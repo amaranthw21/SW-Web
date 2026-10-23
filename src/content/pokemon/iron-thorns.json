@@ -1,0 +1,17 @@
+{
+  "order": 530,
+  "name": "Iron Thorns",
+  "form": "",
+  "image": "/pokemon/iron-thorns.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Rock",
+  "type2": "Electric",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "PARADOX",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

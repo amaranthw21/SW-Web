@@ -1,0 +1,17 @@
+{
+  "order": 1075,
+  "name": "Poipole",
+  "form": "",
+  "image": "/pokemon/poipole.webp",
+  "status": "PENDING",
+  "generation": 7,
+  "type1": "Poison",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "ULTRABEAST",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

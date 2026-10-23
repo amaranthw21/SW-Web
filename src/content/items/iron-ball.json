@@ -1,0 +1,16 @@
+{
+  "name": "Iron Ball",
+  "note": "",
+  "image": "/items/iron-ball.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Common",
+  "description": "A compact but very heavy sphere made of iron. If you throw it at a Pokémon and it hits, it can knock the enemy out. However you need to be on the ground to throw it.",
+  "buy": 2500,
+  "sell": 2250,
+  "howToGet": "FIND",
+  "locations": [
+    "MT THUNDER",
+    "LIGHTNING FIELD"
+  ],
+  "ingredients": []
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Oran Berry",
+  "note": "",
+  "image": "/items/oran-berry.webp",
+  "type": "BERRY",
+  "rarity": "Common",
+  "description": "Restores 10 HP.",
+  "buy": 100,
+  "sell": 90,
+  "howToGet": "FIND",
+  "locations": [
+    "ANYWHERE"
+  ],
+  "ingredients": []
+}

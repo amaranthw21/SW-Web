@@ -1,0 +1,15 @@
+{
+  "name": "Wishing Star",
+  "note": "",
+  "image": "/items/wishing-star.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Rare",
+  "description": "A mysterious crystal containing a wishing star. It can be used to fully restore the entire party's health.",
+  "buy": null,
+  "sell": null,
+  "howToGet": "CRAFT",
+  "locations": [
+    "ASK LUGIA"
+  ],
+  "ingredients": []
+}

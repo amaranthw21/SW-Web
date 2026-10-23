@@ -1,0 +1,17 @@
+{
+  "order": 524,
+  "name": "Volcarona",
+  "form": "",
+  "image": "/pokemon/volcarona.webp",
+  "status": "CLOSED",
+  "generation": 5,
+  "type1": "Bug",
+  "type2": "Fire",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Sylveon",
+  "fakemon": false
+}

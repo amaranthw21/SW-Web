@@ -1,0 +1,17 @@
+{
+  "order": 1066,
+  "name": "Silvally",
+  "form": "",
+  "image": "/pokemon/silvally.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAN-MADE LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

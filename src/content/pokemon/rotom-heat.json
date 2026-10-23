@@ -1,0 +1,17 @@
+{
+  "order": 73,
+  "name": "Rotom",
+  "form": "Heat",
+  "image": "/pokemon/rotom-heat.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Electric",
+  "type2": "Fire",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAN-MADE",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

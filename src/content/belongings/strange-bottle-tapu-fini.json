@@ -1,0 +1,10 @@
+{
+  "name": "Strange Bottle",
+  "pokemon": "Tapu Fini",
+  "image": "/belongings/strange-bottle-tapu-fini.webp",
+  "rarity": "Special",
+  "description": "Swirling through the thick glass vial is a sparkling fluid that appears to be irreflective and opaque. The cork is irremoveable, but the mere feel of the glass is like icicles in one's palm.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

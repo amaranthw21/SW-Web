@@ -1,0 +1,17 @@
+{
+  "order": 255,
+  "name": "Huntail",
+  "form": "",
+  "image": "/pokemon/huntail.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Water",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

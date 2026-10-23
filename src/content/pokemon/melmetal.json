@@ -1,0 +1,17 @@
+{
+  "order": 1068,
+  "name": "Melmetal",
+  "form": "",
+  "image": "/pokemon/melmetal.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Steel",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAN-MADE LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

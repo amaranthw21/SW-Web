@@ -1,0 +1,10 @@
+{
+  "name": "Moon Flute",
+  "pokemon": "Lunala",
+  "image": "/belongings/moon-flute.webp",
+  "rarity": "Special",
+  "description": "A relic from the past, that you recovered from somewhere. This old flute, appears to be broken as it produces no sound when played.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

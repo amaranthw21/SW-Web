@@ -1,0 +1,17 @@
+{
+  "order": 455,
+  "name": "Grimer",
+  "form": "Alolan",
+  "image": "/pokemon/grimer-alolan.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Poison",
+  "type2": "Dark",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

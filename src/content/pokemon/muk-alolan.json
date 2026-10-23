@@ -1,0 +1,17 @@
+{
+  "order": 457,
+  "name": "Muk",
+  "form": "Alolan",
+  "image": "/pokemon/muk-alolan.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Poison",
+  "type2": "Dark",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

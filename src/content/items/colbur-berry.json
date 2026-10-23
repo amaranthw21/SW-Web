@@ -1,0 +1,15 @@
+{
+  "name": "Colbur Berry",
+  "note": "",
+  "image": "/items/colbur-berry.webp",
+  "type": "BERRY",
+  "rarity": "Rare",
+  "description": "Halves damage taken from a supereffective Dark-Type move.",
+  "buy": 1000,
+  "sell": 900,
+  "howToGet": "FIND",
+  "locations": [
+    "METEOR CRATER"
+  ],
+  "ingredients": []
+}

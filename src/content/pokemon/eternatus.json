@@ -1,0 +1,17 @@
+{
+  "order": 1092,
+  "name": "Eternatus",
+  "form": "",
+  "image": "/pokemon/eternatus.webp",
+  "status": "CLOSED",
+  "generation": 8,
+  "type1": "Poison",
+  "type2": "Dragon",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAJOR LEGENDARY",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Hydreigon",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 505,
+  "name": "Hakamo-o",
+  "form": "",
+  "image": "/pokemon/hakamo-o.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Dragon",
+  "type2": "Fighting",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

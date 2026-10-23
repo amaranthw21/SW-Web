@@ -1,0 +1,17 @@
+{
+  "order": 1086,
+  "name": "Dialga",
+  "form": "",
+  "image": "/pokemon/dialga.webp",
+  "status": "CLOSED",
+  "generation": 4,
+  "type1": "Steel",
+  "type2": "Dragon",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAJOR LEGENDARY",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Kommo-o",
+  "fakemon": false
+}

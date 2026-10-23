@@ -1,0 +1,17 @@
+{
+  "order": 345,
+  "name": "Espurr",
+  "form": "",
+  "image": "/pokemon/espurr.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Psychic",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

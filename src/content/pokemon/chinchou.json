@@ -1,0 +1,17 @@
+{
+  "order": 249,
+  "name": "Chinchou",
+  "form": "",
+  "image": "/pokemon/chinchou.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Water",
+  "type2": "Electric",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

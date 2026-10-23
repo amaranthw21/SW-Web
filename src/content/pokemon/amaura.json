@@ -1,0 +1,17 @@
+{
+  "order": 123,
+  "name": "Amaura",
+  "form": "",
+  "image": "/pokemon/amaura.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Rock",
+  "type2": "Ice",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

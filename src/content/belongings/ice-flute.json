@@ -1,0 +1,10 @@
+{
+  "name": "Ice Flute",
+  "pokemon": "Articuno",
+  "image": "/belongings/ice-flute.webp",
+  "rarity": "Special",
+  "description": "A flute. No matter how you blow into it, not a single note escapes. It feels unnervingly cold against your fingers.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

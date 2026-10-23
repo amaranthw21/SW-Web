@@ -1,0 +1,15 @@
+{
+  "name": "Enigma Berry",
+  "note": "",
+  "image": "/items/enigma-berry.webp",
+  "type": "BERRY",
+  "rarity": "Rare",
+  "description": "It has a random effect.",
+  "buy": 1000,
+  "sell": 900,
+  "howToGet": "FIND",
+  "locations": [
+    "ANYWHERE"
+  ],
+  "ingredients": []
+}

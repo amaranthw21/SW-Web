@@ -1,0 +1,17 @@
+{
+  "order": 548,
+  "name": "Incineroar",
+  "form": "",
+  "image": "/pokemon/incineroar.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Fire",
+  "type2": "Dark",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

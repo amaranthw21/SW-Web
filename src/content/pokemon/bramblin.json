@@ -1,0 +1,17 @@
+{
+  "order": 198,
+  "name": "Bramblin",
+  "form": "",
+  "image": "/pokemon/bramblin.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Grass",
+  "type2": "Ghost",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

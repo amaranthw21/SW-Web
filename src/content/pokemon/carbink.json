@@ -1,0 +1,17 @@
+{
+  "order": 10,
+  "name": "Carbink",
+  "form": "",
+  "image": "/pokemon/carbink.webp",
+  "status": "CLOSED",
+  "generation": 6,
+  "type1": "Rock",
+  "type2": "Fairy",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Murkrow",
+  "fakemon": false
+}

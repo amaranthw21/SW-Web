@@ -1,0 +1,10 @@
+{
+  "name": "Unknown Chest",
+  "pokemon": "Entei",
+  "image": "/belongings/unknown-chest.webp",
+  "rarity": "Special",
+  "description": "An ancient chest you came across during one of your journeys, or at least that's the memory you believe to hold. Its method of unlocking eludes you, but the subtle noises it emits suggest a hidden treasure lies within.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

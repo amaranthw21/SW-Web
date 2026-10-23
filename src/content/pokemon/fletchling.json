@@ -1,0 +1,17 @@
+{
+  "order": 371,
+  "name": "Fletchling",
+  "form": "",
+  "image": "/pokemon/fletchling.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Normal",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

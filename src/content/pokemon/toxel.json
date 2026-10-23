@@ -1,0 +1,17 @@
+{
+  "order": 902,
+  "name": "Toxel",
+  "form": "",
+  "image": "/pokemon/toxel.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Electric",
+  "type2": "Poison",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

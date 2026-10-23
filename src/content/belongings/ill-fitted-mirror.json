@@ -1,0 +1,10 @@
+{
+  "name": "Ill-fitted Mirror",
+  "pokemon": "Landorus",
+  "image": "/belongings/ill-fitted-mirror.webp",
+  "rarity": "Special",
+  "description": "A hand sized mirror that doesn't seem to fit its frame quite well. You feel like it should be part of something bigger but you can't remember what that's supposed to be.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

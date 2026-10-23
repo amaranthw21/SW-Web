@@ -7,12 +7,12 @@ import asset from "../lib/asset";
 // ese caso la tarjeta se pinta igual pero sin ser un enlace, en vez de llevar a
 // ninguna parte.
 //
-// `fallbackImage` (opcional) sustituye a la inicial magenta cuando no hay
+// `fallbackImage` (opcional) sustituye a la inicial dorado cuando no hay
 // imagen o no carga; los NPCs lo usan para su silueta genérica.
 export default function EntryCard({ name, subtitle, image, imagePosition, imageZoom, link, fallbackImage }) {
 
     // Si la imagen no existe / falla al cargar, pasamos a `fallbackImage` y,
-    // si tampoco hay o también falla, al placeholder magenta.
+    // si tampoco hay o también falla, al placeholder dorado.
     const [failed, setFailed] = useState([]);
 
     const candidates = [image?.trim(), fallbackImage].filter(

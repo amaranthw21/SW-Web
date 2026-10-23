@@ -1,0 +1,17 @@
+{
+  "name": "Bluk Berry",
+  "note": "",
+  "image": "/items/bluk-berry.webp",
+  "type": "BERRY",
+  "rarity": "Common",
+  "description": "Causes poison to the pokemon that eats it.",
+  "buy": 300,
+  "sell": 270,
+  "howToGet": "FIND",
+  "locations": [
+    "STAR CAVE",
+    "LAVENDER TOWER",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

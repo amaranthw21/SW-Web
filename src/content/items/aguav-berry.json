@@ -1,0 +1,17 @@
+{
+  "name": "Aguav Berry",
+  "note": "",
+  "image": "/items/aguav-berry.webp",
+  "type": "BERRY",
+  "rarity": "Uncommon",
+  "description": "Restores 25% of HP and cures paralysis.",
+  "buy": 500,
+  "sell": 450,
+  "howToGet": "FIND",
+  "locations": [
+    "MT THUNDER",
+    "LIGHTNING FIELD",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

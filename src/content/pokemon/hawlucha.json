@@ -1,0 +1,17 @@
+{
+  "order": 41,
+  "name": "Hawlucha",
+  "form": "",
+  "image": "/pokemon/hawlucha.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Fighting",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

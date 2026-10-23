@@ -1,0 +1,17 @@
+{
+  "order": 1041,
+  "name": "Tapu Fini",
+  "form": "",
+  "image": "/pokemon/tapu-fini.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Water",
+  "type2": "Fairy",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

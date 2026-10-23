@@ -1,0 +1,17 @@
+{
+  "order": 426,
+  "name": "Girafarig",
+  "form": "",
+  "image": "/pokemon/girafarig.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Normal",
+  "type2": "Psychic",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

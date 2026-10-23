@@ -1,0 +1,10 @@
+{
+  "name": "Gracidea",
+  "pokemon": "Shaymin",
+  "image": "/belongings/gracidea.webp",
+  "rarity": "Special",
+  "description": "A single, peculiar flower with pink petals and a sweet aroma. It brings back memories of somewhere, but you are not able to remember where you took it from.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

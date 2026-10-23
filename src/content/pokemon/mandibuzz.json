@@ -1,0 +1,17 @@
+{
+  "order": 943,
+  "name": "Mandibuzz",
+  "form": "",
+  "image": "/pokemon/mandibuzz.webp",
+  "status": "CLOSED",
+  "generation": 5,
+  "type1": "Dark",
+  "type2": "Flying",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Skeledirge Raichu (Alolan)",
+  "fakemon": false
+}

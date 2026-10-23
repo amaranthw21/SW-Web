@@ -1,0 +1,17 @@
+{
+  "order": 728,
+  "name": "Rockruff",
+  "form": "",
+  "image": "/pokemon/rockruff.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Rock",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

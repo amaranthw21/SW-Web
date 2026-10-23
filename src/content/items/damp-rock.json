@@ -1,0 +1,15 @@
+{
+  "name": "Damp Rock",
+  "note": "",
+  "image": "/items/damp-rock.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Uncommon",
+  "description": "A strange rock cold and wet to the touch. It is said that if it breaks, it can invoke rain for a few minutes.",
+  "buy": 7500,
+  "sell": 6750,
+  "howToGet": "FIND",
+  "locations": [
+    "CERULEAN CAPE"
+  ],
+  "ingredients": []
+}

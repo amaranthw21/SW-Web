@@ -1,0 +1,17 @@
+{
+  "order": 676,
+  "name": "Tranquill",
+  "form": "",
+  "image": "/pokemon/tranquill.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Normal",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

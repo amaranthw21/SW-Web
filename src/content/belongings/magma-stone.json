@@ -1,0 +1,10 @@
+{
+  "name": "Magma Stone",
+  "pokemon": "Heatran",
+  "image": "/belongings/magma-stone.webp",
+  "rarity": "Special",
+  "description": "A stone with a strange gem embedded into it. Along with other small shards protruding from the rock. Magma seems to be sealed inside, and radiates a strange power.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Leaf Stone",
+  "note": "",
+  "image": "/items/leaf-stone.webp",
+  "type": "ITEM",
+  "rarity": "Rare",
+  "description": "A peculiar stone that can make certain species of Pokémon evolve and as a material for crafting. It has an unmistakable leaf pattern.",
+  "buy": 10500,
+  "sell": 9450,
+  "howToGet": "FIND",
+  "locations": [
+    "CERULEAN CAPE",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

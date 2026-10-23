@@ -1,0 +1,17 @@
+{
+  "order": 968,
+  "name": "Woobat",
+  "form": "",
+  "image": "/pokemon/woobat.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Psychic",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

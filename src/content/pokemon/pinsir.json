@@ -1,0 +1,17 @@
+{
+  "order": 65,
+  "name": "Pinsir",
+  "form": "",
+  "image": "/pokemon/pinsir.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Bug",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

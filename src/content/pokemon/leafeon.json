@@ -1,0 +1,17 @@
+{
+  "order": 335,
+  "name": "Leafeon",
+  "form": "",
+  "image": "/pokemon/leafeon.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Grass",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

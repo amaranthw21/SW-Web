@@ -1,0 +1,17 @@
+{
+  "order": 315,
+  "name": "Dragapult",
+  "form": "",
+  "image": "/pokemon/dragapult.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Dragon",
+  "type2": "Ghost",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

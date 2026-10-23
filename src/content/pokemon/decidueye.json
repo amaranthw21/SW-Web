@@ -1,0 +1,17 @@
+{
+  "order": 743,
+  "name": "Decidueye",
+  "form": "",
+  "image": "/pokemon/decidueye.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Grass",
+  "type2": "Ghost",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

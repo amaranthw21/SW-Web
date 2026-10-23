@@ -1,0 +1,15 @@
+{
+  "name": "Star Piece",
+  "note": "",
+  "image": "/items/star-piece.webp",
+  "type": "ITEM",
+  "rarity": "Rare",
+  "description": "A small shard of a beautiful gem that gives off a distinctly red sparkle. Can be sold in shops for a hefty price, give as a present or broke thon into Stardust for crafting.",
+  "buy": 10500,
+  "sell": 9450,
+  "howToGet": "FIND",
+  "locations": [
+    "ANYWHERE"
+  ],
+  "ingredients": []
+}

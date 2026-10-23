@@ -1,0 +1,17 @@
+{
+  "order": 393,
+  "name": "Ponyta",
+  "form": "",
+  "image": "/pokemon/ponyta.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Fire",
+  "type2": "",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

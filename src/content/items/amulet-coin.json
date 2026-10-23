@@ -1,0 +1,13 @@
+{
+  "name": "Amulet Coin",
+  "note": "",
+  "image": "/items/amulet-coin.webp",
+  "type": "ITEM",
+  "rarity": "Uncommon",
+  "description": "A coin-shaped amulet. It will double your rewards during an adventure.",
+  "buy": 10500,
+  "sell": 9450,
+  "howToGet": "FIND",
+  "locations": [],
+  "ingredients": []
+}

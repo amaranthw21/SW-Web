@@ -1,0 +1,17 @@
+{
+  "order": 357,
+  "name": "Fennekin",
+  "form": "",
+  "image": "/pokemon/fennekin.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Fire",
+  "type2": "",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

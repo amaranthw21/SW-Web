@@ -1,0 +1,17 @@
+{
+  "order": 71,
+  "name": "Oricorio",
+  "form": "Sensu",
+  "image": "/pokemon/oricorio-sensu.webp",
+  "status": "CLOSED",
+  "generation": 7,
+  "type1": "Ghost",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Quaquaval Unfezant (Male)",
+  "fakemon": false
+}

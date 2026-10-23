@@ -1,0 +1,17 @@
+{
+  "order": 1052,
+  "name": "Chien-Pao",
+  "form": "",
+  "image": "/pokemon/chien-pao.webp",
+  "status": "CLOSED",
+  "generation": 9,
+  "type1": "Dark",
+  "type2": "Ice",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Hatterene",
+  "fakemon": false
+}

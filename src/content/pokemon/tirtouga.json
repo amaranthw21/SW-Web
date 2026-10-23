@@ -1,0 +1,17 @@
+{
+  "order": 891,
+  "name": "Tirtouga",
+  "form": "",
+  "image": "/pokemon/tirtouga.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Water",
+  "type2": "Rock",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

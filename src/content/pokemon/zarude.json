@@ -1,0 +1,17 @@
+{
+  "order": 1047,
+  "name": "Zarude",
+  "form": "",
+  "image": "/pokemon/zarude.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Dark",
+  "type2": "Grass",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

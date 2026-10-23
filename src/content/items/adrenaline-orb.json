@@ -1,0 +1,22 @@
+{
+  "name": "Adrenaline Orb",
+  "note": "",
+  "image": "/items/adrenaline-orb.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Uncommon",
+  "description": "A specialized bomb with a devious twist: Upon detonation, it triggers shadow Pokémon caught in its blast radius to turn against each other. This chaotic effect compels them to engage in internal strife, directing their aggression solely towards one another, leaving untouched those not impacted by the explosive event.",
+  "buy": null,
+  "sell": 2250,
+  "howToGet": "CRAFT",
+  "locations": [],
+  "ingredients": [
+    {
+      "item": "BRIGHT POWDER",
+      "quantity": 1
+    },
+    {
+      "item": "ANY FOOD BERRY",
+      "quantity": 1
+    }
+  ]
+}

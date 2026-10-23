@@ -1,0 +1,16 @@
+{
+  "name": "Thunder Stone",
+  "note": "",
+  "image": "/items/thunder-stone.webp",
+  "type": "ITEM",
+  "rarity": "Rare",
+  "description": "A peculiar stone that can make certain species of Pokémon evolve or be used as crafting materials. It has a distinct thunderbolt pattern.",
+  "buy": 10500,
+  "sell": 9450,
+  "howToGet": "FIND",
+  "locations": [
+    "MT THUNDER",
+    "LIGHTNING FIELD"
+  ],
+  "ingredients": []
+}

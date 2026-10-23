@@ -1,0 +1,10 @@
+{
+  "name": "Starlit Memento",
+  "pokemon": "Cosmoem",
+  "image": "/belongings/starlit-memento.webp",
+  "rarity": "Special",
+  "description": "TBR A crystal reminicent of the warmth felt when looking up into the starry night sky. It hums with a faint light, warm to the touch in a barely noticable way.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

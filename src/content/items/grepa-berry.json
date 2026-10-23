@@ -1,0 +1,15 @@
+{
+  "name": "Grepa Berry",
+  "note": "",
+  "image": "/items/grepa-berry.webp",
+  "type": "BERRY",
+  "rarity": "Common",
+  "description": "A good cooking ingredient. It also serves as a snack.",
+  "buy": 50,
+  "sell": 45,
+  "howToGet": "FIND",
+  "locations": [
+    "LAVENDER TOWER"
+  ],
+  "ingredients": []
+}

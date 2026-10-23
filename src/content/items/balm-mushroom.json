@@ -1,0 +1,15 @@
+{
+  "name": "Balm Mushroom",
+  "note": "",
+  "image": "/items/balm-mushroom.webp",
+  "type": "ITEM",
+  "rarity": "Common",
+  "description": "A rare mushroom that gives off a nice fragrance. It can be sold at a high price to shops or used on high-end meals.",
+  "buy": 200,
+  "sell": 180,
+  "howToGet": "FIND",
+  "locations": [
+    "ANYWHERE"
+  ],
+  "ingredients": []
+}

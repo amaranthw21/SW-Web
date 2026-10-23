@@ -1,0 +1,17 @@
+{
+  "order": 46,
+  "name": "Kangaskhan",
+  "form": "",
+  "image": "/pokemon/kangaskhan.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

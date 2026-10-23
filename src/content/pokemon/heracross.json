@@ -1,0 +1,17 @@
+{
+  "order": 43,
+  "name": "Heracross",
+  "form": "",
+  "image": "/pokemon/heracross.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Bug",
+  "type2": "Fighting",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

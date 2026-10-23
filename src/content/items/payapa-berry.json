@@ -1,0 +1,16 @@
+{
+  "name": "Payapa Berry",
+  "note": "",
+  "image": "/items/payapa-berry.webp",
+  "type": "BERRY",
+  "rarity": "Rare",
+  "description": "Halves damage taken from a supereffective Psychic-Type moves.",
+  "buy": 1000,
+  "sell": 900,
+  "howToGet": "FIND",
+  "locations": [
+    "STAR CAVE",
+    "METEOR CRATER"
+  ],
+  "ingredients": []
+}

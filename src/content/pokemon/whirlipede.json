@@ -1,0 +1,17 @@
+{
+  "order": 938,
+  "name": "Whirlipede",
+  "form": "",
+  "image": "/pokemon/whirlipede.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Bug",
+  "type2": "Poison",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

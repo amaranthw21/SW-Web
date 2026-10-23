@@ -1,0 +1,17 @@
+{
+  "order": 1076,
+  "name": "Naganadel",
+  "form": "",
+  "image": "/pokemon/naganadel.webp",
+  "status": "PENDING",
+  "generation": 7,
+  "type1": "Poison",
+  "type2": "Dragon",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "ULTRABEAST",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

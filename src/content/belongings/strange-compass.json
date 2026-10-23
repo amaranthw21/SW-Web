@@ -1,0 +1,10 @@
+{
+  "name": "Strange Compass",
+  "pokemon": "Raikou",
+  "image": "/belongings/strange-compass.webp",
+  "rarity": "Special",
+  "description": "A strange compass that appears to have been used quite a bit. It appears to be broken.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

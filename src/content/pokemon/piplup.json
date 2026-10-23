@@ -1,0 +1,17 @@
+{
+  "order": 684,
+  "name": "Piplup",
+  "form": "",
+  "image": "/pokemon/piplup.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Water",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

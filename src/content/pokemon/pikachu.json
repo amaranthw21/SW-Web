@@ -1,0 +1,17 @@
+{
+  "order": 446,
+  "name": "Pikachu",
+  "form": "",
+  "image": "/pokemon/pikachu.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Electric",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

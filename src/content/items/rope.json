@@ -1,0 +1,18 @@
+{
+  "name": "Rope",
+  "note": "",
+  "image": "/items/rope.webp",
+  "type": "ITEM",
+  "rarity": "Common",
+  "description": "Several meters of strong rope. It can be used for a multitude of uses. Must be crafted.",
+  "buy": 500,
+  "sell": 450,
+  "howToGet": "CRAFT",
+  "locations": [],
+  "ingredients": [
+    {
+      "item": "BAMBOO SHOOT",
+      "quantity": 1
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "order": 842,
+  "name": "Floragato",
+  "form": "",
+  "image": "/pokemon/floragato.webp",
+  "status": "RESERVED (>1)",
+  "generation": 9,
+  "type1": "Grass",
+  "type2": "",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Haunter",
+  "fakemon": false
+}

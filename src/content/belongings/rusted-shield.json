@@ -1,0 +1,10 @@
+{
+  "name": "Rusted Shield",
+  "pokemon": "Zamazenta",
+  "image": "/belongings/rusted-shield.webp",
+  "rarity": "Special",
+  "description": "A rusted shield that can't protect its wielder anymore. It seems about to fall apart with even the gentlest of impacts.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

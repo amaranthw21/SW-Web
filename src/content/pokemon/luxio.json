@@ -1,0 +1,17 @@
+{
+  "order": 787,
+  "name": "Luxio",
+  "form": "",
+  "image": "/pokemon/luxio.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Electric",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

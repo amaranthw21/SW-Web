@@ -1,0 +1,17 @@
+{
+  "order": 598,
+  "name": "Vikavolt",
+  "form": "",
+  "image": "/pokemon/vikavolt.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Bug",
+  "type2": "Electric",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

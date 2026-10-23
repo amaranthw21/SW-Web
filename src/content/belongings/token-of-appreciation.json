@@ -1,0 +1,10 @@
+{
+  "name": "Token of Appreciation",
+  "pokemon": "Suicune",
+  "image": "/belongings/token-of-appreciation.webp",
+  "rarity": "Special",
+  "description": "An old amulet that someone gave you as a thank you a long time ago. You don't remember that pokemon or what you did to deserve it but it still smells like the forest.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "order": 57,
+  "name": "Mimikyu",
+  "form": "",
+  "image": "/pokemon/mimikyu.webp",
+  "status": "CLOSED",
+  "generation": 7,
+  "type1": "Ghost",
+  "type2": "Fairy",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Jirachi",
+  "fakemon": false
+}

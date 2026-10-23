@@ -1,0 +1,17 @@
+{
+  "name": "Chesto Berry",
+  "note": "",
+  "image": "/items/chesto-berry.webp",
+  "type": "BERRY",
+  "rarity": "Common",
+  "description": "Cures sleep.",
+  "buy": 300,
+  "sell": 270,
+  "howToGet": "FIND",
+  "locations": [
+    "STAR CAVE",
+    "METEOR CRATER",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

@@ -1,0 +1,17 @@
+{
+  "order": 890,
+  "name": "Conkeldurr",
+  "form": "",
+  "image": "/pokemon/conkeldurr.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Fighting",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

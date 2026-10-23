@@ -1,0 +1,17 @@
+{
+  "order": 34,
+  "name": "Falinks",
+  "form": "",
+  "image": "/pokemon/falinks.webp",
+  "status": "RESERVED (>1)",
+  "generation": 8,
+  "type1": "Fighting",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Jynx",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 467,
+  "name": "Hattrem",
+  "form": "",
+  "image": "/pokemon/hattrem.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Psychic",
+  "type2": "",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

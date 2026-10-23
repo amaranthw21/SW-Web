@@ -1,0 +1,17 @@
+{
+  "order": 966,
+  "name": "Wingull",
+  "form": "",
+  "image": "/pokemon/wingull.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Water",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 1023,
+  "name": "Keldeo",
+  "form": "",
+  "image": "/pokemon/keldeo.webp",
+  "status": "CLOSED",
+  "generation": 5,
+  "type1": "Water",
+  "type2": "Fighting",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Sirfetch'd",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 100,
+  "name": "Zangoose",
+  "form": "",
+  "image": "/pokemon/zangoose.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 933,
+  "name": "Vanillish",
+  "form": "",
+  "image": "/pokemon/vanillish.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Ice",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

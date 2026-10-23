@@ -1,0 +1,15 @@
+{
+  "name": "Fairy Feather",
+  "note": "",
+  "image": "/items/fairy-feather.webp",
+  "type": "ITEM",
+  "rarity": "Common",
+  "description": "A strange fairy feather without many uses in combat. However it has several uses as a crafting material.",
+  "buy": 2500,
+  "sell": 2250,
+  "howToGet": "FIND",
+  "locations": [
+    "STAR CAVE"
+  ],
+  "ingredients": []
+}

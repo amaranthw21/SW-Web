@@ -1,0 +1,17 @@
+{
+  "order": 1013,
+  "name": "Manaphy",
+  "form": "",
+  "image": "/pokemon/manaphy.webp",
+  "status": "CLOSED",
+  "generation": 4,
+  "type1": "Water",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Flareon",
+  "fakemon": false
+}

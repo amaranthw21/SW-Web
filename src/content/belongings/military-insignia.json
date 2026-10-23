@@ -1,0 +1,10 @@
+{
+  "name": "Military Insignia",
+  "pokemon": "Terrakion",
+  "image": "/belongings/military-insignia.webp",
+  "rarity": "Special",
+  "description": "A shiny emblem with a castle symbol embedded into it. Despite being made of steel, it seems rather resistant to heat and flames and cannot be bent.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

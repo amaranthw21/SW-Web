@@ -1,0 +1,17 @@
+{
+  "order": 346,
+  "name": "Meowstic",
+  "form": "Female",
+  "image": "/pokemon/meowstic.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Psychic",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 342,
+  "name": "Electivire",
+  "form": "",
+  "image": "/pokemon/electivire.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Electric",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

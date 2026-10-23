@@ -1,0 +1,17 @@
+{
+  "order": 385,
+  "name": "Farfetch'd",
+  "form": "Galarian",
+  "image": "/pokemon/farfetch-d-galarian.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Fighting",
+  "type2": "",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

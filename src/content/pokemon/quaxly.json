@@ -1,0 +1,17 @@
+{
+  "order": 709,
+  "name": "Quaxly",
+  "form": "",
+  "image": "/pokemon/quaxly.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Water",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

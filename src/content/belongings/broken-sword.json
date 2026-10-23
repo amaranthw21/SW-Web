@@ -1,0 +1,10 @@
+{
+  "name": "Broken Sword",
+  "pokemon": "Chien-Pao",
+  "image": "/belongings/broken-sword.webp",
+  "rarity": "Special",
+  "description": "A broken sword really cold to the tact. The blade is so dull it can't cut anything anymore.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

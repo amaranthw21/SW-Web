@@ -1,0 +1,17 @@
+{
+  "order": 661,
+  "name": "Pawmo",
+  "form": "",
+  "image": "/pokemon/pawmo.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Electric",
+  "type2": "Fighting",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

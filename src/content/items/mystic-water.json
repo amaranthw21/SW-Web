@@ -1,0 +1,22 @@
+{
+  "name": "Mystic Water",
+  "note": "",
+  "image": "/items/mystic-water.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Rare",
+  "description": "A teardrop-shaped pendant filled with water. Allows a user to change their secondary type to Water.",
+  "buy": null,
+  "sell": 9450,
+  "howToGet": "CRAFT",
+  "locations": [],
+  "ingredients": [
+    {
+      "item": "WATER STONE",
+      "quantity": 1
+    },
+    {
+      "item": "BRIGHT POWDER",
+      "quantity": 1
+    }
+  ]
+}

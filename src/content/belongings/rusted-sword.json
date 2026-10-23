@@ -1,0 +1,10 @@
+{
+  "name": "Rusted Sword",
+  "pokemon": "Zacian",
+  "image": "/belongings/rusted-sword.webp",
+  "rarity": "Special",
+  "description": "A rusted sword whose blade can't cut anything anymore. It seems to have fought in many battles.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

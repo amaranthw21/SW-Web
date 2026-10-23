@@ -1,0 +1,17 @@
+{
+  "order": 1088,
+  "name": "Regigigas",
+  "form": "",
+  "image": "/pokemon/regigigas.webp",
+  "status": "CLOSED",
+  "generation": 4,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAJOR LEGENDARY",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Cinccino",
+  "fakemon": false
+}

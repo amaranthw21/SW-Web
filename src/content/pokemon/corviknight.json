@@ -1,0 +1,17 @@
+{
+  "order": 740,
+  "name": "Corviknight",
+  "form": "",
+  "image": "/pokemon/corviknight.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Flying",
+  "type2": "Steel",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 24,
+  "name": "Dhelmise",
+  "form": "",
+  "image": "/pokemon/dhelmise.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Ghost",
+  "type2": "Grass",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

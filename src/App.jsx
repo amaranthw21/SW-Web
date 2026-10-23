@@ -1,10 +1,20 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Layout from "./components/Layout";
 
 import Home from "./pages/Home";
+import ItemsHub from "./pages/ItemsHub";
 import Credits from "./pages/Credits";
 import NotFound from "./pages/NotFound";
+
+
+// Las tablas traen todos sus datos (más de mil JSON): se cargan aparte, al
+// entrar en ellas, para que la portada no se los descargue.
+const Pokemon = lazy(() => import("./pages/Pokemon"));
+const Items = lazy(() => import("./pages/Items"));
+const Belongings = lazy(() => import("./pages/Belongings"));
+const Blessings = lazy(() => import("./pages/Blessings"));
 
 
 // En GitHub Pages el sitio cuelga de "/SW-Web/"; el router necesita ese
@@ -26,6 +36,31 @@ function App() {
                     <Route
                         path="/"
                         element={<Home />}
+                    />
+
+                    <Route
+                        path="/pokemon"
+                        element={<Suspense><Pokemon /></Suspense>}
+                    />
+
+                    <Route
+                        path="/items"
+                        element={<ItemsHub />}
+                    />
+
+                    <Route
+                        path="/items/list"
+                        element={<Suspense><Items /></Suspense>}
+                    />
+
+                    <Route
+                        path="/items/belongings"
+                        element={<Suspense><Belongings /></Suspense>}
+                    />
+
+                    <Route
+                        path="/items/blessings"
+                        element={<Suspense><Blessings /></Suspense>}
                     />
 
                     <Route

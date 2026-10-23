@@ -1,0 +1,17 @@
+{
+  "order": 248,
+  "name": "Infernape",
+  "form": "",
+  "image": "/pokemon/infernape.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Fire",
+  "type2": "Fighting",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

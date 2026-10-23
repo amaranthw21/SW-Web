@@ -1,0 +1,17 @@
+{
+  "order": 908,
+  "name": "Grovyle",
+  "form": "",
+  "image": "/pokemon/grovyle.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Grass",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

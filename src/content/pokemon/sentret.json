@@ -1,0 +1,17 @@
+{
+  "order": 775,
+  "name": "Sentret",
+  "form": "",
+  "image": "/pokemon/sentret.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Leppa Berry",
+  "note": "",
+  "image": "/items/leppa-berry.webp",
+  "type": "BERRY",
+  "rarity": "Common",
+  "description": "Restores 10 PP to a move.",
+  "buy": 300,
+  "sell": 270,
+  "howToGet": "FIND",
+  "locations": [
+    "ANYWHERE"
+  ],
+  "ingredients": []
+}

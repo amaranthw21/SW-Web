@@ -1,0 +1,15 @@
+{
+  "name": "Pearl",
+  "note": "",
+  "image": "/items/pearl.webp",
+  "type": "ITEM",
+  "rarity": "Common",
+  "description": "A rather small pearl that has a nice silvery sheen to it. It can be sold at a low price to shops, given as a present to someone or used as a crafting material.",
+  "buy": 500,
+  "sell": 450,
+  "howToGet": "FIND",
+  "locations": [
+    "ANYWHERE"
+  ],
+  "ingredients": []
+}

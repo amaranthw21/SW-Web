@@ -1,0 +1,10 @@
+{
+  "name": "Pink Scarf",
+  "pokemon": "Zarude",
+  "image": "/belongings/pink-scarf.webp",
+  "rarity": "Special",
+  "description": "A pink looking scarf that has really seen better days. Is evident that his owner used to love it but you don't seem to remember how it cam into your possession.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

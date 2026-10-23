@@ -1,0 +1,17 @@
+{
+  "name": "Cheri Berry",
+  "note": "",
+  "image": "/items/cheri-berry.webp",
+  "type": "BERRY",
+  "rarity": "Common",
+  "description": "Cures paralysis.",
+  "buy": 300,
+  "sell": 270,
+  "howToGet": "FIND",
+  "locations": [
+    "MT THUNDER",
+    "LIGHTNING FIELD",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

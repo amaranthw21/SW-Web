@@ -1,0 +1,17 @@
+{
+  "order": 178,
+  "name": "Bellsprout",
+  "form": "",
+  "image": "/pokemon/bellsprout.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Grass",
+  "type2": "Poison",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 347,
+  "name": "Meowstic",
+  "form": "Male",
+  "image": "/pokemon/meowstic-male.webp",
+  "status": "CLOSED",
+  "generation": 6,
+  "type1": "Psychic",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Hoopa",
+  "fakemon": false
+}

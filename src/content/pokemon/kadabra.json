@@ -1,0 +1,17 @@
+{
+  "order": 105,
+  "name": "Kadabra",
+  "form": "",
+  "image": "/pokemon/kadabra.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Psychic",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

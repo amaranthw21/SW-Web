@@ -1,0 +1,15 @@
+{
+  "name": "Misty Seed",
+  "note": "",
+  "image": "/items/misty-seed.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Uncommon",
+  "description": "Strange seeds that seem to hold a fantasy like power. If they come into contact with the ground it will become a Misty Terrain for a few minutes.",
+  "buy": 7500,
+  "sell": 6750,
+  "howToGet": "FIND",
+  "locations": [
+    "STAR CAVE"
+  ],
+  "ingredients": []
+}

@@ -1,0 +1,17 @@
+{
+  "order": 103,
+  "name": "Sawk",
+  "form": "",
+  "image": "/pokemon/sawk.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Fighting",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 293,
+  "name": "Quilava",
+  "form": "",
+  "image": "/pokemon/quilava.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Fire",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 1032,
+  "name": "Lunala",
+  "form": "",
+  "image": "/pokemon/lunala.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Psychic",
+  "type2": "Ghost",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

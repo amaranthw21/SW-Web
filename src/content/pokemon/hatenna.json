@@ -1,0 +1,17 @@
+{
+  "order": 466,
+  "name": "Hatenna",
+  "form": "",
+  "image": "/pokemon/hatenna.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Psychic",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

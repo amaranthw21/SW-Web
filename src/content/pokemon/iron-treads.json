@@ -1,0 +1,17 @@
+{
+  "order": 669,
+  "name": "Iron Treads",
+  "form": "",
+  "image": "/pokemon/iron-treads.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Ground",
+  "type2": "Steel",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "PARADOX",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

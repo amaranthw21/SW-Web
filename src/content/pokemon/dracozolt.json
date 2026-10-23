@@ -1,0 +1,17 @@
+{
+  "order": 7,
+  "name": "Dracozolt",
+  "form": "",
+  "image": "/pokemon/dracozolt.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Electric",
+  "type2": "Dragon",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

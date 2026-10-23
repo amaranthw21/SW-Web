@@ -1,0 +1,17 @@
+{
+  "order": 422,
+  "name": "Gabite",
+  "form": "",
+  "image": "/pokemon/gabite.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Dragon",
+  "type2": "Ground",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

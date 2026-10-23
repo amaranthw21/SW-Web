@@ -1,0 +1,17 @@
+{
+  "order": 77,
+  "name": "Rotom",
+  "form": "Mow",
+  "image": "/pokemon/rotom-mow.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Electric",
+  "type2": "Grass",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAN-MADE",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

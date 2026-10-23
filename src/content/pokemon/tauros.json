@@ -1,0 +1,17 @@
+{
+  "order": 91,
+  "name": "Tauros",
+  "form": "",
+  "image": "/pokemon/tauros.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

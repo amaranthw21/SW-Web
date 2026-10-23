@@ -1,0 +1,17 @@
+{
+  "order": 939,
+  "name": "Scolipede",
+  "form": "",
+  "image": "/pokemon/scolipede.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Bug",
+  "type2": "Poison",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

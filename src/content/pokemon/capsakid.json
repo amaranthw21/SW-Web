@@ -1,0 +1,17 @@
+{
+  "order": 221,
+  "name": "Capsakid",
+  "form": "",
+  "image": "/pokemon/capsakid.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Grass",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

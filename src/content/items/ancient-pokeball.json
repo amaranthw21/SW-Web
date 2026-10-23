@@ -1,0 +1,15 @@
+{
+  "name": "Ancient Pokeball",
+  "note": "",
+  "image": "/items/ancient-pokeball.webp",
+  "type": "ITEM",
+  "rarity": "Rare",
+  "description": "A Pokeball from ancient times. It has been modified to allow the capture of Amalgams and their release outside the dungeon. Unfortunately, they cannot be mass-produced.",
+  "buy": null,
+  "sell": null,
+  "howToGet": "SPECIAL",
+  "locations": [
+    "ASK THE CC"
+  ],
+  "ingredients": []
+}

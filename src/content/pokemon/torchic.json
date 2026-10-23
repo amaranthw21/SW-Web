@@ -1,0 +1,17 @@
+{
+  "order": 896,
+  "name": "Torchic",
+  "form": "",
+  "image": "/pokemon/torchic.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Fire",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 624,
+  "name": "Shedinja",
+  "form": "",
+  "image": "/pokemon/shedinja.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Bug",
+  "type2": "Ghost",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

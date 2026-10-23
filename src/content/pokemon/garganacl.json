@@ -1,0 +1,17 @@
+{
+  "order": 608,
+  "name": "Garganacl",
+  "form": "",
+  "image": "/pokemon/garganacl.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Rock",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

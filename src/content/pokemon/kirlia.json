@@ -1,0 +1,17 @@
+{
+  "order": 922,
+  "name": "Kirlia",
+  "form": "",
+  "image": "/pokemon/kirlia.webp",
+  "status": "CLOSED",
+  "generation": 3,
+  "type1": "Psychic",
+  "type2": "Fairy",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Tapu Lele",
+  "fakemon": false
+}

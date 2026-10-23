@@ -1,0 +1,13 @@
+{
+  "name": "Sun Stone",
+  "note": "",
+  "image": "/items/sun-stone.webp",
+  "type": "ITEM",
+  "rarity": "Rare",
+  "description": "A peculiar stone that can make certain species of Pokémon evolve or used as crafting materials. It burns as red as the evening sun.",
+  "buy": 10500,
+  "sell": 9450,
+  "howToGet": "FIND",
+  "locations": [],
+  "ingredients": []
+}

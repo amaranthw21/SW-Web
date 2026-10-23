@@ -1,0 +1,10 @@
+{
+  "name": "Time Gear",
+  "pokemon": "Celebi",
+  "image": "/belongings/time-gear.webp",
+  "rarity": "Special",
+  "description": "An ancient time gear, now devoid of energy, yet carrying the lingering scent of the forested region from which it hails. In the present, it serves as little more than an intriguing and unusual accessory for an owner that doesn't remember where it comes from.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

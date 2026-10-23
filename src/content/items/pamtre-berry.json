@@ -1,0 +1,15 @@
+{
+  "name": "Pamtre Berry",
+  "note": "",
+  "image": "/items/pamtre-berry.webp",
+  "type": "BERRY",
+  "rarity": "Common",
+  "description": "A good cooking ingredient. It also serves as a snack.",
+  "buy": 50,
+  "sell": 45,
+  "howToGet": "FIND",
+  "locations": [
+    "CERULEAN CAPE"
+  ],
+  "ingredients": []
+}

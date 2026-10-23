@@ -1,0 +1,17 @@
+{
+  "order": 340,
+  "name": "Elekid",
+  "form": "",
+  "image": "/pokemon/elekid.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Electric",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

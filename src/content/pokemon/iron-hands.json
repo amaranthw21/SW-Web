@@ -1,0 +1,17 @@
+{
+  "order": 572,
+  "name": "Iron Hands",
+  "form": "",
+  "image": "/pokemon/iron-hands.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Fighting",
+  "type2": "Electric",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "PARADOX",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

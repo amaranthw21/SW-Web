@@ -1,0 +1,17 @@
+{
+  "order": 843,
+  "name": "Meowscarada",
+  "form": "",
+  "image": "/pokemon/meowscarada.webp",
+  "status": "RESERVED (1ST)",
+  "generation": 9,
+  "type1": "Grass",
+  "type2": "Dark",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Reshiram",
+  "fakemon": false
+}

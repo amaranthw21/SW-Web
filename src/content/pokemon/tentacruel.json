@@ -1,0 +1,17 @@
+{
+  "order": 882,
+  "name": "Tentacruel",
+  "form": "",
+  "image": "/pokemon/tentacruel.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Water",
+  "type2": "Poison",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

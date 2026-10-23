@@ -1,0 +1,17 @@
+{
+  "order": 337,
+  "name": "Sylveon",
+  "form": "",
+  "image": "/pokemon/sylveon.webp",
+  "status": "CLOSED",
+  "generation": 6,
+  "type1": "Fairy",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Volcarona",
+  "fakemon": false
+}

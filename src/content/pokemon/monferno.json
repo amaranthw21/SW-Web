@@ -1,0 +1,17 @@
+{
+  "order": 247,
+  "name": "Monferno",
+  "form": "",
+  "image": "/pokemon/monferno.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Fire",
+  "type2": "Fighting",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

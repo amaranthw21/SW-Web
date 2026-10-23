@@ -1,0 +1,17 @@
+{
+  "name": "Figy Berry",
+  "note": "",
+  "image": "/items/figy-berry.webp",
+  "type": "BERRY",
+  "rarity": "Uncommon",
+  "description": "Restores 25% of HP and cures burn.",
+  "buy": 500,
+  "sell": 450,
+  "howToGet": "FIND",
+  "locations": [
+    "INFERNO CAVE",
+    "MT BLAZE",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

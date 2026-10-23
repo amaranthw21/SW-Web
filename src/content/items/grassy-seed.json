@@ -1,0 +1,16 @@
+{
+  "name": "Grassy Seed",
+  "note": "",
+  "image": "/items/grassy-seed.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Uncommon",
+  "description": "Strange seeds that seem to grow really fast. If they come into contact with the ground it will become an Grass Terrain for a few minutes.",
+  "buy": 7500,
+  "sell": 6750,
+  "howToGet": "FIND",
+  "locations": [
+    "CERULEAN CAPE",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

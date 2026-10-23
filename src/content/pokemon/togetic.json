@@ -1,0 +1,17 @@
+{
+  "order": 894,
+  "name": "Togetic",
+  "form": "",
+  "image": "/pokemon/togetic.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Fairy",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

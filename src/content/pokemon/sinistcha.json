@@ -1,0 +1,17 @@
+{
+  "order": 692,
+  "name": "Sinistcha",
+  "form": "",
+  "image": "/pokemon/sinistcha.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Grass",
+  "type2": "Ghost",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

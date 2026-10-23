@@ -1,0 +1,17 @@
+{
+  "order": 1085,
+  "name": "Palkia",
+  "form": "",
+  "image": "/pokemon/palkia.webp",
+  "status": "CLOSED",
+  "generation": 4,
+  "type1": "Water",
+  "type2": "Dragon",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAJOR LEGENDARY",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Steelix",
+  "fakemon": false
+}

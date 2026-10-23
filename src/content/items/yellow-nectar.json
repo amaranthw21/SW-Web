@@ -1,0 +1,15 @@
+{
+  "name": "Yellow Nectar",
+  "note": "",
+  "image": "/items/yellow-nectar.webp",
+  "type": "ITEM",
+  "rarity": "Common",
+  "description": "Flower nectar obtained from yellow flowers. When used in cooking it leaves behind a bitter aftertaste. It changes the form of a certain species of Pokémon.",
+  "buy": 200,
+  "sell": 180,
+  "howToGet": "FIND",
+  "locations": [
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Babiri Berry",
+  "note": "",
+  "image": "/items/babiri-berry.webp",
+  "type": "BERRY",
+  "rarity": "Rare",
+  "description": "Halves damage taken from a supereffective Steel-Type move.",
+  "buy": 1000,
+  "sell": 900,
+  "howToGet": "FIND",
+  "locations": [
+    "MT THUNDER",
+    "ANCIENT TOMB"
+  ],
+  "ingredients": []
+}

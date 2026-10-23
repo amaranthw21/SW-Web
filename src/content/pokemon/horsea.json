@@ -1,0 +1,17 @@
+{
+  "order": 490,
+  "name": "Horsea",
+  "form": "",
+  "image": "/pokemon/horsea.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Water",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

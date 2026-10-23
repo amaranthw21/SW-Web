@@ -1,0 +1,10 @@
+{
+  "name": "Anthology of Fairytales",
+  "pokemon": "Calyrex",
+  "image": "/belongings/anthology-of-fairytales.webp",
+  "rarity": "Special",
+  "description": "A compilation of ancient fairy tales adorned with captivating illustrations. Despite the enchanting imagery, the language in which these tales are written remains an impenetrable mystery, eluding your understanding.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

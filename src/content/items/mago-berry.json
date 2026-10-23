@@ -1,0 +1,16 @@
+{
+  "name": "Mago Berry",
+  "note": "",
+  "image": "/items/mago-berry.webp",
+  "type": "BERRY",
+  "rarity": "Uncommon",
+  "description": "Restores 25% of HP and cures poison.",
+  "buy": 500,
+  "sell": 450,
+  "howToGet": "FIND",
+  "locations": [
+    "INFERNO CAVE",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

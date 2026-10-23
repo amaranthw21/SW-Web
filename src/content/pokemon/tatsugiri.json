@@ -1,0 +1,17 @@
+{
+  "order": 90,
+  "name": "Tatsugiri",
+  "form": "",
+  "image": "/pokemon/tatsugiri.webp",
+  "status": "CLOSED",
+  "generation": 9,
+  "type1": "Dragon",
+  "type2": "Water",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Walrein",
+  "fakemon": false
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Lunar Feather",
+  "pokemon": "Cresselia",
+  "image": "/belongings/lunar-feather.webp",
+  "rarity": "Special",
+  "description": "A feather of a mysterious creature. Sleeping with it around will prevent you from having nightmares.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

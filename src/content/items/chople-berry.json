@@ -1,0 +1,13 @@
+{
+  "name": "Chople Berry",
+  "note": "",
+  "image": "/items/chople-berry.webp",
+  "type": "BERRY",
+  "rarity": "Rare",
+  "description": "Halves damage taken from a supereffective Fighting-Type move.",
+  "buy": 1000,
+  "sell": 900,
+  "howToGet": "FIND",
+  "locations": [],
+  "ingredients": []
+}

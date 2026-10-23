@@ -1,0 +1,17 @@
+{
+  "order": 699,
+  "name": "Primarina",
+  "form": "",
+  "image": "/pokemon/primarina.webp",
+  "status": "RESERVED (>1)",
+  "generation": 7,
+  "type1": "Water",
+  "type2": "Fairy",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "TBE",
+  "fakemon": false
+}

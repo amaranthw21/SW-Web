@@ -1,0 +1,17 @@
+{
+  "order": 179,
+  "name": "Weepinbell",
+  "form": "",
+  "image": "/pokemon/weepinbell.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Grass",
+  "type2": "Poison",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

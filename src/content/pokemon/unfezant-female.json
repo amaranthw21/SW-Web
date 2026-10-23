@@ -1,0 +1,17 @@
+{
+  "order": 678,
+  "name": "Unfezant",
+  "form": "Female",
+  "image": "/pokemon/unfezant-female.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Normal",
+  "type2": "Flying",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

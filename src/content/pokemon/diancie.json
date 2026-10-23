@@ -1,0 +1,17 @@
+{
+  "order": 1033,
+  "name": "Diancie",
+  "form": "",
+  "image": "/pokemon/diancie.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Rock",
+  "type2": "Fairy",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

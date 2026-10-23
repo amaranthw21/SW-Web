@@ -1,0 +1,17 @@
+{
+  "order": 190,
+  "name": "Orbeetle",
+  "form": "",
+  "image": "/pokemon/orbeetle.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Bug",
+  "type2": "Psychic",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

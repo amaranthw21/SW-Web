@@ -1,0 +1,10 @@
+{
+  "name": "Water's Egg Gem",
+  "pokemon": "Phione",
+  "image": "/belongings/water-s-egg-gem.webp",
+  "rarity": "Special",
+  "description": "Even though it looks similar to the Prince's Egg Jewel, they are different gems. Is said that it was given to the children from royal families that would never inherit the throne.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

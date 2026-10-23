@@ -1,0 +1,17 @@
+{
+  "order": 680,
+  "name": "Trumbeak",
+  "form": "",
+  "image": "/pokemon/trumbeak.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Normal",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

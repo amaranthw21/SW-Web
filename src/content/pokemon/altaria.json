@@ -1,0 +1,17 @@
+{
+  "order": 122,
+  "name": "Altaria",
+  "form": "",
+  "image": "/pokemon/altaria.webp",
+  "status": "CLOSED",
+  "generation": 3,
+  "type1": "Dragon",
+  "type2": "Flying",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Rayquaza",
+  "fakemon": false
+}

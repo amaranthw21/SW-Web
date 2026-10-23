@@ -1,0 +1,17 @@
+{
+  "order": 69,
+  "name": "Oricorio",
+  "form": "Pom-Pom",
+  "image": "/pokemon/oricorio-pom-pom.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Electric",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Miracle Seed",
+  "note": "",
+  "image": "/items/miracle-seed.webp",
+  "type": "ITEM",
+  "rarity": "Uncommon",
+  "description": "A strange seed that can save you from a lethal blow. However it doesn't heal you and crumbles after it. It can be used as a crafting material for medicines.",
+  "buy": 7500,
+  "sell": 6750,
+  "howToGet": "FIND",
+  "locations": [
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

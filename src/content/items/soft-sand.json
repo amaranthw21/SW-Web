@@ -1,0 +1,15 @@
+{
+  "name": "Soft Sand",
+  "note": "",
+  "image": "/items/soft-sand.webp",
+  "type": "ITEM",
+  "rarity": "Common",
+  "description": "It’s a loose, silky sand. It can be use to momentaly blind your opponents by throwing it into their eyes os a material for crafting.",
+  "buy": 500,
+  "sell": 450,
+  "howToGet": "FIND",
+  "locations": [
+    "ANCIENT TOMB"
+  ],
+  "ingredients": []
+}

@@ -1,0 +1,17 @@
+{
+  "order": 3,
+  "name": "Alomomola",
+  "form": "",
+  "image": "/pokemon/alomomola.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Water",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

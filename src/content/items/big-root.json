@@ -1,0 +1,16 @@
+{
+  "name": "Big Root",
+  "note": "",
+  "image": "/items/big-root.webp",
+  "type": "ITEM",
+  "rarity": "Common",
+  "description": "An ancient, tenacious root with a sinister nature. Upon contact with any limb, it coils around it, initiating a malevolent process of life-draining, sapping vitality from the affected appendage.",
+  "buy": 2500,
+  "sell": 2250,
+  "howToGet": "FIND",
+  "locations": [
+    "CERULEAN CAPE",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

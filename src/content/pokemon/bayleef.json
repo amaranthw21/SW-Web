@@ -1,0 +1,17 @@
+{
+  "order": 244,
+  "name": "Bayleef",
+  "form": "",
+  "image": "/pokemon/bayleef.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Grass",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Ice Sash",
+  "pokemon": "Regice",
+  "image": "/belongings/ice-sash.webp",
+  "rarity": "Special",
+  "description": "A sash that seems cold and silky smooth to the touch. The texture reminds you of ice.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

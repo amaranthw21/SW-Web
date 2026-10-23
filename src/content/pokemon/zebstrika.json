@@ -1,0 +1,17 @@
+{
+  "order": 192,
+  "name": "Zebstrika",
+  "form": "",
+  "image": "/pokemon/zebstrika.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Electric",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

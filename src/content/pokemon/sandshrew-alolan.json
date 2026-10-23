@@ -1,0 +1,17 @@
+{
+  "order": 754,
+  "name": "Sandshrew",
+  "form": "Alolan",
+  "image": "/pokemon/sandshrew-alolan.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Ice",
+  "type2": "Steel",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

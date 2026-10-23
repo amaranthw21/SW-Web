@@ -1,0 +1,10 @@
+{
+  "name": "Redstone Chain Fragment",
+  "pokemon": "Mesprit, Uxie, Azelf",
+  "image": "/belongings/redstone-chain-fragment.webp",
+  "rarity": "Special",
+  "description": "A fragment of a chain made by the union of several ominous looking red stones. You don't know what was used for.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

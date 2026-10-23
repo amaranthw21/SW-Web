@@ -1,0 +1,15 @@
+{
+  "name": "Moon Stone",
+  "note": "",
+  "image": "/items/moon-stone.webp",
+  "type": "ITEM",
+  "rarity": "Rare",
+  "description": "A peculiar stone that can make certain species of Pokémon evolve or to use in as crafting material. It is dark like the night sky.",
+  "buy": 10500,
+  "sell": 9450,
+  "howToGet": "FIND",
+  "locations": [
+    "METEOR CRATER"
+  ],
+  "ingredients": []
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Pink Nectar",
+  "note": "",
+  "image": "/items/pink-nectar.webp",
+  "type": "ITEM",
+  "rarity": "Common",
+  "description": "Flower nectar obtained from pink flowers. When used in cooking it leaves behind a really sweet aftertaste. It changes the form of a certain species of Pokémon.",
+  "buy": 200,
+  "sell": 180,
+  "howToGet": "FIND",
+  "locations": [
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

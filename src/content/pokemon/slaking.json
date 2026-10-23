@@ -1,0 +1,17 @@
+{
+  "order": 811,
+  "name": "Slaking",
+  "form": "",
+  "image": "/pokemon/slaking.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

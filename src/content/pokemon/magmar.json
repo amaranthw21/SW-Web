@@ -1,0 +1,17 @@
+{
+  "order": 562,
+  "name": "Magmar",
+  "form": "",
+  "image": "/pokemon/magmar.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Fire",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

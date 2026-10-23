@@ -1,0 +1,10 @@
+{
+  "name": "Sun Flute",
+  "pokemon": "Solgaleo",
+  "image": "/belongings/sun-flute.webp",
+  "rarity": "Special",
+  "description": "A relic from the past, that you recovered from somewhere. This old flute, appears to be broken as it produces no sound when played. However, it's a bit warm to touch.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

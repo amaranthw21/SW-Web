@@ -1,0 +1,10 @@
+{
+  "name": "Mystery Stone Piece",
+  "pokemon": "Tapu Koko",
+  "image": "/belongings/mystery-stone-piece.webp",
+  "rarity": "Special",
+  "description": "A peculiar volcanic stone adorned with cryptic engravings. Despite attempts to reassemble it, some pieces appear to be absent. It could be a fragment of a larger object or puzzle.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

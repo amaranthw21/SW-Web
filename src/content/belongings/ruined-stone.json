@@ -1,0 +1,10 @@
+{
+  "name": "Ruined Stone",
+  "pokemon": "Yveltal",
+  "image": "/belongings/ruined-stone.webp",
+  "rarity": "Special",
+  "description": "A fragment of a stone. It has part of a pokemon engraved on it in great detail but you are not able to remember where the rest of the parts are.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

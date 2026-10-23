@@ -1,0 +1,10 @@
+{
+  "name": "Old Map",
+  "pokemon": "",
+  "image": "/belongings/old-map.webp",
+  "rarity": "Super Rare",
+  "description": "A timeworn map, seized from a corpse's grip, initially blank but now a canvas for marking crucial locations on your journey.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "order": 973,
+  "name": "Silcoon",
+  "form": "",
+  "image": "/pokemon/silcoon.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Bug",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 1035,
+  "name": "Xerneas",
+  "form": "",
+  "image": "/pokemon/xerneas.webp",
+  "status": "CLOSED",
+  "generation": 6,
+  "type1": "Fairy",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Chandelure",
+  "fakemon": false
+}

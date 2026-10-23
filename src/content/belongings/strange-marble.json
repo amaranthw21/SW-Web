@@ -1,0 +1,10 @@
+{
+  "name": "Strange Marble",
+  "pokemon": "Latias",
+  "image": "/belongings/strange-marble.webp",
+  "rarity": "Special",
+  "description": "A strange small marble that gives off a strange feint glow. But it also gives off a weird power that you can't figure out.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

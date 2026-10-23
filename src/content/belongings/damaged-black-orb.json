@@ -1,0 +1,10 @@
+{
+  "name": "Damaged Black Orb",
+  "pokemon": "Zekrom",
+  "image": "/belongings/damaged-black-orb.webp",
+  "rarity": "Special",
+  "description": "An orb made of what appears to be a black stone. It looks like it has seen better days but you can't remember where it came from.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

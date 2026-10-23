@@ -1,0 +1,17 @@
+{
+  "order": 137,
+  "name": "Appletun",
+  "form": "",
+  "image": "/pokemon/appletun.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Grass",
+  "type2": "Dragon",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

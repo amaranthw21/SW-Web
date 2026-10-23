@@ -1,0 +1,17 @@
+{
+  "order": 1049,
+  "name": "Zacian",
+  "form": "",
+  "image": "/pokemon/zacian.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Fairy",
+  "type2": "Steel",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

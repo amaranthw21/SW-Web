@@ -1,0 +1,17 @@
+{
+  "order": 673,
+  "name": "Pidgeotto",
+  "form": "",
+  "image": "/pokemon/pidgeotto.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Normal",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

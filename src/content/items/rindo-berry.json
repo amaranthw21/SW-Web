@@ -1,0 +1,16 @@
+{
+  "name": "Rindo Berry",
+  "note": "",
+  "image": "/items/rindo-berry.webp",
+  "type": "BERRY",
+  "rarity": "Rare",
+  "description": "A good cooking ingredient. It also serves as a snack.",
+  "buy": 1000,
+  "sell": 900,
+  "howToGet": "FIND",
+  "locations": [
+    "CERULEAN CAPE",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

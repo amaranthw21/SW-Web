@@ -1,0 +1,17 @@
+{
+  "order": 202,
+  "name": "Budew",
+  "form": "",
+  "image": "/pokemon/budew.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Grass",
+  "type2": "Poison",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

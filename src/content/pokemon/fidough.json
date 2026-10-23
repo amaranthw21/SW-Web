@@ -1,0 +1,17 @@
+{
+  "order": 362,
+  "name": "Fidough",
+  "form": "",
+  "image": "/pokemon/fidough.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Fairy",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

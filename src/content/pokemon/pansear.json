@@ -1,0 +1,17 @@
+{
+  "order": 654,
+  "name": "Pansear",
+  "form": "",
+  "image": "/pokemon/pansear.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Fire",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 1040,
+  "name": "Tapu Koko",
+  "form": "",
+  "image": "/pokemon/tapu-koko.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Electric",
+  "type2": "Fairy",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

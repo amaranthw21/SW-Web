@@ -1,0 +1,17 @@
+{
+  "order": 686,
+  "name": "Empoleon",
+  "form": "",
+  "image": "/pokemon/empoleon.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Water",
+  "type2": "Steel",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

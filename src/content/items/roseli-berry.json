@@ -1,0 +1,16 @@
+{
+  "name": "Roseli Berry",
+  "note": "",
+  "image": "/items/roseli-berry.webp",
+  "type": "BERRY",
+  "rarity": "Rare",
+  "description": "Halves damage taken form a supereffective Fairy-Type move.",
+  "buy": 1000,
+  "sell": 900,
+  "howToGet": "FIND",
+  "locations": [
+    "VIEN FOREST",
+    "STAR CAVE"
+  ],
+  "ingredients": []
+}

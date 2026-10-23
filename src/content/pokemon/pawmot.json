@@ -1,0 +1,17 @@
+{
+  "order": 662,
+  "name": "Pawmot",
+  "form": "",
+  "image": "/pokemon/pawmot.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Electric",
+  "type2": "Fighting",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

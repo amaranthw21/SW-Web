@@ -1,0 +1,17 @@
+{
+  "order": 271,
+  "name": "Cottonee",
+  "form": "",
+  "image": "/pokemon/cottonee.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Grass",
+  "type2": "Fairy",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

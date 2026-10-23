@@ -1,0 +1,15 @@
+{
+  "name": "Mushroom",
+  "note": "",
+  "image": "/items/mushroom.webp",
+  "type": "ITEM",
+  "rarity": "Common",
+  "description": "A fairly common ingredient you can find almost anywhere.",
+  "buy": 200,
+  "sell": 180,
+  "howToGet": "FIND",
+  "locations": [
+    "ANYWHERE"
+  ],
+  "ingredients": []
+}

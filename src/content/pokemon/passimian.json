@@ -1,0 +1,17 @@
+{
+  "order": 64,
+  "name": "Passimian",
+  "form": "",
+  "image": "/pokemon/passimian.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Fighting",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Black Sludge",
+  "note": "",
+  "image": "/items/black-sludge.webp",
+  "type": "ITEM",
+  "rarity": "Common",
+  "description": "A peculiar sludge, native to certain parts of the island, harbors harm for most Pokémon upon contact. However, if encountered by a Pokémon of the poison type, it exhibits a paradoxical quality, triggering a healing effect instead.",
+  "buy": 2500,
+  "sell": 2250,
+  "howToGet": "FIND",
+  "locations": [
+    "CERULEAN CAPE",
+    "INFERNO CAVE"
+  ],
+  "ingredients": []
+}

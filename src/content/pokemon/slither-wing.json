@@ -1,0 +1,17 @@
+{
+  "order": 525,
+  "name": "Slither Wing",
+  "form": "",
+  "image": "/pokemon/slither-wing.webp",
+  "status": "RESERVED (>1)",
+  "generation": 9,
+  "type1": "Bug",
+  "type2": "Fighting",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "PARADOX",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Vespiquen",
+  "fakemon": false
+}

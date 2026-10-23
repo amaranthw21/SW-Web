@@ -1,0 +1,17 @@
+{
+  "order": 93,
+  "name": "Togedemaru",
+  "form": "",
+  "image": "/pokemon/togedemaru.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Electric",
+  "type2": "Steel",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 438,
+  "name": "Goomy",
+  "form": "",
+  "image": "/pokemon/goomy.webp",
+  "status": "CLOSED",
+  "generation": 6,
+  "type1": "Dragon",
+  "type2": "",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Meltan",
+  "fakemon": false
+}

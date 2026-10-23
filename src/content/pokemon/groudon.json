@@ -1,0 +1,17 @@
+{
+  "order": 1084,
+  "name": "Groudon",
+  "form": "",
+  "image": "/pokemon/groudon.webp",
+  "status": "CLOSED",
+  "generation": 3,
+  "type1": "Ground",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAJOR LEGENDARY",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Rapidash",
+  "fakemon": false
+}

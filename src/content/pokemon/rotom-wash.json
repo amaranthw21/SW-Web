@@ -1,0 +1,17 @@
+{
+  "order": 74,
+  "name": "Rotom",
+  "form": "Wash",
+  "image": "/pokemon/rotom-wash.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Electric",
+  "type2": "Water",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAN-MADE",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

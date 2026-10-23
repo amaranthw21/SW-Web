@@ -1,0 +1,17 @@
+{
+  "order": 1001,
+  "name": "Regice",
+  "form": "",
+  "image": "/pokemon/regice.webp",
+  "status": "CLOSED",
+  "generation": 3,
+  "type1": "Ice",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Petilil",
+  "fakemon": false
+}

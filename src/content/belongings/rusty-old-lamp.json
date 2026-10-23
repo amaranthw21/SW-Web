@@ -1,0 +1,10 @@
+{
+  "name": "Rusty Old Lamp",
+  "pokemon": "Zeraora",
+  "image": "/belongings/rusty-old-lamp.webp",
+  "rarity": "Special",
+  "description": "A strange and rather old oil lamp. It is covered in rust and looks somewhat burned. A part of you feels some discomfort seeing it, like is related to some bad memories.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "order": 326,
+  "name": "Dusknoir",
+  "form": "",
+  "image": "/pokemon/dusknoir.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Ghost",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

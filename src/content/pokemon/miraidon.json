@@ -1,0 +1,17 @@
+{
+  "order": 1061,
+  "name": "Miraidon",
+  "form": "",
+  "image": "/pokemon/miraidon.webp",
+  "status": "RESERVED (1ST)",
+  "generation": 9,
+  "type1": "Electric",
+  "type2": "Dragon",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "PARADOX",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Samurott (Hisuian)",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 63,
+  "name": "Pachirisu",
+  "form": "",
+  "image": "/pokemon/pachirisu.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Electric",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

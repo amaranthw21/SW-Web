@@ -1,0 +1,17 @@
+{
+  "order": 950,
+  "name": "Wattrel",
+  "form": "",
+  "image": "/pokemon/wattrel.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Electric",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

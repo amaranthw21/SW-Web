@@ -1,0 +1,17 @@
+{
+  "order": 675,
+  "name": "Pidove",
+  "form": "",
+  "image": "/pokemon/pidove.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Normal",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

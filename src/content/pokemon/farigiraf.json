@@ -1,0 +1,17 @@
+{
+  "order": 427,
+  "name": "Farigiraf",
+  "form": "",
+  "image": "/pokemon/farigiraf.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Normal",
+  "type2": "Psychic",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

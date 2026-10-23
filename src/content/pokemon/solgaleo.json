@@ -1,0 +1,17 @@
+{
+  "order": 1031,
+  "name": "Solgaleo",
+  "form": "",
+  "image": "/pokemon/solgaleo.webp",
+  "status": "CLOSED",
+  "generation": 7,
+  "type1": "Psychic",
+  "type2": "Steel",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Dragonite",
+  "fakemon": false
+}

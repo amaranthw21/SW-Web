@@ -1,0 +1,15 @@
+{
+  "name": "Silver Powder",
+  "note": "",
+  "image": "/items/silver-powder.webp",
+  "type": "ITEM",
+  "rarity": "Uncommon",
+  "description": "A silver powder that can be used as a crafting material. Throwing yourself into an enemy's eyes can be used to irritate their vision.",
+  "buy": 7500,
+  "sell": 6750,
+  "howToGet": "FIND",
+  "locations": [
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

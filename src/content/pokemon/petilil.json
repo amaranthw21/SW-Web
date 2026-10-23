@@ -1,0 +1,17 @@
+{
+  "order": 663,
+  "name": "Petilil",
+  "form": "",
+  "image": "/pokemon/petilil.webp",
+  "status": "CLOSED",
+  "generation": 5,
+  "type1": "Grass",
+  "type2": "",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Regice",
+  "fakemon": false
+}

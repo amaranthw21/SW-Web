@@ -1,0 +1,17 @@
+{
+  "order": 568,
+  "name": "Sandy Shocks",
+  "form": "",
+  "image": "/pokemon/sandy-shocks.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Electric",
+  "type2": "Ground",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "PARADOX",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

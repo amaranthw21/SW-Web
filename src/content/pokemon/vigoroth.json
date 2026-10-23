@@ -1,0 +1,17 @@
+{
+  "order": 810,
+  "name": "Vigoroth",
+  "form": "",
+  "image": "/pokemon/vigoroth.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

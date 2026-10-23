@@ -1,0 +1,10 @@
+{
+  "name": "Undying Seed",
+  "pokemon": "Virizion",
+  "image": "/belongings/undying-seed.webp",
+  "rarity": "Special",
+  "description": "A strange seed that does not seem to die regardless of whether it is burned or frozen. However, it does not seem to be able to grow regardless of the land in which it is planted.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

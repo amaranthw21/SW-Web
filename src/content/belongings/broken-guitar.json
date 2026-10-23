@@ -1,0 +1,10 @@
+{
+  "name": "Broken Guitar",
+  "pokemon": "Meloetta",
+  "image": "/belongings/broken-guitar.webp",
+  "rarity": "Special",
+  "description": "An old broken guitar. Playing the music will be difficult without fixing the strings. Though the single one that does work makes a deep note that calms you.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

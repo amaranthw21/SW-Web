@@ -1,0 +1,17 @@
+{
+  "order": 22,
+  "name": "Delibird",
+  "form": "",
+  "image": "/pokemon/delibird.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Ice",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

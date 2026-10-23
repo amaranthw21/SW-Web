@@ -1,0 +1,17 @@
+{
+  "order": 136,
+  "name": "Applin",
+  "form": "",
+  "image": "/pokemon/applin.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Grass",
+  "type2": "Dragon",
+  "lineStatus": "OPEN",
+  "stage": "1|2 // 1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

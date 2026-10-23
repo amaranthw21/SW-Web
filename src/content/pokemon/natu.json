@@ -1,0 +1,17 @@
+{
+  "order": 611,
+  "name": "Natu",
+  "form": "",
+  "image": "/pokemon/natu.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Psychic",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

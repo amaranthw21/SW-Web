@@ -1,0 +1,17 @@
+{
+  "order": 864,
+  "name": "Swinub",
+  "form": "",
+  "image": "/pokemon/swinub.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Ice",
+  "type2": "Ground",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

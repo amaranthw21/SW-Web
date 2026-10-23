@@ -1,0 +1,16 @@
+{
+  "name": "Wacan Berry",
+  "note": "",
+  "image": "/items/wacan-berry.webp",
+  "type": "BERRY",
+  "rarity": "Rare",
+  "description": "Halves damage taken from a supereffective Electric-Type move.",
+  "buy": 1000,
+  "sell": 900,
+  "howToGet": "FIND",
+  "locations": [
+    "LIGHTNING FIELD",
+    "MT THUNDER"
+  ],
+  "ingredients": []
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Honey",
+  "note": "",
+  "image": "/items/honey.webp",
+  "type": "ITEM",
+  "rarity": "Common",
+  "description": "A really sweet treat. It can be used in dishes or as a snack. It can also be used to attract Pokémon if you leave it in an open area.",
+  "buy": 200,
+  "sell": 180,
+  "howToGet": "FIND",
+  "locations": [
+    "ANYWHERE"
+  ],
+  "ingredients": []
+}

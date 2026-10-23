@@ -1,0 +1,17 @@
+{
+  "order": 486,
+  "name": "Noctowl",
+  "form": "",
+  "image": "/pokemon/noctowl.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Normal",
+  "type2": "Flying",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

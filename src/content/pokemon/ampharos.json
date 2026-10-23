@@ -1,0 +1,17 @@
+{
+  "order": 130,
+  "name": "Ampharos",
+  "form": "",
+  "image": "/pokemon/ampharos.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Electric",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

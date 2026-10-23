@@ -1,0 +1,17 @@
+{
+  "order": 203,
+  "name": "Roselia",
+  "form": "",
+  "image": "/pokemon/roselia.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Grass",
+  "type2": "Poison",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

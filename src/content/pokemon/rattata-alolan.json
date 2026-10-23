@@ -1,0 +1,17 @@
+{
+  "order": 716,
+  "name": "Rattata",
+  "form": "Alolan",
+  "image": "/pokemon/rattata-alolan.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Dark",
+  "type2": "Normal",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

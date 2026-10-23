@@ -1,0 +1,17 @@
+{
+  "order": 309,
+  "name": "Dragonair",
+  "form": "",
+  "image": "/pokemon/dragonair.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Dragon",
+  "type2": "",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

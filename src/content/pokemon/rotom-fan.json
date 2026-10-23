@@ -1,0 +1,17 @@
+{
+  "order": 76,
+  "name": "Rotom",
+  "form": "Fan",
+  "image": "/pokemon/rotom-fan.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Electric",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAN-MADE",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

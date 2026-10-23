@@ -1,0 +1,15 @@
+{
+  "name": "Shuca Berry",
+  "note": "",
+  "image": "/items/shuca-berry.webp",
+  "type": "BERRY",
+  "rarity": "Rare",
+  "description": "Halves damage taken from a supereffective Ground-Type move.",
+  "buy": 1000,
+  "sell": 900,
+  "howToGet": "FIND",
+  "locations": [
+    "LIGHTNING FIELD"
+  ],
+  "ingredients": []
+}

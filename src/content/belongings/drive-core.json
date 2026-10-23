@@ -1,0 +1,10 @@
+{
+  "name": "Drive Core",
+  "pokemon": "Genesect",
+  "image": "/belongings/drive-core.webp",
+  "rarity": "Special",
+  "description": "An energy Core. The heart of the Golem that is (Insert name here) and supplies it with energy. (Acts like the different Drivers that Genesect has.)",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

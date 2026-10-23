@@ -1,0 +1,17 @@
+{
+  "order": 964,
+  "name": "Wimpod",
+  "form": "",
+  "image": "/pokemon/wimpod.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Bug",
+  "type2": "Water",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

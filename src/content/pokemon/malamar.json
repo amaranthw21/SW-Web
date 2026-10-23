@@ -1,0 +1,17 @@
+{
+  "order": 503,
+  "name": "Malamar",
+  "form": "",
+  "image": "/pokemon/malamar.webp",
+  "status": "CLOSED",
+  "generation": 6,
+  "type1": "Dark",
+  "type2": "Psychic",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Palafin",
+  "fakemon": false
+}

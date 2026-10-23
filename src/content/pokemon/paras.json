@@ -1,0 +1,17 @@
+{
+  "order": 656,
+  "name": "Paras",
+  "form": "",
+  "image": "/pokemon/paras.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Bug",
+  "type2": "Grass",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

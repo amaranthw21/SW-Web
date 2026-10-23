@@ -1,0 +1,15 @@
+{
+  "name": "Dawn Stone",
+  "note": "",
+  "image": "/items/dawn-stone.webp",
+  "type": "ITEM",
+  "rarity": "Rare",
+  "description": "A strange rock that sparkles like a glittering eye. Is said that it can make a certain species of Pokémon evolve, however is also used as a precious material.",
+  "buy": 10500,
+  "sell": 9450,
+  "howToGet": "FIND",
+  "locations": [
+    "STAR CAVE"
+  ],
+  "ingredients": []
+}

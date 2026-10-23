@@ -1,0 +1,17 @@
+{
+  "order": 535,
+  "name": "Ledian",
+  "form": "",
+  "image": "/pokemon/ledian.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Bug",
+  "type2": "Flying",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

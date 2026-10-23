@@ -1,0 +1,17 @@
+{
+  "order": 788,
+  "name": "Luxray",
+  "form": "",
+  "image": "/pokemon/luxray.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Electric",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 355,
+  "name": "Frillish",
+  "form": "Male",
+  "image": "/pokemon/frillish-male.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Water",
+  "type2": "Ghost",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

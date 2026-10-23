@@ -1,0 +1,17 @@
+{
+  "order": 565,
+  "name": "Gyarados",
+  "form": "",
+  "image": "/pokemon/gyarados.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Water",
+  "type2": "Flying",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

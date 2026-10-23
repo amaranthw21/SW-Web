@@ -1,0 +1,17 @@
+{
+  "order": 923,
+  "name": "Gardevoir",
+  "form": "",
+  "image": "/pokemon/gardevoir.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Psychic",
+  "type2": "Fairy",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

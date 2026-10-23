@@ -1,0 +1,10 @@
+{
+  "name": "Everburning Torch",
+  "pokemon": "Moltres",
+  "image": "/belongings/everburning-torch.webp",
+  "rarity": "Special",
+  "description": "A simple looking torch with a fire that won't go out. It doesn't shed much light strangly enough, and doesn't burn whatsoever.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

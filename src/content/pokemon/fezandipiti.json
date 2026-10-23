@@ -1,0 +1,17 @@
+{
+  "order": 1057,
+  "name": "Fezandipiti",
+  "form": "",
+  "image": "/pokemon/fezandipiti.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Poison",
+  "type2": "Fairy",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

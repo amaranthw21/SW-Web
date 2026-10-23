@@ -1,0 +1,17 @@
+{
+  "order": 834,
+  "name": "Spheal",
+  "form": "",
+  "image": "/pokemon/spheal.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Ice",
+  "type2": "Water",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

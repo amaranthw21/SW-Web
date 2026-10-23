@@ -1,0 +1,17 @@
+{
+  "order": 523,
+  "name": "Larvesta",
+  "form": "",
+  "image": "/pokemon/larvesta.webp",
+  "status": "CLOSED",
+  "generation": 5,
+  "type1": "Bug",
+  "type2": "Fire",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Giratina",
+  "fakemon": false
+}

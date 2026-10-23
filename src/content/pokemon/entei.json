@@ -1,0 +1,17 @@
+{
+  "order": 997,
+  "name": "Entei",
+  "form": "+ Gouging Fire",
+  "image": "/pokemon/entei.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Fire",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

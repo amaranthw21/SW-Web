@@ -1,0 +1,17 @@
+{
+  "order": 32,
+  "name": "Eiscue",
+  "form": "",
+  "image": "/pokemon/eiscue.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Ice",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

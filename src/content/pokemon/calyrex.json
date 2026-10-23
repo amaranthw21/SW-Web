@@ -1,0 +1,17 @@
+{
+  "order": 1044,
+  "name": "Calyrex",
+  "form": "",
+  "image": "/pokemon/calyrex.webp",
+  "status": "CLOSED",
+  "generation": 8,
+  "type1": "Psychic",
+  "type2": "Grass",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Braixen",
+  "fakemon": false
+}

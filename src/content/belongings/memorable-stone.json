@@ -1,0 +1,10 @@
+{
+  "name": "Memorable Stone",
+  "pokemon": "Regirock",
+  "image": "/belongings/memorable-stone.webp",
+  "rarity": "Special",
+  "description": "TBR A small rock that has a memorable pattern to it. It's not of any specific shape, object, or creature, but it is a curiously mesmerizing pattern.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

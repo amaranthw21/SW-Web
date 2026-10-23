@@ -1,0 +1,17 @@
+{
+  "order": 616,
+  "name": "Nidorina",
+  "form": "",
+  "image": "/pokemon/nidorina.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Poison",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Potential Sphere Regieleki",
+  "pokemon": "",
+  "image": "/belongings/potential-sphere-regieleki.webp",
+  "rarity": "Special",
+  "description": "TBR A sphere of potent electrical energy. Despite the electrical energy contained within, it's oddly harmless to touch.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

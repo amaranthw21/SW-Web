@@ -1,0 +1,17 @@
+{
+  "order": 278,
+  "name": "Toxicroak",
+  "form": "",
+  "image": "/pokemon/toxicroak.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Poison",
+  "type2": "Fighting",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

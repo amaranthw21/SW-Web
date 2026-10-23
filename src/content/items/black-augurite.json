@@ -1,0 +1,16 @@
+{
+  "name": "Black Augurite",
+  "note": "",
+  "image": "/items/black-augurite.webp",
+  "type": "ITEM",
+  "rarity": "Common",
+  "description": "A glassy black stone that produces a sharp cutting edge when split. Can be used as a throwable weapon.",
+  "buy": 500,
+  "sell": 450,
+  "howToGet": "FIND",
+  "locations": [
+    "MT THUNDER",
+    "LIGHTNING FIELD"
+  ],
+  "ingredients": []
+}

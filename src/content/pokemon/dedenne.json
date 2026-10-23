@@ -1,0 +1,17 @@
+{
+  "order": 21,
+  "name": "Dedenne",
+  "form": "",
+  "image": "/pokemon/dedenne.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Electric",
+  "type2": "Fairy",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

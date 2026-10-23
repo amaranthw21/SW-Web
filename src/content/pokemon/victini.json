@@ -1,0 +1,17 @@
+{
+  "order": 1018,
+  "name": "Victini",
+  "form": "",
+  "image": "/pokemon/victini.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Psychic",
+  "type2": "Fire",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 748,
+  "name": "Salandit",
+  "form": "",
+  "image": "/pokemon/salandit.webp",
+  "status": "CLOSED",
+  "generation": 7,
+  "type1": "Poison",
+  "type2": "Fire",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 609,
+  "name": "Murkrow",
+  "form": "",
+  "image": "/pokemon/murkrow.webp",
+  "status": "CLOSED",
+  "generation": 2,
+  "type1": "Dark",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Carbink",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 373,
+  "name": "Talonflame",
+  "form": "",
+  "image": "/pokemon/talonflame.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Fire",
+  "type2": "Flying",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

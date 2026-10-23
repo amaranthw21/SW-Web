@@ -1,0 +1,10 @@
+{
+  "name": "Member Card",
+  "pokemon": "Darkrai",
+  "image": "/belongings/member-card.webp",
+  "rarity": "Special",
+  "description": "Clutched in your hand is an aged travel card, its origin lost in the recesses of your memory. The once-legible username and destination, now blurred and indecipherable, whisper tales of journeys undertaken and forgotten.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

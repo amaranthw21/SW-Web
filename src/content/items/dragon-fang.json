@@ -1,0 +1,16 @@
+{
+  "name": "Dragon Fang",
+  "note": "",
+  "image": "/items/dragon-fang.webp",
+  "type": "ITEM",
+  "rarity": "Rare",
+  "description": "A strange bone that seems to be the fang of a dragon. Is used as a crafting material.",
+  "buy": 10500,
+  "sell": 9450,
+  "howToGet": "FIND",
+  "locations": [
+    "SKY HIGH RUINS",
+    "ZERO RUINS"
+  ],
+  "ingredients": []
+}

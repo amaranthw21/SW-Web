@@ -1,0 +1,22 @@
+{
+  "name": "Shell Bell",
+  "note": "",
+  "image": "/items/shell-bell.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Rare",
+  "description": "A bell in the shape of a closed shell. Its sound produces a small miracle that helps wounds heal. However, for the conch to sound one has to be moving.",
+  "buy": null,
+  "sell": 9450,
+  "howToGet": "CRAFT",
+  "locations": [],
+  "ingredients": [
+    {
+      "item": "PEARL",
+      "quantity": 1
+    },
+    {
+      "item": "LIGHT CLAY",
+      "quantity": 1
+    }
+  ]
+}

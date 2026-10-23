@@ -1,0 +1,17 @@
+{
+  "order": 643,
+  "name": "Samurott",
+  "form": "Hisuian",
+  "image": "/pokemon/samurott-hisuian.webp",
+  "status": "RESERVED (1ST)",
+  "generation": 8,
+  "type1": "Water",
+  "type2": "Dark",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Miraidon",
+  "fakemon": false
+}

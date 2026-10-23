@@ -1,0 +1,17 @@
+{
+  "order": 1082,
+  "name": "Rayquaza",
+  "form": "",
+  "image": "/pokemon/rayquaza.webp",
+  "status": "CLOSED",
+  "generation": 3,
+  "type1": "Dragon",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAJOR LEGENDARY",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Altaria",
+  "fakemon": false
+}

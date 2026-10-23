@@ -1,0 +1,17 @@
+{
+  "order": 897,
+  "name": "Combusken",
+  "form": "",
+  "image": "/pokemon/combusken.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Fire",
+  "type2": "Fighting",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

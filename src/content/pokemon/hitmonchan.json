@@ -1,0 +1,17 @@
+{
+  "order": 927,
+  "name": "Hitmonchan",
+  "form": "",
+  "image": "/pokemon/hitmonchan.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Fighting",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

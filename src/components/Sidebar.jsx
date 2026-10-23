@@ -4,6 +4,8 @@ import asset from "../lib/asset";
 
 import {
     HomeIcon,
+    PokemonIcon,
+    ItemsIcon,
     CreditsIcon,
     AdminIcon,
     ChevronIcon
@@ -21,6 +23,21 @@ const SECTIONS = [
         to: "/",
         label: "Home",
         icon: <HomeIcon />
+    },
+    {
+        to: "/pokemon",
+        label: "Pokémon",
+        icon: <PokemonIcon />
+    },
+    {
+        to: "/items",
+        label: "Items",
+        icon: <ItemsIcon />,
+        children: [
+            { to: "/items/list", label: "Item list" },
+            { to: "/items/belongings", label: "Special belongings" },
+            { to: "/items/blessings", label: "Blessings" }
+        ]
     },
     {
         to: "/credits",

@@ -1,0 +1,17 @@
+{
+  "order": 957,
+  "name": "Exploud",
+  "form": "",
+  "image": "/pokemon/exploud.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

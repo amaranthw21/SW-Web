@@ -1,0 +1,17 @@
+{
+  "order": 175,
+  "name": "Beldum",
+  "form": "",
+  "image": "/pokemon/beldum.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Steel",
+  "type2": "Psychic",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

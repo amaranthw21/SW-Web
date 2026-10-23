@@ -1,0 +1,17 @@
+{
+  "order": 989,
+  "name": "Crocalor",
+  "form": "",
+  "image": "/pokemon/crocalor.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Fire",
+  "type2": "",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 827,
+  "name": "Drizzile",
+  "form": "",
+  "image": "/pokemon/drizzile.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Water",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

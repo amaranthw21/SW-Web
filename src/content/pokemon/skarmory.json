@@ -1,0 +1,17 @@
+{
+  "order": 83,
+  "name": "Skarmory",
+  "form": "",
+  "image": "/pokemon/skarmory.webp",
+  "status": "CLOSED",
+  "generation": 2,
+  "type1": "Steel",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Ho-Oh",
+  "fakemon": false
+}

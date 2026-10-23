@@ -1,0 +1,18 @@
+{
+  "name": "Heal Powder",
+  "note": "",
+  "image": "/items/heal-powder.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Common",
+  "description": "Powdered medicine that can be injested or applied to your wounds. It will heal any status condititon that you have. A basic crafting recipe that everybody knows.",
+  "buy": 1000,
+  "sell": 900,
+  "howToGet": "CRAFT",
+  "locations": [],
+  "ingredients": [
+    {
+      "item": "ANY STATUS BERRY",
+      "quantity": 2
+    }
+  ]
+}

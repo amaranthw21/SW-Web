@@ -1,0 +1,17 @@
+{
+  "order": 484,
+  "name": "Zoroark",
+  "form": "Hisuian",
+  "image": "/pokemon/zoroark-hisuian.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Normal",
+  "type2": "Ghost",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

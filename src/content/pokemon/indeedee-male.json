@@ -1,0 +1,17 @@
+{
+  "order": 36,
+  "name": "Indeedee",
+  "form": "Male",
+  "image": "/pokemon/indeedee-male.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Psychic",
+  "type2": "Normal",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

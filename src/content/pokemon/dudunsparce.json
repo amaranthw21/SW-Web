@@ -1,0 +1,17 @@
+{
+  "order": 323,
+  "name": "Dudunsparce",
+  "form": "",
+  "image": "/pokemon/dudunsparce.webp",
+  "status": "CLOSED",
+  "generation": 9,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Furret",
+  "fakemon": false
+}

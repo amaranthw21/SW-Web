@@ -1,0 +1,15 @@
+{
+  "name": "Blank Scroll",
+  "note": "",
+  "image": "/items/blank-scroll.webp",
+  "type": "ITEM",
+  "rarity": "Uncommon",
+  "description": "A blank scroll, can be used to become a TM Scroll of a move you know.",
+  "buy": null,
+  "sell": null,
+  "howToGet": "SPECIAL",
+  "locations": [
+    "ASK THE CC"
+  ],
+  "ingredients": []
+}

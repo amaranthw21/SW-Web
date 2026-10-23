@@ -1,0 +1,17 @@
+{
+  "order": 138,
+  "name": "Flapple",
+  "form": "",
+  "image": "/pokemon/flapple.webp",
+  "status": "CLOSED",
+  "generation": 8,
+  "type1": "Grass",
+  "type2": "Dragon",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Terapagos",
+  "fakemon": false
+}

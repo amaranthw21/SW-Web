@@ -1,0 +1,17 @@
+{
+  "order": 583,
+  "name": "Mime Jr.",
+  "form": "",
+  "image": "/pokemon/mime-jr.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Psychic",
+  "type2": "Fairy",
+  "lineStatus": "OPEN",
+  "stage": "1|2 // 1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

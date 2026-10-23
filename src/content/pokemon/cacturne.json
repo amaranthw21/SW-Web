@@ -1,0 +1,17 @@
+{
+  "order": 220,
+  "name": "Cacturne",
+  "form": "",
+  "image": "/pokemon/cacturne.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Grass",
+  "type2": "Dark",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

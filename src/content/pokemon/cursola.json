@@ -1,0 +1,17 @@
+{
+  "order": 17,
+  "name": "Cursola",
+  "form": "",
+  "image": "/pokemon/cursola.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Ghost",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

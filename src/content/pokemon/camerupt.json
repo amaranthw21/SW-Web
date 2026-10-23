@@ -1,0 +1,17 @@
+{
+  "order": 631,
+  "name": "Camerupt",
+  "form": "",
+  "image": "/pokemon/camerupt.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Fire",
+  "type2": "Ground",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

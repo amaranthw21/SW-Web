@@ -1,0 +1,10 @@
+{
+  "name": "Eerie Scroll",
+  "pokemon": "Urshifu",
+  "image": "/belongings/eerie-scroll.webp",
+  "rarity": "Special",
+  "description": "A scroll you can’t seem to open or unlock. Its condition is rather new looking and pristine saved for the dust that gathered it initially. A feeling of dark energy and power plays with your senses when you hold it.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

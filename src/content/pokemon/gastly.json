@@ -1,0 +1,17 @@
+{
+  "order": 412,
+  "name": "Gastly",
+  "form": "",
+  "image": "/pokemon/gastly.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Ghost",
+  "type2": "Poison",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

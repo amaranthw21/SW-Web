@@ -1,0 +1,17 @@
+{
+  "order": 1039,
+  "name": "Tapu Lele",
+  "form": "",
+  "image": "/pokemon/tapu-lele.webp",
+  "status": "CLOSED",
+  "generation": 7,
+  "type1": "Psychic",
+  "type2": "Fairy",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Kirlia",
+  "fakemon": false
+}

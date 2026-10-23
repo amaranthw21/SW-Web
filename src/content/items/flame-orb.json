@@ -1,0 +1,22 @@
+{
+  "name": "Flame Orb",
+  "note": "",
+  "image": "/items/flame-orb.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Rare",
+  "description": "An item to be held by a Pokémon. It’s a bizarre orb that gives off heat when touched and will afflict the holder with a burn during battle. If is used, the surroundings will be engulfed by fire, creating an Scorching Field.",
+  "buy": null,
+  "sell": 9450,
+  "howToGet": "CRAFT",
+  "locations": [],
+  "ingredients": [
+    {
+      "item": "FIRE STONE",
+      "quantity": 1
+    },
+    {
+      "item": "STARDUST",
+      "quantity": 1
+    }
+  ]
+}

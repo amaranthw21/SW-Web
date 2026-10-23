@@ -1,0 +1,17 @@
+{
+  "order": 94,
+  "name": "Torkoal",
+  "form": "",
+  "image": "/pokemon/torkoal.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Fire",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

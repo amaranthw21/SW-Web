@@ -1,0 +1,17 @@
+{
+  "order": 149,
+  "name": "Growlithe",
+  "form": "Hisuian",
+  "image": "/pokemon/growlithe-hisuian.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Fire",
+  "type2": "Rock",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

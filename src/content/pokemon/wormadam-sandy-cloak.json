@@ -1,0 +1,17 @@
+{
+  "order": 217,
+  "name": "Wormadam",
+  "form": "Sandy Cloak",
+  "image": "/pokemon/wormadam-sandy-cloak.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Bug",
+  "type2": "Ground",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

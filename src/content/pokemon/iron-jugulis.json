@@ -1,0 +1,17 @@
+{
+  "order": 301,
+  "name": "Iron Jugulis",
+  "form": "",
+  "image": "/pokemon/iron-jugulis.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Dark",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "PARADOX",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

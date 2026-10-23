@@ -1,0 +1,17 @@
+{
+  "order": 679,
+  "name": "Pikipek",
+  "form": "",
+  "image": "/pokemon/pikipek.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Normal",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

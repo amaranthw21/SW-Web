@@ -1,0 +1,17 @@
+{
+  "order": 180,
+  "name": "Victreebel",
+  "form": "",
+  "image": "/pokemon/victreebel.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Grass",
+  "type2": "Poison",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

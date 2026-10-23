@@ -1,0 +1,17 @@
+{
+  "order": 551,
+  "name": "Kingambit",
+  "form": "",
+  "image": "/pokemon/kingambit.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Dark",
+  "type2": "Steel",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 495,
+  "name": "Igglybuff",
+  "form": "",
+  "image": "/pokemon/igglybuff.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Normal",
+  "type2": "Fairy",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

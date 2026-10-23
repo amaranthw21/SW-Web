@@ -71,7 +71,7 @@
    usando el SVG como máscara. Así el color se cambia por CSS. */
 .frame > div {
 
-    background-color: var(--accent, #c04bd8);
+    background-color: var(--accent, #d4a537);
 
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;

@@ -1,0 +1,17 @@
+{
+  "order": 440,
+  "name": "Sliggoo",
+  "form": "Hisuian",
+  "image": "/pokemon/sliggoo-hisuian.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Steel",
+  "type2": "Dragon",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

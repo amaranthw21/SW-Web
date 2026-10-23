@@ -1,0 +1,17 @@
+{
+  "order": 993,
+  "name": "Moltres",
+  "form": "+ Galarian",
+  "image": "/pokemon/moltres.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Fire",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

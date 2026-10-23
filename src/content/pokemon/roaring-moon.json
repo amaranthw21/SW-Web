@@ -1,0 +1,17 @@
+{
+  "order": 165,
+  "name": "Roaring Moon",
+  "form": "",
+  "image": "/pokemon/roaring-moon.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Dragon",
+  "type2": "Dark",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "PARADOX",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

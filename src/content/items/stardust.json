@@ -1,0 +1,15 @@
+{
+  "name": "Stardust",
+  "note": "",
+  "image": "/items/stardust.webp",
+  "type": "ITEM",
+  "rarity": "Uncommon",
+  "description": "Lovely red sand that flows between the fingers with a loose, silky feel. Can be sold or used as a base crafting material.",
+  "buy": 7500,
+  "sell": 6750,
+  "howToGet": "FIND",
+  "locations": [
+    "ANYWHERE"
+  ],
+  "ingredients": []
+}

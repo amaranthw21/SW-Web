@@ -1,0 +1,17 @@
+{
+  "order": 506,
+  "name": "Kommo-o",
+  "form": "",
+  "image": "/pokemon/kommo-o.webp",
+  "status": "CLOSED",
+  "generation": 7,
+  "type1": "Dragon",
+  "type2": "Fighting",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Dialga",
+  "fakemon": false
+}

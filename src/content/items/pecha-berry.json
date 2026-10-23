@@ -1,0 +1,16 @@
+{
+  "name": "Pecha Berry",
+  "note": "",
+  "image": "/items/pecha-berry.webp",
+  "type": "BERRY",
+  "rarity": "Common",
+  "description": "Cures poison.",
+  "buy": 300,
+  "sell": 270,
+  "howToGet": "FIND",
+  "locations": [
+    "INFERNO CAVE",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

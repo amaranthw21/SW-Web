@@ -1,0 +1,17 @@
+{
+  "order": 238,
+  "name": "Chespin",
+  "form": "",
+  "image": "/pokemon/chespin.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Grass",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

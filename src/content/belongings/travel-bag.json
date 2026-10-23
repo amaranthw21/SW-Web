@@ -1,0 +1,10 @@
+{
+  "name": "Travel Bag",
+  "pokemon": "",
+  "image": "/belongings/travel-bag.webp",
+  "rarity": "Super Rare",
+  "description": "A seasoned travel bag possessing an uncanny ability to hold a myriad of items while maintaining a mysteriously compact size.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

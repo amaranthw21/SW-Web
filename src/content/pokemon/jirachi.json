@@ -1,0 +1,17 @@
+{
+  "order": 1006,
+  "name": "Jirachi",
+  "form": "",
+  "image": "/pokemon/jirachi.webp",
+  "status": "CLOSED",
+  "generation": 3,
+  "type1": "Steel",
+  "type2": "Psychic",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Mimikyu",
+  "fakemon": false
+}

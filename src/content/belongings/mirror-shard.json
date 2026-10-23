@@ -1,0 +1,10 @@
+{
+  "name": "Mirror Shard",
+  "pokemon": "Thundurus",
+  "image": "/belongings/mirror-shard.webp",
+  "rarity": "Special",
+  "description": "A fragment of a mirror. The edges are sharp so you have to be careful when you hold it. You wonder where it comes from, but nothing comes to mind.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

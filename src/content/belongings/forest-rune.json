@@ -1,0 +1,10 @@
+{
+  "name": "Forest Rune",
+  "pokemon": "Xerneas",
+  "image": "/belongings/forest-rune.webp",
+  "rarity": "Special",
+  "description": "An old rune that smells like forest and death. It has a green deer like creature engraved.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "order": 56,
+  "name": "Miltank",
+  "form": "",
+  "image": "/pokemon/miltank.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

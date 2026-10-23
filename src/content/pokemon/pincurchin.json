@@ -1,0 +1,17 @@
+{
+  "order": 66,
+  "name": "Pincurchin",
+  "form": "",
+  "image": "/pokemon/pincurchin.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Electric",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

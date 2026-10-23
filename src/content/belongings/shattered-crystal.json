@@ -1,0 +1,10 @@
+{
+  "name": "Shattered Crystal",
+  "pokemon": "Necrozma",
+  "image": "/belongings/shattered-crystal.webp",
+  "rarity": "Special",
+  "description": "An ancient crystal that once held a potent energy. Nowdays, it's shattered into fragments.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

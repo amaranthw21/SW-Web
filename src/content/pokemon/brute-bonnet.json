@@ -1,0 +1,17 @@
+{
+  "order": 127,
+  "name": "Brute Bonnet",
+  "form": "",
+  "image": "/pokemon/brute-bonnet.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Grass",
+  "type2": "Dark",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "PARADOX",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

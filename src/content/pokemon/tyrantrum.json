@@ -1,0 +1,17 @@
+{
+  "order": 931,
+  "name": "Tyrantrum",
+  "form": "",
+  "image": "/pokemon/tyrantrum.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Rock",
+  "type2": "Dragon",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 1042,
+  "name": "Tapu Bulu",
+  "form": "",
+  "image": "/pokemon/tapu-bulu.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Grass",
+  "type2": "Fairy",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

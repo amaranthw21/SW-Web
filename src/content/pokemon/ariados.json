@@ -1,0 +1,17 @@
+{
+  "order": 838,
+  "name": "Ariados",
+  "form": "",
+  "image": "/pokemon/ariados.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Bug",
+  "type2": "Poison",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

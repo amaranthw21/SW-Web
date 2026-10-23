@@ -1,0 +1,17 @@
+{
+  "order": 496,
+  "name": "Jigglypuff",
+  "form": "",
+  "image": "/pokemon/jigglypuff.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Normal",
+  "type2": "Fairy",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 606,
+  "name": "Nacli",
+  "form": "",
+  "image": "/pokemon/nacli.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Rock",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

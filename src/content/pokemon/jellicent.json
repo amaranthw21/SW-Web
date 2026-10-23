@@ -1,0 +1,17 @@
+{
+  "order": 354,
+  "name": "Jellicent",
+  "form": "Female",
+  "image": "/pokemon/jellicent.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Water",
+  "type2": "Ghost",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

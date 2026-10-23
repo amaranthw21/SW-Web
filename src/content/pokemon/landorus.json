@@ -1,0 +1,17 @@
+{
+  "order": 1021,
+  "name": "Landorus",
+  "form": "",
+  "image": "/pokemon/landorus.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Ground",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

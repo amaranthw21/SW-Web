@@ -1,0 +1,10 @@
+{
+  "name": "Stardust Crystal",
+  "pokemon": "Cosmog",
+  "image": "/belongings/stardust-crystal.webp",
+  "rarity": "Special",
+  "description": "A crystal which appears to contain a small amount of shiny dust that reminds you of stars. You don't know how it got to you or where it came from.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

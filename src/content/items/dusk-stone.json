@@ -1,0 +1,13 @@
+{
+  "name": "Dusk Stone",
+  "note": "",
+  "image": "/items/dusk-stone.webp",
+  "type": "ITEM",
+  "rarity": "Rare",
+  "description": "A peculiar stone that can make certain species of Pokémon evolve or be used as a crafting material. Gazing into it feels like gazing into the abyss.",
+  "buy": 10500,
+  "sell": 9450,
+  "howToGet": "FIND",
+  "locations": [],
+  "ingredients": []
+}

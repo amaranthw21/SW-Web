@@ -1,0 +1,17 @@
+{
+  "order": 711,
+  "name": "Quaquaval",
+  "form": "",
+  "image": "/pokemon/quaquaval.webp",
+  "status": "CLOSED",
+  "generation": 9,
+  "type1": "Water",
+  "type2": "Fighting",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Oricorio (Sensu) Unfezant (Male)",
+  "fakemon": false
+}

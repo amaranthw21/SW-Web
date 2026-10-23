@@ -1,0 +1,17 @@
+{
+  "order": 942,
+  "name": "Vullaby",
+  "form": "",
+  "image": "/pokemon/vullaby.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Dark",
+  "type2": "Flying",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

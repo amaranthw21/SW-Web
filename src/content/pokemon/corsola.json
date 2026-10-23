@@ -1,0 +1,17 @@
+{
+  "order": 15,
+  "name": "Corsola",
+  "form": "",
+  "image": "/pokemon/corsola.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Water",
+  "type2": "Rock",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

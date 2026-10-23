@@ -1,0 +1,17 @@
+{
+  "order": 1062,
+  "name": "Genesect",
+  "form": "",
+  "image": "/pokemon/genesect.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Bug",
+  "type2": "Steel",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAN-MADE LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

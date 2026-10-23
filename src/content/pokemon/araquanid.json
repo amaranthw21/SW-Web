@@ -1,0 +1,17 @@
+{
+  "order": 142,
+  "name": "Araquanid",
+  "form": "",
+  "image": "/pokemon/araquanid.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Water",
+  "type2": "Bug",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

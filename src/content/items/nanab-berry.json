@@ -1,0 +1,17 @@
+{
+  "name": "Nanab Berry",
+  "note": "",
+  "image": "/items/nanab-berry.webp",
+  "type": "BERRY",
+  "rarity": "Common",
+  "description": "Causes paralysis to the pokemon that eats it.",
+  "buy": 300,
+  "sell": 270,
+  "howToGet": "FIND",
+  "locations": [
+    "MT THUNDER",
+    "LIGHTNING FIELD",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

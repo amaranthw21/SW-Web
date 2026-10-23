@@ -1,0 +1,17 @@
+{
+  "order": 99,
+  "name": "Relicanth",
+  "form": "",
+  "image": "/pokemon/relicanth.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Water",
+  "type2": "Rock",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

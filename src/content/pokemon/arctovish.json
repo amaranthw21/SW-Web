@@ -1,0 +1,17 @@
+{
+  "order": 4,
+  "name": "Arctovish",
+  "form": "",
+  "image": "/pokemon/arctovish.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Water",
+  "type2": "Ice",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

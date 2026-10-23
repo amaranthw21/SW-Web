@@ -1,0 +1,17 @@
+{
+  "order": 1090,
+  "name": "Zygarde",
+  "form": "",
+  "image": "/pokemon/zygarde.webp",
+  "status": "CLOSED",
+  "generation": 6,
+  "type1": "Dragon",
+  "type2": "Ground",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAJOR LEGENDARY",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Rotom",
+  "fakemon": false
+}

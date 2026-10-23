@@ -1,0 +1,17 @@
+{
+  "order": 211,
+  "name": "Lopunny",
+  "form": "",
+  "image": "/pokemon/lopunny.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

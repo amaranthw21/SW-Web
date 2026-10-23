@@ -1,0 +1,17 @@
+{
+  "order": 1063,
+  "name": "Magearna",
+  "form": "",
+  "image": "/pokemon/magearna.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Steel",
+  "type2": "Fairy",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAN-MADE LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Never-Melt Ice",
+  "note": "",
+  "image": "/items/never-melt-ice.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Rare",
+  "description": "A strange heat-repelling piece of ice. Allows a user to change their secondary type to Ice.",
+  "buy": null,
+  "sell": 9450,
+  "howToGet": "CRAFT",
+  "locations": [],
+  "ingredients": [
+    {
+      "item": "ICE STONE",
+      "quantity": 1
+    },
+    {
+      "item": "ICE ROCK",
+      "quantity": 1
+    }
+  ]
+}

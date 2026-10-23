@@ -1,0 +1,17 @@
+{
+  "order": 724,
+  "name": "Rhydon",
+  "form": "",
+  "image": "/pokemon/rhydon.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Ground",
+  "type2": "Rock",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

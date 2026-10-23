@@ -1,0 +1,10 @@
+{
+  "name": "Dragon Mask",
+  "pokemon": "Regidrago",
+  "image": "/belongings/dragon-mask.webp",
+  "rarity": "Special",
+  "description": "An old mask that reminds you of the draconian parts that surround Regidrago. The 7 orbs are off, but something inside you seems to tell you that it shouldn't be like that.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

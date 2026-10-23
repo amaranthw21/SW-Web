@@ -1,0 +1,15 @@
+{
+  "name": "Rabuta Berry",
+  "note": "",
+  "image": "/items/rabuta-berry.webp",
+  "type": "BERRY",
+  "rarity": "Common",
+  "description": "A good cooking ingredient. It also serves as a snack.",
+  "buy": 50,
+  "sell": 45,
+  "howToGet": "FIND",
+  "locations": [
+    "MT AVALANCHE"
+  ],
+  "ingredients": []
+}

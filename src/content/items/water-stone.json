@@ -1,0 +1,15 @@
+{
+  "name": "Water Stone",
+  "note": "",
+  "image": "/items/water-stone.webp",
+  "type": "ITEM",
+  "rarity": "Rare",
+  "description": "A peculiar stone that can make certain species of Pokémon evolve or as a crafting material. It is the clear blue of a deep pool.",
+  "buy": 10500,
+  "sell": 9450,
+  "howToGet": "FIND",
+  "locations": [
+    "CERULEAN CAPE"
+  ],
+  "ingredients": []
+}

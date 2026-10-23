@@ -1,0 +1,17 @@
+{
+  "order": 1016,
+  "name": "Azelf",
+  "form": "",
+  "image": "/pokemon/azelf.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Psychic",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

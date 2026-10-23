@@ -98,3 +98,150 @@ collections:
               - { name: url, label: Address, widget: string, hint: "The full address, https:// included. An address inside the site (/credits) also works and won't open a new tab." }
               - { name: icon, label: Logo, widget: image, required: false, hint: "The site's logo. Square images look best; a transparent PNG best of all. Without one, the button shows the first letter." }
               - { name: description, label: Description, widget: string, required: false, hint: "Not printed — it shows when the mouse rests on the button, and screen readers read it. One line: what someone finds if they click." }
+
+  # ───────────────────────── Pokémon ─────────────────────────
+  # Uno por archivo, importados del Excel (scripts/import-excel.py). Las
+  # opciones de los desplegables son las de la pestaña VALUES y tienen que
+  # coincidir con las de src/data/pokemon.js: un valor que no esté allí se
+  # enseña tal cual en la tabla, pero no aparece en los filtros.
+  - name: pokemon
+    publish_mode: simple
+    label: Pokémon
+    label_singular: Pokémon
+    folder: src/content/pokemon
+    extension: json
+    format: json
+    create: true
+    identifier_field: name
+    summary: "{{fields.order}} · {{fields.name}} {{fields.form}} — {{fields.status}}"
+    sortable_fields: [order, name, status, generation]
+    view_groups:
+      - { label: Status, field: status }
+      - { label: Generation, field: generation }
+      - { label: Classification, field: classification }
+    view_filters:
+      - { label: Open, field: status, pattern: "^OPEN$" }
+      - { label: Closed, field: status, pattern: "^CLOSED$" }
+      - { label: Reserved, field: status, pattern: "^RESERVED" }
+      - { label: Pending, field: status, pattern: "^PENDING$" }
+      - { label: Fakemon, field: fakemon, pattern: true }
+    media_folder: /public/pokemon
+    public_folder: /pokemon
+    fields:
+      - { name: order, label: "Number (#)", widget: number, value_type: int, hint: "The number from the Excel. Forms take the number right after their base Pokémon, so they sit together (Corsola 15, Galarian Corsola 16). Fakemon use negative numbers: -1, -2…" }
+      - { name: name, label: Name, widget: string, hint: "Without the form, e.g. 'Corsola'." }
+      - { name: form, label: Form, widget: string, required: false, hint: "e.g. 'Galarian', 'Female', 'Heat'. Leave empty for the base form." }
+      - { name: image, label: Image, widget: image, required: false, hint: "Square, with a transparent background. Shown small in the table." }
+      - { name: status, label: Status, widget: select, default: OPEN, options: ["OPEN", "PENDING", "RESERVED (1ST)", "RESERVED (>1)", "CLOSED"] }
+      - { name: claimed, label: Claimed, widget: boolean, default: false, hint: "Someone has this Pokémon. Who it is isn't stored here: the site and its repository are public." }
+      - { name: npc, label: "NPC", widget: boolean, default: false, hint: "It belongs to an NPC. Shown as 'NPC' instead of 'Claimed'." }
+      - { name: fusedWith, label: "Fused with", widget: string, required: false }
+      - { name: generation, label: Generation, widget: number, value_type: int, required: false, min: 1, max: 9, hint: "1 to 9. Empty for Fakemon." }
+      - { name: type1, label: "Type 1", widget: select, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy] }
+      - { name: type2, label: "Type 2", widget: select, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy] }
+      - { name: lineStatus, label: "Line status", widget: select, options: ["OPEN", "LINE RESERVED", "CAN'T EVOLVE", "FINAL EVOLUTION", "DOESN'T EVOLVE"] }
+      - { name: stage, label: "Evolutive stage", widget: select, options: ["NO EVOLUTION", "1|2", "2|2", "1|3", "2|3", "3|3", "1|2 // 1|3"], hint: "Stage of the line: '1|3' is the first of three." }
+      - { name: classification, label: Classification, widget: select, required: false, options: ["NORMAL", "MAN-MADE", "PARADOX", "MAJOR LEGENDARY", "MINOR LEGENDARY", "MAN-MADE LEGENDARY", "ULTRABEAST"] }
+      - { name: fakemon, label: Fakemon, widget: boolean, default: false }
+      - { name: creator, label: "Creator (Fakemon)", widget: string, required: false, hint: "Only for Fakemon: who designed it. Shown on the site." }
+
+  # ───────────────────────── Items ─────────────────────────
+  - name: items
+    publish_mode: simple
+    label: Items
+    label_singular: Item
+    folder: src/content/items
+    extension: json
+    format: json
+    create: true
+    identifier_field: name
+    summary: "{{fields.name}} {{fields.note}} — {{fields.type}} · {{fields.rarity}}"
+    sortable_fields: [name, type, rarity]
+    view_groups:
+      - { label: Type, field: type }
+      - { label: Rarity, field: rarity }
+      - { label: "How to get", field: howToGet }
+    view_filters:
+      - { label: Find, field: howToGet, pattern: "^FIND$" }
+      - { label: Craft, field: howToGet, pattern: "^CRAFT$" }
+      - { label: Special, field: howToGet, pattern: "^SPECIAL$" }
+    media_folder: /public/items
+    public_folder: /items
+    fields:
+      - { name: name, label: Name, widget: string }
+      - { name: note, label: Note, widget: string, required: false, hint: "Shown small under the name, e.g. the Pokémon a belonging is for ('Zapdos')." }
+      - { name: image, label: Image, widget: image, required: false, hint: "Square, with a transparent background." }
+      - { name: type, label: Type, widget: select, options: ["ITEM", "CONSUMABLE/HELD", "BERRY", "MEAL"], hint: "Special belongings and blessings have their own collections." }
+      - { name: rarity, label: Rarity, widget: select, options: ["Common", "Uncommon", "Rare", "Super Rare", "Special"] }
+      - { name: description, label: Description, widget: text, required: false }
+      - { name: buy, label: "Buy price", widget: number, value_type: int, required: false, hint: "Empty if it can't be bought." }
+      - { name: sell, label: "Sell price", widget: number, value_type: int, required: false, hint: "Empty if it can't be sold." }
+      - { name: howToGet, label: "How to get", widget: select, options: ["FIND", "CRAFT", "SPECIAL"] }
+      - name: locations
+        label: "Locations / instructions"
+        label_singular: Location
+        widget: list
+        required: false
+        field: { name: location, label: Location, widget: string }
+        hint: "Where it's found (e.g. 'CERULEAN CAPE'), or what to do ('ASK THE CC'). Each one becomes an option in the Location filter."
+      - name: ingredients
+        label: Ingredients
+        label_singular: Ingredient
+        widget: list
+        required: false
+        summary: "{{fields.quantity}} × {{fields.item}}"
+        hint: "Only for crafted items."
+        fields:
+          - { name: item, label: Ingredient, widget: string, hint: "e.g. 'IRON BALL' or 'ANY HEALING BERRY'." }
+          - { name: quantity, label: Quantity, widget: number, value_type: int, default: 1, min: 1 }
+
+  # ───────────────────────── Special belongings ─────────────────────────
+  # Venían en la hoja de objetos (tipo SPECIAL BELONGING); tienen página propia
+  # porque no se compran ni se venden y casi todas van ligadas a un Pokémon.
+  - name: belongings
+    publish_mode: simple
+    label: Special belongings
+    label_singular: Special belonging
+    folder: src/content/belongings
+    extension: json
+    format: json
+    create: true
+    identifier_field: name
+    summary: "{{fields.name}} — {{fields.pokemon}}"
+    sortable_fields: [name, pokemon, rarity]
+    view_filters:
+      - { label: "To be developed", field: description, pattern: "^TO BE DEVELOPED$" }
+    media_folder: /public/belongings
+    public_folder: /belongings
+    fields:
+      - { name: name, label: Name, widget: string, hint: "The object, e.g. 'Energy Cell'. While it isn't written yet, the Pokémon's name." }
+      - { name: pokemon, label: Pokémon, widget: string, required: false, hint: "Who it belongs to, e.g. 'Zapdos'." }
+      - { name: image, label: Image, widget: image, required: false, hint: "Square, with a transparent background." }
+      - { name: rarity, label: Rarity, widget: select, default: Special, options: ["Common", "Uncommon", "Rare", "Super Rare", "Special"] }
+      - { name: description, label: Description, widget: text, required: false, hint: "Leave 'TO BE DEVELOPED' (or empty) while it isn't written: the page shows it as pending." }
+      - name: locations
+        label: "Locations / instructions"
+        label_singular: Location
+        widget: list
+        required: false
+        field: { name: location, label: Location, widget: string }
+
+  # ───────────────────────── Blessings ─────────────────────────
+  - name: blessings
+    publish_mode: simple
+    label: Blessings
+    label_singular: Blessing
+    folder: src/content/blessings
+    extension: json
+    format: json
+    create: true
+    identifier_field: name
+    summary: "{{fields.name}} → {{fields.blessing}}"
+    sortable_fields: [name, blessing]
+    media_folder: /public/blessings
+    public_folder: /blessings
+    fields:
+      - { name: name, label: Source, widget: string, hint: "The legendary or object that grants it, e.g. 'Rayquaza' or 'Silver Wing'." }
+      - { name: blessing, label: Blessing, widget: string, hint: "The blessing it gives, e.g. 'Sky Blessing'." }
+      - { name: image, label: Image, widget: image, required: false, hint: "Square, with a transparent background." }
+      - { name: description, label: Description, widget: text, required: false }

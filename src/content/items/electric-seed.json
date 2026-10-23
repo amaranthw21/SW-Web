@@ -1,0 +1,16 @@
+{
+  "name": "Electric Seed",
+  "note": "",
+  "image": "/items/electric-seed.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Uncommon",
+  "description": "Strange seeds that seem to attract and release electricity. If they come into contact with the ground it will become an electric terrain for a few minutes.",
+  "buy": 7500,
+  "sell": 6750,
+  "howToGet": "FIND",
+  "locations": [
+    "MT THUNDER",
+    "LIGHTNING FIELD"
+  ],
+  "ingredients": []
+}

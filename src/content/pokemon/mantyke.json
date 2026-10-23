@@ -1,0 +1,17 @@
+{
+  "order": 573,
+  "name": "Mantyke",
+  "form": "",
+  "image": "/pokemon/mantyke.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Water",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

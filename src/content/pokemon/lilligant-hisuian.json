@@ -1,0 +1,17 @@
+{
+  "order": 665,
+  "name": "Lilligant",
+  "form": "Hisuian",
+  "image": "/pokemon/lilligant-hisuian.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Grass",
+  "type2": "Fighting",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 50,
+  "name": "Komala",
+  "form": "",
+  "image": "/pokemon/komala.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

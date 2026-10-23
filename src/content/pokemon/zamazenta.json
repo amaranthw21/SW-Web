@@ -1,0 +1,17 @@
+{
+  "order": 1048,
+  "name": "Zamazenta",
+  "form": "",
+  "image": "/pokemon/zamazenta.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Fighting",
+  "type2": "Steel",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

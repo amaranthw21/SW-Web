@@ -1,0 +1,17 @@
+{
+  "order": 994,
+  "name": "Zapdos",
+  "form": "+ Galarian",
+  "image": "/pokemon/zapdos.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Electric",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 981,
+  "name": "Yanma",
+  "form": "",
+  "image": "/pokemon/yanma.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Bug",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

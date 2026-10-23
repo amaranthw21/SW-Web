@@ -1,0 +1,15 @@
+{
+  "name": "Cleanse Tag",
+  "note": "",
+  "image": "/items/cleanse-tag.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Uncommon",
+  "description": "A special tag made by the guardians of the island. It will maintain shadow Pokemon away from you for a small amount of time.",
+  "buy": null,
+  "sell": null,
+  "howToGet": "SPECIAL",
+  "locations": [
+    "ASK A GUARDIAN"
+  ],
+  "ingredients": []
+}

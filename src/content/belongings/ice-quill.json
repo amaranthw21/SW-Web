@@ -1,0 +1,10 @@
+{
+  "name": "Ice Quill",
+  "pokemon": "Glastrier",
+  "image": "/belongings/ice-quill.webp",
+  "rarity": "Special",
+  "description": "What at first appeared to be a simple icy stalactite now bends like an animal's quill. It's incredibly cold to the touch, but it doesn't seem to bother you in the slightest.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

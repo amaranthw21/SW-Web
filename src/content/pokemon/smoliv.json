@@ -1,0 +1,17 @@
+{
+  "order": 145,
+  "name": "Smoliv",
+  "form": "",
+  "image": "/pokemon/smoliv.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Grass",
+  "type2": "Normal",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

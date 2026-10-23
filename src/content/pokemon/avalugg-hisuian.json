@@ -1,0 +1,17 @@
+{
+  "order": 183,
+  "name": "Avalugg",
+  "form": "Hisuian",
+  "image": "/pokemon/avalugg-hisuian.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Ice",
+  "type2": "Rock",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

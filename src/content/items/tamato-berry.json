@@ -1,0 +1,17 @@
+{
+  "name": "Tamato Berry",
+  "note": "",
+  "image": "/items/tamato-berry.webp",
+  "type": "BERRY",
+  "rarity": "Common",
+  "description": "Causes burn to the pokemon that eats it.",
+  "buy": 300,
+  "sell": 270,
+  "howToGet": "FIND",
+  "locations": [
+    "INFERNO CAVE",
+    "MT BLAZE",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

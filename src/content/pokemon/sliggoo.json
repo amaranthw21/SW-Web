@@ -1,0 +1,17 @@
+{
+  "order": 439,
+  "name": "Sliggoo",
+  "form": "",
+  "image": "/pokemon/sliggoo.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Dragon",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

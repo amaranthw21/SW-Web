@@ -1,0 +1,17 @@
+{
+  "order": 23,
+  "name": "Iron Bundle",
+  "form": "",
+  "image": "/pokemon/iron-bundle.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Ice",
+  "type2": "Water",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "PARADOX",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

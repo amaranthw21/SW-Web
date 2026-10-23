@@ -1,0 +1,17 @@
+{
+  "order": 1043,
+  "name": "Marshadow",
+  "form": "",
+  "image": "/pokemon/marshadow.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Fighting",
+  "type2": "Ghost",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

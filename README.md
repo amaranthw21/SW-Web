@@ -12,9 +12,26 @@ form-based editing panel.
 
 ## State
 
-This is the empty base: the site shell (top bar, sidebar, frame, background),
-the home page, Credits and the 404 page. The sections of the setting are still
-to be added.
+The site shell (top bar, sidebar, frame, background), the home page, Credits,
+the 404 page and two data tables:
+
+- **Pokémon** (`/pokemon`) — every Pokémon and Fakemon with its status, types,
+  generation, line status, stage and classification. Content in
+  `src/content/pokemon/`, one JSON per Pokémon.
+- **Items** (`/items`) — an entry page that leads to three lists:
+  - **Item list** (`/items/list`) — every item with its type, rarity, prices,
+    how to get it and where, or what it's crafted from. Content in
+    `src/content/items/`.
+  - **Special belongings** (`/items/belongings`) — objects tied to a Pokémon.
+    Content in `src/content/belongings/`.
+  - **Blessings** (`/items/blessings`) — the blessings legendaries grant.
+    Content in `src/content/blessings/`.
+
+All of it was imported once from the server's spreadsheet with
+`scripts/import-excel.py` and are edited in the panel from then on. Running the
+script again overwrites any edits made in the panel. Owner names are not
+imported: the repository is public, so a Pokémon only says whether it's
+claimed and whether it belongs to an NPC.
 
 Carried over from PU-Web and ready to reuse when sections are added:
 

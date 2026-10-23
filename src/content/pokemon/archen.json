@@ -1,0 +1,17 @@
+{
+  "order": 152,
+  "name": "Archen",
+  "form": "",
+  "image": "/pokemon/archen.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Rock",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 915,
+  "name": "Tympole",
+  "form": "",
+  "image": "/pokemon/tympole.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Water",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

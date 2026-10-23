@@ -1,0 +1,17 @@
+{
+  "order": 597,
+  "name": "Charjabug",
+  "form": "",
+  "image": "/pokemon/charjabug.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Bug",
+  "type2": "Electric",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

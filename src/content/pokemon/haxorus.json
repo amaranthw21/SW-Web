@@ -1,0 +1,17 @@
+{
+  "order": 158,
+  "name": "Haxorus",
+  "form": "",
+  "image": "/pokemon/haxorus.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Dragon",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

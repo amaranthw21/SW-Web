@@ -1,0 +1,17 @@
+{
+  "order": 317,
+  "name": "Excadrill",
+  "form": "",
+  "image": "/pokemon/excadrill.webp",
+  "status": "CLOSED",
+  "generation": 5,
+  "type1": "Ground",
+  "type2": "Steel",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Pecharunt",
+  "fakemon": false
+}

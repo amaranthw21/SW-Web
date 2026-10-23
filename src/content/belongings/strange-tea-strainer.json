@@ -1,0 +1,10 @@
+{
+  "name": "Strange Tea Strainer",
+  "pokemon": "Volcanion",
+  "image": "/belongings/strange-tea-strainer.webp",
+  "rarity": "Special",
+  "description": "A well used tea strainer. You don't know where it comes from but the words \"for my friend\" are engraved on its side.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

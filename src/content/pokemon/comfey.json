@@ -1,0 +1,17 @@
+{
+  "order": 14,
+  "name": "Comfey",
+  "form": "",
+  "image": "/pokemon/comfey.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Fairy",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

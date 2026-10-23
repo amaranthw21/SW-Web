@@ -1,0 +1,17 @@
+{
+  "name": "Persim Berry",
+  "note": "",
+  "image": "/items/persim-berry.webp",
+  "type": "BERRY",
+  "rarity": "Common",
+  "description": "Cures confusion.",
+  "buy": 300,
+  "sell": 270,
+  "howToGet": "FIND",
+  "locations": [
+    "STAR CAVE",
+    "LAVENDER TOWER",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

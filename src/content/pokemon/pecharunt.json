@@ -1,0 +1,17 @@
+{
+  "order": 1094,
+  "name": "Pecharunt",
+  "form": "",
+  "image": "/pokemon/pecharunt.webp",
+  "status": "CLOSED",
+  "generation": 9,
+  "type1": "Poison",
+  "type2": "Ghost",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAJOR LEGENDARY",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Excadrill",
+  "fakemon": false
+}

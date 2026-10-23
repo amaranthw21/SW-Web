@@ -1,0 +1,10 @@
+{
+  "name": "Iron Crest",
+  "pokemon": "Cobalion",
+  "image": "/belongings/iron-crest.webp",
+  "rarity": "Special",
+  "description": "A small crest made of steel. It depicts something to a kingdom and while small, seems unable to get hot or cold.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

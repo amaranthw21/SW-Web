@@ -1,0 +1,15 @@
+{
+  "name": "Coba Berry",
+  "note": "",
+  "image": "/items/coba-berry.webp",
+  "type": "BERRY",
+  "rarity": "Rare",
+  "description": "Halves damage taken from a supereffective Flying-Type move.",
+  "buy": 1000,
+  "sell": 900,
+  "howToGet": "FIND",
+  "locations": [
+    "SKY HIGH RUINS"
+  ],
+  "ingredients": []
+}

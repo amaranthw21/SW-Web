@@ -1,0 +1,17 @@
+{
+  "order": 267,
+  "name": "Combee",
+  "form": "",
+  "image": "/pokemon/combee.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Bug",
+  "type2": "Flying",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

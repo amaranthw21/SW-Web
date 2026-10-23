@@ -1,0 +1,17 @@
+{
+  "order": 19,
+  "name": "Cryogonal",
+  "form": "",
+  "image": "/pokemon/cryogonal.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Ice",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

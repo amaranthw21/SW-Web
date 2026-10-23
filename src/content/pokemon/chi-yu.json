@@ -1,0 +1,17 @@
+{
+  "order": 1053,
+  "name": "Chi-Yu",
+  "form": "",
+  "image": "/pokemon/chi-yu.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Dark",
+  "type2": "Fire",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Ice Rock",
+  "note": "",
+  "image": "/items/ice-rock.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Uncommon",
+  "description": "A strange rock freezing to the touch. It is said that if it breaks, it can invoke hail for a few minutes.",
+  "buy": 10500,
+  "sell": 9450,
+  "howToGet": "FIND",
+  "locations": [
+    "MT AVALANCHE",
+    "ANCIENT TOMB"
+  ],
+  "ingredients": []
+}

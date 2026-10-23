@@ -1,0 +1,17 @@
+{
+  "order": 522,
+  "name": "Kricketune",
+  "form": "",
+  "image": "/pokemon/kricketune.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Bug",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 789,
+  "name": "Shroodle",
+  "form": "",
+  "image": "/pokemon/shroodle.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Poison",
+  "type2": "Normal",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

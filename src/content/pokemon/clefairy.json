@@ -1,0 +1,17 @@
+{
+  "order": 263,
+  "name": "Clefairy",
+  "form": "",
+  "image": "/pokemon/clefairy.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Fairy",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

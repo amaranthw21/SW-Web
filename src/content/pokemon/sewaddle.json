@@ -1,0 +1,17 @@
+{
+  "order": 777,
+  "name": "Sewaddle",
+  "form": "",
+  "image": "/pokemon/sewaddle.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Bug",
+  "type2": "Grass",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

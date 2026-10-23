@@ -1,0 +1,17 @@
+{
+  "order": 992,
+  "name": "Articuno",
+  "form": "+ Galarian",
+  "image": "/pokemon/articuno.webp",
+  "status": "CLOSED",
+  "generation": 1,
+  "type1": "Ice",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Drampa",
+  "fakemon": false
+}

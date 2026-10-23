@@ -1,0 +1,17 @@
+{
+  "order": 1000,
+  "name": "Regirock",
+  "form": "",
+  "image": "/pokemon/regirock.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Rock",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

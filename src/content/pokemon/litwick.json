@@ -1,0 +1,17 @@
+{
+  "order": 552,
+  "name": "Litwick",
+  "form": "",
+  "image": "/pokemon/litwick.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Ghost",
+  "type2": "Fire",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

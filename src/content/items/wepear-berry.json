@@ -1,0 +1,17 @@
+{
+  "name": "Wepear Berry",
+  "note": "",
+  "image": "/items/wepear-berry.webp",
+  "type": "BERRY",
+  "rarity": "Common",
+  "description": "Causes confusion to the pokemon that eats it.",
+  "buy": 300,
+  "sell": 270,
+  "howToGet": "FIND",
+  "locations": [
+    "STAR CAVE",
+    "LAVENDER TOWER",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

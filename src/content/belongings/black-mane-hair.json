@@ -1,0 +1,10 @@
+{
+  "name": "Black Mane Hair",
+  "pokemon": "Spectrier",
+  "image": "/belongings/black-mane-hair.webp",
+  "rarity": "Special",
+  "description": "A lock of hair that feels soft to the tact. Even though it feels great to touch it, for some reason you feel dread from the bottom of your stomach.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

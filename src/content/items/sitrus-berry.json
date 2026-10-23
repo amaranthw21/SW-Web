@@ -1,0 +1,15 @@
+{
+  "name": "Sitrus Berry",
+  "note": "",
+  "image": "/items/sitrus-berry.webp",
+  "type": "BERRY",
+  "rarity": "Uncommon",
+  "description": "Restores 25% of HP when health falls below 50%.",
+  "buy": 500,
+  "sell": 450,
+  "howToGet": "FIND",
+  "locations": [
+    "ANYWHERE"
+  ],
+  "ingredients": []
+}

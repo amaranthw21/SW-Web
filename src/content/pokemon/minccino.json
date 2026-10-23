@@ -1,0 +1,17 @@
+{
+  "order": 587,
+  "name": "Minccino",
+  "form": "",
+  "image": "/pokemon/minccino.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

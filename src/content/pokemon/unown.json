@@ -1,0 +1,17 @@
+{
+  "order": 97,
+  "name": "Unown",
+  "form": "",
+  "image": "/pokemon/unown.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Psychic",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

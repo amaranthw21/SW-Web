@@ -1,0 +1,17 @@
+{
+  "order": 92,
+  "name": "Tauros",
+  "form": "Paldean",
+  "image": "/pokemon/tauros-paldean.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Fighting",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 630,
+  "name": "Numel",
+  "form": "",
+  "image": "/pokemon/numel.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Fire",
+  "type2": "Ground",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

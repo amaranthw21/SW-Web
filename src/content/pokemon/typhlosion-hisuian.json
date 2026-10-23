@@ -1,0 +1,17 @@
+{
+  "order": 295,
+  "name": "Typhlosion",
+  "form": "Hisuian",
+  "image": "/pokemon/typhlosion-hisuian.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Fire",
+  "type2": "Ghost",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

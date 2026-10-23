@@ -1,0 +1,17 @@
+{
+  "order": 916,
+  "name": "Palpitoad",
+  "form": "",
+  "image": "/pokemon/palpitoad.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Water",
+  "type2": "Ground",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

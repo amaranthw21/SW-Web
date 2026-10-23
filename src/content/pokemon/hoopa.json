@@ -1,0 +1,17 @@
+{
+  "order": 1037,
+  "name": "Hoopa",
+  "form": "",
+  "image": "/pokemon/hoopa.webp",
+  "status": "CLOSED",
+  "generation": 6,
+  "type1": "Psychic",
+  "type2": "Ghost",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Meowstic (Male)",
+  "fakemon": false
+}

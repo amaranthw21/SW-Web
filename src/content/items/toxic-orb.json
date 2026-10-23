@@ -1,0 +1,26 @@
+{
+  "name": "Toxic Orb",
+  "note": "",
+  "image": "/items/toxic-orb.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Rare",
+  "description": "An item to be held by a Pokémon. It’s a bizarre orb that exudes toxins when touched and will badly poison the holder during battle. If is used, the terrain will become a Wasteland Terrain.",
+  "buy": null,
+  "sell": 9450,
+  "howToGet": "CRAFT",
+  "locations": [],
+  "ingredients": [
+    {
+      "item": "BLACK SLUDGE",
+      "quantity": 1
+    },
+    {
+      "item": "BRIGHT POWDER",
+      "quantity": 1
+    },
+    {
+      "item": "STARDUST",
+      "quantity": 1
+    }
+  ]
+}

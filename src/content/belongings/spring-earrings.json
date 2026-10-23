@@ -1,0 +1,10 @@
+{
+  "name": "Spring Earrings",
+  "pokemon": "Tapu Lele",
+  "image": "/belongings/spring-earrings.webp",
+  "rarity": "Special",
+  "description": "A pair of earrings that seem to bring with them the sensation of spring. You aren't sure what gems have been used to create them, but the craftsmanship is certainly sublime.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Lumoise Galette",
+  "note": "",
+  "image": "/items/lumoise-galette.webp",
+  "type": "MEAL",
+  "rarity": "Common",
+  "description": "A popular treat in another region. It can be used to cure any status condition a pokemon may have.",
+  "buy": 1500,
+  "sell": 1350,
+  "howToGet": "CRAFT",
+  "locations": [],
+  "ingredients": [
+    {
+      "item": "INGREDIENT BERRY",
+      "quantity": 1
+    },
+    {
+      "item": "HONEY",
+      "quantity": 1
+    }
+  ]
+}

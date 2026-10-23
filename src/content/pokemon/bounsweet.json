@@ -1,0 +1,17 @@
+{
+  "order": 195,
+  "name": "Bounsweet",
+  "form": "",
+  "image": "/pokemon/bounsweet.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Grass",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 336,
+  "name": "Glaceon",
+  "form": "",
+  "image": "/pokemon/glaceon.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Ice",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 273,
+  "name": "Crabrawler",
+  "form": "",
+  "image": "/pokemon/crabrawler.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Fighting",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

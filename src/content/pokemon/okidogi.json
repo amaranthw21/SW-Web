@@ -1,0 +1,17 @@
+{
+  "order": 1059,
+  "name": "Okidogi",
+  "form": "",
+  "image": "/pokemon/okidogi.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Poison",
+  "type2": "Fighting",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

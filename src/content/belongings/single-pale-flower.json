@@ -1,0 +1,10 @@
+{
+  "name": "Single Pale Flower",
+  "pokemon": "Tapu Bulu",
+  "image": "/belongings/single-pale-flower.webp",
+  "rarity": "Special",
+  "description": "A single, peculiar flower with pale yellow colours. When you look at it, a feeling of peace and calm surrounds you. It is surprising how this flower can survive despite not having roots to support it.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

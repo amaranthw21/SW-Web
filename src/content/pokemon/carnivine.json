@@ -1,0 +1,17 @@
+{
+  "order": 11,
+  "name": "Carnivine",
+  "form": "",
+  "image": "/pokemon/carnivine.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Grass",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

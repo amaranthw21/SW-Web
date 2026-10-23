@@ -1,0 +1,17 @@
+{
+  "order": 413,
+  "name": "Haunter",
+  "form": "",
+  "image": "/pokemon/haunter.webp",
+  "status": "RESERVED (>1)",
+  "generation": 1,
+  "type1": "Ghost",
+  "type2": "Poison",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Floragato",
+  "fakemon": false
+}

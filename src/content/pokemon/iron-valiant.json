@@ -1,0 +1,17 @@
+{
+  "order": 925,
+  "name": "Iron Valiant",
+  "form": "",
+  "image": "/pokemon/iron-valiant.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Fairy",
+  "type2": "Fighting",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "PARADOX",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

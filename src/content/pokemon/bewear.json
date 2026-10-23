@@ -1,0 +1,17 @@
+{
+  "order": 857,
+  "name": "Bewear",
+  "form": "",
+  "image": "/pokemon/bewear.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Normal",
+  "type2": "Fighting",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

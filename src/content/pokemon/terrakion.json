@@ -1,0 +1,17 @@
+{
+  "order": 1026,
+  "name": "Terrakion",
+  "form": "+ Iron Boulder",
+  "image": "/pokemon/terrakion.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Rock",
+  "type2": "Fighting",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 1019,
+  "name": "Tornadus",
+  "form": "",
+  "image": "/pokemon/tornadus.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Flying",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

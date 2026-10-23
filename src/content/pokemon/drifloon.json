@@ -1,0 +1,17 @@
+{
+  "order": 311,
+  "name": "Drifloon",
+  "form": "",
+  "image": "/pokemon/drifloon.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Ghost",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

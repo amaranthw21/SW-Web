@@ -1,0 +1,17 @@
+{
+  "order": 474,
+  "name": "Sneasel",
+  "form": "Hisuian",
+  "image": "/pokemon/sneasel-hisuian.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Fighting",
+  "type2": "Poison",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

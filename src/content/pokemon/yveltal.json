@@ -1,0 +1,17 @@
+{
+  "order": 1036,
+  "name": "Yveltal",
+  "form": "",
+  "image": "/pokemon/yveltal.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Dark",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

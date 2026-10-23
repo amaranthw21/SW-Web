@@ -1,0 +1,17 @@
+{
+  "order": 141,
+  "name": "Dewpider",
+  "form": "",
+  "image": "/pokemon/dewpider.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Water",
+  "type2": "Bug",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

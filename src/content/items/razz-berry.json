@@ -1,0 +1,17 @@
+{
+  "name": "Razz Berry",
+  "note": "",
+  "image": "/items/razz-berry.webp",
+  "type": "BERRY",
+  "rarity": "Uncommon",
+  "description": "Restores 25% of HP and cures confusion.",
+  "buy": 500,
+  "sell": 450,
+  "howToGet": "FIND",
+  "locations": [
+    "STAR CAVE",
+    "LAVENDER TOWER",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

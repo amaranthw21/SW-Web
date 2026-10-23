@@ -1,0 +1,17 @@
+{
+  "order": 233,
+  "name": "Charmander",
+  "form": "",
+  "image": "/pokemon/charmander.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Fire",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

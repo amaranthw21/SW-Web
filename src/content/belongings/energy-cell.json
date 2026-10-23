@@ -1,0 +1,10 @@
+{
+  "name": "Energy Cell",
+  "pokemon": "Zapdos",
+  "image": "/belongings/energy-cell.webp",
+  "rarity": "Special",
+  "description": "A battery that looks like it was ripped from a power plant. It seems to be full of stored electricity. Looking closely, you can see the letters KPP engraved on one of the metal parts.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

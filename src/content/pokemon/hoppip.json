@@ -1,0 +1,17 @@
+{
+  "order": 487,
+  "name": "Hoppip",
+  "form": "",
+  "image": "/pokemon/hoppip.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Grass",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

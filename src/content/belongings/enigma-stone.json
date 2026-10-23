@@ -1,0 +1,10 @@
+{
+  "name": "Enigma Stone",
+  "pokemon": "Latios",
+  "image": "/belongings/enigma-stone.webp",
+  "rarity": "Special",
+  "description": "A peculiar stone, reminiscent of jaws clamping onto a cerulean sphere, captures your attention. Gazing upon it, a sense of familiarity tugs at the threads of your memories, yet the precise recollection eludes your grasp.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

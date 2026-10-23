@@ -1,0 +1,17 @@
+{
+  "order": 18,
+  "name": "Cramorant",
+  "form": "",
+  "image": "/pokemon/cramorant.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Flying",
+  "type2": "Water",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

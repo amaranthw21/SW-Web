@@ -1,0 +1,15 @@
+{
+  "name": "Durin Berry",
+  "note": "",
+  "image": "/items/durin-berry.webp",
+  "type": "BERRY",
+  "rarity": "Common",
+  "description": "Smells so bad it makes enemies run away from a fight.",
+  "buy": 300,
+  "sell": 270,
+  "howToGet": "FIND",
+  "locations": [
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

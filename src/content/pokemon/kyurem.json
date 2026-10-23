@@ -1,0 +1,17 @@
+{
+  "order": 1089,
+  "name": "Kyurem",
+  "form": "",
+  "image": "/pokemon/kyurem.webp",
+  "status": "CLOSED",
+  "generation": 5,
+  "type1": "Dragon",
+  "type2": "Ice",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAJOR LEGENDARY",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Frosmoth",
+  "fakemon": false
+}

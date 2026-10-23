@@ -1,0 +1,17 @@
+{
+  "order": 1074,
+  "name": "Kartana",
+  "form": "",
+  "image": "/pokemon/kartana.webp",
+  "status": "PENDING",
+  "generation": 7,
+  "type1": "Grass",
+  "type2": "Steel",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "ULTRABEAST",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

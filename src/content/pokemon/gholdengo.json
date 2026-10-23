@@ -1,0 +1,17 @@
+{
+  "order": 425,
+  "name": "Gholdengo",
+  "form": "",
+  "image": "/pokemon/gholdengo.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Steel",
+  "type2": "Ghost",
+  "lineStatus": "OPEN",
+  "stage": "2|2",
+  "classification": "MAN-MADE",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 858,
+  "name": "Stunky",
+  "form": "",
+  "image": "/pokemon/stunky.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Poison",
+  "type2": "Dark",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

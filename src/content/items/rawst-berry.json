@@ -1,0 +1,17 @@
+{
+  "name": "Rawst Berry",
+  "note": "",
+  "image": "/items/rawst-berry.webp",
+  "type": "BERRY",
+  "rarity": "Common",
+  "description": "Cures burn.",
+  "buy": 300,
+  "sell": 270,
+  "howToGet": "FIND",
+  "locations": [
+    "INFERNO CAVE",
+    "MT BLAZE",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

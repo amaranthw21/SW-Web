@@ -1,0 +1,17 @@
+{
+  "order": 698,
+  "name": "Brionne",
+  "form": "",
+  "image": "/pokemon/brionne.webp",
+  "status": "RESERVED (>1)",
+  "generation": 7,
+  "type1": "Water",
+  "type2": "",
+  "lineStatus": "LINE RESERVED",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "TBE",
+  "fakemon": false
+}

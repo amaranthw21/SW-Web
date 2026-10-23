@@ -1,0 +1,17 @@
+{
+  "order": 292,
+  "name": "Cyndaquil",
+  "form": "",
+  "image": "/pokemon/cyndaquil.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Fire",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 497,
+  "name": "Scream Tail",
+  "form": "",
+  "image": "/pokemon/scream-tail.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Fairy",
+  "type2": "Psychic",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "PARADOX",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

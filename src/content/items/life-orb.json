@@ -1,0 +1,26 @@
+{
+  "name": "Life Orb",
+  "note": "",
+  "image": "/items/life-orb.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Rare",
+  "description": "In exchange for gradually absorbing the user's vitality it will increase the power of the user. If broken it will explode similar to the Self-Destruct move.",
+  "buy": null,
+  "sell": 9450,
+  "howToGet": "CRAFT",
+  "locations": [],
+  "ingredients": [
+    {
+      "item": "STARDUST",
+      "quantity": 1
+    },
+    {
+      "item": "FAIRY FEATHER",
+      "quantity": 1
+    },
+    {
+      "item": "ABSORB BULB",
+      "quantity": 1
+    }
+  ]
+}

@@ -94,6 +94,35 @@ export function FactionsIcon(){
 }
 
 
+// Pokémon: una Poké Ball, la silueta que se reconoce a este tamaño.
+export function PokemonIcon(){
+
+    return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="8" />
+            <path d="M4 12h5.2" />
+            <path d="M14.8 12H20" />
+            <circle cx="12" cy="12" r="2.8" />
+        </svg>
+    );
+
+}
+
+
+// Items: una mochila.
+export function ItemsIcon(){
+
+    return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6 9.5a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4V20H6z" />
+            <path d="M9.5 5.5V4.5a2.5 2.5 0 0 1 5 0v1" />
+            <path d="M9 13h6v3H9z" />
+        </svg>
+    );
+
+}
+
+
 export function CreditsIcon(){
 
     return (

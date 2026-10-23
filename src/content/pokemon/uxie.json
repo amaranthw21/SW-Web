@@ -1,0 +1,17 @@
+{
+  "order": 1015,
+  "name": "Uxie",
+  "form": "",
+  "image": "/pokemon/uxie.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Psychic",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

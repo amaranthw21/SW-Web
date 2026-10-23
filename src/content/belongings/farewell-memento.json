@@ -1,0 +1,10 @@
+{
+  "name": "Farewell Memento",
+  "pokemon": "Mew",
+  "image": "/belongings/farewell-memento.webp",
+  "rarity": "Special",
+  "description": "A petite bag containing two spheres resembling glass marbles, emanating a faint energy that, strangely, doesn't harmonize with your own. A parting gift from a forgotten past life, its mysteries remain elusive in the absence of recollections.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

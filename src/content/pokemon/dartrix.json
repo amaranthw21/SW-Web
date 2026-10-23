@@ -1,0 +1,17 @@
+{
+  "order": 742,
+  "name": "Dartrix",
+  "form": "",
+  "image": "/pokemon/dartrix.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Grass",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

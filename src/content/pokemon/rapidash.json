@@ -1,0 +1,17 @@
+{
+  "order": 395,
+  "name": "Rapidash",
+  "form": "",
+  "image": "/pokemon/rapidash.webp",
+  "status": "CLOSED",
+  "generation": 1,
+  "type1": "Fire",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Groudon",
+  "fakemon": false
+}

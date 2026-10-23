@@ -1,0 +1,17 @@
+{
+  "order": 78,
+  "name": "Rotom",
+  "form": "Stereo",
+  "image": "/pokemon/rotom-stereo.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Electric",
+  "type2": "Normal",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAN-MADE",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

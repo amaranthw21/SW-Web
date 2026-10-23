@@ -1,0 +1,17 @@
+{
+  "order": 1002,
+  "name": "Regieleki",
+  "form": "",
+  "image": "/pokemon/regieleki.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Electric",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

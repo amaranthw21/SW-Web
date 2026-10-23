@@ -1,0 +1,17 @@
+{
+  "order": 492,
+  "name": "Kingdra",
+  "form": "",
+  "image": "/pokemon/kingdra.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Water",
+  "type2": "Dragon",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

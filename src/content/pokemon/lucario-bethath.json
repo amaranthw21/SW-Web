@@ -1,0 +1,18 @@
+{
+  "order": -1,
+  "name": "Lucario",
+  "form": "Bethath",
+  "image": "/pokemon/lucario-bethath.webp",
+  "status": "CLOSED",
+  "generation": null,
+  "type1": "Fighting",
+  "type2": "Water",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Lugia",
+  "fakemon": true,
+  "creator": "_xanandra"
+}

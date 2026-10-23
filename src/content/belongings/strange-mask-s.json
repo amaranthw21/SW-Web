@@ -1,0 +1,10 @@
+{
+  "name": "Strange Mask(s)",
+  "pokemon": "Ogerpon",
+  "image": "/belongings/strange-mask-s.webp",
+  "rarity": "Special",
+  "description": "A mask with strange crystallike patterns to it. Putting it on, you can still very well see. However, it doesn't seem to have other properties besides show. (Changes to OgerponPlayer's Starting Mask of Choice)",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

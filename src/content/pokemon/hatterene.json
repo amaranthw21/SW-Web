@@ -1,0 +1,17 @@
+{
+  "order": 468,
+  "name": "Hatterene",
+  "form": "",
+  "image": "/pokemon/hatterene.webp",
+  "status": "CLOSED",
+  "generation": 8,
+  "type1": "Psychic",
+  "type2": "Fairy",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Chien-Pao",
+  "fakemon": false
+}

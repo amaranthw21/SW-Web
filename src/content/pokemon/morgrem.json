@@ -1,0 +1,17 @@
+{
+  "order": 500,
+  "name": "Morgrem",
+  "form": "",
+  "image": "/pokemon/morgrem.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Dark",
+  "type2": "Fairy",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

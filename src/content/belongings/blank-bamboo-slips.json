@@ -1,0 +1,10 @@
+{
+  "name": "Blank Bamboo Slips",
+  "pokemon": "Wo-Chien",
+  "image": "/belongings/blank-bamboo-slips.webp",
+  "rarity": "Special",
+  "description": "Some antique bamboo slips. You have memories that they once had something written but now there doesn't seem to be any trace of text.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

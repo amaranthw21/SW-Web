@@ -1,0 +1,17 @@
+{
+  "order": 702,
+  "name": "Porygon-Z",
+  "form": "",
+  "image": "/pokemon/porygon-z.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "MAN-MADE",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

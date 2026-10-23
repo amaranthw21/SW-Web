@@ -1,0 +1,17 @@
+{
+  "order": 405,
+  "name": "Cofagrigus",
+  "form": "",
+  "image": "/pokemon/cofagrigus.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Ghost",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

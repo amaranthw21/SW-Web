@@ -1,0 +1,17 @@
+{
+  "order": 538,
+  "name": "Lileep",
+  "form": "",
+  "image": "/pokemon/lileep.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Rock",
+  "type2": "Grass",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

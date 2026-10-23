@@ -1,0 +1,17 @@
+{
+  "order": 1020,
+  "name": "Thundurus",
+  "form": "",
+  "image": "/pokemon/thundurus.webp",
+  "status": "CLOSED",
+  "generation": 5,
+  "type1": "Electric",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Sandslash (Alolan)",
+  "fakemon": false
+}

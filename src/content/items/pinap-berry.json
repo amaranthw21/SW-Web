@@ -1,0 +1,17 @@
+{
+  "name": "Pinap Berry",
+  "note": "",
+  "image": "/items/pinap-berry.webp",
+  "type": "BERRY",
+  "rarity": "Common",
+  "description": "Makes enemies unable to attack you for a turn if used in combat. Outside of combat will distract an enemy so you don't have to engage in a fight.",
+  "buy": 300,
+  "sell": 270,
+  "howToGet": "FIND",
+  "locations": [
+    "STAR CAVE",
+    "LAVENDER TOWER",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

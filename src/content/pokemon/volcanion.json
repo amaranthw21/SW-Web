@@ -1,0 +1,17 @@
+{
+  "order": 1034,
+  "name": "Volcanion",
+  "form": "",
+  "image": "/pokemon/volcanion.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Fire",
+  "type2": "Water",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

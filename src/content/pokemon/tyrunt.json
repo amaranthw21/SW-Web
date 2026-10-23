@@ -1,0 +1,17 @@
+{
+  "order": 930,
+  "name": "Tyrunt",
+  "form": "",
+  "image": "/pokemon/tyrunt.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Rock",
+  "type2": "Dragon",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

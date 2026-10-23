@@ -1,0 +1,10 @@
+{
+  "name": "Prince's Egg Jewel",
+  "pokemon": "Manaphy",
+  "image": "/belongings/prince-s-egg-jewel.webp",
+  "rarity": "Special",
+  "description": "An ancient gem that was created like a mythical egg. It is said that the prince of the seas is born from it but you don't remember where you heard that story.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

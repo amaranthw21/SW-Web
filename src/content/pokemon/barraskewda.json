@@ -1,0 +1,17 @@
+{
+  "order": 155,
+  "name": "Barraskewda",
+  "form": "",
+  "image": "/pokemon/barraskewda.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Water",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

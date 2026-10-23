@@ -1,0 +1,17 @@
+{
+  "order": 995,
+  "name": "Suicune",
+  "form": "+ Walking Wake",
+  "image": "/pokemon/suicune.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Water",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

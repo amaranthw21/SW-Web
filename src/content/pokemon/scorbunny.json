@@ -1,0 +1,17 @@
+{
+  "order": 762,
+  "name": "Scorbunny",
+  "form": "",
+  "image": "/pokemon/scorbunny.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Fire",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

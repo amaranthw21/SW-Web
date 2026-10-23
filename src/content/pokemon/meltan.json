@@ -1,0 +1,17 @@
+{
+  "order": 1067,
+  "name": "Meltan",
+  "form": "",
+  "image": "/pokemon/meltan.webp",
+  "status": "CLOSED",
+  "generation": 7,
+  "type1": "Steel",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAN-MADE LEGENDARY",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Goomy",
+  "fakemon": false
+}

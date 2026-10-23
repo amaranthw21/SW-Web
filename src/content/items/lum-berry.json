@@ -1,0 +1,15 @@
+{
+  "name": "Lum Berry",
+  "note": "",
+  "image": "/items/lum-berry.webp",
+  "type": "BERRY",
+  "rarity": "Rare",
+  "description": "Cures any non-volatile status condition and confusion.",
+  "buy": 1000,
+  "sell": 900,
+  "howToGet": "FIND",
+  "locations": [
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

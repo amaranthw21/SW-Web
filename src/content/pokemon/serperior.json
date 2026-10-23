@@ -1,0 +1,17 @@
+{
+  "order": 818,
+  "name": "Serperior",
+  "form": "",
+  "image": "/pokemon/serperior.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Grass",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

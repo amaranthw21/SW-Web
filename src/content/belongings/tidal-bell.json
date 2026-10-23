@@ -1,0 +1,10 @@
+{
+  "name": "Tidal Bell",
+  "pokemon": "Lugia",
+  "image": "/belongings/tidal-bell.webp",
+  "rarity": "Special",
+  "description": "An ancient golden bell, its gentle chime carries a unique calming power, rest to their owner when the memories of the past become too much.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

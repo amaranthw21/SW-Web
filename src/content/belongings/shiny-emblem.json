@@ -1,0 +1,10 @@
+{
+  "name": "Shiny Emblem",
+  "pokemon": "Keldeo",
+  "image": "/belongings/shiny-emblem.webp",
+  "rarity": "Special",
+  "description": "A strange emblem in the shape of a shield with swords and patterns depicted on it. It seems unable to be dirty and damaged, and has a familiar feel to You that you just can’t put your finger on.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Absorb Bulb",
+  "note": "",
+  "image": "/items/absorb-bulb.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Common",
+  "description": "A peculiar plant bulb, thriving in the most humid environments, holds a unique defensive capability. When carried, it absorbs water from incoming attacks, converting it into energy for the user's benefit. Additionally, it doubles as a tool to drain water from an area, though it should be noted that it is not suitable for consumption.",
+  "buy": 2500,
+  "sell": 2250,
+  "howToGet": "FIND",
+  "locations": [
+    "CERULEAN CAPE",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

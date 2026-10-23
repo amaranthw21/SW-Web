@@ -1,0 +1,17 @@
+{
+  "order": 658,
+  "name": "Patrat",
+  "form": "",
+  "image": "/pokemon/patrat.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 377,
+  "name": "Lurantis",
+  "form": "",
+  "image": "/pokemon/lurantis.webp",
+  "status": "RESERVED (1ST)",
+  "generation": 7,
+  "type1": "Grass",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Cresselia",
+  "fakemon": false
+}

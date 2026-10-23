@@ -1,0 +1,17 @@
+{
+  "order": 574,
+  "name": "Mantine",
+  "form": "",
+  "image": "/pokemon/mantine.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Water",
+  "type2": "Flying",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

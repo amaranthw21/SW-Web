@@ -1,0 +1,17 @@
+{
+  "order": 266,
+  "name": "Grapploct",
+  "form": "",
+  "image": "/pokemon/grapploct.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Fighting",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

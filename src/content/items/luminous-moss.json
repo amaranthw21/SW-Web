@@ -1,0 +1,16 @@
+{
+  "name": "Luminous Moss",
+  "note": "",
+  "image": "/items/luminous-moss.webp",
+  "type": "ITEM",
+  "rarity": "Common",
+  "description": "A bioluminescent moss that can be used to illuminate caves and dark places. It can also be used as crafting materials.",
+  "buy": 500,
+  "sell": 450,
+  "howToGet": "FIND",
+  "locations": [
+    "CERULEAN CAPE",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

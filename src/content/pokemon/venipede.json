@@ -1,0 +1,17 @@
+{
+  "order": 937,
+  "name": "Venipede",
+  "form": "",
+  "image": "/pokemon/venipede.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Bug",
+  "type2": "Poison",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

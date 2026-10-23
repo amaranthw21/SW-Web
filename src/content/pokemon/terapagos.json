@@ -1,0 +1,17 @@
+{
+  "order": 1093,
+  "name": "Terapagos",
+  "form": "",
+  "image": "/pokemon/terapagos.webp",
+  "status": "CLOSED",
+  "generation": 9,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAJOR LEGENDARY",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Flapple",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 1029,
+  "name": "Cosmog",
+  "form": "",
+  "image": "/pokemon/cosmog.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Psychic",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

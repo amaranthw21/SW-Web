@@ -1,0 +1,17 @@
+{
+  "order": 1064,
+  "name": "Mewtwo",
+  "form": "",
+  "image": "/pokemon/mewtwo.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Psychic",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAN-MADE LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

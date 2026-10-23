@@ -1,0 +1,17 @@
+{
+  "order": 30,
+  "name": "Druddigon",
+  "form": "",
+  "image": "/pokemon/druddigon.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Dragon",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

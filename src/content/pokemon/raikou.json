@@ -1,0 +1,17 @@
+{
+  "order": 996,
+  "name": "Raikou",
+  "form": "+ Raging Bolt",
+  "image": "/pokemon/raikou.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Electric",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

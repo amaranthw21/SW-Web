@@ -1,0 +1,17 @@
+{
+  "order": 1008,
+  "name": "Cresselia",
+  "form": "",
+  "image": "/pokemon/cresselia.webp",
+  "status": "RESERVED (1ST)",
+  "generation": 4,
+  "type1": "Psychic",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Lurantis",
+  "fakemon": false
+}

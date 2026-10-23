@@ -1,0 +1,17 @@
+{
+  "order": 1054,
+  "name": "Wo-Chien",
+  "form": "",
+  "image": "/pokemon/wo-chien.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Dark",
+  "type2": "Grass",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

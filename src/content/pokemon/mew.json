@@ -1,0 +1,17 @@
+{
+  "order": 991,
+  "name": "Mew",
+  "form": "",
+  "image": "/pokemon/mew.webp",
+  "status": "CLOSED",
+  "generation": 1,
+  "type1": "Psychic",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Alcremie",
+  "fakemon": false
+}

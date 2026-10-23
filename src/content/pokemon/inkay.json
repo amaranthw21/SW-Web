@@ -1,0 +1,17 @@
+{
+  "order": 502,
+  "name": "Inkay",
+  "form": "",
+  "image": "/pokemon/inkay.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Dark",
+  "type2": "Psychic",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

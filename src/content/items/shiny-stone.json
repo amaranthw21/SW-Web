@@ -1,0 +1,15 @@
+{
+  "name": "Shiny Stone",
+  "note": "",
+  "image": "/items/shiny-stone.webp",
+  "type": "ITEM",
+  "rarity": "Rare",
+  "description": "A peculiar stone that can make certain species of Pokémon evolve and can also be used as crafting material. It shines with a dazzling light.",
+  "buy": 10500,
+  "sell": 9450,
+  "howToGet": "FIND",
+  "locations": [
+    "SKY HIGH RUINS"
+  ],
+  "ingredients": []
+}

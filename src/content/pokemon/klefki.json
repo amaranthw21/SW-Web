@@ -1,0 +1,17 @@
+{
+  "order": 49,
+  "name": "Klefki",
+  "form": "",
+  "image": "/pokemon/klefki.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Steel",
+  "type2": "Fairy",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

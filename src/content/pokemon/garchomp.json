@@ -1,0 +1,17 @@
+{
+  "order": 423,
+  "name": "Garchomp",
+  "form": "",
+  "image": "/pokemon/garchomp.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Dragon",
+  "type2": "Ground",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

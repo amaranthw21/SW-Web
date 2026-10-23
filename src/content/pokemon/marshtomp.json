@@ -1,0 +1,17 @@
+{
+  "order": 600,
+  "name": "Marshtomp",
+  "form": "",
+  "image": "/pokemon/marshtomp.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Water",
+  "type2": "Ground",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

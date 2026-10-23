@@ -1,0 +1,17 @@
+{
+  "order": 156,
+  "name": "Axew",
+  "form": "",
+  "image": "/pokemon/axew.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Dragon",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

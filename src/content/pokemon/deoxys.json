@@ -1,0 +1,17 @@
+{
+  "order": 1007,
+  "name": "Deoxys",
+  "form": "",
+  "image": "/pokemon/deoxys.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Psychic",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

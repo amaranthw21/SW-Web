@@ -1,0 +1,10 @@
+{
+  "name": "Crystal Lotus",
+  "pokemon": "Diancie",
+  "image": "/belongings/crystal-lotus.webp",
+  "rarity": "Special",
+  "description": "A flower made of iridescent crystals. Even though it has no organic matter, you can feel the pulse of life through it, as if it were just another flower.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

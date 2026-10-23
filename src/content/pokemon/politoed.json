@@ -1,0 +1,17 @@
+{
+  "order": 690,
+  "name": "Politoed",
+  "form": "",
+  "image": "/pokemon/politoed.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Water",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

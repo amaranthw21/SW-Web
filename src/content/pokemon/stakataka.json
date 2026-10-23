@@ -1,0 +1,17 @@
+{
+  "order": 1078,
+  "name": "Stakataka",
+  "form": "",
+  "image": "/pokemon/stakataka.webp",
+  "status": "PENDING",
+  "generation": 7,
+  "type1": "Rock",
+  "type2": "Steel",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "ULTRABEAST",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

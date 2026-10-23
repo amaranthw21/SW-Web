@@ -1,0 +1,17 @@
+{
+  "order": 972,
+  "name": "Wurmple",
+  "form": "",
+  "image": "/pokemon/wurmple.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Bug",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

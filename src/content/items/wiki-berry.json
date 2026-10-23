@@ -1,0 +1,17 @@
+{
+  "name": "Wiki Berry",
+  "note": "",
+  "image": "/items/wiki-berry.webp",
+  "type": "BERRY",
+  "rarity": "Uncommon",
+  "description": "Restores 25% of HP and cures sleep.",
+  "buy": 500,
+  "sell": 450,
+  "howToGet": "FIND",
+  "locations": [
+    "STAR CAVE",
+    "METEOR CRATER",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

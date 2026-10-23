@@ -1,0 +1,17 @@
+{
+  "order": 470,
+  "name": "Heliolisk",
+  "form": "",
+  "image": "/pokemon/heliolisk.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Electric",
+  "type2": "Normal",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

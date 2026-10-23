@@ -1,0 +1,17 @@
+{
+  "order": 242,
+  "name": "Drednaw",
+  "form": "",
+  "image": "/pokemon/drednaw.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Water",
+  "type2": "Rock",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

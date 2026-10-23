@@ -1,0 +1,17 @@
+{
+  "order": 868,
+  "name": "Slurpuff",
+  "form": "",
+  "image": "/pokemon/slurpuff.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Fairy",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

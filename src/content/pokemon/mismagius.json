@@ -1,0 +1,17 @@
+{
+  "order": 591,
+  "name": "Mismagius",
+  "form": "",
+  "image": "/pokemon/mismagius.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Ghost",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

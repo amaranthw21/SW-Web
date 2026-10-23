@@ -1,0 +1,17 @@
+{
+  "order": 111,
+  "name": "Honedge",
+  "form": "",
+  "image": "/pokemon/honedge.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Steel",
+  "type2": "Ghost",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

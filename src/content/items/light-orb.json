@@ -1,0 +1,22 @@
+{
+  "name": "Light Orb",
+  "note": "",
+  "image": "/items/light-orb.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Rare",
+  "description": "An item to be held by a Pokémon. It's a bizarre orb that gives off small zaps when touched and will afflict the holder with a paralysis during battle. If it is used, the surroundings will be engulfed by lightning, creating an Electric Field.",
+  "buy": null,
+  "sell": 9450,
+  "howToGet": "CRAFT",
+  "locations": [],
+  "ingredients": [
+    {
+      "item": "STARDUST",
+      "quantity": 1
+    },
+    {
+      "item": "THUNDER STONE",
+      "quantity": 1
+    }
+  ]
+}

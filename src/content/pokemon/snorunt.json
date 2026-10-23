@@ -1,0 +1,17 @@
+{
+  "order": 821,
+  "name": "Snorunt",
+  "form": "",
+  "image": "/pokemon/snorunt.webp",
+  "status": "RESERVED (>1)",
+  "generation": 3,
+  "type1": "Ice",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Popplio",
+  "fakemon": false
+}

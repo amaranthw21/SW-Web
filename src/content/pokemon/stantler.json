@@ -1,0 +1,17 @@
+{
+  "order": 849,
+  "name": "Stantler",
+  "form": "",
+  "image": "/pokemon/stantler.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 1028,
+  "name": "Zekrom",
+  "form": "",
+  "image": "/pokemon/zekrom.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Dragon",
+  "type2": "Electric",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

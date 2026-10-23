@@ -1,0 +1,17 @@
+{
+  "order": 182,
+  "name": "Avalugg",
+  "form": "",
+  "image": "/pokemon/avalugg.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Ice",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

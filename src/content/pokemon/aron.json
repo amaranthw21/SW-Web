@@ -1,0 +1,17 @@
+{
+  "order": 114,
+  "name": "Aron",
+  "form": "",
+  "image": "/pokemon/aron.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Steel",
+  "type2": "Rock",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

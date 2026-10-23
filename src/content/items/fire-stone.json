@@ -1,0 +1,16 @@
+{
+  "name": "Fire Stone",
+  "note": "",
+  "image": "/items/fire-stone.webp",
+  "type": "ITEM",
+  "rarity": "Rare",
+  "description": "A peculiar stone that can make certain species of Pokémon evolve or be used as a crafting material. It has a fiery orange heart.",
+  "buy": 10500,
+  "sell": 9450,
+  "howToGet": "FIND",
+  "locations": [
+    "MT BLAZE",
+    "INFERNO CAVE"
+  ],
+  "ingredients": []
+}

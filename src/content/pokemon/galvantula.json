@@ -1,0 +1,17 @@
+{
+  "order": 508,
+  "name": "Galvantula",
+  "form": "",
+  "image": "/pokemon/galvantula.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Bug",
+  "type2": "Electric",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,17 @@
+{
+  "order": 251,
+  "name": "Chingling",
+  "form": "",
+  "image": "/pokemon/chingling.webp",
+  "status": "RESERVED (>1)",
+  "generation": 4,
+  "type1": "Psychic",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "TBD",
+  "fakemon": false
+}

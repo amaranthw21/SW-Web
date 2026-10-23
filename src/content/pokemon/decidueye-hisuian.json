@@ -1,0 +1,17 @@
+{
+  "order": 744,
+  "name": "Decidueye",
+  "form": "Hisuian",
+  "image": "/pokemon/decidueye-hisuian.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Grass",
+  "type2": "Fighting",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

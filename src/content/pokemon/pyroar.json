@@ -1,0 +1,17 @@
+{
+  "order": 544,
+  "name": "Pyroar",
+  "form": "Female",
+  "image": "/pokemon/pyroar.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Fire",
+  "type2": "Normal",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

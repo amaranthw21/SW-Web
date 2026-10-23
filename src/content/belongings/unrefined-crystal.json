@@ -1,0 +1,10 @@
+{
+  "name": "Unrefined Crystal",
+  "pokemon": "Marshadow",
+  "image": "/belongings/unrefined-crystal.webp",
+  "rarity": "Special",
+  "description": "In your possession lies a crystalline formation, pilfered from some elusive source, though the details remain shrouded in the mist of vague memories. An unmistakable latent energy pulsates within its facets, teasing at your senses, yet access to its power remains elusive.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Tablet Fragments",
+  "pokemon": "Silvally",
+  "image": "/belongings/tablet-fragments.webp",
+  "rarity": "Special",
+  "description": "Fragments of the Original Tablets of Arceus. It allows (Insert Name here) to change their type accordingly (Electric-Fire-Grass-Water)",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

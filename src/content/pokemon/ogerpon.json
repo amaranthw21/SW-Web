@@ -1,0 +1,17 @@
+{
+  "order": 1056,
+  "name": "Ogerpon",
+  "form": "",
+  "image": "/pokemon/ogerpon.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Grass",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Liberty Pass",
+  "pokemon": "Victini",
+  "image": "/belongings/liberty-pass.webp",
+  "rarity": "Special",
+  "description": "A letter with what appears to be a postcard with a lighthouse. The ink on the postcard is illegible however, so you don't know where it comes from.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

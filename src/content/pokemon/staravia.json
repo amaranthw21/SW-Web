@@ -1,0 +1,17 @@
+{
+  "order": 852,
+  "name": "Staravia",
+  "form": "",
+  "image": "/pokemon/staravia.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Normal",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

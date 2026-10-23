@@ -1,0 +1,10 @@
+{
+  "name": "Meteorite Fragment",
+  "pokemon": "Deoxys",
+  "image": "/belongings/meteorite-fragment.webp",
+  "rarity": "Special",
+  "description": "An odd piece of rock. It stirs something strange within you but your unable to unlock whats inside. It’s faintly warm to the touch.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

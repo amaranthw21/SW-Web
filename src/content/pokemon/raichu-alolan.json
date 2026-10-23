@@ -1,0 +1,17 @@
+{
+  "order": 448,
+  "name": "Raichu",
+  "form": "Alolan",
+  "image": "/pokemon/raichu-alolan.webp",
+  "status": "CLOSED",
+  "generation": 7,
+  "type1": "Electric",
+  "type2": "Psychic",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Skeledirge Mandibuzz",
+  "fakemon": false
+}

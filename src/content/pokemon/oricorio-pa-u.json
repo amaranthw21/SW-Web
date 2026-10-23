@@ -1,0 +1,17 @@
+{
+  "order": 70,
+  "name": "Oricorio",
+  "form": "Pa'u",
+  "image": "/pokemon/oricorio-pa-u.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Psychic",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

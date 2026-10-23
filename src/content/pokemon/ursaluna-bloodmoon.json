@@ -1,0 +1,17 @@
+{
+  "order": 880,
+  "name": "Ursaluna",
+  "form": "Bloodmoon",
+  "image": "/pokemon/ursaluna-bloodmoon.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Normal",
+  "type2": "Ground",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

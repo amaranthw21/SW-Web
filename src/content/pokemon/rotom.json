@@ -1,0 +1,17 @@
+{
+  "order": 72,
+  "name": "Rotom",
+  "form": "",
+  "image": "/pokemon/rotom.webp",
+  "status": "CLOSED",
+  "generation": 4,
+  "type1": "Electric",
+  "type2": "Ghost",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAN-MADE",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Zygarde",
+  "fakemon": false
+}

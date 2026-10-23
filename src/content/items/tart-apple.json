@@ -1,0 +1,15 @@
+{
+  "name": "Tart Apple",
+  "note": "",
+  "image": "/items/tart-apple.webp",
+  "type": "ITEM",
+  "rarity": "Common",
+  "description": "A peculiar species of apple that can make a certain species of Pokémon evolve. It’s exceptionally sour.",
+  "buy": 200,
+  "sell": 180,
+  "howToGet": "FIND",
+  "locations": [
+    "ANYWHERE"
+  ],
+  "ingredients": []
+}

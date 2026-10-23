@@ -1,0 +1,16 @@
+{
+  "name": "Charcoal",
+  "note": "",
+  "image": "/items/charcoal.webp",
+  "type": "ITEM",
+  "rarity": "Common",
+  "description": "It’s a combustible fuel that can be used to make campfires in places where wood is difficult to find. It powers up fire moves.",
+  "buy": 500,
+  "sell": 450,
+  "howToGet": "FIND",
+  "locations": [
+    "MT BLAZE",
+    "INFERNO CAVE"
+  ],
+  "ingredients": []
+}

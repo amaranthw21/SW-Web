@@ -1,0 +1,17 @@
+{
+  "order": 300,
+  "name": "Hydreigon",
+  "form": "",
+  "image": "/pokemon/hydreigon.webp",
+  "status": "CLOSED",
+  "generation": 5,
+  "type1": "Dark",
+  "type2": "Dragon",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Eternatus",
+  "fakemon": false
+}

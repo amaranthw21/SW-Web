@@ -1,0 +1,17 @@
+{
+  "order": 106,
+  "name": "Alakazam",
+  "form": "",
+  "image": "/pokemon/alakazam.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Psychic",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

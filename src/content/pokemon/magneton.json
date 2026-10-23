@@ -1,0 +1,17 @@
+{
+  "order": 567,
+  "name": "Magneton",
+  "form": "",
+  "image": "/pokemon/magneton.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Electric",
+  "type2": "Steel",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

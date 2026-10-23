@@ -1,0 +1,17 @@
+{
+  "order": 1027,
+  "name": "Reshiram",
+  "form": "",
+  "image": "/pokemon/reshiram.webp",
+  "status": "RESERVED (1ST)",
+  "generation": 5,
+  "type1": "Dragon",
+  "type2": "Fire",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Meowscarada",
+  "fakemon": false
+}

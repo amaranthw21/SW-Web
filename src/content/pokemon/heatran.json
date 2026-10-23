@@ -1,0 +1,17 @@
+{
+  "order": 1010,
+  "name": "Heatran",
+  "form": "",
+  "image": "/pokemon/heatran.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Fire",
+  "type2": "Steel",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

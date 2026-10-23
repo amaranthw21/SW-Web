@@ -1,0 +1,17 @@
+{
+  "name": "Pomeg Berry",
+  "note": "",
+  "image": "/items/pomeg-berry.webp",
+  "type": "BERRY",
+  "rarity": "Common",
+  "description": "Causes sleep to the pokemon that eats it.",
+  "buy": 300,
+  "sell": 270,
+  "howToGet": "FIND",
+  "locations": [
+    "STAR CAVE",
+    "LAVENDER TOWER",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

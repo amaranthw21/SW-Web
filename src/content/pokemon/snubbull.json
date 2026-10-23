@@ -1,0 +1,17 @@
+{
+  "order": 824,
+  "name": "Snubbull",
+  "form": "",
+  "image": "/pokemon/snubbull.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Fairy",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

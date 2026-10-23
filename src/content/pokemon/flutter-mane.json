@@ -1,0 +1,17 @@
+{
+  "order": 590,
+  "name": "Flutter Mane",
+  "form": "",
+  "image": "/pokemon/flutter-mane.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Ghost",
+  "type2": "Fairy",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "PARADOX",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

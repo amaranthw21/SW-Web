@@ -1,0 +1,17 @@
+{
+  "order": 836,
+  "name": "Walrein",
+  "form": "",
+  "image": "/pokemon/walrein.webp",
+  "status": "CLOSED",
+  "generation": 3,
+  "type1": "Ice",
+  "type2": "Water",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Tatsugiri",
+  "fakemon": false
+}

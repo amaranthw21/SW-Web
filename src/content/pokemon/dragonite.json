@@ -1,0 +1,17 @@
+{
+  "order": 310,
+  "name": "Dragonite",
+  "form": "",
+  "image": "/pokemon/dragonite.webp",
+  "status": "CLOSED",
+  "generation": 1,
+  "type1": "Dragon",
+  "type2": "Flying",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Solgaleo",
+  "fakemon": false
+}

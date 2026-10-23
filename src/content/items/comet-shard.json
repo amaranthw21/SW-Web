@@ -1,0 +1,15 @@
+{
+  "name": "Comet Shard",
+  "note": "",
+  "image": "/items/comet-shard.webp",
+  "type": "ITEM",
+  "rarity": "Super Rare",
+  "description": "A shard that fell to the ground when a comet passed nearby. It can be sold at a high price to shops or given to someone as a special gift.",
+  "buy": null,
+  "sell": 30000,
+  "howToGet": "FIND",
+  "locations": [
+    "ANYWHERE"
+  ],
+  "ingredients": []
+}

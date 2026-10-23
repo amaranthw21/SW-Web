@@ -1,0 +1,10 @@
+{
+  "name": "Strange Bottle",
+  "pokemon": "Hoopa",
+  "image": "/belongings/strange-bottle.webp",
+  "rarity": "Special",
+  "description": "A strange ornate bottle that depicts a creature your not familiar with. It gives off a strange sense of power, but no matter what you do, you don't seem to be able to open it.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

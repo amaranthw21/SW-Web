@@ -1,0 +1,22 @@
+{
+  "name": "Shalour Sable",
+  "note": "",
+  "image": "/items/shalour-sable.webp",
+  "type": "MEAL",
+  "rarity": "Common",
+  "description": "A famous shortbread from another region. It can be used to partially heal your injuries.",
+  "buy": 1500,
+  "sell": 1350,
+  "howToGet": "CRAFT",
+  "locations": [],
+  "ingredients": [
+    {
+      "item": "INGREDIENT BERRY",
+      "quantity": 1
+    },
+    {
+      "item": "ANY NECTAR",
+      "quantity": 1
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "order": 623,
+  "name": "Nincada",
+  "form": "",
+  "image": "/pokemon/nincada.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Bug",
+  "type2": "Ground",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

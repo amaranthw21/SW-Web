@@ -1,0 +1,22 @@
+{
+  "name": "Syrupy Apple",
+  "note": "",
+  "image": "/items/syrupy-apple.webp",
+  "type": "MEAL",
+  "rarity": "Common",
+  "description": "A peculiar apple that can make a certain species of pokemon evolve. It is exceptionally syrupy and a great gift for someone.",
+  "buy": 1500,
+  "sell": 1350,
+  "howToGet": "CRAFT",
+  "locations": [],
+  "ingredients": [
+    {
+      "item": "ANY APPLE",
+      "quantity": 1
+    },
+    {
+      "item": "ANY NECTAR",
+      "quantity": 1
+    }
+  ]
+}

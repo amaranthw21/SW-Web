@@ -1,0 +1,17 @@
+{
+  "order": 592,
+  "name": "Morelull",
+  "form": "",
+  "image": "/pokemon/morelull.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Grass",
+  "type2": "Fairy",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

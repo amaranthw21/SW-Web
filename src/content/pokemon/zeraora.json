@@ -1,0 +1,17 @@
+{
+  "order": 1038,
+  "name": "Zeraora",
+  "form": "",
+  "image": "/pokemon/zeraora.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Electric",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Occa Berry",
+  "note": "",
+  "image": "/items/occa-berry.webp",
+  "type": "BERRY",
+  "rarity": "Rare",
+  "description": "Halves damage taken from a supereffective Fire-Type move.",
+  "buy": 1000,
+  "sell": 900,
+  "howToGet": "FIND",
+  "locations": [
+    "MT BLAZE",
+    "INFERNO CAVE"
+  ],
+  "ingredients": []
+}

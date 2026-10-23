@@ -1,0 +1,17 @@
+{
+  "order": 126,
+  "name": "Amoonguss",
+  "form": "",
+  "image": "/pokemon/amoonguss.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Grass",
+  "type2": "Poison",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

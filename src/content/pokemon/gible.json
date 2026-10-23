@@ -1,0 +1,17 @@
+{
+  "order": 421,
+  "name": "Gible",
+  "form": "",
+  "image": "/pokemon/gible.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Dragon",
+  "type2": "Ground",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

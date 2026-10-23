@@ -1,0 +1,17 @@
+{
+  "order": 668,
+  "name": "Great Tusk",
+  "form": "",
+  "image": "/pokemon/great-tusk.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Ground",
+  "type2": "Fighting",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "PARADOX",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

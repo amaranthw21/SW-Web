@@ -1,0 +1,17 @@
+{
+  "order": 269,
+  "name": "Corphish",
+  "form": "",
+  "image": "/pokemon/corphish.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Water",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

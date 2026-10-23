@@ -1,0 +1,17 @@
+{
+  "order": 741,
+  "name": "Rowlet",
+  "form": "",
+  "image": "/pokemon/rowlet.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Grass",
+  "type2": "Flying",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

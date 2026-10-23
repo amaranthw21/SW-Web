@@ -1,0 +1,17 @@
+{
+  "order": 314,
+  "name": "Drakloak",
+  "form": "",
+  "image": "/pokemon/drakloak.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Dragon",
+  "type2": "Ghost",
+  "lineStatus": "OPEN",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

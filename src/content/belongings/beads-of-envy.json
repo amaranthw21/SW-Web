@@ -1,0 +1,10 @@
+{
+  "name": "Beads of Envy",
+  "pokemon": "Chi-Yu",
+  "image": "/belongings/beads-of-envy.webp",
+  "rarity": "Special",
+  "description": "A set of beads that connect to a necklace. They radiate a strong sense of Envy from them.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

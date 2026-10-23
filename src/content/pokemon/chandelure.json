@@ -1,0 +1,17 @@
+{
+  "order": 554,
+  "name": "Chandelure",
+  "form": "",
+  "image": "/pokemon/chandelure.webp",
+  "status": "CLOSED",
+  "generation": 5,
+  "type1": "Ghost",
+  "type2": "Fire",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Xerneas",
+  "fakemon": false
+}

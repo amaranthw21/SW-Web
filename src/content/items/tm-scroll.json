@@ -1,0 +1,16 @@
+{
+  "name": "TM Scroll",
+  "note": "Any",
+  "image": "/items/tm-scroll.webp",
+  "type": "ITEM",
+  "rarity": "Rare",
+  "description": "A scroll that explains how to execute a move.",
+  "buy": null,
+  "sell": null,
+  "howToGet": "SPECIAL",
+  "locations": [
+    "ASK THE CC",
+    "IMPRINT A MOVE ONTO A BLANK SCROLL"
+  ],
+  "ingredients": []
+}

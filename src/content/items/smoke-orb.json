@@ -1,0 +1,22 @@
+{
+  "name": "Smoke Orb",
+  "note": "",
+  "image": "/items/smoke-orb.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Rare",
+  "description": "An item to be held by a Pokémon. It's a bizarre orb that gives off small anesthetic clouds when holded and will afflict the holder with drowsines during battle. If is used the holder the terrain that surround them will be covered in a very dense fog of sleeping gas.",
+  "buy": null,
+  "sell": 9450,
+  "howToGet": "CRAFT",
+  "locations": [],
+  "ingredients": [
+    {
+      "item": "SILVER POWDER",
+      "quantity": 1
+    },
+    {
+      "item": "STARDUST",
+      "quantity": 1
+    }
+  ]
+}

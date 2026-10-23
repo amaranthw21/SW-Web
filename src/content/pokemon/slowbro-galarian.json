@@ -1,0 +1,17 @@
+{
+  "order": 400,
+  "name": "Slowbro",
+  "form": "Galarian",
+  "image": "/pokemon/slowbro-galarian.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Poison",
+  "type2": "Psychic",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

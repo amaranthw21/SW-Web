@@ -1,0 +1,10 @@
+{
+  "name": "Steel Spherical Forge",
+  "pokemon": "Registeel",
+  "image": "/belongings/steel-spherical-forge.webp",
+  "rarity": "Special",
+  "description": "A small sphere that holds the heat of a forge inside. Despite the heat one thinks it must transmit, the steel remains cold to the touch.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

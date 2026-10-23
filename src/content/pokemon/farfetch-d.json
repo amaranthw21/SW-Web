@@ -1,0 +1,17 @@
+{
+  "order": 384,
+  "name": "Farfetch'd",
+  "form": "",
+  "image": "/pokemon/farfetch-d.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Normal",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

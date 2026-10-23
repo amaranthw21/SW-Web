@@ -1,0 +1,17 @@
+{
+  "name": "Iapapa Berry",
+  "note": "",
+  "image": "/items/iapapa-berry.webp",
+  "type": "BERRY",
+  "rarity": "Uncommon",
+  "description": "Restores 25% of HP and cures freeze.",
+  "buy": 500,
+  "sell": 450,
+  "howToGet": "FIND",
+  "locations": [
+    "MT AVALANCHE",
+    "ANCIENT TOMB",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

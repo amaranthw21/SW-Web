@@ -1,0 +1,17 @@
+{
+  "order": 644,
+  "name": "Wooper",
+  "form": "",
+  "image": "/pokemon/wooper.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Water",
+  "type2": "Ground",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

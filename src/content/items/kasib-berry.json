@@ -1,0 +1,15 @@
+{
+  "name": "Kasib Berry",
+  "note": "",
+  "image": "/items/kasib-berry.webp",
+  "type": "BERRY",
+  "rarity": "Rare",
+  "description": "Halves damage taken form a supereffective Ghost-Type move.",
+  "buy": 1000,
+  "sell": 900,
+  "howToGet": "FIND",
+  "locations": [
+    "LAVENDER TOWER"
+  ],
+  "ingredients": []
+}

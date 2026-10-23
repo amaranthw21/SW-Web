@@ -1,0 +1,17 @@
+{
+  "order": 1091,
+  "name": "Necrozma",
+  "form": "",
+  "image": "/pokemon/necrozma.webp",
+  "status": "CLOSED",
+  "generation": 7,
+  "type1": "Psychic",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MAJOR LEGENDARY",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Maushold",
+  "fakemon": false
+}

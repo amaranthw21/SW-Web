@@ -1,0 +1,17 @@
+{
+  "order": 1055,
+  "name": "Ting-Lu",
+  "form": "",
+  "image": "/pokemon/ting-lu.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Dark",
+  "type2": "Ground",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

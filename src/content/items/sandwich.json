@@ -1,0 +1,22 @@
+{
+  "name": "Sandwich",
+  "note": "",
+  "image": "/items/sandwich.webp",
+  "type": "MEAL",
+  "rarity": "Common",
+  "description": "A perfect fitting meal for traveling. Its effects depend on its filling.",
+  "buy": 1500,
+  "sell": 1350,
+  "howToGet": "CRAFT",
+  "locations": [],
+  "ingredients": [
+    {
+      "item": "INGREDIENT BERRY",
+      "quantity": 1
+    },
+    {
+      "item": "HONEY",
+      "quantity": 1
+    }
+  ]
+}

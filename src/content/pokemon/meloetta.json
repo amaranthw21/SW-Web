@@ -1,0 +1,17 @@
+{
+  "order": 1017,
+  "name": "Meloetta",
+  "form": "",
+  "image": "/pokemon/meloetta.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Normal",
+  "type2": "Psychic",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

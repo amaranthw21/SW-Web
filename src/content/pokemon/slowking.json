@@ -1,0 +1,17 @@
+{
+  "order": 401,
+  "name": "Slowking",
+  "form": "",
+  "image": "/pokemon/slowking.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Water",
+  "type2": "Psychic",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

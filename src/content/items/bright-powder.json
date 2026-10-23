@@ -1,0 +1,15 @@
+{
+  "name": "Bright Powder",
+  "note": "",
+  "image": "/items/bright-powder.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Uncommon",
+  "description": "A radiant powder possessing dual utility: when deployed, it can blind opponents, impairing their vision. Additionally, this luminous substance serves as a versatile material for crafting.",
+  "buy": 7500,
+  "sell": 6750,
+  "howToGet": "FIND",
+  "locations": [
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

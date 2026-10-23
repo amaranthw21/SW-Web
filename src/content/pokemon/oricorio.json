@@ -1,0 +1,17 @@
+{
+  "order": 68,
+  "name": "Oricorio",
+  "form": "Baile",
+  "image": "/pokemon/oricorio.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Fire",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

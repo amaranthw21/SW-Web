@@ -1,0 +1,17 @@
+{
+  "order": 82,
+  "name": "Sigilyph",
+  "form": "",
+  "image": "/pokemon/sigilyph.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Psychic",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

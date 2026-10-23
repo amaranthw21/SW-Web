@@ -1,0 +1,17 @@
+{
+  "order": 515,
+  "name": "Klinklang",
+  "form": "",
+  "image": "/pokemon/klinklang.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Steel",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

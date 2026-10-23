@@ -1,0 +1,10 @@
+{
+  "name": "Gold Wreath Orb",
+  "pokemon": "Reshiram",
+  "image": "/belongings/gold-wreath-orb.webp",
+  "rarity": "Special",
+  "description": "A strange orb engraved with a laurel wreath. It seems like a commemoration or copy of something but you can't remember what.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

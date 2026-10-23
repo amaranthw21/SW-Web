@@ -1,0 +1,17 @@
+{
+  "order": 478,
+  "name": "Voltorb",
+  "form": "Hisuian",
+  "image": "/pokemon/voltorb-hisuian.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Electric",
+  "type2": "Grass",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

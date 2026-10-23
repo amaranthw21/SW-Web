@@ -1,0 +1,17 @@
+{
+  "order": 227,
+  "name": "Butterfree",
+  "form": "",
+  "image": "/pokemon/butterfree.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Bug",
+  "type2": "Flying",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

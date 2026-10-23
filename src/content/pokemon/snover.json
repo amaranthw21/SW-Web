@@ -1,0 +1,17 @@
+{
+  "order": 107,
+  "name": "Snover",
+  "form": "",
+  "image": "/pokemon/snover.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Grass",
+  "type2": "Ice",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

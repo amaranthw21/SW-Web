@@ -1,0 +1,17 @@
+{
+  "order": 129,
+  "name": "Flaaffy",
+  "form": "",
+  "image": "/pokemon/flaaffy.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Electric",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

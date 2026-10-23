@@ -1,0 +1,17 @@
+{
+  "order": 779,
+  "name": "Leavanny",
+  "form": "",
+  "image": "/pokemon/leavanny.webp",
+  "status": "OPEN",
+  "generation": 5,
+  "type1": "Bug",
+  "type2": "Grass",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

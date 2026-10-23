@@ -1,0 +1,17 @@
+{
+  "order": 391,
+  "name": "Persian",
+  "form": "Alolan",
+  "image": "/pokemon/persian-alolan.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Dark",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

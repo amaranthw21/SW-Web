@@ -1,0 +1,15 @@
+{
+  "name": "Hard Stone",
+  "note": "",
+  "image": "/items/hard-stone.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Common",
+  "description": "A stone that can be used as a throwable weapon. Due to its weight and hardness it can do a lot of damage if it hits the target.",
+  "buy": 500,
+  "sell": 450,
+  "howToGet": "FIND",
+  "locations": [
+    "ANYWHERE"
+  ],
+  "ingredients": []
+}

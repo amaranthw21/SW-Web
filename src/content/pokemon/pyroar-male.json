@@ -1,0 +1,17 @@
+{
+  "order": 545,
+  "name": "Pyroar",
+  "form": "Male",
+  "image": "/pokemon/pyroar-male.webp",
+  "status": "OPEN",
+  "generation": 6,
+  "type1": "Fire",
+  "type2": "Normal",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

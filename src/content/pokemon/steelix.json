@@ -1,0 +1,17 @@
+{
+  "order": 639,
+  "name": "Steelix",
+  "form": "",
+  "image": "/pokemon/steelix.webp",
+  "status": "CLOSED",
+  "generation": 2,
+  "type1": "Steel",
+  "type2": "Ground",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": true,
+  "fusedWith": "Palkia",
+  "fakemon": false
+}

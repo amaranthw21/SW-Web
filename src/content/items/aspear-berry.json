@@ -1,0 +1,17 @@
+{
+  "name": "Aspear Berry",
+  "note": "",
+  "image": "/items/aspear-berry.webp",
+  "type": "BERRY",
+  "rarity": "Common",
+  "description": "Cures freeze.",
+  "buy": 300,
+  "sell": 270,
+  "howToGet": "FIND",
+  "locations": [
+    "MT AVALANCHE",
+    "ANCIENT TOMB",
+    "VIEN FOREST"
+  ],
+  "ingredients": []
+}

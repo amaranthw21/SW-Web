@@ -1,0 +1,17 @@
+{
+  "order": 58,
+  "name": "Minior",
+  "form": "",
+  "image": "/pokemon/minior.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Rock",
+  "type2": "Flying",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

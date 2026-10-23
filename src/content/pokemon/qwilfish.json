@@ -1,0 +1,17 @@
+{
+  "order": 712,
+  "name": "Qwilfish",
+  "form": "",
+  "image": "/pokemon/qwilfish.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Water",
+  "type2": "Poison",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

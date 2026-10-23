@@ -1,0 +1,17 @@
+{
+  "order": 837,
+  "name": "Spinarak",
+  "form": "",
+  "image": "/pokemon/spinarak.webp",
+  "status": "OPEN",
+  "generation": 2,
+  "type1": "Bug",
+  "type2": "Poison",
+  "lineStatus": "OPEN",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

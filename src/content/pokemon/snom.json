@@ -1,0 +1,17 @@
+{
+  "order": 819,
+  "name": "Snom",
+  "form": "",
+  "image": "/pokemon/snom.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Ice",
+  "type2": "Bug",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -2,7 +2,18 @@
   "greeting": "Welcome to the archive",
   "intro": "This is where the setting lives.\n\nEverything here is written by the moderation team. If something looks wrong or missing, tell a mod — it can be fixed in a couple of minutes.",
   "image": "",
-  "startHere": [],
+  "startHere": [
+    {
+      "title": "Pokémon list",
+      "description": "Every Pokémon on the server, and which ones are still open to pick.",
+      "route": "/pokemon"
+    },
+    {
+      "title": "Items",
+      "description": "What can be found, crafted or earned, special belongings and blessings.",
+      "route": "/items"
+    }
+  ],
   "discordLabel": "",
   "discordUrl": "",
   "linksTitle": "Links",

@@ -1,0 +1,17 @@
+{
+  "order": 802,
+  "name": "Delcatty",
+  "form": "",
+  "image": "/pokemon/delcatty.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "2|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Revive",
+  "note": "",
+  "image": "/items/revive.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Rare",
+  "description": "A strange medicine in candy form. It is capable of healing serious wounds at least to half your life, and regaining your consciousness instantly after you have been K.O.'d.",
+  "buy": 10500,
+  "sell": 9450,
+  "howToGet": "CRAFT",
+  "locations": [],
+  "ingredients": [
+    {
+      "item": "ENERGY POWDER",
+      "quantity": 1
+    },
+    {
+      "item": "ENIGMA BERRY",
+      "quantity": 1
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "order": 1012,
+  "name": "Phione",
+  "form": "",
+  "image": "/pokemon/phione.webp",
+  "status": "OPEN",
+  "generation": 4,
+  "type1": "Water",
+  "type2": "",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "MINOR LEGENDARY",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

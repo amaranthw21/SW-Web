@@ -1,0 +1,15 @@
+{
+  "name": "Light Clay",
+  "note": "",
+  "image": "/items/light-clay.webp",
+  "type": "CONSUMABLE/HELD",
+  "rarity": "Uncommon",
+  "description": "An item to be held by a Pokémon. When the holder uses protective moves like Light Screen or Reflect, their effects will last longer than usual. Is also used as a crafting material.",
+  "buy": 7500,
+  "sell": 6750,
+  "howToGet": "FIND",
+  "locations": [
+    "CERULEAN CAPE"
+  ],
+  "ingredients": []
+}

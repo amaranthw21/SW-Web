@@ -1,0 +1,17 @@
+{
+  "order": 904,
+  "name": "Trapinch",
+  "form": "",
+  "image": "/pokemon/trapinch.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Ground",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

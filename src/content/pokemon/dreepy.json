@@ -1,0 +1,17 @@
+{
+  "order": 313,
+  "name": "Dreepy",
+  "form": "",
+  "image": "/pokemon/dreepy.webp",
+  "status": "OPEN",
+  "generation": 8,
+  "type1": "Dragon",
+  "type2": "Ghost",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

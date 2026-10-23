@@ -1,0 +1,17 @@
+{
+  "order": 772,
+  "name": "Shiftry",
+  "form": "",
+  "image": "/pokemon/shiftry.webp",
+  "status": "OPEN",
+  "generation": 3,
+  "type1": "Grass",
+  "type2": "Dark",
+  "lineStatus": "FINAL EVOLUTION",
+  "stage": "3|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

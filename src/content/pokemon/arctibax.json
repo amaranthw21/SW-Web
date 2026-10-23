@@ -1,0 +1,17 @@
+{
+  "order": 379,
+  "name": "Arctibax",
+  "form": "",
+  "image": "/pokemon/arctibax.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Dragon",
+  "type2": "Ice",
+  "lineStatus": "OPEN",
+  "stage": "2|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

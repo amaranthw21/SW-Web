@@ -1,0 +1,10 @@
+{
+  "name": "Tabanata Wishing Star",
+  "pokemon": "Jirachi",
+  "image": "/belongings/tabanata-wishing-star.webp",
+  "rarity": "Special",
+  "description": "A piece of paper that you can feel contains someone's wish, but you can't remember what the wish was or who wrote it. And nothing is written on it.",
+  "locations": [
+    "ZERO RUINS"
+  ]
+}

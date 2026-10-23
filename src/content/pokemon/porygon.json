@@ -1,0 +1,17 @@
+{
+  "order": 700,
+  "name": "Porygon",
+  "form": "",
+  "image": "/pokemon/porygon.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Normal",
+  "type2": "",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "MAN-MADE",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

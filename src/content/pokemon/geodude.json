@@ -1,0 +1,17 @@
+{
+  "order": 415,
+  "name": "Geodude",
+  "form": "",
+  "image": "/pokemon/geodude.webp",
+  "status": "OPEN",
+  "generation": 1,
+  "type1": "Rock",
+  "type2": "Ground",
+  "lineStatus": "OPEN",
+  "stage": "1|3",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

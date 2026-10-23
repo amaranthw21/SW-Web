@@ -3,7 +3,7 @@
     color-scheme: light;
 
     /* Color de acento global (marco, nombres...). Se sobreescribe por dios. */
-    --accent: #c04bd8;
+    --accent: #d4a537;
 
     /* Altura de la barra: la usan la barra lateral y el scroll-margin de los
        anclas de la tabla de contenidos, para que el título no quede tapado. */
@@ -37,7 +37,7 @@ html {
        en los dos huecos que deja una imagen de fondo: mientras se descarga (en
        móvil, con datos, es un fogonazo blanco de varios cientos de ms) y al
        rebotar el scroll por encima o por debajo de la página en iOS. */
-    background-color: #14101c;
+    background-color: #17130c;
 
     /* Sin rebote elástico al llegar a los extremos.
        
@@ -74,7 +74,7 @@ html {
 
     padding: 0 16px;
 
-    background: rgba(10, 5, 20, 0.9);
+    background: rgba(14, 10, 5, 0.9);
 
     backdrop-filter: blur(8px);
 
@@ -237,9 +237,9 @@ body::before {
 
     background-image: linear-gradient(
             to right,
-            rgba(20, 16, 28, 0.94) 0%,
-            rgba(20, 16, 28, 0.88) 45%,
-            rgba(20, 16, 28, 0.55) 100%
+            rgba(23, 19, 12, 0.94) 0%,
+            rgba(23, 19, 12, 0.88) 45%,
+            rgba(23, 19, 12, 0.55) 100%
         ),
         var(--home-art);
 
@@ -488,9 +488,9 @@ body::before {
 
         background-image: linear-gradient(
                 to bottom,
-                rgba(20, 16, 28, 0.94) 0%,
-                rgba(20, 16, 28, 0.9) 55%,
-                rgba(20, 16, 28, 0.45) 100%
+                rgba(23, 19, 12, 0.94) 0%,
+                rgba(23, 19, 12, 0.9) 55%,
+                rgba(23, 19, 12, 0.45) 100%
             ),
             var(--home-art);
 
@@ -606,7 +606,7 @@ body::before {
 
 }
 
-/* Placeholder mientras no hay imagen: la inicial en magenta, centrada */
+/* Placeholder mientras no hay imagen: la inicial en dorado, centrada */
 .entry-card--empty {
     justify-content: center;
 }
@@ -621,7 +621,7 @@ body::before {
     font-size: 72px;
     font-weight: bold;
 
-    color: #c04bd8;
+    color: #d4a537;
     opacity: 0.6;
 
 }
@@ -683,7 +683,7 @@ body::before {
 
     background: rgba(31, 41, 55, 0.6);
 
-    border: 1px solid rgba(192, 75, 216, 0.45);
+    border: 1px solid rgba(212, 165, 55, 0.45);
 
     border-radius: 12px;
 
@@ -725,7 +725,7 @@ body::before {
 
     .accordion__header:hover {
 
-        background: rgba(192, 75, 216, 0.12);
+        background: rgba(212, 165, 55, 0.12);
 
     }
 
@@ -752,7 +752,7 @@ body::before {
 
 .accordion__icon {
 
-    color: #e08bf0;
+    color: #f0cf7a;
     font-size: 1.4rem;
     line-height: 1;
 
@@ -834,7 +834,7 @@ body::before {
 
     margin-top: 8px;
 
-    color: #e08bf0;
+    color: #f0cf7a;
     text-decoration: none;
     font-weight: 500;
 
@@ -868,7 +868,7 @@ body::before {
 
 .breadcrumb a:hover {
 
-    color: #e08bf0;
+    color: #f0cf7a;
 
     text-decoration: underline;
 
@@ -883,7 +883,7 @@ body::before {
 }
 
 /* Aclarado sobre el acento: así sigue el color de la ficha (país o dios) en
-   vez de quedarse en magenta cuando la página tiene otro. */
+   vez de quedarse en dorado cuando la página tiene otro. */
 .breadcrumb__current {
 
     color: color-mix(in srgb, var(--accent) 65%, white);
@@ -891,7 +891,7 @@ body::before {
 }
 
 
-/* Título de página: mayúsculas + espaciado + brillo magenta.
+/* Título de página: mayúsculas + espaciado + brillo dorado.
 
    El tamaño y el espaciado entre letras son fluidos: a 2.6rem con 4px de
    separación, un título como "TRANSFORMATIONS" se sale de una pantalla de
@@ -997,7 +997,7 @@ body::before {
 
     background-color: rgba(31, 41, 55, 0.6);
 
-    border: 2px solid var(--accent, #c04bd8);
+    border: 2px solid var(--accent, #d4a537);
 
     transition: transform 0.2s, box-shadow 0.2s;
 
@@ -1042,7 +1042,7 @@ body::before {
 
     text-align: center;
 
-    color: #e08bf0;
+    color: #f0cf7a;
 
     font-size: 1.4rem;
     letter-spacing: 2px;
@@ -1118,7 +1118,7 @@ body::before {
     margin: 0 auto 24px;
 
     border-radius: 12px;
-    border: 1px solid rgba(192, 75, 216, 0.35);
+    border: 1px solid rgba(212, 165, 55, 0.35);
 
 }
 
@@ -1161,7 +1161,7 @@ body::before {
 
         transform: translateY(-5px);
 
-        box-shadow: 0 0 18px rgba(192, 75, 216, 0.4);
+        box-shadow: 0 0 18px rgba(212, 165, 55, 0.4);
 
     }
 
@@ -1189,7 +1189,7 @@ body::before {
     font-size: 44px;
     font-weight: bold;
 
-    color: #c04bd8;
+    color: #d4a537;
     opacity: 0.6;
 
 }
@@ -1251,7 +1251,7 @@ body::before {
     flex-direction: column;
 
     background: rgba(31, 41, 55, 0.6);
-    border: 1px solid rgba(192, 75, 216, 0.45);
+    border: 1px solid rgba(212, 165, 55, 0.45);
     border-radius: 12px;
 
     overflow: hidden;
@@ -1269,7 +1269,7 @@ body::before {
 
         transform: translateY(-5px);
 
-        box-shadow: 0 0 18px rgba(192, 75, 216, 0.4);
+        box-shadow: 0 0 18px rgba(212, 165, 55, 0.4);
 
     }
 
@@ -1287,7 +1287,7 @@ body::before {
 
     background: radial-gradient(
         circle at center,
-        rgba(192, 75, 216, 0.12),
+        rgba(212, 165, 55, 0.12),
         rgba(10, 10, 14, 0.6)
     );
 
@@ -1308,7 +1308,7 @@ body::before {
 
     padding: 12px;
 
-    border-top: 1px solid rgba(192, 75, 216, 0.35);
+    border-top: 1px solid rgba(212, 165, 55, 0.35);
 
 }
 
@@ -1333,7 +1333,7 @@ body::before {
 
     background: rgba(31, 41, 55, 0.6);
 
-    border: 1px solid rgba(192, 75, 216, 0.45);
+    border: 1px solid rgba(212, 165, 55, 0.45);
 
     border-radius: 12px;
 
@@ -1362,7 +1362,7 @@ body::before {
 
     background: rgba(31, 41, 55, 0.6);
 
-    border: 1px solid rgba(192, 75, 216, 0.45);
+    border: 1px solid rgba(212, 165, 55, 0.45);
 
     border-radius: 12px;
 
@@ -1607,7 +1607,7 @@ body::before {
 
 .not-found__back a {
 
-    color: #e08bf0;
+    color: #f0cf7a;
 
     text-decoration: none;
     font-weight: 500;
@@ -1645,7 +1645,7 @@ body::before {
 }
 
 
-/* Bloque FAQ (recuadro destacado con acento magenta) — reutilizable */
+/* Bloque FAQ (recuadro destacado con acento dorado) — reutilizable */
 .faq {
 
     max-width: 1200px;
@@ -1656,7 +1656,7 @@ body::before {
 
     background: rgba(31, 41, 55, 0.6);
 
-    border: 1px solid rgba(192, 75, 216, 0.45);
+    border: 1px solid rgba(212, 165, 55, 0.45);
 
     border-radius: 12px;
 
@@ -1691,7 +1691,7 @@ body::before {
 
     margin-bottom: 8px;
 
-    color: #e08bf0;
+    color: #f0cf7a;
 
     font-size: 1.1rem;
 
@@ -1805,7 +1805,7 @@ body::before {
 
 .card a {
 
-    color: #60a5fa;
+    color: var(--accent);
 
     text-decoration: none;
 
@@ -1959,7 +1959,7 @@ body::before {
     overscroll-behavior: contain;
 
     /* Opaco a propósito: por debajo pasa el contenido de la página. */
-    background: #0b0614;
+    background: #0e0b06;
 
     border-right: 1px solid rgba(255, 255, 255, 0.1);
 
@@ -2207,7 +2207,7 @@ body::before {
 
     padding: 0 20px;
 
-    color: #c4b5fd;
+    color: #f3e3b3;
 
     text-decoration: none;
 
@@ -2230,7 +2230,7 @@ body::before {
 
         color: white;
 
-        background-color: rgba(196, 181, 253, 0.14);
+        background-color: rgba(243, 227, 179, 0.14);
 
     }
 
@@ -2329,7 +2329,7 @@ body::before {
         position: sticky;
         bottom: 0;
 
-        background: #0b0614;
+        background: #0e0b06;
 
         border: none;
         border-top: 1px solid rgba(255, 255, 255, 0.07);
@@ -3065,7 +3065,7 @@ button.region-loc {
     padding: 14px 18px;
 
     background: rgba(15, 23, 42, 0.75);
-    border: 1px solid rgba(192, 75, 216, 0.45);
+    border: 1px solid rgba(212, 165, 55, 0.45);
     border-radius: 10px;
 
 }
@@ -3675,9 +3675,9 @@ button.region-loc {
 
     padding: 6px 10px;
 
-    color: #c4b5fd;
+    color: #f3e3b3;
 
-    border: 1px solid rgba(196, 181, 253, 0.4);
+    border: 1px solid rgba(243, 227, 179, 0.4);
     border-radius: 6px;
 
     font-size: 0.9em;
@@ -3706,9 +3706,9 @@ button.region-loc {
 
         color: white;
 
-        border-color: rgba(196, 181, 253, 0.9);
+        border-color: rgba(243, 227, 179, 0.9);
 
-        background-color: rgba(196, 181, 253, 0.12);
+        background-color: rgba(243, 227, 179, 0.12);
 
     }
 
@@ -3817,7 +3817,7 @@ button.region-loc {
     margin: 18px 0 8px;
     padding: 10px 14px;
 
-    background: rgba(11, 6, 20, 0.92);
+    background: rgba(14, 11, 6, 0.92);
 
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 10px;
@@ -4208,7 +4208,7 @@ button.region-loc {
 
     border-radius: 50%;
 
-    background: #14101c;
+    background: #17130c;
     border: 2px solid rgba(255, 255, 255, 0.85);
 
 }
@@ -4409,7 +4409,7 @@ button.region-loc {
 
     padding: 8px 13px;
 
-    background: rgba(20, 16, 28, 0.7);
+    background: rgba(23, 19, 12, 0.7);
 
     border: 1px dashed rgba(255, 255, 255, 0.22);
 
@@ -4464,7 +4464,7 @@ button.region-loc {
     width: 3px;
     margin-left: -1.5px;
 
-    background: #14101c;
+    background: #17130c;
 
 }
 
@@ -4487,7 +4487,7 @@ button.region-loc {
 
     padding: 4px 12px;
 
-    background: #14101c;
+    background: #17130c;
 
     border-radius: 999px;
 
@@ -4542,7 +4542,7 @@ button.region-loc {
 
     padding: 3px 11px;
 
-    background: #14101c;
+    background: #17130c;
 
     border: 1px solid rgba(127, 176, 255, 0.5);
     border-radius: 999px;
@@ -4695,6 +4695,630 @@ button.region-loc {
     .tl-gap {
 
         height: 96px;
+
+    }
+
+}
+
+
+/* ───────────────────────── Tablas de datos ─────────────────────────
+   Pokémon y objetos: la barra de filtros y la tabla. La tabla es una <table>
+   de verdad (se lee bien con lector de pantalla y se copia a una hoja), pero
+   cuando no cabe cada fila se convierte en una tarjeta: nueve columnas no
+   caben en un móvil, y una tabla con scroll lateral se pierde dentro del
+   marco. Cada celda lleva su nombre en data-label para la versión tarjeta.
+
+   "Cuando no cabe" se mide en el propio contenedor (container query), no en la
+   pantalla: el ancho que queda depende también del marco y de si la barra
+   lateral está anclada. */
+
+.filters {
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    margin-bottom: 20px;
+    padding: 18px;
+
+    background: rgba(31, 41, 55, 0.6);
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    border-radius: 14px;
+
+}
+
+.filters__sr {
+
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    overflow: hidden;
+
+    clip-path: inset(50%);
+
+    white-space: nowrap;
+
+}
+
+.filters__search input {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px 16px;
+
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+    border-radius: 10px;
+
+    color: white;
+    font: inherit;
+
+}
+
+.filters__search input::placeholder {
+
+    color: #8b95a5;
+
+}
+
+.filters__search input:focus,
+.filters__select select:focus {
+
+    outline: none;
+
+    border-color: var(--accent);
+
+    box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 40%, transparent);
+
+}
+
+.filters__selects {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+    gap: 10px;
+
+}
+
+.filters__select {
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+}
+
+.filters__label {
+
+    color: #9aa4b2;
+
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+}
+
+.filters__select select {
+
+    padding: 8px 10px;
+
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 8px;
+
+    color: #e2e8f0;
+    font: inherit;
+    font-size: 0.9rem;
+
+}
+
+/* Un filtro puesto se ve de un vistazo: así se entiende por qué faltan filas. */
+.filters__select--on .filters__label {
+
+    color: var(--accent);
+
+}
+
+.filters__select--on select {
+
+    border-color: var(--accent);
+
+}
+
+.filters__summary {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    color: #9aa4b2;
+    font-size: 0.9rem;
+
+}
+
+.filters__clear {
+
+    padding: 6px 12px;
+
+    background: transparent;
+    border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+    border-radius: 999px;
+
+    color: var(--accent);
+    font: inherit;
+    font-size: 0.85rem;
+
+    cursor: pointer;
+
+}
+
+.filters__clear:hover {
+
+    background: color-mix(in srgb, var(--accent) 15%, transparent);
+
+}
+
+
+.data-table-wrap {
+
+    container-type: inline-size;
+
+}
+
+.data-table {
+
+    width: 100%;
+
+    border-collapse: separate;
+    border-spacing: 0;
+
+    background: rgba(31, 41, 55, 0.6);
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    border-radius: 14px;
+
+    color: #cbd5e1;
+    font-size: 0.92rem;
+
+}
+
+.data-table th {
+
+    /* La cabecera se queda pegada bajo la barra al bajar por 1.000 filas. */
+    position: sticky;
+    top: var(--navbar-h);
+    z-index: 1;
+
+    padding: 12px 8px;
+
+    background: rgba(14, 11, 6, 0.95);
+    border-bottom: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+
+    color: #f0cf7a;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: left;
+    text-transform: uppercase;
+
+}
+
+.data-table th:first-child {
+
+    border-top-left-radius: 14px;
+
+}
+
+.data-table th:last-child {
+
+    border-top-right-radius: 14px;
+
+}
+
+.data-table td {
+
+    padding: 8px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+    vertical-align: middle;
+
+}
+
+.data-table tbody tr:last-child td {
+
+    border-bottom: none;
+
+}
+
+.data-table tbody tr:nth-child(even) {
+
+    background: rgba(255, 255, 255, 0.025);
+
+}
+
+@media (hover: hover) {
+
+    .data-table tbody tr:hover {
+
+        background: color-mix(in srgb, var(--accent) 10%, transparent);
+
+    }
+
+}
+
+.data-table__num {
+
+    color: #9aa4b2;
+
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+
+}
+
+.data-table__entry {
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+}
+
+.data-table__sprite {
+
+    flex: none;
+
+    display: grid;
+    place-items: center;
+
+    width: 56px;
+    height: 56px;
+
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 10px;
+
+}
+
+.data-table__sprite img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+}
+
+.data-table__name {
+
+    color: white;
+
+    font-weight: 700;
+
+}
+
+.data-table__inline-num {
+
+    display: none;
+
+    margin-right: 6px;
+
+    color: #9aa4b2;
+
+    font-weight: 400;
+
+}
+
+.data-table__sub {
+
+    color: #9aa4b2;
+
+    font-size: 0.8rem;
+
+}
+
+.data-table__desc {
+
+    max-width: 46ch;
+
+    margin: 4px 0 0;
+
+    color: #9aa4b2;
+
+    font-size: 0.82rem;
+    line-height: 1.45;
+
+}
+
+/* "To be developed": se ve que falta, sin parecer una descripción más. */
+.data-table__desc--muted {
+
+    color: #6b7280;
+
+    font-style: italic;
+
+}
+
+.data-table__blessing {
+
+    color: #f0cf7a;
+
+    font-weight: 600;
+
+}
+
+.page-intro a {
+
+    color: var(--accent);
+
+}
+
+.data-table__tag {
+
+    margin-left: 8px;
+    padding: 1px 7px;
+
+    border: 1px solid color-mix(in srgb, var(--accent) 60%, transparent);
+    border-radius: 999px;
+
+    color: var(--accent);
+
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    vertical-align: middle;
+
+}
+
+.data-table__places {
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    font-size: 0.78rem;
+    letter-spacing: 0.5px;
+
+}
+
+.data-table__qty {
+
+    color: var(--accent);
+
+}
+
+.data-table__empty {
+
+    padding: 28px;
+
+    background: rgba(31, 41, 55, 0.6);
+    border-radius: 14px;
+
+    color: #9aa4b2;
+    text-align: center;
+
+}
+
+
+.type-badges {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+
+}
+
+.type-badge {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    padding: 2px 8px 2px 3px;
+
+    background: color-mix(in srgb, var(--type, #94a3b8) 30%, transparent);
+    border: 1px solid color-mix(in srgb, var(--type, #94a3b8) 70%, transparent);
+    border-radius: 999px;
+
+    color: white;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+
+}
+
+.type-badge img {
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+}
+
+
+.status-badge {
+
+    display: inline-block;
+
+    padding: 2px 10px;
+
+    border: 1px solid;
+    border-radius: 999px;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+
+}
+
+.status-badge--open {
+
+    background: rgba(74, 222, 128, 0.12);
+    border-color: rgba(74, 222, 128, 0.5);
+    color: #86efac;
+
+}
+
+.status-badge--pending {
+
+    background: rgba(127, 176, 255, 0.12);
+    border-color: rgba(127, 176, 255, 0.5);
+    color: #a5c8ff;
+
+}
+
+.status-badge--reserved {
+
+    background: rgba(251, 146, 60, 0.12);
+    border-color: rgba(251, 146, 60, 0.5);
+    color: #fdba74;
+
+}
+
+.status-badge--closed {
+
+    background: rgba(248, 113, 113, 0.12);
+    border-color: rgba(248, 113, 113, 0.5);
+    color: #fca5a5;
+
+}
+
+
+.rarity {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    white-space: nowrap;
+
+}
+
+.rarity img {
+
+    width: 20px;
+    height: 20px;
+
+}
+
+
+/* La versión tarjeta: cada fila es un bloque, la primera celda (imagen y
+   nombre) hace de cabecera y el resto va en dos columnas con su etiqueta. */
+@container (max-width: 899px) {
+
+    .data-table,
+    .data-table tbody,
+    .data-table tr,
+    .data-table td {
+
+        display: block;
+
+    }
+
+    .data-table {
+
+        background: none;
+        border: none;
+
+    }
+
+    .data-table thead {
+
+        display: none;
+
+    }
+
+    .data-table tbody {
+
+        display: grid;
+        gap: 12px;
+
+    }
+
+    .data-table tbody tr,
+    .data-table tbody tr:nth-child(even) {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 14px;
+
+        padding: 14px;
+
+        background: rgba(31, 41, 55, 0.72);
+        border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+        border-radius: 12px;
+
+    }
+
+    /* El tinte al pasar el ratón es de la tabla. Aquí pisaba el fondo solo en
+       las tarjetas impares (las pares ganaban por su :nth-child), así que unas
+       se doraban y otras no: en tarjetas, el aviso lo da el borde, en todas. */
+    .data-table tbody tr:hover {
+
+        background: rgba(31, 41, 55, 0.72);
+        border-color: var(--accent);
+
+    }
+
+    .data-table td {
+
+        padding: 0;
+
+        border: none;
+
+    }
+
+    .data-table td.data-table__main {
+
+        grid-column: 1 / -1;
+
+        padding-bottom: 8px;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    }
+
+    .data-table td[data-label]::before {
+
+        content: attr(data-label);
+
+        display: block;
+
+        margin-bottom: 2px;
+
+        color: #9aa4b2;
+
+        font-size: 0.68rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+
+    }
+
+    /* El número pasa de su columna a delante del nombre. */
+    .data-table--pokemon td.data-table__num:first-child {
+
+        display: none;
+
+    }
+
+    .data-table__inline-num {
+
+        display: inline;
+
+    }
+
+    .data-table__desc {
+
+        max-width: none;
 
     }
 

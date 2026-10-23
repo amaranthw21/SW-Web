@@ -1,0 +1,17 @@
+{
+  "order": 376,
+  "name": "Fomantis",
+  "form": "",
+  "image": "/pokemon/fomantis.webp",
+  "status": "OPEN",
+  "generation": 7,
+  "type1": "Grass",
+  "type2": "",
+  "lineStatus": "CAN'T EVOLVE",
+  "stage": "1|2",
+  "classification": "NORMAL",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}

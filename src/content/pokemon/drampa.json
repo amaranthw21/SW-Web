@@ -1,0 +1,17 @@
+{
+  "order": 29,
+  "name": "Drampa",
+  "form": "",
+  "image": "/pokemon/drampa.webp",
+  "status": "CLOSED",
+  "generation": 7,
+  "type1": "Normal",
+  "type2": "Dragon",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "NORMAL",
+  "claimed": true,
+  "npc": false,
+  "fusedWith": "Articuno",
+  "fakemon": false
+}

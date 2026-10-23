@@ -1,0 +1,17 @@
+{
+  "order": 526,
+  "name": "Iron Moth",
+  "form": "",
+  "image": "/pokemon/iron-moth.webp",
+  "status": "OPEN",
+  "generation": 9,
+  "type1": "Fire",
+  "type2": "Poison",
+  "lineStatus": "DOESN'T EVOLVE",
+  "stage": "NO EVOLUTION",
+  "classification": "PARADOX",
+  "claimed": false,
+  "npc": false,
+  "fusedWith": "",
+  "fakemon": false
+}
