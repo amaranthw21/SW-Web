@@ -1,0 +1,15 @@
+{
+  "name": "Whitecap Island",
+  "order": 10,
+  "underConstruction": true,
+  "image": "signo-construccion_602333-116.avif",
+  "imagePosition": "",
+  "background": "",
+  "color": "",
+  "summary": "",
+  "description": "",
+  "legendaries": [],
+  "territories": [],
+  "npcs": [],
+  "characters": []
+}

@@ -1,0 +1,113 @@
+{
+  "name": "Sleighbell Island",
+  "order": 2,
+  "underConstruction": false,
+  "image": "Lugia-Ho-oh-bg.jpg",
+  "imagePosition": "",
+  "background": "",
+  "color": "",
+  "summary": "(Example) Where the tides and the sacred flames meet.",
+  "description": "(Example text — replace it from the panel.)\n\nLong ago, Sleighbell Island was the meeting place of the guardian of the sea and the guardian of the sky. The bells that give the island its name were cast to call them both.\n\nToday the bells are silent, and nobody remembers who rang them last.",
+  "legendaries": [
+    "lugia",
+    "ho-oh",
+    "suicune",
+    "raikou",
+    "entei"
+  ],
+  "territories": [
+    {
+      "name": "Tidal Coast",
+      "description": "The western half of the island, carved by the sea.",
+      "safeZones": [
+        {
+          "name": "Harbor Town",
+          "image": "Lugia-Ho-oh-bg.jpg",
+          "description": "The island's only port. Ships from the rest of Bethath dock here."
+        },
+        {
+          "name": "Shell Beach",
+          "image": "",
+          "description": ""
+        }
+      ],
+      "dungeons": [
+        {
+          "name": "Whirl Caves",
+          "image": "Lugia-Ho-oh-bg.jpg",
+          "description": "Sea caves that flood at high tide. Something sings deep inside."
+        }
+      ]
+    },
+    {
+      "name": "Bell Highlands",
+      "description": "Hills and old temples to the east.",
+      "safeZones": [
+        {
+          "name": "Temple Village",
+          "image": "",
+          "description": "Monks still sweep the steps of the old bell tower."
+        }
+      ],
+      "dungeons": [
+        {
+          "name": "Burned Tower",
+          "image": "Lugia-Ho-oh-bg.jpg",
+          "description": "The ruins of a tower that burned one night and was never rebuilt."
+        },
+        {
+          "name": "Bell Tower Summit",
+          "image": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "Silver Strait",
+      "description": "Small islets joined by bridges.",
+      "safeZones": [
+        {
+          "name": "Bridge Market",
+          "image": "",
+          "description": ""
+        }
+      ],
+      "dungeons": []
+    }
+  ],
+  "npcs": [
+    {
+      "name": "Elder Kimono",
+      "image": "",
+      "description": "Keeper of the temple. She knows more about the bells than she lets on."
+    },
+    {
+      "name": "Harbor Master",
+      "image": "",
+      "description": ""
+    }
+  ],
+  "characters": [
+    {
+      "name": "Example OC",
+      "image": "",
+      "description": "A character tied to the island.",
+      "status": "taken",
+      "player": "A player"
+    },
+    {
+      "name": "Open slot",
+      "image": "",
+      "description": "",
+      "status": "available",
+      "player": ""
+    },
+    {
+      "name": "Reserved OC",
+      "image": "",
+      "description": "",
+      "status": "reserved",
+      "player": ""
+    }
+  ]
+}

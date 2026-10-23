@@ -1,0 +1,15 @@
+{
+  "name": "Gaia Island",
+  "order": 5,
+  "underConstruction": false,
+  "image": "Gaia-bg.jpg",
+  "imagePosition": "",
+  "background": "",
+  "color": "",
+  "summary": "",
+  "description": "",
+  "legendaries": [],
+  "territories": [],
+  "npcs": [],
+  "characters": []
+}

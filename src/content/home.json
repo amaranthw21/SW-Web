@@ -4,6 +4,11 @@
   "image": "",
   "startHere": [
     {
+      "title": "Bethath",
+      "description": "The region of Bethath and its ten islands.",
+      "route": "/bethath"
+    },
+    {
       "title": "Pokémon list",
       "description": "Every Pokémon on the server, and which ones are still open to pick.",
       "route": "/pokemon"

@@ -1,0 +1,15 @@
+{
+  "name": "Twilight Island",
+  "order": 6,
+  "underConstruction": false,
+  "image": "Twilight-bg.png",
+  "imagePosition": "",
+  "background": "",
+  "color": "",
+  "summary": "",
+  "description": "",
+  "legendaries": [],
+  "territories": [],
+  "npcs": [],
+  "characters": []
+}

@@ -5,6 +5,7 @@ import Layout from "./components/Layout";
 
 import Home from "./pages/Home";
 import ItemsHub from "./pages/ItemsHub";
+import Region from "./pages/Region";
 import Credits from "./pages/Credits";
 import NotFound from "./pages/NotFound";
 
@@ -15,6 +16,8 @@ const Pokemon = lazy(() => import("./pages/Pokemon"));
 const Items = lazy(() => import("./pages/Items"));
 const Belongings = lazy(() => import("./pages/Belongings"));
 const Blessings = lazy(() => import("./pages/Blessings"));
+// La ficha de una isla trae la lista de Pokémon (para sus legendarios).
+const Island = lazy(() => import("./pages/Island"));
 
 
 // En GitHub Pages el sitio cuelga de "/SW-Web/"; el router necesita ese
@@ -41,6 +44,16 @@ function App() {
                     <Route
                         path="/pokemon"
                         element={<Suspense><Pokemon /></Suspense>}
+                    />
+
+                    <Route
+                        path="/bethath"
+                        element={<Region />}
+                    />
+
+                    <Route
+                        path="/bethath/:islandId"
+                        element={<Suspense><Island /></Suspense>}
                     />
 
                     <Route
