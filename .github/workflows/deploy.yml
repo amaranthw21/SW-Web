@@ -1,0 +1,63 @@
+name: Deploy to GitHub Pages
+
+# Publica la web en cada push a main (y permite lanzarlo a mano).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Permisos que necesitan las Actions oficiales de Pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un despliegue a la vez; si llega otro, cancela el anterior en curso.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      # Reduce y recomprime las imágenes de dist/ antes de subirlas. Trabaja
+      # sobre la copia construida, nunca sobre public/: el repo conserva los
+      # originales y cada deploy comprime desde ellos, así que no hay pérdida
+      # acumulada. Tampoco renombra, así que ninguna ruta puede romperse.
+      - name: Optimize images
+        run: npm run optimize:images
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

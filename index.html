@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SW-Web</title>
+
+    <meta
+      name="description"
+      content="The lore archive of our RP setting."
+    />
+
+    <!--
+      Tarjeta de vista previa (Open Graph): es lo que se ve al pegar un enlace del
+      archivo en Discord, que es por donde se comparte casi todo. Sin esto solo
+      salía la URL pelada.
+
+      La dirección de la imagen va absoluta y escrita a mano a propósito: los
+      rastreadores no resuelven rutas relativas, y %BASE_URL% cubre la ruta pero
+      no el dominio. Si el sitio se muda, hay que cambiarla aquí Y en 404.html.
+
+      Ojo con el alcance: el rastreador no ejecuta React, así que lee este mismo
+      HTML para cualquier ruta. Todos los enlaces muestran esta tarjeta; una por
+      página necesitaría generar un HTML por ruta en el build.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SW-Web" />
+    <meta property="og:title" content="SW-Web" />
+    <meta
+      property="og:description"
+      content="The lore archive of our RP setting."
+    />
+    <meta property="og:url" content="https://amaranthw21.github.io/SW-Web/" />
+    <!--
+      Falta la imagen de la tarjeta. Cuando exista public/og-image.jpg (1200×630),
+      añadir aquí og:image (URL absoluta), og:image:width/height, og:image:alt y
+      twitter:card = summary_large_image. Igual en index.html y 404.html.
+    -->
+
+    <!-- Discord tiñe con esto la franja lateral de la tarjeta. -->
+    <meta name="theme-color" content="#c04bd8" />
+    <!--
+      Fallback de rutas para GitHub Pages (SPA): 404.html redirige aquí
+      codificando la ruta en la query; este script la restaura antes de que
+      arranque React. Ver https://github.com/rafgraph/spa-github-pages
+    -->
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

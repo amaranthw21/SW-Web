@@ -1,0 +1,172 @@
+.frame-container {
+
+    position: relative;
+
+    /* Grosor de las piezas del marco. Con los 70x90 fijos de antes, el marco se
+       comía casi la mitad de una pantalla de 375px, así que escala con el ancho.
+       La proporción entre los dos se mantiene (~255:330, la del SVG) para que
+       las esquinas no se deformen.
+
+       .background-overlay deriva su padding de estas dos medidas, así que el
+       texto guarda siempre la misma distancia relativa al marco. */
+    --frame-side: clamp(30px, 5.8vw, 70px);
+    --frame-cap: clamp(38px, 7.5vw, 90px);
+
+    /* El 80% de escritorio deja demasiado poco contenido en móvil, donde el
+       ancho es un recurso escaso: ahí se ocupa casi todo, dejando solo el aire
+       justo para que el marco no toque el borde de la pantalla. */
+    width: calc(100% - 20px);
+    max-width: 1200px;
+
+    margin: 20px auto;
+
+}
+
+@media (min-width: 900px) {
+
+    .frame-container {
+
+        width: 80%;
+
+        margin: 40px auto;
+
+    }
+
+}
+
+
+.container {
+
+    width: 100%;
+
+    position: relative;
+    z-index: 1;
+
+    box-sizing: border-box;
+
+}
+
+
+.frame {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: grid;
+
+    /* Las esquinas miden --frame-side x --frame-cap (definidas en
+       .frame-container, que las reduce en móvil) y el centro (1fr) rellena. */
+    grid-template-columns: var(--frame-side) 1fr var(--frame-side);
+    grid-template-rows: var(--frame-cap) 1fr var(--frame-cap);
+
+    pointer-events: none;
+
+    z-index: 10;
+
+}
+
+
+/* Todas las piezas del marco se pintan con el color de acento (--accent),
+   usando el SVG como máscara. Así el color se cambia por CSS. */
+.frame > div {
+
+    background-color: var(--accent, #c04bd8);
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+}
+
+
+/* ESQUINAS (máscara al tamaño de la celda) */
+
+.tl,
+.tr,
+.bl,
+.br {
+
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+
+}
+
+.tl {
+    grid-column: 1;
+    grid-row: 1;
+    -webkit-mask-image: url("../assets/frame/sector1.svg");
+    mask-image: url("../assets/frame/sector1.svg");
+}
+
+.tr {
+    grid-column: 3;
+    grid-row: 1;
+    -webkit-mask-image: url("../assets/frame/sector3.svg");
+    mask-image: url("../assets/frame/sector3.svg");
+}
+
+.bl {
+    grid-column: 1;
+    grid-row: 3;
+    -webkit-mask-image: url("../assets/frame/sector7.svg");
+    mask-image: url("../assets/frame/sector7.svg");
+}
+
+.br {
+    grid-column: 3;
+    grid-row: 3;
+    -webkit-mask-image: url("../assets/frame/sector9.svg");
+    mask-image: url("../assets/frame/sector9.svg");
+}
+
+
+/* BORDES HORIZONTALES (se repiten en X) */
+
+.t,
+.b {
+    -webkit-mask-repeat: repeat-x;
+    mask-repeat: repeat-x;
+    -webkit-mask-size: auto 100%;
+    mask-size: auto 100%;
+}
+
+.t {
+    grid-column: 2;
+    grid-row: 1;
+    -webkit-mask-image: url("../assets/frame/sector2.svg");
+    mask-image: url("../assets/frame/sector2.svg");
+}
+
+.b {
+    grid-column: 2;
+    grid-row: 3;
+    -webkit-mask-image: url("../assets/frame/sector8.svg");
+    mask-image: url("../assets/frame/sector8.svg");
+}
+
+
+/* BORDES VERTICALES (se repiten en Y) */
+
+.l,
+.r {
+    -webkit-mask-repeat: repeat-y;
+    mask-repeat: repeat-y;
+    -webkit-mask-size: 100% auto;
+    mask-size: 100% auto;
+}
+
+.l {
+    grid-column: 1;
+    grid-row: 2;
+    -webkit-mask-image: url("../assets/frame/sector4.svg");
+    mask-image: url("../assets/frame/sector4.svg");
+}
+
+.r {
+    grid-column: 3;
+    grid-row: 2;
+    -webkit-mask-image: url("../assets/frame/sector6.svg");
+    mask-image: url("../assets/frame/sector6.svg");
+}
+
+/* El centro (columna 2, fila 2) se queda vacío: ningún elemento lo ocupa. */

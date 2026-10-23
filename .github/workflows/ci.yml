@@ -1,0 +1,34 @@
+name: CI
+
+# Revisa las ramas antes de mezclarlas: que pase el linter y que compile.
+#
+# No se engancha al deploy a propósito. Los guardados del panel van directos a
+# main y disparan una publicación; si el linter pudiera tumbarla, un aviso de
+# código dejaría sin publicar una corrección de contenido que no tiene nada que
+# ver. Aquí avisa donde toca —en el pull request— y el deploy sigue dependiendo
+# solo de que el build funcione.
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build

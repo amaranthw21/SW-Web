@@ -1,0 +1,100 @@
+# CMS configuration (Sveltia / Decap-compatible).
+# Defines where the data comes from and goes to, and which forms the mods see.
+
+backend:
+  name: github
+  repo: amaranthw21/SW-Web
+  branch: main
+  # OAuth broker (Cloudflare Worker) that handles the "Sign In with GitHub" flow.
+  # Es el mismo que usa PU-Web: la OAuth App de GitHub no va atada a un repo.
+  # Si el worker limita los orígenes permitidos, hay que añadir el de SW-Web.
+  base_url: https://pu-web-cms-auth.amaranthw21.workers.dev
+  # Quien entra sin permiso de escritura en el repo (los nuevos) no publica
+  # directamente: el CMS le crea un fork y sus cambios llegan como pull request,
+  # que uno de los mods con permiso de escritura revisa y publica desde la
+  # página "Editorial Workflow" del panel.
+  open_authoring: true
+  # El repo es público, así que a los nuevos solo se les pide acceso a repos
+  # públicos y no a todos los suyos, privados incluidos.
+  auth_scope: public_repo
+
+# Open Authoring lo exige a nivel global. Cada colección lo vuelve a poner en
+# `simple` (más abajo) para que los mods con permiso de escritura sigan
+# guardando directo en `main`, como hasta ahora; a los nuevos eso no les afecta,
+# lo suyo pasa siempre por revisión.
+publish_mode: editorial_workflow
+
+# Nota: `local_backend` y `locale` no existen en Sveltia CMS (los ignora y avisa
+# por consola), así que no se declaran aquí. Para editar en local se usa el botón
+# "Work with Local Repository", que sale solo en localhost. El idioma del panel
+# lo toma del navegador.
+
+# Default folder where images are uploaded (each collection overrides it
+# with its own subfolder below).
+media_folder: public
+public_folder: /
+
+# Limpia el nombre del archivo al subirlo. Sin esto se guarda tal cual venga, y
+# una imagen bajada de una wiki suele traer el nombre ya codificado —el apóstrofo
+# de "Bunnie D'Coolette" llega como "%27"—. Ese nombre se guardaba literal, con
+# su porcentaje, pero el navegador descodifica la dirección antes de pedir el
+# archivo: buscaba "Bunnie D'Coolette..." y no lo encontraba, así que la imagen
+# salía rota por mucho que se volviera a subir.
+media_libraries:
+  all:
+    slugify_filename: true
+
+# Editor de texto enriquecido (campos `richtext`): solo los botones que la web
+# sabe pintar. Si el editor ofreciera encabezados, tablas o imágenes, el mod las
+# escribiría y la página las ignoraría, que es peor que no tener el botón.
+#
+# Se pone aquí una vez y vale para todos los campos, sin repetirlo por colección.
+field_defaults:
+  richtext:
+    buttons: [bold, italic, link, bulleted-list]
+    editor_components: []
+
+collections:
+  # ───────────────────────── Portada ─────────────────────────
+  # Un solo archivo, no una colección: la portada es una y no se crean más. De
+  # ahí `files` en vez de `folder`.
+  - name: pages
+    publish_mode: simple
+    label: Pages
+    files:
+      - name: home
+        label: Home page
+        file: src/content/home.json
+        format: json
+        fields:
+          - { name: greeting, label: Greeting, widget: string, hint: "The big line at the top of the front page." }
+          - { name: intro, label: Intro, widget: richtext, required: false, hint: "What this archive is, for someone arriving for the first time. Leave a blank line between paragraphs." }
+          - { name: image, label: "Header picture", widget: image, required: false, hint: "Sits behind the header, fading out towards the text. Without one the header is a plain panel." }
+          - { name: discordLabel, label: "Button label", widget: string, required: false, hint: "e.g. 'Join the Discord'. Leave empty and no button is shown." }
+          - { name: discordUrl, label: "Button link", widget: string, required: false, hint: "Where the button goes. Needs the full address, https:// included." }
+          - name: startHere
+            label: "Start here"
+            widget: list
+            required: false
+            label_singular: Card
+            summary: "{{fields.title}} → {{fields.route}}"
+            hint: "The cards under the header: where a newcomer should go first. Three or four work best."
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: description, label: Description, widget: text, required: false }
+              - { name: route, label: Link, widget: string, required: false, hint: "An address inside the site, e.g. /credits. Empty and the card isn't clickable." }
+              - { name: image, label: Picture, widget: image, required: false, hint: "Comes in from the right of the card, fading towards the text." }
+              - { name: imagePosition, label: "Image position (CSS object-position)", widget: string, required: false, hint: "e.g. 'center 20%'" }
+          - { name: linksTitle, label: "Links heading", widget: string, required: false, hint: "The heading over the links. Empty uses 'Links'." }
+          - name: links
+            label: Links
+            widget: list
+            required: false
+            label_singular: Link
+            summary: "{{fields.label}} → {{fields.url}}"
+            hint: "Everything that lives outside the archive: the Discord, art blogs, forms, other wikis. They come out as a row of buttons, in the order you put them."
+            fields:
+              - { name: label, label: Label, widget: string, hint: "What the button says, e.g. 'The Discord server'." }
+              - { name: url, label: Address, widget: string, hint: "The full address, https:// included. An address inside the site (/credits) also works and won't open a new tab." }
+              - { name: icon, label: Logo, widget: image, required: false, hint: "The site's logo. Square images look best; a transparent PNG best of all. Without one, the button shows the first letter." }
+              - { name: description, label: Description, widget: string, required: false, hint: "Not printed — it shows when the mouse rests on the button, and screen readers read it. One line: what someone finds if they click." }
