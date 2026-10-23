@@ -2,8 +2,6 @@
 
 A lore wiki for our RP setting, built with React + Vite and published on GitHub
 Pages. It follows the same model as
-[PU-Web](https://github.com/amaranthw21/PU-Web): same layout, same frame, same
-form-based editing panel.
 
 **Live site:** https://amaranthw21.github.io/SW-Web/
 **Editing panel:** https://amaranthw21.github.io/SW-Web/admin/
