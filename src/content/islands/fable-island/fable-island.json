@@ -1,0 +1,15 @@
+{
+  "name": "Fable Island",
+  "order": 8,
+  "underConstruction": false,
+  "image": "fable-bg.jpg",
+  "imagePosition": "",
+  "background": "",
+  "color": "",
+  "summary": "",
+  "description": "",
+  "legendaries": [],
+  "territories": [],
+  "npcs": [],
+  "characters": []
+}

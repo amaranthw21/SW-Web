@@ -1,0 +1,15 @@
+{
+  "name": "Bead Island",
+  "order": 3,
+  "underConstruction": false,
+  "image": "Bead-bg.jpeg",
+  "imagePosition": "",
+  "background": "",
+  "color": "",
+  "summary": "",
+  "description": "",
+  "legendaries": [],
+  "territories": [],
+  "npcs": [],
+  "characters": []
+}

@@ -659,6 +659,106 @@ body::before {
 }
 
 
+/* Variante ancha (las islas de Lore): una tarjeta por fila, como un banner. La
+   imagen sigue llenando la tarjeta, pero la banda oscura entra por la izquierda
+   en vez de por abajo, para que el nombre se lea sin tapar todo el arte. */
+.card-grid--wide {
+
+    grid-template-columns: minmax(0, 1fr);
+
+}
+
+.card-grid--wide .entry-card {
+
+    height: 200px;
+
+}
+
+@media (hover: hover) {
+
+    .card-grid--wide .entry-card:hover {
+        transform: translateY(-3px);
+    }
+
+}
+
+/* Sin enlace (una isla en construcción): se ve apagada y no se levanta al
+   pasar el ratón, para que no parezca que se puede abrir. */
+.card-grid--wide div.entry-card {
+
+    cursor: not-allowed;
+
+    filter: grayscale(0.6) brightness(0.75);
+
+}
+
+@media (hover: hover) {
+
+    .card-grid--wide div.entry-card:hover {
+        transform: none;
+    }
+
+}
+
+.card-grid--wide .entry-card--empty {
+    justify-content: flex-start;
+}
+
+.card-grid--wide .entry-card__placeholder {
+
+    left: auto;
+    right: 48px;
+    transform: translateY(-50%);
+
+    font-size: 110px;
+
+}
+
+.card-grid--wide .entry-card__body {
+
+    align-self: stretch;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    width: min(100%, 560px);
+
+    padding: 24px 28px;
+
+    background: linear-gradient(
+        to right,
+        rgba(10, 10, 14, 0.92) 0%,
+        rgba(10, 10, 14, 0.7) 55%,
+        rgba(10, 10, 14, 0)
+    );
+
+}
+
+.card-grid--wide .entry-card__body h3 {
+
+    font-size: 1.6rem;
+
+}
+
+@media (max-width: 520px) {
+
+    .card-grid--wide .entry-card {
+        height: 160px;
+    }
+
+    .card-grid--wide .entry-card__placeholder {
+        right: 24px;
+        font-size: 80px;
+    }
+
+    .card-grid--wide .entry-card__body {
+        padding: 18px;
+    }
+
+}
+
+
 /* Lista de acordeones (Energy / Powers / Transformations) */
 .accordion-list {
 
@@ -2173,6 +2273,14 @@ body::before {
 
 }
 
+.rail__sublink--disabled {
+
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+}
+
 .rail__sublink {
 
     display: flex;
@@ -2867,6 +2975,82 @@ body::before {
 
 /* El carrusel scrollea en horizontal dentro de su propia caja: la página nunca
    se desplaza de lado. */
+/* Miniaturas (los legendarios de una isla): cuadraditas y en una fila que
+   scrollea dentro de sí misma, como los carruseles, pero mucho más pequeñas. */
+.block-thumbs {
+
+    margin-top: 18px;
+
+}
+
+.block-thumbs__row {
+
+    display: flex;
+    gap: 12px;
+
+    overflow-x: auto;
+
+    margin: 0;
+    padding: 0 0 8px;
+
+    list-style: none;
+
+}
+
+.block-thumbs__item {
+
+    flex: 0 0 76px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+}
+
+.block-thumbs__frame {
+
+    display: block;
+
+    width: 76px;
+    height: 76px;
+
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+    border-radius: 10px;
+
+    background: rgba(20, 20, 28, 0.7);
+
+    overflow: hidden;
+
+}
+
+.block-thumbs__frame img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+}
+
+.block-thumbs__name {
+
+    display: block;
+
+    width: 100%;
+
+    text-align: center;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-size: 0.78rem;
+
+    color: #cbd5e1;
+
+}
+
 .region__carousel {
 
     display: flex;

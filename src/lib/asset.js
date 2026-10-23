@@ -17,6 +17,12 @@ export default function asset(path) {
         return path;
     }
 
+    // Las imágenes que empaqueta Vite (las de las islas) ya traen el base path
+    // puesto; prefijarlo otra vez daría "/SW-Web/SW-Web/...".
+    if (BASE !== "/" && path.startsWith(BASE)) {
+        return path;
+    }
+
     return BASE.replace(/\/$/, "") + "/" + path.replace(/^\//, "");
 
 }

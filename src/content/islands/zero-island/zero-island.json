@@ -1,0 +1,15 @@
+{
+  "name": "Zero Island",
+  "order": 1,
+  "underConstruction": false,
+  "image": "Zere-bg.webp",
+  "imagePosition": "",
+  "background": "",
+  "color": "",
+  "summary": "",
+  "description": "",
+  "legendaries": [],
+  "territories": [],
+  "npcs": [],
+  "characters": []
+}

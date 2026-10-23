@@ -169,6 +169,63 @@ function BlockPart({ part }){
     }
 
 
+    // Una fila de miniaturas cuadradas con su nombre debajo (los legendarios
+    // ligados a una isla). Recibe la lista ya resuelta —nombre e imagen—, así
+    // que no sabe de dónde salen.
+    if(part.type === "thumbs"){
+
+        const items = (part.items ?? []).filter(item => item?.name?.trim());
+
+        if(items.length === 0){
+            return null;
+        }
+
+        return (
+
+            <div className="block-thumbs">
+
+                <BlockTitle title={part.title} />
+
+                <ul className="block-thumbs__row">
+
+                    {
+                        items.map(item => (
+
+                            <li key={item.name} className="block-thumbs__item" title={item.tooltip || item.name}>
+
+                                <span className="block-thumbs__frame">
+
+                                    {
+                                        item.image?.trim() && (
+                                            <img
+                                                src={asset(item.image)}
+                                                loading="lazy"
+                                                alt=""
+                                                onError={e => { e.currentTarget.style.visibility = "hidden"; }}
+                                            />
+                                        )
+                                    }
+
+                                </span>
+
+                                <span className="block-thumbs__name">
+                                    {item.name}
+                                </span>
+
+                            </li>
+
+                        ))
+                    }
+
+                </ul>
+
+            </div>
+
+        );
+
+    }
+
+
     if(part.type === "regions"){
 
         return <CountryRegions part={part} />;

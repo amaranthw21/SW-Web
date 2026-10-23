@@ -99,6 +99,104 @@ collections:
               - { name: icon, label: Logo, widget: image, required: false, hint: "The site's logo. Square images look best; a transparent PNG best of all. Without one, the button shows the first letter." }
               - { name: description, label: Description, widget: string, required: false, hint: "Not printed — it shows when the mouse rests on the button, and screen readers read it. One line: what someone finds if they click." }
 
+      - name: region
+        label: Region page
+        file: src/content/region.json
+        format: json
+        fields:
+          - { name: region, label: "Region name", widget: string, hint: "The region's name, e.g. 'Bethath'. It titles its page and its entry in the sidebar." }
+          - { name: intro, label: Intro, widget: richtext, required: false, hint: "A few lines about the region, above the island cards. Leave a blank line between paragraphs." }
+
+  # ───────────────────────── Islands ─────────────────────────
+  # Las islas de la región, cada una en su carpeta con su JSON y sus imágenes
+  # al lado (src/content/islands/<isla>/<isla>.json). Cada una sale como
+  # tarjeta en la página de Bethath y en el submenú de la barra lateral, y tiene su
+  # propia página.
+  - name: islands
+    publish_mode: simple
+    label: Islands
+    label_singular: Island
+    folder: src/content/islands
+    extension: json
+    format: json
+    create: true
+    identifier_field: name
+    # Una carpeta por isla: "Zero Island" se guarda en zero-island/zero-island.json.
+    path: "{{slug}}/{{slug}}"
+    summary: "{{fields.order}} · {{fields.name}}"
+    sortable_fields: [order, name]
+    # Las imágenes se suben a la carpeta de la propia isla y el JSON guarda solo
+    # el nombre del archivo; src/data/islands.js lo convierte en su dirección.
+    media_folder: ""
+    public_folder: ""
+    fields:
+      - { name: name, label: Name, widget: string, hint: "e.g. 'Zero Island'." }
+      - { name: order, label: Order, widget: number, value_type: int, hint: "Where it sits in the list: 1 goes first." }
+      - { name: underConstruction, label: "Under construction", widget: boolean, default: false, required: false, hint: "The island shows up greyed out on the Bethath page and in the sidebar, but nobody can open it." }
+      - { name: image, label: Picture, widget: image, required: false, hint: "Shown on the island's card and at the top of its page. It's saved in the island's own folder." }
+      - { name: imagePosition, label: "Image position (CSS object-position)", widget: string, required: false, hint: "e.g. 'center 20%'" }
+      - { name: background, label: "Page background", widget: image, required: false, hint: "Fills the whole page behind the island's story. Empty uses the Picture above." }
+      - { name: color, label: "Accent color", widget: color, required: false, hint: "Tints the frame and the title on this island's own page. Empty keeps the site's gold." }
+      - { name: summary, label: Summary, widget: text, required: false, hint: "One or two lines for the card on the Bethath page." }
+      - { name: description, label: History, widget: richtext, required: false, hint: "The island's history, first thing on its page. Leave a blank line between paragraphs." }
+      # Se eligen de la colección de Pokémon: se guarda su id ("lugia") y la web
+      # saca de allí el nombre y la imagen, así que no hay que subirlas otra vez.
+      - { name: legendaries, label: "Related legendaries", widget: relation, collection: pokemon, value_field: "{{slug}}", search_fields: [name, form], display_fields: ["{{name}} {{form}}"], multiple: true, required: false, hint: "The legendaries tied to this island. They show as small squares under its history. Search them by name." }
+      - name: territories
+        label: Territories
+        widget: list
+        required: false
+        label_singular: Territory
+        summary: "{{fields.name}}"
+        hint: "Each island is split into two or three territories. Each one gets its own carousels of safe zones and dungeons."
+        fields:
+          - { name: name, label: Name, widget: string }
+          - { name: description, label: Description, widget: richtext, required: false }
+          - name: safeZones
+            label: "Safe zones"
+            widget: list
+            required: false
+            label_singular: "Safe zone"
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: image, label: Picture, widget: image, required: false, hint: "Shown in the carousel. Saved in the island's own folder." }
+              - { name: description, label: Description, widget: richtext, required: false, hint: "Opens under the carousel when someone clicks the place. Empty and the place can't be clicked." }
+          - name: dungeons
+            label: Dungeons
+            widget: list
+            required: false
+            label_singular: Dungeon
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: image, label: Picture, widget: image, required: false, hint: "Shown in the carousel. Saved in the island's own folder." }
+              - { name: description, label: Description, widget: richtext, required: false, hint: "Opens under the carousel when someone clicks the place. Empty and the place can't be clicked." }
+      - name: npcs
+        label: NPCs
+        widget: list
+        required: false
+        label_singular: NPC
+        summary: "{{fields.name}}"
+        hint: "The NPCs who live on the island. Without a picture they get the generic silhouette."
+        fields:
+          - { name: name, label: Name, widget: string }
+          - { name: image, label: Picture, widget: image, required: false, hint: "Shown in the carousel. Saved in the island's own folder." }
+          - { name: description, label: Description, widget: richtext, required: false, hint: "Opens under the carousel when someone clicks them. Empty and they can't be clicked." }
+      - name: characters
+        label: "Related characters"
+        widget: list
+        required: false
+        label_singular: Character
+        summary: "{{fields.name}} — {{fields.status}}"
+        hint: "Characters tied to this island. Without a picture they get the generic silhouette."
+        fields:
+          - { name: name, label: Name, widget: string }
+          - { name: image, label: Picture, widget: image, required: false, hint: "Shown in the carousel. Saved in the island's own folder." }
+          - { name: description, label: Description, widget: richtext, required: false, hint: "Opens under the carousel when someone clicks them. Empty and they can't be clicked." }
+          - { name: status, label: Status, widget: select, required: false, default: available, options: [{ label: Available, value: available }, { label: Reserved, value: reserved }, { label: "In use", value: taken }] }
+          - { name: player, label: "Played by", widget: string, required: false, hint: "Only for Reserved or In use." }
+
   # ───────────────────────── Pokémon ─────────────────────────
   # Uno por archivo, importados del Excel (scripts/import-excel.py). Las
   # opciones de los desplegables son las de la pestaña VALUES y tienen que

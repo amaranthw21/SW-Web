@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import asset from "../lib/asset";
+import islands from "../data/islands";
+import { regionName } from "../data/region";
 
 import {
     HomeIcon,
+    LoreIcon,
     PokemonIcon,
     ItemsIcon,
     CreditsIcon,
@@ -17,12 +20,23 @@ import {
 // nuevo desde el panel aparece aquí solo.
 //
 // Una sección con `children` despliega un submenú. Un hijo sin `to` se pinta
-// como rótulo de grupo en vez de como enlace.
+// como rótulo de grupo en vez de como enlace, y uno con `disabled` (una isla en
+// construcción) como una entrada apagada que no lleva a ninguna parte.
 const SECTIONS = [
     {
         to: "/",
         label: "Home",
         icon: <HomeIcon />
+    },
+    {
+        to: "/bethath",
+        label: regionName,
+        icon: <LoreIcon />,
+        children: islands.map(island => ({
+            to: `/bethath/${island.id}`,
+            label: island.name,
+            disabled: island.underConstruction
+        }))
     },
     {
         to: "/pokemon",
@@ -188,7 +202,15 @@ export default function Sidebar({ menuOpen, onNavigate, pinned, onTogglePin }){
                                                     <li key={child.to ?? `head-${child.label}`}>
 
                                                         {
-                                                            child.to
+                                                            child.disabled
+                                                                ? <span
+                                                                      className="rail__sublink rail__sublink--disabled"
+                                                                      aria-disabled="true"
+                                                                      title="Under construction"
+                                                                  >
+                                                                      {child.label}
+                                                                  </span>
+                                                                : child.to
                                                                 ? <NavLink
                                                                       to={child.to}
                                                                       className="rail__sublink"
