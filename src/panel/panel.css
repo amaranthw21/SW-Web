@@ -1018,3 +1018,61 @@ select.panel-input option {
     margin-right: auto;
 
 }
+
+
+/* ───────── Buscador global ───────── */
+
+.panel-search {
+
+    margin-bottom: 16px;
+
+}
+
+.panel-search__input {
+
+    padding: 12px 14px;
+
+    font-size: 1.05em;
+
+}
+
+.panel-search__results {
+
+    margin-top: 8px;
+
+}
+
+.panel-search__results a {
+
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+
+}
+
+.panel-search__kind {
+
+    flex: none;
+
+    min-width: 96px;
+
+    color: var(--panel-muted);
+
+    font-size: 0.8em;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.04em;
+
+}
+
+@media (max-width: 560px) {
+
+    .panel-search__results a {
+
+        flex-direction: column;
+        gap: 2px;
+
+    }
+
+}
