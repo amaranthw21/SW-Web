@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 
+import { charactersOf } from "../data/characters";
 import islands from "../data/islands";
 import pokemon from "../data/pokemon";
 import { regionName } from "../data/region";
@@ -21,9 +22,27 @@ function filled(entries){
 }
 
 
+// Un personaje de la colección Characters, con la forma que espera el carrusel.
+// Al pulsarlo se abre su resumen con el enlace a su ficha (o va directo a la
+// ficha si no tiene resumen).
+function toCarousel(character){
+
+    return {
+        name: character.name,
+        image: character.image,
+        description: character.summary,
+        status: character.kind === "player" ? character.status : "",
+        player: character.player,
+        link: `/characters/${character.id}`
+    };
+
+}
+
+
 // Las secciones de una isla, en este orden: su historia, sus territorios (cada
 // uno con un carrusel de zonas seguras y otro de dungeons), sus NPCs y los
-// personajes relacionados con ella.
+// personajes de jugadores. Estos dos últimos salen de la colección Characters:
+// cada personaje dice de qué isla es.
 //
 // No se escriben como bloques libres en el panel —cada isla tiene siempre las
 // mismas—, pero se pintan con los mismos bloques y carruseles que las fichas de
@@ -83,7 +102,8 @@ function islandBlocks(island){
     }
 
 
-    const npcs = filled(island.npcs);
+    const people = charactersOf(island.id);
+    const npcs = people.filter(character => character.kind === "npc").map(toCarousel);
 
     if(npcs.length > 0){
 
@@ -95,7 +115,7 @@ function islandBlocks(island){
     }
 
 
-    const characters = filled(island.characters);
+    const characters = people.filter(character => character.kind === "player").map(toCarousel);
 
     if(characters.length > 0){
 

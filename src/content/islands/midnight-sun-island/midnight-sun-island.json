@@ -1,5 +1,5 @@
 {
-  "name": "Twilight Island",
+  "name": "Midnight Sun Island",
   "order": 6,
   "underConstruction": false,
   "image": "Twilight-bg.png",
@@ -9,7 +9,5 @@
   "summary": "",
   "description": "",
   "legendaries": [],
-  "territories": [],
-  "npcs": [],
-  "characters": []
+  "territories": []
 }

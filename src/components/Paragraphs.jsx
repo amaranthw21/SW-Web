@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 
@@ -22,6 +23,9 @@ import { Link } from "react-router-dom";
 // no hay HTML que inyectar ni nada que sanear: lo que no encaje con la sintaxis
 // se queda tal cual está escrito.
 //
+// Además, `entre comillas invertidas` se resalta: las fichas de personaje lo
+// usan para los números de las habilidades y los movimientos (`[-25%]`).
+//
 // La cursiva solo va con asteriscos, no con guiones bajos: los guiones bajos
 // aparecen en nombres de archivo de imágenes y no queremos que una ruta escrita
 // en un texto acabe en cursiva.
@@ -35,7 +39,7 @@ import { Link } from "react-router-dom";
 // contenido de una negrita o de un enlace, la llamada de dentro le pisaría la
 // posición a la de fuera y el recorrido no avanzaría nunca. matchAll trabaja
 // sobre una copia, así que la recursión es segura.
-const INLINE = /\*\*([\s\S]+?)\*\*|\*([\s\S]+?)\*|\[([^\]]+)\]\(([^)\s]+)\)/g;
+const INLINE = /\*\*([\s\S]+?)\*\*|\*([\s\S]+?)\*|\[([^\]]+)\]\(([^)\s]+)\)|`([^`]+)`/g;
 
 
 // El espacio detrás del marcador es lo que distingue una viñeta de una cursiva
@@ -76,9 +80,11 @@ function inline(line){
             nodes.push(line.slice(last, match.index));
         }
 
-        const [full, bold, italic, label, href] = match;
+        const [full, bold, italic, label, href, stat] = match;
 
-        if(bold !== undefined){
+        if(stat !== undefined){
+            nodes.push(<span key={match.index} className="paragraph-stat">{stat}</span>);
+        } else if(bold !== undefined){
             nodes.push(<strong key={match.index}>{inline(bold)}</strong>);
         } else if(italic !== undefined){
             nodes.push(<em key={match.index}>{inline(italic)}</em>);
@@ -103,7 +109,10 @@ function inline(line){
 }
 
 
-export default function Paragraphs({ text, className }){
+// `lineBreaks` respeta los saltos de línea sueltos dentro de un párrafo (sin
+// él se juntan con un espacio, que es lo normal en un texto). Lo usa la
+// historia de los personajes, que a veces va en verso.
+export default function Paragraphs({ text, className, lineBreaks }){
 
     return (text ?? "")
         .split(/\n\s*\n/)
@@ -167,7 +176,16 @@ export default function Paragraphs({ text, className }){
                         key={`${i}-${j}`}
                         className={className ? `paragraph ${className}` : "paragraph"}
                     >
-                        {inline(chunk.lines.join(" "))}
+                        {
+                            lineBreaks
+                                ? chunk.lines.map((line, k) => (
+                                      <Fragment key={k}>
+                                          {k > 0 && <br />}
+                                          {inline(line)}
+                                      </Fragment>
+                                  ))
+                                : inline(chunk.lines.join(" "))
+                        }
                     </p>
 
                 );

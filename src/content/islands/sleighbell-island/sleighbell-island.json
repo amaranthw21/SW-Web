@@ -74,40 +74,5 @@
       ],
       "dungeons": []
     }
-  ],
-  "npcs": [
-    {
-      "name": "Elder Kimono",
-      "image": "",
-      "description": "Keeper of the temple. She knows more about the bells than she lets on."
-    },
-    {
-      "name": "Harbor Master",
-      "image": "",
-      "description": ""
-    }
-  ],
-  "characters": [
-    {
-      "name": "Example OC",
-      "image": "",
-      "description": "A character tied to the island.",
-      "status": "taken",
-      "player": "A player"
-    },
-    {
-      "name": "Open slot",
-      "image": "",
-      "description": "",
-      "status": "available",
-      "player": ""
-    },
-    {
-      "name": "Reserved OC",
-      "image": "",
-      "description": "",
-      "status": "reserved",
-      "player": ""
-    }
   ]
 }

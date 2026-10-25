@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Paragraphs from "./Paragraphs";
 import asset from "../lib/asset";
 
@@ -95,6 +96,19 @@ function Location({ location, isOpen, onToggle, fallbackImage }){
         </>
 
     );
+
+
+    // Un personaje con ficha y sin resumen va directo a su ficha: abrir un panel
+    // vacío solo para pulsar otro enlace sería un paso de más.
+    if(!canExpand && location.link){
+
+        return (
+            <Link to={location.link} className="region-loc" title={statusText || undefined}>
+                {inner}
+            </Link>
+        );
+
+    }
 
 
     if(!canExpand){
@@ -200,6 +214,14 @@ function Region({ region, fallbackImage }){
                                         text={open.description}
                                         className="region__panel-text"
                                     />
+
+                                    {
+                                        open.link && (
+                                            <Link to={open.link} className="region__panel-link">
+                                                View profile →
+                                            </Link>
+                                        )
+                                    }
 
                                 </div>
 
