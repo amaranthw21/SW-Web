@@ -67,6 +67,54 @@ function Tags({ items }){
 }
 
 
+// Muchas entradas de gustos y miedos van como "Título: explicación"
+// ("Company: Stralende likes the presence…"). Se parte por los primeros dos
+// puntos solo si lo de delante es corto, como un título: "Note: see below" sí,
+// una frase larga que lleve dos puntos por el medio no.
+const TERM = /^([^:]{1,40}):\s+(\S[\s\S]*)$/;
+
+function splitEntry(item){
+
+    const match = item.match(TERM);
+
+    return match ? { term: match[1].trim(), text: match[2].trim() } : { term: "", text: item };
+
+}
+
+
+// Una lista "de explicar" (con títulos o con frases largas) no cabe en una
+// columna estrecha: va a todo el ancho, con cada entrada en su tarjeta. Las de
+// dos o tres palabras ("Sunny days") se quedan en columnas, que es lo que
+// mejor les sienta.
+function isDetailed(items){
+
+    return items.some(item => TERM.test(item) || item.length > 60);
+
+}
+
+
+function DetailedList({ title, items }){
+
+    return (
+        <div className="character-notes">
+            <h3 className="block-part__title">{title}</h3>
+            <ul className="character-notes__list">
+                {items.map(item => {
+                    const { term, text } = splitEntry(item);
+                    return (
+                        <li key={item} className="character-note">
+                            {term && <strong className="character-note__term">{term}</strong>}
+                            <span className="character-note__text">{text}</span>
+                        </li>
+                    );
+                })}
+            </ul>
+        </div>
+    );
+
+}
+
+
 function Personality({ character }){
 
     const traits = filled(character.traits);
@@ -77,6 +125,9 @@ function Personality({ character }){
         { title: "Fears / phobias", items: filled(character.fears) }
     ].filter(list => list.items.length > 0);
 
+    const compact = lists.filter(list => !isDetailed(list.items));
+    const detailed = lists.filter(list => isDetailed(list.items));
+
     return (
 
         <>
@@ -84,9 +135,9 @@ function Personality({ character }){
             {traits.length > 0 && <Tags items={traits} />}
 
             {
-                lists.length > 0 && (
+                compact.length > 0 && (
                     <div className="character-lists">
-                        {lists.map(list => (
+                        {compact.map(list => (
                             <div key={list.title}>
                                 <h3 className="block-part__title">{list.title}</h3>
                                 <ul className="paragraph-list">
@@ -97,6 +148,8 @@ function Personality({ character }){
                     </div>
                 )
             }
+
+            {detailed.map(list => <DetailedList key={list.title} title={list.title} items={list.items} />)}
 
             {
                 character.personality?.trim() && (

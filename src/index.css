@@ -6090,3 +6090,57 @@ button.region-loc {
     right: 16px;
 
 }
+
+
+/* Gustos, disgustos y miedos que se explican ("Company: …"): a todo el ancho,
+   cada uno en su tarjeta con el título resaltado. */
+.character-notes {
+
+    margin-bottom: 18px;
+
+}
+
+.character-notes__list {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 10px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+}
+
+.character-note {
+
+    padding: 10px 14px;
+
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-left: 3px solid color-mix(in srgb, var(--accent) 70%, transparent);
+    border-radius: 0 8px 8px 0;
+
+    background: rgba(31, 41, 55, 0.45);
+
+    line-height: 1.5;
+
+}
+
+.character-note__term {
+
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: var(--accent);
+
+}
+
+.character-note__text {
+
+    color: #cbd5e1;
+
+    font-size: 0.95rem;
+
+}
