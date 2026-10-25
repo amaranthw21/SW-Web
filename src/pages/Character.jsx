@@ -195,8 +195,8 @@ function AbilitiesAndMoves({ abilities, moves }){
                         <ul className="character-moves">
                             {moves.map(move => (
                                 <li key={move.name} className="character-move">
-                                    {/* Tres columnas, como las habilidades: nombre, datos
-                                        (categoría, tipo, PP) y descripción. */}
+                                    {/* Una columna, tres filas: nombre, datos (categoría,
+                                        tipo, PP) y descripción. */}
                                     <span className="character-move__name">{move.name}</span>
                                     <span className="character-move__tags">
                                         {move.category && (

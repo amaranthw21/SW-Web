@@ -5712,16 +5712,14 @@ button.region-loc {
 
 }
 
-/* Movimientos en tres columnas: nombre, datos (categoría, tipo y PP) y
-   descripción. Antes los datos iban al otro extremo de la fila, y en una
-   pantalla ancha quedaban lejísimos del nombre. En pantallas medianas los
-   datos pasan debajo del nombre. */
+/* Movimientos en una sola columna, en tres filas: el nombre, debajo sus datos
+   (categoría, tipo y PP) y debajo la descripción. Antes los datos iban al otro
+   extremo de la fila, y en una pantalla ancha quedaban lejísimos del nombre. */
 .character-move {
 
     display: grid;
-    grid-template-columns: minmax(120px, 190px) minmax(130px, 210px) minmax(0, 1fr);
-    align-items: start;
-    gap: 6px 24px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
 
     padding: 14px 0;
 
@@ -5729,43 +5727,9 @@ button.region-loc {
 
 }
 
-@media (max-width: 900px) {
-
-    /* La primera fila se ciñe al nombre: la descripción ocupa las dos filas y,
-       si no, el alto se repartiría y los datos quedarían lejos del nombre. */
-    .character-move {
-
-        grid-template-columns: minmax(130px, 200px) minmax(0, 1fr);
-        grid-template-rows: auto 1fr;
-
-    }
-
-    .character-move__name {
-
-        grid-column: 1;
-
-    }
-
-    .character-move__tags {
-
-        grid-column: 1;
-        grid-row: 2;
-
-    }
-
-    .character-move__body {
-
-        grid-column: 2;
-        grid-row: 1 / span 2;
-
-    }
-
-}
-
 @media (max-width: 640px) {
 
-    .character-ability,
-    .character-move {
+    .character-ability {
 
         grid-template-columns: minmax(0, 1fr);
 
@@ -5774,13 +5738,6 @@ button.region-loc {
     .character-ability__head {
 
         position: static;
-
-    }
-
-    .character-move__body {
-
-        grid-column: 1;
-        grid-row: auto;
 
     }
 
