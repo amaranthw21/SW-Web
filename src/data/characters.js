@@ -58,6 +58,9 @@ const characters = Object.entries(modules)
             ...data,
             id,
             kind: data.kind === "player" ? "player" : "npc",
+            // Las islas que guarda. Antes era una casilla ("guardián de su
+            // isla"); un JSON que aún la tenga se lee igual.
+            guardianOf: data.guardianOf ?? (data.guardian && data.island ? [data.island] : []),
             image: resolveImage(id, data.image),
             gallery: (data.gallery ?? [])
                 .map(item => ({ ...item, image: resolveImage(id, item?.image) }))
@@ -67,12 +70,23 @@ const characters = Object.entries(modules)
     .sort((a, b) => a.name.localeCompare(b.name));
 
 
-// Los de una isla, con los guardianes delante: es lo primero que se quiere ver.
+// Los de una isla: los que viven en ella y los que la guardan, con los
+// guardianes delante, que es lo primero que se quiere ver.
 export function charactersOf(islandId){
 
+    const guards = character => character.guardianOf.includes(islandId);
+
     return characters
-        .filter(character => character.island === islandId)
-        .sort((a, b) => Number(Boolean(b.guardian)) - Number(Boolean(a.guardian)));
+        .filter(character => character.island === islandId || guards(character))
+        .sort((a, b) => Number(guards(b)) - Number(guards(a)));
+
+}
+
+
+// Todas las islas con las que tiene que ver: la suya y las que guarda.
+export function islandsOf(character){
+
+    return [...new Set([character.island, ...character.guardianOf].filter(Boolean))];
 
 }
 
