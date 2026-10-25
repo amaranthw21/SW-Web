@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import characters, { CHARACTER_STATUSES, KINDS } from "../data/characters";
@@ -5,6 +6,7 @@ import islands from "../data/islands";
 import pokemon from "../data/pokemon";
 import ContentBlock from "../components/ContentBlock";
 import ContentToc from "../components/ContentToc";
+import Lightbox from "../components/Lightbox";
 import Paragraphs from "../components/Paragraphs";
 import TypeBadge from "../components/TypeBadge";
 import NotFound from "./NotFound";
@@ -161,16 +163,16 @@ function AbilitiesAndMoves({ abilities, moves }){
 }
 
 
-function Gallery({ items }){
+function Gallery({ items, onOpen }){
 
     return (
         <div className="character-gallery">
             {items.map((item, i) => (
                 <figure key={i} className="character-gallery__item">
-                    {/* Abre la imagen entera en otra pestaña: aquí se ve recortada. */}
-                    <a href={asset(item.image)} target="_blank" rel="noreferrer">
+                    {/* Aquí se ve recortada; al pulsarla se abre entera en el visor. */}
+                    <button type="button" className="zoomable" onClick={() => onOpen(i)} aria-label={`View picture ${i + 1} larger`}>
                         <img src={asset(item.image)} alt="" loading="lazy" />
-                    </a>
+                    </button>
                     {item.credit?.trim() && <figcaption>{item.credit}</figcaption>}
                 </figure>
             ))}
@@ -182,7 +184,7 @@ function Gallery({ items }){
 
 // Las secciones de la ficha, en el orden del documento de personaje. Una que
 // esté vacía no sale, ni en la página ni en el índice.
-function characterBlocks(character){
+function characterBlocks(character, openImage){
 
     const blocks = [];
 
@@ -218,7 +220,7 @@ function characterBlocks(character){
     if(character.gallery.length > 0){
         blocks.push({
             title: "Appearance",
-            parts: [{ type: "node", node: <Gallery items={character.gallery} /> }]
+            parts: [{ type: "node", node: <Gallery items={character.gallery} onOpen={openImage} /> }]
         });
     }
 
@@ -227,7 +229,7 @@ function characterBlocks(character){
 }
 
 
-function Infobox({ character, island, guarded, species }){
+function Infobox({ character, island, guarded, species, onOpenPortrait }){
 
     const types = [character.type1, character.type2].filter(type => type?.trim());
     const status = character.kind === "player" && character.status && character.status !== "available"
@@ -277,12 +279,20 @@ function Infobox({ character, island, guarded, species }){
 
             <h2 className="infobox__title">{character.name}</h2>
 
-            <img
-                className="infobox__flag character-portrait"
-                src={asset(character.image?.trim() || CHARACTER_PLACEHOLDER)}
-                alt=""
-                onError={e => { e.currentTarget.src = asset(CHARACTER_PLACEHOLDER); }}
-            />
+            {
+                character.image?.trim()
+                    ? (
+                        <button type="button" className="zoomable character-portrait-button" onClick={onOpenPortrait} aria-label="View portrait larger">
+                            <img
+                                className="infobox__flag character-portrait"
+                                src={asset(character.image)}
+                                alt=""
+                                onError={e => { e.currentTarget.src = asset(CHARACTER_PLACEHOLDER); }}
+                            />
+                        </button>
+                    )
+                    : <img className="infobox__flag character-portrait" src={asset(CHARACTER_PLACEHOLDER)} alt="" />
+            }
 
             {character.image && character.imageCredit?.trim() && (
                 <p className="character-credit">{character.imageCredit}</p>
@@ -317,6 +327,10 @@ export default function Character(){
         .map(id => islands.find(entry => entry.id === id))
         .filter(Boolean);
 
+    // Imagen abierta en el visor (null: cerrado). El retrato y la galería van en
+    // el mismo visor, así se puede pasar de uno a otras con las flechas.
+    const [viewing, setViewing] = useState(null);
+
     // De qué isla toma el fondo: la suya, o si no tiene, la primera que guarda.
     const home = island ?? guarded[0];
 
@@ -334,7 +348,14 @@ export default function Character(){
     }
 
     const species = speciesOf(character);
-    const blocks = characterBlocks(character);
+
+    const pictures = [
+        ...(character.image?.trim() ? [{ image: character.image, caption: character.imageCredit?.trim(), alt: character.name }] : []),
+        ...character.gallery.map(item => ({ image: item.image, caption: item.credit?.trim(), alt: character.name }))
+    ];
+    const galleryStart = character.image?.trim() ? 1 : 0;
+
+    const blocks = characterBlocks(character, i => setViewing(galleryStart + i));
 
     // La línea bajo el título: fusión, especies e isla, lo que lo sitúa de un
     // vistazo. Lo que falte se omite.
@@ -373,13 +394,21 @@ export default function Character(){
 
                 </div>
 
-                <Infobox character={character} island={island} guarded={guarded} species={species} />
+                <Infobox
+                    character={character}
+                    island={island}
+                    guarded={guarded}
+                    species={species}
+                    onOpenPortrait={() => setViewing(0)}
+                />
 
             </div>
 
             <div className="country-body">
                 {blocks.map(block => <ContentBlock key={block.id} block={block} />)}
             </div>
+
+            <Lightbox items={pictures} index={viewing} onClose={() => setViewing(null)} onChange={setViewing} />
 
         </div>
 
