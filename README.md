@@ -1,7 +1,7 @@
 # SW-Web — RP Lore Archive
 
 A lore wiki for our RP setting, built with React + Vite and published on GitHub
-Pages. It follows the same model as
+Pages.
 
 **Live site:** https://amaranthw21.github.io/SW-Web/
 **Editing panel:** https://amaranthw21.github.io/SW-Web/panel
@@ -47,7 +47,7 @@ Carried over from PU-Web and ready to reuse when sections are added:
 2. Pages in `src/pages/` and routes in `src/App.jsx`.
 3. An entry in `SECTIONS` in `src/components/Sidebar.jsx` (icon in
    `NavIcons.jsx`).
-4. A collection in `public/admin/config.yml` so mods can edit it.
+4. A collection in `src/panel/config.yml` so admins can edit it.
 
 ## Development
 
@@ -59,17 +59,16 @@ npm run dev
 `npm run lint` and `npm run build` are what CI runs on pull requests. Every push
 to `main` deploys to GitHub Pages (`.github/workflows/deploy.yml`).
 
-## Panel for admins without GitHub
+## Editing panel
 
-`/panel` is a second editing panel with the same forms (it reads
-`public/admin/config.yml`), for admins who sign in with a user name and
-password instead of GitHub. A Cloudflare Worker in `worker/` makes the commits
-for them. Setup and limits are in [`worker/README.md`](worker/README.md). In
-`npm run dev` it works with no setup: password `dev`.
+`/panel` (the **Admin** button) is where admins edit the content with forms.
+They sign in with a user name and password: owners are set once in the
+terminal and invite everyone else from the panel. A Cloudflare Worker in
+`worker/` makes the commits for them; their edits arrive as a pull request.
+The forms are defined in `src/panel/config.yml`. Setup and limits are in
+[`worker/README.md`](worker/README.md). In `npm run dev` it works with no
+setup: any name, password `dev`, and edits write to your local files.
 
 ## One-time setup on GitHub
 
 - **Settings → Pages → Source: GitHub Actions.**
-- The CMS signs in through the same OAuth worker as PU-Web
-  (`base_url` in `public/admin/config.yml`). If the worker restricts allowed
-  origins or repos, add SW-Web there.

@@ -345,7 +345,7 @@ function RelationWidget({ id, field, value, onChange, ctx }){
 }
 
 
-// Tres formas, como en Sveltia: con `fields` es una lista de objetos, con
+// Tres formas, como en config.yml: con `fields` es una lista de objetos, con
 // `field` una lista de valores sueltos (p. ej. lugares) y sin nada, de textos.
 function ListWidget({ field, value, onChange, ctx }){
 

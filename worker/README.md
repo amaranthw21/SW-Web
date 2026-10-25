@@ -18,8 +18,8 @@ There are two kinds of account:
 Nobody ever sees anyone else's password: only a hash is stored. Anyone can
 change their own from the **Account** page (click your name in the top bar).
 
-The forms come from `public/admin/config.yml`, the same file Sveltia uses, so
-both panels always show the same fields.
+The forms come from `src/panel/config.yml`: add a field there and it shows up
+in the panel.
 
 It can only touch `src/content/` and `public/`, and only JSON and image files.
 Even someone holding a stolen session couldn't change code or workflows.
@@ -95,15 +95,14 @@ In `wrangler.toml`:
 - `EDIT_BRANCH = "panel-edits"` (the default): saves go to that branch and
   collect in one pull request. Someone with GitHub access merges it and the site
   updates. Good while the admins are new to the panel.
-- `EDIT_BRANCH = "main"`: saves go live with the next deploy (~2 minutes), like
-  the mods' edits in Sveltia.
+- `EDIT_BRANCH = "main"`: saves go live with the next deploy (~2 minutes).
 
 Run `npx wrangler deploy` after changing it.
 
 ## Limits
 
 - No limit on login attempts yet: passwords must be at least 10 characters.
-- No deleting entries from the panel. That's done in Sveltia or on GitHub.
+- No deleting entries from the panel. That's done on GitHub (delete the file).
 - Uploaded pictures are saved right away, even if the entry is never saved.
 - If two admins edit the same file at once, the second one to save is told to
   reload instead of overwriting the first one's changes.

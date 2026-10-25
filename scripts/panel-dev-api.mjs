@@ -1,7 +1,7 @@
 // Backend del panel para `npm run dev`: las mismas rutas que el Worker
 // (worker/src/index.js), pero leyendo y escribiendo los archivos del repo en
-// este ordenador en vez de hacer commits. Es el equivalente al "Work with Local
-// Repository" de Sveltia: se edita en local y luego se hace el commit a mano.
+// este ordenador en vez de hacer commits: se edita en local y luego se hace el
+// commit a mano.
 //
 // Entra cualquier nombre con la contraseña "dev", como dueña. Las invitaciones
 // y las cuentas que se crean con ellas se guardan en memoria y se pierden al

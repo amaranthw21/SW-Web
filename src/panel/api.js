@@ -157,7 +157,7 @@ export async function readJson(session, path){
 }
 
 
-// Mismo formato que dejaba Sveltia (dos espacios y salto de línea al final),
+// Mismo formato que el resto del contenido (dos espacios y salto de línea al final),
 // para que un guardado sin cambios no salga como diff.
 export function writeJson(session, path, data, sha, message){
 
