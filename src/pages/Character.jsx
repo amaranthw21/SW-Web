@@ -175,9 +175,13 @@ function AbilitiesAndMoves({ abilities, moves }){
                     <div className="character-abilities">
                         {abilities.map(ability => (
                             <div key={`${ability.slot}-${ability.name}`} className="character-ability">
-                                {ability.slot?.trim() && <p className="character-ability__slot">{ability.slot}</p>}
-                                <p className="character-ability__name">{ability.name}</p>
-                                <Paragraphs text={ability.description} className="character-ability__text" />
+                                <div className="character-ability__head">
+                                    {ability.slot?.trim() && <p className="character-ability__slot">{ability.slot}</p>}
+                                    <p className="character-ability__name">{ability.name}</p>
+                                </div>
+                                <div className="character-ability__body">
+                                    <Paragraphs text={ability.description} className="character-ability__text" />
+                                </div>
                             </div>
                         ))}
                     </div>
