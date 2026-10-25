@@ -36,6 +36,24 @@ function speciesOf(character){
 }
 
 
+// "A", "A & B", "A, B & C".
+function joinNames(names){
+
+    return names.length > 1 ? `${names.slice(0, -1).join(", ")} & ${names.at(-1)}` : names.join("");
+
+}
+
+
+// Una isla en construcción aún no tiene página: se nombra sin enlace.
+function IslandLink({ island }){
+
+    return island.underConstruction
+        ? island.name
+        : <Link to={`/bethath/${island.id}`}>{island.name}</Link>;
+
+}
+
+
 function Tags({ items }){
 
     return (
@@ -209,7 +227,7 @@ function characterBlocks(character){
 }
 
 
-function Infobox({ character, island, species }){
+function Infobox({ character, island, guarded, species }){
 
     const types = [character.type1, character.type2].filter(type => type?.trim());
     const status = character.kind === "player" && character.status && character.status !== "available"
@@ -242,11 +260,15 @@ function Infobox({ character, island, species }){
         )],
         ["Type", types.length > 0 && <span className="type-badges">{types.map(type => <TypeBadge key={type} type={type} />)}</span>],
         ["Hidden type", character.hiddenType?.trim() && <TypeBadge type={character.hiddenType} />],
-        [character.guardian ? "Guardian of" : "Island", island && (
-            island.underConstruction
-                ? island.name
-                : <Link to={`/bethath/${island.id}`}>{island.name}</Link>
-        )]
+        ["Guardian of", guarded.length > 0 && (
+            <>
+                {guarded.map(entry => (
+                    <span key={entry.id} className="infobox__line"><IslandLink island={entry} /></span>
+                ))}
+            </>
+        )],
+        // Su isla, si no es ya una de las que guarda (no se repite).
+        ["Island", island && !character.guardianOf.includes(island.id) && <IslandLink island={island} />]
     ].filter(([, value]) => value);
 
     return (
@@ -291,14 +313,20 @@ export default function Character(){
 
     const character = characters.find(entry => entry.id === characterId);
     const island = islands.find(entry => entry.id === character?.island);
+    const guarded = (character?.guardianOf ?? [])
+        .map(id => islands.find(entry => entry.id === id))
+        .filter(Boolean);
+
+    // De qué isla toma el fondo: la suya, o si no tiene, la primera que guarda.
+    const home = island ?? guarded[0];
 
     useDocumentTitle(character?.name ?? "Character not found");
 
     // Como en las islas: la página toma el fondo y el color de su isla, para
     // que se note de dónde es.
     usePageAccent(
-        island ? island.background?.trim() || island.image : undefined,
-        island?.color?.trim() || undefined
+        home ? home.background?.trim() || home.image : undefined,
+        home?.color?.trim() || undefined
     );
 
     if(!character){
@@ -313,7 +341,7 @@ export default function Character(){
     const tagline = [
         character.fusionName?.trim(),
         species.map(entry => entry.name).join(" × "),
-        island && (character.guardian ? `Guardian of ${island.name}` : island.name)
+        guarded.length > 0 ? `Guardian of ${joinNames(guarded.map(entry => entry.name))}` : island?.name
     ].filter(Boolean).join(" · ");
 
     return (
@@ -345,7 +373,7 @@ export default function Character(){
 
                 </div>
 
-                <Infobox character={character} island={island} species={species} />
+                <Infobox character={character} island={island} guarded={guarded} species={species} />
 
             </div>
 

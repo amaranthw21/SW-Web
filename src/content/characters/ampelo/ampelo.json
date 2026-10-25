@@ -5,7 +5,9 @@
   "status": "",
   "player": "",
   "island": "twilight-island",
-  "guardian": true,
+  "guardianOf": [
+    "twilight-island"
+  ],
   "image": "",
   "imageCredit": "Drawn by Xanandra, coloring by ???",
   "summary": "The shattered Necrozma who guards Twilight Island, piecing himself back together one conversation at a time.",

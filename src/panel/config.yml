@@ -131,8 +131,9 @@ collections:
   # ───────────────────────── Characters ─────────────────────────
   # Una ficha por personaje, NPC o de jugador, en su carpeta con su JSON y sus
   # imágenes (src/content/characters/<id>/<id>.json), como las islas. Cada uno
-  # elige su isla, y la isla lo enseña sola en su carrusel de NPCs o de
-  # personajes, enlazado a su ficha (/characters/<id>).
+  # elige su isla (y las que guarda, si guarda alguna), y cada isla lo enseña
+  # sola en su carrusel de NPCs o de personajes, enlazado a su ficha
+  # (/characters/<id>).
   - name: characters
     label: Characters
     label_singular: Character
@@ -153,8 +154,8 @@ collections:
       - { name: kind, label: Kind, widget: select, default: npc, options: [{ label: NPC, value: npc }, { label: "Player character", value: player }], hint: "NPCs go in the island's NPC carousel; player characters in its Characters carousel." }
       - { name: status, label: Status, widget: select, required: false, default: available, options: [{ label: Available, value: available }, { label: Reserved, value: reserved }, { label: "In use", value: taken }], hint: "Only for player characters: whether someone has asked for it or plays it." }
       - { name: player, label: "Played by", widget: string, required: false, hint: "Only for player characters that are Reserved or In use." }
-      - { name: island, label: Island, widget: relation, collection: islands, value_field: "{{slug}}", search_fields: [name], display_fields: ["{{name}}"], required: false, hint: "The island the character belongs to. It shows up on that island's page." }
-      - { name: guardian, label: "Guardian of the island", widget: boolean, default: false, required: false, hint: "Shown as 'Guardian of <island>' and listed first on the island." }
+      - { name: island, label: Island, widget: relation, collection: islands, value_field: "{{slug}}", search_fields: [name], display_fields: ["{{name}}"], required: false, hint: "The island the character lives on. It shows up on that island's page." }
+      - { name: guardianOf, label: "Guardian of", widget: relation, collection: islands, value_field: "{{slug}}", search_fields: [name], display_fields: ["{{name}}"], multiple: true, required: false, hint: "The islands it guards, if any; most characters guard none, a few guard several. It shows up first on each of them." }
       - { name: image, label: Portrait, widget: image, required: false, hint: "Shown in the infobox and on the cards. Saved in the character's own folder." }
       - { name: imageCredit, label: "Portrait credit", widget: string, required: false, hint: "e.g. 'Drawn by Xanandra'. Shown under the portrait." }
       - { name: summary, label: Summary, widget: text, required: false, hint: "One or two lines for the cards and the island carousel." }
