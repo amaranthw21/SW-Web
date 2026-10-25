@@ -5673,24 +5673,73 @@ button.region-loc {
 
 }
 
+/* Habilidades en filas: a la izquierda el hueco y el nombre, a la derecha la
+   descripción a todo lo que queda de ancho. Antes iban en una rejilla de
+   tarjetas, pero sus textos van de una línea a varios párrafos, y las de una
+   fila se estiraban todas a la más larga. */
 .character-abilities {
 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 12px;
+    margin-bottom: 24px;
 
-    margin-bottom: 20px;
+    border-top: 1px solid rgba(148, 163, 184, 0.18);
 
 }
 
 .character-ability {
 
-    padding: 12px 16px;
+    display: grid;
+    grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
+    align-items: start;
+    gap: 6px 24px;
 
-    border: 1px solid rgba(148, 163, 184, 0.25);
-    border-radius: 10px;
+    padding: 14px 0;
 
-    background: rgba(31, 41, 55, 0.45);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+
+}
+
+/* El nombre se queda a la vista mientras se lee una descripción larga. */
+.character-ability__head {
+
+    position: sticky;
+    top: calc(var(--navbar-h) + 12px);
+
+}
+
+.character-ability__body .character-ability__text + .character-ability__text {
+
+    margin-top: 8px;
+
+}
+
+/* Movimientos en una sola columna, en tres filas: el nombre, debajo sus datos
+   (categoría, tipo y PP) y debajo la descripción. Antes los datos iban al otro
+   extremo de la fila, y en una pantalla ancha quedaban lejísimos del nombre. */
+.character-move {
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+
+}
+
+@media (max-width: 640px) {
+
+    .character-ability {
+
+        grid-template-columns: minmax(0, 1fr);
+
+    }
+
+    .character-ability__head {
+
+        position: static;
+
+    }
 
 }
 
@@ -5710,7 +5759,7 @@ button.region-loc {
 
 .character-ability__name {
 
-    margin: 2px 0 6px;
+    margin: 2px 0 0;
 
     color: var(--accent);
 
@@ -5738,32 +5787,27 @@ button.region-loc {
 
     list-style: none;
 
-}
-
-.character-move {
-
-    padding: 12px 0;
-
     border-top: 1px solid rgba(148, 163, 184, 0.18);
 
 }
 
-.character-move__head {
+/* La fila de un movimiento comparte el diseño de las habilidades (arriba). */
+.character-move__name {
+
+    color: var(--accent);
+
+    font-weight: bold;
+
+    font-size: 1.05rem;
+
+}
+
+.character-move__tags {
 
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 8px;
-
-    margin-bottom: 4px;
-
-}
-
-.character-move__name {
-
-    margin-right: auto;
-
-    font-weight: bold;
+    gap: 6px;
 
 }
 
