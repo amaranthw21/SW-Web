@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import asset from "../lib/asset";
 import islands from "../data/islands";
 import { regionName } from "../data/region";
 
@@ -251,9 +250,9 @@ export default function Sidebar({ menuOpen, onNavigate, pinned, onTogglePin }){
               Aquí porque arriba quedaba pegado a la hamburguesa —seis píxeles— y
               la gente que iba a abrir el menú aterrizaba en el CMS.
             */}
-            <a
+            <NavLink
                 className="rail__admin"
-                href={asset("/admin/index.html")}
+                to="/panel"
                 onClick={onNavigate}
             >
 
@@ -265,7 +264,7 @@ export default function Sidebar({ menuOpen, onNavigate, pinned, onTogglePin }){
                     Admin
                 </span>
 
-            </a>
+            </NavLink>
 
 
             {/*

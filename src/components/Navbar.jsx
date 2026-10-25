@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import serverIcon from "../assets/IconServer-128.png";
-import asset from "../lib/asset";
 
 
 // La barra superior. Las secciones del sitio viven en la barra lateral
@@ -32,16 +31,13 @@ export default function Navbar({ menuOpen, onToggleMenu }){
             <div className="navbar__actions">
 
                 {/*
-                  El panel del CMS es un archivo estático en public/admin/, no una
-                  ruta de React, así que va con <a> (navegación completa) y con
-                  asset() para respetar el base path de GitHub Pages.
-
-                  Se apunta a index.html explícitamente: en dev, Vite no resuelve
-                  "/admin/" como directorio y lo captura el fallback del SPA.
+                  El panel de edición propio (/panel), donde entran todos los
+                  admins, tengan GitHub o no. Sveltia sigue en /admin/, pero ya
+                  no se enlaza desde la web.
                 */}
-                <a href={asset("/admin/index.html")} className="admin-link">
+                <Link to="/panel" className="admin-link">
                     Admin
-                </a>
+                </Link>
 
                 {/*
                   Abre la barra lateral en móvil. En escritorio el rail está
