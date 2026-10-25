@@ -1,0 +1,113 @@
+{
+  "name": "George",
+  "nameOrigin": "",
+  "kind": "npc",
+  "status": "",
+  "player": "thetotalunknown2341",
+  "island": "chroma-island",
+  "guardianOf": [
+    "chroma-island"
+  ],
+  "image": "",
+  "imageCredit": "Drawn by xanandra_. Painted by thetotalunknown2341",
+  "cardPosition": "",
+  "summary": "",
+  "gender": "Male",
+  "age": "39",
+  "fusionName": "Pechadrill",
+  "species1": "pecharunt",
+  "species2": "excadrill",
+  "type1": "Poison",
+  "type2": "Steel",
+  "hiddenType": "Ground",
+  "traits": [
+    "Stern",
+    "Dedicated",
+    "Loyal",
+    "Conscientious",
+    "Restrained",
+    "Assertive"
+  ],
+  "likes": [
+    "Apples",
+    "Consistency",
+    "Quiet Spaces"
+  ],
+  "dislikes": [
+    "Crowds",
+    "Bitter Medicine",
+    "Troublemakers"
+  ],
+  "fears": [
+    "Dementophobia / Decidophobia"
+  ],
+  "personality": "George is an odd piece of the puzzle that makes up Chroma Island. It seems like he’s the one in charge by his stance, his behavior, and the way he composes himself, but one simple interaction with him and Aeneas shows that he follows the terapagos fusion’s orders to an exact, with perhaps little to no personal decisions on major topics other than simply just. . . carrying out orders from Aeneas. \n\nWhat the exact relationship is between the two remains to be discovered, but the fact of the matter remains that George is a very capable guardian in all matters Aeneas has decided he should aid in, which is. . . basically everything, because Aeneas decided George should be a very very helpful person.",
+  "abilities": [
+    {
+      "slot": "Common Talent",
+      "name": "Ground",
+      "description": "Can dig and move around underground. However, some surfaces will be too hard to break through."
+    },
+    {
+      "slot": "Special Talent",
+      "name": "Down to Earth",
+      "description": "George can use Malignant Chain out of battle for the sole purpose of bringing an AFO (Annoying Flying Object) to the ground, or to stop cowards from running away from him."
+    },
+    {
+      "slot": "Common Battle",
+      "name": "Poison Puppeteer",
+      "description": "If a pokemon is poisoned because of George they are also considered confused."
+    },
+    {
+      "slot": "Unique Battle",
+      "name": "Shield Drill",
+      "description": "Ignore raises in Defense and Sp. Defense."
+    }
+  ],
+  "moves": [
+    {
+      "name": "Fissure",
+      "category": "Physical",
+      "type": "Ground",
+      "pp": 5,
+      "description": "Has a really low chance [30%] to deal massive damage to the target."
+    },
+    {
+      "name": "Acid Spray",
+      "category": "Status",
+      "type": "Poison",
+      "pp": 20,
+      "description": "Reduces the target’s Sp. Defense by 2 stages."
+    },
+    {
+      "name": "Iron Defense",
+      "category": "Status",
+      "type": "Steel",
+      "pp": 15,
+      "description": "Raises defense by two stages."
+    },
+    {
+      "name": "Heavy Slam",
+      "category": "Physical",
+      "type": "Steel",
+      "pp": 10,
+      "description": "Damages, dealing more/less damage if George is/isn’t larger/heavier than his enemy. \nIf the target has used minimize, bypass accuracy check and deal massive damage."
+    },
+    {
+      "name": "Drill Run",
+      "category": "Physical",
+      "type": "Ground",
+      "pp": 10,
+      "description": "Damage with an increased critical hit ratio."
+    },
+    {
+      "name": "Malignant Chain",
+      "category": "Special",
+      "type": "Poison",
+      "pp": 5,
+      "description": "Damage with a chance [50%] to badly poison the target."
+    }
+  ],
+  "backstory": "To deny a choice, or to allow a choice?\nTo make that choice, or have someone else make it?\nTo determine their answer, or leave it up to them?\n\nYou.\nPecharunt.\nPecharunt, Pecharunt, Pecharunt, Pecharunt.\n\nHaven’t you denied free will long enough?\nHow long will we keep this pointless game of control in check?\n\nYou created a garden of your own perfection. Every petal on every rose, a perfect representation of what you wanted.\nA perfect mimicry of the most ideal, wonderful life. A life you could live forever.\n\nwhat a joke you are to believe that.\nhow immature you are to believe that.\n\nThe flowers never listened to you.\n\nEyes closed and opened. Eyelids contacted flesh, bringing fluid to eyes. \nHe didn’t want it to stop.\nWhy did it have to stop.\nWhy did it have to end.\nIt shouldn’t have ended.\nWhy.\n\nThe apple doesn’t fall far from the tree.\nAnd there they were.\nSomeone frolickling across the meadow. \n\nCheerful. Friendly.\nLike a child going on an adventure.\n\n“Let’s play a game!”\nA game.\n\nTo deny a choice, or to allow a choice?\nAllow.\nTo make that choice, or have someone else make it?\nSomeone else.\nTo determine their answer, or leave it up to them?\nThey should have the freedom to choose.\n\n“Soo! If I’m the King of this Island….~~!!! Then you should be….??”\n“. . . I suppose I should be the Royal Guard. . .?”\n“Mmmm…!! Yeah!! That works!!! Great idea!!!!”\n\nWhat a pathetic ending.\nAre you still the leader of your fantasy? Or are you merely now a participant?",
+  "gallery": []
+}
