@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
+import normalize from "../lib/normalize";
 import useDocumentTitle from "../lib/useDocumentTitle";
 
 import { API, ApiError, deleteFiles, listFiles, loadSession, login, readJson, saveSession, writeJson } from "./api";
@@ -230,7 +231,7 @@ function Workspace({ session, logout, onSession }){
             />
         );
     } else {
-        content = <Collections config={config} paths={paths} session={session} />;
+        content = <Collections config={config} paths={paths} saved={saved} session={session} />;
     }
 
     return <Shell session={session} onLogout={logout}>{content}</Shell>;
@@ -238,7 +239,7 @@ function Workspace({ session, logout, onSession }){
 }
 
 
-function Collections({ config, paths, session }){
+function Collections({ config, paths, saved, session }){
 
     return (
 
@@ -250,6 +251,8 @@ function Collections({ config, paths, session }){
                     : "Saved changes go live on the site in about two minutes."}
             </div>
 
+            <GlobalSearch config={config} paths={paths} saved={saved} />
+
             <div className="panel-grid">
                 {config.collections.map(collection => (
                     <Link key={collection.name} to={`?c=${collection.name}`} className="panel-tile">
@@ -260,6 +263,111 @@ function Collections({ config, paths, session }){
             </div>
 
         </>
+
+    );
+
+}
+
+
+const RESULTS = 30;
+
+
+// Lo que se mira de cada entrada, aparte de su resumen: los textos cortos de
+// primer nivel (forma, dueño, tipo, nota…). Las descripciones largas y las
+// rutas de imagen se dejan fuera, o casi cualquier palabra encontraría medio
+// archivo.
+function searchText(data){
+
+    return Object.values(data ?? {})
+        .filter(value => (typeof value === "string" && value.length <= 60 && !/\.(png|jpe?g|webp|avif|gif|svg)$/i.test(value))
+            || typeof value === "number")
+        .join(" ");
+
+}
+
+
+// Busca en todas las colecciones a la vez, para llegar a un Pokémon o a un
+// objeto sin abrir antes su lista. Primero lo que empieza por lo escrito (por
+// nombre), luego lo que lo contiene en el resumen y al final en otro campo.
+function GlobalSearch({ config, paths, saved }){
+
+    const navigate = useNavigate();
+    const [query, setQuery] = useState("");
+
+    const index = useMemo(() => config.collections.flatMap(collection =>
+        entriesOf(collection, paths).map(entry => {
+            const data = saved[entry.path] ?? bundledData(entry.path);
+            const summary = summaryOf(collection, entry, data);
+            return {
+                collection,
+                entry,
+                summary,
+                name: normalize(String(data?.[collection.identifier_field ?? "title"] ?? entry.label ?? summary)),
+                summaryText: normalize(summary),
+                extraText: normalize(searchText(data))
+            };
+        })
+    ), [config, paths, saved]);
+
+    const needle = normalize(query.trim());
+
+    const results = needle
+        ? index
+            .map(item => ({
+                ...item,
+                rank: item.name.startsWith(needle) ? 0
+                    : item.summaryText.includes(needle) ? 1
+                    : item.extraText.includes(needle) ? 2
+                    : -1
+            }))
+            .filter(item => item.rank >= 0)
+            .sort((a, b) => a.rank - b.rank || a.summary.localeCompare(b.summary))
+        : [];
+
+    const linkOf = item => `?c=${item.collection.name}&f=${encodeURIComponent(item.entry.path)}`;
+
+    return (
+
+        <div className="panel-search">
+
+            <input
+                className="panel-input panel-search__input"
+                type="search"
+                placeholder="Search everything: a Pokémon, an item, an owner…"
+                aria-label="Search all collections"
+                value={query}
+                onChange={event => setQuery(event.target.value)}
+                onKeyDown={event => {
+                    // Enter abre el primer resultado: lo normal es buscar uno concreto.
+                    if(event.key === "Enter" && results.length){
+                        navigate(linkOf(results[0]));
+                    }
+                }}
+            />
+
+            {needle && (
+                results.length === 0
+                    ? <p className="panel-muted">Nothing matches “{query.trim()}”.</p>
+                    : (
+                        <>
+                            <ul className="panel-entries panel-search__results">
+                                {results.slice(0, RESULTS).map(item => (
+                                    <li key={item.entry.path}>
+                                        <Link to={linkOf(item)}>
+                                            <span className="panel-search__kind">{item.collection.label_singular ?? item.collection.label}</span>
+                                            {item.summary}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                            {results.length > RESULTS && (
+                                <p className="panel-muted">Showing {RESULTS} of {results.length}. Type a bit more to narrow it down.</p>
+                            )}
+                        </>
+                    )
+            )}
+
+        </div>
 
     );
 
@@ -281,7 +389,8 @@ function EntryList({ collection, paths, saved, notice }){
         return entriesOf(collection, paths)
             .map(entry => {
                 const data = saved[entry.path] ?? bundledData(entry.path);
-                return { ...entry, data, summary: summaryOf(collection, entry, data) };
+                const summary = summaryOf(collection, entry, data);
+                return { ...entry, data, summary, text: normalize(`${summary} ${searchText(data)}`) };
             })
             .sort((a, b) => {
                 const x = a.data?.[sortField];
@@ -294,8 +403,8 @@ function EntryList({ collection, paths, saved, notice }){
 
     }, [collection, paths, saved]);
 
-    const needle = query.trim().toLowerCase();
-    const shown = needle ? entries.filter(entry => entry.summary.toLowerCase().includes(needle)) : entries;
+    const needle = normalize(query.trim());
+    const shown = needle ? entries.filter(entry => entry.text.includes(needle)) : entries;
 
     return (
 
