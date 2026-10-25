@@ -1,0 +1,118 @@
+{
+  "name": "Kára",
+  "nameOrigin": "",
+  "kind": "npc",
+  "status": "available",
+  "player": "cresselia_world_slayer",
+  "island": "enthropy-island",
+  "guardianOf": [
+    "enthropy-island",
+    "fable-island",
+    "bead-island"
+  ],
+  "image": "",
+  "imageCredit": "Art by ballooey",
+  "cardPosition": "",
+  "summary": "",
+  "gender": "Female",
+  "age": "22",
+  "fusionName": "Regicino",
+  "species1": "regigigas",
+  "species2": "minccino",
+  "type1": "Normal",
+  "type2": "Flying",
+  "hiddenType": "Psychic",
+  "traits": [
+    " Silly",
+    "Adventurous",
+    "Joyful",
+    "Confident",
+    "Creative",
+    " Immature"
+  ],
+  "likes": [
+    "Inorganic Lifeforms",
+    "Puzzling Ruins",
+    "Quests",
+    "Feeling the Wind"
+  ],
+  "dislikes": [
+    "Messy Eaters",
+    "Laziness",
+    "Delays",
+    "Waiting",
+    "Getting Wet"
+  ],
+  "fears": [
+    "Ataxophobia"
+  ],
+  "personality": "Befitting of her status as the wandering NPC legendary, Kára is a very easygoing individual who seems more interested in the journey rather than the result at the end. It’s hard to tell if she wants the world to go back to how it was before, or if she wants to find some middle ground between the current state of the world and the old days. Either way, she’s here to help! Somehow...!",
+  "abilities": [
+    {
+      "slot": "Common Talent",
+      "name": "Flying",
+      "description": "Can fly around, and tolerate difficult flying conditions like hailstorms, sandstorms, or similar."
+    },
+    {
+      "slot": "Special Talent",
+      "name": "Creator and Master",
+      "description": "Kára can control mechanical/golem-like creations to make them do simplistic things akin to basic motions. For sentient beings that fit this category, they must be unconscious and their player must allow what Kára makes them do. She cannot control the person, only the physical form."
+    },
+    {
+      "slot": "Common Battle",
+      "name": "Skill Link",
+      "description": "Maximizes the number of times multi-strike moves hit."
+    },
+    {
+      "slot": "Unique Battle",
+      "name": "Overclock",
+      "description": "If Kára’s speed is not raised, she can still act twice within a single turn, but will inflict Burn on herself in consequence after the forced extra action. Kára automatically cures herself of any Burn status if she does not force an extra action in her turn."
+    }
+  ],
+  "moves": [
+    {
+      "name": "Spike Cannon",
+      "category": "Physical",
+      "type": "Normal",
+      "pp": 15,
+      "description": "Sharp spikes are shot at the target in rapid succession. They hit two to five times in a row."
+    },
+    {
+      "name": "Tickle",
+      "category": "Status",
+      "type": "Normal",
+      "pp": 4,
+      "description": "The user tickles the foe into laughing, reducing its Attack and Defense stats."
+    },
+    {
+      "name": "Defog",
+      "category": "Status",
+      "type": "Flying",
+      "pp": 15,
+      "description": "A strong wind blows away the target's barriers such as Reflect or Light Screen. This also lowers the target's evasiveness."
+    },
+    {
+      "name": "Imprison",
+      "category": "Status",
+      "type": "Psychic",
+      "pp": 10,
+      "description": "Prevents target from using moves known by the user."
+    },
+    {
+      "name": "Teleport",
+      "category": "Status",
+      "type": "Psychic",
+      "pp": 20,
+      "description": "The user teleports to another location within the current island, which can be a few feet."
+    },
+    {
+      "name": "Crush Grip",
+      "category": "Physical",
+      "type": "Normal",
+      "pp": 5,
+      "description": "The target is crushed with great force. The more HP the target has left, the greater the move’s power.\n"
+    }
+  ],
+  "backstory": "Regigigas, the great, renown creator of the regis, parent to their creations of steel, ice, stone, thunder, and dragon, simply awoke one day to the curious feeling of...\nWeightlessness. A cloudlike fluff, even. A tinge of immaturity in the back of her mind.\nShe was in the mind of a young, adventurous youth. \nShe was as free as she could ever be. With simply the thought of momentum, she could soar into the skies and move around with ease. \nTo the past with those old, rusty limbs of hers that took ages to get here and there!\nTo the past!\n...\nIt was still wrong.\nThings weren’t the same anymore.\nSomething was different.\n...\nWhat had she been before this?\nWho was Kára?\n...\nBqyt gticp eep gki ki kx ohcru hvitqkxa lp fnluw. | 8674 | 5432\n...\nAnd why was she worrying about that?\nShe simply needed to be herself.\nAdventurous!\nSilly!\nFull of whimsy!\nAfter all, that’s just who Kára is! \nYour lovely regicino, tinkerer, mechanic, and adventurer~\nHere to save the day!",
+  "gallery": []
+}
