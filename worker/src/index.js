@@ -121,6 +121,10 @@ async function route(request, env){
         return writeFile(await request.json(), user, env);
     }
 
+    if(method === "DELETE" && pathname === "/file"){
+        return deleteFiles(await request.json(), user, env);
+    }
+
     if(method === "POST" && pathname === "/password"){
         return changePassword(await request.json(), user, env);
     }
@@ -580,6 +584,65 @@ async function writeFile({ path, content, base64, sha, message }, user, env){
     }
 
     return json({ sha: data.content.sha });
+
+}
+
+
+// Borra una entrada: su JSON (el primero de `paths`) y, si vive en su propia
+// carpeta, lo que tiene al lado (las imágenes de una isla). Va todo en un solo
+// commit con la API de árboles de Git; con la de contenidos sería un commit por
+// archivo. Con revisión, el borrado también espera en la pull request.
+async function deleteFiles({ paths, sha, message }, user, env){
+
+    if(!Array.isArray(paths) || paths.length === 0){
+        throw httpError(400, "Nothing to delete");
+    }
+
+    paths.forEach(checkPath);
+
+    const branch = await prepareEditBranch(env);
+
+    // Si alguien cambió la entrada después de que este admin la abriera, no se
+    // borra a ciegas: que la recargue y vea qué está borrando.
+    const current = await github(env, `/contents/${encodePath(paths[0])}?ref=${branch}`);
+
+    if(sha && current.sha !== sha){
+        throw httpError(409, "Someone else changed this entry. Reload it before deleting.");
+    }
+
+    const ref = await github(env, `/git/ref/heads/${branch}`);
+    const head = await github(env, `/git/commits/${ref.object.sha}`);
+
+    const tree = await github(env, "/git/trees", {
+        method: "POST",
+        body: JSON.stringify({
+            base_tree: head.tree.sha,
+            tree: paths.map(path => ({ path, mode: "100644", type: "blob", sha: null }))
+        })
+    });
+
+    const commit = await github(env, "/git/commits", {
+        method: "POST",
+        body: JSON.stringify({
+            message: `${message || `Delete ${paths[0]}`} (panel: ${user})`,
+            tree: tree.sha,
+            parents: [head.sha],
+            author: { name: user, email: `${user}@panel.sw-web` }
+        })
+    });
+
+    // Sin force: si la rama avanzó mientras tanto, GitHub lo rechaza en vez de
+    // tirar el commit de otro.
+    await github(env, `/git/refs/heads/${branch}`, {
+        method: "PATCH",
+        body: JSON.stringify({ sha: commit.sha })
+    });
+
+    if(branch !== env.BASE_BRANCH){
+        await ensurePullRequest(env);
+    }
+
+    return json({ ok: true });
 
 }
 

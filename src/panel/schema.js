@@ -76,6 +76,22 @@ export function entriesOf(collection, paths){
 }
 
 
+// Qué se borra con una entrada: su JSON y, si cada entrada tiene su carpeta
+// (las islas), todo lo que hay en ella. El JSON va primero: el backend
+// comprueba con él que nadie la cambió mientras tanto.
+export function entryFiles(collection, path, paths){
+
+    if(!(collection.path ?? "").includes("/")){
+        return [path];
+    }
+
+    const folder = path.split("/").slice(0, -1).join("/") + "/";
+
+    return [path, ...paths.filter(item => item !== path && item.startsWith(folder))];
+
+}
+
+
 export function newEntryPath(collection, data){
 
     const name = slug(String(data[collection.identifier_field ?? "title"] ?? ""));

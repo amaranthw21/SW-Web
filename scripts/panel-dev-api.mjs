@@ -7,7 +7,7 @@
 // y las cuentas que se crean con ellas se guardan en memoria y se pierden al
 // parar el servidor: están para probar el flujo, no para usarse. Solo existe en
 // el servidor de desarrollo (apply: "serve"); el build no lo incluye.
-import { readFile, writeFile, readdir, mkdir } from "node:fs/promises";
+import { readFile, writeFile, readdir, mkdir, rm, rmdir } from "node:fs/promises";
 import { dirname, join, relative } from "node:path";
 import { randomBytes } from "node:crypto";
 
@@ -219,6 +219,17 @@ export default function panelDevApi(){
                         await writeFile(target, base64 ? Buffer.from(base64, "base64") : content);
                         server.config.logger.info(`[panel] wrote ${relative(root, target)}`);
                         return send(res, 200, { sha: "local" });
+                    }
+
+                    if(req.method === "DELETE" && url.pathname === "/file"){
+                        const { paths } = await body(req);
+                        for(const path of paths ?? []){
+                            await rm(join(root, checkPath(path)));
+                            server.config.logger.info(`[panel] deleted ${path}`);
+                        }
+                        // La carpeta de una isla se queda vacía: fuera también.
+                        await rmdir(dirname(join(root, paths[0]))).catch(() => {});
+                        return send(res, 200, { ok: true });
                     }
 
                     send(res, 404, { error: "Not found" });
