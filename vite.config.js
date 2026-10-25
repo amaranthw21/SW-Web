@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import panelDevApi from './scripts/panel-dev-api.mjs'
 
 // El sitio se publica en GitHub Pages bajo https://<user>.github.io/SW-Web/,
 // así que en build necesita el base path "/SW-Web/". En desarrollo se sirve
@@ -11,5 +12,6 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig(({ command, isPreview }) => ({
   base: command === 'build' || isPreview ? '/SW-Web/' : '/',
-  plugins: [react()],
+  // panelDevApi: el backend local del panel (/panel), solo en `npm run dev`.
+  plugins: [react(), panelDevApi()],
 }))
