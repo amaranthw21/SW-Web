@@ -6231,3 +6231,24 @@ button.region-loc {
     text-align: center;
 
 }
+
+
+/* Imagen con encuadre libre (FramedImage): se coloca a mano dentro de su caja,
+   que la recorta. */
+.framed-image {
+
+    position: absolute;
+
+    max-width: none;
+
+    user-select: none;
+
+}
+
+.region-loc__img--framed {
+
+    position: relative;
+
+    overflow: hidden;
+
+}

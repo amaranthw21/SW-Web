@@ -1199,3 +1199,47 @@ select.panel-input option {
     object-fit: cover;
 
 }
+
+
+/* Las vistas previas del encuadre: se arrastra la imagen dentro. */
+.panel-focus__circle,
+.panel-focus__thumb {
+
+    position: relative;
+
+    cursor: grab;
+
+    touch-action: none;
+
+}
+
+.panel-focus__circle:active,
+.panel-focus__thumb:active {
+
+    cursor: grabbing;
+
+}
+
+.panel-focus__circle:focus-visible,
+.panel-focus__thumb:focus-visible {
+
+    outline: 2px solid white;
+    outline-offset: 2px;
+
+}
+
+.panel-focus__zoom {
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    width: 140px;
+
+}
+
+.panel-focus__zoom input {
+
+    accent-color: var(--accent);
+
+}
