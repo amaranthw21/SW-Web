@@ -1,15 +1,15 @@
 {
   "name": "Ampelo",
-  "nameOrigin": "From the Ampelomyces Quisqualis fungus",
+  "nameOrigin": "Ampelomyces Quisqualis fungus",
   "kind": "npc",
   "status": "",
-  "player": "",
+  "player": "thetotalunknown2341",
   "island": "twilight-island",
   "guardianOf": [
     "twilight-island"
   ],
   "image": "",
-  "imageCredit": "Drawn by Xanandra, coloring by ???",
+  "imageCredit": "Drawn by Xanandra, coloring by thetotalunknown2341",
   "summary": "The shattered Necrozma who guards Twilight Island, piecing himself back together one conversation at a time.",
   "gender": "Male",
   "age": "35",

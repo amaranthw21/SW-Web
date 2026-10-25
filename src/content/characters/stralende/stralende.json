@@ -1,0 +1,126 @@
+{
+  "name": "Stralende",
+  "nameOrigin": "Slightly tweaked version of the Norwegian word for “Resplendent”",
+  "kind": "npc",
+  "status": "",
+  "player": "pigbeeef4065",
+  "island": "sleighbell-island",
+  "guardianOf": [
+    "sleighbell-island"
+  ],
+  "image": "newcanvas2-1.webp",
+  "imageCredit": "By xanandra_",
+  "summary": "",
+  "gender": "Male",
+  "age": "Unknown",
+  "fusionName": "Skarm-Oh",
+  "species1": "ho-oh",
+  "species2": "skarmory",
+  "type1": "Flying",
+  "type2": "Steel",
+  "hiddenType": "Fire",
+  "traits": [
+    "Gentle",
+    "Calm",
+    "A bit… full of himself… just a bit.",
+    "Protective / loving(?)",
+    "Insightful",
+    "A bit talkative"
+  ],
+  "likes": [
+    "Company: Stralende likes the presence and company of friends or even strangers, after all, there is nobody to feel warmth from if you are alone.",
+    "Lively places: Bustling towns, busy streets… those are right up their ally, though they may or may not have responsibilities to fulfill that stops them from spending all their time in such places.",
+    "Puzzles: Not as in a literal box of puzzles, but rather just puzzles in general with creative solutions… he likes alternative solutions and open ended things in general.",
+    "Metalworks: Stralende’s other half used to be a part time craftsperson, so that passion carried over somewhat, though there might not be much time to enjoy it."
+  ],
+  "dislikes": [
+    "Conflict: Although we know conflict is something that is basically mandatory for fiction to be interesting, Stralende would rather keep it to a minimum around him and others.",
+    "Stubborn people: He usually understands why some might be adamant about certain things, but Stralende doesn’t enjoy the feeling of talking to a brick wall.",
+    "Violence: To him, violence should almost never be the first solution to conflicts if they were to arise, and believes there are better alternatives the vast majority of times somewhere to be discovered."
+  ],
+  "fears": [
+    "Fear of the dark: His other half had a fear of the darkness in the past, though that ceased to be a problem after being fused, as he himself possessed the ability to light the surroundings now.",
+    "Fear of being alone: Being alone, or simply feeling alone… nobody to talk to, nobody to be with… both of them disliked this."
+  ],
+  "personality": "Gentle:\nStralende is a gentle individual despite his steel hard feathers and razor sharp wings, and in fact even loving to the people around him.\nCalm:\nHe is usually calm and collected, as only then they can think more clearly… plus, that’s how they usually are anyways, and it feels good to be like that.\nAnd yes, Stralende is a bit full of himself at times, maybe he will mention how he brings warmth to everybody, or maybe his looks… powers… etc… but it’s nowhere near a constant.\nProtective:\nHe cherishes the people he knows, and isn’t too keen on them getting themselves into dangerous places… Of course, Stralende isn’t all seeing or all doing, so he couldn’t stop every single reckless act that happens in and out of his sight. It almost feels… like a maternal love. \nInsightful:\nRemember how I mentioned that puzzles are quite up his alley? Not creating them, but solving them is a little hobby of his, so he enjoys the notion of creative solutions.\nTalkative: \nPeople can get bored, talking about random things is a way he passes time… and for his own entertainment. He can definitely act a bit unseriously if needed.",
+  "abilities": [
+    {
+      "slot": "Common Talent",
+      "name": "Fire",
+      "description": "Slightly warmer than the average pokemon, can tolerate more heat, can swim in magma."
+    },
+    {
+      "slot": "Special Talent",
+      "name": "Rainbow Aura",
+      "description": "A warm, invisible aura surrounds the user, it has the ability to sooth the creatures that are nearby, and speeds up healing for those who are injured around the user.\n\nIn addition, weather within the area of the aura is always calm, unless the weather is forcefully overridden by strong abilities such as primordial sea, desolate land, delta stream, and air lock. The user can choose to disable the weather calming as well.\n\nThis allows the user to fly around, shielded from harsh weather.\n\nThe intensity of the warmth can also hint at the emotional state of the user."
+    },
+    {
+      "slot": "Common Battle",
+      "name": "Magic Guard",
+      "description": "The user is immune to non attacking damage with some exceptions. (curse damage, belly drum, etc)"
+    },
+    {
+      "slot": "Unique Battle",
+      "name": "Phoenix Down ",
+      "description": "(Down is a word for feathers under the wings and belly of a bird.)\n\nThe user always takes not very effective damage from fire type moves, and upon commencing battle, summons harsh sunlight. The harsh sunlight cannot be negated via normal weather abilities or moves, but abilities wielded by other major legendaries can either cancel out both, or override the weather if powered up (Primordial sea, Delta stream, air lock, etc)"
+    },
+    {
+      "slot": "Unique Battle (Item)",
+      "name": "Radiant Smite",
+      "description": "When equipped with the Clear Bell, all fire type moves of the user can become the Radiant type. (user chooses whether to or not, requires a one move worth of time to activate in combat if choose not to in the beginning but want to activate later) (Still retains the STAB boost of Fire)\n\nAdditionally, once per day / Long rest, the user would be “revived” from damage that would otherwise cause them to faint with half of their HP recovered."
+    }
+  ],
+  "moves": [
+    {
+      "name": "Sacred Fire ",
+      "category": "Special",
+      "type": "Fire",
+      "pp": 1,
+      "description": "The user razes the target with a flame imbued with sacred energy, 50% to burn the target."
+    },
+    {
+      "name": "Beak Blast ",
+      "category": "Physical",
+      "type": "Flying",
+      "pp": 15,
+      "description": "The user heats up their beak before swooping in on the target beak first like a bullet, if the user was hit with a contact move before the attack is unleashed, the attacker is burned. This move almost always goes last. (yes, bulletproof users are immune.)"
+    },
+    {
+      "name": "Iron Head",
+      "category": "Physical",
+      "type": "Steel",
+      "pp": 15,
+      "description": "The user slams into the target with its steel-hard head, 30% to flinch the target."
+    },
+    {
+      "name": "Flame Charge",
+      "category": "Physical",
+      "type": "Fire",
+      "pp": 20,
+      "description": "The user cloaks themselves in flames, before picking up momentum and charges at the target. Boosts speed by 1 stage if successful."
+    },
+    {
+      "name": "Chatter ",
+      "category": "Special",
+      "type": "Flying",
+      "pp": 15,
+      "description": "The user targets the opponent with a deafening chatter of nonsense, confusing phrase, question or the likes, 100% chance to confuse the target"
+    },
+    {
+      "name": "Flash Cannon",
+      "category": "Special",
+      "type": "Steel",
+      "pp": 15,
+      "description": "The user concentrates and unleashes a blast of light-like energy at the target, 10% to lower the special defense of the user."
+    },
+    {
+      "name": "Radiant Ignition (CUSTOM)",
+      "category": "Status",
+      "type": "Fire",
+      "pp": 10,
+      "description": "The user envelops themselves in a cloak of flames with a light most radiant, adding the fire type to themselves temporarily, and increasing their attack stat by one stage. This move can only be used like this while the user has less than 50% of their HP remaining, the effect above ends when the battle ends, or when the user is knocked out. If used while above 50% HP, or used again after empowering themselves with the effects above, the move is instead a status move that cleanses the user with the said flames, healing the user by 33% of their HP and removes any status conditions."
+    }
+  ],
+  "backstory": "Klingo… yes, that was my name, but it’s an old one, so I’ll just leave that one in the past where it belongs.\n\nStralende will now be my name. Why? Because this is a fresh start, so Klingo can rest easy now.\n\nPlus, Stralende seems a good bit more majestic, wouldn’t you say so, hmm?\n\nRegardless, I will be forever grateful to be made anew.\n\n———\n\nMost individuals are only a tiny, practically invisible speck on the scale of their universe, and that is not even mentioning the existence of the other ones as well.\n\nBut of course, they may or may not really mind that, sometimes, one can be happy even if they know they are nothing compared to the size of the world.\n\nOut of the countless trillions of zillions of specks of those insignificant grains of dust… one of them was named Klingo. \n\nMaybe more than just one was named that, maybe not.\n\nChances are, there could be a parallel version, or someone who was coincidentally named the same.\n\nBut regardless… let’s zoom in.\n\nKlingo was just another mon in the universe in which he lived, a Skarmory, known for their sharp wings and fighting with corviknight… and sturdy body…\n\nBut unlike some worlds, where those birds of steel were companions of humans who treated them to various degrees, in this world, civilization bloomed under the reign of mons.\n\nSkarmory and corviknight were not really born to be rivals with one another, both often held the same professions of transportation or sometimes military participation, but their relationship with one another was generally peaceful.\n\nKlingo… was just another one of them, seemingly destined to take on the tradition once more, but fate had other plans for him.\n\nAt a young age, despite their species weakness to fire, Klingo grew obsessed with metalworking, even though his body was not the greatest with handling the equipment, even though the process wasn’t pleasant, nothing was able to stop his passion.\n\nHis family surprisingly did not mind it at all.\nAnd that was how he became a blacksmith instead of some knight in battered armor (battered armor means seen battle.).\n\nHis works were not exactly exemplary, but not shabby either, insignificant he still was, but he did not care.\n\nHowever, fate had plans for him.\n\nWar broke out among the nations, with his own country going on a crusade that ended up taking up twenty years of his life, he didn’t want to participate at first, but after one of his siblings tragically passed from the battles… alongside many others, he couldn’t bear it anymore.\n\nKlingo decided to go ahead and join as his whole family had done, and even though our man didn’t have much experience in combat, he was actually quite decent, and improved quickly under pressure.\n\nHis skills as a blacksmith was also welcomed in the army, and with that skill Klingo rose through the ranks… year after year.\n\nYear after year, he fought alongside his family (being the same species does not mean immediate family, but his family was present.). Year after year, his skill in combat honed sharper and sharper, as did his skill in smithing.\n\nCombat gave him more insight on creating armor, weapons and other items… which only further boosted his ascent.\n\nHaving tasted the flavor of glory, there was no going back.\n\nKlingo became more and more full of himself, taking pride in his accolades, status, achievements and more… isn’t this where they fall? No.\nTwenty years passed, death passed him by a whisker many times, but fate had plans for him.\n\nAnd soon, Klingo led the conquest to its fruitful end with a legendary victory that would be known for the ages to come.\n\nHowever, that victory came at a cost.\n\nIn order to turn the tides decisively, Klingo personally went forth himself with no protection as an offering of surrender… flying high in the sky all by himself in the dead of night, carrying a decorated box of what seemed to be a little delegation for the said surrender, despite him being known by even the commoners to fear the absence of light.\n\nThe opposing army awaited his descent to inspect the legitimacy of the perceived surrender upon his request, but they did not have to wait.\n\nThe moment the door to the inner sanctum opened… he dove right in at maximum velocity, little barrels filled with grey powder previously unseen from afar ignited behind his back, accelerating beyond terminal velocity.\n\n“Open sesame!”\n\nThe walls decided to not argue this time amidst his cackling that followed.\nBy then, he had felt like he lived his life to the fullest, it felt amazing, glorious… \n\nWhich was exactly why there were no regrets left behind.\n\nThe briefest moment later, the starry night sky seemed to twinkle a bit brighter than the moment before.\n\nAnd soon after, countless soldiers sprung forth to lay siege.\n\n**But fate had other plans for him.**",
+  "gallery": []
+}
