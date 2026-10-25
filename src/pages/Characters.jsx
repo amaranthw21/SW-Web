@@ -1,4 +1,4 @@
-import characters, { CHARACTER_STATUSES, KINDS } from "../data/characters";
+import characters, { CHARACTER_STATUSES, KINDS, islandsOf } from "../data/characters";
 import islands from "../data/islands";
 import { regionName } from "../data/region";
 import EntryCard from "../components/EntryCard";
@@ -15,7 +15,7 @@ const FILTERS = ["q", "kind", "island", "status"];
 // Solo las islas que tienen algún personaje: un filtro que no devuelve nada
 // no ayuda.
 const ISLANDS = islands
-    .filter(island => characters.some(character => character.island === island.id))
+    .filter(island => characters.some(character => islandsOf(character).includes(island.id)))
     .map(island => ({ value: island.id, label: island.name }));
 
 
@@ -25,7 +25,7 @@ function matches(character, { q, kind, island, status }){
 
     return (!q || normalize(text).includes(normalize(q)))
         && (!kind || character.kind === kind)
-        && (!island || character.island === island)
+        && (!island || islandsOf(character).includes(island))
         && (!status || (character.kind === "player" && (character.status || "available") === status));
 
 }
@@ -34,15 +34,17 @@ function matches(character, { q, kind, island, status }){
 // La línea pequeña de cada tarjeta: qué es y, si es de jugador, si está libre.
 function subtitleOf(character){
 
-    const island = islands.find(entry => entry.id === character.island);
-
     if(character.kind === "player"){
         const status = labelOf(CHARACTER_STATUSES, character.status || "available");
         const player = character.player?.trim();
         return [status, player && `played by ${player}`].filter(Boolean).join(" · ");
     }
 
-    return character.guardian && island ? `Guardian of ${island.name}` : "NPC";
+    const guarded = character.guardianOf
+        .map(id => islands.find(entry => entry.id === id)?.name)
+        .filter(Boolean);
+
+    return guarded.length > 0 ? `Guardian of ${guarded.join(", ")}` : "NPC";
 
 }
 
