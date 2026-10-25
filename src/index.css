@@ -5776,9 +5776,17 @@ button.region-loc {
 
 }
 
+/* Mismo diseño en filas que las habilidades: nombre, categoría, tipo y PP
+   juntos a la izquierda y la descripción a la derecha. Antes los datos iban al
+   otro extremo de la fila, y en una pantalla ancha quedaban lejísimos del
+   nombre. */
 .character-move {
 
-    padding: 12px 0;
+    display: grid;
+    grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
+    gap: 8px 24px;
+
+    padding: 14px 0;
 
     border-top: 1px solid rgba(148, 163, 184, 0.18);
 
@@ -5786,20 +5794,41 @@ button.region-loc {
 
 .character-move__head {
 
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
+    align-self: start;
 
-    margin-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
 
 }
 
 .character-move__name {
 
-    margin-right: auto;
+    color: var(--accent);
 
     font-weight: bold;
+
+    font-size: 1.05rem;
+
+}
+
+.character-move__tags {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+
+}
+
+@media (max-width: 640px) {
+
+    .character-move {
+
+        grid-template-columns: minmax(0, 1fr);
+
+    }
 
 }
 

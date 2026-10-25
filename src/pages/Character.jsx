@@ -195,17 +195,23 @@ function AbilitiesAndMoves({ abilities, moves }){
                         <ul className="character-moves">
                             {moves.map(move => (
                                 <li key={move.name} className="character-move">
+                                    {/* Como las habilidades: el nombre con sus datos justo
+                                        debajo a la izquierda, la descripción a la derecha. */}
                                     <div className="character-move__head">
                                         <span className="character-move__name">{move.name}</span>
-                                        {move.category && (
-                                            <span className={`character-move__cat character-move__cat--${move.category.toLowerCase()}`}>
-                                                {move.category}
-                                            </span>
-                                        )}
-                                        {move.type && <TypeBadge type={move.type} />}
-                                        {move.pp != null && <span className="character-move__pp">{move.pp} PP</span>}
+                                        <span className="character-move__tags">
+                                            {move.category && (
+                                                <span className={`character-move__cat character-move__cat--${move.category.toLowerCase()}`}>
+                                                    {move.category}
+                                                </span>
+                                            )}
+                                            {move.type && <TypeBadge type={move.type} />}
+                                            {move.pp != null && <span className="character-move__pp">{move.pp} PP</span>}
+                                        </span>
                                     </div>
-                                    <Paragraphs text={move.description} className="character-move__text" />
+                                    <div className="character-move__body">
+                                        <Paragraphs text={move.description} className="character-move__text" />
+                                    </div>
                                 </li>
                             ))}
                         </ul>
