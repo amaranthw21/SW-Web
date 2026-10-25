@@ -175,10 +175,8 @@ function AbilitiesAndMoves({ abilities, moves }){
                     <div className="character-abilities">
                         {abilities.map(ability => (
                             <div key={`${ability.slot}-${ability.name}`} className="character-ability">
-                                <div className="character-ability__head">
-                                    {ability.slot?.trim() && <p className="character-ability__slot">{ability.slot}</p>}
-                                    <p className="character-ability__name">{ability.name}</p>
-                                </div>
+                                <p className="character-ability__name">{ability.name}</p>
+                                <p className="character-ability__slot">{ability.slot}</p>
                                 <div className="character-ability__body">
                                     <Paragraphs text={ability.description} className="character-ability__text" />
                                 </div>
@@ -195,20 +193,18 @@ function AbilitiesAndMoves({ abilities, moves }){
                         <ul className="character-moves">
                             {moves.map(move => (
                                 <li key={move.name} className="character-move">
-                                    {/* Como las habilidades: el nombre con sus datos justo
-                                        debajo a la izquierda, la descripción a la derecha. */}
-                                    <div className="character-move__head">
-                                        <span className="character-move__name">{move.name}</span>
-                                        <span className="character-move__tags">
-                                            {move.category && (
-                                                <span className={`character-move__cat character-move__cat--${move.category.toLowerCase()}`}>
-                                                    {move.category}
-                                                </span>
-                                            )}
-                                            {move.type && <TypeBadge type={move.type} />}
-                                            {move.pp != null && <span className="character-move__pp">{move.pp} PP</span>}
-                                        </span>
-                                    </div>
+                                    {/* Tres columnas, como las habilidades: nombre, datos
+                                        (categoría, tipo, PP) y descripción. */}
+                                    <span className="character-move__name">{move.name}</span>
+                                    <span className="character-move__tags">
+                                        {move.category && (
+                                            <span className={`character-move__cat character-move__cat--${move.category.toLowerCase()}`}>
+                                                {move.category}
+                                            </span>
+                                        )}
+                                        {move.type && <TypeBadge type={move.type} />}
+                                        {move.pp != null && <span className="character-move__pp">{move.pp} PP</span>}
+                                    </span>
                                     <div className="character-move__body">
                                         <Paragraphs text={move.description} className="character-move__text" />
                                     </div>
