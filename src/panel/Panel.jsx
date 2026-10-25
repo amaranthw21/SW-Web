@@ -14,7 +14,7 @@ import "./panel.css";
 // Panel de edición para los admins sin cuenta de GitHub. Entran con usuario y
 // contraseña (cada uno elige la suya con un enlace de invitación); el backend
 // (worker/) hace los commits por ellos. Los formularios
-// salen de public/admin/config.yml, el mismo que usa Sveltia en /admin.
+// salen de src/panel/config.yml.
 //
 // Dónde se está va en la dirección (?c=colección&f=archivo), para que el botón
 // de atrás del navegador funcione y se pueda pasar un enlace a una entrada.

@@ -1,65 +1,22 @@
-# CMS configuration (Sveltia / Decap-compatible).
-# Defines where the data comes from and goes to, and which forms the mods see.
+# Formularios del panel de edición (/panel): qué colecciones hay, dónde vive
+# cada archivo y qué campos se ven. El panel lee este archivo tal cual (ver
+# src/panel/schema.js), así que un campo añadido aquí aparece en el formulario.
+#
+# Sigue el formato de Sveltia/Decap, que era el panel de antes: así sirve su
+# documentación para los widgets (string, text, richtext, number, boolean,
+# select, color, image, list, relation).
 
-backend:
-  name: github
-  repo: amaranthw21/SW-Web
-  branch: main
-  # OAuth broker (Cloudflare Worker) that handles the "Sign In with GitHub" flow.
-  # Es el mismo que usa PU-Web: la OAuth App de GitHub no va atada a un repo.
-  # Si el worker limita los orígenes permitidos, hay que añadir el de SW-Web.
-  base_url: https://pu-web-cms-auth.amaranthw21.workers.dev
-  # Quien entra sin permiso de escritura en el repo (los nuevos) no publica
-  # directamente: el CMS le crea un fork y sus cambios llegan como pull request,
-  # que uno de los mods con permiso de escritura revisa y publica desde la
-  # página "Editorial Workflow" del panel.
-  open_authoring: true
-  # El repo es público, así que a los nuevos solo se les pide acceso a repos
-  # públicos y no a todos los suyos, privados incluidos.
-  auth_scope: public_repo
-
-# Open Authoring lo exige a nivel global. Cada colección lo vuelve a poner en
-# `simple` (más abajo) para que los mods con permiso de escritura sigan
-# guardando directo en `main`, como hasta ahora; a los nuevos eso no les afecta,
-# lo suyo pasa siempre por revisión.
-publish_mode: editorial_workflow
-
-# Nota: `local_backend` y `locale` no existen en Sveltia CMS (los ignora y avisa
-# por consola), así que no se declaran aquí. Para editar en local se usa el botón
-# "Work with Local Repository", que sale solo en localhost. El idioma del panel
-# lo toma del navegador.
-
-# Default folder where images are uploaded (each collection overrides it
-# with its own subfolder below).
+# Carpeta por defecto para las imágenes subidas (cada colección pone la suya más
+# abajo). `media_folder` es dónde se guarda el archivo en el repo y
+# `public_folder` lo que se escribe en el JSON.
 media_folder: public
 public_folder: /
-
-# Limpia el nombre del archivo al subirlo. Sin esto se guarda tal cual venga, y
-# una imagen bajada de una wiki suele traer el nombre ya codificado —el apóstrofo
-# de "Bunnie D'Coolette" llega como "%27"—. Ese nombre se guardaba literal, con
-# su porcentaje, pero el navegador descodifica la dirección antes de pedir el
-# archivo: buscaba "Bunnie D'Coolette..." y no lo encontraba, así que la imagen
-# salía rota por mucho que se volviera a subir.
-media_libraries:
-  all:
-    slugify_filename: true
-
-# Editor de texto enriquecido (campos `richtext`): solo los botones que la web
-# sabe pintar. Si el editor ofreciera encabezados, tablas o imágenes, el mod las
-# escribiría y la página las ignoraría, que es peor que no tener el botón.
-#
-# Se pone aquí una vez y vale para todos los campos, sin repetirlo por colección.
-field_defaults:
-  richtext:
-    buttons: [bold, italic, link, bulleted-list]
-    editor_components: []
 
 collections:
   # ───────────────────────── Portada ─────────────────────────
   # Un solo archivo, no una colección: la portada es una y no se crean más. De
   # ahí `files` en vez de `folder`.
   - name: pages
-    publish_mode: simple
     label: Pages
     files:
       - name: home
@@ -113,7 +70,6 @@ collections:
   # tarjeta en la página de Bethath y en el submenú de la barra lateral, y tiene su
   # propia página.
   - name: islands
-    publish_mode: simple
     label: Islands
     label_singular: Island
     folder: src/content/islands
@@ -203,7 +159,6 @@ collections:
   # coincidir con las de src/data/pokemon.js: un valor que no esté allí se
   # enseña tal cual en la tabla, pero no aparece en los filtros.
   - name: pokemon
-    publish_mode: simple
     label: Pokémon
     label_singular: Pokémon
     folder: src/content/pokemon
@@ -213,16 +168,6 @@ collections:
     identifier_field: name
     summary: "{{fields.order}} · {{fields.name}} {{fields.form}} — {{fields.status}}"
     sortable_fields: [order, name, status, generation]
-    view_groups:
-      - { label: Status, field: status }
-      - { label: Generation, field: generation }
-      - { label: Classification, field: classification }
-    view_filters:
-      - { label: Open, field: status, pattern: "^OPEN$" }
-      - { label: Closed, field: status, pattern: "^CLOSED$" }
-      - { label: Reserved, field: status, pattern: "^RESERVED" }
-      - { label: Pending, field: status, pattern: "^PENDING$" }
-      - { label: Fakemon, field: fakemon, pattern: true }
     media_folder: /public/pokemon
     public_folder: /pokemon
     fields:
@@ -245,7 +190,6 @@ collections:
 
   # ───────────────────────── Items ─────────────────────────
   - name: items
-    publish_mode: simple
     label: Items
     label_singular: Item
     folder: src/content/items
@@ -255,14 +199,6 @@ collections:
     identifier_field: name
     summary: "{{fields.name}} {{fields.note}} — {{fields.type}} · {{fields.rarity}}"
     sortable_fields: [name, type, rarity]
-    view_groups:
-      - { label: Type, field: type }
-      - { label: Rarity, field: rarity }
-      - { label: "How to get", field: howToGet }
-    view_filters:
-      - { label: Find, field: howToGet, pattern: "^FIND$" }
-      - { label: Craft, field: howToGet, pattern: "^CRAFT$" }
-      - { label: Special, field: howToGet, pattern: "^SPECIAL$" }
     media_folder: /public/items
     public_folder: /items
     fields:
@@ -297,7 +233,6 @@ collections:
   # Venían en la hoja de objetos (tipo SPECIAL BELONGING); tienen página propia
   # porque no se compran ni se venden y casi todas van ligadas a un Pokémon.
   - name: belongings
-    publish_mode: simple
     label: Special belongings
     label_singular: Special belonging
     folder: src/content/belongings
@@ -307,8 +242,6 @@ collections:
     identifier_field: name
     summary: "{{fields.name}} — {{fields.pokemon}}"
     sortable_fields: [name, pokemon, rarity]
-    view_filters:
-      - { label: "To be developed", field: description, pattern: "^TO BE DEVELOPED$" }
     media_folder: /public/belongings
     public_folder: /belongings
     fields:
@@ -326,7 +259,6 @@ collections:
 
   # ───────────────────────── Blessings ─────────────────────────
   - name: blessings
-    publish_mode: simple
     label: Blessings
     label_singular: Blessing
     folder: src/content/blessings

@@ -31,9 +31,8 @@ export default function Navbar({ menuOpen, onToggleMenu }){
             <div className="navbar__actions">
 
                 {/*
-                  El panel de edición propio (/panel), donde entran todos los
-                  admins, tengan GitHub o no. Sveltia sigue en /admin/, pero ya
-                  no se enlaza desde la web.
+                  El panel de edición (/panel), donde entran todos los admins
+                  con su usuario y contraseña.
                 */}
                 <Link to="/panel" className="admin-link">
                     Admin

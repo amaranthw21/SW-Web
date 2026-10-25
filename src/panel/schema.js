@@ -1,16 +1,18 @@
-// Lee public/admin/config.yml, el mismo que usa Sveltia, y saca de ahí las
-// colecciones y sus campos. Así hay un solo sitio donde se definen los
-// formularios: un campo nuevo añadido allí aparece en los dos paneles.
+// Lee src/panel/config.yml y saca de ahí las colecciones y sus campos. Así hay
+// un solo sitio donde se definen los formularios: un campo nuevo añadido allí
+// aparece en el panel.
 import { parse } from "yaml";
 
 import slug from "../lib/slug";
 
+// Va dentro del bundle del panel (?raw lo trae como texto): no hay que pedirlo
+// aparte ni publicarlo en public/.
+import configText from "./config.yml?raw";
+
 
 export async function loadConfig(){
 
-    const response = await fetch(`${import.meta.env.BASE_URL}admin/config.yml`);
-
-    return parse(await response.text());
+    return parse(configText);
 
 }
 
