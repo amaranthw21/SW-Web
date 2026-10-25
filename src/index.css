@@ -6197,6 +6197,103 @@ button.region-loc {
 
 }
 
+/* La entrada de una sola de las identidades lleva su color en el borde. */
+.character-note[style] {
+
+    border-left-color: var(--identity);
+
+}
+
+.character-note__head {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 8px;
+
+    margin-bottom: 2px;
+
+}
+
+.character-note__head .character-note__term {
+
+    margin-bottom: 0;
+
+}
+
+
+/* Personajes que son varios en un cuerpo: de quién es cada cosa, en una
+   pastilla con el color de esa identidad ("Both" va en el acento). */
+.character-who {
+
+    display: inline-block;
+
+    padding: 1px 9px;
+
+    border: 1px solid color-mix(in srgb, var(--identity) 55%, transparent);
+    border-radius: 999px;
+
+    background: color-mix(in srgb, var(--identity) 14%, transparent);
+    color: var(--identity);
+
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+
+}
+
+.character-who--all {
+
+    --identity: var(--accent);
+
+}
+
+.character-whos {
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+}
+
+/* La personalidad de cada identidad, lado a lado (una debajo de otra en
+   móvil). */
+.character-identities {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+
+    margin-top: 18px;
+
+}
+
+.character-identity {
+
+    padding: 14px 18px 4px;
+
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-top: 3px solid var(--identity);
+    border-radius: 0 0 8px 8px;
+
+    background: rgba(31, 41, 55, 0.45);
+
+}
+
+.character-identity__name {
+
+    margin: 0 0 8px;
+
+    color: var(--identity);
+
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+}
+
 
 /* /characters: un apartado para los NPCs y otro para los personajes de
    jugadores, cada uno con su rejilla de 4 por fila. */

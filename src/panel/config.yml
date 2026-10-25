@@ -198,7 +198,18 @@ collections:
         required: false
         field: { name: fear, label: Fear, widget: string }
         hint: "One per row. Short ('Sunny days') or 'Title: explanation' ('Company: likes being around friends…'). With a title it shows as a card with the title highlighted."
-      - { name: personality, label: "In-depth personality", widget: richtext, required: false }
+      - { name: personality, label: "In-depth personality", widget: richtext, required: false, hint: "For a character made of several identities, the part they share; each identity's own part goes below." }
+      - name: identities
+        label: Identities
+        label_singular: Identity
+        widget: list
+        required: false
+        summary: "{{fields.name}}"
+        hint: "Only for a character that is several in one body (e.g. Malaya and Bailey). In Likes, Dislikes and Fears, end an entry's title with who it belongs to: 'Cooking (Malaya): …', 'Forced inactivity (Both): …'."
+        fields:
+          - { name: name, label: Name, widget: string }
+          - { name: color, label: Color, widget: color, required: false, hint: "Tints its name and its entries. Empty picks one." }
+          - { name: personality, label: Personality, widget: richtext, required: false, hint: "Shown in its own card under the shared personality." }
       # Abilities and moves
       - name: abilities
         label: Abilities

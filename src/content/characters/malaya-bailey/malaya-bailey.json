@@ -1,0 +1,131 @@
+{
+  "name": "Malaya / Bailey",
+  "nameOrigin": "",
+  "kind": "npc",
+  "status": "",
+  "player": "xanandra_",
+  "island": "sleighbell-island",
+  "guardianOf": [
+    "sleighbell-island"
+  ],
+  "image": "",
+  "imageCredit": "",
+  "summary": "",
+  "gender": "Female",
+  "age": "34",
+  "fusionName": "Lucagia",
+  "species1": "lugia",
+  "species2": "lucario-bethath",
+  "type1": "Flying",
+  "type2": "Fighting",
+  "hiddenType": "Water",
+  "traits": [
+    "Protective",
+    "Determined",
+    "Perceptive",
+    "Reckless",
+    "Volatile",
+    "Withdrawn"
+  ],
+  "likes": [
+    "Terrible weathers (Both): Both are drawn to violent weather and turbulent environments. Thunderstorms, heavy rain, blizzards, ash clouds…",
+    "Pure physical combat (Bailey): Bailey enjoys fighting in its most direct, unrefined form. If a confrontation does not feel serious or high-stakes, she will instinctively default to bodily attacks, rather than using pokemon moves.",
+    "Nocturnal habits (Bailey): Bailey is naturally inclined to activity at night, since that reduces the presence of others and likelihood of encountering a certain specific individual.",
+    "Collecting small trinkets (Malaya): Malaya has a habit of collecting small, often insignificant objects she finds. Over time, this has grown into a sizable and disorganized collection.",
+    "Cooking (Malaya): She enjoys cooking, however, she is notably bad at it, frequently misjudging timing, ingredients, or proportions so she rarely shows others."
+  ],
+  "dislikes": [
+    "Forced inactivity (Both): Being made to stay still or do nothing for long periods makes both of them restless and agitated.",
+    "Ho-Oh (Bailey): She just hates his guts (I will tell more once Espero is done with Ho-Oh)",
+    "Post-storm destruction (Malaya): While she shares an affinity for storms, Malaya is deeply unsettled by the aftermath they leave behind. Damaged environments, scattered debris, and general disorder often trigger an urge in her to restore or “fix” what was broken, even when it is beyond her ability to fully repair."
+  ],
+  "fears": [
+    "Claustrophobia"
+  ],
+  "personality": "Malaya and Bailey are two distinct identities sharing the same body, shaped by something neither fully understands. They are not opposites, but different expressions of the same underlying nature... restless, intense, and driven more by instinct than restraint. Both are impulsive, action-driven, and dangerously willing to throw themselves into harm’s way without a second thought. Stillness makes them uneasy. If nothing is happening, they will make something happen... whether that means picking a fight or inserting themselves into situations they have no reason to be part of.\n\nThey are not built for peace.",
+  "identities": [
+    {
+      "name": "Malaya",
+      "color": "#a5d8ff",
+      "personality": "Malaya is the more restrained of the two, though that restraint is neither natural nor stable. She is deeply protective, often placing herself between others and harm with little regard for her own safety. There is a nurturing quality to her behavior: she listens, observes, and takes responsibility even when it is not hers to carry.\n\nMalaya seeks connection and wants to be close to others, but this desire is constantly undermined by her fear of losing control. She is aware of the instability within her and what it is capable of, which leads her to keep others at a distance despite wanting the opposite. Her composure is something she actively maintains, and when it fails, it does the shift is abrupt and frightening."
+    },
+    {
+      "name": "Bailey",
+      "color": "#a78bfa",
+      "personality": "Bailey, in contrast, does not attempt to restrain herself. She is direct, reactive, and often violent in her approach to problems, favouring immediate action over reflection. For her subtlety feels pointless and patience just wastes time. She does not question her impulses and shows little concern for consequences once she is set in motion.\n\nBailey is naturally solitary, viewing others as unpredictable and often not worth the effort of understanding. However, this does not make her incapable of attachment, only that it manifests differently. She expresses it through action rather than words, staying and fighting rather than offering false reassurance. Once provoked, she escalates quickly and rarely pulls back on her own."
+    }
+  ],
+  "abilities": [
+    {
+      "slot": "Common Talent",
+      "name": "Fighting",
+      "description": "Can destroy large obstacles blocking paths. Your opponent cannot use foul, unusual tricks in duels you start, an example being having an ally of theirs attack you from the shadows."
+    },
+    {
+      "slot": "Special Talent",
+      "name": "Stormrider / Tidebreaker",
+      "description": "**Stormrider (Malaya):** This ability allows Malaya to soar through the skies in complete freedom. However, the beating of her wings unleashes a raging typhoon in her vicinity, which only calms once she touches the ground again.\n\n**Tidebreaker (Bailey):** This ability grants Bailey complete adaptation to the deep-sea environment, allowing her to breathe underwater and move at high speed. However, it also makes the surrounding waters grow increasingly violent, which subsides once she leaves the water."
+    },
+    {
+      "slot": "Common Battle",
+      "name": "Reckless",
+      "description": "Boosts the power of the Pokémon's moves by `20%` if they have recoil or crash damage."
+    },
+    {
+      "slot": "Unique Battle",
+      "name": "Maelstrom Veil",
+      "description": "When this Pokémon enters the battle, it summons Rain. While Rain is active, damage taken from Electric-type moves is reduced by half."
+    },
+    {
+      "slot": "Unique Battle (Item)",
+      "name": "Shadow Takeover",
+      "description": "If this Pokémon is holding its signature item, all Flying-type attacking moves become Shadow-type moves.\n\nAdditionally, when this Pokémon hits a target with a Shadow-type move, the target becomes surrounded by a maelstrom, losing a small amount of Health at the end of each turn. This effect is refreshed if the target is hit again."
+    }
+  ],
+  "moves": [
+    {
+      "name": "Aeroblast",
+      "category": "Special",
+      "type": "Flying",
+      "pp": 5,
+      "description": "A vortex of air is shot at the target to inflict damage. This move has a heightened chance of landing a critical hit."
+    },
+    {
+      "name": "Wave Crash",
+      "category": "Physical",
+      "type": "Water",
+      "pp": 10,
+      "description": "The user shrouds itself in water and slams into the target with its whole body to inflict damage. This also damages the user quite a lot."
+    },
+    {
+      "name": "Aqua Ring",
+      "category": "Status",
+      "type": "Water",
+      "pp": 20,
+      "description": "The user summons a ring of water that will gradually restore its Health `[1/16]`."
+    },
+    {
+      "name": "Axe Kick",
+      "category": "Physical",
+      "type": "Fighting",
+      "pp": 10,
+      "description": "The user attacks by kicking up into the air and slamming its heel down upon the target. This may also confuse the target. If it misses, the user takes damage instead."
+    },
+    {
+      "name": "Brave Bird",
+      "category": "Physical",
+      "type": "Flying",
+      "pp": 15,
+      "description": "The user attacks by tucking its wings and charging at targets from a low altitude. The user will also take some damage."
+    },
+    {
+      "name": "Drain Punch",
+      "category": "Physical",
+      "type": "Fighting",
+      "pp": 10,
+      "description": "The user attacks with an energy-draining punch. The user's Health will be restored by a portion of the damage dealt `[1/2 of the damage inflicted]`."
+    }
+  ],
+  "backstory": "Malaya or Bailey. Bailey or Malaya.\nTwo names that don’t quite fit… yet can’t be separated either.\n\nBecause in the end, those are the only names she has.\n\nShe does not call herself Lugia.\nNot anymore.\n\nThat name exists—heavy, distant, almost foreign… like something remembered rather than lived.\nIt lingers at the edges of her thoughts, ancient and vast, but never fully within reach. Something she knows she should understand… and doesn’t.\n\nSo she doesn’t use it.\n\nShe is Malaya.\nOr she is Bailey.\n\nIt depends.\n\nBecause Malaya is not Bailey, and Bailey is not Malaya.\nThey do not think the same, do not feel the same, do not exist the same way. And yet, they occupy the same space, move the same body, inherit the same fractured remains of something neither of them can fully claim.\n\nBefore this… there were two.\n\nThat much is certain.\n\nTwo sisters. Twins.\n\nMalaya.\nBailey.\n\nShe remembers them—but not as a life lived.\n\nOnly in fragments.\n\nMoments that unfold in first person, yet never quite feel like her own.\nAs if she were watching through someone else’s eyes, trapped inside the scene but never in control. Everything is distant, blurred, distorted—like trying to see through deep water. Sounds come muffled. Movements drag. Faces never stay clear long enough to recognize.\n\nShe sees hands that might be hers.\nHears voices that might be familiar.\nFeels emotions that arrive without context and vanish just as quickly.\n\nAnd she cannot tell—\n\nif what she is seeing belongs to Malaya…\nor to Bailey.\n\nThose fragments bleed into something else.\n\nSomething bigger.\n\nThere are other memories—if they can even be called that.\nNot weak. Not small. Not contained.\n\nVast oceans stretching endlessly beneath her.\nSkies splitting open above her.\nWings that do not feel like wings so much as forces, currents, pressure, motion.\n\nSometimes, those moments are calm.\n\nA white form gliding silently through sky and sea alike.\nA presence that does not disturb, that does not need to act to be felt. There is balance there. Stillness. A quiet sense that everything is… as it should be.\n\nOther times...\n\nthey are not.\n\nThe same presence, twisted. Darkened.\nIndigo instead of white. Eyes burning red instead of empty black.\nThe air grows violent around her, the ocean responds in kind, and everything becomes movement, impact, reaction. There is no stillness—only force.\n\nShe does not know who was Lugia anymore.\n\nBut it’s there. Beneath everything.\n\nMalaya leans toward the calm.\nShe holds onto it, tries to shape herself around it.\n\nBailey leans toward the violence.\n\nNeither of them chose this or understands it.\n\nBut both of them exist.\n\nSometimes Malaya is the one thinking, trying to piece things together, trying to make the fragments align into something coherent.\n\nSometimes Bailey takes over... sharper, faster, less concerned with whos and whys and more with getting rid of what angers her.\n\nAnd sometimes… there is only silence between them.\n\nA gap where something should be.\n\nThey do not try to become one.\nThey stopped trying a long time ago.\n\nMalaya is Malaya.\nBailey is Bailey.\n\nThat is enough.\nIt has to be.\n\nBecause every time they get too close to something that doesn’t belong to either name...\n\nEverything starts to fall apart again.\n\nThe fragments blur. The sensations overlap.\n\nAnd for a moment... it almost feels like there was something that would swallow them both.\n\nSomething that had a name they no longer use.\n\nBut is scary.\n\nSo they let it go.\n\nAnd return to what they understand.\n\nTwo names.\nTwo voices.\nOne existence they cannot divide, and cannot truly share.\n\nAnd beneath it all... lies something vast, something better forgotten.\n\nBut never truly gone.",
+  "gallery": []
+}

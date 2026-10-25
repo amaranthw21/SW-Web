@@ -56,6 +56,63 @@ function IslandLink({ island }){
 }
 
 
+// Un personaje puede ser varios en un cuerpo (Malaya y Bailey): cada identidad
+// lleva su nombre, su color y su parte de la personalidad. Sin color propio
+// toma uno de estos, por orden.
+const IDENTITY_COLORS = ["#7dd3fc", "#f0abfc", "#86efac", "#fdba74"];
+
+function identitiesOf(character){
+
+    return filled(character.identities).map((identity, i) => ({
+        ...identity,
+        name: identity.name.trim(),
+        color: identity.color?.trim() || IDENTITY_COLORS[i % IDENTITY_COLORS.length]
+    }));
+
+}
+
+
+// De quién es una entrada, si se dice entre paréntesis al final del título:
+// "Cooking (Malaya): …", "Forced inactivity (Both): …", "Claustrophobia
+// (Bailey)". Solo cuenta si nombra a una de sus identidades o a todas ("Both",
+// "All"); otro paréntesis ("Fear (of the dark)") se queda como está.
+const WHO = /^(.*?)\s*\(\s*([^()]+?)\s*\)$/;
+const EVERYONE = ["both", "all", "everyone"];
+
+function whoOf(term, identities){
+
+    const match = identities.length > 0 && term.match(WHO);
+    const who = match && match[2].toLowerCase();
+
+    if(!who){
+        return { term, who: null };
+    }
+
+    if(EVERYONE.includes(who)){
+        return { term: match[1], who: { name: match[2], color: null } };
+    }
+
+    const identity = identities.find(entry => entry.name.toLowerCase() === who);
+
+    return identity ? { term: match[1], who: identity } : { term, who: null };
+
+}
+
+
+function WhoTag({ who }){
+
+    return (
+        <span
+            className={`character-who${who.color ? "" : " character-who--all"}`}
+            style={who.color ? { "--identity": who.color } : undefined}
+        >
+            {who.name}
+        </span>
+    );
+
+}
+
+
 function Tags({ items }){
 
     return (
@@ -73,11 +130,15 @@ function Tags({ items }){
 // una frase larga que lleve dos puntos por el medio no.
 const TERM = /^([^:]{1,40}):\s+(\S[\s\S]*)$/;
 
-function splitEntry(item){
+function splitEntry(item, identities){
 
     const match = item.match(TERM);
 
-    return match ? { term: match[1].trim(), text: match[2].trim() } : { term: "", text: item };
+    if(!match){
+        return { term: "", text: item, who: whoOf(item, identities).who };
+    }
+
+    return { ...whoOf(match[1].trim(), identities), text: match[2].trim() };
 
 }
 
@@ -93,17 +154,22 @@ function isDetailed(items){
 }
 
 
-function DetailedList({ title, items }){
+function DetailedList({ title, items, identities }){
 
     return (
         <div className="character-notes">
             <h3 className="block-part__title">{title}</h3>
             <ul className="character-notes__list">
                 {items.map(item => {
-                    const { term, text } = splitEntry(item);
+                    const { term, text, who } = splitEntry(item, identities);
                     return (
-                        <li key={item} className="character-note">
-                            {term && <strong className="character-note__term">{term}</strong>}
+                        <li key={item} className="character-note" style={who?.color ? { "--identity": who.color } : undefined}>
+                            {(term || who) && (
+                                <span className="character-note__head">
+                                    {term && <strong className="character-note__term">{term}</strong>}
+                                    {who && <WhoTag who={who} />}
+                                </span>
+                            )}
                             <span className="character-note__text">{text}</span>
                         </li>
                     );
@@ -115,7 +181,27 @@ function DetailedList({ title, items }){
 }
 
 
-function Personality({ character }){
+// La parte de la personalidad de cada identidad, una tarjeta por cabeza con su
+// nombre en su color.
+function IdentityProfiles({ identities }){
+
+    const described = identities.filter(identity => identity.personality?.trim());
+
+    return described.length > 0 && (
+        <div className="character-identities">
+            {described.map(identity => (
+                <section key={identity.name} className="character-identity" style={{ "--identity": identity.color }}>
+                    <h3 className="character-identity__name">{identity.name}</h3>
+                    <Paragraphs text={identity.personality} className="country-block__text" />
+                </section>
+            ))}
+        </div>
+    );
+
+}
+
+
+function Personality({ character, identities }){
 
     const traits = filled(character.traits);
 
@@ -141,7 +227,10 @@ function Personality({ character }){
                             <div key={list.title}>
                                 <h3 className="block-part__title">{list.title}</h3>
                                 <ul className="paragraph-list">
-                                    {list.items.map(item => <li key={item}>{item}</li>)}
+                                    {list.items.map(item => {
+                                        const { term, who } = whoOf(item, identities);
+                                        return <li key={item}>{term}{who && <> <WhoTag who={who} /></>}</li>;
+                                    })}
                                 </ul>
                             </div>
                         ))}
@@ -149,13 +238,15 @@ function Personality({ character }){
                 )
             }
 
-            {detailed.map(list => <DetailedList key={list.title} title={list.title} items={list.items} />)}
+            {detailed.map(list => <DetailedList key={list.title} title={list.title} items={list.items} identities={identities} />)}
 
             {
                 character.personality?.trim() && (
                     <Paragraphs text={character.personality} className="country-block__text" />
                 )
             }
+
+            <IdentityProfiles identities={identities} />
 
         </>
 
@@ -245,18 +336,18 @@ function Gallery({ items, onOpen }){
 
 // Las secciones de la ficha, en el orden del documento de personaje. Una que
 // esté vacía no sale, ni en la página ni en el índice.
-function characterBlocks(character, openImage){
+function characterBlocks(character, identities, openImage){
 
     const blocks = [];
 
     const hasPersonality = filled(character.traits).length || filled(character.likes).length
         || filled(character.dislikes).length || filled(character.fears).length
-        || character.personality?.trim();
+        || character.personality?.trim() || identities.some(identity => identity.personality?.trim());
 
     if(hasPersonality){
         blocks.push({
             title: "Personality",
-            parts: [{ type: "node", node: <Personality character={character} /> }]
+            parts: [{ type: "node", node: <Personality character={character} identities={identities} /> }]
         });
     }
 
@@ -290,7 +381,7 @@ function characterBlocks(character, openImage){
 }
 
 
-function Infobox({ character, island, guarded, species, onOpenPortrait }){
+function Infobox({ character, identities, island, guarded, species, onOpenPortrait }){
 
     const types = [character.type1, character.type2].filter(type => type?.trim());
     const status = character.kind === "player" && character.status && character.status !== "available"
@@ -303,6 +394,9 @@ function Infobox({ character, island, guarded, species, onOpenPortrait }){
                 {character.name}
                 {character.nameOrigin?.trim() && <span className="character-origin">{character.nameOrigin}</span>}
             </>
+        )],
+        ["Identities", identities.length > 1 && (
+            <span className="character-whos">{identities.map(identity => <WhoTag key={identity.name} who={identity} />)}</span>
         )],
         ["Kind", labelOf(KINDS, character.kind)],
         ["Status", status && [status, character.player?.trim() && `played by ${character.player.trim()}`].filter(Boolean).join(", ")],
@@ -409,6 +503,7 @@ export default function Character(){
     }
 
     const species = speciesOf(character);
+    const identities = identitiesOf(character);
 
     const pictures = [
         ...(character.image?.trim() ? [{ image: character.image, caption: character.imageCredit?.trim(), alt: character.name }] : []),
@@ -416,7 +511,7 @@ export default function Character(){
     ];
     const galleryStart = character.image?.trim() ? 1 : 0;
 
-    const blocks = characterBlocks(character, i => setViewing(galleryStart + i));
+    const blocks = characterBlocks(character, identities, i => setViewing(galleryStart + i));
 
     // La línea bajo el título: fusión, especies e isla, lo que lo sitúa de un
     // vistazo. Lo que falte se omite.
@@ -457,6 +552,7 @@ export default function Character(){
 
                 <Infobox
                     character={character}
+                    identities={identities}
                     island={island}
                     guarded={guarded}
                     species={species}
