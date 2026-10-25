@@ -576,7 +576,9 @@ body::before {
 
     color: white;
 
-    background-color: #14141c;
+    /* El fondo que asoma mientras carga la imagen: oscuro cálido, como el resto
+       del sitio (venía de PU-Web en un azul oscuro que tiraba a morado). */
+    background-color: #1a150d;
 
     transition: transform 0.2s;
 
@@ -626,7 +628,10 @@ body::before {
 
 }
 
-/* Banda inferior: degradado oscuro para que el nombre se lea sobre cualquier arte */
+/* Banda inferior: degradado oscuro para que el nombre se lea sobre cualquier
+   arte. Es más alta y densa abajo de lo que era: sobre un dibujo blanco (el de
+   Ampelo) la banda antigua dejaba el texto casi sin contraste. La sombra del
+   texto remata los bordes de las letras. */
 .entry-card__body {
 
     position: relative;
@@ -634,13 +639,16 @@ body::before {
 
     width: 100%;
 
-    padding: 40px 18px 16px;
+    padding: 56px 18px 16px;
 
     background: linear-gradient(
         to top,
-        rgba(10, 10, 14, 0.92),
-        rgba(10, 10, 14, 0)
+        rgba(12, 9, 4, 0.96) 0%,
+        rgba(12, 9, 4, 0.82) 40%,
+        rgba(12, 9, 4, 0) 100%
     );
+
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 12px rgba(0, 0, 0, 0.6);
 
 }
 
@@ -654,7 +662,7 @@ body::before {
 
     margin: 4px 0 0;
 
-    color: #d7c2e0;
+    color: #eadfc8;
 
 }
 
@@ -1249,7 +1257,7 @@ body::before {
     text-decoration: none;
     color: white;
 
-    background-color: #14141c;
+    background-color: #1a150d;
 
     transition: transform 0.2s, box-shadow 0.2s;
 
@@ -2720,13 +2728,13 @@ body::before {
 
     object-fit: cover;
 
-    background: #14141c;
+    background: #1a150d;
 
 }
 
 .block-title__icon--empty {
 
-    background: color-mix(in srgb, var(--accent) 18%, #14141c);
+    background: color-mix(in srgb, var(--accent) 18%, #1a150d);
 
 }
 
@@ -2928,7 +2936,7 @@ body::before {
     border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
     border-radius: 10px;
 
-    background-color: #14141c;
+    background-color: #1a150d;
 
 }
 
@@ -3109,7 +3117,7 @@ button.region-loc {
     border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
     border-radius: 10px;
 
-    background-color: #14141c;
+    background-color: #1a150d;
 
     transition: border-color 0.2s, transform 0.2s;
 
@@ -3117,7 +3125,7 @@ button.region-loc {
 
 .region-loc__img--empty {
 
-    background: color-mix(in srgb, var(--accent) 14%, #14141c);
+    background: color-mix(in srgb, var(--accent) 14%, #1a150d);
 
 }
 

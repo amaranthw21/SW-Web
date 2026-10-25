@@ -158,6 +158,8 @@ collections:
       - { name: guardianOf, label: "Guardian of", widget: relation, collection: islands, value_field: "{{slug}}", search_fields: [name], display_fields: ["{{name}}"], multiple: true, required: false, hint: "The islands it guards, if any; most characters guard none, a few guard several. It shows up first on each of them." }
       - { name: image, label: Portrait, widget: image, required: false, hint: "Shown in the infobox and on the cards. Saved in the character's own folder." }
       - { name: imageCredit, label: "Portrait credit", widget: string, required: false, hint: "e.g. 'Drawn by Xanandra'. Shown under the portrait." }
+      - { name: cardPosition, label: "Card framing", widget: focus, image_field: image, zoom_field: cardZoom, required: false, hint: "Click the part of the portrait the cards should show (usually the face). Used on the Characters page and in the island carousel." }
+      - { name: cardZoom, label: "Card zoom", widget: number, value_type: float, min: 1, max: 3, required: false, hint: "1 shows the whole width; 1.5 or 2 zooms in on the framing point. Empty is 1. Only on the Characters page cards." }
       - { name: summary, label: Summary, widget: text, required: false, hint: "One or two lines for the cards and the island carousel." }
       - { name: gender, label: Gender, widget: string, required: false }
       - { name: age, label: Age, widget: string, required: false, hint: "Text, so '35', 'Unknown' or 'Ancient' all work." }

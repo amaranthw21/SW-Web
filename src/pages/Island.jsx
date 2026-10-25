@@ -30,6 +30,7 @@ function toCarousel(character){
     return {
         name: character.name,
         image: character.image,
+        imagePosition: character.cardPosition,
         description: character.summary,
         status: character.kind === "player" ? character.status : "",
         player: character.player,

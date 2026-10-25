@@ -65,6 +65,11 @@ function Location({ location, isOpen, onToggle, fallbackImage }){
                           src={asset(image)}
                           loading="lazy"
                           alt={location.name ?? ""}
+                          // El encuadre que se eligió en el panel (los personajes
+                          // lo tienen; las zonas de los países, no). El zoom no:
+                          // la imagen lleva aquí su borde y se levanta al pasar
+                          // el ratón, y escalarla escalaría el borde con ella.
+                          style={location.imagePosition ? { objectPosition: location.imagePosition } : undefined}
                           onError={e => {
                               const fallback = fallbackImage && asset(fallbackImage);
                               if(fallback && !e.currentTarget.src.endsWith(fallback)){

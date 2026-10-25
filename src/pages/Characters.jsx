@@ -120,6 +120,8 @@ export default function Characters(){
                                         name={character.name}
                                         subtitle={subtitleOf(character)}
                                         image={character.image}
+                                        imagePosition={character.cardPosition}
+                                        imageZoom={character.cardZoom}
                                         link={`/characters/${character.id}`}
                                         fallbackImage={CHARACTER_PLACEHOLDER}
                                     />

@@ -1076,3 +1076,123 @@ select.panel-input option {
     }
 
 }
+
+
+/* ───────── Encuadre de la tarjeta ───────── */
+
+.panel-focus {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+}
+
+.panel-focus__pick {
+
+    flex: 1 1 260px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+}
+
+/* La imagen entera, sin recortar: se pulsa encima para elegir el punto. */
+.panel-focus__image {
+
+    position: relative;
+
+    align-self: flex-start;
+
+    max-width: 100%;
+
+    padding: 0;
+
+    border: 1px solid var(--panel-line);
+    border-radius: 8px;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    cursor: crosshair;
+
+    overflow: hidden;
+
+}
+
+.panel-focus__image img {
+
+    display: block;
+
+    max-width: 100%;
+    max-height: 320px;
+
+}
+
+.panel-focus__marker {
+
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+
+    margin: -11px 0 0 -11px;
+
+    border: 2px solid white;
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 2px var(--accent), 0 0 8px rgba(0, 0, 0, 0.8);
+
+    pointer-events: none;
+
+}
+
+.panel-focus__preview {
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+}
+
+/* Misma proporción que las tarjetas de la web (300 × 320). */
+.panel-focus__card {
+
+    position: relative;
+
+    width: 150px;
+    height: 160px;
+
+    border-radius: 10px;
+
+    background: #1a150d;
+
+    overflow: hidden;
+
+}
+
+.panel-focus__card img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+.panel-focus__name {
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    padding: 24px 8px 6px;
+
+    background: linear-gradient(to top, rgba(12, 9, 4, 0.95), rgba(12, 9, 4, 0));
+
+    font-size: 0.8em;
+
+    font-weight: bold;
+
+}

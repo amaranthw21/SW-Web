@@ -48,13 +48,17 @@ export default function Field({ field, value, onChange, ctx }){
 
 export function Fields({ fields, value, onChange, ctx }){
 
+    // `parent` es el objeto entero al que pertenecen estos campos: el encuadre
+    // necesita ver la imagen y el zoom, que son campos hermanos suyos.
+    const inner = { ...ctx, parent: value };
+
     return fields.map(field => (
         <Field
             key={field.name}
             field={field}
             value={value?.[field.name]}
             onChange={next => onChange({ ...value, [field.name]: next })}
-            ctx={ctx}
+            ctx={inner}
         />
     ));
 
@@ -270,6 +274,67 @@ function ImageWidget({ id, value, onChange, ctx }){
 }
 
 
+// El encuadre de una imagen en su tarjeta: se pulsa en la imagen el punto que
+// tiene que quedar a la vista (la cara, normalmente) y al lado se ve la tarjeta
+// tal como saldrá. Se guarda como object-position ("50% 20%").
+//
+// En config.yml: `image_field` es el campo hermano con la imagen y `zoom_field`
+// (opcional) el del zoom, que la vista previa también aplica.
+function FocusWidget({ field, value, onChange, ctx }){
+
+    const image = ctx.parent?.[field.image_field ?? "image"];
+    const zoom = Number(ctx.parent?.[field.zoom_field]) || 1;
+
+    if(!image?.trim()){
+        return <p className="panel-field__hint">Add a picture first; then click on it here to choose what the card shows.</p>;
+    }
+
+    const path = imagePath(image, ctx.entryPath);
+    const src = path ? rawUrl(path) : image;
+    const position = value?.trim() || "50% 50%";
+    const [x, y] = position.split(/\s+/).map(part => parseFloat(part));
+
+    function pick(event){
+        const box = event.currentTarget.getBoundingClientRect();
+        const px = Math.round(((event.clientX - box.left) / box.width) * 100);
+        const py = Math.round(((event.clientY - box.top) / box.height) * 100);
+        onChange(`${Math.min(100, Math.max(0, px))}% ${Math.min(100, Math.max(0, py))}%`);
+    }
+
+    return (
+
+        <div className="panel-focus">
+
+            <div className="panel-focus__pick">
+                <button type="button" className="panel-focus__image" onClick={pick} aria-label="Click the part of the picture the card should show">
+                    <img src={src} alt="" />
+                    <span className="panel-focus__marker" style={{ left: `${x}%`, top: `${y}%` }} />
+                </button>
+                <div className="panel-row">
+                    <span className="panel-muted">{value?.trim() ? `Focus: ${position}` : "Centered (default)"}</span>
+                    {value?.trim() && <button type="button" className="panel-btn panel-btn--ghost" onClick={() => onChange("")}>Center</button>}
+                </div>
+            </div>
+
+            <div className="panel-focus__preview">
+                <span className="panel-muted">Card preview</span>
+                <div className="panel-focus__card">
+                    <img
+                        src={src}
+                        alt=""
+                        style={{ objectPosition: position, transform: zoom !== 1 ? `scale(${zoom})` : undefined, transformOrigin: position }}
+                    />
+                    <span className="panel-focus__name">{ctx.parent?.name || "Name"}</span>
+                </div>
+            </div>
+
+        </div>
+
+    );
+
+}
+
+
 // Elige entradas de otra colección (las islas eligen sus legendarios entre los
 // Pokémon). Las opciones salen del contenido del último build.
 function RelationWidget({ id, field, value, onChange, ctx }){
@@ -466,5 +531,6 @@ const WIDGETS = {
     color: ColorWidget,
     image: ImageWidget,
     relation: RelationWidget,
+    focus: FocusWidget,
     list: ListWidget
 };
