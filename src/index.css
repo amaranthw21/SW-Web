@@ -5673,14 +5673,10 @@ button.region-loc {
 
 }
 
-/* Habilidades y movimientos en filas de tres columnas, alineadas entre sí:
-   nombre, datos (el hueco de la habilidad; la categoría, el tipo y los PP del
-   movimiento) y la descripción, que ocupa todo lo que queda. Antes iban en una
-   rejilla de tarjetas, y como sus textos van de una línea a varios párrafos,
-   las de una fila se estiraban todas a la más larga.
-   
-   En pantallas medianas los datos pasan debajo del nombre (dos columnas) y en
-   el móvil va todo seguido. */
+/* Habilidades en filas: a la izquierda el hueco y el nombre, a la derecha la
+   descripción a todo lo que queda de ancho. Antes iban en una rejilla de
+   tarjetas, pero sus textos van de una línea a varios párrafos, y las de una
+   fila se estiraban todas a la más larga. */
 .character-abilities {
 
     margin-bottom: 24px;
@@ -5689,7 +5685,37 @@ button.region-loc {
 
 }
 
-.character-ability,
+.character-ability {
+
+    display: grid;
+    grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
+    align-items: start;
+    gap: 6px 24px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+
+}
+
+/* El nombre se queda a la vista mientras se lee una descripción larga. */
+.character-ability__head {
+
+    position: sticky;
+    top: calc(var(--navbar-h) + 12px);
+
+}
+
+.character-ability__body .character-ability__text + .character-ability__text {
+
+    margin-top: 8px;
+
+}
+
+/* Movimientos en tres columnas: nombre, datos (categoría, tipo y PP) y
+   descripción. Antes los datos iban al otro extremo de la fila, y en una
+   pantalla ancha quedaban lejísimos del nombre. En pantallas medianas los
+   datos pasan debajo del nombre. */
 .character-move {
 
     display: grid;
@@ -5703,17 +5729,10 @@ button.region-loc {
 
 }
 
-.character-ability__body .character-ability__text + .character-ability__text {
-
-    margin-top: 8px;
-
-}
-
 @media (max-width: 900px) {
 
     /* La primera fila se ciñe al nombre: la descripción ocupa las dos filas y,
        si no, el alto se repartiría y los datos quedarían lejos del nombre. */
-    .character-ability,
     .character-move {
 
         grid-template-columns: minmax(130px, 200px) minmax(0, 1fr);
@@ -5721,14 +5740,12 @@ button.region-loc {
 
     }
 
-    .character-ability__name,
     .character-move__name {
 
         grid-column: 1;
 
     }
 
-    .character-ability__slot,
     .character-move__tags {
 
         grid-column: 1;
@@ -5736,7 +5753,6 @@ button.region-loc {
 
     }
 
-    .character-ability__body,
     .character-move__body {
 
         grid-column: 2;
@@ -5755,7 +5771,12 @@ button.region-loc {
 
     }
 
-    .character-ability__body,
+    .character-ability__head {
+
+        position: static;
+
+    }
+
     .character-move__body {
 
         grid-column: 1;
@@ -5769,9 +5790,6 @@ button.region-loc {
 
     margin: 0;
 
-    /* A la altura del nombre, que es más grande. */
-    padding-top: 4px;
-
     color: #8b95a5;
 
     font-size: 0.75rem;
@@ -5784,7 +5802,7 @@ button.region-loc {
 
 .character-ability__name {
 
-    margin: 0;
+    margin: 2px 0 0;
 
     color: var(--accent);
 
