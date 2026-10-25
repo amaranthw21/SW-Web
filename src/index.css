@@ -5507,3 +5507,19 @@ button.region-loc {
     }
 
 }
+
+
+/* Columna Owner de la tabla de Pokémon: los usuarios de Discord pueden ser
+   largos y sin espacios, así que se cortan donde haga falta en vez de estirar
+   la tabla. Quién lleva un NPC va más apagado que la etiqueta. */
+.owner-cell {
+
+    overflow-wrap: anywhere;
+
+}
+
+.owner-cell__by {
+
+    opacity: 0.7;
+
+}

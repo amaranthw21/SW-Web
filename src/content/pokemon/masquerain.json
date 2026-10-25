@@ -12,6 +12,7 @@
   "classification": "NORMAL",
   "claimed": true,
   "npc": true,
+  "owner": "cresselia_world_slayer",
   "fusedWith": "Kyogre",
   "fakemon": false
 }

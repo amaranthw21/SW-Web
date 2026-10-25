@@ -27,9 +27,10 @@ the 404 page and two data tables:
 
 All of it was imported once from the server's spreadsheet with
 `scripts/import-excel.py` and are edited in the panel from then on. Running the
-script again overwrites any edits made in the panel. Owner names are not
-imported: the repository is public, so a Pokémon only says whether it's
-claimed and whether it belongs to an NPC.
+script again overwrites any edits made in the panel. Owners (the OWNER
+column) were added later with `scripts/import-owners.py`, which only fills the
+`owner` field and leaves everything else as it is; from then on they're edited
+in the panel too.
 
 Carried over from PU-Web and ready to reuse when sections are added:
 

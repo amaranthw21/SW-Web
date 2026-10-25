@@ -10,8 +10,8 @@
 #   .venv/bin/python scripts/import-excel.py "ruta/al/Pokemon_Item List.xlsx"
 #
 # Lo que NO se importa, a propósito:
-#   - Los nombres de los propietarios (columna OWNER). El repo es público, así
-#     que solo queda si el Pokémon está reclamado y si es de un NPC.
+#   - Los nombres de los propietarios (columna OWNER). Se decidió publicarlos
+#     después: los copia scripts/import-owners.py, que solo toca ese campo.
 #   - Las pestañas FINDER (son filtros, que ahora hace la propia página) y
 #     VALUES (son las opciones de los desplegables del panel).
 #   - Las columnas de tipo con VLOOKUP, que solo repetían el tipo con su icono.

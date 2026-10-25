@@ -176,8 +176,9 @@ collections:
       - { name: form, label: Form, widget: string, required: false, hint: "e.g. 'Galarian', 'Female', 'Heat'. Leave empty for the base form." }
       - { name: image, label: Image, widget: image, required: false, hint: "Square, with a transparent background. Shown small in the table." }
       - { name: status, label: Status, widget: select, default: OPEN, options: ["OPEN", "PENDING", "RESERVED (1ST)", "RESERVED (>1)", "CLOSED"] }
-      - { name: claimed, label: Claimed, widget: boolean, default: false, hint: "Someone has this Pokémon. Who it is isn't stored here: the site and its repository are public." }
-      - { name: npc, label: "NPC", widget: boolean, default: false, hint: "It belongs to an NPC. Shown as 'NPC' instead of 'Claimed'." }
+      - { name: claimed, label: Claimed, widget: boolean, default: false, hint: "Someone has this Pokémon." }
+      - { name: npc, label: "NPC", widget: boolean, default: false, hint: "It belongs to an NPC. Shown as 'NPC' next to the owner." }
+      - { name: owner, label: Owner, widget: string, required: false, hint: "The player's user name (for an NPC, who plays it). Shown on the site. Empty shows just 'Claimed'." }
       - { name: fusedWith, label: "Fused with", widget: string, required: false }
       - { name: generation, label: Generation, widget: number, value_type: int, required: false, min: 1, max: 9, hint: "1 to 9. Empty for Fakemon." }
       - { name: type1, label: "Type 1", widget: select, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy] }

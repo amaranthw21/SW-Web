@@ -32,7 +32,7 @@ function matches(entry, filters){
 
     const { q, status, type, gen, line, stage, claimed, origin } = filters;
 
-    if(q && !normalize(`${entry.name} ${entry.form} ${entry.fusedWith}`).includes(normalize(q))){
+    if(q && !normalize(`${entry.name} ${entry.form} ${entry.fusedWith} ${entry.owner ?? ""}`).includes(normalize(q))){
         return false;
     }
 
@@ -108,15 +108,25 @@ function number(entry){
 }
 
 
-// Quién lo tiene no se publica (el repo es público): solo si está reclamado y
-// si es de un NPC.
-function claimLabel(entry){
+// Quién lo tiene: el usuario (de la columna OWNER del Excel, o escrito en el
+// panel). Un NPC lleva delante la etiqueta y, si consta, quién lo lleva.
+// Reclamado sin nombre se queda en "Claimed".
+function OwnerCell({ entry }){
 
     if(entry.npc){
-        return "NPC";
+        return (
+            <>
+                NPC
+                {entry.owner && <span className="owner-cell__by"> · {entry.owner}</span>}
+            </>
+        );
     }
 
-    return entry.claimed ? "Claimed" : "—";
+    if(!entry.claimed){
+        return "—";
+    }
+
+    return entry.owner || "Claimed";
 
 }
 
@@ -147,7 +157,7 @@ export default function Pokemon(){
             <FilterBar
                 search={values.q}
                 onSearch={value => set("q", value)}
-                placeholder="Search by name, form or fusion…"
+                placeholder="Search by name, form, fusion or owner…"
                 shown={shown.length}
                 total={pokemon.length}
                 active={active}
@@ -182,7 +192,7 @@ export default function Pokemon(){
                                         <th scope="col">Type</th>
                                         <th scope="col">Gen</th>
                                         <th scope="col">Status</th>
-                                        <th scope="col">Claimed</th>
+                                        <th scope="col">Owner</th>
                                         <th scope="col">Line status</th>
                                         <th scope="col">Stage</th>
                                         <th scope="col">Classification</th>
@@ -266,8 +276,8 @@ export default function Pokemon(){
                                                     <StatusBadge status={entry.status} />
                                                 </td>
 
-                                                <td data-label="Claimed">
-                                                    {claimLabel(entry)}
+                                                <td data-label="Owner" className="owner-cell">
+                                                    <OwnerCell entry={entry} />
                                                 </td>
 
                                                 <td data-label="Line status">
