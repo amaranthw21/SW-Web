@@ -181,18 +181,21 @@ collections:
         widget: list
         required: false
         field: { name: like, label: Like, widget: string }
+        hint: "One per row. Short ('Sunny days') or 'Title: explanation' ('Company: likes being around friends…'). With a title it shows as a card with the title highlighted."
       - name: dislikes
         label: Dislikes
         label_singular: Dislike
         widget: list
         required: false
         field: { name: dislike, label: Dislike, widget: string }
+        hint: "One per row. Short ('Sunny days') or 'Title: explanation' ('Company: likes being around friends…'). With a title it shows as a card with the title highlighted."
       - name: fears
         label: "Fears / phobias"
         label_singular: Fear
         widget: list
         required: false
         field: { name: fear, label: Fear, widget: string }
+        hint: "One per row. Short ('Sunny days') or 'Title: explanation' ('Company: likes being around friends…'). With a title it shows as a card with the title highlighted."
       - { name: personality, label: "In-depth personality", widget: richtext, required: false }
       # Abilities and moves
       - name: abilities
