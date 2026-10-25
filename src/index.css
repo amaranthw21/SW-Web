@@ -6144,3 +6144,49 @@ button.region-loc {
     font-size: 0.95rem;
 
 }
+
+
+/* /characters: un apartado para los NPCs y otro para los personajes de
+   jugadores, cada uno con su rejilla de 4 por fila. */
+.characters-section {
+
+    margin-top: 32px;
+
+}
+
+.characters-section__title {
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0 0 16px;
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+
+    color: var(--accent);
+
+    font-size: 1.4rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+}
+
+.characters-section__count {
+
+    padding: 1px 10px;
+
+    border-radius: 999px;
+
+    background: color-mix(in srgb, var(--accent) 18%, transparent);
+
+    color: #cbd5e1;
+
+    font-size: 0.85rem;
+
+    letter-spacing: 0;
+
+}
