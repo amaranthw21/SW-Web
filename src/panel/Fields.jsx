@@ -316,15 +316,20 @@ function FocusWidget({ field, value, onChange, ctx }){
                 </div>
             </div>
 
+            {/* Los dos sitios donde sale: el círculo de la página de personajes
+                (con zoom) y la miniatura del carrusel de la isla (sin él). */}
             <div className="panel-focus__preview">
-                <span className="panel-muted">Card preview</span>
-                <div className="panel-focus__card">
+                <span className="panel-muted">Characters page</span>
+                <div className="panel-focus__circle">
                     <img
                         src={src}
                         alt=""
                         style={{ objectPosition: position, transform: zoom !== 1 ? `scale(${zoom})` : undefined, transformOrigin: position }}
                     />
-                    <span className="panel-focus__name">{ctx.parent?.name || "Name"}</span>
+                </div>
+                <span className="panel-muted">Island carousel</span>
+                <div className="panel-focus__thumb">
+                    <img src={src} alt="" style={{ objectPosition: position }} />
                 </div>
             </div>
 

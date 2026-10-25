@@ -6198,3 +6198,36 @@ button.region-loc {
     letter-spacing: 0;
 
 }
+
+
+/* /characters: los personajes como botones circulares grandes (los de los
+   mundos de PU-Web). Aquí son enlaces, así que sin subrayado. */
+.character-row {
+
+    margin: 8px 0 16px;
+
+}
+
+.character-btn {
+
+    text-decoration: none;
+
+}
+
+.character-btn .world-btn__label {
+
+    color: white;
+
+}
+
+.character-btn__sub {
+
+    margin-top: -8px;
+
+    color: #a99f8c;
+
+    font-size: 0.85rem;
+
+    text-align: center;
+
+}
