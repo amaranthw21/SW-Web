@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import FramedImage from "./FramedImage";
 import Paragraphs from "./Paragraphs";
 import asset from "../lib/asset";
 
@@ -59,17 +60,22 @@ function Location({ location, isOpen, onToggle, fallbackImage }){
         <>
             <span className="region-loc__frame">
             {
-                image
+                // Con encuadre elegido en el panel (los personajes), la imagen va
+                // dentro de una caja que hace de marco y se coloca libremente; el
+                // borde y el efecto al pasar el ratón son de la caja, así que el
+                // zoom no los escala.
+                image && (location.imagePosition || location.imageZoom)
+                    ? (
+                        <span className="region-loc__img region-loc__img--framed">
+                            <FramedImage src={asset(image)} position={location.imagePosition} zoom={location.imageZoom} aspect={4 / 3} />
+                        </span>
+                    )
+                    : image
                     ? <img
                           className="region-loc__img"
                           src={asset(image)}
                           loading="lazy"
                           alt={location.name ?? ""}
-                          // El encuadre que se eligió en el panel (los personajes
-                          // lo tienen; las zonas de los países, no). El zoom no:
-                          // la imagen lleva aquí su borde y se levanta al pasar
-                          // el ratón, y escalarla escalaría el borde con ella.
-                          style={location.imagePosition ? { objectPosition: location.imagePosition } : undefined}
                           onError={e => {
                               const fallback = fallbackImage && asset(fallbackImage);
                               if(fallback && !e.currentTarget.src.endsWith(fallback)){

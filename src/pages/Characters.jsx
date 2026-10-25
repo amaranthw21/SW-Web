@@ -4,6 +4,7 @@ import characters, { CHARACTER_STATUSES, islandsOf } from "../data/characters";
 import islands from "../data/islands";
 import { regionName } from "../data/region";
 import { FilterBar, FilterSelect } from "../components/FilterBar";
+import FramedImage from "../components/FramedImage";
 import { CHARACTER_PLACEHOLDER } from "../lib/placeholders";
 import asset from "../lib/asset";
 import labelOf from "../lib/labelOf";
@@ -63,23 +64,16 @@ function subtitleOf(character){
 // nombre y qué es.
 function CharacterButton({ character }){
 
-    const position = character.cardPosition?.trim() || "center";
-    const zoom = Number(character.cardZoom) || 1;
-
     return (
 
         <Link to={`/characters/${character.id}`} className="world-btn character-btn">
 
             <span className="world-btn__circle">
-                <span
-                    className="world-btn__img"
-                    style={{
-                        backgroundImage: `url("${asset(character.image?.trim() || CHARACTER_PLACEHOLDER)}")`,
-                        backgroundPosition: position,
-                        transform: zoom !== 1 ? `scale(${zoom})` : undefined,
-                        transformOrigin: position
-                    }}
-                />
+                {
+                    character.image?.trim()
+                        ? <FramedImage src={asset(character.image)} position={character.cardPosition} zoom={character.cardZoom} />
+                        : <FramedImage src={asset(CHARACTER_PLACEHOLDER)} />
+                }
             </span>
 
             <span className="world-btn__label">{character.name}</span>

@@ -1,6 +1,8 @@
-import { useId, useMemo, useState } from "react";
+import { useId, useMemo, useRef, useState } from "react";
 
+import FramedImage from "../components/FramedImage";
 import Paragraphs from "../components/Paragraphs";
+import { parsePosition } from "../lib/framing";
 
 import { uploadFile, rawUrl } from "./api";
 import {
@@ -48,9 +50,17 @@ export default function Field({ field, value, onChange, ctx }){
 
 export function Fields({ fields, value, onChange, ctx }){
 
-    // `parent` es el objeto entero al que pertenecen estos campos: el encuadre
-    // necesita ver la imagen y el zoom, que son campos hermanos suyos.
-    const inner = { ...ctx, parent: value };
+    // `parent` es el objeto entero al que pertenecen estos campos y `setField`
+    // cambia uno de ellos: el encuadre necesita ver la imagen y llevar el zoom,
+    // que son campos hermanos suyos.
+    const inner = {
+        ...ctx,
+        parent: value,
+        setField: (name, next) => onChange({ ...value, [name]: next }),
+        // Varios a la vez: dos setField seguidos partirían del mismo `value` y
+        // el segundo desharía el primero.
+        setFields: patch => onChange({ ...value, ...patch })
+    };
 
     return fields.map(field => (
         <Field
@@ -274,31 +284,81 @@ function ImageWidget({ id, value, onChange, ctx }){
 }
 
 
-// El encuadre de una imagen en su tarjeta: se pulsa en la imagen el punto que
-// tiene que quedar a la vista (la cara, normalmente) y al lado se ve la tarjeta
-// tal como saldrá. Se guarda como object-position ("50% 20%").
+// Un hueco de vista previa (el círculo, la miniatura) en el que se arrastra la
+// imagen para moverla, o con las flechas del teclado, de poco en poco.
+function DragFrame({ src, position, zoom, aspect, className, label, onMove }){
+
+    const start = useRef(null);
+    const [x, y] = parsePosition(position);
+
+    return (
+        <div
+            className={className}
+            tabIndex={0}
+            role="group"
+            aria-label={`${label}: drag the picture or use the arrow keys to move it`}
+            onPointerDown={event => {
+                const box = event.currentTarget.querySelector("img").getBoundingClientRect();
+                start.current = { px: event.clientX, py: event.clientY, x, y, w: box.width, h: box.height };
+                // Para seguir recibiendo el arrastre aunque el puntero salga de
+                // la vista previa.
+                event.currentTarget.setPointerCapture?.(event.pointerId);
+            }}
+            onPointerMove={event => {
+                const s = start.current;
+                // Arrastrar a la derecha lleva la imagen a la derecha: el punto
+                // que queda en el centro se va hacia la izquierda.
+                if(s){
+                    onMove(s.x - (event.clientX - s.px) / s.w, s.y - (event.clientY - s.py) / s.h);
+                }
+            }}
+            onPointerUp={() => { start.current = null; }}
+            onPointerCancel={() => { start.current = null; }}
+            onKeyDown={event => {
+                const step = { ArrowLeft: [0.02, 0], ArrowRight: [-0.02, 0], ArrowUp: [0, 0.02], ArrowDown: [0, -0.02] }[event.key];
+                if(step){
+                    event.preventDefault();
+                    onMove(x + step[0], y + step[1]);
+                }
+            }}
+        >
+            <FramedImage src={src} position={position} zoom={zoom} aspect={aspect} />
+        </div>
+    );
+
+}
+
+
+// El encuadre de un retrato en el círculo de /characters y en la miniatura
+// del carrusel de la isla. La imagen se mueve libremente hacia cualquier lado:
+// arrastrándola en una de las vistas previas, con las flechas, o pulsando en la
+// imagen entera el punto que debe quedar en el centro. Al lado va el zoom.
 //
-// En config.yml: `image_field` es el campo hermano con la imagen y `zoom_field`
-// (opcional) el del zoom, que la vista previa también aplica.
+// Se guarda como el punto de la imagen que queda en el centro ("50% 25%"; ver
+// components/FramedImage.jsx). En config.yml, `image_field` es el campo
+// hermano con la imagen y `zoom_field` el del zoom, que este mismo widget lleva.
 function FocusWidget({ field, value, onChange, ctx }){
 
     const image = ctx.parent?.[field.image_field ?? "image"];
-    const zoom = Number(ctx.parent?.[field.zoom_field]) || 1;
+    const zoomField = field.zoom_field;
+    const zoom = Number(ctx.parent?.[zoomField]) || 1;
 
     if(!image?.trim()){
-        return <p className="panel-field__hint">Add a picture first; then click on it here to choose what the card shows.</p>;
+        return <p className="panel-field__hint">Add a picture first; then you can frame it here.</p>;
     }
 
     const path = imagePath(image, ctx.entryPath);
     const src = path ? rawUrl(path) : image;
     const position = value?.trim() || "50% 50%";
-    const [x, y] = position.split(/\s+/).map(part => parseFloat(part));
+    const [x, y] = parsePosition(position);
+    const changed = value?.trim() || zoom !== 1;
+
+    const round = n => Math.round(n * 1000) / 10;
+    const move = (nx, ny) => onChange(`${round(nx)}% ${round(ny)}%`);
 
     function pick(event){
         const box = event.currentTarget.getBoundingClientRect();
-        const px = Math.round(((event.clientX - box.left) / box.width) * 100);
-        const py = Math.round(((event.clientY - box.top) / box.height) * 100);
-        onChange(`${Math.min(100, Math.max(0, px))}% ${Math.min(100, Math.max(0, py))}%`);
+        move((event.clientX - box.left) / box.width, (event.clientY - box.top) / box.height);
     }
 
     return (
@@ -306,31 +366,50 @@ function FocusWidget({ field, value, onChange, ctx }){
         <div className="panel-focus">
 
             <div className="panel-focus__pick">
-                <button type="button" className="panel-focus__image" onClick={pick} aria-label="Click the part of the picture the card should show">
+                <span className="panel-muted">Click the point that should be in the middle</span>
+                <button type="button" className="panel-focus__image" onClick={pick} aria-label="Click the point of the picture that should be in the middle">
                     <img src={src} alt="" />
-                    <span className="panel-focus__marker" style={{ left: `${x}%`, top: `${y}%` }} />
+                    <span className="panel-focus__marker" style={{ left: `${x * 100}%`, top: `${y * 100}%` }} />
                 </button>
-                <div className="panel-row">
-                    <span className="panel-muted">{value?.trim() ? `Focus: ${position}` : "Centered (default)"}</span>
-                    {value?.trim() && <button type="button" className="panel-btn panel-btn--ghost" onClick={() => onChange("")}>Center</button>}
-                </div>
             </div>
 
-            {/* Los dos sitios donde sale: el círculo de la página de personajes
-                (con zoom) y la miniatura del carrusel de la isla (sin él). */}
             <div className="panel-focus__preview">
-                <span className="panel-muted">Characters page</span>
-                <div className="panel-focus__circle">
-                    <img
-                        src={src}
-                        alt=""
-                        style={{ objectPosition: position, transform: zoom !== 1 ? `scale(${zoom})` : undefined, transformOrigin: position }}
-                    />
-                </div>
+
+                <span className="panel-muted">Characters page · drag to move</span>
+                <DragFrame className="panel-focus__circle" label="Circle" src={src} position={position} zoom={zoom} aspect={1} onMove={move} />
+
                 <span className="panel-muted">Island carousel</span>
-                <div className="panel-focus__thumb">
-                    <img src={src} alt="" style={{ objectPosition: position }} />
-                </div>
+                <DragFrame className="panel-focus__thumb" label="Carousel thumbnail" src={src} position={position} zoom={zoom} aspect={4 / 3} onMove={move} />
+
+                {zoomField && (
+                    <label className="panel-focus__zoom">
+                        <span className="panel-muted">Zoom {zoom.toFixed(2)}×</span>
+                        <input
+                            type="range"
+                            min="1"
+                            max="3"
+                            step="0.05"
+                            value={zoom}
+                            onChange={event => {
+                                const next = Number(event.target.value);
+                                // A 1 se quita el campo (undefined no se guarda),
+                                // igual que si nunca se hubiera tocado.
+                                ctx.setField(zoomField, next === 1 ? undefined : next);
+                            }}
+                        />
+                    </label>
+                )}
+
+                {changed && (
+                    <button
+                        type="button"
+                        className="panel-btn panel-btn--ghost"
+                        onClick={() => ctx.setFields({ [field.name]: undefined, ...(zoomField ? { [zoomField]: undefined } : {}) })}
+                    >
+                        Reset
+                    </button>
+                )}
+
             </div>
 
         </div>
