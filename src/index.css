@@ -5616,8 +5616,6 @@ button.region-loc {
     align-items: center;
     gap: 6px;
 
-    color: inherit;
-
 }
 
 .character-species img {
@@ -5890,5 +5888,25 @@ button.region-loc {
 .region__panel-link:hover {
 
     text-decoration: underline;
+
+}
+
+
+/* Enlaces del infobox (la isla, las especies): en el oro del sitio. Sin esto
+   la isla salía en el azul por defecto del navegador, que sobre este fondo
+   oscuro casi no se ve. */
+.infobox__table a {
+
+    color: var(--accent);
+
+    text-decoration-color: color-mix(in srgb, var(--accent) 50%, transparent);
+
+    text-underline-offset: 3px;
+
+}
+
+.infobox__table a:hover {
+
+    text-decoration-color: var(--accent);
 
 }
