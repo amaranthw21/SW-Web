@@ -18,6 +18,9 @@ const Belongings = lazy(() => import("./pages/Belongings"));
 const Blessings = lazy(() => import("./pages/Blessings"));
 // La ficha de una isla trae la lista de Pokémon (para sus legendarios).
 const Island = lazy(() => import("./pages/Island"));
+// El panel de edición sin GitHub. Trae todo el contenido y el lector de YAML,
+// así que solo se descarga quien entra en él.
+const Panel = lazy(() => import("./panel/Panel"));
 
 
 // En GitHub Pages el sitio cuelga de "/SW-Web/"; el router necesita ese
@@ -31,6 +34,17 @@ function App() {
 
         <BrowserRouter basename={basename}>
             <Routes>
+
+                {/* Fuera del Layout: el panel lleva su propia barra y no el
+                    marco ni la barra lateral de la web. */}
+                <Route
+                    path="/panel"
+                    element={
+                        <Suspense fallback={<p style={{ padding: 24 }}>Loading the panel…</p>}>
+                            <Panel />
+                        </Suspense>
+                    }
+                />
 
                 <Route element={<Layout />}>
 

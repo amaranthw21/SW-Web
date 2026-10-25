@@ -61,6 +61,14 @@ npm run dev
 `npm run lint` and `npm run build` are what CI runs on pull requests. Every push
 to `main` deploys to GitHub Pages (`.github/workflows/deploy.yml`).
 
+## Panel for admins without GitHub
+
+`/panel` is a second editing panel with the same forms (it reads
+`public/admin/config.yml`), for admins who sign in with a user name and
+password instead of GitHub. A Cloudflare Worker in `worker/` makes the commits
+for them. Setup and limits are in [`worker/README.md`](worker/README.md). In
+`npm run dev` it works with no setup: password `dev`.
+
 ## One-time setup on GitHub
 
 - **Settings → Pages → Source: GitHub Actions.**

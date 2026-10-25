@@ -1,0 +1,19 @@
+# Worker del panel propio. Se despliega aparte de la web: ver worker/README.md.
+name = "sw-web-panel"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+[vars]
+REPO = "amaranthw21/SW-Web"
+BASE_BRANCH = "main"
+# Igual que BASE_BRANCH: se publica directo. Otro nombre (p. ej. "panel-edits"):
+# los cambios esperan en una pull request a que alguien con GitHub la fusione.
+EDIT_BRANCH = "panel-edits"
+# Desde dónde se puede llamar al Worker (la web publicada y el dev local).
+ALLOWED_ORIGINS = "https://amaranthw21.github.io,http://localhost:*"
+
+# Cuentas de los admins invitados y las invitaciones pendientes. Las dueñas van
+# aparte, en el secreto ADMINS.
+[[kv_namespaces]]
+binding = "PANEL"
+id = "17853cc88273408990c09e4176e4949d"
