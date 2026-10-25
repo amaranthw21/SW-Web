@@ -7,6 +7,7 @@ import pokemon, {
     TYPES
 } from "../data/pokemon";
 import { FilterBar, FilterSelect } from "../components/FilterBar";
+import TypeBadge from "../components/TypeBadge";
 import useFilters from "../lib/useFilters";
 import labelOf from "../lib/labelOf";
 import normalize from "../lib/normalize";
@@ -53,33 +54,6 @@ function matches(entry, filters){
         && (!line || entry.lineStatus === line)
         && (!stage || entry.stage === stage)
         && (!filters.class || entry.classification === filters.class);
-
-}
-
-
-function TypeBadge({ type }){
-
-    const color = TYPES.find(option => option.value === type)?.color;
-
-    return (
-
-        <span
-            className="type-badge"
-            style={color ? { "--type": color } : undefined}
-        >
-
-            <img
-                src={asset(`/types/${type.toLowerCase()}.webp`)}
-                alt=""
-                loading="lazy"
-                onError={e => { e.currentTarget.style.display = "none"; }}
-            />
-
-            {type}
-
-        </span>
-
-    );
 
 }
 

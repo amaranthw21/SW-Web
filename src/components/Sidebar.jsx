@@ -6,6 +6,7 @@ import { regionName } from "../data/region";
 import {
     HomeIcon,
     LoreIcon,
+    CharactersIcon,
     PokemonIcon,
     ItemsIcon,
     CreditsIcon,
@@ -36,6 +37,11 @@ const SECTIONS = [
             label: island.name,
             disabled: island.underConstruction
         }))
+    },
+    {
+        to: "/characters",
+        label: "Characters",
+        icon: <CharactersIcon />
     },
     {
         to: "/pokemon",

@@ -226,6 +226,16 @@ function BlockPart({ part }){
     }
 
 
+    // Contenido ya pintado por la página (las fichas de personaje tienen piezas
+    // propias: rasgos, habilidades, movimientos). El bloque solo pone el marco y
+    // el título, igual que a los demás.
+    if(part.type === "node"){
+
+        return part.node;
+
+    }
+
+
     if(part.type === "regions"){
 
         return <CountryRegions part={part} />;

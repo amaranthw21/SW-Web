@@ -1,0 +1,70 @@
+{
+  "name": "Ampelo",
+  "nameOrigin": "From the Ampelomyces Quisqualis fungus",
+  "kind": "npc",
+  "status": "",
+  "player": "",
+  "island": "twilight-island",
+  "guardian": true,
+  "image": "",
+  "imageCredit": "Drawn by Xanandra, coloring by ???",
+  "summary": "The shattered Necrozma who guards Twilight Island, piecing himself back together one conversation at a time.",
+  "gender": "Male",
+  "age": "35",
+  "fusionName": "Mausozma",
+  "species1": "necrozma",
+  "species2": "maushold",
+  "type1": "Psychic",
+  "type2": "Normal",
+  "hiddenType": "Dark",
+  "traits": [
+    "Absent-minded",
+    "Aloof",
+    "Considerate",
+    "Curious"
+  ],
+  "likes": [
+    "Sunny days",
+    "Starlit nights",
+    "Spending time telling and hearing stories"
+  ],
+  "dislikes": [
+    "Inconsistency",
+    "Sour foods",
+    "The entire horror genre"
+  ],
+  "fears": [
+    "Dissociaphobia"
+  ],
+  "personality": "Ampelo is a considerable amount more childish or immature than the other legendaries of major importance. Being fragmented more than usual by the disaster of old has left him. . . empty, in some parts of where he should be. He likes conversing with others because to him, it feels like he’s regaining parts of himself as he talks to them. He has enough memory to know for sure that he has a role to play in helping the world recover from this whole mess. The lack of complete maturity due to his fragmentation might not help him take calm, collected actions, either.",
+  "abilities": [
+    {
+      "slot": "Common Talent",
+      "name": "Normal",
+      "description": "Can more easily adjust to certain environments, though at a lesser amount than other abilities dedicated to specific environments."
+    },
+    {
+      "slot": "Common Battle",
+      "name": "Friend Guard",
+      "description": "Damage dealt to allies is reduced `[-25%]` with some exceptions."
+    }
+  ],
+  "moves": [
+    {
+      "name": "Population Bomb",
+      "category": "Physical",
+      "type": "Normal",
+      "pp": 10,
+      "description": "Has the potential to damage a foe ten times. Each hit has lowered accuracy `[90%]` and the attack will end upon any misses."
+    },
+    {
+      "name": "Expanding Force",
+      "category": "Special",
+      "type": "Psychic",
+      "pp": 10,
+      "description": "Damages a foe. If a Psychic Terrain is in effect and Ampelo is grounded, the power increases `[1.5x plus terrain bonus]` and it affects all foes."
+    }
+  ],
+  "backstory": "Many beings across many times and ages shine and act as living embodiments of the sun, or of light, in many forms.\nThe grand legendary Necrozma was another one of these beings. A reflection of the sun, a being of mass, wondrous light who shared its embrace to the paradise that was reality.\nAs the tales of Bethath go, many pages of the current time yield to their seeking eyes a tale of disaster. Of nothing, and of crushed hopes, or shattered dreams.\nAnother victim of the disaster, as many, was the Necrozma who shared and brought light to many.\n\nCursed.\nShattered.\nInsignificant.\n\nHe awoke one day.\nThere was no light within him.\nAn endless weight upon his shoulders.\nA feeling of reunion long gone.\nAnd a name. A name that wasn’t his, yet was still a piece of him.\nAmpelo.\nAn identity who this Necrozma had never known until he awoke, having been discovered by those exploring Twilight Island.\n\nWhere-\nWhere had he gone?\n\nHe was here, and he wasn’t here. He was there, and he wasn’t there. He saw glimpses, visions, nightmares, terrors.\nA despairing silence, surrounding the vast end.\nA cry for existence, denying the cruel fates.\n\nAnd yet the choice still had to be made. The responsibility, still yet to be assigned.\n\nA fallen god bears his title not for himself.\nA fallen god does not seek his crown to satiate his own hunger.\nA fallen god desires not to be whole of a selfish reason,\nfor the reunion with the many selves is a journey in itself.\n\nFor the light it once was able to shine.\nIt shall all return to its source.\n\nFor a world reborn,\nfor a world forgotten.\n\nThe guardian of Twilight Island,\nremains eternally shattered.",
+  "gallery": []
+}

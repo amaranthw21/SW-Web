@@ -5523,3 +5523,390 @@ button.region-loc {
     opacity: 0.7;
 
 }
+
+
+/* ─────────────── Ficha de personaje ─────────────── */
+
+/* NPC / Player character, al lado del nombre. */
+.character-kind {
+
+    display: inline-block;
+
+    margin-left: 14px;
+
+    padding: 3px 10px;
+
+    border: 1px solid color-mix(in srgb, var(--accent) 60%, transparent);
+    border-radius: 999px;
+
+    color: var(--accent);
+
+    font-size: 0.8rem;
+
+    letter-spacing: 1px;
+
+    vertical-align: middle;
+
+}
+
+.character-kind--player {
+
+    border-color: rgba(148, 163, 184, 0.5);
+
+    color: #cbd5e1;
+
+}
+
+/* Fusión · especies · isla, bajo el título. */
+.character-tagline {
+
+    margin: -8px 0 16px;
+
+    color: #cbd5e1;
+
+    font-size: 1.05rem;
+
+}
+
+.character-portrait {
+
+    max-height: 320px;
+
+}
+
+.character-credit {
+
+    margin: -8px 0 12px;
+
+    padding: 0 16px;
+
+    color: #8b95a5;
+
+    font-size: 0.8rem;
+
+    text-align: center;
+
+}
+
+/* El origen del nombre, pequeño debajo del nombre. */
+.character-origin {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: #8b95a5;
+
+    font-size: 0.8rem;
+
+}
+
+.character-species {
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+}
+
+.character-species a {
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+}
+
+.character-species img {
+
+    width: 32px;
+    height: 32px;
+
+    object-fit: contain;
+
+}
+
+/* Rasgos de personalidad: etiquetas. */
+.character-tags {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin: 0 0 18px;
+    padding: 0;
+
+    list-style: none;
+
+}
+
+.character-tags li {
+
+    padding: 4px 12px;
+
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+    border-radius: 999px;
+
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+
+    font-size: 0.9rem;
+
+}
+
+/* Gustos, disgustos y miedos, en columnas que se apilan en móvil. */
+.character-lists {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 4px 24px;
+
+    margin-bottom: 12px;
+
+}
+
+.character-abilities {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+}
+
+.character-ability {
+
+    padding: 12px 16px;
+
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 10px;
+
+    background: rgba(31, 41, 55, 0.45);
+
+}
+
+.character-ability__slot {
+
+    margin: 0;
+
+    color: #8b95a5;
+
+    font-size: 0.75rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+.character-ability__name {
+
+    margin: 2px 0 6px;
+
+    color: var(--accent);
+
+    font-weight: bold;
+
+    font-size: 1.05rem;
+
+}
+
+.character-ability__text,
+.character-move__text {
+
+    margin: 0;
+
+    color: #cbd5e1;
+
+    line-height: 1.55;
+
+}
+
+.character-moves {
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+}
+
+.character-move {
+
+    padding: 12px 0;
+
+    border-top: 1px solid rgba(148, 163, 184, 0.18);
+
+}
+
+.character-move__head {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 4px;
+
+}
+
+.character-move__name {
+
+    margin-right: auto;
+
+    font-weight: bold;
+
+}
+
+.character-move__cat {
+
+    padding: 2px 10px;
+
+    border-radius: 999px;
+
+    font-size: 0.8rem;
+
+}
+
+.character-move__cat--physical {
+
+    background: rgba(238, 129, 48, 0.25);
+
+    color: #ffc79e;
+
+}
+
+.character-move__cat--special {
+
+    background: rgba(99, 144, 240, 0.25);
+
+    color: #bcd0ff;
+
+}
+
+.character-move__cat--status {
+
+    background: rgba(148, 163, 184, 0.25);
+
+    color: #e2e8f0;
+
+}
+
+.character-move__pp {
+
+    color: #8b95a5;
+
+    font-size: 0.85rem;
+
+}
+
+/* Números de habilidades y movimientos (`[-25%]` en el panel). */
+.paragraph-stat {
+
+    padding: 0 6px;
+
+    border-radius: 4px;
+
+    background: color-mix(in srgb, var(--accent) 22%, transparent);
+
+    color: white;
+
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    font-size: 0.9em;
+
+    white-space: nowrap;
+
+}
+
+.character-gallery {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+
+}
+
+.character-gallery__item {
+
+    margin: 0;
+
+}
+
+.character-gallery__item img {
+
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 3 / 4;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+}
+
+.character-gallery__item figcaption {
+
+    margin-top: 6px;
+
+    color: #8b95a5;
+
+    font-size: 0.85rem;
+
+}
+
+@media (max-width: 600px) {
+
+    .character-kind {
+
+        display: table;
+
+        margin: 8px 0 0;
+
+    }
+
+}
+
+
+/* "View profile →" en el panel de un personaje del carrusel de una isla. */
+.region__panel-link {
+
+    display: inline-block;
+
+    margin-top: 10px;
+
+    color: var(--accent);
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+}
+
+.region__panel-link:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* Enlaces del infobox (la isla, las especies): en el oro del sitio. Sin esto
+   la isla salía en el azul por defecto del navegador, que sobre este fondo
+   oscuro casi no se ve. */
+.infobox__table a {
+
+    color: var(--accent);
+
+    text-decoration-color: color-mix(in srgb, var(--accent) 50%, transparent);
+
+    text-underline-offset: 3px;
+
+}
+
+.infobox__table a:hover {
+
+    text-decoration-color: var(--accent);
+
+}

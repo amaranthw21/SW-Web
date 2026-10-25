@@ -94,6 +94,19 @@ export function FactionsIcon(){
 }
 
 
+// Characters: un busto (cabeza y hombros), la silueta de "persona".
+export function CharactersIcon(){
+
+    return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="8" r="3.6" />
+            <path d="M5 20c.6-3.8 3.4-6.2 7-6.2s6.4 2.4 7 6.2" />
+        </svg>
+    );
+
+}
+
+
 // Pokémon: una Poké Ball, la silueta que se reconoce a este tamaño.
 export function PokemonIcon(){
 

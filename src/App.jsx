@@ -18,6 +18,9 @@ const Belongings = lazy(() => import("./pages/Belongings"));
 const Blessings = lazy(() => import("./pages/Blessings"));
 // La ficha de una isla trae la lista de Pokémon (para sus legendarios).
 const Island = lazy(() => import("./pages/Island"));
+// La ficha de personaje también (para sus especies).
+const Characters = lazy(() => import("./pages/Characters"));
+const Character = lazy(() => import("./pages/Character"));
 // El panel de edición sin GitHub. Trae todo el contenido y el lector de YAML,
 // así que solo se descarga quien entra en él.
 const Panel = lazy(() => import("./panel/Panel"));
@@ -68,6 +71,16 @@ function App() {
                     <Route
                         path="/bethath/:islandId"
                         element={<Suspense><Island /></Suspense>}
+                    />
+
+                    <Route
+                        path="/characters"
+                        element={<Suspense><Characters /></Suspense>}
+                    />
+
+                    <Route
+                        path="/characters/:characterId"
+                        element={<Suspense><Character /></Suspense>}
                     />
 
                     <Route

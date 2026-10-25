@@ -128,30 +128,107 @@ collections:
               - { name: name, label: Name, widget: string }
               - { name: image, label: Picture, widget: image, required: false, hint: "Shown in the carousel. Saved in the island's own folder." }
               - { name: description, label: Description, widget: richtext, required: false, hint: "Opens under the carousel when someone clicks the place. Empty and the place can't be clicked." }
-      - name: npcs
-        label: NPCs
+  # ───────────────────────── Characters ─────────────────────────
+  # Una ficha por personaje, NPC o de jugador, en su carpeta con su JSON y sus
+  # imágenes (src/content/characters/<id>/<id>.json), como las islas. Cada uno
+  # elige su isla, y la isla lo enseña sola en su carrusel de NPCs o de
+  # personajes, enlazado a su ficha (/characters/<id>).
+  - name: characters
+    label: Characters
+    label_singular: Character
+    folder: src/content/characters
+    extension: json
+    format: json
+    create: true
+    identifier_field: name
+    path: "{{slug}}/{{slug}}"
+    summary: "{{fields.name}}"
+    sortable_fields: [name]
+    media_folder: ""
+    public_folder: ""
+    fields:
+      # Basics
+      - { name: name, label: Name, widget: string }
+      - { name: nameOrigin, label: "Name origin", widget: string, required: false, hint: "Where the name comes from, e.g. 'From the Ampelomyces Quisqualis fungus'. Shown small next to the name." }
+      - { name: kind, label: Kind, widget: select, default: npc, options: [{ label: NPC, value: npc }, { label: "Player character", value: player }], hint: "NPCs go in the island's NPC carousel; player characters in its Characters carousel." }
+      - { name: status, label: Status, widget: select, required: false, default: available, options: [{ label: Available, value: available }, { label: Reserved, value: reserved }, { label: "In use", value: taken }], hint: "Only for player characters: whether someone has asked for it or plays it." }
+      - { name: player, label: "Played by", widget: string, required: false, hint: "Only for player characters that are Reserved or In use." }
+      - { name: island, label: Island, widget: relation, collection: islands, value_field: "{{slug}}", search_fields: [name], display_fields: ["{{name}}"], required: false, hint: "The island the character belongs to. It shows up on that island's page." }
+      - { name: guardian, label: "Guardian of the island", widget: boolean, default: false, required: false, hint: "Shown as 'Guardian of <island>' and listed first on the island." }
+      - { name: image, label: Portrait, widget: image, required: false, hint: "Shown in the infobox and on the cards. Saved in the character's own folder." }
+      - { name: imageCredit, label: "Portrait credit", widget: string, required: false, hint: "e.g. 'Drawn by Xanandra'. Shown under the portrait." }
+      - { name: summary, label: Summary, widget: text, required: false, hint: "One or two lines for the cards and the island carousel." }
+      - { name: gender, label: Gender, widget: string, required: false }
+      - { name: age, label: Age, widget: string, required: false, hint: "Text, so '35', 'Unknown' or 'Ancient' all work." }
+      - { name: fusionName, label: "Fusion name", widget: string, required: false, hint: "e.g. 'Mausozma'. Leave empty if it isn't a fusion." }
+      - { name: species1, label: "Species 1", widget: relation, collection: pokemon, value_field: "{{slug}}", search_fields: [name, form], display_fields: ["{{name}} {{form}}"], required: false, hint: "Search it by name. Its picture and name come from the Pokémon list." }
+      - { name: species2, label: "Species 2", widget: relation, collection: pokemon, value_field: "{{slug}}", search_fields: [name, form], display_fields: ["{{name}} {{form}}"], required: false, hint: "The second species of a fusion." }
+      - { name: type1, label: "Main type 1", widget: select, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy] }
+      - { name: type2, label: "Main type 2", widget: select, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy] }
+      - { name: hiddenType, label: "Hidden type", widget: select, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy] }
+      # Personality
+      - name: traits
+        label: "Personality traits"
+        label_singular: Trait
         widget: list
         required: false
-        label_singular: NPC
-        summary: "{{fields.name}}"
-        hint: "The NPCs who live on the island. Without a picture they get the generic silhouette."
-        fields:
-          - { name: name, label: Name, widget: string }
-          - { name: image, label: Picture, widget: image, required: false, hint: "Shown in the carousel. Saved in the island's own folder." }
-          - { name: description, label: Description, widget: richtext, required: false, hint: "Opens under the carousel when someone clicks them. Empty and they can't be clicked." }
-      - name: characters
-        label: "Related characters"
+        field: { name: trait, label: Trait, widget: string }
+        hint: "One per row, e.g. 'Curious'. They show as tags."
+      - name: likes
+        label: Likes
+        label_singular: Like
         widget: list
         required: false
-        label_singular: Character
-        summary: "{{fields.name}} — {{fields.status}}"
-        hint: "Characters tied to this island. Without a picture they get the generic silhouette."
+        field: { name: like, label: Like, widget: string }
+      - name: dislikes
+        label: Dislikes
+        label_singular: Dislike
+        widget: list
+        required: false
+        field: { name: dislike, label: Dislike, widget: string }
+      - name: fears
+        label: "Fears / phobias"
+        label_singular: Fear
+        widget: list
+        required: false
+        field: { name: fear, label: Fear, widget: string }
+      - { name: personality, label: "In-depth personality", widget: richtext, required: false }
+      # Abilities and moves
+      - name: abilities
+        label: Abilities
+        label_singular: Ability
+        widget: list
+        required: false
+        summary: "{{fields.slot}}: {{fields.name}}"
+        fields:
+          - { name: slot, label: Slot, widget: string, hint: "e.g. 'Common Talent' or 'Common Battle'." }
+          - { name: name, label: Name, widget: string, hint: "e.g. 'Friend Guard'." }
+          - { name: description, label: Description, widget: richtext, required: false, hint: "Put numbers in backticks to highlight them: `[-25%]`." }
+      - name: moves
+        label: Moves
+        label_singular: Move
+        widget: list
+        required: false
+        summary: "{{fields.name}} ({{fields.category}}-{{fields.type}}/{{fields.pp}})"
         fields:
           - { name: name, label: Name, widget: string }
-          - { name: image, label: Picture, widget: image, required: false, hint: "Shown in the carousel. Saved in the island's own folder." }
-          - { name: description, label: Description, widget: richtext, required: false, hint: "Opens under the carousel when someone clicks them. Empty and they can't be clicked." }
-          - { name: status, label: Status, widget: select, required: false, default: available, options: [{ label: Available, value: available }, { label: Reserved, value: reserved }, { label: "In use", value: taken }] }
-          - { name: player, label: "Played by", widget: string, required: false, hint: "Only for Reserved or In use." }
+          - { name: category, label: Category, widget: select, options: [Physical, Special, Status] }
+          - { name: type, label: Type, widget: select, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy] }
+          - { name: pp, label: PP, widget: number, value_type: int, required: false, min: 1 }
+          - { name: description, label: Description, widget: richtext, required: false, hint: "Put numbers in backticks to highlight them: `[1.5x]`." }
+      # Story and appearance
+      - { name: backstory, label: Backstory, widget: richtext, required: false, hint: "Line breaks are kept, so verses read as verses. Leave a blank line between paragraphs." }
+      - name: gallery
+        label: Appearance
+        label_singular: Picture
+        widget: list
+        required: false
+        summary: "{{fields.credit}}"
+        hint: "Pictures of the character, each with its credit. Saved in the character's own folder."
+        fields:
+          - { name: image, label: Picture, widget: image }
+          - { name: credit, label: Credit, widget: string, required: false, hint: "e.g. 'Drawn by Xanandra, coloring by ???'." }
+
 
   # ───────────────────────── Pokémon ─────────────────────────
   # Uno por archivo, importados del Excel (scripts/import-excel.py). Las

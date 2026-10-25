@@ -11,8 +11,13 @@ Pages.
 ## State
 
 The site shell (top bar, sidebar, frame, background), the home page, Credits,
-the 404 page and two data tables:
+the 404 page, the Bethath islands and these sections:
 
+- **Characters** (`/characters`) — a profile page per character, NPC or
+  player character: infobox with the basics, personality, abilities and moves,
+  backstory and appearance. Each one picks its island and shows up in that
+  island's carousel. Content in `src/content/characters/<id>/`, one folder per
+  character with its JSON and pictures.
 - **Pokémon** (`/pokemon`) — every Pokémon and Fakemon with its status, types,
   generation, line status, stage and classification. Content in
   `src/content/pokemon/`, one JSON per Pokémon.
