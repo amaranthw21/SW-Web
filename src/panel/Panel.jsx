@@ -3,10 +3,10 @@ import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 import useDocumentTitle from "../lib/useDocumentTitle";
 
-import { API, ApiError, listFiles, loadSession, login, readJson, saveSession, writeJson } from "./api";
+import { API, ApiError, deleteFiles, listFiles, loadSession, login, readJson, saveSession, writeJson } from "./api";
 import { Account, AcceptInvite, Admins } from "./Accounts";
 import { Fields } from "./Fields";
-import { bundledData, emptyObject, entriesOf, loadConfig, missingFields, newEntryPath, summaryOf } from "./schema";
+import { bundledData, emptyObject, entriesOf, entryFiles, loadConfig, missingFields, newEntryPath, summaryOf } from "./schema";
 
 import "./panel.css";
 
@@ -163,6 +163,9 @@ function Workspace({ session, logout, onSession }){
     // que si no seguirían enseñando el valor viejo hasta el siguiente deploy.
     const [saved, setSaved] = useState({});
 
+    // El aviso que queda en la lista después de borrar una entrada.
+    const [notice, setNotice] = useState(null);
+
     const fail = useCallback(err => {
         if(err instanceof ApiError && err.status === 401){
             logout("Your session expired. Sign in again.");
@@ -208,11 +211,24 @@ function Workspace({ session, logout, onSession }){
                         setParams({ c: collection.name, f: path }, { replace: true });
                     }
                 }}
+                onDeleted={(removed, title) => {
+                    setPaths(current => current.filter(path => !removed.includes(path)));
+                    setNotice({ collection: collection.name, text: `“${title}” was deleted.` });
+                    setParams({ c: collection.name }, { replace: true });
+                    window.scrollTo(0, 0);
+                }}
                 onError={fail}
             />
         );
     } else if(collection){
-        content = <EntryList collection={collection} paths={paths} saved={saved} />;
+        content = (
+            <EntryList
+                collection={collection}
+                paths={paths}
+                saved={saved}
+                notice={notice?.collection === collection.name ? notice.text : ""}
+            />
+        );
     } else {
         content = <Collections config={config} paths={paths} session={session} />;
     }
@@ -253,7 +269,7 @@ function Collections({ config, paths, session }){
 const PAGE = 100;
 
 
-function EntryList({ collection, paths, saved }){
+function EntryList({ collection, paths, saved, notice }){
 
     const [query, setQuery] = useState("");
     const [limit, setLimit] = useState(PAGE);
@@ -286,6 +302,8 @@ function EntryList({ collection, paths, saved }){
         <>
 
             <nav className="panel-crumbs"><Link to="/panel">Collections</Link> › {collection.label}</nav>
+
+            {notice && <div className="panel-note">{notice}</div>}
 
             <div className="panel-toolbar">
                 <input
@@ -325,7 +343,7 @@ function EntryList({ collection, paths, saved }){
 }
 
 
-function Editor({ session, config, collection, file, paths, addPath, onSaved, onError }){
+function Editor({ session, config, collection, file, paths, addPath, onSaved, onDeleted, onError }){
 
     const fileEntry = collection.files?.find(item => item.file === file);
     const fields = fileEntry?.fields ?? collection.fields;
@@ -335,6 +353,7 @@ function Editor({ session, config, collection, file, paths, addPath, onSaved, on
     const [sha, setSha] = useState(null);
     const [status, setStatus] = useState("");
     const [problems, setProblems] = useState([]);
+    const [problemsTitle, setProblemsTitle] = useState("");
     const [busy, setBusy] = useState(false);
 
     useEffect(() => {
@@ -380,6 +399,7 @@ function Editor({ session, config, collection, file, paths, addPath, onSaved, on
 
         const missing = missingFields(fields, data);
         setProblems(missing);
+        setProblemsTitle("Can't save yet:");
 
         if(missing.length){
             return;
@@ -428,6 +448,47 @@ function Editor({ session, config, collection, file, paths, addPath, onSaved, on
 
     }
 
+    // Las páginas sueltas (portada, región) no se borran, y una colección puede
+    // pedir lo mismo con `delete: false` en config.yml.
+    const canDelete = file && !fileEntry && collection.delete !== false;
+
+    async function remove(){
+
+        const files = entryFiles(collection, file, paths);
+        const name = data[collection.identifier_field ?? "title"] || title;
+        const extra = files.length > 1 ? `\n\nIts ${files.length - 1} other file(s) in the same folder (pictures) go too.` : "";
+        const when = session.review
+            ? "It disappears from the site when the pull request is merged."
+            : "It disappears from the site in a couple of minutes.";
+
+        if(!window.confirm(`Delete “${name}”?${extra}\n\n${when}`)){
+            return;
+        }
+
+        setBusy(true);
+        setStatus("Deleting…");
+
+        try {
+
+            await deleteFiles(session, files, sha, `Delete ${collection.label_singular ?? collection.label} “${name}”`);
+            onDeleted(files, name);
+
+        } catch(err){
+
+            setStatus("");
+            setBusy(false);
+
+            if(err instanceof ApiError && err.status !== 401){
+                setProblems([err.message]);
+                setProblemsTitle("Couldn't delete it:");
+            } else {
+                onError(err);
+            }
+
+        }
+
+    }
+
     const ctx = { session, config, collection, entryPath: path, saved: !!file, paths, addPath };
 
     return (
@@ -448,12 +509,17 @@ function Editor({ session, config, collection, file, paths, addPath, onSaved, on
 
                 {problems.length > 0 && (
                     <div className="panel-error">
-                        Can't save yet:
+                        {problemsTitle}
                         <ul>{problems.map(problem => <li key={problem}>{problem}</li>)}</ul>
                     </div>
                 )}
 
                 <div className="panel-row">
+                    {canDelete && (
+                        <button type="button" className="panel-btn panel-btn--danger panel-savebar__delete" disabled={busy} onClick={remove}>
+                            Delete
+                        </button>
+                    )}
                     <span className="panel-muted">{dirty ? "Unsaved changes" : status}</span>
                     <button type="button" className="panel-btn panel-btn--primary" disabled={busy || !dirty} onClick={save}>
                         {busy ? "Saving…" : "Save"}

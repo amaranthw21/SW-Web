@@ -169,6 +169,17 @@ export function writeJson(session, path, data, sha, message){
 }
 
 
+// `paths[0]` es el JSON de la entrada y `sha` la versión que se abrió.
+export function deleteFiles(session, paths, sha, message){
+
+    return request(session, "/file", {
+        method: "DELETE",
+        body: JSON.stringify({ paths, sha, message })
+    });
+
+}
+
+
 export async function uploadFile(session, path, file, message){
 
     const bytes = new Uint8Array(await file.arrayBuffer());

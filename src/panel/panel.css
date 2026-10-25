@@ -1012,3 +1012,9 @@ select.panel-input option {
     text-decoration: none;
 
 }
+
+.panel-savebar__delete {
+
+    margin-right: auto;
+
+}

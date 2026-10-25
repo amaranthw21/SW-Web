@@ -102,7 +102,11 @@ Run `npx wrangler deploy` after changing it.
 ## Limits
 
 - No limit on login attempts yet: passwords must be at least 10 characters.
-- No deleting entries from the panel. That's done on GitHub (delete the file).
+- **Delete** (in an entry's save bar) removes the entry and, for islands, the
+  pictures in its folder, in one commit. Pictures in `public/` that other
+  collections use (e.g. `/pokemon/x.webp`) are kept, since they may be shared.
+  The home and region pages can't be deleted, and a collection can turn it off
+  with `delete: false` in `src/panel/config.yml`.
 - Uploaded pictures are saved right away, even if the entry is never saved.
 - If two admins edit the same file at once, the second one to save is told to
   reload instead of overwriting the first one's changes.
