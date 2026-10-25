@@ -1,0 +1,116 @@
+{
+  "name": "Io",
+  "nameOrigin": "",
+  "kind": "npc",
+  "status": "",
+  "player": "kyuremstar",
+  "island": "frost-island",
+  "guardianOf": [
+    "frost-island"
+  ],
+  "image": "kyuuuuuumth.png",
+  "imageCredit": "Art by kyuremstar",
+  "cardPosition": "28.4% 72.6%",
+  "summary": "",
+  "gender": "Neutral (She/Her)",
+  "age": "Unknown (42 Mentally)",
+  "fusionName": "Kyumoth",
+  "species1": "kyurem",
+  "species2": "frosmoth",
+  "type1": "Bug",
+  "type2": "Dragon",
+  "hiddenType": "Ice",
+  "traits": [
+    "Gentle",
+    "Compassionate",
+    "Zealous",
+    "Sensitive",
+    "Vain",
+    "Anxious"
+  ],
+  "likes": [
+    "Bug-Type Pokemon",
+    "Sweet Treats",
+    "The Moon"
+  ],
+  "dislikes": [
+    "Getting her scales dirty",
+    "Conflict",
+    "Spicy Food",
+    "Daylight"
+  ],
+  "fears": [
+    " Autophobia: Fear of being alone",
+    "Dementophobia: Fear of going mad/insane"
+  ],
+  "personality": " With steps as elegant as her appearance, Io takes her role as the guardian of Frost Island seriously and does her best to help other Pokemon whenever she or her moth army can! She sometimes wonder to herself if she's doing a good job in this role ever since she fused with a legendary but as long as nobody's questioning her, it should be all good...!\n\nFurther proof of Io being the dominant personality would be her extreme passion for other bug-type Pokemon, especially moth-like Pokemon. She enjoy company but she feels right at home between them.",
+  "abilities": [
+    {
+      "slot": "Common Talent",
+      "name": "Ice",
+      "description": "Naturally cools down surrounding. Can tolerate freezing temperatures, and easily travel in snowy/icy zones."
+    },
+    {
+      "slot": "Special Talent",
+      "name": "Ice Moth Constructs",
+      "description": "Io can create moths made out of ice crystals and command them remotely. They swarm all over Frost Island and watch the island and communicate messages to residents in her place.\n\nAdditionally, her icy wings can change in shape and size. She doesn't need them to fly and are for display anyway."
+    },
+    {
+      "slot": "Common Battle",
+      "name": "Ice Scales",
+      "description": "Takes half damage from Special Attacks."
+    },
+    {
+      "slot": "Unique Battle",
+      "name": "Absolute Zero",
+      "description": "The user absorbs any Ice move used against them and heals them for 1/4 of max HP. They are also immune to Ice type moves. Also gains protection against Frostbite/Freeze and the benefits of Hail/Snowstorm and Frost Terrain."
+    }
+  ],
+  "moves": [
+    {
+      "name": "Glaciate",
+      "category": "Special",
+      "type": "Ice",
+      "pp": 15,
+      "description": "Io freezes the world around her, lowering her foes' speed."
+    },
+    {
+      "name": "Attack Order",
+      "category": "Physical",
+      "type": "Bug",
+      "pp": 15,
+      "description": "Io summons a swarm of bugs to infest her opponent. Higher chance for critical hits."
+    },
+    {
+      "name": "Draco Meteor",
+      "category": "Special",
+      "type": "Dragon",
+      "pp": 5,
+      "description": "Powerful meteors rain from the sky, harshly lowering Io's Special Attack after"
+    },
+    {
+      "name": "Icicle Crash",
+      "category": "Physical",
+      "type": "Ice",
+      "pp": 10,
+      "description": "Io summons icicles to rain down on a foe from above. 30% chance to flinch the target."
+    },
+    {
+      "name": "Pollen Puff",
+      "category": "Special",
+      "type": "Bug",
+      "pp": 15,
+      "description": "Io creates a ball of pollen to throw at a target. Damages a foe or heals an ally for 50% of max HP"
+    },
+    {
+      "name": "Quiver Dance",
+      "category": "Status",
+      "type": "Bug",
+      "pp": 20,
+      "description": "Raises Special Attack, Special Defence and Speed"
+    }
+  ],
+  "backstory": "Kyurem, the Boundary Pokemon\n\nCreated as the hollow vessel that contain and control two ideologies; Or were they all one being in the beginning?\n\nOnly Arceus knew the answer.\n\nIn the past, Kyurem was emotionless and carried out orders, either given by residents or other legendaries, in a robotic manner. It had no goals of its own, no passion for anything.\n\nElsewhere, a Frosmoth glanced up to see the full moon in the night sky. She was lost and alone and dreamed of being surrounded by family and friends again.\n\nThen the moon cracked. \n\nCRITICAL ERROR. REBOOTING SYSTEM...\n\nThe world around her twisted and distorted like two ideas being mashed together to create a whole.\n\nINSTALLING IO.EXE....\n\nShe was finally complete, a being that is whole again... ",
+  "gallery": [],
+  "cardZoom": 2.15
+}

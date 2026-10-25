@@ -1,0 +1,113 @@
+{
+  "name": "Alruna",
+  "nameOrigin": "",
+  "kind": "npc",
+  "status": "",
+  "player": "cresselia_world_slayer",
+  "island": "bead-island",
+  "guardianOf": [
+    "bead-island"
+  ],
+  "image": "kyogre.png",
+  "imageCredit": "Art by xanandra_",
+  "cardPosition": "49.2% 67.1%",
+  "summary": "",
+  "gender": "Female",
+  "age": "33",
+  "fusionName": "Kyosquerain",
+  "species1": "kyogre",
+  "species2": "masquerain",
+  "type1": "Water",
+  "type2": "Bug",
+  "hiddenType": "Flying",
+  "traits": [
+    "Ethereal",
+    "Altruistic",
+    "Compassionate",
+    "Melodramatic",
+    "Loyal"
+  ],
+  "likes": [
+    "Reflective Things",
+    "Moments of Relaxation",
+    "Praise"
+  ],
+  "dislikes": [
+    "Dry Areas",
+    "Fire",
+    "Being Belittled"
+  ],
+  "fears": [
+    "Proditiophobia"
+  ],
+  "personality": "Alruna holds herself in high regard, viewing herself as a guide for those who are willing to help join the battle to restore the world back to its prior state. Her movements are carried with the elegance of a graceful goddess, and her words, practiced as if telling a fable. The guide from the water’s depths speaks not of the lost paths.\n",
+  "abilities": [
+    {
+      "slot": "Common Talent",
+      "name": "Water",
+      "description": "Able to swim/breathe/dive underwater for far longer periods of time than other pokemons."
+    },
+    {
+      "slot": "Special Talent",
+      "name": "Rain Rider",
+      "description": "When the air is full of moisture, Alruna can fly. The more moist it is, the better she can fly."
+    },
+    {
+      "slot": "Common Battle",
+      "name": "Drizzle",
+      "description": "The Pokémon makes it rain when it enters a battle. "
+    },
+    {
+      "slot": "Unique Battle",
+      "name": "Guidance of Seas",
+      "description": "Allies will be healed for 25% of the healing Alruna receives. If this healing is excess healing, the portion considered from the excess is increased to 50%.\n"
+    }
+  ],
+  "moves": [
+    {
+      "name": "Defend Order",
+      "category": "Status",
+      "type": "Bug",
+      "pp": 1,
+      "description": "The user raises its Defense and Sp. Def stats. "
+    },
+    {
+      "name": "Tailwing",
+      "category": "Status",
+      "type": "Flying",
+      "pp": 15,
+      "description": "The user whips up a turbulent whirlwind that boosts the Speed stats of itself and its allies for four turns. "
+    },
+    {
+      "name": "Quiver Dance",
+      "category": "Status",
+      "type": "Bug",
+      "pp": 20,
+      "description": "The user lightly performs a beautiful, mystic dance. This boosts the user's Sp. Atk, Sp. Def, and Speed stats. "
+    },
+    {
+      "name": "Aqua Ring",
+      "category": "Special",
+      "type": "Water",
+      "pp": 20,
+      "description": "The user summons a ring of water that will gradually restore its HP. "
+    },
+    {
+      "name": "Water Spout",
+      "category": "Special",
+      "type": "Water",
+      "pp": 5,
+      "description": "The user spouts water to damage opposing Pokémon. The lower the user's HP, the lower the move's power. "
+    },
+    {
+      "name": "Origin Pulse",
+      "category": "Special",
+      "type": "Water",
+      "pp": 10,
+      "description": "The user attacks opposing Pokémon with countless beams of light that glow a deep and brilliant blue. "
+    }
+  ],
+  "backstory": "One story tells of a whalelike creature that commanded the vast oceans, and the waters in the sky.\nIt summoned downpours with a mere thought, quenched those plagued with drought, and yet, for all there was to its fables, it merely slumbered, sealed away by a curse.\nSealed away deep, deep away, in the dark blue depths.\n...\nAnother story tells of a supposed fairy and a young girl, lost in the depths of a mysterious cavern.\nA masquerain and a helioptile. \nThe fairy guided the lost youth through the caverns. Grateful as she was, she happily followed along.\nDeeper into the caves, until the two saw a grand, massive whale.\n…\nAnd then the world simply fell apart.\n...\nThe whale of many fables simply awoke in the cavern’s depths. \nThe shell of stone coating its prior form, crumbling away before its eyes.\nThe helioptile, nowhere to be seen.\n...\nMany speak of adventures.\nOthers, speak of contradictions.\nA creature who flies in the seas and the air.\nA creature who cannot fly if its wings get wet.\n...\nBy conflicting, it simply negates out into a neutral.\nTo this new world, shall she draw her wings in flight.\nShall she guide them forevermore.\n",
+  "gallery": [],
+  "cardZoom": 1.7
+}
