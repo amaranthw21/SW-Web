@@ -64,6 +64,34 @@ collections:
           - { name: region, label: "Region name", widget: string, hint: "The region's name, e.g. 'Bethath'. It titles its page and its entry in the sidebar." }
           - { name: intro, label: Intro, widget: richtext, required: false, hint: "A few lines about the region, above the island cards. Leave a blank line between paragraphs." }
 
+      # El Rulebook de General: un apartado por tipo de reglas (General,
+      # Character, Combat, Romance), cada uno con sus reglas numeradas.
+      - name: rulebook
+        label: Rulebook
+        file: src/content/rulebook.json
+        format: json
+        fields:
+          - name: sections
+            label: Sections
+            widget: list
+            label_singular: Section
+            summary: "{{fields.title}}"
+            hint: "Each section is a heading on the page and an entry in its contents, in this order."
+            fields:
+              - { name: title, label: Title, widget: string, hint: "e.g. 'General' or 'Combat'." }
+              - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown above the rules. Leave a blank line between paragraphs." }
+              - name: rules
+                label: Rules
+                widget: list
+                required: false
+                label_singular: Rule
+                summary: "{{fields.title}}"
+                hint: "They're numbered on their own, in this order: don't write the [1] in the title."
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: text, label: Text, widget: richtext, required: false }
+              - { name: outro, label: "Closing note", widget: richtext, required: false, hint: "Shown under the last rule, e.g. 'These rules may change in the future'." }
+
   # ───────────────────────── Islands ─────────────────────────
   # Las islas de la región, cada una en su carpeta con su JSON y sus imágenes
   # al lado (src/content/islands/<isla>/<isla>.json). Cada una sale como

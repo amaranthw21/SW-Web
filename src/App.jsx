@@ -4,6 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 
 import Home from "./pages/Home";
+import GeneralHub from "./pages/GeneralHub";
+import GeneralPage from "./pages/GeneralPage";
+import Rulebook from "./pages/Rulebook";
 import ItemsHub from "./pages/ItemsHub";
 import Region from "./pages/Region";
 import Credits from "./pages/Credits";
@@ -56,6 +59,23 @@ function App() {
                     <Route
                         path="/"
                         element={<Home />}
+                    />
+
+                    <Route
+                        path="/general"
+                        element={<GeneralHub />}
+                    />
+
+                    {/* Va antes que /general/:pageId; el router la prefiere
+                        igualmente, por ser una ruta fija. */}
+                    <Route
+                        path="/general/rulebook"
+                        element={<Rulebook />}
+                    />
+
+                    <Route
+                        path="/general/:pageId"
+                        element={<GeneralPage />}
                     />
 
                     <Route
