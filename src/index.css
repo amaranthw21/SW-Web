@@ -5853,6 +5853,37 @@ button.region-loc {
 
 }
 
+/* Etiquetas opcionales del movimiento (Legendary, Custom): con borde para no
+   confundirse con la categoría. */
+.character-move__flag {
+
+    padding: 1px 9px;
+
+    border: 1px solid currentColor;
+    border-radius: 999px;
+
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+}
+
+.character-move__flag--legendary {
+
+    background: rgba(234, 179, 8, 0.15);
+
+    color: #fcd34d;
+
+}
+
+.character-move__flag--custom {
+
+    background: rgba(168, 85, 247, 0.15);
+
+    color: #d8b4fe;
+
+}
+
 /* Números de habilidades y movimientos (`[-25%]` en el panel). */
 .paragraph-stat {
 

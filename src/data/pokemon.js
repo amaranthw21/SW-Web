@@ -68,7 +68,8 @@ export const TYPES = [
     { value: "Dragon",   color: "#6f35fc" },
     { value: "Dark",     color: "#705746" },
     { value: "Steel",    color: "#b7b7ce" },
-    { value: "Fairy",    color: "#d685ad" }
+    { value: "Fairy",    color: "#d685ad" },
+    { value: "Stellar",  color: "#40b5a5" }
 ].map(type => ({ ...type, label: type.value }));
 
 

@@ -15,6 +15,14 @@ const images = import.meta.glob(
     { eager: true, query: "?url", import: "default" }
 );
 
+// Las mismas, pequeñas (scripts/thumbnails.mjs), para los círculos de la página
+// de personajes y el carrusel de la isla. 600px aguanta el zoom del encuadre en
+// pantallas retina.
+const thumbs = import.meta.glob(
+    "../content/characters/*/*.{png,jpg,jpeg,webp,avif,gif}",
+    { eager: true, query: "?thumb=600", import: "default" }
+);
+
 
 export const KINDS = [
     { value: "npc",    label: "NPC" },
@@ -37,7 +45,7 @@ function folderOf(path){
 
 // El JSON guarda solo el nombre del archivo; si no está en la carpeta se deja
 // tal cual, para que una ruta de public/ o una dirección externa sigan valiendo.
-function resolveImage(id, image){
+function resolveImage(id, image, from = images){
 
     const name = image?.trim();
 
@@ -45,7 +53,7 @@ function resolveImage(id, image){
         return name;
     }
 
-    return images[`../content/characters/${id}/${name.replace(/^\.?\//, "")}`] ?? name;
+    return from[`../content/characters/${id}/${name.replace(/^\.?\//, "")}`] ?? name;
 
 }
 
@@ -62,6 +70,7 @@ const characters = Object.entries(modules)
             // isla"); un JSON que aún la tenga se lee igual.
             guardianOf: data.guardianOf ?? (data.guardian && data.island ? [data.island] : []),
             image: resolveImage(id, data.image),
+            thumb: resolveImage(id, data.image, thumbs),
             gallery: (data.gallery ?? [])
                 .map(item => ({ ...item, image: resolveImage(id, item?.image) }))
                 .filter(item => item.image)

@@ -297,6 +297,8 @@ function AbilitiesAndMoves({ abilities, moves }){
                                         )}
                                         {move.type && <TypeBadge type={move.type} />}
                                         {move.pp != null && <span className="character-move__pp">{move.pp} PP</span>}
+                                        {move.legendary && <span className="character-move__flag character-move__flag--legendary">Legendary</span>}
+                                        {move.custom && <span className="character-move__flag character-move__flag--custom">Custom</span>}
                                     </span>
                                     <div className="character-move__body">
                                         <Paragraphs text={move.description} className="character-move__text" />
@@ -383,7 +385,8 @@ function characterBlocks(character, identities, openImage){
 
 function Infobox({ character, identities, island, guarded, species, onOpenPortrait }){
 
-    const types = [character.type1, character.type2].filter(type => type?.trim());
+    // Los Amalgama tienen un tercer tipo propio (y ningún tipo oculto).
+    const types = [character.type1, character.type2, character.type3].filter(type => type?.trim());
     const status = character.kind === "player" && character.status && character.status !== "available"
         ? labelOf(CHARACTER_STATUSES, character.status)
         : "";

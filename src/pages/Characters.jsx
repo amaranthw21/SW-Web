@@ -71,7 +71,7 @@ function CharacterButton({ character }){
             <span className="world-btn__circle">
                 {
                     character.image?.trim()
-                        ? <FramedImage src={asset(character.image)} position={character.cardPosition} zoom={character.cardZoom} />
+                        ? <FramedImage src={asset(character.thumb)} position={character.cardPosition} zoom={character.cardZoom} />
                         : <FramedImage src={asset(CHARACTER_PLACEHOLDER)} />
                 }
             </span>
