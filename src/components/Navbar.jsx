@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import serverIcon from "../assets/IconServer-128.png";
+// El original mide 866px y pesa 1MB; en el menú se ve a 55px.
+import serverIcon from "../assets/IconServer-128.png?thumb=128";
 
 
 // La barra superior. Las secciones del sitio viven en la barra lateral

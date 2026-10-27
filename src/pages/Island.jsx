@@ -29,7 +29,7 @@ function toCarousel(character){
 
     return {
         name: character.name,
-        image: character.image,
+        image: character.thumb,
         imagePosition: character.cardPosition,
         imageZoom: character.cardZoom,
         description: character.summary,
