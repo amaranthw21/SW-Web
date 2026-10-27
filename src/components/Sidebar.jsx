@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import general from "../data/general";
 import islands from "../data/islands";
 import { regionName } from "../data/region";
 
 import {
     HomeIcon,
+    RulesIcon,
     LoreIcon,
     CharactersIcon,
     PokemonIcon,
@@ -27,6 +29,15 @@ const SECTIONS = [
         to: "/",
         label: "Home",
         icon: <HomeIcon />
+    },
+    {
+        to: "/general",
+        label: "General",
+        icon: <RulesIcon />,
+        children: general.map(page => ({
+            to: `/general/${page.id}`,
+            label: page.title
+        }))
     },
     {
         to: "/bethath",
