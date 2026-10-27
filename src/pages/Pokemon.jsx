@@ -15,7 +15,7 @@ import useDocumentTitle from "../lib/useDocumentTitle";
 import asset from "../lib/asset";
 
 
-const FILTERS = ["q", "status", "type", "gen", "line", "stage", "class", "claimed", "origin"];
+const FILTERS = ["q", "status", "type", "type2", "gen", "line", "stage", "class", "claimed", "origin"];
 
 const CLAIMED = [
     { value: "claimed", label: "Claimed" },
@@ -31,13 +31,17 @@ const ORIGINS = [
 
 function matches(entry, filters){
 
-    const { q, status, type, gen, line, stage, claimed, origin } = filters;
+    const { q, status, type, type2, gen, line, stage, claimed, origin } = filters;
 
     if(q && !normalize(`${entry.name} ${entry.form} ${entry.fusedWith} ${entry.owner ?? ""}`).includes(normalize(q))){
         return false;
     }
 
-    if(type && entry.type1 !== type && entry.type2 !== type){
+    // Cada tipo elegido tiene que estar en el Pokémon, en cualquiera de sus dos
+    // huecos: Fire + Flying encuentra a Charizard sea cual sea el orden.
+    const hasType = wanted => !wanted || entry.type1 === wanted || entry.type2 === wanted;
+
+    if(!hasType(type) || !hasType(type2)){
         return false;
     }
 
@@ -140,6 +144,7 @@ export default function Pokemon(){
 
                 <FilterSelect label="Status" value={values.status} options={STATUSES} onChange={value => set("status", value)} />
                 <FilterSelect label="Type" value={values.type} options={TYPES} onChange={value => set("type", value)} />
+                <FilterSelect label="Second type" value={values.type2} options={TYPES} onChange={value => set("type2", value)} />
                 <FilterSelect label="Generation" value={values.gen} options={GENERATIONS} onChange={value => set("gen", value)} />
                 <FilterSelect label="Line status" value={values.line} options={LINE_STATUSES} onChange={value => set("line", value)} />
                 <FilterSelect label="Stage" value={values.stage} options={STAGES} onChange={value => set("stage", value)} />
