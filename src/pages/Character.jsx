@@ -385,7 +385,8 @@ function characterBlocks(character, identities, openImage){
 
 function Infobox({ character, identities, island, guarded, species, onOpenPortrait }){
 
-    const types = [character.type1, character.type2].filter(type => type?.trim());
+    // Los Amalgama tienen un tercer tipo propio (y ningún tipo oculto).
+    const types = [character.type1, character.type2, character.type3].filter(type => type?.trim());
     const status = character.kind === "player" && character.status && character.status !== "available"
         ? labelOf(CHARACTER_STATUSES, character.status)
         : "";

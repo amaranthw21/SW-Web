@@ -168,7 +168,8 @@ collections:
       - { name: species2, label: "Species 2", widget: relation, collection: pokemon, value_field: "{{slug}}", search_fields: [name, form], display_fields: ["{{name}} {{form}}"], required: false, hint: "The second species of a fusion." }
       - { name: type1, label: "Main type 1", widget: select, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy] }
       - { name: type2, label: "Main type 2", widget: select, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy] }
-      - { name: hiddenType, label: "Hidden type", widget: select, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy] }
+      - { name: type3, label: "Main type 3", widget: select, required: false, hint: "Only for Amalgams, which have three types of their own.", options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy] }
+      - { name: hiddenType, label: "Hidden type", widget: select, required: false, hint: "Leave empty for Amalgams: they have no hidden type.", options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy] }
       # Personality
       - name: traits
         label: "Personality traits"
