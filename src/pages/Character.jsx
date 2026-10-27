@@ -297,6 +297,8 @@ function AbilitiesAndMoves({ abilities, moves }){
                                         )}
                                         {move.type && <TypeBadge type={move.type} />}
                                         {move.pp != null && <span className="character-move__pp">{move.pp} PP</span>}
+                                        {move.legendary && <span className="character-move__flag character-move__flag--legendary">Legendary</span>}
+                                        {move.custom && <span className="character-move__flag character-move__flag--custom">Custom</span>}
                                     </span>
                                     <div className="character-move__body">
                                         <Paragraphs text={move.description} className="character-move__text" />

@@ -232,6 +232,8 @@ collections:
           - { name: category, label: Category, widget: select, options: [Physical, Special, Status] }
           - { name: type, label: Type, widget: select, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy] }
           - { name: pp, label: PP, widget: number, value_type: int, required: false, min: 1 }
+          - { name: legendary, label: Legendary, widget: boolean, default: false, required: false, hint: "Shown as a 'Legendary' tag next to the move." }
+          - { name: custom, label: Custom, widget: boolean, default: false, required: false, hint: "A move made up for this character. Shown as a 'Custom' tag." }
           - { name: description, label: Description, widget: richtext, required: false, hint: "Put numbers in backticks to highlight them: `[1.5x]`." }
       # Story and appearance
       - { name: backstory, label: Backstory, widget: richtext, required: false, hint: "Line breaks are kept, so verses read as verses. Leave a blank line between paragraphs." }
