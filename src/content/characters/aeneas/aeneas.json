@@ -116,7 +116,7 @@
     {
       "name": "Sugar Shatter",
       "category": "Special",
-      "type": "Stellar",
+      "type": "Normal",
       "pp": 5,
       "description": "Sugar is shattered to hit all enemies, inflicting on each enemy either poison, sleep, paralysis, or nothing. ",
       "legendary": true,
