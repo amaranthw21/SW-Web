@@ -1,0 +1,69 @@
+{
+  "sections": [
+    {
+      "title": "General",
+      "intro": "Below are some general guidelines for the server. While we haven’t listed every possible rule to keep things simple, we expect everyone to follow basic common sense. In other words, if you wouldn’t do something to a stranger on the street, like stopping them to ask for their private information, please don’t do it here either.\n\nWith that in mind, let’s move on to the rules.",
+      "rules": [
+        {
+          "title": "Read the Server Rules thoroughly",
+          "text": "Please read through general, character, combat, romance-rules, and ban-list to find parts of the password and gain access to the server."
+        },
+        {
+          "title": "Listen to Staff and Admins",
+          "text": "The staff are here to help maintain and run the server, so please feel free to ask them any questions you have. Please do not be rude to, harass or argue with a staff member to get your way, especially if a decision is final."
+        },
+        {
+          "title": "Respect other Players",
+          "text": "This is a given, but please be respectful of your fellow players in the server. Do not bully, antagonize, pester, or otherwise harass people for any reason in the server proper or in DMs. If someone asks you to stop doing something or is made uncomfortable by your behavior, you are expected to stop immediately. Respect the privacy of other people in the server and do not push people to talk about things they’d rather not discuss.\n\nAdditionally, please avoid being purposefully annoying, obnoxious, or generally being a nuisance to other players as this can also constitute harassment.\n\nIf you have an issue with another player and would like the mods to get involved, please open up a ticket using the command `/new`."
+        },
+        {
+          "title": "Please do not Minimod",
+          "text": "Minimodding is when a regular server member tries to do the job of a staff member, such as answering questions related to server lore or trying to enforce the rules on other members. Minimodding can not only be harmful as it may unintentionally spread misinformation, but it is also annoying behavior.\n\nYou may answer questions that can be easily looked up on Bulbapedia or Googled if Staff aren't around, but please let Staff handle questions directed at them and let them do their jobs."
+        },
+        {
+          "title": "Avoid Controversial or Offensive Topics",
+          "text": "Discussing or spreading racist, sexist, homophobic, or any other blatantly offensive topics is not allowed in this server. Please do not have sexually explicit discussions or have inappropriate profile pictures or usernames as this is a teen and up server and we have minors present. Please be mindful of what you choose to discuss and share as this is a public server. We ask that personal details, political views, and venting be avoided as much as possible."
+        },
+        {
+          "title": "No Advertising of any kind",
+          "text": "Please do not join this server to advertise other servers, commissions, or social media accounts. You will be banned if you join this server and immediately ask for a partnership or beg for commissions, that includes personally DM any member about commissions."
+        },
+        {
+          "title": "Try to be Active",
+          "text": "Real life comes first, of course. However, please try to be active if you have your character accepted. Please do not leave your roleplay partners hanging for days or weeks on end without saying anything. Members who are inactive for a month or over may have their characters revoked. Read Character Rules for more information."
+        },
+        {
+          "title": "Please respect all writing styles",
+          "text": "This server welcomes writers of all skill levels, and we ask you to respect each other for that. However, we do ask that constant one-liner replies be avoided. Sometimes it just happens, but don't make them the norm. The same goes for joke replies, one or twice is funny, but if your partners are expecting a more serious tone it can cause conflicts."
+        },
+        {
+          "title": "Keep Channels On Topic",
+          "text": "Try to keep channels organized and on topic. If a conversation has changed topics and would be better suited for another channel, please relocate it there. The first part of the password is \"The\""
+        },
+        {
+          "title": "Absolutely no AI in this server",
+          "text": "Please do not use AI to generate images of characters or write replies to roleplays you are in."
+        }
+      ],
+      "outro": "These rules may change in the future. If they are to be changed, members will be notified."
+    },
+    {
+      "title": "Character",
+      "intro": "",
+      "rules": [],
+      "outro": ""
+    },
+    {
+      "title": "Combat",
+      "intro": "",
+      "rules": [],
+      "outro": ""
+    },
+    {
+      "title": "Romance",
+      "intro": "",
+      "rules": [],
+      "outro": ""
+    }
+  ]
+}
