@@ -2544,12 +2544,13 @@ body::before {
 
 }
 
-/* Los bloques van por debajo del infobox, a ancho completo. */
+/* Los bloques van por debajo del infobox, a ancho completo, con el mismo hueco
+   que hay entre bloque y bloque. */
 .country-body {
 
     max-width: 1200px;
 
-    margin: 0 auto;
+    margin: 24px auto 0;
 
 }
 
