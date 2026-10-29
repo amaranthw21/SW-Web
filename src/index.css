@@ -2678,6 +2678,15 @@ body::before {
 }
 
 
+/* Hueco entre bloques. Antes salía del margen del último elemento de cada uno,
+   y un bloque que acababa en miniaturas (History) se pegaba al siguiente. */
+.country-block + .country-block {
+
+    margin-top: 24px;
+
+}
+
+
 /* Cabecera de un bloque: rectángulo con el título y, montado sobre su borde
    izquierdo, un círculo con la imagen. El diámetro del círculo se deriva de la
    altura del rectángulo (--block-title-h), así que cambiando esa variable
