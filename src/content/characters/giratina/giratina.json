@@ -1,0 +1,40 @@
+{
+  "name": "Giratina",
+  "nameOrigin": "",
+  "kind": "npc",
+  "status": "",
+  "player": "kyuremstar",
+  "island": "enthropy-island",
+  "guardianOf": [
+    "enthropy-island"
+  ],
+  "image": "girvesta.png",
+  "imageCredit": "Art by kyuremstar",
+  "cardPosition": "41.5% 59%",
+  "summary": "",
+  "gender": "",
+  "age": "",
+  "fusionName": "",
+  "species1": "",
+  "species2": "",
+  "type1": "",
+  "type2": "",
+  "type3": "",
+  "hiddenType": "",
+  "traits": [],
+  "likes": [],
+  "dislikes": [],
+  "fears": [],
+  "personality": "",
+  "identities": [],
+  "abilities": [],
+  "moves": [],
+  "backstory": "",
+  "gallery": [
+    {
+      "image": "giraworm.png",
+      "credit": "Art by kyuremstar"
+    }
+  ],
+  "cardZoom": 1.35
+}

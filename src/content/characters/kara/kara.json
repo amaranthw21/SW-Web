@@ -69,9 +69,11 @@
       "description": "If Kára’s speed is not raised, she can still act twice within a single turn, but will inflict Burn on herself in consequence after the forced extra action. Kára automatically cures herself of any Burn status if she does not force an extra action in her turn."
     },
     {
-      "slot": "Unique Battle (Item)",
+      "slot": "Unique Battle",
       "name": "Miniregi",
-      "description": "Kára can no longer actively use Spike Cannon in battle. Instead, the miniregi buddy will automatically use it on a random enemy every time she uses a move (scaling off her stat changes and PP), but it only deals 10% of its original damage. "
+      "description": "Kára can no longer actively use Spike Cannon in battle. Instead, the miniregi buddy will automatically use it on a random enemy every time she uses a move (scaling off her stat changes and PP), but it only deals 10% of its original damage. ",
+      "locked": true,
+      "item": true
     }
   ],
   "moves": [
@@ -122,9 +124,10 @@
       "category": "Special",
       "type": "Normal",
       "pp": 5,
-      "legendary": false,
-      "custom": false,
-      "description": "The target is compressed with strong pressure. The less HP the target has left, the greater the move’s power."
+      "legendary": true,
+      "custom": true,
+      "description": "The target is compressed with strong pressure. The less HP the target has left, the greater the move’s power.",
+      "locked": true
     }
   ],
   "backstory": "Regigigas, the great, renown creator of the regis, parent to their creations of steel, ice, stone, thunder, and dragon, simply awoke one day to the curious feeling of...\nWeightlessness. A cloudlike fluff, even. A tinge of immaturity in the back of her mind.\nShe was in the mind of a young, adventurous youth. \nShe was as free as she could ever be. With simply the thought of momentum, she could soar into the skies and move around with ease. \nTo the past with those old, rusty limbs of hers that took ages to get here and there!\nTo the past!\n...\nIt was still wrong.\nThings weren’t the same anymore.\nSomething was different.\n...\nWhat had she been before this?\nWho was Kára?\n...\nBqyt gticp eep gki ki kx ohcru hvitqkxa lp fnluw. | 8674 | 5432\n...\nAnd why was she worrying about that?\nShe simply needed to be herself.\nAdventurous!\nSilly!\nFull of whimsy!\nAfter all, that’s just who Kára is! \nYour lovely regicino, tinkerer, mechanic, and adventurer~\nHere to save the day!",

@@ -61,9 +61,11 @@
       "description": "When Ampelo is above half HP, this acts as Neuroforce [supereffective moves deal 25% more damage to enemies]. When he is not, this acts as Prism Armor [supereffective moves deal 25% less damage to Ampelo]. "
     },
     {
-      "slot": "Unique Battle (Item)",
+      "slot": "Unique Battle",
       "name": "Z Mastery",
-      "description": "When an ally uses a Z-Move, the next use of Photon Geyser is upgraded to it’s Z-Move equivalent Light that Burns the Sky. \nAmpelo’s usage of Light that Burns the Sky in this way ignores the one Z-Move per battle limitation. "
+      "description": "When an ally uses a Z-Move, the next use of Photon Geyser is upgraded to it’s Z-Move equivalent Light that Burns the Sky. \nAmpelo’s usage of Light that Burns the Sky in this way ignores the one Z-Move per battle limitation. ",
+      "locked": true,
+      "item": true
     }
   ],
   "moves": [

@@ -1,0 +1,172 @@
+{
+  "name": "Chronus / Lathander",
+  "nameOrigin": "",
+  "kind": "npc",
+  "status": "available",
+  "player": "",
+  "island": "enthropy-island",
+  "guardianOf": [
+    "enthropy-island"
+  ],
+  "image": "dialga.png",
+  "imageCredit": "",
+  "cardPosition": "57.5% 41%",
+  "summary": "",
+  "gender": "Genderless (he/him/they/them/any/all)",
+  "age": "",
+  "fusionName": "Dialmo-o",
+  "species1": "dialga",
+  "species2": "kommo-o",
+  "type1": "Steel",
+  "type2": "Fighting",
+  "type3": "",
+  "hiddenType": "Dragon",
+  "traits": [
+    "Stoic",
+    "Adamant",
+    "Hardy",
+    "Somewhat Nhilistic",
+    "Patient",
+    "Quiet"
+  ],
+  "likes": [
+    "New happenings to pique his interest… having been around for a long while there is a need for stimulation somehow."
+  ],
+  "dislikes": [],
+  "fears": [
+    "The existential dread of eternity (Chronus):  it’s not that close, but the feeling is there. Who wouldn’t fear eternity driving them to insanity",
+    "High places (Lanthander): It wasn’t a pleasant experience then, so it wouldn’t be any more pleasant now that you are much heavier."
+  ],
+  "personality": "",
+  "identities": [
+    {
+      "name": "Chronus",
+      "color": "#0555d6",
+      "personality": "**Somewhat Nhilistic:**\nWhat inherent meaning is there to life if everything seems like eternity? All they got going for themselves are new events to look out for, and maybe a few more… Ooo philosophical we are getting here.\n\n**Patient:**\nThere is plenty of time to go around, especially when you are time incarnate.\n\n**Quiet:**\nNo need to waste energy speaking tons.\n"
+    },
+    {
+      "name": "Lathander",
+      "color": "#f06f19",
+      "personality": "**Stoic:**\nTime has worn down the edges of this fellow, the energy that they had before isn’t really there anymore. Even though their new form did revitalize their passion somewhat, they are still inclined to stay calm at most times… and maybe not seem very energetic either.\n\n**Adamant:**\nAlthough they have lost their edge as said above, their resolve for things they deem important is still there, totally intact.\n\n**Hardy:**\nIn the past, they were no stranger to enduring hardship, so that carries through.\n"
+    }
+  ],
+  "abilities": [
+    {
+      "slot": "Common Talent",
+      "name": "Dragon",
+      "locked": false,
+      "item": false,
+      "description": "Understand and peer through the veil of comprehension to more easily understand what is hidden to others."
+    },
+    {
+      "slot": "Special Talent",
+      "name": "Time Control",
+      "locked": false,
+      "item": false,
+      "description": "The user is able to control the flow of time freely on a small scale, such as reversing or speeding up the passage of time on small processes such as small plant growth, water boiling, baking, etc. larger feats of time control will have larger costs"
+    },
+    {
+      "slot": "Common Battle",
+      "name": "Bulletproof",
+      "locked": false,
+      "item": false,
+      "description": "The user is immune to certain ball and bomb moves."
+    },
+    {
+      "slot": "Unique Battle",
+      "name": "Temporal Shift",
+      "locked": false,
+      "item": false,
+      "description": "The user has a 10% chance to “Freeze” the targets of their attack if they land via time stop, which stops them from taking an action on to their next turn and renders them immobile for that said turn. Targets floating in the air will remain in that position in the air.\n\nIn addition, the user gains the Dragon Typing on top of their existing typing\n"
+    },
+    {
+      "slot": "Unique Battle",
+      "name": "Temporal Warp",
+      "locked": true,
+      "item": true,
+      "description": "Once per battle, the user can speed up or slow down on at most two targets, the user themselves excluded, granting an additional action the next turn for them with speed up or slow them with slow down and stop them from making a move next turn (they can still move around), the user can also target someone with time stop as well to deny them of action entirely for a turn, though that option can only target one target at a time.\n"
+    }
+  ],
+  "moves": [
+    {
+      "name": "Roar of Time",
+      "category": "Special",
+      "type": "Dragon",
+      "pp": 5,
+      "legendary": true,
+      "custom": false,
+      "locked": false,
+      "item": false,
+      "description": "The user unleashes a powerful roar filled with immeasurable power, damaging the target. If this move succeeds in damaging the target, the user cannot use moves for the next turn."
+    },
+    {
+      "name": "Shift Gear",
+      "category": "Status",
+      "type": "Steel",
+      "pp": 10,
+      "legendary": false,
+      "custom": false,
+      "locked": false,
+      "item": false,
+      "description": "The user shifts their gears, sharply boosting their speed and boosts their attack by one stage.\n"
+    },
+    {
+      "name": "Body Press",
+      "category": "Physical",
+      "type": "Fighting",
+      "pp": 10,
+      "legendary": false,
+      "custom": false,
+      "locked": false,
+      "item": false,
+      "description": "The user slams down on the target with their body, this move deals damage with the users defense stat.\n"
+    },
+    {
+      "name": "Iron Defense",
+      "category": "Status",
+      "type": "Steel",
+      "pp": 15,
+      "legendary": false,
+      "custom": false,
+      "locked": false,
+      "item": false,
+      "description": "The user hardens their defenses to sharply boost their defense stat.\n"
+    },
+    {
+      "name": "Heavy Slam",
+      "category": "Physical",
+      "type": "Steel",
+      "pp": 10,
+      "legendary": false,
+      "custom": false,
+      "locked": false,
+      "item": false,
+      "description": "The user throws themselves at the target to crush them with their weight, this move deals more damage the more the user outweighs the target, this move also deals double damage and never misses against a target that has used minimize."
+    },
+    {
+      "name": "Storm Throw",
+      "category": "Physical",
+      "type": "Fighting",
+      "pp": 10,
+      "legendary": false,
+      "custom": false,
+      "locked": false,
+      "item": false,
+      "description": "The user strikes the target with a fierce blow, this move always results in a critical hit.\n"
+    },
+    {
+      "name": "The Test of Time",
+      "category": "Special",
+      "type": "Steel",
+      "pp": 10,
+      "legendary": true,
+      "custom": true,
+      "locked": true,
+      "item": false,
+      "description": "Rays of mysterious light rains down upon the target(s), dealing damage and lowering their speed and evasion by one stage, while also afflicting targets with a condition that drains of their HP by 1/16 every turn for 5 turns, or until the battle ends.\n\nRock types are immune to the residual damage."
+    }
+  ],
+  "backstory": "It doesn’t matter what happens in each of the multiverses that life resides in, mass extinctions, famine, war, reconstruction of civilization… Time shall tick along regardless. \n\nAn individual or two every once in a while might reach enlightenment, or maybe not… some might just enjoy life as usual, cherishing the limited amount of time they have left, which to be fair, is probably the best outcome for all.\n\nThat said, let us move on… to his actual story.\n\nLathander, just another mon amidst the countless others, insignificant, unseen… and just… there. However, as luck would have it, that would not be the case for much longer.\n\nThe homeland in which he resides was ravaged on a regular basis by war and famine, classic setting for tragedies, or maybe epic tales of heroism. \n\nCountless times had he touched shoulders with death itself, countless times he pulled through once more, our man rose up through the ranks after being inevitably and forcefully pulled into this war in which he had no part in before.\n\nHe wasn’t even aiming to do so, all he wanted was to hang on for his dear life… but alas, life had other plans for him.\n\nUp and up Lathander went, more and more battles he witnessed… more and more he grew paranoid of his own inevitable end. \n\nBut luck was on his side once more.\n\nOver the years, repeated successes of conquest and defense made death feel further and further away, so as peace finally returned after the lands were cleansed with the flames of war, he started to think about it less… and less. Until there was nothing for him to do in the years of retirement.\n\nHe had no spouse, no children, and no close ones to cling on to for longer, they had all either went missing, or had been met with the inevitable… but again, he never had any children to begin with.\n\nBy now, Lathander had already come to accept what was going to come any day now, he had already made peace with himself… the only thing he truly craved was to relive another life, but rest was not so bad either.\n\nAfter all, for what could any entity, conscious of eternal existence, want - but an end?\n\nThat was one of the reasons why he waited every day, unbothered by what’s to come, there was not much left to do for him anyways.\n\nThough… the same could not be said for Chronus.\n\nIt all came as quick as a blink of an eye, one second, Lathander was just walking amidst a sea of greenery, and another second… it was all silent, all was pitch black.\n\nDid he faint? Was there a hitman?\n\nWhatever it was, by the time he had woke up once again, he was greeted with the sight of something foreign… weight upon his whole body, and his appendages, shining with a gleam that was completely unseen before.\n\nThe appendages moved around without his own accord, it was like as if everything was being seen from another perspective. It’s just a dream… he thought to himself.\n\nSo he shut his lids, before reopening them. Same things, same sensation.\n\nThis was no dream, but nothing made sense, his head hurt, there was no memories lost, but there was an unfathomable amount that wasn’t there before, and a different voice within him, speaking something else…\n\nHis head hurt, such a big headache…\n\n“I suppose you are very confused.”\n\nIndeed Lathander was struggling to piece things together, struggling to regain control over his body, the movement was natural, but not made by him.\n\n“Futile struggle.”\n\nChronus and Lathander, those two names resided in his memories instead of just one.\n\nIt was like there was an immeasurable power that took control over everything.\n\nHe continued to struggle for a little longer, but in the end, Lathander reluctantly chose to assimilate with this new being and his new body… and indeed the headaches went away.\n\nThe two minds still sort of coexisted, though now as one instead of two different beings.\n\nOne might still take a bit more control over another, but they have been mostly fused together at this point.\n\nChronus, Lathander… \n\nA Nihilistic mind, and another still with newfound determination within.\n\nWhat will they be… together?",
+  "gallery": [],
+  "cardZoom": 1.35
+}
