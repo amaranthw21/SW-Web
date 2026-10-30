@@ -80,7 +80,7 @@ collections:
             fields:
               - { name: title, label: Title, widget: string, hint: "e.g. 'General' or 'Combat'." }
               - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown above the rules. Leave a blank line between paragraphs." }
-              - name: rules
+              - name: entries
                 label: Rules
                 widget: list
                 required: false
@@ -91,6 +91,110 @@ collections:
                   - { name: title, label: Title, widget: string }
                   - { name: text, label: Text, widget: richtext, required: false }
               - { name: outro, label: "Closing note", widget: richtext, required: false, hint: "Shown under the last rule, e.g. 'These rules may change in the future'." }
+
+      # Mechanics de General: un apartado por sistema, cada uno con sus entradas.
+      - name: mechanics
+        label: "Mechanics"
+        file: src/content/mechanics.json
+        format: json
+        fields:
+          - name: sections
+            label: Sections
+            widget: list
+            label_singular: Section
+            summary: "{{fields.title}}"
+            hint: "Each section is a button on the page, in this order. Pressing it shows what's inside."
+            fields:
+              - { name: title, label: Title, widget: string, hint: "e.g. 'Battles' or 'Training'." }
+              - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown at the top of the section. Leave a blank line between paragraphs." }
+              - name: entries
+                label: Entries
+                widget: list
+                required: false
+                label_singular: Entry
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: text, label: Text, widget: richtext, required: false }
+              - { name: outro, label: "Closing note", widget: richtext, required: false, hint: "Shown at the end of the section." }
+
+      # Character Types de General: un apartado por tipo de personaje.
+      - name: character-types
+        label: "Character Types"
+        file: src/content/character-types.json
+        format: json
+        fields:
+          - name: sections
+            label: Sections
+            widget: list
+            label_singular: Section
+            summary: "{{fields.title}}"
+            hint: "Each section is a button on the page, in this order. Pressing it shows what's inside."
+            fields:
+              - { name: title, label: Title, widget: string, hint: "The name of the character type." }
+              - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown at the top of the section. Leave a blank line between paragraphs." }
+              - name: entries
+                label: Entries
+                widget: list
+                required: false
+                label_singular: Entry
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: text, label: Text, widget: richtext, required: false }
+              - { name: outro, label: "Closing note", widget: richtext, required: false, hint: "Shown at the end of the section." }
+
+      # Changes & Bans de General: la lista de vetados y la de cambios respecto a los juegos.
+      - name: changes-and-bans
+        label: "Changes & Bans"
+        file: src/content/changes-and-bans.json
+        format: json
+        fields:
+          - name: sections
+            label: Sections
+            widget: list
+            label_singular: Section
+            summary: "{{fields.title}}"
+            hint: "Each section is a button on the page, in this order. Pressing it shows what's inside."
+            fields:
+              - { name: title, label: Title, widget: string, hint: "e.g. 'Ban-list' or 'Changed list'." }
+              - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown at the top of the section. Leave a blank line between paragraphs." }
+              - name: entries
+                label: Entries
+                widget: list
+                required: false
+                label_singular: Entry
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: text, label: Text, widget: richtext, required: false }
+              - { name: outro, label: "Closing note", widget: richtext, required: false, hint: "Shown at the end of the section." }
+
+      # Character Creation Help de General: la guía para hacer un personaje, por pasos.
+      - name: character-creation
+        label: "Character Creation Help"
+        file: src/content/character-creation.json
+        format: json
+        fields:
+          - name: sections
+            label: Sections
+            widget: list
+            label_singular: Section
+            summary: "{{fields.title}}"
+            hint: "Each section is a button on the page, in this order. Pressing it shows what's inside."
+            fields:
+              - { name: title, label: Title, widget: string, hint: "e.g. 'Step 1: Pick a Pokémon'." }
+              - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown at the top of the section. Leave a blank line between paragraphs." }
+              - name: entries
+                label: Entries
+                widget: list
+                required: false
+                label_singular: Entry
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: text, label: Text, widget: richtext, required: false }
+              - { name: outro, label: "Closing note", widget: richtext, required: false, hint: "Shown at the end of the section." }
 
   # ───────────────────────── Islands ─────────────────────────
   # Las islas de la región, cada una en su carpeta con su JSON y sus imágenes

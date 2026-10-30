@@ -3,7 +3,8 @@
     {
       "title": "General",
       "intro": "Below are some general guidelines for the server. While we haven’t listed every possible rule to keep things simple, we expect everyone to follow basic common sense. In other words, if you wouldn’t do something to a stranger on the street, like stopping them to ask for their private information, please don’t do it here either.\n\nWith that in mind, let’s move on to the rules.",
-      "rules": [
+      "outro": "These rules may change in the future. If they are to be changed, members will be notified.",
+      "entries": [
         {
           "title": "Read the Server Rules thoroughly",
           "text": "Please read through general, character, combat, romance-rules, and ban-list to find parts of the password and gain access to the server."
@@ -44,26 +45,25 @@
           "title": "Absolutely no AI in this server",
           "text": "Please do not use AI to generate images of characters or write replies to roleplays you are in."
         }
-      ],
-      "outro": "These rules may change in the future. If they are to be changed, members will be notified."
+      ]
     },
     {
       "title": "Character",
       "intro": "",
-      "rules": [],
-      "outro": ""
+      "outro": "",
+      "entries": []
     },
     {
       "title": "Combat",
       "intro": "",
-      "rules": [],
-      "outro": ""
+      "outro": "",
+      "entries": []
     },
     {
       "title": "Romance",
       "intro": "",
-      "rules": [],
-      "outro": ""
+      "outro": "",
+      "entries": []
     }
   ]
 }

@@ -18,13 +18,13 @@ const general = [
         description: "The kinds of characters you can play and what sets each one apart."
     },
     {
-        id: "ban-list",
-        title: "Ban-list + Changed list",
+        id: "changes-and-bans",
+        title: "Changes & Bans",
         description: "What can't be used, and what has been changed from the original games."
     },
     {
         id: "character-creation",
-        title: "Character Creation help",
+        title: "Character Creation Help",
         description: "A step-by-step guide to making your first character."
     },
     {
