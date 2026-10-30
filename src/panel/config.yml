@@ -221,6 +221,8 @@ collections:
         fields:
           - { name: slot, label: Slot, widget: string, hint: "e.g. 'Common Talent' or 'Common Battle'." }
           - { name: name, label: Name, widget: string, hint: "e.g. 'Friend Guard'." }
+          - { name: locked, label: Locked, widget: boolean, default: false, required: false, hint: "Not available yet. Shown greyed out with a 'Locked' tag." }
+          - { name: item, label: Item, widget: boolean, default: false, required: false, hint: "Granted by an item. Shown as an 'Item' tag." }
           - { name: description, label: Description, widget: richtext, required: false, hint: "Put numbers in backticks to highlight them: `[-25%]`." }
       - name: moves
         label: Moves
@@ -235,6 +237,8 @@ collections:
           - { name: pp, label: PP, widget: number, value_type: int, required: false, min: 1 }
           - { name: legendary, label: Legendary, widget: boolean, default: false, required: false, hint: "Shown as a 'Legendary' tag next to the move." }
           - { name: custom, label: Custom, widget: boolean, default: false, required: false, hint: "A move made up for this character. Shown as a 'Custom' tag." }
+          - { name: locked, label: Locked, widget: boolean, default: false, required: false, hint: "Not available yet. Shown greyed out with a 'Locked' tag." }
+          - { name: item, label: Item, widget: boolean, default: false, required: false, hint: "Granted by an item. Shown as an 'Item' tag." }
           - { name: description, label: Description, widget: richtext, required: false, hint: "Put numbers in backticks to highlight them: `[1.5x]`." }
       # Story and appearance
       - { name: backstory, label: Backstory, widget: richtext, required: false, hint: "Line breaks are kept, so verses read as verses. Leave a blank line between paragraphs." }

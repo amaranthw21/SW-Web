@@ -5863,9 +5863,13 @@ button.region-loc {
 
 }
 
-/* Etiquetas opcionales del movimiento (Legendary, Custom): con borde para no
-   confundirse con la categoría. */
-.character-move__flag {
+/* Etiquetas opcionales de habilidades y movimientos (Locked, Item, Legendary,
+   Custom): con borde para no confundirse con la categoría. */
+.character-flag {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
 
     padding: 1px 9px;
 
@@ -5878,7 +5882,35 @@ button.region-loc {
 
 }
 
-.character-move__flag--legendary {
+.character-flag__icon {
+
+    width: 0.9em;
+    height: 0.9em;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+
+}
+
+.character-flag--locked {
+
+    background: rgba(148, 163, 184, 0.15);
+
+    color: #cbd5e1;
+
+}
+
+.character-flag--item {
+
+    background: rgba(20, 184, 166, 0.15);
+
+    color: #5eead4;
+
+}
+
+.character-flag--legendary {
 
     background: rgba(234, 179, 8, 0.15);
 
@@ -5886,11 +5918,42 @@ button.region-loc {
 
 }
 
-.character-move__flag--custom {
+.character-flag--custom {
 
     background: rgba(168, 85, 247, 0.15);
 
     color: #d8b4fe;
+
+}
+
+.character-ability__flags {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    margin-top: 6px;
+
+}
+
+/* Una habilidad o movimiento bloqueado se ve apagado: el nombre en gris y el
+   resto en segundo plano, para que de un vistazo se note que aún no está
+   disponible. La etiqueta Locked se queda a plena luz para que se lea. */
+.is-locked .character-ability__name,
+.is-locked .character-move__name {
+
+    color: #8b95a5;
+
+}
+
+.is-locked .character-ability__slot,
+.is-locked .character-ability__body,
+.is-locked .character-move__cat,
+.is-locked .type-badge,
+.is-locked .character-move__pp,
+.is-locked .character-move__body {
+
+    opacity: 0.5;
 
 }
 
