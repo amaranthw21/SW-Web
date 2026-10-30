@@ -49,21 +49,123 @@
     },
     {
       "title": "Character",
-      "intro": "",
+      "intro": "These are some basic rules the server follows regarding characters and submissions. Please read them carefully, and if you have any questions, check whether the answer is already in the Q&A channel or feel free to ask in the Ask-a-Question channel.",
       "outro": "",
-      "entries": []
+      "entries": [
+        {
+          "title": "[1] Reserving Pokemon/Legendaries",
+          "text": "Individual Pokémon and Legendary Pokémon are limited to **one per person**, on a first-come, first-served basis. For example, if Member A claims Pikachu, Member B cannot use Pikachu for their character. The Pokémon remains unavailable unless Member A retires their character.\n\nReservations for Pokemon and/or Legends **last for 15 days**, during which no one else may claim either mon for their own fusion. **The reservation is released after 15 days with no tangible progress** on the character, but if you need more time to complete your submission please ask a member of staff for an extension."
+        },
+        {
+          "title": "[2]  Regional Variants",
+          "text": "If a Pokémon is already in use, or one of its evolutions is taken, you may create a **regional variant** of that Pokémon instead. You will need to provide the following information:\n\n- **Name:** The name of your regional variant.\n- **Type(s):** Its Pokémon type or types.\n- **Artwork:** An image of the Pokémon, including proper artist credits.\n- **Evolution(s):** Any evolutions it has, if applicable.\n\n**IMPORTANT:**  If you are not the original creator of a regional variant, you must use it as originally intended by its creator. This means you cannot change its name, types, evolutions, or any other established details."
+        },
+        {
+          "title": "[3] Fakemon",
+          "text": "You may create and use original Pokémon species (Fakémon), but each one must be approved before use. \n\n**IMPORTAN**: If you are not the original creator of a Fakémon, you must use it as originally intended by its creator. This means you cannot change its name, types, evolutions, or any other established details."
+        },
+        {
+          "title": "[4] Inactive Characters will be Removed after around One  Month of Inactivity or More",
+          "text": "Depending on where they were in the server, inactive characters **may be retconned or written out of the story. That means, they will be declared dead offscreen.** To avoid having your character pruned, please try to maintain activity or leave a notice in https://discord.com/channels/1172279262418579466/1317621289682468944  if you will be inactive for a period.\n\nSince Legendary Pokemon are limited in number and quite powerful, we tend to be more strict with their activity levels. **You will still receive notice before we prune your character**\n\nStaff keeps an archive of removed characters. If you wish to recover your OCs' submission, ask."
+        },
+        {
+          "title": "[5] Please use the provided templates for character sheets for reference",
+          "text": "You may submit your character sheet directly in a thread in the #character-submission channel or through a Google Doc. Regardless of the format, your submission must include all the information requested in the templates, which can be found in https://discord.com/channels/1172279262418579466/1490661905105420390.\n\nYou are welcome to customize the templates with emojis or include additional information about your character. While we appreciate the extra effort, **any information beyond what the template requests is entirely optional.**"
+        },
+        {
+          "title": "[5] All characters must have an image for the official RP.",
+          "text": "You can create the artwork yourself, request character art in #art-requests, or use an image found online (please credit the original artist whenever possible). You can also use resources such as [FusionDex](https://www.fusiondex.org/) to find a suitable reference.\n\n**Don't have artwork yet?** No problem! You can submit your character for initial approval without an image and continue developing them in the non-canon channels while you work on their design. However, your character must have an image before participating in the official RP.\n\nIf you don't have artwork, need a temporary reference, or simply don't want to provide one yourself, the staff can help you find a suitable placeholder from FusionDex or another online source.\n\nPlease **do not use AI-generated artwork** for your characters. Refer to the general rules for our stance on AI. Additionally, keep character artwork appropriate for our server, as we have minors in the community."
+        },
+        {
+          "title": "[6] Please inform a member of staff and get approval before making changes to an accepted character.",
+          "text": "This applies to any changes that affect your character going forward, from minor backstory tweaks to major alterations to their abilities or other established traits.\n\nWe ask that you do this because we maintain a **website containing copies of all approved character sheets** for easy access by the community. Any changes to your character's information must also be reflected on the website, so staff need to be informed to keep everything up to date.\n\nThank you for helping us keep our character records accurate and consistent!"
+        }
+      ]
     },
     {
-      "title": "Combat",
-      "intro": "",
+      "title": "OC Cast",
+      "intro": "The following rules focus on character creation and the limitations that apply to your OCs. For more detailed information, please refer to Character-Creation.",
+      "entries": [
+        {
+          "title": "[1] Cast Size",
+          "text": "Each member can have up to four characters at a time. However, the following limitations apply to your character roster:\n\n- **Legendary Limit:** Each member may have only one Legendary Fusion at a time.\n\n- **Amalgam Limit:** Each member may have only one Amalgam at a time."
+        },
+        {
+          "title": "[2] Starting Character",
+          "text": "Your first OC can be one of the following:\n\n- **Commonfolk:** A character based on a single non-Legendary Pokémon or a fusion of two non-Legendary Pokémon.\n\n- **Egg Fusion:** A fusion of two non-Legendary Pokémon in their first evolutionary stage (those that do not have evolutions count as \"first evolutionary stage for the purpose of this rule). These characters are essentially the children of the server.\n\n- **Legendary Fusion:** A fusion between a Legendary Pokémon and another Pokémon. All Legendary Pokémon must be part of a fusion; standalone Legendary characters are not allowed."
+        },
+        {
+          "title": "[3] Cooldowns between submissions/reservations",
+          "text": "After about one month of activity with your last OC, you will be allowed to reserve Pokemon for your next OC.\n\nBefore that, please refrain from reserving pokemon in the https://discord.com/channels/1172279262418579466/1488284334304526427. We want everyone to have a fair shot at making their characters come to life, so please don’t try to Gatekeep or Puppyguard Pokemon.\n\nYou can still make plans for your next OC in https://discord.com/channels/1172279262418579466/1488940943208874014"
+        },
+        {
+          "title": "[4] Member NPCs",
+          "text": "You are allowed to have NPCs (Non-Playable Characters) associated with your OCs. You can even submit them for reference if you wish! **NPCs do not count toward our one species of each Pokémon limit or your four-character cast limit**, as long as they remain background characters.\n\nFor example, if your character's mother is a Vulpix × Sandshrew fusion who occasionally appears in the background or serves as a plot device for your OC's story, that's perfectly fine! You don't need to submit her as an official character and even if there is another Vulpix around you can use them and mention them.\n\nHowever, **if an NPC starts playing a significant role in the RP and becomes a more prominent character, you will be required to submit them officially.** Once approved (if posible), they will be added to your character roster.\n\n**IMPORTANT:** You can't use legendaries as NPC."
+        },
+        {
+          "title": "[5] Character Drop",
+          "text": "You are free to drop a character from your roster whenever you wish. If you remain in the server, the character will either be considered missing or become a background NPC under your control, unless you specify otherwise. This allows you to bring them back later if you change your mind, making their return easier to integrate naturally into the story.\n\n**Legendary Pokémon Exception:** If you drop a Legendary Fusion, you cannot reclaim that same character if another member has claimed it and used it for their own character in the meantime. \n\nPlease keep in mind that dropping a character does not guarantee you will be able to reclaim the same Pokémon later!"
+        }
+      ],
+      "outro": ""
+    },
+    {
+      "title": "Roleplay",
+      "intro": "Below are some changes and rules that generally apply to roleplay & combat",
       "outro": "",
-      "entries": []
+      "entries": [
+        {
+          "title": "[1] Avoid Main Character Syndrome",
+          "text": "All characters are roughly on an even playing field in terms of power (for example Mewtwo's attack are gonna hit as hard as an Espeon's). So don’t try to have your character hog the spotlight or dominate the RP."
+        },
+        {
+          "title": "[2] Avoid Godmodding, Infomodding, Powerplaying and Inappropriate Topics",
+          "text": "- **Godmodding:**  Controlling another person's character, or having your character be impossible to beat or damage\n- **Infomodding:** Using information gained OOC to influence decisions made IC\n- **Powerplaying:** Manipulating your character's powers, skills, and abilities so that they always have an advantage.\n- **Inappropriate Topics:** Do not include the following topics in your character's submission or rps: \n  - Explicitly Sexual Themes or Fetishes,\n  - Extreme Gore,\n  - Cannibalism (Yes, we consider Pokemon eating other Pokemon cannibalism as this is a PMD setting)\n  - Self Harm\n  - Racist/Homophobic/Sexist themes\n  - Sexual Assault of any kind\n\n**Also, be mindful of how you portray certain conditions.** For example, avoid clichés like assuming a psychopath must automatically be a violent criminal."
+        },
+        {
+          "title": "[3] Characters ≠ Players",
+          "text": "We have a diverse cast of characters in this server with an array of different personalities. Please keep the actions of a character separate from those of the player, and do not treat people poorly OOC based on the actions of their character.\n\nAdditionally, we allow the natural consequences of character actions to play out. If you cannot handle your character being punished for doing something stupid, please think twice before committing to it."
+        },
+        {
+          "title": "[4] PTK",
+          "text": "Permission to Kill (PTK) is always on in this server, which means you must obtain your RP Partner’s permission to kill their character. So even if your character is in a dangerous situation, they cannot be killed unless you give a go-ahead.\n\nYou cannot kill someone else’s character unless you both have agreed to it and have also cleared your decision with a member of staff."
+        },
+        {
+          "title": "[5] Right to retire",
+          "text": "If you engage in PVP with another character, you have the right to have your character run away from the fight if you wish."
+        },
+        {
+          "title": "[6] Safe Havens",
+          "text": "The towns and Guardian's Lairs (For example the Bell Tower in Sleighbell Island) are considered “Safe Havens” where, outside of friendly spars or training, battles that could be dangerous to characters well-being are prohibited in character. If your characters choose to instigate a fight in a safe haven, they will receive in character consequences."
+        },
+        {
+          "title": "Jumping",
+          "text": "PVP must be agreed upon by both players. Your character cannot engage another character in combat if their player does not consent to it. And if you continue trying to initiate combat a Helper or NPC will interfere irp and mods will step in ooc"
+        }
+      ]
     },
     {
       "title": "Romance",
-      "intro": "",
+      "intro": "This rules might look a little bit silly, but breaking any of them might cause an automatic strike in the best case and a ban in the worse. So thread carefully.",
       "outro": "",
-      "entries": []
+      "entries": [
+        {
+          "title": "[1] Absolutely no ERP in this server",
+          "text": "This server is teen and up and minors are present. Engaging in erotic roleplay in the server is strictly forbidden, and anyone who asks for one or tries to start one will be banned."
+        },
+        {
+          "title": "[2] Keep relationships organic",
+          "text": "While having a character “fall in love at first sight,” and have a crush on another is fun and dandy we ask that any relationships characters build are planned ahead of time and that they occur organically and over the course of several roleplays.\n\nBasically, don't do a SIMS and go from meting to marrying in a day.\n"
+        },
+        {
+          "title": "[3] Do not force a relationship",
+          "text": "Do not coerce or try to pressure another player into shipping their character with yours. Players also have the right to back away from an in character relationship at any time, even if they were okay with it in the beginning. The moment someone involved gets uncomfortable with it, the ship is over, no questions asked. Do not be pushy about shipping, and take NO for an answer!\n\nAlso, if you want to create a ship, tell the mods in advance so we are in the known. Otherwise, the situation may be misinterpreted if for example a character is clearly romantic but the other is not that much."
+        },
+        {
+          "title": "[4] Ensure that the shipped characters are of a similar  age group",
+          "text": "This might sound a bit tyrannical in the world of shipping... but in this server, teenage characters are to be shipped with other teen characters and adult aged characters must be shipped with adult characters. A teen can't form a romatic relationship with an adult. NO.\n\n**And if we see someone shipping a child character. Is an automatic ban.**"
+        }
+      ]
     }
   ]
 }
