@@ -18,25 +18,30 @@
   ],
   "territories": [
     {
-      "name": "Tidal Coast",
+      "name": "Whirl Islands",
       "description": "The western half of the island, carved by the sea.",
       "safeZones": [
         {
-          "name": "Harbor Town",
-          "image": "Lugia-Ho-oh-bg.jpg",
-          "description": "The island's only port. Ships from the rest of Bethath dock here."
+          "name": "Mauville Island",
+          "image": "5obqefqd9avh1.gif",
+          "description": ""
         },
         {
-          "name": "Shell Beach",
-          "image": "",
+          "name": "Platinum Coast",
+          "image": "tumblr-0e73b299bcdce7f11a1816f9e05a00e4-113d949d-1280.png",
+          "description": ""
+        },
+        {
+          "name": "Silver Trench",
+          "image": "underwater-wreckage-by-lasriaonline-des4mj5-fullview.png",
           "description": ""
         }
       ],
       "dungeons": [
         {
-          "name": "Whirl Caves",
-          "image": "Lugia-Ho-oh-bg.jpg",
-          "description": "Sea caves that flood at high tide. Something sings deep inside."
+          "name": "Burned Tower",
+          "image": "lennart-butz-ukiyo2.gif",
+          "description": ""
         }
       ]
     },
@@ -69,6 +74,18 @@
       "safeZones": [
         {
           "name": "Bridge Market",
+          "image": "",
+          "description": ""
+        }
+      ],
+      "dungeons": []
+    },
+    {
+      "name": "Purity Reserve",
+      "description": "",
+      "safeZones": [
+        {
+          "name": "Timeless Clearing",
           "image": "",
           "description": ""
         }
