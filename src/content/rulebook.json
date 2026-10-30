@@ -83,18 +83,6 @@
       ]
     },
     {
-      "title": "Combat",
-      "intro": "",
-      "outro": "",
-      "entries": []
-    },
-    {
-      "title": "Romance",
-      "intro": "",
-      "outro": "",
-      "entries": []
-    },
-    {
       "title": "OC Cast",
       "intro": "The following rules focus on character creation and the limitations that apply to your OCs. For more detailed information, please refer to Character-Creation.",
       "entries": [
@@ -105,9 +93,79 @@
         {
           "title": "[2] Starting Character",
           "text": "Your first OC can be one of the following:\n\n- **Commonfolk:** A character based on a single non-Legendary Pokémon or a fusion of two non-Legendary Pokémon.\n\n- **Egg Fusion:** A fusion of two non-Legendary Pokémon in their first evolutionary stage (those that do not have evolutions count as \"first evolutionary stage for the purpose of this rule). These characters are essentially the children of the server.\n\n- **Legendary Fusion:** A fusion between a Legendary Pokémon and another Pokémon. All Legendary Pokémon must be part of a fusion; standalone Legendary characters are not allowed."
+        },
+        {
+          "title": "[3] Cooldowns between submissions/reservations",
+          "text": "After about one month of activity with your last OC, you will be allowed to reserve Pokemon for your next OC.\n\nBefore that, please refrain from reserving pokemon in the https://discord.com/channels/1172279262418579466/1488284334304526427. We want everyone to have a fair shot at making their characters come to life, so please don’t try to Gatekeep or Puppyguard Pokemon.\n\nYou can still make plans for your next OC in https://discord.com/channels/1172279262418579466/1488940943208874014"
+        },
+        {
+          "title": "[4] Member NPCs",
+          "text": "You are allowed to have NPCs (Non-Playable Characters) associated with your OCs. You can even submit them for reference if you wish! **NPCs do not count toward our one species of each Pokémon limit or your four-character cast limit**, as long as they remain background characters.\n\nFor example, if your character's mother is a Vulpix × Sandshrew fusion who occasionally appears in the background or serves as a plot device for your OC's story, that's perfectly fine! You don't need to submit her as an official character and even if there is another Vulpix around you can use them and mention them.\n\nHowever, **if an NPC starts playing a significant role in the RP and becomes a more prominent character, you will be required to submit them officially.** Once approved (if posible), they will be added to your character roster.\n\n**IMPORTANT:** You can't use legendaries as NPC."
+        },
+        {
+          "title": "[5] Character Drop",
+          "text": "You are free to drop a character from your roster whenever you wish. If you remain in the server, the character will either be considered missing or become a background NPC under your control, unless you specify otherwise. This allows you to bring them back later if you change your mind, making their return easier to integrate naturally into the story.\n\n**Legendary Pokémon Exception:** If you drop a Legendary Fusion, you cannot reclaim that same character if another member has claimed it and used it for their own character in the meantime. \n\nPlease keep in mind that dropping a character does not guarantee you will be able to reclaim the same Pokémon later!"
         }
       ],
       "outro": ""
+    },
+    {
+      "title": "Roleplay",
+      "intro": "Below are some changes and rules that generally apply to roleplay & combat",
+      "outro": "",
+      "entries": [
+        {
+          "title": "[1] Avoid Main Character Syndrome",
+          "text": "All characters are roughly on an even playing field in terms of power (for example Mewtwo's attack are gonna hit as hard as an Espeon's). So don’t try to have your character hog the spotlight or dominate the RP."
+        },
+        {
+          "title": "[2] Avoid Godmodding, Infomodding, Powerplaying and Inappropriate Topics",
+          "text": "- **Godmodding:**  Controlling another person's character, or having your character be impossible to beat or damage\n- **Infomodding:** Using information gained OOC to influence decisions made IC\n- **Powerplaying:** Manipulating your character's powers, skills, and abilities so that they always have an advantage.\n- **Inappropriate Topics:** Do not include the following topics in your character's submission or rps: \n  - Explicitly Sexual Themes or Fetishes,\n  - Extreme Gore,\n  - Cannibalism (Yes, we consider Pokemon eating other Pokemon cannibalism as this is a PMD setting)\n  - Self Harm\n  - Racist/Homophobic/Sexist themes\n  - Sexual Assault of any kind\n\n**Also, be mindful of how you portray certain conditions.** For example, avoid clichés like assuming a psychopath must automatically be a violent criminal."
+        },
+        {
+          "title": "[3] Characters ≠ Players",
+          "text": "We have a diverse cast of characters in this server with an array of different personalities. Please keep the actions of a character separate from those of the player, and do not treat people poorly OOC based on the actions of their character.\n\nAdditionally, we allow the natural consequences of character actions to play out. If you cannot handle your character being punished for doing something stupid, please think twice before committing to it."
+        },
+        {
+          "title": "[4] PTK",
+          "text": "Permission to Kill (PTK) is always on in this server, which means you must obtain your RP Partner’s permission to kill their character. So even if your character is in a dangerous situation, they cannot be killed unless you give a go-ahead.\n\nYou cannot kill someone else’s character unless you both have agreed to it and have also cleared your decision with a member of staff."
+        },
+        {
+          "title": "[5] Right to retire",
+          "text": "If you engage in PVP with another character, you have the right to have your character run away from the fight if you wish."
+        },
+        {
+          "title": "[6] Safe Havens",
+          "text": "The towns and Guardian's Lairs (For example the Bell Tower in Sleighbell Island) are considered “Safe Havens” where, outside of friendly spars or training, battles that could be dangerous to characters well-being are prohibited in character. If your characters choose to instigate a fight in a safe haven, they will receive in character consequences."
+        },
+        {
+          "title": "Jumping",
+          "text": "PVP must be agreed upon by both players. Your character cannot engage another character in combat if their player does not consent to it. And if you continue trying to initiate combat a Helper or NPC will interfere irp and mods will step in ooc"
+        }
+      ]
+    },
+    {
+      "title": "Romance",
+      "intro": "This rules might look a little bit silly, but breaking any of them might cause an automatic strike in the best case and a ban in the worse. So thread carefully.",
+      "outro": "",
+      "entries": [
+        {
+          "title": "[1] Absolutely no ERP in this server",
+          "text": "This server is teen and up and minors are present. Engaging in erotic roleplay in the server is strictly forbidden, and anyone who asks for one or tries to start one will be banned."
+        },
+        {
+          "title": "[2] Keep relationships organic",
+          "text": "While having a character “fall in love at first sight,” and have a crush on another is fun and dandy we ask that any relationships characters build are planned ahead of time and that they occur organically and over the course of several roleplays.\n\nBasically, don't do a SIMS and go from meting to marrying in a day.\n"
+        },
+        {
+          "title": "[3] Do not force a relationship",
+          "text": "Do not coerce or try to pressure another player into shipping their character with yours. Players also have the right to back away from an in character relationship at any time, even if they were okay with it in the beginning. The moment someone involved gets uncomfortable with it, the ship is over, no questions asked. Do not be pushy about shipping, and take NO for an answer!\n\nAlso, if you want to create a ship, tell the mods in advance so we are in the known. Otherwise, the situation may be misinterpreted if for example a character is clearly romantic but the other is not that much."
+        },
+        {
+          "title": "[4] Ensure that the shipped characters are of a similar  age group",
+          "text": "This might sound a bit tyrannical in the world of shipping... but in this server, teenage characters are to be shipped with other teen characters and adult aged characters must be shipped with adult characters. A teen can't form a romatic relationship with an adult. NO.\n\n**And if we see someone shipping a child character. Is an automatic ban.**"
+        }
+      ]
     }
   ]
 }
