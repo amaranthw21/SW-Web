@@ -8,6 +8,20 @@
   "color": "",
   "summary": "",
   "description": "",
-  "legendaries": [],
+  "legendaries": [
+    "kyurem",
+    "zekrom",
+    "reshiram",
+    "victini",
+    "meloetta",
+    "landorus",
+    "thundurus",
+    "tornadus",
+    "enamorus",
+    "cobalion",
+    "virizion",
+    "terrakion",
+    "keldeo"
+  ],
   "territories": []
 }
