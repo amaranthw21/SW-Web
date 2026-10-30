@@ -1,0 +1,154 @@
+{
+  "name": "Iyal",
+  "nameOrigin": "From the Ranunculus lyallii Flower",
+  "kind": "npc",
+  "status": "",
+  "player": "thetotalunknown2341",
+  "island": "twilight-island",
+  "guardianOf": [
+    "twilight-island"
+  ],
+  "image": "",
+  "imageCredit": "",
+  "cardPosition": "",
+  "summary": "",
+  "gender": "Female",
+  "age": "44",
+  "fusionName": "Rogarde",
+  "species1": "zygarde",
+  "species2": "rotom",
+  "type1": "Dragon",
+  "type2": "Ghost",
+  "type3": "",
+  "hiddenType": "Ground",
+  "traits": [
+    "Regal",
+    "Charismatic",
+    "Ambitious",
+    "Observant",
+    "Innovative",
+    "Magnanimous"
+  ],
+  "likes": [
+    "Fermented Cheeses",
+    "Gossip",
+    "Socializing"
+  ],
+  "dislikes": [
+    "Metal Walls/Boxes",
+    "Bricks (Both the Object and The Character Archetype)",
+    "Being Unable to Contribute"
+  ],
+  "fears": [
+    "Aquaphobia"
+  ],
+  "personality": "The sole guardian of Gaia Island, the representation of the balance between life and death in the world, fancies herself as a sort of, great, grand, wondrous aid to the furtherment of the post-apocalypse recovery acts. Rather than focus on the what ifs, and how to fixes, and what to dos, she rather let the other guardians figure that out! Someone needed to help everyone adjust to and balance out this new way of life, and what better way to do it than graciously repurposing her many segments to serve as a. . . communications network! Many such things existed in many other universes, and playing the role of one in this world was sure to help people stay in touch! As so the balancer of things decreed, thus was Bethath granted the grand authority of cell service.",
+  "identities": [],
+  "abilities": [
+    {
+      "slot": "Common",
+      "name": "Electric",
+      "locked": false,
+      "item": false,
+      "description": "Surrounded by a light layer of electric fuzz that helps detect incredibly close people. Concentrate this fuzz into electricity that can emit light and shock people, as a weak shock nowhere near the power of an actual move."
+    },
+    {
+      "slot": "Special Talent",
+      "name": "Outdated 802.11 Protocol",
+      "locked": false,
+      "item": false,
+      "description": "Iyal is the source of the internet that allows the Rogarde Phone™ from her blessing to operate without (major) flaw. "
+    },
+    {
+      "slot": "Common Battle",
+      "name": " Levitate",
+      "locked": false,
+      "item": false,
+      "description": "Immune to ground type moves by floating."
+    },
+    {
+      "slot": "Unique Battle",
+      "name": "Placeholder",
+      "locked": false,
+      "item": false,
+      "description": ""
+    },
+    {
+      "slot": "Unique Battle",
+      "name": "Placeholder",
+      "locked": true,
+      "item": true,
+      "description": ""
+    }
+  ],
+  "moves": [
+    {
+      "name": "Ominous Wind",
+      "category": "Special",
+      "type": "Ghost",
+      "pp": 5,
+      "legendary": false,
+      "custom": false,
+      "locked": false,
+      "item": false,
+      "description": "Damage an enemy, with a chance [10%] to increase Attack, Defense, Sp. Attack, Sp. Defense, and Speed by a stage."
+    },
+    {
+      "name": "Spite",
+      "category": "Status",
+      "type": "Ghost",
+      "pp": 10,
+      "legendary": false,
+      "custom": false,
+      "locked": false,
+      "item": false,
+      "description": "Reduce [-4] the PP of the target enemy’s last used move."
+    },
+    {
+      "name": "Nightmare",
+      "category": "Status",
+      "type": "Ghost",
+      "pp": 15,
+      "legendary": false,
+      "custom": false,
+      "locked": false,
+      "item": false,
+      "description": "If the target is asleep, inflict them with a status that damages [1/4th Max HP of Afflicted] each turn they’re asleep. The status is cleansed upon reawakening. "
+    },
+    {
+      "name": "Magnitude",
+      "category": "Physical",
+      "type": "Ground",
+      "pp": null,
+      "legendary": false,
+      "custom": false,
+      "locked": false,
+      "item": false,
+      "description": "Deals random damage to ALL other pokemon. If a pokemon is using Dig, the damage is doubled."
+    },
+    {
+      "name": "Land’s Wrath",
+      "category": "Physical",
+      "type": "Ground",
+      "pp": 10,
+      "legendary": true,
+      "custom": false,
+      "locked": false,
+      "item": false,
+      "description": "Damage all enemies."
+    },
+    {
+      "name": "Core Enforcer",
+      "category": "Special",
+      "type": "Dragon",
+      "pp": 10,
+      "legendary": true,
+      "custom": false,
+      "locked": false,
+      "item": false,
+      "description": "Damages all enemies, then suppress their common battle abilities (preventing it from taking effect, with some exceptions). "
+    }
+  ],
+  "backstory": "In the beginning, there existed life! Brought upon by the greatest grand god, Arceus.\nAlso in the beginning, there existed death. Because yeah. That kinda had to happen.\n\nAt some point in time in this completely fabricated and totally untrue version of events, the legendary Zygarde was brought upon by Arceus, the equivalent of the world’s most angry father, to quell and manage the two rambling babies known as Xerneas and Yvetal. \n\n“Oh, great children! Have you not simply heard the wonders of this new, great, wonderful internet trend I saw the other day?”\n“Mooommmm!!!!! Please—!!!! Is this another scam?”\n“I- of course NOT, Xerneas. I’ve learned from last time! Simply put! A quite luxurious prince from a faraway universe is calling for his fans to send him money so that-”\n“That’s so a scam.”\n“. . . Utterly preposterous.”\n\nNone of this actually happened, by the way. \nBut we can pretend it did! \nAnything on the internet is believable if you believe in it! \n\nAnd if you’re a rotom, a creature that practically lives in technology, what better reality to view than the one you find the most amusing!\nLet’s live in this fanfiction site. . . forever! \n\n. . .\n\nAfter the world shattered and broke, many differences were present in Zygarde, the legendary that represented the balance between life, and death.\nIt was very clear she wasn’t the same person anymore. If not by her physical form, by her mannerisms.\n\nBut, eh. Who cares!",
+  "gallery": []
+}
