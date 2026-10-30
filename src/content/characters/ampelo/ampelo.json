@@ -46,9 +46,24 @@
       "description": "Can more easily adjust to certain environments, though at a lesser amount than other abilities dedicated to specific environments."
     },
     {
+      "slot": "Special Talent",
+      "name": "Refragmented",
+      "description": "When sending a team of people off to do a Fragment Collection mission, if it is requested by the team, Ampelo can leave a minor fragment of himself with the team to act as a guide, who is incapable of battle, and if lost or destroyed, cannot be replaced."
+    },
+    {
       "slot": "Common Battle",
       "name": "Friend Guard",
       "description": "Damage dealt to allies is reduced `[-25%]` with some exceptions."
+    },
+    {
+      "slot": "Unique Battle",
+      "name": "Unique Battle: Adaptive Prism",
+      "description": "When Ampelo is above half HP, this acts as Neuroforce [supereffective moves deal 25% more damage to enemies]. When he is not, this acts as Prism Armor [supereffective moves deal 25% less damage to Ampelo]. "
+    },
+    {
+      "slot": "Unique Battle (Item)",
+      "name": "Z Mastery",
+      "description": "When an ally uses a Z-Move, the next use of Photon Geyser is upgraded to it’s Z-Move equivalent Light that Burns the Sky. \nAmpelo’s usage of Light that Burns the Sky in this way ignores the one Z-Move per battle limitation. "
     }
   ],
   "moves": [
@@ -65,6 +80,24 @@
       "type": "Psychic",
       "pp": 10,
       "description": "Damages a foe. If a Psychic Terrain is in effect and Ampelo is grounded, the power increases `[1.5x plus terrain bonus]` and it affects all foes."
+    },
+    {
+      "name": "Calm Mind",
+      "category": "Status",
+      "type": "Psychic",
+      "pp": 20,
+      "legendary": false,
+      "custom": false,
+      "description": "Raises Sp. Atk and Sp. Defense by one stage each"
+    },
+    {
+      "name": "Helping Hand ",
+      "category": "Status",
+      "type": "Normal",
+      "pp": 20,
+      "legendary": false,
+      "custom": false,
+      "description": "Boosts the damage an ally deals this turn [+50%]."
     }
   ],
   "backstory": "Many beings across many times and ages shine and act as living embodiments of the sun, or of light, in many forms.\nThe grand legendary Necrozma was another one of these beings. A reflection of the sun, a being of mass, wondrous light who shared its embrace to the paradise that was reality.\nAs the tales of Bethath go, many pages of the current time yield to their seeking eyes a tale of disaster. Of nothing, and of crushed hopes, or shattered dreams.\nAnother victim of the disaster, as many, was the Necrozma who shared and brought light to many.\n\nCursed.\nShattered.\nInsignificant.\n\nHe awoke one day.\nThere was no light within him.\nAn endless weight upon his shoulders.\nA feeling of reunion long gone.\nAnd a name. A name that wasn’t his, yet was still a piece of him.\nAmpelo.\nAn identity who this Necrozma had never known until he awoke, having been discovered by those exploring Twilight Island.\n\nWhere-\nWhere had he gone?\n\nHe was here, and he wasn’t here. He was there, and he wasn’t there. He saw glimpses, visions, nightmares, terrors.\nA despairing silence, surrounding the vast end.\nA cry for existence, denying the cruel fates.\n\nAnd yet the choice still had to be made. The responsibility, still yet to be assigned.\n\nA fallen god bears his title not for himself.\nA fallen god does not seek his crown to satiate his own hunger.\nA fallen god desires not to be whole of a selfish reason,\nfor the reunion with the many selves is a journey in itself.\n\nFor the light it once was able to shine.\nIt shall all return to its source.\n\nFor a world reborn,\nfor a world forgotten.\n\nThe guardian of Twilight Island,\nremains eternally shattered.",

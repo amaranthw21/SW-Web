@@ -61,6 +61,11 @@
       "slot": "Unique Battle",
       "name": "Guidance of Seas",
       "description": "Allies will be healed for 25% of the healing Alruna receives. If this healing is excess healing, the portion considered from the excess is increased to 50%.\n"
+    },
+    {
+      "slot": "Unique Battle (ITEM)",
+      "name": "Channel Primal Waters",
+      "description": "When Alruna is directly healed by an ally, she gains a raise in Sp. ATK."
     }
   ],
   "moves": [
@@ -105,6 +110,15 @@
       "type": "Water",
       "pp": 10,
       "description": "The user attacks opposing Pokémon with countless beams of light that glow a deep and brilliant blue. "
+    },
+    {
+      "name": "Refreshing Waters",
+      "category": "Status",
+      "type": "Water",
+      "pp": 5,
+      "legendary": true,
+      "custom": true,
+      "description": "The user heals all its allies and raises their Defense and Sp. Def stats."
     }
   ],
   "backstory": "One story tells of a whalelike creature that commanded the vast oceans, and the waters in the sky.\nIt summoned downpours with a mere thought, quenched those plagued with drought, and yet, for all there was to its fables, it merely slumbered, sealed away by a curse.\nSealed away deep, deep away, in the dark blue depths.\n...\nAnother story tells of a supposed fairy and a young girl, lost in the depths of a mysterious cavern.\nA masquerain and a helioptile. \nThe fairy guided the lost youth through the caverns. Grateful as she was, she happily followed along.\nDeeper into the caves, until the two saw a grand, massive whale.\n…\nAnd then the world simply fell apart.\n...\nThe whale of many fables simply awoke in the cavern’s depths. \nThe shell of stone coating its prior form, crumbling away before its eyes.\nThe helioptile, nowhere to be seen.\n...\nMany speak of adventures.\nOthers, speak of contradictions.\nA creature who flies in the seas and the air.\nA creature who cannot fly if its wings get wet.\n...\nBy conflicting, it simply negates out into a neutral.\nTo this new world, shall she draw her wings in flight.\nShall she guide them forevermore.\n",
