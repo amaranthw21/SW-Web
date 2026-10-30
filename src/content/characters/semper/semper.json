@@ -8,9 +8,9 @@
   "guardianOf": [
     "enthropy-island"
   ],
-  "image": "",
+  "image": "newcanvas12222.png",
   "imageCredit": "Drawn by xanandra_",
-  "cardPosition": "",
+  "cardPosition": "62.9% 48.1%",
   "summary": "",
   "gender": "Male",
   "age": "51",
@@ -30,5 +30,6 @@
   "abilities": [],
   "moves": [],
   "backstory": "",
-  "gallery": []
+  "gallery": [],
+  "cardZoom": 1.1
 }
