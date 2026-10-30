@@ -8,6 +8,13 @@
   "color": "",
   "summary": "",
   "description": "",
-  "legendaries": [],
+  "legendaries": [
+    "xerneas",
+    "yveltal",
+    "zygarde",
+    "volcanion",
+    "diancie",
+    "hoopa"
+  ],
   "territories": []
 }
