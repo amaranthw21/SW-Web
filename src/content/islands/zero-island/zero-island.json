@@ -8,6 +8,15 @@
   "color": "",
   "summary": "",
   "description": "",
-  "legendaries": [],
+  "legendaries": [
+    "mew",
+    "mewtwo",
+    "type-null",
+    "silvally",
+    "magearna",
+    "genesect",
+    "melmetal",
+    "meltan"
+  ],
   "territories": []
 }

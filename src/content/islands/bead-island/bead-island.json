@@ -8,6 +8,17 @@
   "color": "",
   "summary": "",
   "description": "",
-  "legendaries": [],
+  "legendaries": [
+    "rayquaza",
+    "groudon",
+    "kyogre",
+    "jirachi",
+    "deoxys",
+    "regice",
+    "regirock",
+    "registeel",
+    "latios",
+    "latias"
+  ],
   "territories": []
 }

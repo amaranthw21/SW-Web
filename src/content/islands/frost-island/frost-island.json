@@ -1,6 +1,6 @@
 {
   "name": "Frost Island",
-  "order": 7,
+  "order": 5,
   "underConstruction": false,
   "image": "Frost-bg.webp",
   "imagePosition": "",
@@ -8,6 +8,20 @@
   "color": "",
   "summary": "",
   "description": "",
-  "legendaries": [],
+  "legendaries": [
+    "kyurem",
+    "zekrom",
+    "reshiram",
+    "victini",
+    "meloetta",
+    "landorus",
+    "thundurus",
+    "tornadus",
+    "enamorus",
+    "cobalion",
+    "virizion",
+    "terrakion",
+    "keldeo"
+  ],
   "territories": []
 }

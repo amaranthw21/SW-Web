@@ -8,6 +8,18 @@
   "color": "",
   "summary": "",
   "description": "",
-  "legendaries": [],
+  "legendaries": [
+    "eternatus",
+    "zamazenta",
+    "zacian",
+    "calyrex",
+    "glastrier",
+    "spectrier",
+    "regidrago",
+    "regieleki",
+    "urshifu",
+    "kubfu",
+    "zarude"
+  ],
   "territories": []
 }

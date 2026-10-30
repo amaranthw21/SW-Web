@@ -13,54 +13,73 @@
     "ho-oh",
     "suicune",
     "raikou",
-    "entei"
+    "entei",
+    "celebi"
   ],
   "territories": [
     {
-      "name": "Tidal Coast",
+      "name": "Whirl Islands",
       "description": "The western half of the island, carved by the sea.",
       "safeZones": [
         {
-          "name": "Harbor Town",
-          "image": "Lugia-Ho-oh-bg.jpg",
-          "description": "The island's only port. Ships from the rest of Bethath dock here."
+          "name": "Mauville Island",
+          "image": "5obqefqd9avh1.gif",
+          "description": ""
         },
         {
-          "name": "Shell Beach",
-          "image": "",
+          "name": "Platinum Coast",
+          "image": "tumblr-0e73b299bcdce7f11a1816f9e05a00e4-113d949d-1280.png",
           "description": ""
-        }
-      ],
-      "dungeons": [
+        },
         {
-          "name": "Whirl Caves",
-          "image": "Lugia-Ho-oh-bg.jpg",
-          "description": "Sea caves that flood at high tide. Something sings deep inside."
-        }
-      ]
-    },
-    {
-      "name": "Bell Highlands",
-      "description": "Hills and old temples to the east.",
-      "safeZones": [
+          "name": "Silver Trench",
+          "image": "underwater-wreckage-by-lasriaonline-des4mj5-fullview.png",
+          "description": ""
+        },
         {
-          "name": "Temple Village",
-          "image": "",
-          "description": "Monks still sweep the steps of the old bell tower."
+          "name": "Mt. Blaze",
+          "image": "c2ujqaoxcaa7cu2.jpg",
+          "description": ""
+        },
+        {
+          "name": "Mt. Thunder",
+          "image": "207bb50ee8fe5a3b452337858789b934.png",
+          "description": ""
+        },
+        {
+          "name": "Mt. Avalanche",
+          "image": "tumblr-ot8ky2imft1vx4423o1-500.png",
+          "description": ""
         }
       ],
       "dungeons": [
         {
           "name": "Burned Tower",
-          "image": "Lugia-Ho-oh-bg.jpg",
-          "description": "The ruins of a tower that burned one night and was never rebuilt."
+          "image": "lennart-butz-ukiyo2.gif",
+          "description": ""
         },
         {
-          "name": "Bell Tower Summit",
-          "image": "",
+          "name": "Frosty Grotto",
+          "image": "we-did-a-pixel-art-ice-cave-of-wonders-for-let-us-know-what-v0-iphr8n09xci31.webp",
+          "description": ""
+        },
+        {
+          "name": "Amp Depths",
+          "image": "8689af0304a57abada2e2afc88475f95.jpg",
+          "description": ""
+        },
+        {
+          "name": "Fiery Furnance",
+          "image": "c02594845d2a9bb78543136132d12b96.gif",
           "description": ""
         }
       ]
+    },
+    {
+      "name": "Sacred Fields",
+      "description": "Hills and old temples to the east.",
+      "safeZones": [],
+      "dungeons": []
     },
     {
       "name": "Silver Strait",
@@ -68,6 +87,18 @@
       "safeZones": [
         {
           "name": "Bridge Market",
+          "image": "",
+          "description": ""
+        }
+      ],
+      "dungeons": []
+    },
+    {
+      "name": "Purity Reserve",
+      "description": "",
+      "safeZones": [
+        {
+          "name": "Timeless Clearing",
           "image": "",
           "description": ""
         }

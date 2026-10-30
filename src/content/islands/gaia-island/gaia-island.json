@@ -1,6 +1,6 @@
 {
   "name": "Gaia Island",
-  "order": 5,
+  "order": 6,
   "underConstruction": false,
   "image": "Gaia-bg.jpg",
   "imagePosition": "",
@@ -8,6 +8,13 @@
   "color": "",
   "summary": "",
   "description": "",
-  "legendaries": [],
+  "legendaries": [
+    "xerneas",
+    "yveltal",
+    "zygarde",
+    "volcanion",
+    "diancie",
+    "hoopa"
+  ],
   "territories": []
 }
