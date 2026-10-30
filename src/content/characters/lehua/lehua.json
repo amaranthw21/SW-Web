@@ -1,0 +1,110 @@
+{
+  "name": "Lehua",
+  "nameOrigin": "From the Metrosideros polymorpha also known as the ʻōhiʻa lehua",
+  "kind": "npc",
+  "status": "",
+  "player": "xanandra_",
+  "island": "bead-island",
+  "guardianOf": [
+    "bead-island"
+  ],
+  "image": "",
+  "imageCredit": "Art by xanandra_",
+  "cardPosition": "",
+  "summary": "",
+  "gender": "Male",
+  "age": "21",
+  "fusionName": "Groudash",
+  "species1": "groudon",
+  "species2": "rapidash-galarian",
+  "type1": "Fire",
+  "type2": "Ground",
+  "type3": "",
+  "hiddenType": "Normal",
+  "traits": [],
+  "likes": [],
+  "dislikes": [],
+  "fears": [],
+  "personality": "",
+  "identities": [],
+  "abilities": [
+    {
+      "slot": "Common Talent",
+      "name": "Fire",
+      "description": "Slightly warmer than the average mon. Can tolerate fire, and swim in magma."
+    },
+    {
+      "slot": "Special Talent",
+      "name": "Surface Tension",
+      "description": "Lehua can run at incredible speeds, allowing him to sprint across the surface of water or other liquids without sinking. However, he must keep moving to stay afloat. If he slows down too much or stops, he will sink into the water."
+    },
+    {
+      "slot": "Common Battle",
+      "name": "Desolate Land",
+      "description": "It creates extremely harsh sunlight that prevents Water-type moves from working while the Pokémon is on the battlefield."
+    },
+    {
+      "slot": "Unique Battle",
+      "name": "Stubborn Defiance",
+      "description": "When this Pokémon’s stats are lowered by an opponent, the stat drop is reversed into a boost instead.\nAdditionally, whenever this Pokémon uses a move, it clears all entry hazards and terrain effects from the battlefield."
+    }
+  ],
+  "moves": [
+    {
+      "name": "Precipice Blades",
+      "category": "Physical",
+      "type": "Ground",
+      "pp": 10,
+      "legendary": true,
+      "custom": false,
+      "description": "The user attacks opposing Pokemon by manifesting the power of the land in fearsome blades of stone."
+    },
+    {
+      "name": "Flame Charge",
+      "category": "Physical",
+      "type": "Fire",
+      "pp": 20,
+      "legendary": false,
+      "custom": false,
+      "description": "The user cloaks itself in blazing flames and charges at the target with reckless speed. This move also boosts the user’s Speed stat."
+    },
+    {
+      "name": "High Horsepower",
+      "category": "Physical",
+      "type": "Ground",
+      "pp": 10,
+      "legendary": false,
+      "custom": false,
+      "description": "The user fiercely attacks the target using its entire body."
+    },
+    {
+      "name": "Stomping Tantrum",
+      "category": "Physical",
+      "type": "Ground",
+      "pp": 10,
+      "legendary": false,
+      "custom": false,
+      "description": "Driven by frustration, the user attacks the target. This move's power is doubled if the user's previous move failed."
+    },
+    {
+      "name": "Eruption",
+      "category": "Special",
+      "type": "Fire",
+      "pp": 5,
+      "legendary": false,
+      "custom": false,
+      "description": "The user attacks the opposing team wit explosive fury. The lower the user's Hp, the lower the move's power."
+    },
+    {
+      "name": "Work Up",
+      "category": "Status",
+      "type": "Normal",
+      "pp": 20,
+      "legendary": false,
+      "custom": false,
+      "description": "The user rouses itself, boosting its Attack and Special Attack."
+    }
+  ],
+  "backstory": "",
+  "gallery": []
+}
