@@ -1,12 +1,50 @@
 {
   "sections": [
     {
-      "title": "Ban-list",
-      "entries": []
+      "title": "Ban List",
+      "entries": [
+        {
+          "title": "[1] Moves that conflict with the personality",
+          "text": "Like Baby-Doll Eyes, Charm, Fake Tears, Flattery, Growl, Kinesis, Scary Face, Tail Whip, Tearful Look, Tickle."
+        },
+        {
+          "title": "[2] Moves that kiss another character without consent or  cause infatuation",
+          "text": "Like Attract, Captivate, Lovely Kiss, Draining Kiss, Sweet Kiss\n"
+        },
+        {
+          "title": "[3] Moves that are the signature of a legendary",
+          "text": "All Legendary Pokemon have exclusive moves, with some being the moves of another form or regional variant, and some being custom made for the server.\n\nIn some cases, a legendary move might now be widely avaliable for non-legendary characters (For example, sacred sword, the ex-signature move Cobalion) In those cases, you can use them normaly and instead we will either find a substitute or create a custom new signature move."
+        },
+        {
+          "title": "[4] Abilities that force a character to feel a certain way",
+          "text": "Like intimidate, Cute Charm, Unnerve"
+        },
+        {
+          "title": "[5] Abilities removed for balancing purposes",
+          "text": "Wonder Guard, No Guard"
+        }
+      ]
     },
     {
       "title": "Changed list",
-      "entries": []
+      "entries": [
+        {
+          "title": "[1] Changes to Legendary Signatures",
+          "text": "- **Oblivion Wing:** The user can choose if they want it to be Dark or Flying\n\n- **Ruination:** Accuracy reduced from 100% to 70%\n\n- **Nature’s Madness:** Accuracy reduced from 100% to 70% and is single target"
+        },
+        {
+          "title": "[2] Important changes to other Moves",
+          "text": "\nCopycat, Sketch, Metronome: Cannot copy or call upon another legendary’s signature move. Additionally, if a move you copy is not one of your types, it will be at reduced power\n\nSketch: You can only have one instance of Sketch. Once you use it once in a RP and it will reverted to sketch once the RP has finished."
+        },
+        {
+          "title": "[3] Legendary Moves Substitution",
+          "text": "- **Articuno - Freezing Glare:** From the Galarian Articuno. The player chooses if move is Ice or Psychic Type\n- **Zapdos - Thunderous Kick:**  From the Galarian Zapdos. The player chooses if move is Electric or Fighting type\n- **Moltres - Fiery Wrath:**  From the Galarian Moltres. The player chooses if move is Fire or Dark\n- **Mew - Genesis Supernova:** Mew's Z move in Sol and Moon. Has been reassigned as Mew's Signature with 5PP\n- **Entei - Burning Bulwark:** From the Paradox Entei\n- **Raikou - Thunderclap:** From the Paradox Raikou\n- **Suicune - Hydro Stream:** From the Paradox Suicune\n- **Celebi - Light of Ruin:** AZ's Floette Signature Move. Has been reasigned to Celebi.\n- **Uxie, Mesprit, Azelf - Mystical Power:** The three of them have the same signature move.\n- **Cresselia - Lunar Dance & Lunar Blessing:** You can choose to use one or both\n- **Manaphy - Heart Swap & Take Heart:** You can choose one or both\n- **Victini - Searing Shot & V-Create:** You can choose one or both\n- **Cobalion - Trachyon Cutter:** From Iron Crown.\n- **Terrakion - Mighty Cleave:** From Iron Boulder\n- **Virizion - Psyblade:** From Iron Leaves\n- **Reshiram - Fusion Flare & Blue Flare:** You can choose one or both\n- **Zekrom - Fusion Bolt & Bolt Strike:** You can choose one or both\n- **Yvetal - Oblivion Wing** The player can choose if they want to make it a dark or flying type."
+        },
+        {
+          "title": "[4] Character Relocation",
+          "text": "- Paradox Pokémon are considered to be simply regional variants from an unknown region."
+        }
+      ]
     }
   ]
 }
