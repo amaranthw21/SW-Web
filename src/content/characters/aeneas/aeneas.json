@@ -65,7 +65,7 @@
       "description": "When any status is inflicted on anyone, Aeneas gains a stack of Sugarslice, up to five, with a limit of once per action. \nWhen reaching max Sugarslice stacks, combine them to form a Sugarapple. Aeneas cannot gain Sugarslice if he has a Sugarapple.\nWith a Sugarapple, Aeneas using a damaging move follows up with an additional move on the same target known as Sugar Bomb. Sugar Bomb cannot be used any other way."
     },
     {
-      "slot": "Unique Battle (Item)",
+      "slot": "Unique Battle",
       "name": "Terastal Mastery",
       "description": "Allows Aeneas to enter into his Terastal Form, and with great, taxing burden on himself, his Stellar Form. \nWhen in either form, his Normal Type becomes the Stellar Type. \nWhen in the Terastal or Stellar Form, Sugar Bomb is enhanced. For every ally above half health or terastallized or mini-terastallized (same ally can count twice if they fill multiple conditions), it deals 10% more damage.\nWhen in the Stellar Form, all of Aeneas’s stats (except speed) are raised 2 stages, and he takes notable damage every time he uses a move (excluding Sugar Bomb) for as long as he remains in Stellar Form. \nIf Aeneas drops below half health, he automatically returns to his Normal Form.",
       "locked": true,
