@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import ContentBlock from "../components/ContentBlock";
-import ContentToc from "../components/ContentToc";
 import rulebook from "../content/rulebook.json";
 import withBlockIds from "../lib/blocks";
 import useDocumentTitle from "../lib/useDocumentTitle";
@@ -45,6 +44,12 @@ export default function Rulebook(){
 
     const blocks = rulebookBlocks();
 
+    // Un botón por apartado; solo se ven las reglas del que esté pulsado. Va en
+    // la dirección (?section=combat) para poder enlazar a un apartado concreto
+    // y para que el botón de atrás vuelva al anterior.
+    const [params, setParams] = useSearchParams();
+    const current = blocks.find(block => block.id === params.get("section"));
+
 
     return (
 
@@ -60,14 +65,26 @@ export default function Rulebook(){
                 Rulebook
             </h1>
 
-            <ContentToc sections={blocks} />
+            <div className="rulebook-tabs" role="group" aria-label="Rule sections">
+                {
+                    blocks.map(block => (
+                        <button
+                            key={block.id}
+                            type="button"
+                            className={`rulebook-tab${block === current ? " rulebook-tab--on" : ""}`}
+                            aria-pressed={block === current}
+                            onClick={() => setParams({ section: block.id })}
+                        >
+                            {block.title}
+                        </button>
+                    ))
+                }
+            </div>
 
             {
-                blocks.map(block => (
-
-                    <ContentBlock key={block.id} block={block} />
-
-                ))
+                current
+                    ? <ContentBlock key={current.id} block={current} />
+                    : <p className="rulebook-hint">Pick a section to read its rules.</p>
             }
 
         </div>
