@@ -64,6 +64,34 @@ collections:
           - { name: region, label: "Region name", widget: string, hint: "The region's name, e.g. 'Bethath'. It titles its page and its entry in the sidebar." }
           - { name: intro, label: Intro, widget: richtext, required: false, hint: "A few lines about the region, above the island cards. Leave a blank line between paragraphs." }
 
+      # El Rulebook de General: un apartado por tipo de reglas (General,
+      # Character, Combat, Romance), cada uno con sus reglas numeradas.
+      - name: rulebook
+        label: Rulebook
+        file: src/content/rulebook.json
+        format: json
+        fields:
+          - name: sections
+            label: Sections
+            widget: list
+            label_singular: Section
+            summary: "{{fields.title}}"
+            hint: "Each section is a heading on the page and an entry in its contents, in this order."
+            fields:
+              - { name: title, label: Title, widget: string, hint: "e.g. 'General' or 'Combat'." }
+              - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown above the rules. Leave a blank line between paragraphs." }
+              - name: rules
+                label: Rules
+                widget: list
+                required: false
+                label_singular: Rule
+                summary: "{{fields.title}}"
+                hint: "They're numbered on their own, in this order: don't write the [1] in the title."
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: text, label: Text, widget: richtext, required: false }
+              - { name: outro, label: "Closing note", widget: richtext, required: false, hint: "Shown under the last rule, e.g. 'These rules may change in the future'." }
+
   # ───────────────────────── Islands ─────────────────────────
   # Las islas de la región, cada una en su carpeta con su JSON y sus imágenes
   # al lado (src/content/islands/<isla>/<isla>.json). Cada una sale como
@@ -166,10 +194,10 @@ collections:
       - { name: fusionName, label: "Fusion name", widget: string, required: false, hint: "e.g. 'Mausozma'. Leave empty if it isn't a fusion." }
       - { name: species1, label: "Species 1", widget: relation, collection: pokemon, value_field: "{{slug}}", search_fields: [name, form], display_fields: ["{{name}} {{form}}"], required: false, hint: "Search it by name. Its picture and name come from the Pokémon list." }
       - { name: species2, label: "Species 2", widget: relation, collection: pokemon, value_field: "{{slug}}", search_fields: [name, form], display_fields: ["{{name}} {{form}}"], required: false, hint: "The second species of a fusion." }
-      - { name: type1, label: "Main type 1", widget: select, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar] }
-      - { name: type2, label: "Main type 2", widget: select, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar] }
-      - { name: type3, label: "Main type 3", widget: select, required: false, hint: "Only for Amalgams, which have three types of their own.", options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar] }
-      - { name: hiddenType, label: "Hidden type", widget: select, required: false, hint: "Leave empty for Amalgams: they have no hidden type.", options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar] }
+      - { name: type1, label: "Main type 1", widget: select, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar, Shadow, Radiant] }
+      - { name: type2, label: "Main type 2", widget: select, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar, Shadow, Radiant] }
+      - { name: type3, label: "Main type 3", widget: select, required: false, hint: "Only for Amalgams, which have three types of their own.", options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar, Shadow, Radiant] }
+      - { name: hiddenType, label: "Hidden type", widget: select, required: false, hint: "Leave empty for Amalgams: they have no hidden type.", options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar, Shadow, Radiant] }
       # Personality
       - name: traits
         label: "Personality traits"
@@ -233,7 +261,7 @@ collections:
         fields:
           - { name: name, label: Name, widget: string }
           - { name: category, label: Category, widget: select, options: [Physical, Special, Status] }
-          - { name: type, label: Type, widget: select, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar] }
+          - { name: type, label: Type, widget: select, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar, Shadow, Radiant] }
           - { name: pp, label: PP, widget: number, value_type: int, required: false, min: 1 }
           - { name: legendary, label: Legendary, widget: boolean, default: false, required: false, hint: "Shown as a 'Legendary' tag next to the move." }
           - { name: custom, label: Custom, widget: boolean, default: false, required: false, hint: "A move made up for this character. Shown as a 'Custom' tag." }
@@ -282,8 +310,8 @@ collections:
       - { name: owner, label: Owner, widget: string, required: false, hint: "The player's user name (for an NPC, who plays it). Shown on the site. Empty shows just 'Claimed'." }
       - { name: fusedWith, label: "Fused with", widget: string, required: false }
       - { name: generation, label: Generation, widget: number, value_type: int, required: false, min: 1, max: 9, hint: "1 to 9. Empty for Fakemon." }
-      - { name: type1, label: "Type 1", widget: select, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar] }
-      - { name: type2, label: "Type 2", widget: select, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar] }
+      - { name: type1, label: "Type 1", widget: select, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar, Shadow, Radiant] }
+      - { name: type2, label: "Type 2", widget: select, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar, Shadow, Radiant] }
       - { name: lineStatus, label: "Line status", widget: select, options: ["OPEN", "LINE RESERVED", "CAN'T EVOLVE", "FINAL EVOLUTION", "DOESN'T EVOLVE"] }
       - { name: stage, label: "Evolutive stage", widget: select, options: ["NO EVOLUTION", "1|2", "2|2", "1|3", "2|3", "3|3", "1|2 // 1|3"], hint: "Stage of the line: '1|3' is the first of three." }
       - { name: classification, label: Classification, widget: select, required: false, options: ["NORMAL", "MAN-MADE", "PARADOX", "MAJOR LEGENDARY", "MINOR LEGENDARY", "MAN-MADE LEGENDARY", "ULTRABEAST"] }

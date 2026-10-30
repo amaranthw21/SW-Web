@@ -118,14 +118,18 @@
       "category": "Special",
       "type": "Normal",
       "pp": 5,
-      "description": "Sugar is shattered to hit all enemies, inflicting on each enemy either poison, sleep, paralysis, or nothing. "
+      "description": "Sugar is shattered to hit all enemies, inflicting on each enemy either poison, sleep, paralysis, or nothing. ",
+      "legendary": true,
+      "custom": true
     },
     {
-      "name": "Sugarbomb (CUSTOM)",
+      "name": "Sugarbomb",
       "category": "Physical",
-      "type": "Normal",
+      "type": "Stellar",
       "pp": 1,
-      "description": "The Sugarapple is launched at the target and explodes in a wonderful mess of crystals."
+      "description": "The Sugarapple is launched at the target and explodes in a wonderful mess of crystals.",
+      "legendary": true,
+      "custom": true
     }
   ],
   "backstory": "Sugar and spice and then everything nice, colors as red as the skin of a fruit,\nSparks with timber lead to a flame, burning as orange as wonderfully tamed,\nLeading the pie to be wonderfully crisp, yellowly golden to sweeten the eyes,\nBringing it outside to dine in the sun, a lovely field of green surrounding the pie,\nLooking above we see the sky, blue and cloudy as all can’t deny,\nEating and eating we all spend our day, till night comes with its purple tinted skies!\n...\nTerapagos wasn’t ever the best with rhymes. For all that was confusing, he’d mysteriously awoken one day having dreamed of baking a pie.\n... It didn’t help that the pie from his dream smelled delicious. The sort of smell you’d smell after a long day playing outside, where the sun shone onto you from above, the birds chirped and sang in the trees, and your mother happily called, announcing she’d baked a treat for you and your friends.\n...\nOddly enough, he felt like he was the pie. It was an incredible stretch of logic, but...\nHe just felt... sweeter than usual. More carefree. Like that concept of that day outside, the sun shining, the birds, the allure of pie...\nHe didn’t feel like a participant in that scene. He felt like... the scene itself.\n...\nHe felt like an apple. \nHe felt like a bag of sugar.\nHe felt like both could combine into a sweet, sugary apple.\n...\nAnd from that sugary apple, could there be a refined, sweeter, sugar. \nAnd when that sugar was melted, it could create stellar, crystal treats. \n...\nBut Aeneas honestly just wanted some plain old apple pie. \n",
