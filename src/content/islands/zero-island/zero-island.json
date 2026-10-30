@@ -10,7 +10,13 @@
   "description": "",
   "legendaries": [
     "mew",
-    "mewtwo"
+    "mewtwo",
+    "type-null",
+    "silvally",
+    "magearna",
+    "genesect",
+    "melmetal",
+    "meltan"
   ],
   "territories": []
 }
