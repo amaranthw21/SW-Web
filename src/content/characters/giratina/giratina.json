@@ -8,9 +8,9 @@
   "guardianOf": [
     "enthropy-island"
   ],
-  "image": "",
+  "image": "girvesta.png",
   "imageCredit": "Art by kyuremstar",
-  "cardPosition": "",
+  "cardPosition": "41.5% 59%",
   "summary": "",
   "gender": "",
   "age": "",
@@ -30,5 +30,11 @@
   "abilities": [],
   "moves": [],
   "backstory": "",
-  "gallery": []
+  "gallery": [
+    {
+      "image": "giraworm.png",
+      "credit": "Art by kyuremstar"
+    }
+  ],
+  "cardZoom": 1.35
 }
