@@ -49,9 +49,38 @@
     },
     {
       "title": "Character",
-      "intro": "",
+      "intro": "These are some basic rules the server follows regarding characters and submissions. Please read them carefully, and if you have any questions, check whether the answer is already in the Q&A channel or feel free to ask in the Ask-a-Question channel.",
       "outro": "",
-      "entries": []
+      "entries": [
+        {
+          "title": "[1] Reserving Pokemon/Legendaries",
+          "text": "Individual Pokémon and Legendary Pokémon are limited to **one per person**, on a first-come, first-served basis. For example, if Member A claims Pikachu, Member B cannot use Pikachu for their character. The Pokémon remains unavailable unless Member A retires their character.\n\nReservations for Pokemon and/or Legends **last for 15 days**, during which no one else may claim either mon for their own fusion. **The reservation is released after 15 days with no tangible progress** on the character, but if you need more time to complete your submission please ask a member of staff for an extension."
+        },
+        {
+          "title": "[2]  Regional Variants",
+          "text": "If a Pokémon is already in use, or one of its evolutions is taken, you may create a **regional variant** of that Pokémon instead. You will need to provide the following information:\n\n- **Name:** The name of your regional variant.\n- **Type(s):** Its Pokémon type or types.\n- **Artwork:** An image of the Pokémon, including proper artist credits.\n- **Evolution(s):** Any evolutions it has, if applicable.\n\n**IMPORTANT:**  If you are not the original creator of a regional variant, you must use it as originally intended by its creator. This means you cannot change its name, types, evolutions, or any other established details."
+        },
+        {
+          "title": "[3] Fakemon",
+          "text": "You may create and use original Pokémon species (Fakémon), but each one must be approved before use. \n\n**IMPORTAN**: If you are not the original creator of a Fakémon, you must use it as originally intended by its creator. This means you cannot change its name, types, evolutions, or any other established details."
+        },
+        {
+          "title": "[4] Inactive Characters will be Removed after around One  Month of Inactivity or More",
+          "text": "Depending on where they were in the server, inactive characters **may be retconned or written out of the story. That means, they will be declared dead offscreen.** To avoid having your character pruned, please try to maintain activity or leave a notice in https://discord.com/channels/1172279262418579466/1317621289682468944  if you will be inactive for a period.\n\nSince Legendary Pokemon are limited in number and quite powerful, we tend to be more strict with their activity levels. **You will still receive notice before we prune your character**\n\nStaff keeps an archive of removed characters. If you wish to recover your OCs' submission, ask."
+        },
+        {
+          "title": "[5] Please use the provided templates for character sheets for reference",
+          "text": "You may submit your character sheet directly in a thread in the #character-submission channel or through a Google Doc. Regardless of the format, your submission must include all the information requested in the templates, which can be found in https://discord.com/channels/1172279262418579466/1490661905105420390.\n\nYou are welcome to customize the templates with emojis or include additional information about your character. While we appreciate the extra effort, **any information beyond what the template requests is entirely optional.**"
+        },
+        {
+          "title": "[5] All characters must have an image for the official RP.",
+          "text": "You can create the artwork yourself, request character art in #art-requests, or use an image found online (please credit the original artist whenever possible). You can also use resources such as [FusionDex](https://www.fusiondex.org/) to find a suitable reference.\n\n**Don't have artwork yet?** No problem! You can submit your character for initial approval without an image and continue developing them in the non-canon channels while you work on their design. However, your character must have an image before participating in the official RP.\n\nIf you don't have artwork, need a temporary reference, or simply don't want to provide one yourself, the staff can help you find a suitable placeholder from FusionDex or another online source.\n\nPlease **do not use AI-generated artwork** for your characters. Refer to the general rules for our stance on AI. Additionally, keep character artwork appropriate for our server, as we have minors in the community."
+        },
+        {
+          "title": "[6] Please inform a member of staff and get approval before making changes to an accepted character.",
+          "text": "This applies to any changes that affect your character going forward, from minor backstory tweaks to major alterations to their abilities or other established traits.\n\nWe ask that you do this because we maintain a **website containing copies of all approved character sheets** for easy access by the community. Any changes to your character's information must also be reflected on the website, so staff need to be informed to keep everything up to date.\n\nThank you for helping us keep our character records accurate and consistent!"
+        }
+      ]
     },
     {
       "title": "Combat",
@@ -64,6 +93,21 @@
       "intro": "",
       "outro": "",
       "entries": []
+    },
+    {
+      "title": "OC Cast",
+      "intro": "The following rules focus on character creation and the limitations that apply to your OCs. For more detailed information, please refer to Character-Creation.",
+      "entries": [
+        {
+          "title": "[1] Cast Size",
+          "text": "Each member can have up to four characters at a time. However, the following limitations apply to your character roster:\n\n- **Legendary Limit:** Each member may have only one Legendary Fusion at a time.\n\n- **Amalgam Limit:** Each member may have only one Amalgam at a time."
+        },
+        {
+          "title": "[2] Starting Character",
+          "text": "Your first OC can be one of the following:\n\n- **Commonfolk:** A character based on a single non-Legendary Pokémon or a fusion of two non-Legendary Pokémon.\n\n- **Egg Fusion:** A fusion of two non-Legendary Pokémon in their first evolutionary stage (those that do not have evolutions count as \"first evolutionary stage for the purpose of this rule). These characters are essentially the children of the server.\n\n- **Legendary Fusion:** A fusion between a Legendary Pokémon and another Pokémon. All Legendary Pokémon must be part of a fusion; standalone Legendary characters are not allowed."
+        }
+      ],
+      "outro": ""
     }
   ]
 }
