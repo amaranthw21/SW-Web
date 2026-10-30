@@ -66,9 +66,11 @@
       "description": "The user absorbs any Ice move used against them and heals them for 1/4 of max HP. They are also immune to Ice type moves. Also gains protection against Frostbite/Freeze and the benefits of Hail/Snowstorm and Frost Terrain."
     },
     {
-      "slot": "Unique Battle (Item)",
+      "slot": "Unique Battle",
       "name": "Wu Wei",
-      "description": "If activated, Glaciate turn into Ice Burn or Freeze Shock. Also if Reshiram or Zekrom are present, Boundary Break becomes Fire or Electric type respectively."
+      "description": "If activated, Glaciate turn into Ice Burn or Freeze Shock. Also if Reshiram or Zekrom are present, Boundary Break becomes Fire or Electric type respectively.",
+      "locked": true,
+      "item": true
     }
   ],
   "moves": [
@@ -121,7 +123,8 @@
       "pp": 10,
       "legendary": true,
       "custom": true,
-      "description": "Io taps into the power of the Original Dragon and unleashes draconic energy onto her foe. Can be Physical or Special. 30% chance to Burn, Frostbite or Paralyse the target."
+      "description": "Io taps into the power of the Original Dragon and unleashes draconic energy onto her foe. Can be Physical or Special. 30% chance to Burn, Frostbite or Paralyse the target.",
+      "locked": true
     }
   ],
   "backstory": "Kyurem, the Boundary Pokemon\n\nCreated as the hollow vessel that contain and control two ideologies; Or were they all one being in the beginning?\n\nOnly Arceus knew the answer.\n\nIn the past, Kyurem was emotionless and carried out orders, either given by residents or other legendaries, in a robotic manner. It had no goals of its own, no passion for anything.\n\nElsewhere, a Frosmoth glanced up to see the full moon in the night sky. She was lost and alone and dreamed of being surrounded by family and friends again.\n\nThen the moon cracked. \n\nCRITICAL ERROR. REBOOTING SYSTEM...\n\nThe world around her twisted and distorted like two ideas being mashed together to create a whole.\n\nINSTALLING IO.EXE....\n\nShe was finally complete, a being that is whole again... ",
