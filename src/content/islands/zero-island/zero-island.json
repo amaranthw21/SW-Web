@@ -8,6 +8,9 @@
   "color": "",
   "summary": "",
   "description": "",
-  "legendaries": [],
+  "legendaries": [
+    "mew",
+    "mewtwo"
+  ],
   "territories": []
 }
