@@ -117,7 +117,7 @@
     {
       "name": "Radiant Ignition",
       "category": "Status",
-      "type": "Fire",
+      "type": "Radiant",
       "pp": 10,
       "description": "The user envelops themselves in a cloak of flames with a light most radiant, adding the fire type to themselves temporarily, and increasing their attack stat by one stage. This move can only be used like this while the user has less than 50% of their HP remaining, the effect above ends when the battle ends, or when the user is knocked out. If used while above 50% HP, or used again after empowering themselves with the effects above, the move is instead a status move that cleanses the user with the said flames, healing the user by 33% of their HP and removes any status conditions.",
       "legendary": true,
