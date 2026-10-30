@@ -1,11 +1,26 @@
 import { Link, useParams } from "react-router-dom";
+import SectionTabs from "../components/SectionTabs";
+import changesAndBans from "../content/changes-and-bans.json";
+import characterCreation from "../content/character-creation.json";
+import characterTypes from "../content/character-types.json";
+import mechanics from "../content/mechanics.json";
 import general from "../data/general";
 import useDocumentTitle from "../lib/useDocumentTitle";
 import NotFound from "./NotFound";
 
 
-// Una página de General (Rulebook, Mechanics…). De momento solo el título y la
-// entradilla: el contenido de cada una llegará después.
+// Las páginas de General que ya tienen contenido, hecho de apartados con un
+// botón cada uno (como el Rulebook, que tiene su propia ruta).
+const CONTENT = {
+    "mechanics": mechanics,
+    "character-types": characterTypes,
+    "changes-and-bans": changesAndBans,
+    "character-creation": characterCreation
+};
+
+
+// Una página de General (Mechanics, Lore…). Las que aún no tienen contenido
+// enseñan solo el título y la entradilla.
 export default function GeneralPage(){
 
     const { pageId } = useParams();
@@ -38,9 +53,15 @@ export default function GeneralPage(){
                 {page.title}
             </h1>
 
-            <p className="page-intro">
-                {page.description}
-            </p>
+            {
+                CONTENT[page.id]
+                    ? <SectionTabs sections={CONTENT[page.id].sections} />
+                    : (
+                        <p className="page-intro">
+                            {page.description}
+                        </p>
+                    )
+            }
 
         </div>
 

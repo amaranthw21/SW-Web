@@ -255,6 +255,34 @@ function Personality({ character, identities }){
 }
 
 
+function LockIcon(){
+
+    return (
+        <svg className="character-flag__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <rect x="5" y="11" width="14" height="10" rx="2" />
+            <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+        </svg>
+    );
+
+}
+
+
+// Las etiquetas opcionales que comparten habilidades y movimientos. Legendary y
+// Custom solo las tienen los movimientos, pero no estorba mirarlas igual.
+function Flags({ entry }){
+
+    return (
+        <>
+            {entry.locked && <span className="character-flag character-flag--locked"><LockIcon />Locked</span>}
+            {entry.item && <span className="character-flag character-flag--item">Item</span>}
+            {entry.legendary && <span className="character-flag character-flag--legendary">Legendary</span>}
+            {entry.custom && <span className="character-flag character-flag--custom">Custom</span>}
+        </>
+    );
+
+}
+
+
 function AbilitiesAndMoves({ abilities, moves }){
 
     return (
@@ -265,10 +293,13 @@ function AbilitiesAndMoves({ abilities, moves }){
                 abilities.length > 0 && (
                     <div className="character-abilities">
                         {abilities.map(ability => (
-                            <div key={`${ability.slot}-${ability.name}`} className="character-ability">
+                            <div key={`${ability.slot}-${ability.name}`} className={`character-ability${ability.locked ? " is-locked" : ""}`}>
                                 <div className="character-ability__head">
                                     {ability.slot?.trim() && <p className="character-ability__slot">{ability.slot}</p>}
                                     <p className="character-ability__name">{ability.name}</p>
+                                    {(ability.locked || ability.item) && (
+                                        <span className="character-ability__flags"><Flags entry={ability} /></span>
+                                    )}
                                 </div>
                                 <div className="character-ability__body">
                                     <Paragraphs text={ability.description} className="character-ability__text" />
@@ -285,7 +316,7 @@ function AbilitiesAndMoves({ abilities, moves }){
                         <h3 className="block-part__title">Moves</h3>
                         <ul className="character-moves">
                             {moves.map(move => (
-                                <li key={move.name} className="character-move">
+                                <li key={move.name} className={`character-move${move.locked ? " is-locked" : ""}`}>
                                     {/* Una columna, tres filas: nombre, datos (categoría,
                                         tipo, PP) y descripción. */}
                                     <span className="character-move__name">{move.name}</span>
@@ -297,8 +328,7 @@ function AbilitiesAndMoves({ abilities, moves }){
                                         )}
                                         {move.type && <TypeBadge type={move.type} />}
                                         {move.pp != null && <span className="character-move__pp">{move.pp} PP</span>}
-                                        {move.legendary && <span className="character-move__flag character-move__flag--legendary">Legendary</span>}
-                                        {move.custom && <span className="character-move__flag character-move__flag--custom">Custom</span>}
+                                        <Flags entry={move} />
                                     </span>
                                     <div className="character-move__body">
                                         <Paragraphs text={move.description} className="character-move__text" />
