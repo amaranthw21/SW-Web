@@ -5575,6 +5575,27 @@ button.region-loc {
 
 }
 
+/* El sobrenombre ("The Shadow Walker"), justo bajo el nombre. */
+.character-title {
+
+    margin: -12px 0 14px;
+
+    color: var(--accent);
+
+    font-size: 1.2rem;
+    font-style: italic;
+    letter-spacing: 0.5px;
+
+}
+
+.character-origin--title {
+
+    color: var(--accent);
+
+    font-style: italic;
+
+}
+
 /* Fusión · especies · isla, bajo el título. */
 .character-tagline {
 

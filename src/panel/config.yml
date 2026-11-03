@@ -282,6 +282,7 @@ collections:
     fields:
       # Basics
       - { name: name, label: Name, widget: string }
+      - { name: title, label: Title, widget: string, required: false, hint: "An epithet such as 'The Shadow Walker'. Shown under the name on the character's page." }
       - { name: nameOrigin, label: "Name origin", widget: string, required: false, hint: "Where the name comes from, e.g. 'From the Ampelomyces Quisqualis fungus'. Shown small next to the name." }
       - { name: kind, label: Kind, widget: select, default: npc, options: [{ label: NPC, value: npc }, { label: "Player character", value: player }], hint: "NPCs go in the island's NPC carousel; player characters in its Characters carousel." }
       - { name: status, label: Status, widget: select, required: false, default: available, options: [{ label: Available, value: available }, { label: Reserved, value: reserved }, { label: "In use", value: taken }], hint: "Only for player characters: whether someone has asked for it or plays it." }
