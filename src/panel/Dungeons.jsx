@@ -1,13 +1,19 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 
+import { Rarity } from "../components/ItemParts";
+import asset from "../lib/asset";
+
 import { HALL, HAZARD, HAZARDS, LOOPS, ROOM, SIZES, generateDungeon, randomSeed } from "./dungeon/generate";
+import { DUNGEONS, ITEMS_BY_ID, dungeonLabel, lootFor } from "./dungeon/loot";
 
 
 // Generador de mazmorras para los moderadores: saca un piso al estilo Mundo
 // Misterioso (salas, pasillos, punto de inicio y escaleras) para explicar las
 // mazmorras a los jugadores. Todo va en la dirección (semilla, tamaño,
-// bucles), así que copiar el enlace basta para que otro vea el mismo mapa.
+// bucles, mazmorra), así que copiar el enlace basta para que otro vea el
+// mismo mapa. Al elegir una mazmorra, los objetos del suelo salen de los que
+// la lista de objetos dice que aparecen en ella.
 export function Dungeons(){
 
     const [params, setParams] = useSearchParams();
@@ -21,6 +27,7 @@ export function Dungeons(){
     const loops = LOOPS[params.get("loops")] ? params.get("loops") : "some";
     const hazardParam = params.get("hazard");
     const hazardChoice = HAZARDS[hazardParam] || hazardParam === "none" ? hazardParam : "random";
+    const place = DUNGEONS.find(item => item.value === params.get("dungeon"))?.value ?? "";
 
     // Sin semilla en la dirección (recién llegado) se pone una al azar.
     useEffect(() => {
@@ -34,8 +41,8 @@ export function Dungeons(){
     }, [seed, setParams]);
 
     const dungeon = useMemo(
-        () => seed ? generateDungeon({ seed, size, loops, hazard: hazardChoice }) : null,
-        [seed, size, loops, hazardChoice]
+        () => seed ? generateDungeon({ seed, size, loops, hazard: hazardChoice, loot: lootFor(place) }) : null,
+        [seed, size, loops, hazardChoice, place]
     );
     const hazard = dungeon?.hazard ? HAZARDS[dungeon.hazard] : null;
 
@@ -50,7 +57,11 @@ export function Dungeons(){
         setParams(current => {
             const next = new URLSearchParams(current);
             for(const [key, value] of Object.entries(changes)){
-                next.set(key, value);
+                if(value){
+                    next.set(key, value);
+                } else {
+                    next.delete(key);
+                }
             }
             return next;
         });
@@ -67,7 +78,7 @@ export function Dungeons(){
 
     function download(){
         const link = document.createElement("a");
-        link.download = `dungeon-${seed}.png`;
+        link.download = `${place ? `${place.toLowerCase().replace(/\W+/g, "-")}-` : "dungeon-"}${seed}.png`;
         link.href = canvas.current.toDataURL("image/png");
         link.click();
     }
@@ -79,6 +90,16 @@ export function Dungeons(){
             <nav className="panel-crumbs"><Link to="/panel">Collections</Link> › Dungeon generator</nav>
 
             <div className="panel-card dungeon-controls">
+
+                <label className="dungeon-control dungeon-control--wide">
+                    <span className="panel-field__label">Dungeon</span>
+                    <select className="panel-input" value={place} onChange={event => update({ dungeon: event.target.value })}>
+                        <option value="">No items</option>
+                        {DUNGEONS.map(item => (
+                            <option key={item.value} value={item.value}>{item.label}</option>
+                        ))}
+                    </select>
+                </label>
 
                 <label className="dungeon-control">
                     <span className="panel-field__label">Size</span>
@@ -153,6 +174,9 @@ export function Dungeons(){
                             {hazard && (
                                 <li><i className={`dungeon-swatch dungeon-swatch--${dungeon.hazard}`} /> {hazard.label}</li>
                             )}
+                            {dungeon.items.length > 0 && (
+                                <li><i className="dungeon-swatch dungeon-swatch--item">1</i> Item</li>
+                            )}
                         </ul>
 
                         <p className="panel-muted">
@@ -179,6 +203,8 @@ export function Dungeons(){
                         <button type="button" className="panel-btn panel-btn--ghost" onClick={download}>Download PNG</button>
                     </div>
 
+                    {place && <ItemList dungeon={dungeon} place={place} hazard={hazard} />}
+
                 </>
             )}
 
@@ -187,6 +213,55 @@ export function Dungeons(){
     );
 
 }
+
+
+// Los objetos del suelo, con el mismo número que llevan en el mapa.
+function ItemList({ dungeon, place, hazard }){
+
+    const pool = lootFor(place).length;
+
+    return (
+
+        <section className="panel-card dungeon-items">
+
+            <h2>Items on this floor</h2>
+
+            <p className="panel-muted">
+                {dungeon.items.length} picked from the {plural(pool, "item")} that the item list places in {dungeonLabel(place)} (or anywhere). Rarer ones show up less.
+                {hazard && dungeon.hazardRooms.length > 0 && ` Each ${hazard.label.toLowerCase()} room hides one, with better odds of something rare.`}
+            </p>
+
+            <ol className="dungeon-items__list">
+                {dungeon.items.map((spot, index) => {
+                    const item = ITEMS_BY_ID[spot.id];
+                    return (
+                        <li key={`${spot.x},${spot.y}`}>
+                            <span className="dungeon-items__number" style={{ borderColor: rarityColor(item.rarity) }}>{index + 1}</span>
+                            {item.image && <img src={asset(item.image)} alt="" width="32" height="32" loading="lazy" />}
+                            <Link to={`/panel?c=items&f=${encodeURIComponent(`src/content/items/${item.id}.json`)}`} className="dungeon-items__name">{item.name}</Link>
+                            <Rarity value={item.rarity} />
+                            {spot.guarded && hazard && <span className="dungeon-items__tag">needs {hazard.ability.toLowerCase()}</span>}
+                        </li>
+                    );
+                })}
+            </ol>
+
+        </section>
+
+    );
+
+}
+
+
+const RARITY_COLORS = {
+    "Common": "#e8e2d4",
+    "Uncommon": "#6cc070",
+    "Rare": "#4f9cf0",
+    "Super Rare": "#b06cf0",
+    "Special": "#f0c040"
+};
+
+const rarityColor = rarity => RARITY_COLORS[rarity] ?? RARITY_COLORS.Common;
 
 
 const plural = (count, word) => `${count} ${word}${count === 1 ? "" : "s"}`;
@@ -334,6 +409,26 @@ function draw(canvas, dungeon, { showPath, showGrid }){
             ctx.fill();
         }
     }
+
+    // Objetos: una ficha con su número (el de la lista de abajo), con el borde
+    // del color de su rareza.
+    ctx.font = `bold ${TILE * 0.62}px system-ui, sans-serif`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+
+    dungeon.items.forEach((spot, index) => {
+        const px = spot.x * TILE;
+        const py = spot.y * TILE;
+        ctx.fillStyle = "#2b1d0e";
+        ctx.strokeStyle = rarityColor(ITEMS_BY_ID[spot.id]?.rarity);
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.roundRect(px + 1, py + 1, TILE - 2, TILE - 2, 3);
+        ctx.fill();
+        ctx.stroke();
+        ctx.fillStyle = "#fff";
+        ctx.fillText(String(index + 1), px + TILE / 2, py + TILE / 2 + 0.5);
+    });
 
     // Un halo detrás del inicio y de las escaleras: en un mapa grande, un solo
     // tile se pierde.

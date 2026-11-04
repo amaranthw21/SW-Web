@@ -24,9 +24,21 @@ export const HAZARDS = {
 
 
 export const SIZES = {
-    small: { label: "Small", width: 36, height: 22, cols: 3, rows: 2 },
-    medium: { label: "Medium", width: 52, height: 30, cols: 4, rows: 3 },
-    large: { label: "Large", width: 68, height: 38, cols: 5, rows: 4 }
+    small: { label: "Small", width: 36, height: 22, cols: 3, rows: 2, items: [4, 6] },
+    medium: { label: "Medium", width: 52, height: 30, cols: 4, rows: 3, items: [6, 9] },
+    large: { label: "Large", width: 68, height: 38, cols: 5, rows: 4, items: [9, 13] }
+};
+
+
+// Lo fácil que sale cada rareza al repartir objetos por el suelo. Detrás de un
+// peligro, lo que no es común sale el doble: es la recompensa por tener la
+// habilidad.
+export const RARITY_WEIGHTS = {
+    "Common": 50,
+    "Uncommon": 30,
+    "Rare": 15,
+    "Super Rare": 5,
+    "Special": 2
 };
 
 // Probabilidad de que cada unión que no hace falta se añada igualmente.
@@ -89,9 +101,10 @@ export function randomSeed(){
 
 
 // `hazard`: "random" (lo elige la semilla), "none" o una clave de HAZARDS.
-export function generateDungeon({ seed, size = "medium", loops = "some", hazard = "random" }){
+// `loot`: los objetos que pueden salir ([{ id, rarity }]); vacío, ninguno.
+export function generateDungeon({ seed, size = "medium", loops = "some", hazard = "random", loot = [] }){
 
-    const { width, height, cols, rows } = SIZES[size] ?? SIZES.medium;
+    const { width, height, cols, rows, items: itemRange } = SIZES[size] ?? SIZES.medium;
     const loopChance = (LOOPS[loops] ?? LOOPS.some).chance;
 
     // Por si acaso: si alguna vez no se pudiera llegar a las escaleras, se
@@ -114,7 +127,11 @@ export function generateDungeon({ seed, size = "medium", loops = "some", hazard 
             const hazardRooms = type ? hazardousRooms(hazardRng, dungeon) : [];
             const hazardHalls = type ? hazardousCorridors(hazardRng, dungeon) : [];
 
-            return { ...dungeon, hazard: type, hazardRooms, hazardHalls, walkable: walkableShare(dungeon), seed, size, loops };
+            // Los objetos, con su propio generador por lo mismo: cambiar de
+            // mazmorra cambia lo que hay en el suelo, no el mapa.
+            const items = placeItems(rngFrom(`${key}/items`), dungeon, hazardRooms, loot, itemRange);
+
+            return { ...dungeon, hazard: type, hazardRooms, hazardHalls, items, walkable: walkableShare(dungeon), seed, size, loops };
 
         }
 
@@ -357,6 +374,72 @@ function hazardousRooms(rng, dungeon){
 // El tramo tiene que ser pasillo "puro" (cada tile con solo dos vecinos por
 // los que andar), o se podría rodear por un pasillo pegado y no cerraría
 // nada. Y, como con las salas, se quita si corta el camino a las escaleras.
+// Reparte objetos por el suelo de las salas. Primero uno en cada sala con
+// peligro (dentro del anillo), que es lo que da motivo para entrar; el resto,
+// en salas al azar, para que no se amontonen en las grandes. Nunca en el
+// inicio ni en las escaleras, ni pegado a otro objeto.
+function placeItems(rng, dungeon, hazardRooms, loot, [min, max]){
+
+    if(!loot.length){
+        return [];
+    }
+
+    const { tiles, start, stairs } = dungeon;
+    const count = rng.int(min, max);
+    const taken = [];
+
+    const free = ({ x, y }) => tiles[y][x] === ROOM
+        && !(x === start.x && y === start.y)
+        && !(x === stairs.x && y === stairs.y)
+        && taken.every(item => Math.abs(item.x - x) > 1 || Math.abs(item.y - y) > 1);
+
+    const pickItem = guarded => {
+        const weights = loot.map(item => {
+            const base = RARITY_WEIGHTS[item.rarity] ?? RARITY_WEIGHTS.Common;
+            return guarded && item.rarity !== "Common" ? base * 2 : base;
+        });
+        let roll = rng.next() * weights.reduce((sum, weight) => sum + weight, 0);
+        for(let i = 0; i < loot.length; i++){
+            roll -= weights[i];
+            if(roll < 0){
+                return loot[i];
+            }
+        }
+        return loot[loot.length - 1];
+    };
+
+    const dropIn = (room, guarded) => {
+        // Dentro del anillo si la sala tiene peligro; si no, en toda la sala.
+        const inset = guarded ? 1 : 0;
+        for(let tries = 0; tries < 12; tries++){
+            const tile = {
+                x: rng.int(room.x + inset, room.x + room.w - 1 - inset),
+                y: rng.int(room.y + inset, room.y + room.h - 1 - inset)
+            };
+            if(free(tile)){
+                taken.push({ ...tile, id: pickItem(guarded).id, guarded });
+                return true;
+            }
+        }
+        return false;
+    };
+
+    for(const room of rng.shuffle(hazardRooms)){
+        if(taken.length < count){
+            dropIn(room, true);
+        }
+    }
+
+    for(let tries = 0; taken.length < count && tries < count * 10; tries++){
+        const room = rng.pick(dungeon.rooms);
+        dropIn(room, hazardRooms.includes(room));
+    }
+
+    return taken;
+
+}
+
+
 // Parte mínima del mapa (de todo lo que no es muro) que tiene que poder
 // recorrerse desde el inicio sin ninguna habilidad. Sin este tope, los
 // peligros pueden acabar cerrando casi todo menos el camino a las escaleras.
