@@ -5506,7 +5506,8 @@ button.region-loc {
     }
 
     /* El número pasa de su columna a delante del nombre. */
-    .data-table--pokemon td.data-table__num:first-child {
+    .data-table--pokemon td.data-table__num:first-child,
+    .data-table--dex td.data-table__num:first-child {
 
         display: none;
 
@@ -6616,27 +6617,45 @@ button.region-loc {
 
 
 /* ───────── Pokédex (/pokedex) ─────────
-   Las fichas de los enemigos. El panel las usa también como vista previa. */
+   La tabla usa la de Pokémon (.data-table); esto es solo lo suyo. Las fichas
+   (.dex-card) son la vista previa del panel. */
 
-.dex-kinds {
+.data-table__tag--boss {
 
-    margin-bottom: 18px;
+    border-color: #e05a4f;
 
-}
-
-.dex-message {
-
-    color: #cbd5e1;
-
-    font-style: italic;
+    color: #ffb4ab;
 
 }
 
-.dex-grid {
+.dex-hidden-type {
 
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr));
-    gap: 18px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-top: 6px;
+
+}
+
+.data-table--dex .data-table__sprite .dex-unknown {
+
+    font-size: 1.6rem;
+
+}
+
+/* Las listas de movimientos y lugares van en mayúsculas en Items; aquí no. */
+.dex-moves {
+
+    font-size: 0.85rem;
+    letter-spacing: normal;
+
+}
+
+/* Un movimiento o un lugar no se parte en dos renglones. */
+.data-table--dex .data-table__places li {
+
+    white-space: nowrap;
 
 }
 
