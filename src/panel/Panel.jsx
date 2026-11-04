@@ -6,6 +6,7 @@ import useDocumentTitle from "../lib/useDocumentTitle";
 
 import { API, ApiError, deleteFiles, listFiles, loadSession, login, readJson, saveSession, writeJson } from "./api";
 import { Account, AcceptInvite, Admins } from "./Accounts";
+import { Dungeons } from "./Dungeons";
 import { Fields } from "./Fields";
 import { bundledData, emptyObject, entriesOf, entryFiles, loadConfig, missingFields, newEntryPath, summaryOf } from "./schema";
 
@@ -88,6 +89,7 @@ function Shell({ children, session, onLogout }){
                     <Link to="/" className="panel-bar__link panel-bar__site">View site</Link>
                     {session && (
                         <>
+                            <Link to="/panel?view=dungeons" className="panel-bar__link">Dungeons</Link>
                             {session.owner && <Link to="/panel?view=admins" className="panel-bar__link">Admins</Link>}
                             <Link to="/panel?view=account" className="panel-bar__user" title="Account and password">{session.user}</Link>
                             <button type="button" className="panel-btn panel-btn--ghost" onClick={() => onLogout()}>Sign out</button>
@@ -190,6 +192,8 @@ function Workspace({ session, logout, onSession }){
 
     if(view === "account"){
         content = <Account session={session} onSession={onSession} />;
+    } else if(view === "dungeons"){
+        content = <Dungeons />;
     } else if(view === "admins" && session.owner){
         content = <Admins session={session} onError={fail} />;
     } else if(error){
@@ -260,6 +264,15 @@ function Collections({ config, paths, saved, session }){
                         <span className="panel-muted">{entriesOf(collection, paths).length} {collection.files ? "pages" : "entries"}</span>
                     </Link>
                 ))}
+            </div>
+
+            <h3 className="panel-subhead">Tools</h3>
+
+            <div className="panel-grid">
+                <Link to="?view=dungeons" className="panel-tile">
+                    <strong>Dungeon generator</strong>
+                    <span className="panel-muted">Random floor with a start and stairs</span>
+                </Link>
             </div>
 
         </>

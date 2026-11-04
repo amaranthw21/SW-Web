@@ -1243,3 +1243,176 @@ select.panel-input option {
     accent-color: var(--accent);
 
 }
+
+
+/* ───────── Herramientas ───────── */
+
+.panel-subhead {
+
+    margin: 28px 0 12px;
+
+    color: var(--panel-muted);
+
+    font-size: 0.85em;
+    font-weight: normal;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+}
+
+
+/* ───────── Generador de mazmorras ───────── */
+
+.dungeon-controls {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px 16px;
+
+    margin-bottom: 16px;
+
+}
+
+.dungeon-control {
+
+    display: flex;
+    flex: 1 1 140px;
+    flex-direction: column;
+    gap: 6px;
+
+}
+
+.dungeon-control .panel-field__label {
+
+    margin: 0;
+
+}
+
+.dungeon-new {
+
+    flex: 0 0 auto;
+
+}
+
+.dungeon-map {
+
+    overflow: hidden;
+
+    border: 1px solid var(--panel-line);
+    border-radius: 12px;
+
+    background: #1c150d;
+
+}
+
+.dungeon-map canvas {
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    /* Que los tiles se vean nítidos al escalar, no borrosos. */
+    image-rendering: pixelated;
+
+}
+
+.dungeon-info {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 16px;
+
+    margin: 12px 0;
+
+}
+
+.dungeon-info p {
+
+    margin: 0;
+
+}
+
+.dungeon-legend {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+}
+
+.dungeon-legend li {
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+}
+
+.dungeon-swatch {
+
+    display: inline-block;
+
+    width: 14px;
+    height: 14px;
+
+    border-radius: 3px;
+
+}
+
+.dungeon-swatch--start {
+
+    border: 2px solid #fff;
+    border-radius: 50%;
+
+    background: #4f9cf0;
+
+}
+
+.dungeon-swatch--stairs {
+
+    background: linear-gradient(135deg, #e8e2d4 50%, #5a4a32 50%);
+
+}
+
+.dungeon-swatch--room {
+
+    background: #c9b48a;
+
+}
+
+.dungeon-swatch--hall {
+
+    background: #a38e66;
+
+}
+
+.dungeon-actions {
+
+    flex-wrap: wrap;
+
+}
+
+.dungeon-toggle {
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    cursor: pointer;
+
+}
+
+.dungeon-spacer {
+
+    flex: 1;
+
+}
