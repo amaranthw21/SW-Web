@@ -1790,3 +1790,106 @@ select.panel-input option {
     color: var(--accent);
 
 }
+
+
+/* ───────── Mazmorras guardadas ───────── */
+
+.dungeon-saved {
+
+    margin-bottom: 16px;
+
+}
+
+.dungeon-saved h2,
+.dungeon-saved-head h2 {
+
+    margin-top: 0;
+
+}
+
+.dungeon-saved__list {
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+}
+
+.dungeon-saved__list li {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 12px;
+
+    padding: 8px 0;
+
+}
+
+.dungeon-saved__list li + li {
+
+    border-top: 1px solid var(--panel-line);
+
+}
+
+.dungeon-saved__name {
+
+    color: var(--accent);
+
+    font-weight: bold;
+
+}
+
+.dungeon-saved__list .dungeon-delete {
+
+    margin-left: auto;
+
+}
+
+.dungeon-save {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px 16px;
+
+    margin-bottom: 16px;
+
+}
+
+.dungeon-save__problem {
+
+    flex-basis: 100%;
+
+    margin: 0;
+
+}
+
+.dungeon-saved-head {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-bottom: 16px;
+
+}
+
+.dungeon-saved-head p {
+
+    margin: 4px 0 0;
+
+}
+
+.dungeon-delete {
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px 8px;
+
+}

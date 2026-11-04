@@ -1,28 +1,216 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useEffect, useMemo, useState } from "react";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
-import { Rarity } from "../components/ItemParts";
-import asset from "../lib/asset";
-
-import { HALL, HAZARD, HAZARDS, LOOPS, ROOM, SIZES, generateDungeon, randomSeed } from "./dungeon/generate";
-import { DUNGEONS, ITEMS_BY_ID, dungeonLabel, lootFor } from "./dungeon/loot";
-import { ENEMIES_BY_ID, enemiesFor, enemyName, sizeLabel } from "./dungeon/enemies";
-import TypeBadge from "../components/TypeBadge";
+import { ApiError, deleteFiles, listFiles, readJson, writeJson } from "./api";
+import { FloorView } from "./FloorView";
+import { bundledData } from "./schema";
+import { HAZARDS, LOOPS, SIZES, generateDungeon, randomSeed } from "./dungeon/generate";
+import { DUNGEONS, dungeonLabel, lootFor } from "./dungeon/loot";
+import { enemiesFor } from "./dungeon/enemies";
+import { FOLDER, floorFromDungeon, fromSnapshot, idOf, newDungeonPath, toSnapshot } from "./dungeon/floor";
 
 
 // Generador de mazmorras para los moderadores: saca un piso al estilo Mundo
 // Misterioso (salas, pasillos, punto de inicio y escaleras) para explicar las
-// mazmorras a los jugadores. Todo va en la dirección (semilla, tamaño,
-// bucles, mazmorra), así que copiar el enlace basta para que otro vea el
-// mismo mapa. Al elegir una mazmorra, los objetos del suelo salen de los que
-// la lista de objetos dice que aparecen en ella.
-export function Dungeons(){
+// mazmorras a los jugadores. Las opciones van en la dirección (semilla,
+// tamaño, bucles, mazmorra), así que copiar el enlace basta para que otro vea
+// el mismo mapa. Al elegir una mazmorra, los objetos y enemigos salen de la
+// lista de objetos y de la Pokédex.
+//
+// Un piso se puede guardar (src/content/dungeons/) para volver a él mientras
+// se juega, y borrar cuando la mazmorra se completa. Uno guardado se abre con
+// ?view=dungeons&saved=<id>.
+export function Dungeons({ session, onError }){
+
+    const [params] = useSearchParams();
+    const [paths, setPaths] = useState(null);
+
+    // Lo leído de GitHub y lo guardado en esta sesión: tapa al contenido del
+    // build, que no tiene lo guardado después del último deploy.
+    const [fresh, setFresh] = useState({});
+
+    useEffect(() => {
+        listFiles(session).then(setPaths).catch(onError);
+    }, [session, onError]);
+
+    const files = useMemo(
+        () => (paths ?? []).filter(path => path.startsWith(`${FOLDER}/`) && path.endsWith(".json")),
+        [paths]
+    );
+
+    useEffect(() => {
+        const missing = files.filter(path => !bundledData(path) && !fresh[path]);
+        if(!missing.length){
+            return;
+        }
+        Promise.all(missing.map(path => readJson(session, path).then(result => [path, result.data])))
+            .then(read => setFresh(current => ({ ...Object.fromEntries(read), ...current })))
+            .catch(onError);
+    }, [session, files, fresh, onError]);
+
+    const saved = useMemo(
+        () => files
+            .map(path => ({ path, id: idOf(path), data: fresh[path] ?? bundledData(path) }))
+            .filter(entry => entry.data)
+            .sort((a, b) => String(b.data.createdAt).localeCompare(String(a.data.createdAt))),
+        [files, fresh]
+    );
+
+    const onSaved = (path, data) => {
+        setFresh(current => ({ ...current, [path]: data }));
+        setPaths(current => [...(current ?? []), path]);
+    };
+
+    const onDeleted = path => {
+        setPaths(current => (current ?? []).filter(item => item !== path));
+    };
+
+    const openId = params.get("saved");
+
+    if(openId){
+        return (
+            <SavedDungeon
+                key={openId}
+                session={session}
+                path={`${FOLDER}/${openId}.json`}
+                known={paths ? files.includes(`${FOLDER}/${openId}.json`) : null}
+                onDeleted={onDeleted}
+                onError={onError}
+            />
+        );
+    }
+
+    return (
+
+        <>
+
+            <nav className="panel-crumbs"><Link to="/panel">Collections</Link> › Dungeon generator</nav>
+
+            <SavedList saved={paths ? saved : null} session={session} onDeleted={onDeleted} onError={onError} />
+
+            <Generator session={session} onSaved={onSaved} onError={onError} />
+
+        </>
+
+    );
+
+}
+
+
+// Las mazmorras guardadas, la más nueva primero.
+function SavedList({ saved, session, onDeleted, onError }){
+
+    if(!saved){
+        return <p className="panel-muted">Loading saved dungeons…</p>;
+    }
+
+    if(!saved.length){
+        return null;
+    }
+
+    return (
+
+        <section className="panel-card dungeon-saved">
+
+            <h2>Saved dungeons</h2>
+
+            <ul className="dungeon-saved__list">
+                {saved.map(entry => (
+                    <li key={entry.path}>
+                        <Link to={`?view=dungeons&saved=${entry.id}`} className="dungeon-saved__name">{entry.data.name}</Link>
+                        <span className="panel-muted">{describe(entry.data)}</span>
+                        <DeleteDungeon
+                            session={session}
+                            path={entry.path}
+                            name={entry.data.name}
+                            onDeleted={() => onDeleted(entry.path)}
+                            onError={onError}
+                        />
+                    </li>
+                ))}
+            </ul>
+
+        </section>
+
+    );
+
+}
+
+
+// El botón de borrar una mazmorra completada. Pide confirmación en la propia
+// página, no con window.confirm: hay navegadores (como el del panel de
+// Claude) que bloquean esos diálogos y los dan por cancelados sin enseñarlos,
+// y entonces el botón parecía no hacer nada.
+function DeleteDungeon({ session, path, name, sha = null, onDeleted, onError }){
+
+    const [asking, setAsking] = useState(false);
+    const [busy, setBusy] = useState(false);
+    const [problem, setProblem] = useState("");
+
+    async function remove(){
+        setBusy(true);
+        setProblem("");
+        try {
+            await deleteFiles(session, [path], sha, `Delete dungeon “${name}” (completed)`);
+            onDeleted();
+        } catch(err){
+            setBusy(false);
+            if(err instanceof ApiError && err.status !== 401){
+                setProblem(`Couldn't delete it: ${err.message}`);
+            } else {
+                onError(err);
+            }
+        }
+    }
+
+    if(!asking){
+        return (
+            <span className="dungeon-delete">
+                <button type="button" className="panel-btn panel-btn--ghost" onClick={() => setAsking(true)}>
+                    Completed · delete
+                </button>
+                {problem && <span className="panel-error">{problem}</span>}
+            </span>
+        );
+    }
+
+    return (
+        <span className="dungeon-delete dungeon-delete--asking">
+            <span>Delete it for good?</span>
+            <button type="button" className="panel-btn panel-btn--danger" disabled={busy} onClick={remove}>
+                {busy ? "Deleting…" : "Yes, delete"}
+            </button>
+            <button type="button" className="panel-btn panel-btn--ghost" disabled={busy} onClick={() => setAsking(false)}>
+                Cancel
+            </button>
+            {problem && <span className="panel-error">{problem}</span>}
+        </span>
+    );
+
+}
+
+
+const plural = (count, word) => `${count} ${word}${count === 1 ? "" : "s"}`;
+
+
+function describe(data){
+
+    const parts = [
+        data.dungeon ? dungeonLabel(data.dungeon) : "No dungeon",
+        SIZES[data.settings?.size]?.label,
+        data.createdBy && `saved by ${data.createdBy}`,
+        data.createdAt && new Date(data.createdAt).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" })
+    ];
+
+    return parts.filter(Boolean).join(" · ");
+
+}
+
+
+function Generator({ session, onSaved, onError }){
 
     const [params, setParams] = useSearchParams();
-    const [showPath, setShowPath] = useState(false);
-    const [showGrid, setShowGrid] = useState(true);
-    const [copied, setCopied] = useState(false);
-    const canvas = useRef(null);
+    const navigate = useNavigate();
 
     const seed = params.get("seed");
     const size = SIZES[params.get("size")] ? params.get("size") : "medium";
@@ -46,25 +234,17 @@ export function Dungeons(){
         }
     }, [seed, setParams]);
 
-    const dungeon = useMemo(
-        () => seed ? generateDungeon({
+    const floor = useMemo(
+        () => seed ? floorFromDungeon(generateDungeon({
             seed, size, loops,
             hazard: hazardChoice,
             loot: lootFor(place),
             foes: enemiesFor(dungeonLabel(place))
-        }) : null,
+        })) : null,
         [seed, size, loops, hazardChoice, place]
     );
-    const hazard = dungeon?.hazard ? HAZARDS[dungeon.hazard] : null;
-
-    useEffect(() => {
-        if(dungeon && canvas.current){
-            draw(canvas.current, dungeon, { showPath, showGrid });
-        }
-    }, [dungeon, showPath, showGrid]);
 
     function update(changes){
-        setCopied(false);
         setParams(current => {
             const next = new URLSearchParams(current);
             for(const [key, value] of Object.entries(changes)){
@@ -78,27 +258,14 @@ export function Dungeons(){
         });
     }
 
-    async function copyLink(){
-        try {
-            await navigator.clipboard.writeText(window.location.href);
-            setCopied(true);
-        } catch {
-            window.prompt("Copy this link:", window.location.href);
-        }
-    }
-
-    function download(){
-        const link = document.createElement("a");
-        link.download = `${place ? `${place.toLowerCase().replace(/\W+/g, "-")}-` : "dungeon-"}${seed}.png`;
-        link.href = canvas.current.toDataURL("image/png");
-        link.click();
-    }
+    const label = place ? dungeonLabel(place) : "";
+    const itemPool = lootFor(place).length;
+    const enemyPool = enemiesFor(label).length;
+    const hazard = floor?.hazard ? HAZARDS[floor.hazard] : null;
 
     return (
 
         <>
-
-            <nav className="panel-crumbs"><Link to="/panel">Collections</Link> › Dungeon generator</nav>
 
             <div className="panel-card dungeon-controls">
 
@@ -168,54 +335,21 @@ export function Dungeons(){
 
             </div>
 
-            {dungeon && (
+            {floor && (
                 <>
 
-                    <div className="dungeon-map">
-                        <canvas ref={canvas} aria-label={`Dungeon map, seed ${seed}`} />
-                    </div>
-
-                    <div className="dungeon-info">
-
-                        <ul className="dungeon-legend">
-                            <li><i className="dungeon-swatch dungeon-swatch--start" /> Start</li>
-                            <li><i className="dungeon-swatch dungeon-swatch--stairs" /> Stairs</li>
-                            <li><i className="dungeon-swatch dungeon-swatch--room" /> Room</li>
-                            <li><i className="dungeon-swatch dungeon-swatch--hall" /> Corridor</li>
-                            {hazard && (
-                                <li><i className={`dungeon-swatch dungeon-swatch--${dungeon.hazard}`} /> {hazard.label}</li>
-                            )}
-                            {dungeon.items.length > 0 && (
-                                <li><i className="dungeon-swatch dungeon-swatch--item">1</i> Item</li>
-                            )}
-                            {dungeon.enemies.length > 0 && (
-                                <li><i className="dungeon-swatch dungeon-swatch--enemy">1</i> Enemy</li>
-                            )}
-                        </ul>
-
-                        <p className="panel-muted">
-                            {dungeon.rooms.length} rooms · {dungeon.routes === 0 ? "one way through" : `${dungeon.routes} loop${dungeon.routes > 1 ? "s" : ""}`} · {dungeon.path.length - 1} steps to the stairs (shortest way)
-                        </p>
-
-                    </div>
-
-                    {hazard && (
-                        <div className="panel-note dungeon-hazard">
-                            <strong>{hazard.label}</strong>: {hazardSummary(dungeon, hazard)}
-                        </div>
-                    )}
-
-                    <div className="panel-row dungeon-actions">
-                        <label className="dungeon-toggle">
-                            <input type="checkbox" checked={showPath} onChange={event => setShowPath(event.target.checked)} /> Show the shortest way
-                        </label>
-                        <label className="dungeon-toggle">
-                            <input type="checkbox" checked={showGrid} onChange={event => setShowGrid(event.target.checked)} /> Grid
-                        </label>
-                        <span className="dungeon-spacer" />
-                        <button type="button" className="panel-btn panel-btn--ghost" onClick={copyLink}>{copied ? "Link copied" : "Copy link"}</button>
-                        <button type="button" className="panel-btn panel-btn--ghost" onClick={download}>Download PNG</button>
-                    </div>
+                    <SaveForm
+                        key={`${place}|${seed}`}
+                        session={session}
+                        floor={floor}
+                        place={place}
+                        settings={{ seed, size, loops, hazard: hazardChoice }}
+                        onSaved={(path, data) => {
+                            onSaved(path, data);
+                            navigate(`/panel?view=dungeons&saved=${idOf(path)}`);
+                        }}
+                        onError={onError}
+                    />
 
                     {lostPlace && (
                         <div className="panel-card dungeon-items">
@@ -225,9 +359,29 @@ export function Dungeons(){
                         </div>
                     )}
 
-                    {place && <EnemyList dungeon={dungeon} place={place} />}
-
-                    {place && <ItemList dungeon={dungeon} place={place} hazard={hazard} />}
+                    <FloorView
+                        floor={floor}
+                        fileName={`${place ? `${place.toLowerCase().replace(/\W+/g, "-")}-` : "dungeon-"}${seed}`}
+                        enemies={place ? {
+                            intro: `${floor.enemies.length} picked at random from the ${enemyPool} ${enemyPool === 1 ? "enemy" : "enemies"} that the Pokédex places in ${label}. Mini bosses and bosses are left out.`,
+                            empty: enemyPool ? null : (
+                                <>
+                                    The Pokédex has no enemies for {label} yet (mini bosses and bosses never show up at random), so this floor has none.
+                                    {" "}<Link to="/panel?view=pokedex">Add some in the Pokédex</Link> and tick {label} under Dungeon. New entries show up here once the site is published.
+                                </>
+                            )
+                        } : null}
+                        items={place ? {
+                            intro: `${floor.items.length} picked from the ${plural(itemPool, "item")} that the item list places in ${label} (or anywhere). Rarer ones show up less.`
+                                + (hazard && floor.stats.hazardRooms > 0 ? ` Each ${hazard.label.toLowerCase()} room hides one, with better odds of something rare.` : ""),
+                            empty: itemPool ? null : (
+                                <>
+                                    The item list has nothing to find in {label} (or anywhere), so this floor has no items.
+                                    {" "}<Link to="/panel?c=items">Open the items</Link> and add {place} to the locations of the ones that should show up here.
+                                </>
+                            )
+                        } : null}
+                    />
 
                 </>
             )}
@@ -239,337 +393,147 @@ export function Dungeons(){
 }
 
 
-// Los enemigos del piso, con el mismo número que en el mapa. Si la Pokédex no
-// tiene ninguno para esta mazmorra, se dice y se manda a añadirlos, en vez de
-// dejar el mapa vacío sin explicación.
-function EnemyList({ dungeon, place }){
+// Guardar el piso que se ve, con un nombre. Se guarda tal cual (mapa, objetos
+// y enemigos), no solo las opciones.
+function SaveForm({ session, floor, place, settings, onSaved, onError }){
 
-    const label = dungeonLabel(place);
-    const pool = enemiesFor(label).length;
+    const [name, setName] = useState(`${place ? dungeonLabel(place) : "Dungeon"} · ${settings.seed}`);
+    const [busy, setBusy] = useState(false);
+    const [problem, setProblem] = useState("");
 
-    if(!pool){
-        return (
-            <section className="panel-card dungeon-items dungeon-items--empty">
-                <h2>Enemies on this floor</h2>
-                <p className="panel-muted">
-                    The Pokédex has no enemies for {label} yet (mini bosses and bosses never show up at random), so this floor has none.
-                    {" "}<Link to="/panel?view=pokedex">Add some in the Pokédex</Link> and tick {label} under Dungeon. New entries show up here once the site is published.
-                </p>
-            </section>
-        );
+    async function save(event){
+
+        event.preventDefault();
+
+        const title = name.trim();
+
+        if(!title){
+            setProblem("Give it a name first.");
+            return;
+        }
+
+        setBusy(true);
+        setProblem("");
+
+        const path = newDungeonPath();
+        const data = toSnapshot(floor, { name: title, place, settings, user: session.user });
+
+        try {
+            await writeJson(session, path, data, null, `Save dungeon “${title}”`);
+            onSaved(path, data);
+        } catch(err){
+            setBusy(false);
+            if(err instanceof ApiError && err.status !== 401){
+                setProblem(err.message);
+            } else {
+                onError(err);
+            }
+        }
+
     }
 
     return (
 
-        <section className="panel-card dungeon-items">
-
-            <h2>Enemies on this floor</h2>
-
-            <p className="panel-muted">
-                {dungeon.enemies.length} picked at random from the {pool} {pool === 1 ? "enemy" : "enemies"} that the Pokédex places in {label}. Mini bosses and bosses are left out.
-            </p>
-
-            <ol className="dungeon-items__list">
-                {dungeon.enemies.map((spot, index) => {
-                    const entry = ENEMIES_BY_ID[spot.id];
-                    return (
-                        <li key={`${spot.x},${spot.y}`}>
-                            <span className="dungeon-items__number dungeon-items__number--enemy">{index + 1}</span>
-                            {entry.image && <img src={asset(entry.image)} alt="" width="32" height="32" loading="lazy" />}
-                            <Link to={`/panel?view=pokedex&id=${entry.id}`} className="dungeon-items__name">{enemyName(entry)}</Link>
-                            <span className="dungeon-items__tag">{sizeLabel(entry.size)}</span>
-                            {entry.types.filter(Boolean).map(type => <TypeBadge key={type} type={type} />)}
-                        </li>
-                    );
-                })}
-            </ol>
-
-        </section>
+        <form className="panel-card dungeon-save" onSubmit={save}>
+            <label className="dungeon-control dungeon-control--wide">
+                <span className="panel-field__label">Save this floor as</span>
+                <input className="panel-input" value={name} maxLength={80} onChange={event => setName(event.target.value)} />
+            </label>
+            <button type="submit" className="panel-btn panel-btn--primary" disabled={busy}>{busy ? "Saving…" : "Save dungeon"}</button>
+            {problem && <p className="panel-error dungeon-save__problem">{problem}</p>}
+        </form>
 
     );
 
 }
 
 
-// Los objetos del suelo, con el mismo número que llevan en el mapa.
-function ItemList({ dungeon, place, hazard }){
+// Una mazmorra guardada: se lee siempre de GitHub (el build puede ir por
+// detrás) y se enseña igual que en el generador, con el botón de borrarla
+// cuando se completa.
+function SavedDungeon({ session, path, known, onDeleted, onError }){
 
-    const label = dungeonLabel(place);
-    const pool = lootFor(place).length;
+    const navigate = useNavigate();
+    const [entry, setEntry] = useState(null);
+    const [notFound, setNotFound] = useState(false);
 
-    if(!pool){
-        return (
-            <section className="panel-card dungeon-items">
-                <h2>Items on this floor</h2>
-                <p className="panel-muted">
-                    The item list has nothing to find in {label} (or anywhere), so this floor has no items.
-                    {" "}<Link to="/panel?c=items">Open the items</Link> and add {place} to the locations of the ones that should show up here.
-                </p>
-            </section>
-        );
-    }
+    // `known` es null mientras no se sabe qué archivos hay, y false si este no
+    // está entre ellos (ya se borró).
+    const missing = known === false || notFound;
 
-    return (
+    useEffect(() => {
 
-        <section className="panel-card dungeon-items">
-
-            <h2>Items on this floor</h2>
-
-            <p className="panel-muted">
-                {dungeon.items.length} picked from the {plural(pool, "item")} that the item list places in {dungeonLabel(place)} (or anywhere). Rarer ones show up less.
-                {hazard && dungeon.hazardRooms.length > 0 && ` Each ${hazard.label.toLowerCase()} room hides one, with better odds of something rare.`}
-            </p>
-
-            <ol className="dungeon-items__list">
-                {dungeon.items.map((spot, index) => {
-                    const item = ITEMS_BY_ID[spot.id];
-                    return (
-                        <li key={`${spot.x},${spot.y}`}>
-                            <span className="dungeon-items__number" style={{ borderColor: rarityColor(item.rarity) }}>{index + 1}</span>
-                            {item.image && <img src={asset(item.image)} alt="" width="32" height="32" loading="lazy" />}
-                            <Link to={`/panel?c=items&f=${encodeURIComponent(`src/content/items/${item.id}.json`)}`} className="dungeon-items__name">{item.name}</Link>
-                            <Rarity value={item.rarity} />
-                            {spot.guarded && hazard && <span className="dungeon-items__tag">needs {hazard.ability.toLowerCase()}</span>}
-                        </li>
-                    );
-                })}
-            </ol>
-
-        </section>
-
-    );
-
-}
-
-
-const RARITY_COLORS = {
-    "Common": "#e8e2d4",
-    "Uncommon": "#6cc070",
-    "Rare": "#4f9cf0",
-    "Super Rare": "#b06cf0",
-    "Special": "#f0c040"
-};
-
-const rarityColor = rarity => RARITY_COLORS[rarity] ?? RARITY_COLORS.Common;
-
-
-const plural = (count, word) => `${count} ${word}${count === 1 ? "" : "s"}`;
-
-
-function hazardSummary(dungeon, hazard){
-
-    const rooms = dungeon.hazardRooms.length;
-    const halls = dungeon.hazardHalls.length;
-
-    if(!rooms && !halls){
-        return "nothing could be closed off here without blocking the way to the stairs, so this floor has none. Try another seed.";
-    }
-
-    const parts = [
-        rooms && `${plural(rooms, "room")} can only be entered`,
-        halls && `${plural(halls, "corridor")} can only be crossed`
-    ].filter(Boolean);
-
-    return `${parts.join(" and ")} with ${hazard.ability.toLowerCase()}. Without it you can still reach the stairs and walk ${Math.round(dungeon.walkable * 100)}% of the floor.`;
-
-}
-
-
-const TILE = 16;
-
-const COLORS = {
-    wall: "#1c150d",
-    wallEdge: "#3a2c1a",
-    room: "#c9b48a",
-    hall: "#a38e66",
-    grid: "rgba(40, 28, 12, 0.28)",
-    path: "rgba(212, 165, 55, 0.95)",
-    start: "#4f9cf0",
-    stairs: "#e8e2d4",
-    stairsShade: "#5a4a32"
-};
-
-// Fondo y detalle de cada peligro (los mismos que las muestras de la leyenda).
-const HAZARD_COLORS = {
-    chasm: { base: "#08060c", detail: "rgba(140, 110, 200, 0.35)" },
-    water: { base: "#2f6fb3", detail: "rgba(190, 225, 255, 0.55)" },
-    lava: { base: "#c2410c", detail: "rgba(255, 210, 90, 0.75)" }
-};
-
-
-// Un poco de dibujo en cada tile de peligro para que no parezca solo un color:
-// ondas en el agua, grietas brillantes en la lava, un borde tenue en el abismo.
-function drawHazardTile(ctx, hazard, px, py){
-
-    const colors = HAZARD_COLORS[hazard];
-
-    ctx.fillStyle = colors.base;
-    ctx.fillRect(px, py, TILE, TILE);
-
-    ctx.strokeStyle = colors.detail;
-    ctx.lineWidth = 1.5;
-    ctx.beginPath();
-
-    if(hazard === "water"){
-        for(const offset of [5, 11]){
-            ctx.moveTo(px + 2, py + offset);
-            ctx.quadraticCurveTo(px + 5, py + offset - 3, px + 8, py + offset);
-            ctx.quadraticCurveTo(px + 11, py + offset + 3, px + 14, py + offset);
+        if(!known){
+            return;
         }
-    } else if(hazard === "lava"){
-        ctx.moveTo(px + 3, py + 4);
-        ctx.lineTo(px + 8, py + 8);
-        ctx.lineTo(px + 6, py + 13);
-        ctx.moveTo(px + 8, py + 8);
-        ctx.lineTo(px + 13, py + 6);
-    } else {
-        ctx.rect(px + 3.5, py + 3.5, TILE - 7, TILE - 7);
-    }
 
-    ctx.stroke();
-
-}
-
-
-function draw(canvas, dungeon, { showPath, showGrid }){
-
-    const { width, height, tiles, start, stairs, path } = dungeon;
-
-    canvas.width = width * TILE;
-    canvas.height = height * TILE;
-
-    const ctx = canvas.getContext("2d");
-
-    ctx.fillStyle = COLORS.wall;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    for(let y = 0; y < height; y++){
-        for(let x = 0; x < width; x++){
-            const tile = tiles[y][x];
-            if(tile === ROOM || tile === HALL){
-                ctx.fillStyle = tile === ROOM ? COLORS.room : COLORS.hall;
-                ctx.fillRect(x * TILE, y * TILE, TILE, TILE);
-            } else if(tile === HAZARD){
-                drawHazardTile(ctx, dungeon.hazard, x * TILE, y * TILE);
-            }
-        }
-    }
-
-    // Borde claro del muro que da al suelo, para que salas y pasillos se lean.
-    ctx.strokeStyle = COLORS.wallEdge;
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-
-    for(let y = 0; y < height; y++){
-        for(let x = 0; x < width; x++){
-            if(!tiles[y][x]){
-                continue;
-            }
-            const px = x * TILE;
-            const py = y * TILE;
-            if(!tiles[y - 1]?.[x]){ ctx.moveTo(px, py); ctx.lineTo(px + TILE, py); }
-            if(!tiles[y + 1]?.[x]){ ctx.moveTo(px, py + TILE); ctx.lineTo(px + TILE, py + TILE); }
-            if(!tiles[y][x - 1]){ ctx.moveTo(px, py); ctx.lineTo(px, py + TILE); }
-            if(!tiles[y][x + 1]){ ctx.moveTo(px + TILE, py); ctx.lineTo(px + TILE, py + TILE); }
-        }
-    }
-
-    ctx.stroke();
-
-    if(showGrid){
-        ctx.strokeStyle = COLORS.grid;
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        for(let y = 0; y < height; y++){
-            for(let x = 0; x < width; x++){
-                if(tiles[y][x]){
-                    ctx.rect(x * TILE + 0.5, y * TILE + 0.5, TILE - 1, TILE - 1);
+        readJson(session, path)
+            .then(result => setEntry(result))
+            .catch(err => {
+                if(err instanceof ApiError && err.status === 404){
+                    setNotFound(true);
+                } else {
+                    onError(err);
                 }
-            }
-        }
-        ctx.stroke();
+            });
+
+    }, [session, path, known, onError]);
+
+    const floor = useMemo(() => entry ? fromSnapshot(entry.data) : null, [entry]);
+
+    const crumbs = <nav className="panel-crumbs"><Link to="/panel">Collections</Link> › <Link to="?view=dungeons">Dungeon generator</Link> › {entry?.data.name ?? "Saved dungeon"}</nav>;
+
+    if(missing){
+        return (
+            <>
+                {crumbs}
+                <div className="panel-card">
+                    <p className="panel-error">This dungeon isn't saved anymore. Someone probably deleted it after it was completed.</p>
+                    <Link to="?view=dungeons" className="panel-btn">Back to the generator</Link>
+                </div>
+            </>
+        );
     }
 
-    if(showPath && path){
-        ctx.fillStyle = COLORS.path;
-        for(const step of path.slice(1, -1)){
-            ctx.beginPath();
-            ctx.arc(step.x * TILE + TILE / 2, step.y * TILE + TILE / 2, TILE * 0.16, 0, Math.PI * 2);
-            ctx.fill();
-        }
+    if(!entry){
+        return <>{crumbs}<p className="panel-muted">Loading…</p></>;
     }
 
-    // Objetos: una ficha con su número (el de la lista de abajo), con el borde
-    // del color de su rareza.
-    ctx.font = `bold ${TILE * 0.62}px system-ui, sans-serif`;
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
+    const { data } = entry;
 
-    dungeon.items.forEach((spot, index) => {
-        const px = spot.x * TILE;
-        const py = spot.y * TILE;
-        ctx.fillStyle = "#2b1d0e";
-        ctx.strokeStyle = rarityColor(ITEMS_BY_ID[spot.id]?.rarity);
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.roundRect(px + 1, py + 1, TILE - 2, TILE - 2, 3);
-        ctx.fill();
-        ctx.stroke();
-        ctx.fillStyle = "#fff";
-        ctx.fillText(String(index + 1), px + TILE / 2, py + TILE / 2 + 0.5);
-    });
+    return (
 
-    // Enemigos: un círculo rojo con su número (el de su lista).
-    dungeon.enemies.forEach((spot, index) => {
-        const cx = spot.x * TILE + TILE / 2;
-        const cy = spot.y * TILE + TILE / 2;
-        ctx.fillStyle = "#c62828";
-        ctx.strokeStyle = "#fff";
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.arc(cx, cy, TILE * 0.45, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.stroke();
-        ctx.fillStyle = "#fff";
-        ctx.fillText(String(index + 1), cx, cy + 0.5);
-    });
+        <>
 
-    // Un halo detrás del inicio y de las escaleras: en un mapa grande, un solo
-    // tile se pierde.
-    const halo = (point, color) => {
-        const cx = point.x * TILE + TILE / 2;
-        const cy = point.y * TILE + TILE / 2;
-        const glow = ctx.createRadialGradient(cx, cy, TILE * 0.3, cx, cy, TILE * 1.8);
-        glow.addColorStop(0, color);
-        glow.addColorStop(1, "transparent");
-        ctx.fillStyle = glow;
-        ctx.fillRect(cx - TILE * 2, cy - TILE * 2, TILE * 4, TILE * 4);
-    };
+            {crumbs}
 
-    halo(stairs, "rgba(255, 220, 120, 0.75)");
-    halo(start, "rgba(79, 156, 240, 0.7)");
+            <div className="panel-card dungeon-saved-head">
+                <div>
+                    <h2>{data.name}</h2>
+                    <p className="panel-muted">{describe(data)}</p>
+                </div>
+                <DeleteDungeon
+                    session={session}
+                    path={path}
+                    name={data.name}
+                    sha={entry.sha}
+                    onDeleted={() => {
+                        onDeleted(path);
+                        navigate("/panel?view=dungeons", { replace: true });
+                    }}
+                    onError={onError}
+                />
+            </div>
 
-    // Escaleras: peldaños que bajan, con borde para que se vean sobre el suelo.
-    const sx = stairs.x * TILE;
-    const sy = stairs.y * TILE;
-    ctx.fillStyle = COLORS.stairsShade;
-    ctx.fillRect(sx, sy, TILE, TILE);
-    ctx.fillStyle = COLORS.stairs;
-    const step = TILE / 4;
-    for(let i = 0; i < 4; i++){
-        ctx.fillRect(sx + i * step, sy + i * step, TILE - i * step, step - 1);
-    }
-    ctx.strokeStyle = "#fff";
-    ctx.lineWidth = 1.5;
-    ctx.strokeRect(sx + 0.75, sy + 0.75, TILE - 1.5, TILE - 1.5);
+            <FloorView
+                floor={floor}
+                fileName={`${data.dungeon ? `${data.dungeon.toLowerCase().replace(/\W+/g, "-")}-` : "dungeon-"}${data.settings?.seed ?? idOf(path)}`}
+                enemies={data.dungeon ? { intro: "", empty: "No enemies on this floor." } : null}
+                items={data.dungeon ? { intro: "", empty: "No items on this floor." } : null}
+            />
 
-    // Inicio: un círculo azul con borde blanco, como el marcador del equipo.
-    ctx.fillStyle = COLORS.start;
-    ctx.strokeStyle = "#fff";
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.arc(start.x * TILE + TILE / 2, start.y * TILE + TILE / 2, TILE * 0.42, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.stroke();
+        </>
+
+    );
 
 }

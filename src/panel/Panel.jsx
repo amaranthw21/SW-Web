@@ -195,7 +195,7 @@ function Workspace({ session, logout, onSession }){
     if(view === "account"){
         content = <Account session={session} onSession={onSession} />;
     } else if(view === "dungeons"){
-        content = <Dungeons />;
+        content = <Dungeons session={session} onError={fail} />;
     } else if(view === "pokedex"){
         content = <Pokedex session={session} onError={fail} />;
     } else if(view === "admins" && session.owner){
