@@ -1747,3 +1747,46 @@ select.panel-input option {
     gap: 4px 12px;
 
 }
+
+.dungeon-swatch--enemy {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 16px;
+    height: 16px;
+
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+
+    background: #c62828;
+
+    color: #fff;
+
+    font-size: 10px;
+    font-style: normal;
+    font-weight: bold;
+
+}
+
+.dungeon-items__number--enemy {
+
+    border-color: #fff;
+    border-radius: 50%;
+
+    background: #c62828;
+
+}
+
+.dungeon-items h2 {
+
+    margin-top: 0;
+
+}
+
+.dungeon-items p a {
+
+    color: var(--accent);
+
+}

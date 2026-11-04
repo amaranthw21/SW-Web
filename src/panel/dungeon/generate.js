@@ -24,9 +24,9 @@ export const HAZARDS = {
 
 
 export const SIZES = {
-    small: { label: "Small", width: 36, height: 22, cols: 3, rows: 2, items: [4, 6] },
-    medium: { label: "Medium", width: 52, height: 30, cols: 4, rows: 3, items: [6, 9] },
-    large: { label: "Large", width: 68, height: 38, cols: 5, rows: 4, items: [9, 13] }
+    small: { label: "Small", width: 36, height: 22, cols: 3, rows: 2, items: [4, 6], enemies: [3, 5] },
+    medium: { label: "Medium", width: 52, height: 30, cols: 4, rows: 3, items: [6, 9], enemies: [5, 8] },
+    large: { label: "Large", width: 68, height: 38, cols: 5, rows: 4, items: [9, 13], enemies: [8, 12] }
 };
 
 
@@ -102,9 +102,10 @@ export function randomSeed(){
 
 // `hazard`: "random" (lo elige la semilla), "none" o una clave de HAZARDS.
 // `loot`: los objetos que pueden salir ([{ id, rarity }]); vacío, ninguno.
-export function generateDungeon({ seed, size = "medium", loops = "some", hazard = "random", loot = [] }){
+// `foes`: los enemigos que pueden salir ([{ id }]); vacío, ninguno.
+export function generateDungeon({ seed, size = "medium", loops = "some", hazard = "random", loot = [], foes = [] }){
 
-    const { width, height, cols, rows, items: itemRange } = SIZES[size] ?? SIZES.medium;
+    const { width, height, cols, rows, items: itemRange, enemies: enemyRange } = SIZES[size] ?? SIZES.medium;
     const loopChance = (LOOPS[loops] ?? LOOPS.some).chance;
 
     // Por si acaso: si alguna vez no se pudiera llegar a las escaleras, se
@@ -131,7 +132,9 @@ export function generateDungeon({ seed, size = "medium", loops = "some", hazard 
             // mazmorra cambia lo que hay en el suelo, no el mapa.
             const items = placeItems(rngFrom(`${key}/items`), dungeon, hazardRooms, loot, itemRange);
 
-            return { ...dungeon, hazard: type, hazardRooms, hazardHalls, items, walkable: walkableShare(dungeon), seed, size, loops };
+            const enemies = placeEnemies(rngFrom(`${key}/enemies`), dungeon, items, foes, enemyRange);
+
+            return { ...dungeon, hazard: type, hazardRooms, hazardHalls, items, enemies, walkable: walkableShare(dungeon), seed, size, loops };
 
         }
 
@@ -436,6 +439,39 @@ function placeItems(rng, dungeon, hazardRooms, loot, [min, max]){
     }
 
     return taken;
+
+}
+
+
+// Reparte enemigos al azar (todos con la misma probabilidad, y pueden
+// repetirse) por el suelo de las salas. Nunca en la sala del inicio, que es
+// donde llega el equipo, ni encima de las escaleras o de un objeto, ni pegados
+// a otro enemigo.
+function placeEnemies(rng, dungeon, items, foes, [min, max]){
+
+    if(!foes.length){
+        return [];
+    }
+
+    const { tiles, stairs } = dungeon;
+    const rooms = dungeon.rooms.filter(room => room !== dungeon.startRoom);
+    const count = rng.int(min, max);
+    const placed = [];
+
+    const free = ({ x, y }) => tiles[y][x] === ROOM
+        && !(x === stairs.x && y === stairs.y)
+        && !items.some(item => item.x === x && item.y === y)
+        && placed.every(enemy => Math.abs(enemy.x - x) > 1 || Math.abs(enemy.y - y) > 1);
+
+    for(let tries = 0; placed.length < count && tries < count * 20; tries++){
+        const room = rng.pick(rooms);
+        const tile = randomFloor(rng, room);
+        if(free(tile)){
+            placed.push({ ...tile, id: rng.pick(foes).id });
+        }
+    }
+
+    return placed;
 
 }
 

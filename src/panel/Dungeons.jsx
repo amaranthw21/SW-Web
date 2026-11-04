@@ -6,6 +6,8 @@ import asset from "../lib/asset";
 
 import { HALL, HAZARD, HAZARDS, LOOPS, ROOM, SIZES, generateDungeon, randomSeed } from "./dungeon/generate";
 import { DUNGEONS, ITEMS_BY_ID, dungeonLabel, lootFor } from "./dungeon/loot";
+import { ENEMIES_BY_ID, enemiesFor, enemyName, sizeLabel } from "./dungeon/enemies";
+import TypeBadge from "../components/TypeBadge";
 
 
 // Generador de mazmorras para los moderadores: saca un piso al estilo Mundo
@@ -28,6 +30,10 @@ export function Dungeons(){
     const hazardParam = params.get("hazard");
     const hazardChoice = HAZARDS[hazardParam] || hazardParam === "none" ? hazardParam : "random";
     const place = DUNGEONS.find(item => item.value === params.get("dungeon"))?.value ?? "";
+    // Un enlace viejo puede traer una mazmorra que ya no está en la lista de
+    // objetos (se renombró o se le quitaron todos): se avisa en vez de
+    // enseñar el piso vacío sin más.
+    const lostPlace = !place && params.get("dungeon");
 
     // Sin semilla en la dirección (recién llegado) se pone una al azar.
     useEffect(() => {
@@ -41,7 +47,12 @@ export function Dungeons(){
     }, [seed, setParams]);
 
     const dungeon = useMemo(
-        () => seed ? generateDungeon({ seed, size, loops, hazard: hazardChoice, loot: lootFor(place) }) : null,
+        () => seed ? generateDungeon({
+            seed, size, loops,
+            hazard: hazardChoice,
+            loot: lootFor(place),
+            foes: enemiesFor(dungeonLabel(place))
+        }) : null,
         [seed, size, loops, hazardChoice, place]
     );
     const hazard = dungeon?.hazard ? HAZARDS[dungeon.hazard] : null;
@@ -177,6 +188,9 @@ export function Dungeons(){
                             {dungeon.items.length > 0 && (
                                 <li><i className="dungeon-swatch dungeon-swatch--item">1</i> Item</li>
                             )}
+                            {dungeon.enemies.length > 0 && (
+                                <li><i className="dungeon-swatch dungeon-swatch--enemy">1</i> Enemy</li>
+                            )}
                         </ul>
 
                         <p className="panel-muted">
@@ -203,6 +217,16 @@ export function Dungeons(){
                         <button type="button" className="panel-btn panel-btn--ghost" onClick={download}>Download PNG</button>
                     </div>
 
+                    {lostPlace && (
+                        <div className="panel-card dungeon-items">
+                            <p className="panel-error">
+                                “{dungeonLabel(lostPlace)}” isn't a dungeon in the item list anymore, so this floor has no items or enemies. Pick another dungeon above.
+                            </p>
+                        </div>
+                    )}
+
+                    {place && <EnemyList dungeon={dungeon} place={place} />}
+
                     {place && <ItemList dungeon={dungeon} place={place} hazard={hazard} />}
 
                 </>
@@ -215,10 +239,75 @@ export function Dungeons(){
 }
 
 
+// Los enemigos del piso, con el mismo número que en el mapa. Si la Pokédex no
+// tiene ninguno para esta mazmorra, se dice y se manda a añadirlos, en vez de
+// dejar el mapa vacío sin explicación.
+function EnemyList({ dungeon, place }){
+
+    const label = dungeonLabel(place);
+    const pool = enemiesFor(label).length;
+
+    if(!pool){
+        return (
+            <section className="panel-card dungeon-items dungeon-items--empty">
+                <h2>Enemies on this floor</h2>
+                <p className="panel-muted">
+                    The Pokédex has no enemies for {label} yet (mini bosses and bosses never show up at random), so this floor has none.
+                    {" "}<Link to="/panel?view=pokedex">Add some in the Pokédex</Link> and tick {label} under Dungeon. New entries show up here once the site is published.
+                </p>
+            </section>
+        );
+    }
+
+    return (
+
+        <section className="panel-card dungeon-items">
+
+            <h2>Enemies on this floor</h2>
+
+            <p className="panel-muted">
+                {dungeon.enemies.length} picked at random from the {pool} {pool === 1 ? "enemy" : "enemies"} that the Pokédex places in {label}. Mini bosses and bosses are left out.
+            </p>
+
+            <ol className="dungeon-items__list">
+                {dungeon.enemies.map((spot, index) => {
+                    const entry = ENEMIES_BY_ID[spot.id];
+                    return (
+                        <li key={`${spot.x},${spot.y}`}>
+                            <span className="dungeon-items__number dungeon-items__number--enemy">{index + 1}</span>
+                            {entry.image && <img src={asset(entry.image)} alt="" width="32" height="32" loading="lazy" />}
+                            <Link to={`/panel?view=pokedex&id=${entry.id}`} className="dungeon-items__name">{enemyName(entry)}</Link>
+                            <span className="dungeon-items__tag">{sizeLabel(entry.size)}</span>
+                            {entry.types.filter(Boolean).map(type => <TypeBadge key={type} type={type} />)}
+                        </li>
+                    );
+                })}
+            </ol>
+
+        </section>
+
+    );
+
+}
+
+
 // Los objetos del suelo, con el mismo número que llevan en el mapa.
 function ItemList({ dungeon, place, hazard }){
 
+    const label = dungeonLabel(place);
     const pool = lootFor(place).length;
+
+    if(!pool){
+        return (
+            <section className="panel-card dungeon-items">
+                <h2>Items on this floor</h2>
+                <p className="panel-muted">
+                    The item list has nothing to find in {label} (or anywhere), so this floor has no items.
+                    {" "}<Link to="/panel?c=items">Open the items</Link> and add {place} to the locations of the ones that should show up here.
+                </p>
+            </section>
+        );
+    }
 
     return (
 
@@ -428,6 +517,21 @@ function draw(canvas, dungeon, { showPath, showGrid }){
         ctx.stroke();
         ctx.fillStyle = "#fff";
         ctx.fillText(String(index + 1), px + TILE / 2, py + TILE / 2 + 0.5);
+    });
+
+    // Enemigos: un círculo rojo con su número (el de su lista).
+    dungeon.enemies.forEach((spot, index) => {
+        const cx = spot.x * TILE + TILE / 2;
+        const cy = spot.y * TILE + TILE / 2;
+        ctx.fillStyle = "#c62828";
+        ctx.strokeStyle = "#fff";
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.arc(cx, cy, TILE * 0.45, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+        ctx.fillStyle = "#fff";
+        ctx.fillText(String(index + 1), cx, cy + 0.5);
     });
 
     // Un halo detrás del inicio y de las escaleras: en un mapa grande, un solo
