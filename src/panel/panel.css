@@ -1547,3 +1547,203 @@ select.panel-input option {
     font-size: 0.85em;
 
 }
+
+
+/* ───────── Pokédex ───────── */
+
+.dex-tabs {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+}
+
+.dex-search {
+
+    margin-bottom: 12px;
+
+}
+
+.dex-row__number {
+
+    display: inline-block;
+
+    min-width: 3em;
+
+    color: var(--panel-muted);
+
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+}
+
+.dex-row__state {
+
+    color: var(--panel-muted);
+
+    font-size: 0.85em;
+
+    white-space: nowrap;
+
+}
+
+.dex-row__state.is-seen {
+
+    color: var(--accent);
+
+}
+
+/* El formulario y, al lado, la ficha tal como la ven los jugadores. El panel
+   es estrecho (860px), así que aquí se ensancha un poco. */
+.panel-main:has(.dex-editor) {
+
+    max-width: 1180px;
+
+}
+
+.dex-editor {
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    align-items: start;
+    gap: 24px;
+
+}
+
+.dex-preview {
+
+    position: sticky;
+    top: 80px;
+
+}
+
+.dex-preview .panel-subhead {
+
+    margin-top: 0;
+
+}
+
+@media (max-width: 900px) {
+
+    .dex-editor {
+
+        grid-template-columns: minmax(0, 1fr);
+
+    }
+
+    .dex-preview {
+
+        position: static;
+
+    }
+
+}
+
+.dex-seen {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 14px;
+
+}
+
+.dex-seen__all {
+
+    margin-left: auto;
+
+}
+
+.dex-pair {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+
+}
+
+.dex-field__head {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+
+}
+
+.dex-reveal {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 3px 10px 3px 6px;
+
+    border: 1px solid var(--panel-line);
+    border-radius: 999px;
+
+    color: var(--panel-muted);
+
+    font-size: 0.82em;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+}
+
+.dex-reveal.is-on {
+
+    border-color: var(--accent);
+
+    color: var(--accent);
+
+}
+
+.dex-slots {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 8px;
+
+}
+
+.dex-slots--list {
+
+    grid-template-columns: minmax(0, 1fr);
+
+}
+
+.dex-slot {
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+}
+
+.dex-slot .panel-input {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+.dex-dungeons {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 6px 14px;
+
+}
+
+.panel-entries a.dex-row {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 12px;
+
+}

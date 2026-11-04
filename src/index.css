@@ -6613,3 +6613,223 @@ button.region-loc {
     text-align: center;
 
 }
+
+
+/* ───────── Pokédex (/pokedex) ─────────
+   Las fichas de los enemigos. El panel las usa también como vista previa. */
+
+.dex-kinds {
+
+    margin-bottom: 18px;
+
+}
+
+.dex-message {
+
+    color: #cbd5e1;
+
+    font-style: italic;
+
+}
+
+.dex-grid {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr));
+    gap: 18px;
+
+}
+
+.dex-card {
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    min-width: 0;
+
+    padding: 16px;
+
+    background: rgba(31, 41, 55, 0.85);
+    border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    border-radius: 14px;
+
+    color: #e2e8f0;
+
+}
+
+.dex-card--boss {
+
+    border-color: color-mix(in srgb, #e05a4f 70%, transparent);
+
+    box-shadow: 0 0 18px color-mix(in srgb, #e05a4f 25%, transparent);
+
+}
+
+.dex-card__head {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
+
+}
+
+.dex-card__number {
+
+    color: var(--accent);
+
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.85rem;
+
+}
+
+.dex-card__name {
+
+    flex: 1;
+
+    min-width: 0;
+    margin: 0;
+
+    font-size: 1.15rem;
+
+    overflow-wrap: anywhere;
+
+}
+
+.dex-card__kind {
+
+    padding: 2px 8px;
+
+    border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+    border-radius: 999px;
+
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+}
+
+.dex-card--boss .dex-card__kind {
+
+    border-color: #e05a4f;
+
+    color: #ffb4ab;
+
+}
+
+.dex-card__art {
+
+    display: grid;
+    place-items: center;
+
+    aspect-ratio: 4 / 3;
+
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.07), rgba(0, 0, 0, 0.35));
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+.dex-card__art img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+}
+
+.dex-card__art span {
+
+    color: rgba(226, 232, 240, 0.25);
+
+    font-size: 4rem;
+    font-weight: bold;
+
+}
+
+.dex-card__facts {
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 12px;
+
+    margin: 0;
+
+    font-size: 0.9rem;
+
+}
+
+.dex-card__facts dt {
+
+    color: var(--accent);
+
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+}
+
+.dex-card__facts dd {
+
+    min-width: 0;
+    margin: 0;
+
+}
+
+.dex-card__types {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+}
+
+.dex-card__note {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: #cbd5e1;
+
+    font-size: 0.85rem;
+
+}
+
+.dex-card__moves {
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px 12px;
+
+    margin: 0;
+    padding-left: 1.3em;
+
+}
+
+.dex-card__text {
+
+    margin: 0;
+    padding-top: 10px;
+
+    border-top: 1px solid rgba(212, 165, 55, 0.2);
+
+    font-style: italic;
+    line-height: 1.55;
+    white-space: pre-line;
+
+}
+
+.dex-unknown {
+
+    color: #8b95a5;
+
+    font-style: italic;
+    letter-spacing: 0.05em;
+
+}

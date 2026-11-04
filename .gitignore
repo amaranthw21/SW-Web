@@ -25,3 +25,6 @@ dist-ssr
 
 # Caché de Wrangler (worker/)
 .wrangler
+
+# Pokédex de `npm run dev` (en producción vive en el KV del Worker)
+.dev-pokedex

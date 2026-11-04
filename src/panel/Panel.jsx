@@ -8,6 +8,7 @@ import { API, ApiError, deleteFiles, listFiles, loadSession, login, readJson, sa
 import { Account, AcceptInvite, Admins } from "./Accounts";
 import { Dungeons } from "./Dungeons";
 import { Fields } from "./Fields";
+import { Pokedex } from "./Pokedex";
 import { bundledData, emptyObject, entriesOf, entryFiles, loadConfig, missingFields, newEntryPath, summaryOf } from "./schema";
 
 import "./panel.css";
@@ -90,6 +91,7 @@ function Shell({ children, session, onLogout }){
                     {session && (
                         <>
                             <Link to="/panel?view=dungeons" className="panel-bar__link">Dungeons</Link>
+                            <Link to="/panel?view=pokedex" className="panel-bar__link">Pokédex</Link>
                             {session.owner && <Link to="/panel?view=admins" className="panel-bar__link">Admins</Link>}
                             <Link to="/panel?view=account" className="panel-bar__user" title="Account and password">{session.user}</Link>
                             <button type="button" className="panel-btn panel-btn--ghost" onClick={() => onLogout()}>Sign out</button>
@@ -194,6 +196,8 @@ function Workspace({ session, logout, onSession }){
         content = <Account session={session} onSession={onSession} />;
     } else if(view === "dungeons"){
         content = <Dungeons />;
+    } else if(view === "pokedex"){
+        content = <Pokedex session={session} onError={fail} />;
     } else if(view === "admins" && session.owner){
         content = <Admins session={session} onError={fail} />;
     } else if(error){
@@ -272,6 +276,10 @@ function Collections({ config, paths, saved, session }){
                 <Link to="?view=dungeons" className="panel-tile">
                     <strong>Dungeon generator</strong>
                     <span className="panel-muted">Random floor with a start and stairs</span>
+                </Link>
+                <Link to="?view=pokedex" className="panel-tile">
+                    <strong>Pokédex</strong>
+                    <span className="panel-muted">Dungeon enemies and what players have discovered</span>
                 </Link>
             </div>
 

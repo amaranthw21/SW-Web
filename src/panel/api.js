@@ -203,3 +203,94 @@ export function rawUrl(path){
     return `${API}/raw?path=${encodeURIComponent(path)}`;
 
 }
+
+
+// ───────────────────────── Pokédex ─────────────────────────
+// Va al KV del Worker y no al repo (ver src/lib/pokedex.js).
+
+export async function listDex(session){
+
+    return (await request(session, "/dex/all")).entries;
+
+}
+
+
+// `entry.updated` es la versión que se abrió: si otro guardó después, falla.
+export async function saveDex(session, entry){
+
+    return (await request(session, `/dex/entry/${entry.id}`, {
+        method: "PUT",
+        body: JSON.stringify(entry)
+    })).entry;
+
+}
+
+
+export function deleteDex(session, id){
+
+    return request(session, `/dex/entry/${id}`, { method: "DELETE" });
+
+}
+
+
+export async function uploadDexImage(session, id, file){
+
+    const bytes = new Uint8Array(await file.arrayBuffer());
+
+    let binary = "";
+
+    for(let i = 0; i < bytes.length; i += 0x8000){
+        binary += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+    }
+
+    return (await request(session, `/dex/image/${id}`, {
+        method: "PUT",
+        body: JSON.stringify({ base64: btoa(binary), type: file.type })
+    })).entry;
+
+}
+
+
+export async function removeDexImage(session, id){
+
+    return (await request(session, `/dex/image/${id}`, { method: "DELETE" })).entry;
+
+}
+
+
+// La dirección pública de la imagen. Solo responde si está descubierta.
+export function dexImageUrl(id, version){
+
+    return `${API}/dex/image/${id}?v=${version}`;
+
+}
+
+
+// Una imagen aún oculta pide sesión, y un <img> no manda cabeceras: el panel
+// la baja con fetch y la enseña como blob.
+export async function dexImageBlob(session, id, version){
+
+    const response = await fetch(dexImageUrl(id, version), {
+        headers: { Authorization: `Bearer ${session.token}` }
+    });
+
+    if(!response.ok){
+        throw new ApiError(response.status, "Couldn't load the picture");
+    }
+
+    return URL.createObjectURL(await response.blob());
+
+}
+
+
+export async function publicDex(){
+
+    const response = await fetch(`${API}/dex`);
+
+    if(!response.ok){
+        throw new ApiError(response.status, `Error ${response.status}`);
+    }
+
+    return (await response.json()).entries;
+
+}

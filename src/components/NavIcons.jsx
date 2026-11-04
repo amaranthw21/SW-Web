@@ -123,6 +123,21 @@ export function PokemonIcon(){
 
 
 // Items: una mochila.
+// Pokédex: el aparato, con su pantalla y la lucecita de arriba.
+export function PokedexIcon(){
+
+    return (
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <rect x="5" y="3" width="14" height="18" rx="2" />
+            <rect x="8" y="9" width="8" height="6" rx="1" />
+            <circle cx="8.5" cy="5.8" r="1.1" fill="currentColor" stroke="none" />
+            <path d="M9 18h6" />
+        </svg>
+    );
+
+}
+
+
 export function ItemsIcon(){
 
     return (
