@@ -7,11 +7,13 @@
 // GitHub lo encuentra. Se decidió así a propósito; para los jugadores basta
 // con que la web no lo enseñe.
 //
-// Hay dos clases de enemigo:
-//   - Amalgamas: fusiones, con hasta 3 tipos. Su tamaño fija cuántos
-//     movimientos tienen.
+// Cada enemigo tiene un tamaño: pequeño, mediano, grande, mini jefe o jefe. El
+// tamaño fija cuántos movimientos tiene, y separa las dos clases:
+//   - Amalgamas (todo menos jefe): fusiones, con hasta 3 tipos.
 //   - Jefes: como un Pokémon normal, 1 o 2 tipos más un tipo oculto, una
 //     habilidad y 6 movimientos.
+// `kind` (amalgam o boss) sale siempre del tamaño; se guarda solo por
+// comodidad al leer el JSON.
 
 
 export const KINDS = [
@@ -23,11 +25,10 @@ export const KINDS = [
 export const SIZES = [
     { value: "small",    label: "Small",     moves: [2, 3] },
     { value: "medium",   label: "Medium",    moves: [4, 5] },
-    { value: "large",    label: "Large",     moves: [6, 6] },
-    { value: "miniboss", label: "Mini boss", moves: [6, 6] }
+    { value: "big",      label: "Big",       moves: [6, 6] },
+    { value: "miniboss", label: "Mini boss", moves: [6, 6] },
+    { value: "boss",     label: "Boss",      moves: [6, 6] }
 ];
-
-const BOSS_MOVES = [6, 6];
 
 export const MAX_MOVES = 6;
 
@@ -60,10 +61,6 @@ export function typeSlots(kind){
 
 export function moveRange(entry){
 
-    if(entry.kind === "boss"){
-        return BOSS_MOVES;
-    }
-
     return SIZES.find(size => size.value === entry.size)?.moves ?? [1, MAX_MOVES];
 
 }
@@ -78,7 +75,7 @@ export function sizeLabel(size){
 
 export function emptyEntry(kind = "amalgam"){
 
-    return cleanEntry({ kind });
+    return cleanEntry({ size: kind === "boss" ? "boss" : "small" });
 
 }
 
@@ -110,7 +107,8 @@ function flags(value, count){
 //
 export function cleanEntry(input = {}){
 
-    const kind = input.kind === "boss" ? "boss" : "amalgam";
+    const size = SIZES.some(item => item.value === input.size) ? input.size : "small";
+    const kind = size === "boss" ? "boss" : "amalgam";
     const number = Number.isInteger(input.number) ? input.number : null;
 
     const types = texts(input.types, typeSlots(kind), 40);
@@ -121,7 +119,7 @@ export function cleanEntry(input = {}){
         kind,
         number,
         name: text(input.name, 80),
-        size: kind === "amalgam" ? (SIZES.some(size => size.value === input.size) ? input.size : "small") : null,
+        size,
         types,
         hiddenType: kind === "boss" ? text(input.hiddenType, 40) : "",
         ability: text(input.ability, 80),

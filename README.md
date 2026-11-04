@@ -30,10 +30,11 @@ the 404 page, the Bethath islands and these sections:
   - **Blessings** (`/items/blessings`) — the blessings legendaries grant.
     Content in `src/content/blessings/`.
 
-- **Pokédex** (`/pokedex`) — the dungeon enemies: amalgams (fusions with up
-  to three types; their size — small, medium, large or mini boss — sets how
-  many moves they have) and bosses (one or two types, a hidden type, an
-  ability and six moves). Players only see what the moderators have marked as
+- **Pokédex** (`/pokedex`) — the dungeon enemies. Each has a size (small,
+  medium, big, mini boss or boss) that sets how many moves it has. Everything
+  but a boss is an amalgam (a fusion with up to three types); bosses are like
+  normal Pokémon (one or two types, a hidden type, an ability, six moves).
+  Players only see what the moderators have marked as
   discovered, and the rest shows as ???. Hidden data isn't secret: it's in
   the repo for anyone who looks on GitHub, and that's fine. Content in
   `src/content/pokedex/` (one JSON per enemy, named with a random id) and

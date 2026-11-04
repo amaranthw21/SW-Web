@@ -1,9 +1,8 @@
 import { FilterBar, FilterSelect } from "../components/FilterBar";
 import TypeBadge from "../components/TypeBadge";
-import { TYPES } from "../data/pokemon";
 import pokedex from "../data/pokedex";
 import asset from "../lib/asset";
-import { KINDS, SIZES, sizeLabel } from "../lib/pokedex";
+import { SIZES, sizeLabel } from "../lib/pokedex";
 import normalize from "../lib/normalize";
 import useDocumentTitle from "../lib/useDocumentTitle";
 import useFilters from "../lib/useFilters";
@@ -13,7 +12,7 @@ import useFilters from "../lib/useFilters";
 // lo que se sabe de ellos, en una tabla como la de Pokémon. Solo sale lo que
 // los moderadores han marcado como descubierto (ver src/lib/pokedex.js).
 
-const FILTERS = ["q", "kind", "size", "type", "place"];
+const FILTERS = ["q", "size", "place"];
 
 
 function Unknown(){
@@ -30,19 +29,14 @@ function dexNumber(number){
 }
 
 
-function matches(entry, { q, kind, size, type, place }){
+function matches(entry, { q, size, place }){
 
     if(q && !normalize(`${entry.name ?? ""} ${entry.number ?? ""} ${entry.ability ?? ""}`).includes(normalize(q))){
         return false;
     }
 
-    // Solo cuenta lo descubierto: filtrar por un tipo oculto lo destaparía.
-    if(type && !entry.types.includes(type) && entry.hiddenType !== type){
-        return false;
-    }
-
-    return (!kind || entry.kind === kind)
-        && (!size || entry.size === size)
+    // Solo cuenta lo descubierto: filtrar por una mazmorra oculta la destaparía.
+    return (!size || entry.size === size)
         && (!place || (entry.dungeons ?? []).includes(place));
 
 }
@@ -82,10 +76,8 @@ export default function Pokedex(){
                 active={active}
                 onClear={() => FILTERS.forEach(key => set(key, ""))}
             >
-                <FilterSelect label="Kind" value={values.kind} options={KINDS} onChange={value => set("kind", value)} />
                 <FilterSelect label="Size" value={values.size} options={SIZES} onChange={value => set("size", value)} />
-                <FilterSelect label="Type" value={values.type} options={TYPES} onChange={value => set("type", value)} />
-                <FilterSelect label="Found in" value={values.place} options={places} onChange={value => set("place", value)} />
+                <FilterSelect label="Dungeon" value={values.place} options={places} onChange={value => set("place", value)} />
             </FilterBar>
 
             {
@@ -108,7 +100,7 @@ export default function Pokedex(){
                                         <th scope="col">Type</th>
                                         <th scope="col">Ability</th>
                                         <th scope="col">Moves</th>
-                                        <th scope="col">Found in</th>
+                                        <th scope="col">Dungeon</th>
                                     </tr>
                                 </thead>
 
@@ -159,7 +151,7 @@ function DexRow({ entry }){
                             <span className="data-table__inline-num">#{dexNumber(entry.number)}</span>
                             {entry.name ?? <Unknown />}
                             <span className={`data-table__tag${boss ? " data-table__tag--boss" : ""}`}>
-                                {boss ? "Boss" : sizeLabel(entry.size)}
+                                {sizeLabel(entry.size)}
                             </span>
                         </div>
 
@@ -206,7 +198,7 @@ function DexRow({ entry }){
                     )}
             </td>
 
-            <td data-label="Found in">
+            <td data-label="Dungeon">
                 {entry.dungeons
                     ? entry.dungeons.length
                         ? <ul className="data-table__places">{entry.dungeons.map(place => <li key={place}>{place}</li>)}</ul>

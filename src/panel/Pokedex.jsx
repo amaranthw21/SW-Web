@@ -158,7 +158,7 @@ function DexList({ entries, loading }){
                                         <span>
                                             <span className="dex-row__number">{entry.number ?? "—"}</span>
                                             {entry.name || <em className="panel-muted">Unnamed</em>}
-                                            {entry.kind === "amalgam" && <span className="panel-muted"> · {sizeLabel(entry.size)}</span>}
+                                            <span className="panel-muted"> · {sizeLabel(entry.size)}</span>
                                         </span>
                                         <span className={`dex-row__state${entry.revealed.seen ? " is-seen" : ""}`}>
                                             {entry.revealed.seen ? `Seen · ${found}/${total} discovered` : "Not seen yet"}
@@ -483,23 +483,15 @@ function DexEditor({ session, id, kind, paths, onSaved, onDeleted, onError }){
                             />
                         </Field>
 
-                        <Field label="Kind">
-                            <select className="panel-input" value={entry.kind} onChange={event => change({ kind: event.target.value })}>
-                                {KINDS.map(item => <option key={item.value} value={item.value}>{item.label}</option>)}
+                        <Field label="Size" hint="Sets how many moves it has, and a boss gets a hidden type. Always shown.">
+                            <select className="panel-input" value={entry.size} onChange={event => change({ size: event.target.value })}>
+                                {SIZES.map(size => (
+                                    <option key={size.value} value={size.value}>
+                                        {size.label} ({size.moves[0] === size.moves[1] ? size.moves[0] : size.moves.join("–")} moves)
+                                    </option>
+                                ))}
                             </select>
                         </Field>
-
-                        {!boss && (
-                            <Field label="Size" hint="Sets how many moves it has. Always shown.">
-                                <select className="panel-input" value={entry.size} onChange={event => change({ size: event.target.value })}>
-                                    {SIZES.map(size => (
-                                        <option key={size.value} value={size.value}>
-                                            {size.label} ({size.moves[0] === size.moves[1] ? size.moves[0] : size.moves.join("–")} moves)
-                                        </option>
-                                    ))}
-                                </select>
-                            </Field>
-                        )}
                     </div>
 
                     <Field label="Name" hint={boss ? undefined : "The fusion's name."} reveal={<Reveal on={entry.revealed.name} onChange={value => reveal("name", value)} />}>
@@ -570,7 +562,7 @@ function DexEditor({ session, id, kind, paths, onSaved, onDeleted, onError }){
 
                     <Field
                         label={`Moves (${filledMoves}/${minMoves === maxMoves ? maxMoves : `${minMoves}–${maxMoves}`})`}
-                        hint={filledMoves < minMoves ? `${boss ? "A boss" : `A ${sizeLabel(entry.size).toLowerCase()} amalgam`} has ${minMoves === maxMoves ? minMoves : `${minMoves} to ${maxMoves}`} moves.` : undefined}
+                        hint={filledMoves < minMoves ? `${boss ? "A boss" : `A ${sizeLabel(entry.size).toLowerCase()}`} has ${minMoves === maxMoves ? minMoves : `${minMoves} to ${maxMoves}`} moves.` : undefined}
                     >
                         <div className="dex-slots dex-slots--list">
                             {entry.moves.map((move, i) => (
@@ -595,7 +587,7 @@ function DexEditor({ session, id, kind, paths, onSaved, onDeleted, onError }){
                         <textarea className="panel-input panel-input--area" rows={4} value={entry.description} onChange={event => change({ description: event.target.value })} />
                     </Field>
 
-                    <Field label="Found in" hint="The dungeons where it shows up." reveal={<Reveal on={entry.revealed.dungeons} onChange={value => reveal("dungeons", value)} />}>
+                    <Field label="Dungeon" hint="The dungeons where it shows up." reveal={<Reveal on={entry.revealed.dungeons} onChange={value => reveal("dungeons", value)} />}>
                         <div className="dex-dungeons">
                             {[...new Set([...DUNGEONS.map(item => item.label), ...entry.dungeons])].map(name => (
                                 <label key={name} className="panel-switch">
@@ -656,7 +648,7 @@ function DexEditor({ session, id, kind, paths, onSaved, onDeleted, onError }){
 // solo se ajusta lo que depende de la clase y el tamaño.
 function cleanForm(entry){
 
-    const kind = entry.kind === "boss" ? "boss" : "amalgam";
+    const kind = entry.size === "boss" ? "boss" : "amalgam";
     const slots = typeSlots(kind);
     const types = Array.from({ length: slots }, (_, i) => entry.types[i] ?? "");
     const clean = cleanEntry(entry);

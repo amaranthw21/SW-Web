@@ -34,7 +34,7 @@ export default function DexCard({ entry, image }){
             <header className="dex-card__head">
                 <span className="dex-card__number">{dexNumber(entry.number)}</span>
                 <h3 className="dex-card__name">{entry.name ?? <Unknown />}</h3>
-                <span className="dex-card__kind">{boss ? "Boss" : sizeLabel(entry.size)}</span>
+                <span className="dex-card__kind">{sizeLabel(entry.size)}</span>
             </header>
 
             <div className="dex-card__art">
@@ -74,7 +74,7 @@ export default function DexCard({ entry, image }){
                         )}
                 </dd>
 
-                <dt>Found in</dt>
+                <dt>Dungeon</dt>
                 <dd>{entry.dungeons ? (entry.dungeons.length ? entry.dungeons.join(", ") : "—") : <Unknown />}</dd>
 
             </dl>
