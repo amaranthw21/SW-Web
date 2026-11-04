@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 
-import { HALL, LOOPS, ROOM, SIZES, generateDungeon, randomSeed } from "./dungeon/generate";
+import { HALL, HAZARD, HAZARDS, LOOPS, ROOM, SIZES, generateDungeon, randomSeed } from "./dungeon/generate";
 
 
 // Generador de mazmorras para los moderadores: saca un piso al estilo Mundo
@@ -19,6 +19,8 @@ export function Dungeons(){
     const seed = params.get("seed");
     const size = SIZES[params.get("size")] ? params.get("size") : "medium";
     const loops = LOOPS[params.get("loops")] ? params.get("loops") : "some";
+    const hazardParam = params.get("hazard");
+    const hazardChoice = HAZARDS[hazardParam] || hazardParam === "none" ? hazardParam : "random";
 
     // Sin semilla en la dirección (recién llegado) se pone una al azar.
     useEffect(() => {
@@ -31,7 +33,11 @@ export function Dungeons(){
         }
     }, [seed, setParams]);
 
-    const dungeon = useMemo(() => seed ? generateDungeon({ seed, size, loops }) : null, [seed, size, loops]);
+    const dungeon = useMemo(
+        () => seed ? generateDungeon({ seed, size, loops, hazard: hazardChoice }) : null,
+        [seed, size, loops, hazardChoice]
+    );
+    const hazard = dungeon?.hazard ? HAZARDS[dungeon.hazard] : null;
 
     useEffect(() => {
         if(dungeon && canvas.current){
@@ -93,6 +99,17 @@ export function Dungeons(){
                 </label>
 
                 <label className="dungeon-control">
+                    <span className="panel-field__label">Hazard</span>
+                    <select className="panel-input" value={hazardChoice} onChange={event => update({ hazard: event.target.value })}>
+                        <option value="random">Random</option>
+                        {Object.entries(HAZARDS).map(([key, item]) => (
+                            <option key={key} value={key}>{item.label} ({item.ability.toLowerCase()})</option>
+                        ))}
+                        <option value="none">None</option>
+                    </select>
+                </label>
+
+                <label className="dungeon-control">
                     <span className="panel-field__label">Seed</span>
                     {/* Se aplica al pulsar Enter o salir del campo, no con cada
                         letra, para poder borrarla entera y escribir otra. */}
@@ -133,6 +150,9 @@ export function Dungeons(){
                             <li><i className="dungeon-swatch dungeon-swatch--stairs" /> Stairs</li>
                             <li><i className="dungeon-swatch dungeon-swatch--room" /> Room</li>
                             <li><i className="dungeon-swatch dungeon-swatch--hall" /> Corridor</li>
+                            {hazard && (
+                                <li><i className={`dungeon-swatch dungeon-swatch--${dungeon.hazard}`} /> {hazard.label}</li>
+                            )}
                         </ul>
 
                         <p className="panel-muted">
@@ -140,6 +160,12 @@ export function Dungeons(){
                         </p>
 
                     </div>
+
+                    {hazard && (
+                        <div className="panel-note dungeon-hazard">
+                            <strong>{hazard.label}</strong>: {hazardSummary(dungeon, hazard)}
+                        </div>
+                    )}
 
                     <div className="panel-row dungeon-actions">
                         <label className="dungeon-toggle">
@@ -163,6 +189,28 @@ export function Dungeons(){
 }
 
 
+const plural = (count, word) => `${count} ${word}${count === 1 ? "" : "s"}`;
+
+
+function hazardSummary(dungeon, hazard){
+
+    const rooms = dungeon.hazardRooms.length;
+    const halls = dungeon.hazardHalls.length;
+
+    if(!rooms && !halls){
+        return "nothing could be closed off here without blocking the way to the stairs, so this floor has none. Try another seed.";
+    }
+
+    const parts = [
+        rooms && `${plural(rooms, "room")} can only be entered`,
+        halls && `${plural(halls, "corridor")} can only be crossed`
+    ].filter(Boolean);
+
+    return `${parts.join(" and ")} with ${hazard.ability.toLowerCase()}. Without it you can still reach the stairs and walk ${Math.round(dungeon.walkable * 100)}% of the floor.`;
+
+}
+
+
 const TILE = 16;
 
 const COLORS = {
@@ -176,6 +224,47 @@ const COLORS = {
     stairs: "#e8e2d4",
     stairsShade: "#5a4a32"
 };
+
+// Fondo y detalle de cada peligro (los mismos que las muestras de la leyenda).
+const HAZARD_COLORS = {
+    chasm: { base: "#08060c", detail: "rgba(140, 110, 200, 0.35)" },
+    water: { base: "#2f6fb3", detail: "rgba(190, 225, 255, 0.55)" },
+    lava: { base: "#c2410c", detail: "rgba(255, 210, 90, 0.75)" }
+};
+
+
+// Un poco de dibujo en cada tile de peligro para que no parezca solo un color:
+// ondas en el agua, grietas brillantes en la lava, un borde tenue en el abismo.
+function drawHazardTile(ctx, hazard, px, py){
+
+    const colors = HAZARD_COLORS[hazard];
+
+    ctx.fillStyle = colors.base;
+    ctx.fillRect(px, py, TILE, TILE);
+
+    ctx.strokeStyle = colors.detail;
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+
+    if(hazard === "water"){
+        for(const offset of [5, 11]){
+            ctx.moveTo(px + 2, py + offset);
+            ctx.quadraticCurveTo(px + 5, py + offset - 3, px + 8, py + offset);
+            ctx.quadraticCurveTo(px + 11, py + offset + 3, px + 14, py + offset);
+        }
+    } else if(hazard === "lava"){
+        ctx.moveTo(px + 3, py + 4);
+        ctx.lineTo(px + 8, py + 8);
+        ctx.lineTo(px + 6, py + 13);
+        ctx.moveTo(px + 8, py + 8);
+        ctx.lineTo(px + 13, py + 6);
+    } else {
+        ctx.rect(px + 3.5, py + 3.5, TILE - 7, TILE - 7);
+    }
+
+    ctx.stroke();
+
+}
 
 
 function draw(canvas, dungeon, { showPath, showGrid }){
@@ -196,6 +285,8 @@ function draw(canvas, dungeon, { showPath, showGrid }){
             if(tile === ROOM || tile === HALL){
                 ctx.fillStyle = tile === ROOM ? COLORS.room : COLORS.hall;
                 ctx.fillRect(x * TILE, y * TILE, TILE, TILE);
+            } else if(tile === HAZARD){
+                drawHazardTile(ctx, dungeon.hazard, x * TILE, y * TILE);
             }
         }
     }

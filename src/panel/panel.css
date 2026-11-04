@@ -1416,3 +1416,29 @@ select.panel-input option {
     flex: 1;
 
 }
+
+.dungeon-swatch--chasm {
+
+    border: 1px solid rgba(140, 110, 200, 0.6);
+
+    background: #08060c;
+
+}
+
+.dungeon-swatch--water {
+
+    background: #2f6fb3;
+
+}
+
+.dungeon-swatch--lava {
+
+    background: #c2410c;
+
+}
+
+.dungeon-hazard {
+
+    margin-bottom: 12px;
+
+}
