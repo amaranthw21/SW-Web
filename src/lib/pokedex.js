@@ -1,13 +1,11 @@
-// La Pokédex: los enemigos de las mazmorras. La usan las dos mitades:
-//   - el Worker (worker/src/dex.js), que la guarda en su KV y decide qué se
-//     ve desde fuera;
-//   - la web (la página pública y el editor del panel).
-// Sin dependencias, para que el Worker la pueda importar tal cual.
+// La Pokédex: los enemigos de las mazmorras. Cada uno es un JSON en
+// src/content/pokedex/<id>.json (su imagen, en public/dex/) y se edita en el
+// panel (?view=pokedex). La página pública (/pokedex) solo enseña lo que los
+// moderadores han marcado como descubierto; lo demás sale como ???.
 //
-// No vive en src/content/ como el resto del contenido porque el repo es
-// público: lo que aún no se ha descubierto estaría a la vista en GitHub. En el
-// KV solo lo leen los moderadores, y la web pública recibe únicamente lo que
-// tenga marcado como descubierto.
+// Lo oculto no es secreto de verdad: el repo es público y quien sepa mirar en
+// GitHub lo encuentra. Se decidió así a propósito; para los jugadores basta
+// con que la web no lo enseñe.
 //
 // Hay dos clases de enemigo:
 //   - Amalgamas: fusiones, con hasta 3 tipos. Su tamaño fija cuántos
@@ -35,11 +33,13 @@ export const MAX_MOVES = 6;
 
 export const MAX_IMAGE_BYTES = 2 * 1024 * 1024;
 
-export const IMAGE_TYPES = ["image/png", "image/jpeg", "image/webp", "image/gif", "image/avif"];
+export const FOLDER = "src/content/pokedex";
 
-// Los ids van en la dirección de la web pública, así que son al azar y no
-// salen del nombre: un nombre aún oculto no puede asomar por ahí.
-export const ID_PATTERN = /^[a-z0-9]{8,32}$/;
+export const IMAGE_FOLDER = "dex";
+
+// Los ids son el nombre del archivo. Van al azar y no salen del nombre del
+// enemigo: así se puede crear antes de saber cómo se llama, y renombrarlo no
+// cambia el archivo.
 
 
 export function newId(){
@@ -108,7 +108,6 @@ function flags(value, count){
 // el KV o una entrada a medias). Las listas de lo descubierto se alinean con
 // las de tipos y movimientos: `revealed.moves[2]` es el tercer movimiento.
 //
-// La imagen no se toca aquí: la pone el Worker al subirla.
 export function cleanEntry(input = {}){
 
     const kind = input.kind === "boss" ? "boss" : "amalgam";
@@ -130,6 +129,7 @@ export function cleanEntry(input = {}){
         moves,
         description: text(input.description, 4000),
         dungeons: texts(input.dungeons, 30, 80).filter(Boolean),
+        image: text(input.image, 300),
         notes: text(input.notes, 4000),
         revealed: {
             seen: revealed.seen === true,
@@ -154,7 +154,7 @@ export function cleanEntry(input = {}){
 // movimientos…) para que se vea cuántos quedan por descubrir. Una entrada que
 // nadie ha visto aún no sale.
 //
-// Las notas de los moderadores no salen nunca.
+// Las notas de los moderadores no salen en la web.
 export function publicView(entry){
 
     const { revealed } = entry;
@@ -177,7 +177,7 @@ export function publicView(entry){
         number: entry.number,
         size: entry.size,
         name: show(revealed.name, entry.name),
-        image: revealed.image && entry.image ? entry.image.version : null,
+        image: show(revealed.image, entry.image),
         types: slots(entry.types, revealed.types),
         hiddenType: entry.kind === "boss" ? show(revealed.hiddenType, entry.hiddenType) : null,
         ability: show(revealed.ability, entry.ability),

@@ -34,13 +34,14 @@ the 404 page, the Bethath islands and these sections:
   to three types; their size — small, medium, large or mini boss — sets how
   many moves they have) and bosses (one or two types, a hidden type, an
   ability and six moves). Players only see what the moderators have marked as
-  discovered, and the rest shows as ???. Unlike everything else it doesn't
-  live in `src/content/`: the repo is public, so it's kept in the panel
-  Worker's KV store and edited at `/panel?view=pokedex`. Shared logic (what's
-  public, the move limits) in `src/lib/pokedex.js`; routes in
-  `worker/src/dex.js`. Locally it's stored in `.dev-pokedex/` (not in git).
+  discovered, and the rest shows as ???. Hidden data isn't secret: it's in
+  the repo for anyone who looks on GitHub, and that's fine. Content in
+  `src/content/pokedex/` (one JSON per enemy, named with a random id) and
+  pictures in `public/dex/`. It has its own editor at `/panel?view=pokedex`
+  instead of a collection in `config.yml`; shared logic in
+  `src/lib/pokedex.js`.
 
-All of the rest was imported once from the server's spreadsheet with
+All the other sections were imported once from the server's spreadsheet with
 `scripts/import-excel.py` and are edited in the panel from then on. Running the
 script again overwrites any edits made in the panel. Owners (the OWNER
 column) were added later with `scripts/import-owners.py`, which only fills the

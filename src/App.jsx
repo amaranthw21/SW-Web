@@ -19,7 +19,7 @@ const Pokemon = lazy(() => import("./pages/Pokemon"));
 const Items = lazy(() => import("./pages/Items"));
 const Belongings = lazy(() => import("./pages/Belongings"));
 const Blessings = lazy(() => import("./pages/Blessings"));
-// Los datos de la Pokédex llegan del Worker, no del build.
+// La Pokédex trae sus JSON (src/content/pokedex).
 const Pokedex = lazy(() => import("./pages/Pokedex"));
 // La ficha de una isla trae la lista de Pokémon (para sus legendarios).
 const Island = lazy(() => import("./pages/Island"));

@@ -11,8 +11,6 @@ import { readFile, writeFile, readdir, mkdir, rm, rmdir } from "node:fs/promises
 import { dirname, join, relative } from "node:path";
 import { randomBytes } from "node:crypto";
 
-import { dexRoute } from "../worker/src/dex.js";
-
 const ALLOWED_PREFIXES = ["src/content/", "public/"];
 
 const TYPES = {
@@ -54,7 +52,7 @@ async function walk(root, dir){
 }
 
 
-async function rawBody(req){
+async function body(req){
 
     const chunks = [];
 
@@ -62,70 +60,7 @@ async function rawBody(req){
         chunks.push(chunk);
     }
 
-    return Buffer.concat(chunks);
-
-}
-
-
-async function body(req){
-
-    return JSON.parse((await rawBody(req)).toString("utf8"));
-
-}
-
-
-// La Pokédex en local: en archivos de .dev-pokedex/ (fuera de git) en vez del
-// KV del Worker. Las rutas son las mismas, las de worker/src/dex.js.
-function fileStore(dir){
-
-    const index = join(dir, "entries.json");
-    const image = id => join(dir, "images", id);
-
-    const read = async () => JSON.parse(await readFile(index, "utf8").catch(() => "{}"));
-
-    const write = async entries => {
-        await mkdir(dir, { recursive: true });
-        await writeFile(index, JSON.stringify(entries, null, 2));
-    };
-
-    return {
-        list: async () => Object.values(await read()),
-        get: async id => (await read())[id] ?? null,
-        put: async entry => write({ ...await read(), [entry.id]: entry }),
-        remove: async id => {
-            const { [id]: _removed, ...rest } = await read();
-            await write(rest);
-        },
-        getImage: async id => {
-            try {
-                return { bytes: await readFile(image(id)), type: await readFile(`${image(id)}.type`, "utf8") };
-            } catch {
-                return null;
-            }
-        },
-        putImage: async (id, bytes, type) => {
-            await mkdir(join(dir, "images"), { recursive: true });
-            await writeFile(image(id), bytes);
-            await writeFile(`${image(id)}.type`, type);
-        },
-        removeImage: async id => {
-            await rm(image(id), { force: true });
-            await rm(`${image(id)}.type`, { force: true });
-        }
-    };
-
-}
-
-
-function devAuth(request){
-
-    const user = request.headers.get("authorization")?.replace(/^Bearer local\./, "");
-
-    if(!user || user.startsWith("Bearer")){
-        throw Object.assign(new Error("Not signed in"), { status: 401 });
-    }
-
-    return user;
+    return JSON.parse(Buffer.concat(chunks).toString("utf8"));
 
 }
 
@@ -207,18 +142,6 @@ export default function panelDevApi(){
                         invites.delete(data.token);
                         users.set(invite.user, data.password);
                         return send(res, 200, session(invite.user));
-                    }
-
-                    if(url.pathname.startsWith("/dex")){
-                        const request = new Request(url, {
-                            method: req.method,
-                            headers: Object.entries(req.headers).filter(([, value]) => typeof value === "string"),
-                            body: ["GET", "HEAD"].includes(req.method) ? undefined : await rawBody(req)
-                        });
-                        const response = await dexRoute(request, { store: fileStore(join(root, ".dev-pokedex")), auth: devAuth });
-                        res.statusCode = response.status;
-                        response.headers.forEach((value, key) => res.setHeader(key, value));
-                        return res.end(Buffer.from(await response.arrayBuffer()));
                     }
 
                     if(req.method === "GET" && url.pathname === "/raw"){

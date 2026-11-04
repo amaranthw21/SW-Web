@@ -19,7 +19,7 @@
 //   GITHUB_TOKEN    secreto  token fine-grained: Contents y Pull requests (RW) en SW-Web
 //   SESSION_SECRET  secreto  cadena larga al azar para firmar las sesiones
 //   ADMINS          secreto  las dueñas (worker/hash-password.mjs)
-//   PANEL           KV       cuentas, invitaciones y la Pokédex
+//   PANEL           KV       cuentas e invitaciones
 //   REPO, BASE_BRANCH, EDIT_BRANCH, ALLOWED_ORIGINS   en wrangler.toml
 //
 // Si EDIT_BRANCH es igual que BASE_BRANCH, se guarda directo y se publica en el
@@ -34,8 +34,6 @@ const MIN_PASSWORD = 10;
 const ITERATIONS = 100000;
 
 const USER_NAME = /^[a-z0-9][a-z0-9_.-]{1,31}$/;
-
-import { dexRoute, kvStore } from "./dex.js";
 
 const ALLOWED_PREFIXES = ["src/content/", "public/"];
 
@@ -107,14 +105,6 @@ async function route(request, env){
     // repo es público de todas formas.
     if(method === "GET" && pathname === "/raw"){
         return raw(checkPath(url.searchParams.get("path")), env);
-    }
-
-    // La Pokédex no va al repo sino al KV (ver src/lib/pokedex.js). Parte de
-    // sus rutas son públicas, así que cada una decide si pide sesión.
-    const dex = await dexRoute(request, { store: kvStore(env.PANEL), auth: req => authenticate(req, env) });
-
-    if(dex){
-        return dex;
     }
 
     const user = await authenticate(request, env);

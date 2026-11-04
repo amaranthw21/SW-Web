@@ -1,43 +1,61 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 
 import DexCard from "../components/DexCard";
 import { TYPES } from "../data/pokemon";
 import normalize from "../lib/normalize";
-import { KINDS, MAX_IMAGE_BYTES, SIZES, cleanEntry, emptyEntry, moveRange, newId, publicView, revealCount, sizeLabel, typeSlots } from "../lib/pokedex";
+import { FOLDER, IMAGE_FOLDER, KINDS, MAX_IMAGE_BYTES, SIZES, cleanEntry, emptyEntry, moveRange, newId, publicView, revealCount, sizeLabel, typeSlots } from "../lib/pokedex";
 
-import { ApiError, deleteDex, dexImageBlob, listDex, removeDexImage, saveDex, uploadDexImage } from "./api";
+import { ApiError, deleteFiles, listFiles, rawUrl, readJson, uploadFile, writeJson } from "./api";
 import { DUNGEONS } from "./dungeon/loot";
+import { bundledData, imagePath } from "./schema";
 
 
 // La Pokédex en el panel: los moderadores ven y editan todo, y marcan qué ha
-// descubierto ya la gente. Lo marcado es lo único que llega a la página
-// pública (/pokedex). No va por GitHub como el resto: se guarda al momento en
-// el Worker (ver src/lib/pokedex.js).
+// descubierto ya la gente. Lo marcado es lo único que sale en la página
+// pública (/pokedex). Se guarda como el resto del contenido: un JSON por
+// enemigo en src/content/pokedex/ (ver src/lib/pokedex.js).
 //
 // Dónde se está va en la dirección: ?view=pokedex, &id=<id> para una entrada,
 // &new=amalgam|boss para crear una.
 export function Pokedex({ session, onError }){
 
     const [params] = useSearchParams();
-    const [entries, setEntries] = useState(null);
+    const [paths, setPaths] = useState(null);
+
+    // Lo guardado en esta sesión y lo leído de GitHub: tapa al contenido del
+    // build, que no tiene lo creado después del último deploy.
+    const [fresh, setFresh] = useState({});
 
     useEffect(() => {
-        listDex(session).then(setEntries).catch(onError);
+        listFiles(session).then(setPaths).catch(onError);
     }, [session, onError]);
+
+    const files = useMemo(
+        () => (paths ?? []).filter(path => path.startsWith(`${FOLDER}/`) && path.endsWith(".json")),
+        [paths]
+    );
+
+    // Lo que aún no está en el build se lee de GitHub, para la lista.
+    useEffect(() => {
+        const missing = files.filter(path => !bundledData(path));
+        Promise.all(missing.map(path => readJson(session, path).then(result => [path, result.data])))
+            .then(read => read.length && setFresh(current => ({ ...Object.fromEntries(read), ...current })))
+            .catch(onError);
+    }, [session, files, onError]);
 
     const id = params.get("id");
     const creating = params.get("new");
 
-    if(!entries){
+    if(!paths){
         return <p className="panel-muted">Loading…</p>;
     }
 
     if(id || creating){
 
-        const existing = entries.find(entry => entry.id === id);
+        const path = `${FOLDER}/${id}.json`;
 
-        if(id && !existing){
+        if(id && !files.includes(path)){
             return (
                 <div className="panel-card">
                     <p>This entry doesn't exist any more.</p>
@@ -50,22 +68,33 @@ export function Pokedex({ session, onError }){
             <DexEditor
                 key={id ?? `new-${creating}`}
                 session={session}
-                initial={existing ?? { ...emptyEntry(creating), id: newId(), updated: null, image: null }}
-                isNew={!existing}
-                onSaved={entry => setEntries(current => [...current.filter(item => item.id !== entry.id), entry])}
-                onDeleted={removed => setEntries(current => current.filter(item => item.id !== removed))}
+                id={id}
+                kind={creating}
+                paths={paths}
+                onSaved={(savedPath, data) => {
+                    setFresh(current => ({ ...current, [savedPath]: data }));
+                    setPaths(current => current.includes(savedPath) ? current : [...current, savedPath]);
+                }}
+                onDeleted={removed => setPaths(current => current.filter(path => !removed.includes(path)))}
                 onError={onError}
             />
         );
 
     }
 
-    return <DexList entries={entries} />;
+    const entries = files
+        .map(path => {
+            const data = fresh[path] ?? bundledData(path);
+            return data && { ...cleanEntry(data), id: path.split("/").pop().replace(".json", "") };
+        })
+        .filter(Boolean);
+
+    return <DexList entries={entries} loading={entries.length < files.length} />;
 
 }
 
 
-function DexList({ entries }){
+function DexList({ entries, loading }){
 
     const [params, setParams] = useSearchParams();
     const [query, setQuery] = useState("");
@@ -85,7 +114,7 @@ function DexList({ entries }){
             <div className="panel-note">
                 Players see an enemy on the <Link to="/pokedex" target="_blank">Pokédex page</Link> once
                 it's marked <strong>Seen</strong>, and only the parts marked <strong>Discovered</strong>.
-                Everything else shows as ???. Changes reach the page within a minute; they don't wait for a deploy.
+                Everything else shows as ???.
             </div>
 
             <div className="panel-toolbar">
@@ -115,8 +144,10 @@ function DexList({ entries }){
                 onChange={event => setQuery(event.target.value)}
             />
 
+            {loading && <p className="panel-muted">Loading the entries that aren't on the site yet…</p>}
+
             {shown.length === 0
-                ? <p className="panel-muted">{query ? "Nothing matches." : "None yet."}</p>
+                ? !loading && <p className="panel-muted">{query ? "Nothing matches." : "None yet."}</p>
                 : (
                     <ul className="panel-entries">
                         {shown.map(entry => {
@@ -193,40 +224,36 @@ function TypeSelect({ value, onChange, placeholder = "—" }){
 }
 
 
-function DexEditor({ session, initial, isNew, onSaved, onDeleted, onError }){
+function DexEditor({ session, id, kind, paths, onSaved, onDeleted, onError }){
 
     const [, setParams] = useSearchParams();
-    const [entry, setEntry] = useState(initial);
-    const [saved, setSaved] = useState(!isNew);
+    const location = useLocation();
+    const [entryId] = useState(() => id ?? newId());
+    const [entry, setEntry] = useState(id ? null : emptyEntry(kind));
+    const [sha, setSha] = useState(null);
+    const [saved, setSaved] = useState(Boolean(id));
     const [dirty, setDirty] = useState(false);
     const [busy, setBusy] = useState(false);
-    const [status, setStatus] = useState("");
+    // Al crear, la dirección pasa a la de la entrada y el editor se abre de
+    // nuevo: el aviso de guardado viaja con ella.
+    const [status, setStatus] = useState(location.state?.status ?? "");
     const [problem, setProblem] = useState("");
-    const [loaded, setLoaded] = useState(null);
 
-    const version = entry.image?.version;
-    const image = version && loaded?.version === version ? loaded.url : null;
+    const path = `${FOLDER}/${entryId}.json`;
 
-    // La imagen se baja con la sesión (puede estar aún oculta).
+    // Lo que se abre para editar se lee siempre fresco, con su sha: si otro
+    // guarda después, GitHub rechaza el guardado en vez de pisarlo.
     useEffect(() => {
 
-        if(!version){
+        if(!id){
             return;
         }
 
-        let url;
-        let live = true;
+        readJson(session, `${FOLDER}/${id}.json`)
+            .then(result => { setEntry(cleanEntry(result.data)); setSha(result.sha); })
+            .catch(onError);
 
-        dexImageBlob(session, entry.id, version)
-            .then(next => { url = next; if(live) setLoaded({ version, url: next }); })
-            .catch(() => {});
-
-        return () => {
-            live = false;
-            if(url) URL.revokeObjectURL(url);
-        };
-
-    }, [session, entry.id, version]);
+    }, [session, id, onError]);
 
     // Avisa antes de cerrar la pestaña con cambios sin guardar.
     useEffect(() => {
@@ -242,6 +269,18 @@ function DexEditor({ session, initial, isNew, onSaved, onDeleted, onError }){
         return () => window.removeEventListener("beforeunload", warn);
 
     }, [dirty]);
+
+    const preview = useMemo(
+        () => entry && publicView({ ...entry, id: entryId, revealed: { ...entry.revealed, seen: true } }),
+        [entry, entryId]
+    );
+
+    if(!entry){
+        return <p className="panel-muted">Loading…</p>;
+    }
+
+    const imageFile = imagePath(entry.image, path);
+    const image = imageFile ? rawUrl(imageFile) : null;
 
     function change(update){
         setEntry(current => {
@@ -316,14 +355,16 @@ function DexEditor({ session, initial, isNew, onSaved, onDeleted, onError }){
         setProblem("");
 
         try {
-            const next = await saveDex(session, entry);
-            setEntry(next);
+            const data = cleanEntry(entry);
+            const result = await writeJson(session, path, data, sha, `${saved ? "Update" : "Create"} Pokédex “${data.name}”`);
+            setSha(result.sha);
             setSaved(true);
             setDirty(false);
-            setStatus("Saved. Players see it within a minute.");
-            onSaved(next);
-            if(isNew){
-                setParams({ view: "pokedex", id: next.id }, { replace: true });
+            const message = session.review ? "Saved to the pull request." : "Saved. It'll be live in a couple of minutes.";
+            setStatus(message);
+            onSaved(path, data);
+            if(!id){
+                setParams({ view: "pokedex", id: entryId }, { replace: true, state: { status: message } });
             }
         } catch(err){
             fail(err);
@@ -335,15 +376,21 @@ function DexEditor({ session, initial, isNew, onSaved, onDeleted, onError }){
 
     async function remove(){
 
-        if(!window.confirm(`Delete “${entry.name || "this entry"}” from the Pokédex? This can't be undone.`)){
+        const when = session.review
+            ? "It disappears from the site when the pull request is merged."
+            : "It disappears from the site in a couple of minutes.";
+
+        if(!window.confirm(`Delete “${entry.name || "this entry"}” from the Pokédex?\n\n${when}`)){
             return;
         }
 
         setBusy(true);
 
         try {
-            await deleteDex(session, entry.id);
-            onDeleted(entry.id);
+            // Su imagen se va con ella, si está en el repo.
+            const files = [path, ...(imageFile && paths.includes(imageFile) ? [imageFile] : [])];
+            await deleteFiles(session, files, sha, `Delete Pokédex “${entry.name}”`);
+            onDeleted(files);
             setDirty(false);
             setParams({ view: "pokedex", kind: entry.kind }, { replace: true });
         } catch(err){
@@ -353,11 +400,16 @@ function DexEditor({ session, initial, isNew, onSaved, onDeleted, onError }){
 
     }
 
-    // La imagen se guarda sola, aparte del resto: solo trae de vuelta la
-    // imagen y la versión nueva, para no pisar lo que haya sin guardar.
+    // La imagen se sube al momento a public/dex/, con un nombre nuevo cada vez
+    // (subir encima de otra pediría su sha). La entrada la apunta al guardar.
     async function pickImage(file){
 
         if(!file){
+            return;
+        }
+
+        if(file === "remove"){
+            change({ image: "" });
             return;
         }
 
@@ -366,16 +418,16 @@ function DexEditor({ session, initial, isNew, onSaved, onDeleted, onError }){
             return;
         }
 
+        const ext = file.name.split(".").pop().toLowerCase();
+        const name = `${entryId}-${Date.now().toString(36)}.${ext}`;
+
         setBusy(true);
         setProblem("");
 
         try {
-            const next = file === "remove"
-                ? await removeDexImage(session, entry.id)
-                : await uploadDexImage(session, entry.id, file);
-            setEntry(current => ({ ...current, image: next.image, updated: next.updated }));
-            onSaved({ ...next });
-            setStatus(file === "remove" ? "Picture removed." : "Picture saved.");
+            await uploadFile(session, `public/${IMAGE_FOLDER}/${name}`, file, `Upload Pokédex picture ${name}`);
+            change({ image: `/${IMAGE_FOLDER}/${name}` });
+            setStatus("Picture uploaded. Save to keep it.");
         } catch(err){
             fail(err);
         } finally {
@@ -387,7 +439,6 @@ function DexEditor({ session, initial, isNew, onSaved, onDeleted, onError }){
     const boss = entry.kind === "boss";
     const [minMoves, maxMoves] = moveRange(entry);
     const filledMoves = entry.moves.filter(Boolean).length;
-    const preview = useMemo(() => publicView({ ...entry, revealed: { ...entry.revealed, seen: true } }), [entry]);
     const typeCount = typeSlots(entry.kind);
 
     return (
@@ -458,31 +509,27 @@ function DexEditor({ session, initial, isNew, onSaved, onDeleted, onError }){
                     <Field label="Picture" reveal={<Reveal on={entry.revealed.image} onChange={value => reveal("image", value)} />}>
                         <div className="panel-image">
                             <div className="panel-image__thumb">
-                                {image ? <img src={image} alt="" /> : entry.image ? "…" : "None"}
+                                {image ? <img src={image} alt="" /> : "None"}
                             </div>
                             <div className="panel-image__side">
-                                {saved
-                                    ? (
-                                        <div className="panel-row">
-                                            <label className={`panel-btn${busy ? " is-disabled" : ""}`}>
-                                                {entry.image ? "Replace" : "Upload"}
-                                                <input
-                                                    type="file"
-                                                    accept="image/png,image/jpeg,image/webp,image/gif,image/avif"
-                                                    hidden
-                                                    disabled={busy}
-                                                    onChange={event => { pickImage(event.target.files[0]); event.target.value = ""; }}
-                                                />
-                                            </label>
-                                            {entry.image && (
-                                                <button type="button" className="panel-btn panel-btn--ghost" disabled={busy} onClick={() => pickImage("remove")}>
-                                                    Remove
-                                                </button>
-                                            )}
-                                        </div>
-                                    )
-                                    : <span className="panel-muted">Save the entry first, then add its picture.</span>}
-                                <span className="panel-muted">PNG, JPEG, WebP, GIF or AVIF, under 2 MB. It's saved straight away.</span>
+                                <div className="panel-row">
+                                    <label className={`panel-btn${busy ? " is-disabled" : ""}`}>
+                                        {entry.image ? "Replace" : "Upload"}
+                                        <input
+                                            type="file"
+                                            accept="image/png,image/jpeg,image/webp,image/gif,image/avif"
+                                            hidden
+                                            disabled={busy}
+                                            onChange={event => { pickImage(event.target.files[0]); event.target.value = ""; }}
+                                        />
+                                    </label>
+                                    {entry.image && (
+                                        <button type="button" className="panel-btn panel-btn--ghost" disabled={busy} onClick={() => pickImage("remove")}>
+                                            Remove
+                                        </button>
+                                    )}
+                                </div>
+                                <span className="panel-muted">PNG, JPEG, WebP, GIF or AVIF, under 2 MB. Square with a transparent background looks best in the table.</span>
                             </div>
                         </div>
                     </Field>
@@ -592,7 +639,7 @@ function DexEditor({ session, initial, isNew, onSaved, onDeleted, onError }){
                         </button>
                     )}
                     <button type="button" className="panel-btn panel-btn--primary" disabled={busy || (!dirty && saved)} onClick={save}>
-                        {busy ? "Saving…" : isNew && !saved ? "Create" : "Save"}
+                        {busy ? "Saving…" : saved ? "Save" : "Create"}
                     </button>
                 </div>
             </div>

@@ -112,13 +112,3 @@ Run `npx wrangler deploy` after changing it.
   reload instead of overwriting the first one's changes.
 - Lists and the choices for "Related legendaries" come from the last deploy, so
   an entry created in the panel shows its file name until the next deploy.
-
-## Pokédex
-
-The Pokédex (dungeon enemies) is stored in the same KV namespace (`PANEL`),
-not in the repo, so undiscovered enemies stay secret. Keys: `dex:<id>` for each
-entry and `dex-image:<id>` for its picture. `GET /dex` is public and only
-returns what moderators marked as discovered; everything else needs a session.
-See `src/dex.js`. Changes take effect without a deploy of the site, but the
-Worker itself must be redeployed once (`npx wrangler deploy`) for the routes to
-exist. There is no backup of the KV: if it's lost, so is the Pokédex.

@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
-
 import { FilterBar, FilterSelect } from "../components/FilterBar";
 import TypeBadge from "../components/TypeBadge";
 import { TYPES } from "../data/pokemon";
-import { API, dexImageUrl, publicDex } from "../panel/api";
+import pokedex from "../data/pokedex";
+import asset from "../lib/asset";
 import { KINDS, SIZES, sizeLabel } from "../lib/pokedex";
 import normalize from "../lib/normalize";
 import useDocumentTitle from "../lib/useDocumentTitle";
@@ -11,11 +10,8 @@ import useFilters from "../lib/useFilters";
 
 
 // La Pokédex pública: los enemigos de las mazmorras que ya se han visto, con
-// lo que se sabe de ellos, en una tabla como la de Pokémon. No sale del build
-// como el resto de páginas sino del Worker del panel, que solo entrega lo que
-// los moderadores han marcado como descubierto (ver src/lib/pokedex.js). Así,
-// lo que aún es secreto no está en ningún sitio al que llegue un jugador, ni
-// siquiera en el repo.
+// lo que se sabe de ellos, en una tabla como la de Pokémon. Solo sale lo que
+// los moderadores han marcado como descubierto (ver src/lib/pokedex.js).
 
 const FILTERS = ["q", "kind", "size", "type", "place"];
 
@@ -57,22 +53,7 @@ export default function Pokedex(){
     useDocumentTitle("Pokédex");
 
     const { values, set, active } = useFilters(FILTERS);
-    const [entries, setEntries] = useState(null);
-    const [error, setError] = useState(API ? "" : "The Pokédex isn't available right now.");
-
-    useEffect(() => {
-
-        if(!API){
-            return;
-        }
-
-        publicDex()
-            .then(setEntries)
-            .catch(() => setError("Couldn't load the Pokédex. Try again in a moment."));
-
-    }, []);
-
-    const all = entries ?? [];
+    const all = pokedex;
     const shown = all.filter(entry => matches(entry, values));
 
     // Los lugares del filtro, de lo ya descubierto.
@@ -107,11 +88,7 @@ export default function Pokedex(){
                 <FilterSelect label="Found in" value={values.place} options={places} onChange={value => set("place", value)} />
             </FilterBar>
 
-            {error && <p className="data-table__empty">{error}</p>}
-
-            {!error && !entries && <p className="data-table__empty">Loading…</p>}
-
-            {entries && (
+            {
                 shown.length === 0
                     ? (
                         <p className="data-table__empty">
@@ -144,7 +121,7 @@ export default function Pokedex(){
                         </div>
 
                     )
-            )}
+            }
 
         </div>
 
@@ -171,7 +148,7 @@ function DexRow({ entry }){
 
                     <span className="data-table__sprite">
                         {entry.image
-                            ? <img src={dexImageUrl(entry.id, entry.image)} alt="" loading="lazy" width="56" height="56" />
+                            ? <img src={asset(entry.image)} alt="" loading="lazy" width="56" height="56" />
                             : <span className="dex-unknown" aria-hidden="true">?</span>}
                     </span>
 
