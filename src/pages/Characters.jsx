@@ -32,7 +32,7 @@ const ISLANDS = islands
 
 function matches(character, { q, island, status }){
 
-    const text = [character.name, character.fusionName, character.player, character.nameOrigin].join(" ");
+    const text = [character.name, character.title, character.fusionName, character.player, character.nameOrigin].join(" ");
 
     return (!q || normalize(text).includes(normalize(q)))
         && (!island || islandsOf(character).includes(island))

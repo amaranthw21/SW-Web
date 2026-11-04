@@ -10,6 +10,7 @@ import {
     LoreIcon,
     CharactersIcon,
     PokemonIcon,
+    PokedexIcon,
     ItemsIcon,
     CreditsIcon,
     AdminIcon,
@@ -58,6 +59,11 @@ const SECTIONS = [
         to: "/pokemon",
         label: "Pokémon",
         icon: <PokemonIcon />
+    },
+    {
+        to: "/pokedex",
+        label: "Pokédex",
+        icon: <PokedexIcon />
     },
     {
         to: "/items",

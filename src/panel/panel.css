@@ -1243,3 +1243,653 @@ select.panel-input option {
     accent-color: var(--accent);
 
 }
+
+
+/* ───────── Herramientas ───────── */
+
+.panel-subhead {
+
+    margin: 28px 0 12px;
+
+    color: var(--panel-muted);
+
+    font-size: 0.85em;
+    font-weight: normal;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+}
+
+
+/* ───────── Generador de mazmorras ───────── */
+
+.dungeon-controls {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px 16px;
+
+    margin-bottom: 16px;
+
+}
+
+.dungeon-control {
+
+    display: flex;
+    flex: 1 1 140px;
+    flex-direction: column;
+    gap: 6px;
+
+}
+
+.dungeon-control .panel-field__label {
+
+    margin: 0;
+
+}
+
+.dungeon-new {
+
+    flex: 0 0 auto;
+
+}
+
+.dungeon-map {
+
+    overflow: hidden;
+
+    border: 1px solid var(--panel-line);
+    border-radius: 12px;
+
+    background: #1c150d;
+
+}
+
+.dungeon-map canvas {
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    /* Que los tiles se vean nítidos al escalar, no borrosos. */
+    image-rendering: pixelated;
+
+}
+
+.dungeon-info {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 16px;
+
+    margin: 12px 0;
+
+}
+
+.dungeon-info p {
+
+    margin: 0;
+
+}
+
+.dungeon-legend {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+}
+
+.dungeon-legend li {
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+}
+
+.dungeon-swatch {
+
+    display: inline-block;
+
+    width: 14px;
+    height: 14px;
+
+    border-radius: 3px;
+
+}
+
+.dungeon-swatch--start {
+
+    border: 2px solid #fff;
+    border-radius: 50%;
+
+    background: #4f9cf0;
+
+}
+
+.dungeon-swatch--stairs {
+
+    background: linear-gradient(135deg, #e8e2d4 50%, #5a4a32 50%);
+
+}
+
+.dungeon-swatch--room {
+
+    background: #c9b48a;
+
+}
+
+.dungeon-swatch--hall {
+
+    background: #a38e66;
+
+}
+
+.dungeon-actions {
+
+    flex-wrap: wrap;
+
+}
+
+.dungeon-toggle {
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    cursor: pointer;
+
+}
+
+.dungeon-spacer {
+
+    flex: 1;
+
+}
+
+.dungeon-swatch--chasm {
+
+    border: 1px solid rgba(140, 110, 200, 0.6);
+
+    background: #08060c;
+
+}
+
+.dungeon-swatch--water {
+
+    background: #2f6fb3;
+
+}
+
+.dungeon-swatch--lava {
+
+    background: #c2410c;
+
+}
+
+.dungeon-hazard {
+
+    margin-bottom: 12px;
+
+}
+
+.dungeon-control--wide {
+
+    flex-basis: 200px;
+
+}
+
+.dungeon-swatch--item {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 16px;
+    height: 16px;
+
+    border: 2px solid #e8e2d4;
+
+    background: #2b1d0e;
+
+    color: #fff;
+
+    font-size: 10px;
+    font-style: normal;
+    font-weight: bold;
+
+}
+
+.dungeon-items {
+
+    margin-top: 16px;
+
+}
+
+.dungeon-items__list {
+
+    margin: 12px 0 0;
+    padding: 0;
+
+    list-style: none;
+
+}
+
+.dungeon-items__list li {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+
+    padding: 6px 0;
+
+}
+
+.dungeon-items__list li + li {
+
+    border-top: 1px solid var(--panel-line);
+
+}
+
+.dungeon-items__number {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 24px;
+
+    border: 2px solid;
+    border-radius: 5px;
+
+    background: #2b1d0e;
+
+    font-size: 0.85em;
+    font-weight: bold;
+
+}
+
+.dungeon-items__list img {
+
+    object-fit: contain;
+
+}
+
+.dungeon-items__name {
+
+    color: var(--accent);
+
+    font-weight: bold;
+
+}
+
+.dungeon-items__tag {
+
+    padding: 1px 8px;
+
+    border: 1px solid var(--panel-line);
+    border-radius: 999px;
+
+    color: var(--panel-muted);
+
+    font-size: 0.85em;
+
+}
+
+
+/* ───────── Pokédex ───────── */
+
+.dex-tabs {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+}
+
+.dex-search {
+
+    margin-bottom: 12px;
+
+}
+
+.dex-row__number {
+
+    display: inline-block;
+
+    min-width: 3em;
+
+    color: var(--panel-muted);
+
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+}
+
+.dex-row__state {
+
+    color: var(--panel-muted);
+
+    font-size: 0.85em;
+
+    white-space: nowrap;
+
+}
+
+.dex-row__state.is-seen {
+
+    color: var(--accent);
+
+}
+
+/* El formulario y, al lado, la ficha tal como la ven los jugadores. El panel
+   es estrecho (860px), así que aquí se ensancha un poco. */
+.panel-main:has(.dex-editor) {
+
+    max-width: 1180px;
+
+}
+
+.dex-editor {
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    align-items: start;
+    gap: 24px;
+
+}
+
+.dex-preview {
+
+    position: sticky;
+    top: 80px;
+
+}
+
+.dex-preview .panel-subhead {
+
+    margin-top: 0;
+
+}
+
+@media (max-width: 900px) {
+
+    .dex-editor {
+
+        grid-template-columns: minmax(0, 1fr);
+
+    }
+
+    .dex-preview {
+
+        position: static;
+
+    }
+
+}
+
+.dex-seen {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 14px;
+
+}
+
+.dex-seen__all {
+
+    margin-left: auto;
+
+}
+
+.dex-pair {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+
+}
+
+.dex-field__head {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+
+}
+
+.dex-reveal {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 3px 10px 3px 6px;
+
+    border: 1px solid var(--panel-line);
+    border-radius: 999px;
+
+    color: var(--panel-muted);
+
+    font-size: 0.82em;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+}
+
+.dex-reveal.is-on {
+
+    border-color: var(--accent);
+
+    color: var(--accent);
+
+}
+
+.dex-slots {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 8px;
+
+}
+
+.dex-slots--list {
+
+    grid-template-columns: minmax(0, 1fr);
+
+}
+
+.dex-slot {
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+}
+
+.dex-slot .panel-input {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+.dex-dungeons {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 6px 14px;
+
+}
+
+.panel-entries a.dex-row {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 12px;
+
+}
+
+.dungeon-swatch--enemy {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 16px;
+    height: 16px;
+
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+
+    background: #c62828;
+
+    color: #fff;
+
+    font-size: 10px;
+    font-style: normal;
+    font-weight: bold;
+
+}
+
+.dungeon-items__number--enemy {
+
+    border-color: #fff;
+    border-radius: 50%;
+
+    background: #c62828;
+
+}
+
+.dungeon-items h2 {
+
+    margin-top: 0;
+
+}
+
+.dungeon-items p a {
+
+    color: var(--accent);
+
+}
+
+
+/* ───────── Mazmorras guardadas ───────── */
+
+.dungeon-saved {
+
+    margin-bottom: 16px;
+
+}
+
+.dungeon-saved h2,
+.dungeon-saved-head h2 {
+
+    margin-top: 0;
+
+}
+
+.dungeon-saved__list {
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+}
+
+.dungeon-saved__list li {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 12px;
+
+    padding: 8px 0;
+
+}
+
+.dungeon-saved__list li + li {
+
+    border-top: 1px solid var(--panel-line);
+
+}
+
+.dungeon-saved__name {
+
+    color: var(--accent);
+
+    font-weight: bold;
+
+}
+
+.dungeon-saved__list .dungeon-delete {
+
+    margin-left: auto;
+
+}
+
+.dungeon-save {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px 16px;
+
+    margin-bottom: 16px;
+
+}
+
+.dungeon-save__problem {
+
+    flex-basis: 100%;
+
+    margin: 0;
+
+}
+
+.dungeon-saved-head {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-bottom: 16px;
+
+}
+
+.dungeon-saved-head p {
+
+    margin: 4px 0 0;
+
+}
+
+.dungeon-delete {
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px 8px;
+
+}

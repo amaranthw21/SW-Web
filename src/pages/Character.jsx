@@ -425,6 +425,7 @@ function Infobox({ character, identities, island, guarded, species, onOpenPortra
         ["Name", character.name && (
             <>
                 {character.name}
+                {character.title?.trim() && <span className="character-origin character-origin--title">{character.title}</span>}
                 {character.nameOrigin?.trim() && <span className="character-origin">{character.nameOrigin}</span>}
             </>
         )],
@@ -572,6 +573,8 @@ export default function Character(){
             <div className="country-layout">
 
                 <div className="country-layout__top">
+
+                    {character.title?.trim() && <p className="character-title">{character.title}</p>}
 
                     {tagline && <p className="character-tagline">{tagline}</p>}
 
