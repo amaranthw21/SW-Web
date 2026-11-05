@@ -1,0 +1,36 @@
+{
+  "kind": "amalgam",
+  "number": 2,
+  "name": "Placeholder",
+  "size": "small",
+  "types": [
+    "Grass",
+    "",
+    ""
+  ],
+  "hiddenType": "",
+  "ability": "Placeholder",
+  "abilityText": "",
+  "moves": [],
+  "description": "Placeholder",
+  "dungeons": [
+    "Vien Forest"
+  ],
+  "image": "",
+  "notes": "",
+  "revealed": {
+    "seen": false,
+    "name": false,
+    "image": false,
+    "types": [
+      false,
+      false,
+      false
+    ],
+    "hiddenType": false,
+    "ability": false,
+    "moves": [],
+    "description": false,
+    "dungeons": false
+  }
+}
