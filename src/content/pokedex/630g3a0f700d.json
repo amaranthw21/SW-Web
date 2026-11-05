@@ -1,22 +1,28 @@
 {
   "kind": "amalgam",
-  "number": 6,
-  "name": "Placeholder",
-  "size": "small",
+  "number": 7,
+  "name": "Rosabuckfly",
+  "size": "medium",
   "types": [
     "Grass",
-    "",
-    ""
+    "Bug",
+    "Normal"
   ],
   "hiddenType": "",
-  "ability": "Placeholder",
-  "abilityText": "",
-  "moves": [],
+  "ability": "Serene Grace",
+  "abilityText": "Serene Grace will double the chance of a move having an additional effect.",
+  "moves": [
+    "Placeholder",
+    "Placeholder",
+    "Placeholder",
+    "Placeholder",
+    "Placeholder"
+  ],
   "description": "Placeholder",
   "dungeons": [
     "Vien Forest"
   ],
-  "image": "",
+  "image": "/dex/630g3a0f700d-mw3o9587.png",
   "notes": "",
   "revealed": {
     "seen": false,
@@ -29,7 +35,13 @@
     ],
     "hiddenType": false,
     "ability": false,
-    "moves": [],
+    "moves": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
     "description": false,
     "dungeons": false
   }
