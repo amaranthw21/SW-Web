@@ -5,6 +5,7 @@ import Paragraphs from "../components/Paragraphs";
 import { parsePosition } from "../lib/framing";
 
 import { uploadFile, rawUrl } from "./api";
+import { ENEMIES_BY_ID, enemyName } from "./dungeon/enemies";
 import {
     bundledPaths, bundledData, defaultValue, emptyObject, entriesOf, fillTemplate,
     imagePath, isRequired, uploadTarget
@@ -182,6 +183,55 @@ function SelectWidget({ id, field, value, onChange }){
             {options.map(option => <option key={option.value} value={option.value}>{option.label}</option>)}
             {/* Un valor que ya no está en la lista se conserva en vez de borrarse. */}
             {value && !options.some(option => option.value === value) && <option value={value}>{value}</option>}
+        </select>
+    );
+
+}
+
+
+// Varias opciones a la vez (`options`, como en select): guarda la lista de
+// valores marcados, en el orden de las opciones.
+function CheckboxesWidget({ field, value, onChange }){
+
+    const options = field.options.map(option =>
+        typeof option === "object" ? option : { label: option, value: option }
+    );
+    const checked = Array.isArray(value) ? value : [];
+
+    return (
+        <div className="panel-checks">
+            {options.map(option => (
+                <label key={option.value} className="panel-switch">
+                    <input
+                        type="checkbox"
+                        checked={checked.includes(option.value)}
+                        onChange={event => onChange(options
+                            .map(item => item.value)
+                            .filter(item => item === option.value ? event.target.checked : checked.includes(item)))}
+                    />
+                    {option.label}
+                </label>
+            ))}
+        </div>
+    );
+
+}
+
+
+// Una entrada de la Pokédex de un tamaño (`size`: miniboss o boss). La
+// Pokédex no es una colección de config.yml, así que no vale relation.
+function PokedexWidget({ id, field, value, onChange }){
+
+    const options = Object.values(ENEMIES_BY_ID)
+        .filter(entry => !field.size || entry.size === field.size)
+        .map(entry => ({ value: entry.id, label: enemyName(entry) }))
+        .sort((a, b) => a.label.localeCompare(b.label));
+
+    return (
+        <select id={id} className="panel-input" value={value ?? ""} onChange={event => onChange(event.target.value)}>
+            <option value="">{options.length ? "—" : "— None in the Pokédex yet —"}</option>
+            {options.map(option => <option key={option.value} value={option.value}>{option.label}</option>)}
+            {value && !options.some(option => option.value === value) && <option value={value}>{value} (not in the Pokédex)</option>}
         </select>
     );
 
@@ -615,6 +665,8 @@ const WIDGETS = {
     color: ColorWidget,
     image: ImageWidget,
     relation: RelationWidget,
+    checkboxes: CheckboxesWidget,
+    pokedex: PokedexWidget,
     focus: FocusWidget,
     list: ListWidget
 };

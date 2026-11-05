@@ -7,11 +7,11 @@ import { ENEMIES_BY_ID, enemyName } from "./enemies";
 // ya con nombre, imagen y demás. Sale del generador o de una mazmorra
 // guardada; las vistas no distinguen de dónde viene.
 //
-// Las mazmorras guardadas van en src/content/dungeons/<id>.json, con el mapa
+// Los pisos guardados van en src/content/dungeon-runs/<id>.json, con el mapa
 // entero y una copia de cada objeto y enemigo: así no cambian aunque luego se
 // toque la lista de objetos, la Pokédex o el propio generador.
 
-export const FOLDER = "src/content/dungeons";
+export const FOLDER = "src/content/dungeon-runs";
 
 const CHARS = { [WALL]: "#", [ROOM]: ".", [HALL]: ",", [HAZARD]: "~" };
 const TILES = Object.fromEntries(Object.entries(CHARS).map(([tile, char]) => [char, Number(tile)]));
@@ -75,7 +75,8 @@ export function toSnapshot(floor, { name, place, settings, user }){
         hazard: floor.hazard,
         stats: floor.stats,
         items: floor.items,
-        enemies: floor.enemies
+        enemies: floor.enemies,
+        details: floor.details ?? null
     };
 
 }
@@ -95,7 +96,8 @@ export function fromSnapshot(data){
         hazard: data.hazard ?? null,
         stats: data.stats,
         items: data.items ?? [],
-        enemies: data.enemies ?? []
+        enemies: data.enemies ?? [],
+        details: data.details ?? null
     };
 
 }

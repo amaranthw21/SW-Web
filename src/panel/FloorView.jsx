@@ -89,6 +89,8 @@ export function FloorView({ floor, fileName, enemies, items, linkItems = true })
                 </div>
             )}
 
+            {floor.details && <DetailsCard details={floor.details} linkItems={linkItems} />}
+
             <div className="panel-row dungeon-actions">
                 <label className="dungeon-toggle">
                     <input type="checkbox" checked={showPath} onChange={event => setShowPath(event.target.checked)} /> Show the shortest way
@@ -154,6 +156,83 @@ export function FloorView({ floor, fileName, enemies, items, linkItems = true })
             )}
 
         </>
+
+    );
+
+}
+
+
+// Lo que viene de la ficha de la mazmorra: el gimmick, el clima o terreno y
+// el evento de este piso, y sus jefes.
+function DetailsCard({ details, linkItems }){
+
+    const boss = (title, entry) => entry && (
+        <div className="dungeon-details__boss">
+            <span className="panel-field__label">{title}</span>
+            <span className="dungeon-details__boss-name">
+                {entry.image && <img src={asset(entry.image)} alt="" width="32" height="32" loading="lazy" />}
+                {linkItems
+                    ? <Link to={`/panel?view=pokedex&id=${entry.id}`} className="dungeon-items__name">{entry.name}</Link>
+                    : <span className="dungeon-items__name">{entry.name}</span>}
+                {entry.types.map(type => <TypeBadge key={type} type={type} />)}
+            </span>
+        </div>
+    );
+
+    return (
+
+        <section className="panel-card dungeon-details">
+
+            <h2>{details.name || "This floor"}</h2>
+
+            {details.gimmick && (
+                <div className="dungeon-details__block">
+                    <span className="panel-field__label">Gimmick</span>
+                    <strong>{details.gimmick}</strong>
+                    {details.gimmickText && <p className="dungeon-details__text">{details.gimmickText}</p>}
+                </div>
+            )}
+
+            {details.conditionCount > 0 && (
+                <div className="dungeon-details__block">
+                    <span className="panel-field__label">Weather / terrain</span>
+                    {/* Los pisos guardados antes de las explicaciones traen solo el nombre. */}
+                    {details.condition
+                        ? (
+                            <>
+                                <strong>{details.condition.name ?? details.condition}</strong>
+                                {details.condition.description && <p className="dungeon-details__text">{details.condition.description}</p>}
+                            </>
+                        )
+                        : <span className="panel-muted">None on this floor</span>}
+                </div>
+            )}
+
+            {details.eventCount > 0 && (
+                <div className="dungeon-details__block">
+                    <span className="panel-field__label">Event</span>
+                    {details.event
+                        ? (
+                            <>
+                                <strong>
+                                    {details.event.name}
+                                    {details.event.kind && <span className="dungeon-items__tag dungeon-details__kind">{details.event.kind === "common" ? "Common" : "Unique"}</span>}
+                                </strong>
+                                {details.event.description && <p className="dungeon-details__text">{details.event.description}</p>}
+                            </>
+                        )
+                        : <span className="panel-muted">None on this floor</span>}
+                </div>
+            )}
+
+            {(details.miniboss || details.boss) && (
+                <div className="dungeon-details__bosses">
+                    {boss("Mini boss", details.miniboss)}
+                    {boss("Boss", details.boss)}
+                </div>
+            )}
+
+        </section>
 
     );
 

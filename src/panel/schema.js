@@ -156,6 +156,7 @@ export function defaultValue(field){
         case "list": return [];
         case "object": return emptyObject(field.fields);
         case "relation": return field.multiple ? [] : "";
+        case "checkboxes": return [];
         default: return "";
     }
 
