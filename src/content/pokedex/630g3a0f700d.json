@@ -1,6 +1,6 @@
 {
   "kind": "amalgam",
-  "number": 12,
+  "number": 7,
   "name": "Placeholder",
   "size": "medium",
   "types": [
@@ -16,7 +16,7 @@
   "dungeons": [
     "Vien Forest"
   ],
-  "image": "",
+  "image": "/dex/630g3a0f700d-mw3p8fgr.png",
   "notes": "",
   "revealed": {
     "seen": false,
