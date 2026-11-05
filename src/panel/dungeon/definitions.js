@@ -9,6 +9,23 @@ export const DEFINITIONS_FOLDER = "src/content/dungeons";
 
 const modules = import.meta.glob("../../content/dungeons/*.json", { eager: true, import: "default" });
 
+// Los eventos comunes, que pueden pasar en cualquier mazmorra: un solo
+// archivo (colección dungeon_events de config.yml).
+export const COMMON_EVENTS_FILE = "src/content/dungeon-events.json";
+
+const common = import.meta.glob("../../content/dungeon-events.json", { eager: true, import: "default" });
+
+export const BUNDLED_COMMON_EVENTS = Object.values(common)[0] ?? { events: [] };
+
+
+export function cleanEvents(data){
+
+    return (Array.isArray(data?.events) ? data.events : [])
+        .filter(event => event?.name?.trim())
+        .map(event => ({ name: event.name.trim(), description: event.description ?? "" }));
+
+}
+
 
 export const BUNDLED_DEFINITIONS = Object.fromEntries(
     Object.entries(modules).map(([path, data]) => [`${DEFINITIONS_FOLDER}/${path.split("/").pop()}`, data])
@@ -45,7 +62,11 @@ export function cleanDefinition(data){
         gimmick: data?.gimmick ?? "",
         gimmickText: data?.gimmickText ?? "",
         hazards: list(data?.hazards).filter(Boolean),
-        conditions: list(data?.conditions).map(String).map(item => item.trim()).filter(Boolean),
+        // Antes eran solo nombres; ahora, nombre y explicación.
+        conditions: list(data?.conditions)
+            .map(item => typeof item === "string" ? { name: item, description: "" } : { name: item?.name ?? "", description: item?.description ?? "" })
+            .map(item => ({ ...item, name: item.name.trim() }))
+            .filter(item => item.name),
         events: list(data?.events).filter(event => event?.name),
         miniboss: data?.miniboss ?? "",
         boss: data?.boss ?? ""

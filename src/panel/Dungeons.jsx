@@ -7,7 +7,10 @@ import { bundledData } from "./schema";
 import { HAZARDS, LOOPS, SIZES, generateDungeon, pickFrom, randomSeed } from "./dungeon/generate";
 import { dungeonLabel, dungeonOptions, lootFor } from "./dungeon/loot";
 import { ENEMIES_BY_ID, enemiesFor, enemyName } from "./dungeon/enemies";
-import { BUNDLED_DEFINITIONS, DEFINITIONS_FOLDER, cleanDefinition, definitionFor } from "./dungeon/definitions";
+import {
+    BUNDLED_COMMON_EVENTS, BUNDLED_DEFINITIONS, COMMON_EVENTS_FILE, DEFINITIONS_FOLDER,
+    cleanDefinition, cleanEvents, definitionFor
+} from "./dungeon/definitions";
 import { FOLDER, floorFromDungeon, fromSnapshot, idOf, newDungeonPath, toSnapshot } from "./dungeon/floor";
 
 
@@ -17,7 +20,8 @@ import { FOLDER, floorFromDungeon, fromSnapshot, idOf, newDungeonPath, toSnapsho
 // tamaño, bucles, mazmorra), así que copiar el enlace basta para que otro vea
 // el mismo mapa. Al elegir una mazmorra, los objetos y enemigos salen de la
 // lista de objetos y de la Pokédex, y si tiene ficha (colección Dungeons),
-// sus peligros, climas o terrenos, eventos y jefes se cargan solos.
+// sus peligros, climas o terrenos, eventos y jefes se cargan solos. El evento
+// de cada piso sale de los únicos de la mazmorra y de los comunes.
 //
 // Un piso se puede guardar (src/content/dungeon-runs/) para volver a él mientras
 // se juega, y borrar cuando la mazmorra se completa. Uno guardado se abre con
@@ -54,8 +58,13 @@ export function Dungeons({ session, onError }){
         [paths, definitionFiles, fresh]
     );
 
-    // Lo que no está en el build se lee de GitHub. Las fichas, siempre: se
-    // editan y el build puede tener una versión vieja.
+    const commonEvents = useMemo(
+        () => cleanEvents(fresh[COMMON_EVENTS_FILE] ?? BUNDLED_COMMON_EVENTS),
+        [fresh]
+    );
+
+    // Lo que no está en el build se lee de GitHub. Las fichas y los eventos
+    // comunes, siempre: se editan y el build puede tener una versión vieja.
     const readDefinitions = useRef(false);
 
     useEffect(() => {
@@ -63,7 +72,8 @@ export function Dungeons({ session, onError }){
             return;
         }
         readDefinitions.current = true;
-        Promise.all(definitionFiles.map(path => readJson(session, path).then(result => [path, result.data])))
+        const toRead = [...definitionFiles, ...(paths.includes(COMMON_EVENTS_FILE) ? [COMMON_EVENTS_FILE] : [])];
+        Promise.all(toRead.map(path => readJson(session, path).then(result => [path, result.data])))
             .then(read => read.length && setFresh(current => ({ ...current, ...Object.fromEntries(read) })))
             .catch(onError);
     }, [session, paths, definitionFiles, onError]);
@@ -118,7 +128,7 @@ export function Dungeons({ session, onError }){
 
             <SavedList saved={paths ? saved : null} session={session} onDeleted={onDeleted} onError={onError} />
 
-            <Generator session={session} definitions={definitions} onSaved={onSaved} onError={onError} />
+            <Generator session={session} definitions={definitions} commonEvents={commonEvents} onSaved={onSaved} onError={onError} />
 
         </>
 
@@ -254,7 +264,7 @@ function choose(param, list, seed, salt){
 }
 
 
-function Generator({ session, definitions, onSaved, onError }){
+function Generator({ session, definitions, commonEvents, onSaved, onError }){
 
     const [params, setParams] = useSearchParams();
     const navigate = useNavigate();
@@ -283,6 +293,14 @@ function Generator({ session, definitions, onSaved, onError }){
     const conditionParam = params.get("condition") ?? "random";
     const eventParam = params.get("event") ?? "random";
 
+    // Los eventos posibles en este piso: los únicos de la mazmorra y los
+    // comunes, todos juntos. Si un nombre se repite, gana el único.
+    const events = useMemo(() => {
+        const unique = (definition?.events ?? []).map(event => ({ ...event, kind: "unique" }));
+        const names = new Set(unique.map(event => event.name));
+        return [...unique, ...commonEvents.filter(event => !names.has(event.name)).map(event => ({ ...event, kind: "common" }))];
+    }, [definition, commonEvents]);
+
     // Sin semilla en la dirección (recién llegado) se pone una al azar.
     useEffect(() => {
         if(!seed){
@@ -308,9 +326,11 @@ function Generator({ session, definitions, onSaved, onError }){
             foes: enemiesFor(label)
         }));
 
-        return { ...generated, details: definition ? detailsOf(definition, seed, conditionParam, eventParam) : null };
+        const details = definition || events.length ? detailsOf(definition, events, seed, conditionParam, eventParam) : null;
 
-    }, [seed, size, loops, hazardChoice, hazardPool, place, label, definition, conditionParam, eventParam]);
+        return { ...generated, details };
+
+    }, [seed, size, loops, hazardChoice, hazardPool, place, label, definition, events, conditionParam, eventParam]);
 
     function update(changes){
         setParams(current => {
@@ -382,18 +402,27 @@ function Generator({ session, definitions, onSaved, onError }){
                         <span className="panel-field__label">Weather / terrain</span>
                         <select className="panel-input" value={conditionParam} onChange={event => update({ condition: event.target.value === "random" ? "" : event.target.value })}>
                             <option value="random">Random</option>
-                            {definition.conditions.map(item => <option key={item} value={item}>{item}</option>)}
+                            {definition.conditions.map(item => <option key={item.name} value={item.name}>{item.name}</option>)}
                             <option value="none">None</option>
                         </select>
                     </label>
                 )}
 
-                {definition && definition.events.length > 0 && (
+                {events.length > 0 && (
                     <label className="dungeon-control">
                         <span className="panel-field__label">Event</span>
                         <select className="panel-input" value={eventParam} onChange={event => update({ event: event.target.value === "random" ? "" : event.target.value })}>
                             <option value="random">Random</option>
-                            {definition.events.map(item => <option key={item.name} value={item.name}>{item.name}</option>)}
+                            {events.some(item => item.kind === "unique") && (
+                                <optgroup label="Unique to this dungeon">
+                                    {events.filter(item => item.kind === "unique").map(item => <option key={item.name} value={item.name}>{item.name}</option>)}
+                                </optgroup>
+                            )}
+                            {events.some(item => item.kind === "common") && (
+                                <optgroup label="Common">
+                                    {events.filter(item => item.kind === "common").map(item => <option key={item.name} value={item.name}>{item.name}</option>)}
+                                </optgroup>
+                            )}
                             <option value="none">None</option>
                         </select>
                     </label>
@@ -488,25 +517,29 @@ function Generator({ session, definitions, onSaved, onError }){
 // Lo que la ficha de la mazmorra aporta a este piso: su gimmick, el clima o
 // terreno y el evento que tocan, y sus jefes. Los jefes se copian (nombre,
 // imagen, tipos) para que el piso guardado no dependa de la Pokédex.
-function detailsOf(definition, seed, conditionParam, eventParam){
+//
+// Sin ficha (`definition` null) solo hay evento, de los comunes.
+function detailsOf(definition, events, seed, conditionParam, eventParam){
 
     const boss = id => {
         const entry = id ? ENEMIES_BY_ID[id] : null;
         return entry ? { id, name: enemyName(entry), image: entry.image, types: entry.types.filter(Boolean) } : null;
     };
 
-    const eventName = choose(eventParam, definition.events.map(event => event.name), seed, "event");
+    const eventName = choose(eventParam, events.map(event => event.name), seed, "event");
+    const conditions = definition?.conditions ?? [];
+    const conditionName = choose(conditionParam, conditions.map(item => item.name), seed, "condition");
 
     return {
-        name: definition.name,
-        gimmick: definition.gimmick,
-        gimmickText: definition.gimmickText,
-        condition: choose(conditionParam, definition.conditions, seed, "condition"),
-        conditionCount: definition.conditions.length,
-        event: definition.events.find(event => event.name === eventName) ?? null,
-        eventCount: definition.events.length,
-        miniboss: boss(definition.miniboss),
-        boss: boss(definition.boss)
+        name: definition?.name ?? "",
+        gimmick: definition?.gimmick ?? "",
+        gimmickText: definition?.gimmickText ?? "",
+        condition: conditions.find(item => item.name === conditionName) ?? null,
+        conditionCount: conditions.length,
+        event: events.find(event => event.name === eventName) ?? null,
+        eventCount: events.length,
+        miniboss: boss(definition?.miniboss),
+        boss: boss(definition?.boss)
     };
 
 }

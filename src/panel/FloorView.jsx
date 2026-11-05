@@ -183,7 +183,7 @@ function DetailsCard({ details, linkItems }){
 
         <section className="panel-card dungeon-details">
 
-            <h2>{details.name}</h2>
+            <h2>{details.name || "This floor"}</h2>
 
             {details.gimmick && (
                 <div className="dungeon-details__block">
@@ -196,7 +196,15 @@ function DetailsCard({ details, linkItems }){
             {details.conditionCount > 0 && (
                 <div className="dungeon-details__block">
                     <span className="panel-field__label">Weather / terrain</span>
-                    {details.condition ? <strong>{details.condition}</strong> : <span className="panel-muted">None on this floor</span>}
+                    {/* Los pisos guardados antes de las explicaciones traen solo el nombre. */}
+                    {details.condition
+                        ? (
+                            <>
+                                <strong>{details.condition.name ?? details.condition}</strong>
+                                {details.condition.description && <p className="dungeon-details__text">{details.condition.description}</p>}
+                            </>
+                        )
+                        : <span className="panel-muted">None on this floor</span>}
                 </div>
             )}
 
@@ -206,7 +214,10 @@ function DetailsCard({ details, linkItems }){
                     {details.event
                         ? (
                             <>
-                                <strong>{details.event.name}</strong>
+                                <strong>
+                                    {details.event.name}
+                                    {details.event.kind && <span className="dungeon-items__tag dungeon-details__kind">{details.event.kind === "common" ? "Common" : "Unique"}</span>}
+                                </strong>
                                 {details.event.description && <p className="dungeon-details__text">{details.event.description}</p>}
                             </>
                         )

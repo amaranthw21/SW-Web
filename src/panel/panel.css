@@ -1964,3 +1964,11 @@ select.panel-input option {
     gap: 6px 10px;
 
 }
+
+.dungeon-details__kind {
+
+    margin-left: 8px;
+
+    font-weight: normal;
+
+}
