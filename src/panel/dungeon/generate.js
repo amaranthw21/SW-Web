@@ -85,6 +85,15 @@ function rngFrom(seed){
 }
 
 
+// Uno de la lista, siempre el mismo para la misma semilla y `salt` (el clima,
+// el evento…), y sin tocar los generadores del mapa.
+export function pickFrom(seed, salt, list){
+
+    return list.length ? rngFrom(`${seed}/${salt}`).pick(list) : null;
+
+}
+
+
 const ALPHABET = "abcdefghjkmnpqrstuvwxyz23456789";
 
 export function randomSeed(){
@@ -100,10 +109,12 @@ export function randomSeed(){
 }
 
 
-// `hazard`: "random" (lo elige la semilla), "none" o una clave de HAZARDS.
+// `hazard`: "random" (lo elige la semilla entre `hazardPool`), "none" o una
+// clave de HAZARDS. `hazardPool`: entre cuáles elige "random"; por defecto,
+// todos. Vacío, ninguno.
 // `loot`: los objetos que pueden salir ([{ id, rarity }]); vacío, ninguno.
 // `foes`: los enemigos que pueden salir ([{ id }]); vacío, ninguno.
-export function generateDungeon({ seed, size = "medium", loops = "some", hazard = "random", loot = [], foes = [] }){
+export function generateDungeon({ seed, size = "medium", loops = "some", hazard = "random", hazardPool = Object.keys(HAZARDS), loot = [], foes = [] }){
 
     const { width, height, cols, rows, items: itemRange, enemies: enemyRange } = SIZES[size] ?? SIZES.medium;
     const loopChance = (LOOPS[loops] ?? LOOPS.some).chance;
@@ -121,7 +132,8 @@ export function generateDungeon({ seed, size = "medium", loops = "some", hazard 
             // Los peligros salen de otro generador con la misma semilla: así
             // cambiar el tipo de peligro no cambia la forma del mapa.
             const hazardRng = rngFrom(`${key}/hazard`);
-            const type = hazard === "random" ? hazardRng.pick(Object.keys(HAZARDS))
+            const pool = hazardPool.filter(key => HAZARDS[key]);
+            const type = hazard === "random" ? (pool.length ? hazardRng.pick(pool) : null)
                 : HAZARDS[hazard] ? hazard
                 : null;
 

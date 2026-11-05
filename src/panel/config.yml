@@ -464,6 +464,49 @@ collections:
           - { name: item, label: Ingredient, widget: string, hint: "e.g. 'IRON BALL' or 'ANY HEALING BERRY'." }
           - { name: quantity, label: Quantity, widget: number, value_type: int, default: 1, min: 1 }
 
+  # ───────────────────────── Dungeons ─────────────────────────
+  # Las fichas de las mazmorras. El generador del panel (?view=dungeons) las
+  # lee: al elegir una, sus peligros, climas, eventos y jefes se cargan solos.
+  - name: dungeons
+    label: Dungeons
+    label_singular: Dungeon
+    folder: src/content/dungeons
+    extension: json
+    format: json
+    create: true
+    identifier_field: name
+    summary: "{{fields.name}} — {{fields.gimmick}}"
+    sortable_fields: [name]
+    fields:
+      - { name: name, label: Name, widget: string, hint: "Spelled as in the items' locations and the Pokédex (e.g. 'Inferno Cave'): that's how its items and enemies are found." }
+      - { name: gimmick, label: Gimmick, widget: string, required: false, hint: "Its name, e.g. 'Rising Heat'." }
+      - { name: gimmickText, label: "Gimmick explanation", widget: text, required: false, hint: "How it works, for the moderators running the dungeon." }
+      - name: hazards
+        label: Hazards
+        widget: checkboxes
+        required: false
+        options: [{ label: "Chasm (needs flying)", value: chasm }, { label: "Deep water (needs swimming)", value: water }, { label: "Lava (needs lava walking)", value: lava }]
+        hint: "The ones that can show up. The generator picks one of them for each floor. None ticked: no hazards."
+      - name: conditions
+        label: "Possible weathers or terrains"
+        label_singular: "Weather or terrain"
+        widget: list
+        required: false
+        field: { name: condition, label: "Weather or terrain", widget: string }
+        hint: "e.g. 'Harsh sunlight' or 'Grassy Terrain'. The generator picks one for each floor."
+      - name: events
+        label: "Unique events"
+        label_singular: Event
+        widget: list
+        required: false
+        summary: "{{fields.name}}"
+        hint: "The generator picks one for each floor."
+        fields:
+          - { name: name, label: Name, widget: string }
+          - { name: description, label: Description, widget: text, required: false }
+      - { name: miniboss, label: "Mini boss", widget: pokedex, size: miniboss, required: false, hint: "From the Pokédex: only entries with the Mini boss size. New entries show up here once the site is published." }
+      - { name: boss, label: Boss, widget: pokedex, size: boss, required: false, hint: "From the Pokédex: only entries with the Boss size. New entries show up here once the site is published." }
+
   # ───────────────────────── Special belongings ─────────────────────────
   # Venían en la hoja de objetos (tipo SPECIAL BELONGING); tienen página propia
   # porque no se compran ni se venden y casi todas van ligadas a un Pokémon.

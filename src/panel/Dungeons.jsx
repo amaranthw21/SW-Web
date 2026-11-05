@@ -1,12 +1,13 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 import { ApiError, deleteFiles, listFiles, readJson, writeJson } from "./api";
 import { FloorView } from "./FloorView";
 import { bundledData } from "./schema";
-import { HAZARDS, LOOPS, SIZES, generateDungeon, randomSeed } from "./dungeon/generate";
-import { DUNGEONS, dungeonLabel, lootFor } from "./dungeon/loot";
-import { enemiesFor } from "./dungeon/enemies";
+import { HAZARDS, LOOPS, SIZES, generateDungeon, pickFrom, randomSeed } from "./dungeon/generate";
+import { dungeonLabel, dungeonOptions, lootFor } from "./dungeon/loot";
+import { ENEMIES_BY_ID, enemiesFor, enemyName } from "./dungeon/enemies";
+import { BUNDLED_DEFINITIONS, DEFINITIONS_FOLDER, cleanDefinition, definitionFor } from "./dungeon/definitions";
 import { FOLDER, floorFromDungeon, fromSnapshot, idOf, newDungeonPath, toSnapshot } from "./dungeon/floor";
 
 
@@ -15,9 +16,10 @@ import { FOLDER, floorFromDungeon, fromSnapshot, idOf, newDungeonPath, toSnapsho
 // mazmorras a los jugadores. Las opciones van en la dirección (semilla,
 // tamaño, bucles, mazmorra), así que copiar el enlace basta para que otro vea
 // el mismo mapa. Al elegir una mazmorra, los objetos y enemigos salen de la
-// lista de objetos y de la Pokédex.
+// lista de objetos y de la Pokédex, y si tiene ficha (colección Dungeons),
+// sus peligros, climas o terrenos, eventos y jefes se cargan solos.
 //
-// Un piso se puede guardar (src/content/dungeons/) para volver a él mientras
+// Un piso se puede guardar (src/content/dungeon-runs/) para volver a él mientras
 // se juega, y borrar cuando la mazmorra se completa. Uno guardado se abre con
 // ?view=dungeons&saved=<id>.
 export function Dungeons({ session, onError }){
@@ -37,6 +39,34 @@ export function Dungeons({ session, onError }){
         () => (paths ?? []).filter(path => path.startsWith(`${FOLDER}/`) && path.endsWith(".json")),
         [paths]
     );
+
+    const definitionFiles = useMemo(
+        () => (paths ?? []).filter(path => path.startsWith(`${DEFINITIONS_FOLDER}/`) && path.endsWith(".json")),
+        [paths]
+    );
+
+    // Las fichas de las mazmorras: las que hay ahora en GitHub (una borrada
+    // después del último deploy ya no sale). Hasta saberlo, las del build.
+    const definitions = useMemo(
+        () => paths
+            ? Object.fromEntries(definitionFiles.map(path => [path, fresh[path] ?? bundledData(path)]).filter(([, data]) => data))
+            : BUNDLED_DEFINITIONS,
+        [paths, definitionFiles, fresh]
+    );
+
+    // Lo que no está en el build se lee de GitHub. Las fichas, siempre: se
+    // editan y el build puede tener una versión vieja.
+    const readDefinitions = useRef(false);
+
+    useEffect(() => {
+        if(!paths || readDefinitions.current){
+            return;
+        }
+        readDefinitions.current = true;
+        Promise.all(definitionFiles.map(path => readJson(session, path).then(result => [path, result.data])))
+            .then(read => read.length && setFresh(current => ({ ...current, ...Object.fromEntries(read) })))
+            .catch(onError);
+    }, [session, paths, definitionFiles, onError]);
 
     useEffect(() => {
         const missing = files.filter(path => !bundledData(path) && !fresh[path]);
@@ -88,7 +118,7 @@ export function Dungeons({ session, onError }){
 
             <SavedList saved={paths ? saved : null} session={session} onDeleted={onDeleted} onError={onError} />
 
-            <Generator session={session} onSaved={onSaved} onError={onError} />
+            <Generator session={session} definitions={definitions} onSaved={onSaved} onError={onError} />
 
         </>
 
@@ -207,7 +237,24 @@ function describe(data){
 }
 
 
-function Generator({ session, onSaved, onError }){
+// Cuál se usa de una lista: el parámetro dice "none", un valor concreto o
+// (por defecto) "random", que lo elige la semilla.
+function choose(param, list, seed, salt){
+
+    if(param === "none"){
+        return null;
+    }
+
+    if(param && param !== "random"){
+        return list.find(item => item === param) ?? null;
+    }
+
+    return pickFrom(seed, salt, list);
+
+}
+
+
+function Generator({ session, definitions, onSaved, onError }){
 
     const [params, setParams] = useSearchParams();
     const navigate = useNavigate();
@@ -217,11 +264,24 @@ function Generator({ session, onSaved, onError }){
     const loops = LOOPS[params.get("loops")] ? params.get("loops") : "some";
     const hazardParam = params.get("hazard");
     const hazardChoice = HAZARDS[hazardParam] || hazardParam === "none" ? hazardParam : "random";
-    const place = DUNGEONS.find(item => item.value === params.get("dungeon"))?.value ?? "";
-    // Un enlace viejo puede traer una mazmorra que ya no está en la lista de
-    // objetos (se renombró o se le quitaron todos): se avisa en vez de
-    // enseñar el piso vacío sin más.
+    const options = useMemo(() => dungeonOptions(definitions), [definitions]);
+    const option = options.find(item => item.value === params.get("dungeon"));
+    const place = option?.value ?? "";
+    const label = option?.label ?? "";
+    // Un enlace viejo puede traer una mazmorra que ya no existe (se renombró
+    // o se borró): se avisa en vez de enseñar el piso vacío sin más.
     const lostPlace = !place && params.get("dungeon");
+
+    // La ficha de la mazmorra, si tiene. Sus peligros son entre los que elige
+    // "Random"; si no tiene ficha, entre todos.
+    const definition = useMemo(() => {
+        const data = definitionFor(place, definitions);
+        return data ? cleanDefinition(data) : null;
+    }, [place, definitions]);
+    const hazardPool = useMemo(() => definition ? definition.hazards : Object.keys(HAZARDS), [definition]);
+
+    const conditionParam = params.get("condition") ?? "random";
+    const eventParam = params.get("event") ?? "random";
 
     // Sin semilla en la dirección (recién llegado) se pone una al azar.
     useEffect(() => {
@@ -234,15 +294,23 @@ function Generator({ session, onSaved, onError }){
         }
     }, [seed, setParams]);
 
-    const floor = useMemo(
-        () => seed ? floorFromDungeon(generateDungeon({
+    const floor = useMemo(() => {
+
+        if(!seed){
+            return null;
+        }
+
+        const generated = floorFromDungeon(generateDungeon({
             seed, size, loops,
             hazard: hazardChoice,
+            hazardPool,
             loot: lootFor(place),
-            foes: enemiesFor(dungeonLabel(place))
-        })) : null,
-        [seed, size, loops, hazardChoice, place]
-    );
+            foes: enemiesFor(label)
+        }));
+
+        return { ...generated, details: definition ? detailsOf(definition, seed, conditionParam, eventParam) : null };
+
+    }, [seed, size, loops, hazardChoice, hazardPool, place, label, definition, conditionParam, eventParam]);
 
     function update(changes){
         setParams(current => {
@@ -258,7 +326,6 @@ function Generator({ session, onSaved, onError }){
         });
     }
 
-    const label = place ? dungeonLabel(place) : "";
     const itemPool = lootFor(place).length;
     const enemyPool = enemiesFor(label).length;
     const hazard = floor?.hazard ? HAZARDS[floor.hazard] : null;
@@ -273,7 +340,7 @@ function Generator({ session, onSaved, onError }){
                     <span className="panel-field__label">Dungeon</span>
                     <select className="panel-input" value={place} onChange={event => update({ dungeon: event.target.value })}>
                         <option value="">No items</option>
-                        {DUNGEONS.map(item => (
+                        {options.map(item => (
                             <option key={item.value} value={item.value}>{item.label}</option>
                         ))}
                     </select>
@@ -300,13 +367,37 @@ function Generator({ session, onSaved, onError }){
                 <label className="dungeon-control">
                     <span className="panel-field__label">Hazard</span>
                     <select className="panel-input" value={hazardChoice} onChange={event => update({ hazard: event.target.value })}>
-                        <option value="random">Random</option>
+                        <option value="random">
+                            {!definition ? "Random" : hazardPool.length ? `Random (${hazardPool.map(key => HAZARDS[key].label).join(", ")})` : "Random (this dungeon has none)"}
+                        </option>
                         {Object.entries(HAZARDS).map(([key, item]) => (
                             <option key={key} value={key}>{item.label} ({item.ability.toLowerCase()})</option>
                         ))}
                         <option value="none">None</option>
                     </select>
                 </label>
+
+                {definition && definition.conditions.length > 0 && (
+                    <label className="dungeon-control">
+                        <span className="panel-field__label">Weather / terrain</span>
+                        <select className="panel-input" value={conditionParam} onChange={event => update({ condition: event.target.value === "random" ? "" : event.target.value })}>
+                            <option value="random">Random</option>
+                            {definition.conditions.map(item => <option key={item} value={item}>{item}</option>)}
+                            <option value="none">None</option>
+                        </select>
+                    </label>
+                )}
+
+                {definition && definition.events.length > 0 && (
+                    <label className="dungeon-control">
+                        <span className="panel-field__label">Event</span>
+                        <select className="panel-input" value={eventParam} onChange={event => update({ event: event.target.value === "random" ? "" : event.target.value })}>
+                            <option value="random">Random</option>
+                            {definition.events.map(item => <option key={item.name} value={item.name}>{item.name}</option>)}
+                            <option value="none">None</option>
+                        </select>
+                    </label>
+                )}
 
                 <label className="dungeon-control">
                     <span className="panel-field__label">Seed</span>
@@ -343,7 +434,8 @@ function Generator({ session, onSaved, onError }){
                         session={session}
                         floor={floor}
                         place={place}
-                        settings={{ seed, size, loops, hazard: hazardChoice }}
+                        label={label}
+                        settings={{ seed, size, loops, hazard: hazardChoice, condition: conditionParam, event: eventParam }}
                         onSaved={(path, data) => {
                             onSaved(path, data);
                             navigate(`/panel?view=dungeons&saved=${idOf(path)}`);
@@ -354,7 +446,7 @@ function Generator({ session, onSaved, onError }){
                     {lostPlace && (
                         <div className="panel-card dungeon-items">
                             <p className="panel-error">
-                                “{dungeonLabel(lostPlace)}” isn't a dungeon in the item list anymore, so this floor has no items or enemies. Pick another dungeon above.
+                                “{dungeonLabel(lostPlace)}” isn't a dungeon anymore, so this floor has no items or enemies. Pick another dungeon above.
                             </p>
                         </div>
                     )}
@@ -393,11 +485,38 @@ function Generator({ session, onSaved, onError }){
 }
 
 
+// Lo que la ficha de la mazmorra aporta a este piso: su gimmick, el clima o
+// terreno y el evento que tocan, y sus jefes. Los jefes se copian (nombre,
+// imagen, tipos) para que el piso guardado no dependa de la Pokédex.
+function detailsOf(definition, seed, conditionParam, eventParam){
+
+    const boss = id => {
+        const entry = id ? ENEMIES_BY_ID[id] : null;
+        return entry ? { id, name: enemyName(entry), image: entry.image, types: entry.types.filter(Boolean) } : null;
+    };
+
+    const eventName = choose(eventParam, definition.events.map(event => event.name), seed, "event");
+
+    return {
+        name: definition.name,
+        gimmick: definition.gimmick,
+        gimmickText: definition.gimmickText,
+        condition: choose(conditionParam, definition.conditions, seed, "condition"),
+        conditionCount: definition.conditions.length,
+        event: definition.events.find(event => event.name === eventName) ?? null,
+        eventCount: definition.events.length,
+        miniboss: boss(definition.miniboss),
+        boss: boss(definition.boss)
+    };
+
+}
+
+
 // Guardar el piso que se ve, con un nombre. Se guarda tal cual (mapa, objetos
 // y enemigos), no solo las opciones.
-function SaveForm({ session, floor, place, settings, onSaved, onError }){
+function SaveForm({ session, floor, place, label, settings, onSaved, onError }){
 
-    const [name, setName] = useState(`${place ? dungeonLabel(place) : "Dungeon"} · ${settings.seed}`);
+    const [name, setName] = useState(`${label || "Dungeon"} · ${settings.seed}`);
     const [busy, setBusy] = useState(false);
     const [problem, setProblem] = useState("");
 

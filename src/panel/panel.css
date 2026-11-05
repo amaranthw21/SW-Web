@@ -1893,3 +1893,74 @@ select.panel-input option {
     gap: 6px 8px;
 
 }
+
+.panel-checks {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+
+}
+
+.dungeon-details {
+
+    display: grid;
+    gap: 14px;
+
+    margin-bottom: 12px;
+
+}
+
+.dungeon-details h2 {
+
+    margin: 0;
+
+}
+
+.dungeon-details__block {
+
+    display: grid;
+    gap: 2px;
+
+}
+
+.dungeon-details__block .panel-field__label,
+.dungeon-details__boss .panel-field__label {
+
+    margin: 0;
+
+}
+
+.dungeon-details__text {
+
+    margin: 4px 0 0;
+
+    color: var(--panel-muted);
+
+    white-space: pre-line;
+
+}
+
+.dungeon-details__bosses {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 32px;
+
+}
+
+.dungeon-details__boss {
+
+    display: grid;
+    gap: 4px;
+
+}
+
+.dungeon-details__boss-name {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+
+}
