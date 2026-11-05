@@ -1,0 +1,36 @@
+{
+  "kind": "amalgam",
+  "number": 13,
+  "name": "Sunbalgeist",
+  "size": "small",
+  "types": [
+    "Grass",
+    "Ghost",
+    "Ground"
+  ],
+  "hiddenType": "",
+  "ability": "",
+  "abilityText": "",
+  "moves": [],
+  "description": "",
+  "dungeons": [
+    "Vien Forest"
+  ],
+  "image": "/dex/5w1l180b722n-mw3palsf.png",
+  "notes": "",
+  "revealed": {
+    "seen": false,
+    "name": false,
+    "image": false,
+    "types": [
+      false,
+      false,
+      false
+    ],
+    "hiddenType": false,
+    "ability": false,
+    "moves": [],
+    "description": false,
+    "dungeons": false
+  }
+}
