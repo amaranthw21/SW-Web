@@ -1,0 +1,46 @@
+{
+  "kind": "boss",
+  "number": 20,
+  "name": "Forgotten Past",
+  "size": "boss",
+  "types": [
+    "Grass",
+    "Dark"
+  ],
+  "hiddenType": "Ground",
+  "ability": "Rewind",
+  "abilityText": "Every turn, if Celebi is damaged by a foe this ability will have a 1/10 chance to activate and rewind the turn, that is eliminate all damage done in the turn it activates.",
+  "moves": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "description": "",
+  "dungeons": [],
+  "image": "/dex/684w1u4n6y36-mw3plqtn.png",
+  "notes": "",
+  "revealed": {
+    "seen": false,
+    "name": false,
+    "image": false,
+    "types": [
+      false,
+      false
+    ],
+    "hiddenType": false,
+    "ability": false,
+    "moves": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "description": false,
+    "dungeons": false
+  }
+}

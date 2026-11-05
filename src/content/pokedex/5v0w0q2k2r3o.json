@@ -1,0 +1,36 @@
+{
+  "kind": "amalgam",
+  "number": 19,
+  "name": "Megarboria",
+  "size": "miniboss",
+  "types": [
+    "Grass",
+    "Fairy",
+    "Normal"
+  ],
+  "hiddenType": "",
+  "ability": "",
+  "abilityText": "",
+  "moves": [],
+  "description": "",
+  "dungeons": [
+    "Vien Forest"
+  ],
+  "image": "/dex/5v0w0q2k2r3o-mw3pi11a.png",
+  "notes": "",
+  "revealed": {
+    "seen": false,
+    "name": false,
+    "image": false,
+    "types": [
+      false,
+      false,
+      false
+    ],
+    "hiddenType": false,
+    "ability": false,
+    "moves": [],
+    "description": false,
+    "dungeons": false
+  }
+}

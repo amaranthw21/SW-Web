@@ -1,0 +1,44 @@
+{
+  "kind": "amalgam",
+  "number": 1,
+  "name": "Carnibradish",
+  "size": "small",
+  "types": [
+    "Grass",
+    "Poison",
+    "Ghost"
+  ],
+  "hiddenType": "",
+  "ability": "Wind Rider",
+  "abilityText": "Boosts the Pokémon's Attack stat if Tailwind takes effect or if the Pokémon is hit by a wind move. The Pokémon also takes no damage from wind moves.",
+  "moves": [
+    "Bullet Seed",
+    "Spite",
+    "Poison Jab"
+  ],
+  "description": "It lures unsuspecting prey with its sweet scent before trapping them with its thorny vines. Once caught, its prey is dragged into its enormous jaws. It seems to be pretty aggresive.",
+  "dungeons": [
+    "Vien Forest"
+  ],
+  "image": "/dex/6e1b485z6h6c-mw3n3tex.png",
+  "notes": "",
+  "revealed": {
+    "seen": false,
+    "name": false,
+    "image": false,
+    "types": [
+      false,
+      false,
+      false
+    ],
+    "hiddenType": false,
+    "ability": false,
+    "moves": [
+      false,
+      false,
+      false
+    ],
+    "description": false,
+    "dungeons": false
+  }
+}
