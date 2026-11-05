@@ -4,7 +4,7 @@ import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { ApiError, deleteFiles, listFiles, readJson, writeJson } from "./api";
 import { FloorView } from "./FloorView";
 import { bundledData } from "./schema";
-import { HAZARDS, LOOPS, SIZES, generateDungeon, pickFrom, randomSeed } from "./dungeon/generate";
+import { GUARDED_RARITIES, HAZARDS, LOOPS, SIZES, generateDungeon, pickFrom, randomSeed, rollFor } from "./dungeon/generate";
 import { dungeonLabel, dungeonOptions, lootFor } from "./dungeon/loot";
 import { ENEMIES_BY_ID, enemiesFor, enemyName } from "./dungeon/enemies";
 import {
@@ -230,6 +230,21 @@ function DeleteDungeon({ session, path, name, sha = null, onDeleted, onError }){
 }
 
 
+// Qué esconden las salas con peligro: un Super Rare, o lo más raro que haya
+// si la mazmorra no tiene ninguno (y entonces se avisa).
+function guardedNote(place, hazard){
+
+    const loot = lootFor(place);
+    const rarity = GUARDED_RARITIES.find(item => loot.some(entry => entry.rarity === item));
+    const room = `${hazard.label.toLowerCase()} room`;
+
+    return rarity === GUARDED_RARITIES[0]
+        ? `Items in a ${room} are always Super Rare.`
+        : `Items in a ${room} should be Super Rare, but this dungeon has none, so they're ${rarity} (the rarest it has).`;
+
+}
+
+
 const plural = (count, word) => `${count} ${word}${count === 1 ? "" : "s"}`;
 
 
@@ -247,19 +262,44 @@ function describe(data){
 }
 
 
-// Cuál se usa de una lista: el parámetro dice "none", un valor concreto o
-// (por defecto) "random", que lo elige la semilla.
-function choose(param, list, seed, salt){
+// El clima o terreno del piso. El parámetro dice "none", uno concreto o (por
+// defecto) "random": entonces solo hay uno 1 de cada `chance` pisos, y cuál,
+// lo elige la semilla.
+function chooseCondition(param, conditions, chance, seed){
 
     if(param === "none"){
         return null;
     }
 
     if(param && param !== "random"){
-        return list.find(item => item === param) ?? null;
+        return conditions.find(item => item.name === param) ?? null;
     }
 
-    return pickFrom(seed, salt, list);
+    return rollFor(seed, "condition") < 1 / chance ? pickFrom(seed, "condition", conditions) : null;
+
+}
+
+
+// El evento del piso: uno como mucho. Con "random", uno único de la mazmorra
+// 1 de cada `chance` pisos; si no toca (o no tiene), uno común.
+function chooseEvent(param, events, chance, seed){
+
+    if(param === "none"){
+        return null;
+    }
+
+    if(param && param !== "random"){
+        return events.find(event => event.name === param) ?? null;
+    }
+
+    const unique = events.filter(event => event.kind === "unique");
+    const common = events.filter(event => event.kind === "common");
+
+    if(unique.length && rollFor(seed, "event") < 1 / chance){
+        return pickFrom(seed, "event", unique);
+    }
+
+    return pickFrom(seed, "event", common);
 
 }
 
@@ -388,7 +428,9 @@ function Generator({ session, definitions, commonEvents, onSaved, onError }){
                     <span className="panel-field__label">Hazard</span>
                     <select className="panel-input" value={hazardChoice} onChange={event => update({ hazard: event.target.value })}>
                         <option value="random">
-                            {!definition ? "Random" : hazardPool.length ? `Random (${hazardPool.map(key => HAZARDS[key].label).join(", ")})` : "Random (this dungeon has none)"}
+                            {hazardPool.length
+                                ? `Random (${[...hazardPool.map(key => HAZARDS[key].label), "none"].join(", ")}: 1 in ${hazardPool.length + 1} each)`
+                                : "Random (this dungeon has none)"}
                         </option>
                         {Object.entries(HAZARDS).map(([key, item]) => (
                             <option key={key} value={key}>{item.label} ({item.ability.toLowerCase()})</option>
@@ -401,7 +443,7 @@ function Generator({ session, definitions, commonEvents, onSaved, onError }){
                     <label className="dungeon-control">
                         <span className="panel-field__label">Weather / terrain</span>
                         <select className="panel-input" value={conditionParam} onChange={event => update({ condition: event.target.value === "random" ? "" : event.target.value })}>
-                            <option value="random">Random</option>
+                            <option value="random">Random (1 in {definition.conditionChance} floors)</option>
                             {definition.conditions.map(item => <option key={item.name} value={item.name}>{item.name}</option>)}
                             <option value="none">None</option>
                         </select>
@@ -412,7 +454,11 @@ function Generator({ session, definitions, commonEvents, onSaved, onError }){
                     <label className="dungeon-control">
                         <span className="panel-field__label">Event</span>
                         <select className="panel-input" value={eventParam} onChange={event => update({ event: event.target.value === "random" ? "" : event.target.value })}>
-                            <option value="random">Random</option>
+                            <option value="random">
+                                {events.some(item => item.kind === "unique")
+                                    ? `Random (unique 1 in ${definition.eventChance}, else common)`
+                                    : "Random"}
+                            </option>
                             {events.some(item => item.kind === "unique") && (
                                 <optgroup label="Unique to this dungeon">
                                     {events.filter(item => item.kind === "unique").map(item => <option key={item.name} value={item.name}>{item.name}</option>)}
@@ -494,7 +540,7 @@ function Generator({ session, definitions, commonEvents, onSaved, onError }){
                         } : null}
                         items={place ? {
                             intro: `${floor.items.length} picked from the ${plural(itemPool, "item")} that the item list places in ${label} (or anywhere). Rarer ones show up less.`
-                                + (hazard && floor.stats.hazardRooms > 0 ? ` Each ${hazard.label.toLowerCase()} room hides one, with better odds of something rare.` : ""),
+                                + (hazard && floor.stats.hazardRooms > 0 ? ` ${guardedNote(place, hazard)}` : ""),
                             empty: itemPool ? null : (
                                 <>
                                     The item list has nothing to find in {label} (or anywhere), so this floor has no items.
@@ -526,17 +572,15 @@ function detailsOf(definition, events, seed, conditionParam, eventParam){
         return entry ? { id, name: enemyName(entry), image: entry.image, types: entry.types.filter(Boolean) } : null;
     };
 
-    const eventName = choose(eventParam, events.map(event => event.name), seed, "event");
     const conditions = definition?.conditions ?? [];
-    const conditionName = choose(conditionParam, conditions.map(item => item.name), seed, "condition");
 
     return {
         name: definition?.name ?? "",
         gimmick: definition?.gimmick ?? "",
         gimmickText: definition?.gimmickText ?? "",
-        condition: conditions.find(item => item.name === conditionName) ?? null,
+        condition: chooseCondition(conditionParam, conditions, definition?.conditionChance ?? 10, seed),
         conditionCount: conditions.length,
-        event: events.find(event => event.name === eventName) ?? null,
+        event: chooseEvent(eventParam, events, definition?.eventChance ?? 10, seed),
         eventCount: events.length,
         miniboss: boss(definition?.miniboss),
         boss: boss(definition?.boss)

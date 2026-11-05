@@ -52,6 +52,17 @@ export function definitionFor(place, definitions){
 }
 
 
+export const CHANCES = [10, 20];
+
+function chanceOf(value){
+
+    const number = Number(value);
+
+    return CHANCES.includes(number) ? number : CHANCES[0];
+
+}
+
+
 // Deja una ficha con la forma esperada aunque falten campos.
 export function cleanDefinition(data){
 
@@ -68,6 +79,9 @@ export function cleanDefinition(data){
             .map(item => ({ ...item, name: item.name.trim() }))
             .filter(item => item.name),
         events: list(data?.events).filter(event => event?.name),
+        // "1 de cada N pisos". Solo 10 o 20; otra cosa, 10.
+        conditionChance: chanceOf(data?.conditionChance),
+        eventChance: chanceOf(data?.eventChance),
         miniboss: data?.miniboss ?? "",
         boss: data?.boss ?? ""
     };

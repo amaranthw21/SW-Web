@@ -493,20 +493,22 @@ collections:
         widget: list
         required: false
         summary: "{{fields.name}}"
-        hint: "The generator picks one for each floor."
+        hint: "A floor has one of these only now and then (see the chance below); which one is picked at random."
         fields:
           - { name: name, label: Name, widget: string, hint: "e.g. 'Harsh sunlight' or 'Grassy Terrain'." }
           - { name: description, label: Explanation, widget: text, required: false, hint: "What it does in this dungeon." }
+      - { name: conditionChance, label: "Weather / terrain chance", widget: select, default: "10", options: [{ label: "1 in 10 floors", value: "10" }, { label: "1 in 20 floors", value: "20" }], hint: "How often a floor has one of the weathers or terrains above." }
       - name: events
         label: "Unique events"
         label_singular: Event
         widget: list
         required: false
         summary: "{{fields.name}}"
-        hint: "Only happen here. Each floor gets one event, picked from these and the common events."
+        hint: "Only happen here. A floor has one event at most: one of these now and then (see the chance below), otherwise a common event."
         fields:
           - { name: name, label: Name, widget: string }
           - { name: description, label: Description, widget: text, required: false }
+      - { name: eventChance, label: "Unique event chance", widget: select, default: "10", options: [{ label: "1 in 10 floors", value: "10" }, { label: "1 in 20 floors", value: "20" }], hint: "How often a floor gets one of the unique events above instead of a common one." }
       - { name: miniboss, label: "Mini boss", widget: pokedex, size: miniboss, required: false, hint: "From the Pokédex: only entries with the Mini boss size. New entries show up here once the site is published." }
       - { name: boss, label: Boss, widget: pokedex, size: boss, required: false, hint: "From the Pokédex: only entries with the Boss size. New entries show up here once the site is published." }
 
@@ -528,7 +530,7 @@ collections:
             widget: list
             required: false
             summary: "{{fields.name}}"
-            hint: "Can happen in any dungeon. Each floor gets one event, picked from these and the dungeon's unique events."
+            hint: "Can happen in any dungeon. A floor has one event: a unique one of the dungeon now and then, otherwise one of these."
             fields:
               - { name: name, label: Name, widget: string }
               - { name: description, label: Description, widget: text, required: false }

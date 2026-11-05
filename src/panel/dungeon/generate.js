@@ -31,8 +31,7 @@ export const SIZES = {
 
 
 // Lo fácil que sale cada rareza al repartir objetos por el suelo. Detrás de un
-// peligro, lo que no es común sale el doble: es la recompensa por tener la
-// habilidad.
+// peligro no se sortea: siempre es un Super Rare (ver GUARDED_RARITIES).
 export const RARITY_WEIGHTS = {
     "Common": 50,
     "Uncommon": 30,
@@ -40,6 +39,11 @@ export const RARITY_WEIGHTS = {
     "Super Rare": 5,
     "Special": 2
 };
+
+// Lo que esconde una sala con peligro: un Super Rare de los que puede dar la
+// mazmorra. Si no tiene ninguno, lo más raro que tenga por debajo, para que
+// la sala no se quede sin recompensa.
+export const GUARDED_RARITIES = ["Super Rare", "Rare", "Uncommon", "Common"];
 
 // Probabilidad de que cada unión que no hace falta se añada igualmente.
 export const LOOPS = {
@@ -94,6 +98,14 @@ export function pickFrom(seed, salt, list){
 }
 
 
+// Una tirada de 0 a 1, siempre la misma para la misma semilla y `salt`.
+export function rollFor(seed, salt){
+
+    return rngFrom(`${seed}/${salt}/roll`).next();
+
+}
+
+
 const ALPHABET = "abcdefghjkmnpqrstuvwxyz23456789";
 
 export function randomSeed(){
@@ -133,7 +145,9 @@ export function generateDungeon({ seed, size = "medium", loops = "some", hazard 
             // cambiar el tipo de peligro no cambia la forma del mapa.
             const hazardRng = rngFrom(`${key}/hazard`);
             const pool = hazardPool.filter(key => HAZARDS[key]);
-            const type = hazard === "random" ? (pool.length ? hazardRng.pick(pool) : null)
+            // "random": cada peligro posible y "ninguno" tienen la misma
+            // probabilidad, 1 / (peligros + 1).
+            const type = hazard === "random" ? hazardRng.pick([...pool, null])
                 : HAZARDS[hazard] ? hazard
                 : null;
 
@@ -408,11 +422,14 @@ function placeItems(rng, dungeon, hazardRooms, loot, [min, max]){
         && !(x === stairs.x && y === stairs.y)
         && taken.every(item => Math.abs(item.x - x) > 1 || Math.abs(item.y - y) > 1);
 
+    const guardedRarity = GUARDED_RARITIES.find(rarity => loot.some(item => item.rarity === rarity));
+    const guardedLoot = loot.filter(item => item.rarity === guardedRarity);
+
     const pickItem = guarded => {
-        const weights = loot.map(item => {
-            const base = RARITY_WEIGHTS[item.rarity] ?? RARITY_WEIGHTS.Common;
-            return guarded && item.rarity !== "Common" ? base * 2 : base;
-        });
+        if(guarded && guardedLoot.length){
+            return rng.pick(guardedLoot);
+        }
+        const weights = loot.map(item => RARITY_WEIGHTS[item.rarity] ?? RARITY_WEIGHTS.Common);
         let roll = rng.next() * weights.reduce((sum, weight) => sum + weight, 0);
         for(let i = 0; i < loot.length; i++){
             roll -= weights[i];
