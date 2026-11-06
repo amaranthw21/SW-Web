@@ -7244,3 +7244,52 @@ button.region-loc {
     color: white;
 
 }
+
+
+/* Un movimiento en el OC Maker: nombre, categoría · tipo · PP, y la etiqueta
+   de legendario, como en el panel. */
+.oc-move {
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+}
+
+.oc-move__row {
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 80px;
+    gap: 6px;
+
+}
+
+.oc-move__flag {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    align-self: flex-start;
+
+    cursor: pointer;
+
+}
+
+.oc-move__flag input {
+
+    width: 16px;
+    height: 16px;
+
+    margin: 0;
+
+    accent-color: var(--accent);
+
+}
+
+/* Sin marcar, la etiqueta se ve apagada: así se nota que es opcional. */
+.oc-move__flag input:not(:checked) + .character-flag {
+
+    opacity: 0.45;
+
+}

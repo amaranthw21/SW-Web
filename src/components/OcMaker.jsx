@@ -12,7 +12,13 @@ import { fillTemplate, parseTemplate } from "../lib/ocTemplate";
 //   "Specie 1", "Species 2"…           → la lista de Pokémon.
 //   "Main Type 1", "Hidden Type"…      → los tipos.
 //   "World of Origin"                  → los mundos del panel, más "Other".
+//   "Move (Type/PP)"                   → nombre, categoría, tipo, PP y si es
+//                                        legendario, como en el panel.
 function kindOf(label){
+
+    if(/^move\b/i.test(label)){
+        return "move";
+    }
 
     if(/^species?\s*\d*$/i.test(label)){
         return "species";
@@ -42,6 +48,13 @@ const SPECIES = [...new Map(
 ).values()];
 
 const OTHER = "__other";
+
+
+// Shadow, Radiant y Stellar son tipos especiales del servidor: un OC nuevo no
+// los elige.
+const TYPE_OPTIONS = TYPES.filter(type => !["Stellar", "Shadow", "Radiant"].includes(type.value));
+
+const CATEGORIES = ["Physical", "Special", "Status"];
 
 
 // Lo escrito se guarda en el navegador de quien lo escribe, para que recargar
@@ -187,9 +200,13 @@ export default function OcMaker({ versions, storageKey, typeId }){
 
                         seen[token.label] = (seen[token.label] ?? 0) + 1;
 
+                        // "Move (Type/PP)" ya no hace falta explicarlo: lo
+                        // piden los campos del movimiento.
+                        const base = kindOf(token.label) === "move" ? "Move" : token.label;
+
                         const label = totals[token.label] > 1
-                            ? `${token.label} #${seen[token.label]}`
-                            : token.label;
+                            ? `${base} #${seen[token.label]}`
+                            : base;
 
                         const id = `oc-${token.key}`;
                         const nested = (token.indent?.length ?? 0) > 1;
@@ -201,7 +218,13 @@ export default function OcMaker({ versions, storageKey, typeId }){
                                 <label htmlFor={id}>{label}</label>
 
                                 {
-                                    token.long && token.line !== null && (
+                                    kindOf(token.label) === "move" && (
+                                        <MoveFields label={label} fieldKey={token.key} values={values} setValue={setValue} />
+                                    )
+                                }
+
+                                {
+                                    token.long && token.line !== null && kindOf(token.label) !== "move" && (
                                         <input
                                             className="oc-maker__input"
                                             type="text"
@@ -328,6 +351,25 @@ function answers(tokens, values){
 
     for(const token of tokens){
 
+        // "Thunderbolt (Special-Electric/15) [Legendary]", como lo resume el panel.
+        if(token.type === "field" && kindOf(token.label) === "move"){
+
+            const name = (values[`${token.key}:name`] ?? "").trim();
+            const category = values[`${token.key}:cat`] ?? "";
+            const type = values[`${token.key}:type`] ?? "";
+            const pp = String(values[`${token.key}:pp`] ?? "").trim();
+
+            const kind = [category, type].filter(Boolean).join("-");
+            const detail = [kind, pp].filter(Boolean).join("/");
+
+            out[`${token.key}:inline`] = name && [
+                name,
+                detail && `(${detail})`,
+                values[`${token.key}:legendary`] && "[Legendary]"
+            ].filter(Boolean).join(" ");
+
+        }
+
         if(token.type === "field" && kindOf(token.label) === "world" && values[token.key] === OTHER){
             out[token.key] = values[`${token.key}:name`] ?? "";
             out[`${token.key}:quote`] = values[`${token.key}:desc`] ?? "";
@@ -357,7 +399,7 @@ function Picker({ id, kind, fieldKey, values, setValue, worldOptions }){
         return (
             <select id={id} className="oc-maker__input" value={value} onChange={event => setValue(fieldKey, event.target.value)}>
                 <option value="">—</option>
-                {TYPES.map(type => <option key={type.value} value={type.value}>{type.label}</option>)}
+                {TYPE_OPTIONS.map(type => <option key={type.value} value={type.value}>{type.label}</option>)}
             </select>
         );
 
@@ -491,6 +533,53 @@ function SpeciesSearch({ id, value, onChange }){
                     <p className="oc-maker__hint">No Pokémon matches “{query.trim()}”.</p>
                 )
             }
+
+        </div>
+
+    );
+
+}
+
+
+// Un movimiento, con los mismos datos que en el panel: nombre, categoría, tipo,
+// PP y la etiqueta de legendario. La descripción va debajo, en su caja.
+function MoveFields({ label, fieldKey, values, setValue }){
+
+    const field = name => ({
+        value: values[`${fieldKey}:${name}`] ?? "",
+        onChange: event => setValue(`${fieldKey}:${name}`, event.target.value)
+    });
+
+    return (
+
+        <div className="oc-move">
+
+            <input className="oc-maker__input oc-move__name" type="text" placeholder="Move name" aria-label={`${label}: name`} {...field("name")} />
+
+            <div className="oc-move__row">
+
+                <select className="oc-maker__input" aria-label={`${label}: category`} {...field("cat")}>
+                    <option value="">Category</option>
+                    {CATEGORIES.map(category => <option key={category} value={category}>{category}</option>)}
+                </select>
+
+                <select className="oc-maker__input" aria-label={`${label}: type`} {...field("type")}>
+                    <option value="">Type</option>
+                    {TYPE_OPTIONS.map(type => <option key={type.value} value={type.value}>{type.label}</option>)}
+                </select>
+
+                <input className="oc-maker__input" type="number" min={1} placeholder="PP" aria-label={`${label}: PP`} {...field("pp")} />
+
+            </div>
+
+            <label className="oc-move__flag">
+                <input
+                    type="checkbox"
+                    checked={Boolean(values[`${fieldKey}:legendary`])}
+                    onChange={event => setValue(`${fieldKey}:legendary`, event.target.checked)}
+                />
+                <span className="character-flag character-flag--legendary">Legendary</span>
+            </label>
 
         </div>
 
