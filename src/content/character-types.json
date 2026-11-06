@@ -3,57 +3,163 @@
   "worldsHint": "The world your Pokémon originates from. If it's from one of the games, add the region name. If it's not from the games, please add the name and a short description.",
   "worlds": [
     {
-      "name": "Kanto"
+      "name": "Kanto",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Johto"
+      "name": "Johto",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Hoenn"
+      "name": "Hoenn",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Sinnoh"
+      "name": "Sinnoh",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Hisui"
+      "name": "Hisui",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Unova"
+      "name": "Unova",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Kalos"
+      "name": "Kalos",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Alola"
+      "name": "Alola",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Galar"
+      "name": "Galar",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Paldea"
+      "name": "Paldea",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Kitakami"
+      "name": "Kitakami",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Orre"
+      "name": "Orre",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Fiore"
+      "name": "Fiore",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Almia"
+      "name": "Almia",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Oblivia"
+      "name": "Oblivia",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Ransei"
+      "name": "Ransei",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
       "name": "Bethath",
       "notFor": [
         "legendary-reincarnations"
+      ]
+    },
+    {
+      "name": "Air Continent",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
+    },
+    {
+      "name": "Grass Continent",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
+    },
+    {
+      "name": "Mist Continent",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
+    },
+    {
+      "name": "Water Continent",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
+    },
+    {
+      "name": "Sand Continent",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
+    },
+    {
+      "name": "Mystery Continent",
+      "notFor": [
+        "egg-children",
+        "amalgams"
       ]
     }
   ],
