@@ -93,7 +93,7 @@ function save(key, data){
 //
 // `versions` son los apartados del tipo que tienen plantilla; `storageKey`
 // separa lo guardado de cada tipo de personaje.
-export default function OcMaker({ versions, storageKey, typeId }){
+export default function OcMaker({ versions, storageKey, typeId, legendaryMoves = false }){
 
     const [state, setState] = useState(() => load(storageKey));
 
@@ -224,7 +224,7 @@ export default function OcMaker({ versions, storageKey, typeId }){
 
                                 {
                                     kindOf(token.label) === "move" && (
-                                        <MoveFields label={label} fieldKey={token.key} values={values} setValue={setValue} />
+                                        <MoveFields label={label} fieldKey={token.key} values={values} setValue={setValue} legendary={legendaryMoves} />
                                     )
                                 }
 
@@ -339,7 +339,7 @@ export default function OcMaker({ versions, storageKey, typeId }){
             </form>
 
 
-            <CopyTemplate title="Your finished sheet" text={fillTemplate(tokens, answers(tokens, values), extras)} />
+            <CopyTemplate title="Your finished sheet" text={fillTemplate(tokens, answers(tokens, values, legendaryMoves), extras)} />
 
         </div>
 
@@ -350,7 +350,7 @@ export default function OcMaker({ versions, storageKey, typeId }){
 
 // Lo que se escribe en la plantilla. Casi todo va tal cual; el mundo "Other"
 // pone el nombre escrito y, debajo, su descripción.
-function answers(tokens, values){
+function answers(tokens, values, legendaryMoves){
 
     const out = { ...values };
 
@@ -370,7 +370,7 @@ function answers(tokens, values){
             out[`${token.key}:inline`] = name && [
                 name,
                 detail && `(${detail})`,
-                values[`${token.key}:legendary`] && "[Legendary]"
+                legendaryMoves && values[`${token.key}:legendary`] && "[Legendary]"
             ].filter(Boolean).join(" ");
 
         }
@@ -549,7 +549,7 @@ function SpeciesSearch({ id, value, onChange }){
 
 // Un movimiento, con los mismos datos que en el panel: nombre, categoría, tipo,
 // PP y la etiqueta de legendario. La descripción va debajo, en su caja.
-function MoveFields({ label, fieldKey, values, setValue }){
+function MoveFields({ label, fieldKey, values, setValue, legendary }){
 
     const field = name => ({
         value: values[`${fieldKey}:${name}`] ?? "",
@@ -585,14 +585,19 @@ function MoveFields({ label, fieldKey, values, setValue }){
 
             </div>
 
-            <label className="oc-move__flag">
-                <input
-                    type="checkbox"
-                    checked={Boolean(values[`${fieldKey}:legendary`])}
-                    onChange={event => setValue(`${fieldKey}:legendary`, event.target.checked)}
-                />
-                <span className="character-flag character-flag--legendary">Legendary</span>
-            </label>
+            {/* Solo los tipos que lo tienen activado en el panel (los legendarios). */}
+            {
+                legendary && (
+                    <label className="oc-move__flag">
+                        <input
+                            type="checkbox"
+                            checked={Boolean(values[`${fieldKey}:legendary`])}
+                            onChange={event => setValue(`${fieldKey}:legendary`, event.target.checked)}
+                        />
+                        <span className="character-flag character-flag--legendary">Legendary</span>
+                    </label>
+                )
+            }
 
         </div>
 

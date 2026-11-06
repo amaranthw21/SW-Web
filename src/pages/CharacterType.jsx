@@ -61,6 +61,7 @@ export default function CharacterType(){
                         key="oc-maker"
                         storageKey={`oc-maker:${type.id}`}
                         typeId={type.id}
+                        legendaryMoves={Boolean(type.legendaryMoves)}
                         versions={(type.sections ?? []).filter(version => !version.maker && version.template?.trim())}
                     />
                 )}

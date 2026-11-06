@@ -149,6 +149,7 @@ collections:
               - { name: image, label: Picture, widget: image, required: false, hint: "Shown on the card." }
               - { name: imagePosition, label: "Image position (CSS object-position)", widget: string, required: false, hint: "e.g. 'center 20%'" }
               - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown at the top of the type's page, above the buttons." }
+              - { name: legendaryMoves, label: "Legendary tag on moves", widget: boolean, default: false, required: false, hint: "In the OC Maker, each move gets a 'Legendary' checkbox. Only makes sense for legendaries." }
               - name: sections
                 label: Versions
                 widget: list
