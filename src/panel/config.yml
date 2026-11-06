@@ -157,6 +157,8 @@ collections:
                       - { name: title, label: Title, widget: string }
                       - { name: text, label: Text, widget: richtext, required: false }
                   - { name: outro, label: "Closing note", widget: richtext, required: false, hint: "Shown at the end of the version." }
+                  - { name: templateTitle, label: "Template heading", widget: string, required: false, hint: "The heading over the template, e.g. 'Legendary OC template'. Empty says 'Template'." }
+                  - { name: template, label: Template, widget: text, required: false, hint: "The sheet people copy and paste into Discord. It's shown exactly as written, with a Copy button, so write it in Discord's Markdown." }
 
       # Changes & Bans de General: la lista de vetados y la de cambios respecto a los juegos.
       - name: changes-and-bans

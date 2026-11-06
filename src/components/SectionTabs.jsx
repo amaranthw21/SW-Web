@@ -1,5 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import ContentBlock from "./ContentBlock";
+import CopyTemplate from "./CopyTemplate";
 import withBlockIds from "../lib/blocks";
 
 
@@ -12,6 +13,9 @@ import withBlockIds from "../lib/blocks";
 //
 // `numbered` pone [1], [2]… delante de cada entrada, como en las reglas.
 // `empty` es lo que dice un apartado que aún no tiene nada escrito.
+//
+// Un apartado puede acabar en una plantilla (`template`) para copiar y pegar
+// en Discord, como las fichas de Character Types.
 function sectionBlocks(sections, numbered, empty){
 
     return withBlockIds(
@@ -28,6 +32,13 @@ function sectionBlocks(sections, numbered, empty){
                 })),
                 { type: "text", text: section.outro }
             ].filter(part => part.title || part.text?.trim());
+
+            if(section.template?.trim()){
+                parts.push({
+                    type: "node",
+                    node: <CopyTemplate key="template" title={section.templateTitle} text={section.template} />
+                });
+            }
 
             // Un apartado aún vacío sale igual, para que se vea que existe.
             if(parts.length === 0){
