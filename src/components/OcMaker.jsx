@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import CopyTemplate from "./CopyTemplate";
 import { worlds, worldsHint } from "../data/characterTypes";
+import asset from "../lib/asset";
 import pokemon, { TYPES } from "../data/pokemon";
 import { fillTemplate, parseTemplate } from "../lib/ocTemplate";
 
@@ -32,12 +33,13 @@ function kindOf(label){
 
 // "Articuno" y "Articuno (Galarian)": el "+" del Excel ("+ Galarian", la forma
 // normal y la regional en una fila) no hace falta aquí.
-const SPECIES = [...new Set(
+const SPECIES = [...new Map(
     pokemon.map(entry => {
         const form = entry.form?.replace(/^\+\s*/, "").trim();
-        return form ? `${entry.name} (${form})` : entry.name;
+        const label = form ? `${entry.name} (${form})` : entry.name;
+        return [label, { label, image: entry.image }];
     })
-)];
+).values()];
 
 const OTHER = "__other";
 
@@ -165,11 +167,6 @@ export default function OcMaker({ versions, storageKey, typeId }){
 
 
             <form className="oc-maker__form" onSubmit={event => event.preventDefault()}>
-
-                {/* Una sola lista para todas las preguntas de especie. */}
-                <datalist id="oc-maker-species">
-                    {SPECIES.map(name => <option key={name} value={name} />)}
-                </datalist>
 
                 {
                     tokens.map((token, i) => {
@@ -350,21 +347,7 @@ function Picker({ id, kind, fieldKey, values, setValue, worldOptions }){
 
     if(kind === "species"){
 
-        // Se busca escribiendo; la lista sugiere los Pokémon que coinciden.
-        return (
-            <>
-                <input
-                    id={id}
-                    className="oc-maker__input"
-                    type="text"
-                    list="oc-maker-species"
-                    placeholder="Start typing to search"
-                    autoComplete="off"
-                    value={value}
-                    onChange={event => setValue(fieldKey, event.target.value)}
-                />
-            </>
-        );
+        return <SpeciesSearch id={id} value={value} onChange={next => setValue(fieldKey, next)} />;
 
     }
 
@@ -422,6 +405,94 @@ function Picker({ id, kind, fieldKey, values, setValue, worldOptions }){
             }
 
         </>
+
+    );
+
+}
+
+
+// Buscar un Pokémon de la lista, como el buscador del panel: se escribe, salen
+// los que coinciden y al elegir uno queda como una pastilla con su ×.
+function SpeciesSearch({ id, value, onChange }){
+
+    const [query, setQuery] = useState("");
+
+    const needle = query.trim().toLowerCase();
+
+    const matches = needle
+        ? SPECIES.filter(option => option.label.toLowerCase().includes(needle))
+            // Los que empiezan por lo escrito, primero.
+            .sort((a, b) => a.label.toLowerCase().startsWith(needle) === b.label.toLowerCase().startsWith(needle)
+                ? 0
+                : a.label.toLowerCase().startsWith(needle) ? -1 : 1)
+            .slice(0, 8)
+        : [];
+
+    function pick(label){
+        onChange(label);
+        setQuery("");
+    }
+
+
+    if(value){
+
+        const image = SPECIES.find(option => option.label === value)?.image;
+
+        return (
+            <div className="oc-species">
+                <span className="oc-species__chip">
+                    {image && <img src={asset(image)} alt="" loading="lazy" onError={e => { e.currentTarget.style.display = "none"; }} />}
+                    {value}
+                    <button type="button" aria-label={`Remove ${value}`} onClick={() => onChange("")}>×</button>
+                </span>
+            </div>
+        );
+
+    }
+
+
+    return (
+
+        <div className="oc-species">
+
+            <input
+                id={id}
+                className="oc-maker__input"
+                type="search"
+                placeholder="Search…"
+                autoComplete="off"
+                value={query}
+                onChange={event => setQuery(event.target.value)}
+                onKeyDown={event => {
+                    if(event.key === "Enter" && matches[0]){
+                        event.preventDefault();
+                        pick(matches[0].label);
+                    }
+                }}
+            />
+
+            {
+                matches.length > 0 && (
+                    <ul className="oc-species__options">
+                        {matches.map(option => (
+                            <li key={option.label}>
+                                <button type="button" onClick={() => pick(option.label)}>
+                                    {option.image && <img src={asset(option.image)} alt="" loading="lazy" onError={e => { e.currentTarget.style.visibility = "hidden"; }} />}
+                                    {option.label}
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                )
+            }
+
+            {
+                needle && matches.length === 0 && (
+                    <p className="oc-maker__hint">No Pokémon matches “{query.trim()}”.</p>
+                )
+            }
+
+        </div>
 
     );
 

@@ -7145,3 +7145,102 @@ button.region-loc {
     margin-top: 28px;
 
 }
+
+
+/* El buscador de especies del OC Maker, como el del panel. */
+.oc-species__options {
+
+    margin: 4px 0 0;
+    padding: 4px;
+
+    list-style: none;
+
+    background: rgba(10, 14, 22, 0.95);
+
+    border: 1px solid rgba(212, 165, 55, 0.35);
+    border-radius: 8px;
+
+}
+
+.oc-species__options button {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    width: 100%;
+
+    padding: 6px 8px;
+
+    background: transparent;
+
+    border: 0;
+    border-radius: 6px;
+
+    color: #e2e8f0;
+
+    font: inherit;
+    text-align: left;
+
+    cursor: pointer;
+
+}
+
+.oc-species__options button:hover,
+.oc-species__options button:focus-visible {
+
+    outline: none;
+
+    background: rgba(212, 165, 55, 0.15);
+
+}
+
+.oc-species__options img,
+.oc-species__chip img {
+
+    width: 28px;
+    height: 28px;
+
+    object-fit: contain;
+
+}
+
+.oc-species__chip {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 3px 6px 3px 8px;
+
+    background: rgba(212, 165, 55, 0.12);
+
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+
+    color: #e2e8f0;
+
+}
+
+.oc-species__chip button {
+
+    padding: 0 4px;
+
+    background: transparent;
+
+    border: 0;
+
+    color: #cbd5e1;
+
+    font-size: 1.15em;
+    line-height: 1;
+
+    cursor: pointer;
+
+}
+
+.oc-species__chip button:hover {
+
+    color: white;
+
+}
