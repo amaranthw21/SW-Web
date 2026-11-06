@@ -2,7 +2,6 @@ import { Link, useParams } from "react-router-dom";
 import SectionTabs from "../components/SectionTabs";
 import changesAndBans from "../content/changes-and-bans.json";
 import characterCreation from "../content/character-creation.json";
-import characterTypes from "../content/character-types.json";
 import mechanics from "../content/mechanics.json";
 import general from "../data/general";
 import useDocumentTitle from "../lib/useDocumentTitle";
@@ -13,7 +12,6 @@ import NotFound from "./NotFound";
 // botón cada uno (como el Rulebook, que tiene su propia ruta).
 const CONTENT = {
     "mechanics": mechanics,
-    "character-types": characterTypes,
     "changes-and-bans": changesAndBans,
     "character-creation": characterCreation
 };

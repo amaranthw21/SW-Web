@@ -1,3 +1,41 @@
 {
-  "sections": []
+  "intro": "",
+  "types": [
+    {
+      "title": "Legendary Reincarnations",
+      "summary": "",
+      "sections": [
+        { "title": "Full Version", "entries": [] },
+        { "title": "Slice of Life Version", "entries": [] },
+        { "title": "OC Maker", "entries": [] }
+      ]
+    },
+    {
+      "title": "Commonfolk",
+      "summary": "",
+      "sections": [
+        { "title": "Full Version", "entries": [] },
+        { "title": "Slice of Life Version", "entries": [] },
+        { "title": "OC Maker", "entries": [] }
+      ]
+    },
+    {
+      "title": "Egg/Children",
+      "summary": "",
+      "sections": [
+        { "title": "Full Version", "entries": [] },
+        { "title": "Slice of Life Version", "entries": [] },
+        { "title": "OC Maker", "entries": [] }
+      ]
+    },
+    {
+      "title": "Amalgams",
+      "summary": "",
+      "sections": [
+        { "title": "Full Version", "entries": [] },
+        { "title": "Slice of Life Version", "entries": [] },
+        { "title": "OC Maker", "entries": [] }
+      ]
+    }
+  ]
 }

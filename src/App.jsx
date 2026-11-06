@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import GeneralHub from "./pages/GeneralHub";
 import GeneralPage from "./pages/GeneralPage";
 import Rulebook from "./pages/Rulebook";
+import CharacterTypes from "./pages/CharacterTypes";
+import CharacterType from "./pages/CharacterType";
 import ItemsHub from "./pages/ItemsHub";
 import Region from "./pages/Region";
 import Credits from "./pages/Credits";
@@ -73,6 +75,16 @@ function App() {
                     <Route
                         path="/general/rulebook"
                         element={<Rulebook />}
+                    />
+
+                    <Route
+                        path="/general/character-types"
+                        element={<CharacterTypes />}
+                    />
+
+                    <Route
+                        path="/general/character-types/:typeId"
+                        element={<CharacterType />}
                     />
 
                     <Route
