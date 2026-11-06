@@ -351,7 +351,7 @@ export default function ContentBlock({ block }){
 
     return (
 
-        <section className="country-block" id={block.id}>
+        <section className={block.className ? `country-block ${block.className}` : "country-block"} id={block.id}>
 
             <header className="block-title">
 

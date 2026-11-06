@@ -2860,6 +2860,115 @@ body::before {
 }
 
 
+/* Subtítulos, notas y partes separadas dentro de un texto del CMS (ver
+   Paragraphs). Pensado para las guías de Character Types: un campo de la ficha
+   detrás de otro, cada uno con su explicación. */
+
+.paragraph-heading {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 26px 0 8px;
+
+    color: white;
+
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+}
+
+.paragraph-heading::before {
+
+    content: "";
+
+    flex: none;
+
+    width: 4px;
+    height: 1.1em;
+
+    border-radius: 2px;
+
+    background: var(--accent);
+
+}
+
+/* El primero no necesita aire por arriba: ya lo da el título de la parte. */
+.block-part__title + .paragraph-heading,
+.paragraph-heading:first-child {
+
+    margin-top: 6px;
+
+}
+
+.paragraph-subheading {
+
+    margin: 16px 0 4px;
+    padding-left: 14px;
+
+    color: color-mix(in srgb, var(--accent) 35%, white);
+
+    font-size: 0.92rem;
+
+}
+
+.paragraph-heading + .country-block__text,
+.paragraph-subheading + .country-block__text {
+
+    margin-bottom: 12px;
+
+}
+
+.paragraph-note {
+
+    margin: 0 0 18px;
+    padding: 12px 16px;
+
+    border-left: 3px solid color-mix(in srgb, var(--accent) 60%, transparent);
+    border-radius: 0 8px 8px 0;
+
+    background: color-mix(in srgb, var(--accent) 9%, rgba(15, 23, 42, 0.55));
+
+}
+
+.paragraph-note > :last-child {
+
+    margin-bottom: 0;
+
+}
+
+.country-block--divided .block-part__title {
+
+    display: block;
+
+    margin-top: 34px;
+    padding-top: 22px;
+    padding-bottom: 0;
+
+    border-top: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    border-bottom: none;
+
+    color: var(--accent);
+
+    font-size: 1.3rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+}
+
+/* La primera parte va justo debajo del título del bloque: sin raya. */
+.country-block--divided .block-title + .block-part__title {
+
+    margin-top: 0;
+    padding-top: 0;
+
+    border-top: none;
+
+}
+
+
 /* Imagen dentro de un bloque. */
 
 .block-figure {

@@ -12,6 +12,20 @@ import { Link } from "react-router-dom";
 //     **negrita**            *cursiva*
 //     - viñeta               [texto](/ruta)
 //
+// Y por líneas, para textos largos que piden algo de estructura (las guías de
+// Character Types, con un campo de la ficha detrás de otro):
+//
+//     ### Subtítulo          #### Sub-subtítulo
+//     > Nota o ejemplo, en una caja aparte
+//
+// Son los que escriben los botones de encabezado y de cita del editor del
+// panel. "#", "##" y "###" salen igual: el título de cada parte ya es un h3,
+// así que debajo solo caben dos niveles.
+//
+// Una dirección suelta (https://…) también sale como enlace: copiarla y
+// pegarla es lo que hace todo el mundo, y no se le puede pedir a quien edita
+// que la envuelva en [texto](url).
+//
 // La viñeta vale con "-", "*" o "+", que son los tres que usa markdown: el
 // editor del panel escribe uno u otro según le parece, y una lista hecha con su
 // botón tiene que salir como lista igual.
@@ -39,12 +53,35 @@ import { Link } from "react-router-dom";
 // contenido de una negrita o de un enlace, la llamada de dentro le pisaría la
 // posición a la de fuera y el recorrido no avanzaría nunca. matchAll trabaja
 // sobre una copia, así que la recursión es segura.
-const INLINE = /\*\*([\s\S]+?)\*\*|\*([\s\S]+?)\*|\[([^\]]+)\]\(([^)\s]+)\)|`([^`]+)`/g;
+// La dirección suelta no se come el punto o la coma que la cierran: "mira
+// https://x.com." enlaza a https://x.com.
+const INLINE = /\*\*([\s\S]+?)\*\*|\*([\s\S]+?)\*|\[([^\]]+)\]\(([^)\s]+)\)|`([^`]+)`|(https?:\/\/[^\s<>]*[^\s<>.,;:!?'")])/g;
 
 
 // El espacio detrás del marcador es lo que distingue una viñeta de una cursiva
 // al principio de la línea: "* item" es viñeta, "*item*" es cursiva.
 const BULLET = /^[-*+] +/;
+
+const HEADING = /^(#{1,6}) +/;
+
+const QUOTE = /^> ?/;
+
+
+// Cómo se lee una línea suelta: cada encabezado va solo, y las viñetas, las
+// citas y el texto normal se agrupan con sus vecinas del mismo tipo.
+function kindOf(line){
+
+    if(HEADING.test(line)){
+        return "heading";
+    }
+
+    if(QUOTE.test(line)){
+        return "quote";
+    }
+
+    return BULLET.test(line) ? "list" : "text";
+
+}
 
 
 function Anchor({ href, children }){
@@ -80,9 +117,16 @@ function inline(line){
             nodes.push(line.slice(last, match.index));
         }
 
-        const [full, bold, italic, label, href, stat] = match;
+        const [full, bold, italic, label, href, stat, url] = match;
 
-        if(stat !== undefined){
+        if(url !== undefined){
+            // Sin "https://" ni la barra final, que solo ocupan sitio.
+            nodes.push(
+                <Anchor key={match.index} href={url}>
+                    {url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}
+                </Anchor>
+            );
+        } else if(stat !== undefined){
             nodes.push(<span key={match.index} className="paragraph-stat">{stat}</span>);
         } else if(bold !== undefined){
             nodes.push(<strong key={match.index}>{inline(bold)}</strong>);
@@ -132,10 +176,10 @@ export default function Paragraphs({ text, className, lineBreaks }){
                 .filter(Boolean)
                 .forEach(line => {
 
-                    const kind = BULLET.test(line) ? "list" : "text";
+                    const kind = kindOf(line);
                     const open = chunks[chunks.length - 1];
 
-                    if(open?.kind === kind){
+                    if(open?.kind === kind && kind !== "heading"){
                         open.lines.push(line);
                     } else {
                         chunks.push({ kind, lines: [line] });
@@ -144,6 +188,41 @@ export default function Paragraphs({ text, className, lineBreaks }){
                 });
 
             return chunks.map((chunk, j) => {
+
+                if(chunk.kind === "heading"){
+
+                    const line = chunk.lines[0];
+                    const Tag = line.match(HEADING)[1].length > 3 ? "h5" : "h4";
+
+                    return (
+                        <Tag
+                            key={`${i}-${j}`}
+                            className={Tag === "h4" ? "paragraph-heading" : "paragraph-subheading"}
+                        >
+                            {inline(line.replace(HEADING, ""))}
+                        </Tag>
+                    );
+
+                }
+
+                // Lo de dentro de la caja es un texto más (con sus viñetas y sus
+                // párrafos): una línea que solo tiene ">" separa párrafos, que es
+                // como el editor escribe una cita de varios. Dentro se respetan los
+                // saltos de línea, para que una primera línea en negrita haga de
+                // título de la caja.
+                if(chunk.kind === "quote"){
+
+                    return (
+                        <blockquote key={`${i}-${j}`} className="paragraph-note">
+                            <Paragraphs
+                                text={chunk.lines.map(line => line.replace(QUOTE, "")).join("\n")}
+                                className={className}
+                                lineBreaks
+                            />
+                        </blockquote>
+                    );
+
+                }
 
                 if(chunk.kind === "list"){
 

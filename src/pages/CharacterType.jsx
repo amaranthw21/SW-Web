@@ -56,6 +56,7 @@ export default function CharacterType(){
 
             <SectionTabs
                 sections={type.sections}
+                divided
                 extra={section => section.maker && (
                     <OcMaker
                         key="oc-maker"
