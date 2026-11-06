@@ -3,6 +3,7 @@ import CopyTemplate from "./CopyTemplate";
 import Dropdown from "./Dropdown";
 import TypeBadge from "./TypeBadge";
 import { worlds, worldsHint } from "../data/characterTypes";
+import islands from "../data/islands";
 import asset from "../lib/asset";
 import pokemon, { TYPES } from "../data/pokemon";
 import { fillTemplate, parseTemplate } from "../lib/ocTemplate";
@@ -14,6 +15,7 @@ import { fillTemplate, parseTemplate } from "../lib/ocTemplate";
 //   "Specie 1", "Species 2"…           → la lista de Pokémon.
 //   "Main Type 1", "Hidden Type"…      → los tipos.
 //   "World of Origin"                  → los mundos del panel, más "Other".
+//   "Island"                           → las islas de Bethath.
 //   "Move (Type/PP)"                   → nombre, categoría, tipo, PP y si es
 //                                        legendario, como en el panel.
 function kindOf(label){
@@ -34,6 +36,10 @@ function kindOf(label){
         return "world";
     }
 
+    if(/^island$/i.test(label)){
+        return "island";
+    }
+
     return "text";
 
 }
@@ -50,6 +56,8 @@ const SPECIES = [...new Map(
 ).values()];
 
 const OTHER = "__other";
+
+const ISLANDS = islands.map(island => ({ value: island.name, label: island.name }));
 
 
 // Shadow, Radiant y Stellar son tipos especiales del servidor: un OC nuevo no
@@ -395,6 +403,13 @@ function Picker({ id, kind, fieldKey, values, setValue, worldOptions }){
     if(kind === "species"){
 
         return <SpeciesSearch id={id} value={value} onChange={next => setValue(fieldKey, next)} />;
+
+    }
+
+
+    if(kind === "island"){
+
+        return <Dropdown id={id} value={value} onChange={next => setValue(fieldKey, next)} options={ISLANDS} />;
 
     }
 
