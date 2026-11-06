@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import EntryCard from "../components/EntryCard";
+import Card from "../components/Card";
 import Paragraphs from "../components/Paragraphs";
 import characterTypes, { characterTypesIntro } from "../data/characterTypes";
 import useDocumentTitle from "../lib/useDocumentTitle";
 
 
-// Character Types de General: una tarjeta ancha por tipo, igual que las islas
-// en la página de la región. Cada una lleva a la página del tipo, que tiene sus
-// propios botones (Full Version, Slice of Life Version, OC Maker…).
+// Character Types de General: una tarjeta por tipo, como las de General e
+// Items. Cada una lleva a la página del tipo, que tiene sus propios botones
+// (Full Version, Slice of Life Version, OC Maker…).
 export default function CharacterTypes(){
 
     useDocumentTitle("Character Types");
@@ -38,18 +38,15 @@ export default function CharacterTypes(){
             }
 
 
-            <hr className="section-divider" />
-
-
-            <div className="grid card-grid card-grid--wide">
+            <div className="grid card-grid--lore">
 
                 {
                     characterTypes.map(type => (
 
-                        <EntryCard
+                        <Card
                             key={type.id}
-                            name={type.title}
-                            subtitle={type.summary}
+                            title={type.title}
+                            description={type.summary}
                             image={type.image}
                             imagePosition={type.imagePosition}
                             link={`/general/character-types/${type.id}`}
