@@ -126,6 +126,17 @@ collections:
         format: json
         fields:
           - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown above the cards. Leave a blank line between paragraphs." }
+          - { name: worldsHint, label: "World of Origin help", widget: text, required: false, hint: "Shown under the World of Origin question in the OC Maker." }
+          - name: worlds
+            label: "Worlds of origin"
+            widget: list
+            required: false
+            label_singular: World
+            summary: "{{fields.name}}"
+            hint: "The choices for 'World of Origin' in the OC Maker, in this order. 'Other' is always added at the end so people can write their own."
+            fields:
+              - { name: name, label: Name, widget: string, hint: "e.g. 'Kanto'." }
+              - { name: notFor, label: "Not available for", widget: checkboxes, required: false, options: [{ label: "Legendary Reincarnations", value: legendary-reincarnations }, { label: Commonfolk, value: commonfolk }, { label: "Egg/Children", value: egg-children }, { label: Amalgams, value: amalgams }], hint: "Tick the character types that can't pick this world." }
           - name: types
             label: "Character types"
             widget: list

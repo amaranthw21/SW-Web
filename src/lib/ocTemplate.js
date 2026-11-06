@@ -150,6 +150,14 @@ export function fillTemplate(tokens, values, extras = []){
 
         out.push(value ? `${token.indent}- ${token.label}: ${value}` : token.line);
 
+        // Una respuesta corta puede llevar debajo una explicación citada (un
+        // mundo de origen inventado y su descripción).
+        const note = (values[`${token.key}:quote`] ?? "").trim();
+
+        if(note){
+            out.push(quote(note));
+        }
+
     }
 
 

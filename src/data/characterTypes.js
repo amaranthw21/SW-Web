@@ -8,6 +8,13 @@ import slug from "../lib/slug";
 export const characterTypesIntro = content.intro ?? "";
 
 
+// Los mundos de origen que se pueden elegir en el OC Maker. `notFor` son los
+// ids de los tipos que no pueden escogerlo (Bethath no es para legendarios).
+export const worlds = (content.worlds ?? []).filter(world => world?.name?.trim());
+
+export const worldsHint = content.worldsHint ?? "";
+
+
 const characterTypes = (content.types ?? [])
     .filter(type => type?.title?.trim())
     .map(type => ({

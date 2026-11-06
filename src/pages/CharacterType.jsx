@@ -60,6 +60,7 @@ export default function CharacterType(){
                     <OcMaker
                         key="oc-maker"
                         storageKey={`oc-maker:${type.id}`}
+                        typeId={type.id}
                         versions={(type.sections ?? []).filter(version => !version.maker && version.template?.trim())}
                     />
                 )}

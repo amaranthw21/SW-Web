@@ -1,5 +1,62 @@
 {
   "intro": "",
+  "worldsHint": "The world your Pokémon originates from. If it's from one of the games, add the region name. If it's not from the games, please add the name and a short description.",
+  "worlds": [
+    {
+      "name": "Kanto"
+    },
+    {
+      "name": "Johto"
+    },
+    {
+      "name": "Hoenn"
+    },
+    {
+      "name": "Sinnoh"
+    },
+    {
+      "name": "Hisui"
+    },
+    {
+      "name": "Unova"
+    },
+    {
+      "name": "Kalos"
+    },
+    {
+      "name": "Alola"
+    },
+    {
+      "name": "Galar"
+    },
+    {
+      "name": "Paldea"
+    },
+    {
+      "name": "Kitakami"
+    },
+    {
+      "name": "Orre"
+    },
+    {
+      "name": "Fiore"
+    },
+    {
+      "name": "Almia"
+    },
+    {
+      "name": "Oblivia"
+    },
+    {
+      "name": "Ransei"
+    },
+    {
+      "name": "Bethath",
+      "notFor": [
+        "legendary-reincarnations"
+      ]
+    }
+  ],
   "types": [
     {
       "title": "Legendary Reincarnations",

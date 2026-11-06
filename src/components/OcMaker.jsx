@@ -1,6 +1,45 @@
 import { useEffect, useMemo, useState } from "react";
 import CopyTemplate from "./CopyTemplate";
+import { worlds, worldsHint } from "../data/characterTypes";
+import pokemon, { TYPES } from "../data/pokemon";
 import { fillTemplate, parseTemplate } from "../lib/ocTemplate";
+
+
+// Algunas preguntas no se escriben a mano sino que se eligen de nuestras
+// listas. Se reconocen por su nombre en la plantilla.
+//
+//   "Specie 1", "Species 2"…           → la lista de Pokémon.
+//   "Main Type 1", "Hidden Type"…      → los tipos.
+//   "World of Origin"                  → los mundos del panel, más "Other".
+function kindOf(label){
+
+    if(/^species?\s*\d*$/i.test(label)){
+        return "species";
+    }
+
+    if(/\btype\b/i.test(label)){
+        return "type";
+    }
+
+    if(/^world of origin$/i.test(label)){
+        return "world";
+    }
+
+    return "text";
+
+}
+
+
+// "Articuno" y "Articuno (Galarian)": el "+" del Excel ("+ Galarian", la forma
+// normal y la regional en una fila) no hace falta aquí.
+const SPECIES = [...new Set(
+    pokemon.map(entry => {
+        const form = entry.form?.replace(/^\+\s*/, "").trim();
+        return form ? `${entry.name} (${form})` : entry.name;
+    })
+)];
+
+const OTHER = "__other";
 
 
 // Lo escrito se guarda en el navegador de quien lo escribe, para que recargar
@@ -34,7 +73,7 @@ function save(key, data){
 //
 // `versions` son los apartados del tipo que tienen plantilla; `storageKey`
 // separa lo guardado de cada tipo de personaje.
-export default function OcMaker({ versions, storageKey }){
+export default function OcMaker({ versions, storageKey, typeId }){
 
     const [state, setState] = useState(() => load(storageKey));
 
@@ -46,6 +85,8 @@ export default function OcMaker({ versions, storageKey }){
     const extras = state.extras ?? [];
 
     const tokens = useMemo(() => parseTemplate(current?.template), [current]);
+
+    const worldOptions = worlds.filter(world => !(world.notFor ?? []).includes(typeId));
 
 
     if(!current){
@@ -125,6 +166,11 @@ export default function OcMaker({ versions, storageKey }){
 
             <form className="oc-maker__form" onSubmit={event => event.preventDefault()}>
 
+                {/* Una sola lista para todas las preguntas de especie. */}
+                <datalist id="oc-maker-species">
+                    {SPECIES.map(name => <option key={name} value={name} />)}
+                </datalist>
+
                 {
                     tokens.map((token, i) => {
 
@@ -171,7 +217,16 @@ export default function OcMaker({ versions, storageKey }){
                                 }
 
                                 {
-                                    token.long
+                                    !token.long && kindOf(token.label) !== "text"
+                                        ? <Picker
+                                              id={id}
+                                              kind={kindOf(token.label)}
+                                              fieldKey={token.key}
+                                              values={values}
+                                              setValue={setValue}
+                                              worldOptions={worldOptions}
+                                          />
+                                        : token.long
                                         ? <textarea
                                               id={id}
                                               className="oc-maker__input oc-maker__input--area"
@@ -200,7 +255,7 @@ export default function OcMaker({ versions, storageKey }){
                 <h3 className="block-part__title oc-maker__heading">EXTRAS</h3>
 
                 <p className="oc-maker__hint">
-                    Anything else you want to add: family, friends, quirks… Each one goes at the end of the sheet.
+                    Anything else you want to add about your OC. Each one goes at the end of the sheet.
                 </p>
 
                 {
@@ -213,7 +268,7 @@ export default function OcMaker({ versions, storageKey }){
                                 <input
                                     className="oc-maker__input"
                                     type="text"
-                                    placeholder="Title, e.g. Family"
+                                    placeholder="Title"
                                     aria-label={`Extra ${i + 1}: title`}
                                     value={extra.title ?? ""}
                                     onChange={event => setExtras(extras.map((e, j) => j === i ? { ...e, title: event.target.value } : e))}
@@ -259,9 +314,114 @@ export default function OcMaker({ versions, storageKey }){
             </form>
 
 
-            <CopyTemplate title="Your finished sheet" text={fillTemplate(tokens, values, extras)} />
+            <CopyTemplate title="Your finished sheet" text={fillTemplate(tokens, answers(tokens, values), extras)} />
 
         </div>
+
+    );
+
+}
+
+
+// Lo que se escribe en la plantilla. Casi todo va tal cual; el mundo "Other"
+// pone el nombre escrito y, debajo, su descripción.
+function answers(tokens, values){
+
+    const out = { ...values };
+
+    for(const token of tokens){
+
+        if(token.type === "field" && kindOf(token.label) === "world" && values[token.key] === OTHER){
+            out[token.key] = values[`${token.key}:name`] ?? "";
+            out[`${token.key}:quote`] = values[`${token.key}:desc`] ?? "";
+        }
+
+    }
+
+    return out;
+
+}
+
+
+// Una pregunta que se contesta eligiendo de una lista.
+function Picker({ id, kind, fieldKey, values, setValue, worldOptions }){
+
+    const value = values[fieldKey] ?? "";
+
+    if(kind === "species"){
+
+        // Se busca escribiendo; la lista sugiere los Pokémon que coinciden.
+        return (
+            <>
+                <input
+                    id={id}
+                    className="oc-maker__input"
+                    type="text"
+                    list="oc-maker-species"
+                    placeholder="Start typing to search"
+                    autoComplete="off"
+                    value={value}
+                    onChange={event => setValue(fieldKey, event.target.value)}
+                />
+            </>
+        );
+
+    }
+
+
+    if(kind === "type"){
+
+        return (
+            <select id={id} className="oc-maker__input" value={value} onChange={event => setValue(fieldKey, event.target.value)}>
+                <option value="">—</option>
+                {TYPES.map(type => <option key={type.value} value={type.value}>{type.label}</option>)}
+            </select>
+        );
+
+    }
+
+
+    return (
+
+        <>
+
+            {worldsHint.trim() && <p className="oc-maker__hint">{worldsHint}</p>}
+
+            <select id={id} className="oc-maker__input" value={value} onChange={event => setValue(fieldKey, event.target.value)}>
+                <option value="">—</option>
+                {worldOptions.map(world => <option key={world.name} value={world.name}>{world.name}</option>)}
+                <option value={OTHER}>Other</option>
+            </select>
+
+            {
+                value === OTHER && (
+
+                    <div className="oc-maker__field oc-maker__field--nested">
+
+                        <input
+                            className="oc-maker__input"
+                            type="text"
+                            placeholder="Name of the world"
+                            aria-label="Name of the world"
+                            value={values[`${fieldKey}:name`] ?? ""}
+                            onChange={event => setValue(`${fieldKey}:name`, event.target.value)}
+                        />
+
+                        <textarea
+                            className="oc-maker__input oc-maker__input--area"
+                            rows={3}
+                            placeholder="A short description of the world"
+                            aria-label="Description of the world"
+                            value={values[`${fieldKey}:desc`] ?? ""}
+                            onChange={event => setValue(`${fieldKey}:desc`, event.target.value)}
+                        />
+
+                    </div>
+
+                )
+            }
+
+        </>
 
     );
 
