@@ -146,6 +146,7 @@ collections:
                 hint: "Each version is a button on the type's page, in this order. Pressing it shows what's inside."
                 fields:
                   - { name: title, label: Title, widget: string, hint: "e.g. 'Full Version', 'Slice of Life Version' or 'OC Maker'." }
+                  - { name: maker, label: "OC Maker questionnaire", widget: boolean, default: false, required: false, hint: "Turns this version into the OC Maker: a form built from the other versions' templates that gives back the filled-in sheet. Its own template is ignored." }
                   - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown at the top of the version. Leave a blank line between paragraphs." }
                   - name: entries
                     label: Entries

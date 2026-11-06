@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import OcMaker from "../components/OcMaker";
 import Paragraphs from "../components/Paragraphs";
 import SectionTabs from "../components/SectionTabs";
 import characterTypes from "../data/characterTypes";
@@ -7,7 +8,9 @@ import NotFound from "./NotFound";
 
 
 // Un tipo de personaje: un botón por versión (Full Version, Slice of Life
-// Version, OC Maker…), como en Changes & Bans, y solo se ve la pulsada.
+// Version, OC Maker…), como en Changes & Bans, y solo se ve la pulsada. El
+// apartado marcado como OC Maker lleva el cuestionario hecho con las plantillas
+// de los demás.
 export default function CharacterType(){
 
     const { typeId } = useParams();
@@ -51,7 +54,16 @@ export default function CharacterType(){
                 )
             }
 
-            <SectionTabs sections={type.sections} />
+            <SectionTabs
+                sections={type.sections}
+                extra={section => section.maker && (
+                    <OcMaker
+                        key="oc-maker"
+                        storageKey={`oc-maker:${type.id}`}
+                        versions={(type.sections ?? []).filter(version => !version.maker && version.template?.trim())}
+                    />
+                )}
+            />
 
         </div>
 

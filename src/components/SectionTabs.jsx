@@ -15,8 +15,9 @@ import withBlockIds from "../lib/blocks";
 // `empty` es lo que dice un apartado que aún no tiene nada escrito.
 //
 // Un apartado puede acabar en una plantilla (`template`) para copiar y pegar
-// en Discord, como las fichas de Character Types.
-function sectionBlocks(sections, numbered, empty){
+// en Discord, como las fichas de Character Types. `extra(section)` deja que la
+// página añada al final de un apartado algo suyo (el cuestionario del OC Maker).
+function sectionBlocks(sections, numbered, empty, extra){
 
     return withBlockIds(
         (sections ?? []).map(section => {
@@ -32,6 +33,12 @@ function sectionBlocks(sections, numbered, empty){
                 })),
                 { type: "text", text: section.outro }
             ].filter(part => part.title || part.text?.trim());
+
+            const node = extra?.(section);
+
+            if(node){
+                parts.push({ type: "node", node });
+            }
 
             if(section.template?.trim()){
                 parts.push({
@@ -53,9 +60,9 @@ function sectionBlocks(sections, numbered, empty){
 }
 
 
-export default function SectionTabs({ sections, numbered = false, empty = "Nothing has been written here yet." }){
+export default function SectionTabs({ sections, numbered = false, empty = "Nothing has been written here yet.", extra }){
 
-    const blocks = sectionBlocks(sections, numbered, empty);
+    const blocks = sectionBlocks(sections, numbered, empty, extra);
 
     const [params, setParams] = useSearchParams();
     const current = blocks.find(block => block.id === params.get("section"));

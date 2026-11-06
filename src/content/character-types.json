@@ -19,7 +19,8 @@
         },
         {
           "title": "OC Maker",
-          "entries": []
+          "entries": [],
+          "maker": true
         }
       ]
     },
@@ -37,7 +38,8 @@
         },
         {
           "title": "OC Maker",
-          "entries": []
+          "entries": [],
+          "maker": true
         }
       ]
     },
@@ -55,7 +57,8 @@
         },
         {
           "title": "OC Maker",
-          "entries": []
+          "entries": [],
+          "maker": true
         }
       ]
     },
@@ -73,7 +76,8 @@
         },
         {
           "title": "OC Maker",
-          "entries": []
+          "entries": [],
+          "maker": true
         }
       ]
     }
