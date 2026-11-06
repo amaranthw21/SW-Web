@@ -57,7 +57,10 @@ const SPECIES = [...new Map(
 
 const OTHER = "__other";
 
-const ISLANDS = islands.map(island => ({ value: island.name, label: island.name }));
+// Las islas en construcción no se pueden elegir todavía.
+const ISLANDS = islands
+    .filter(island => !island.underConstruction)
+    .map(island => ({ value: island.name, label: island.name }));
 
 
 // Shadow, Radiant y Stellar son tipos especiales del servidor: un OC nuevo no
