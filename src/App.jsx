@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import GeneralHub from "./pages/GeneralHub";
 import GeneralPage from "./pages/GeneralPage";
 import Rulebook from "./pages/Rulebook";
+import CharacterTypes from "./pages/CharacterTypes";
 import ItemsHub from "./pages/ItemsHub";
 import Region from "./pages/Region";
 import Credits from "./pages/Credits";
@@ -26,6 +27,8 @@ const Island = lazy(() => import("./pages/Island"));
 // La ficha de personaje también (para sus especies).
 const Characters = lazy(() => import("./pages/Characters"));
 const Character = lazy(() => import("./pages/Character"));
+// Un tipo de personaje también: su OC Maker ofrece la lista de Pokémon.
+const CharacterType = lazy(() => import("./pages/CharacterType"));
 // El panel de edición sin GitHub. Trae todo el contenido y el lector de YAML,
 // así que solo se descarga quien entra en él.
 const Panel = lazy(() => import("./panel/Panel"));
@@ -73,6 +76,16 @@ function App() {
                     <Route
                         path="/general/rulebook"
                         element={<Rulebook />}
+                    />
+
+                    <Route
+                        path="/general/character-types"
+                        element={<CharacterTypes />}
+                    />
+
+                    <Route
+                        path="/general/character-types/:typeId"
+                        element={<Suspense><CharacterType /></Suspense>}
                     />
 
                     <Route

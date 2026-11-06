@@ -1,5 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import ContentBlock from "./ContentBlock";
+import CopyTemplate from "./CopyTemplate";
 import withBlockIds from "../lib/blocks";
 
 
@@ -12,7 +13,11 @@ import withBlockIds from "../lib/blocks";
 //
 // `numbered` pone [1], [2]… delante de cada entrada, como en las reglas.
 // `empty` es lo que dice un apartado que aún no tiene nada escrito.
-function sectionBlocks(sections, numbered, empty){
+//
+// Un apartado puede acabar en una plantilla (`template`) para copiar y pegar
+// en Discord, como las fichas de Character Types. `extra(section)` deja que la
+// página añada al final de un apartado algo suyo (el cuestionario del OC Maker).
+function sectionBlocks(sections, numbered, empty, extra){
 
     return withBlockIds(
         (sections ?? []).map(section => {
@@ -29,6 +34,19 @@ function sectionBlocks(sections, numbered, empty){
                 { type: "text", text: section.outro }
             ].filter(part => part.title || part.text?.trim());
 
+            const node = extra?.(section);
+
+            if(node){
+                parts.push({ type: "node", node });
+            }
+
+            if(section.template?.trim()){
+                parts.push({
+                    type: "node",
+                    node: <CopyTemplate key="template" title={section.templateTitle} text={section.template} />
+                });
+            }
+
             // Un apartado aún vacío sale igual, para que se vea que existe.
             if(parts.length === 0){
                 parts.push({ type: "text", text: `*${empty}*` });
@@ -42,9 +60,9 @@ function sectionBlocks(sections, numbered, empty){
 }
 
 
-export default function SectionTabs({ sections, numbered = false, empty = "Nothing has been written here yet." }){
+export default function SectionTabs({ sections, numbered = false, empty = "Nothing has been written here yet.", extra }){
 
-    const blocks = sectionBlocks(sections, numbered, empty);
+    const blocks = sectionBlocks(sections, numbered, empty, extra);
 
     const [params, setParams] = useSearchParams();
     const current = blocks.find(block => block.id === params.get("section"));

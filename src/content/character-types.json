@@ -1,3 +1,155 @@
 {
-  "sections": []
+  "intro": "",
+  "worldsHint": "The world your Pokémon originates from. If it's from one of the games, add the region name. If it's not from the games, please add the name and a short description.",
+  "worlds": [
+    {
+      "name": "Kanto"
+    },
+    {
+      "name": "Johto"
+    },
+    {
+      "name": "Hoenn"
+    },
+    {
+      "name": "Sinnoh"
+    },
+    {
+      "name": "Hisui"
+    },
+    {
+      "name": "Unova"
+    },
+    {
+      "name": "Kalos"
+    },
+    {
+      "name": "Alola"
+    },
+    {
+      "name": "Galar"
+    },
+    {
+      "name": "Paldea"
+    },
+    {
+      "name": "Kitakami"
+    },
+    {
+      "name": "Orre"
+    },
+    {
+      "name": "Fiore"
+    },
+    {
+      "name": "Almia"
+    },
+    {
+      "name": "Oblivia"
+    },
+    {
+      "name": "Ransei"
+    },
+    {
+      "name": "Bethath",
+      "notFor": [
+        "legendary-reincarnations"
+      ]
+    }
+  ],
+  "types": [
+    {
+      "title": "Legendary Reincarnations",
+      "summary": "",
+      "legendaryMoves": true,
+      "sections": [
+        {
+          "title": "Full Version",
+          "entries": [],
+          "templateTitle": "Legendary OC template",
+          "template": "## LEGENDARY OC\n__**BASICS**__\n - Name:\n - Nickname:\n - Gender:\n - Species: \n  - Fusion Name:\n  - Specie 1:\n  - Specie 2:\n - Age:\n - Type: \n  - Main Type 1:\n  - Main Type 2:\n  - Hidden Type:\n - Occupation:\n - World of Origin:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**PERSONALITY**__\n - Personality Traits:\n - Likes:\n - Dislikes:\n - Fears/Phobias:\n - In-Depth Personality:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**ABILITIES & MOVES**__\n\n __Abilities__\n - Common Talent:\n> Insert text here\n - Special Talent:\n> Insert text here\n - Common Battle:\n> Insert text here\n - Unique Battle:\n> Insert text here\n\n __Moves:__\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**BACKSTORY**\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**APPEARANCE**\n- Credits"
+        },
+        {
+          "title": "Slice of Life Version",
+          "entries": [],
+          "templateTitle": "Legendary OC template",
+          "template": "## LEGENDARY OC\n__**BASICS**__\n - Name:\n - Nickname:\n - Gender:\n - Species: \n  - Fusion Name:\n  - Specie 1:\n  - Specie 2:\n - Age:\n - Type: \n  - Main Type 1:\n  - Main Type 2:\n  - Hidden Type:\n - Occupation:\n - World of Origin:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**PERSONALITY**__\n - Personality Traits:\n - Likes:\n - Dislikes:\n - Fears/Phobias:\n - In-Depth Personality:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**ABILITIES & MOVES**__\n\n __Abilities__\n - Common Talent:\n> Insert text here\n - Special Talent:\n> Insert text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**BACKSTORY**\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**APPEARANCE**\n- Credits"
+        },
+        {
+          "title": "OC Maker",
+          "entries": [],
+          "maker": true
+        }
+      ]
+    },
+    {
+      "title": "Commonfolk",
+      "summary": "",
+      "sections": [
+        {
+          "title": "Full Version",
+          "entries": [],
+          "templateTitle": "Commonfolk OC template",
+          "template": "## COMMONFOLK OC\n__**BASICS**__\n - Name:\n - Nickname:\n - Gender:\n - Species: \n  - Fusion Name:\n  - Specie 1:\n  - Specie 2:\n - Age:\n - Type: \n  - Main Type 1:\n  - Main Type 2:\n - Occupation:\n - World of Origin:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**PERSONALITY**__\n - Personality Traits:\n - Likes:\n - Dislikes:\n - Fears/Phobias:\n - In-Depth Personality:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**ABILITIES & MOVES**__\n\n __Abilities__\n - Common Talent:\n> Insert text here\n - Special Talent:\n> Insert text here\n - Common Battle:\n> Insert text here\n - Special Perk:\n> Insert text here\n\n __Moves:__\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**BACKSTORY**\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**APPEARANCE**\n- Credits"
+        },
+        {
+          "title": "Slice of Life Version",
+          "entries": [],
+          "templateTitle": "Commonfolk OC template",
+          "template": "## COMMONFOLK OC\n__**BASICS**__\n - Name:\n - Nickname:\n - Gender:\n - Species: \n  - Fusion Name:\n  - Specie 1:\n  - Specie 2:\n - Age:\n - Type: \n  - Main Type 1:\n  - Main Type 2:\n - Occupation:\n - World of Origin:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**PERSONALITY**__\n - Personality Traits:\n - Likes:\n - Dislikes:\n - Fears/Phobias:\n - In-Depth Personality:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**ABILITIES & MOVES**__\n\n __Abilities__\n - Common Talent:\n> Insert text here\n - Special Talent:\n> Insert text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**BACKSTORY**\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**APPEARANCE**\n- Credits"
+        },
+        {
+          "title": "OC Maker",
+          "entries": [],
+          "maker": true
+        }
+      ]
+    },
+    {
+      "title": "Egg/Children",
+      "summary": "",
+      "sections": [
+        {
+          "title": "Full Version",
+          "entries": [],
+          "templateTitle": "Egg OC template",
+          "template": "## EGG OC\n__**BASICS**__\n - Name:\n - Nickname:\n - Gender:\n - Species: \n  - Fusion Name:\n  - Specie 1:\n  - Specie 2:\n - Age:\n - Type: \n  - Main Type 1:\n  - Main Type 2:\n - Island:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**PERSONALITY**__\n - Personality Traits:\n - Likes:\n - Dislikes:\n - Fears/Phobias:\n - In-Depth Personality:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**ABILITIES & MOVES**__\n\n __Abilities__\n - Common Talent:\n> Insert text here\n - Common Battle:\n> Insert text here\n\n __Moves:__\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**BACKSTORY**\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**APPEARANCE**\n- Credits"
+        },
+        {
+          "title": "Slice of Life Version",
+          "entries": [],
+          "templateTitle": "Egg OC template",
+          "template": "## EGG OC\n__**BASICS**__\n - Name:\n - Nickname:\n - Gender:\n - Species: \n  - Fusion Name:\n  - Specie 1:\n  - Specie 2:\n - Age (*):\n - Type: \n  - Main Type 1:\n  - Main Type 2:\n - Island:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**PERSONALITY**__\n - Personality Traits:\n - Likes:\n - Dislikes:\n - Fears/Phobias:\n - In-Depth Personality:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**ABILITIES & MOVES**__\n\n __Abilities__\n - Common Talent:\n> Insert text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**BACKSTORY**\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**APPEARANCE**\n- Credits"
+        },
+        {
+          "title": "OC Maker",
+          "entries": [],
+          "maker": true
+        }
+      ]
+    },
+    {
+      "title": "Amalgams",
+      "summary": "",
+      "sections": [
+        {
+          "title": "Full Version",
+          "entries": [],
+          "templateTitle": "Amalgam OC template",
+          "template": "## AMALGAM OC\n__**BASICS**__\n - Name:\n - Nickname:\n - Gender:\n - Species: \n  - Fusion Name:\n  - Specie 1:\n  - Specie 2:\n  - Specie 3:\n - Age:\n - Type: \n  - Main Type 1:\n  - Main Type 2:\n  - Main Type 3:\n - Occupation:\n - Island:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**PERSONALITY**__\n - Personality Traits:\n - Likes:\n - Dislikes:\n - Fears/Phobias:\n - In-Depth Personality:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**ABILITIES & MOVES**__\n\n __Abilities__\n - Common Talent:\n> Insert text here\n - Special Talent:\n> Insert text here\n - Common Battle:\n> Insert text here\n - Unique Battle:\n> Insert text here\n\n __Moves:__\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Custom Move (Type/PP):\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**BACKSTORY**\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**APPEARANCE**\n- Credits"
+        },
+        {
+          "title": "Slice of Life Version",
+          "entries": [],
+          "templateTitle": "Amalgam OC template",
+          "template": "## AMALGAM OC\n__**BASICS**__\n - Name:\n - Nickname:\n - Gender:\n - Species: \n  - Fusion Name:\n  - Specie 1:\n  - Specie 2:\n  - Specie 3:\n - Age:\n - Type: \n  - Main Type 1:\n  - Main Type 2:\n  - Main Type 3:\n - Occupation:\n - Island:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**PERSONALITY**__\n - Personality Traits:\n - Likes:\n - Dislikes:\n - Fears/Phobias:\n - In-Depth Personality:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**ABILITIES & MOVES**__\n\n __Abilities__\n - Common Talent:\n> Insert text here\n - Special Talent:\n> Insert text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**BACKSTORY**\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**APPEARANCE**\n- Credits"
+        },
+        {
+          "title": "OC Maker",
+          "entries": [],
+          "maker": true
+        }
+      ]
+    }
+  ]
 }
