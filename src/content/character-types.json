@@ -1,73 +1,206 @@
 {
-  "intro": "",
+  "intro": "The server has several different character types. It's worth noting that, despite their differences, every type has its own ways of progressing through the story and developing over time.\n\nFor example, Legendary Reincarnations can discover more about the past of the Legendary Pokémon they are fused with. Commonfolk can learn more about the regions they left behind. Eggs/Children can gradually learn, grow, and discover the world around them. Finally, Amalgams can work towards recovering their lost memories and piecing together their history.",
   "worldsHint": "The world your Pokémon originates from. If it's from one of the games, add the region name. If it's not from the games, please add the name and a short description.",
   "worlds": [
     {
-      "name": "Kanto"
+      "name": "Kanto",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Johto"
+      "name": "Johto",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Hoenn"
+      "name": "Hoenn",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Sinnoh"
+      "name": "Sinnoh",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Hisui"
+      "name": "Hisui",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Unova"
+      "name": "Unova",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Kalos"
+      "name": "Kalos",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Alola"
+      "name": "Alola",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Galar"
+      "name": "Galar",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Paldea"
+      "name": "Paldea",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Kitakami"
+      "name": "Kitakami",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Orre"
+      "name": "Orre",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Fiore"
+      "name": "Fiore",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Almia"
+      "name": "Almia",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Oblivia"
+      "name": "Oblivia",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
-      "name": "Ransei"
+      "name": "Ransei",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     },
     {
       "name": "Bethath",
       "notFor": [
         "legendary-reincarnations"
       ]
+    },
+    {
+      "name": "Air Continent",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
+    },
+    {
+      "name": "Grass Continent",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
+    },
+    {
+      "name": "Mist Continent",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
+    },
+    {
+      "name": "Water Continent",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
+    },
+    {
+      "name": "Sand Continent",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
+    },
+    {
+      "name": "Mystery Continent",
+      "notFor": [
+        "egg-children",
+        "amalgams"
+      ]
     }
   ],
   "types": [
     {
       "title": "Legendary Reincarnations",
-      "summary": "",
+      "summary": "Fusions of Legendaries/Mythicals/Ultra-Beasts x Normal Pokemon",
       "legendaryMoves": true,
       "sections": [
         {
           "title": "Full Version",
-          "entries": [],
+          "entries": [
+            {
+              "title": "Basics",
+              "text": "- **NAME:**\nYour character's name. Please do not use anything offensive. \n\nIn case of nameless characters, especially those suffering from severe amnesia. You can use **'???'** to indicate that this character has no name. If you have a name planned, you can include it next to it in parentheses.\n\n*Example: ??? (Caryo)*\n\n- **NICKNAME (NOT OBLIGATORY)**\nYour character's nickname. This can be a term of endearment, a title, or an abbreviation if the name is too long.\n\n- **GENDER**\nThe gender of your character. If your character uses neopronouns or any pronouns other than the expected ones, please write them down too.\n\n- **SPECIES**\nThe species of your character.\n**Fusion Name:**\nThe name of your fusion's species. It's usually created by combining the two Pokémon species you used to create it. Example: Espe-Oh.\n**Specie 1 & Specie 2**\nThe species you used for your fusion. \n\n- **AGE**\nYour Pokémon's age. In case of a Legendary they cannot be younger than 16.\n\n - **TYPE**\nThe combination of types of your character.\n**Main Type 1 / Main Type 2**\nThe two main types of your character. These must belong to the Pokémon you used for the fusion and will be the ones that will affect your weaknesses in combat.\n\n**Hidden Type**\nIt ONLY serves as a third type for obtaining moves. It does not count towards STAB, weaknesses, or strengths.\n\nHowever is often the case with older Pokémon, especially those introduced before the Fairy type was added, that could be reasonably argued that they should have another Type combination. If you believe a Pokémon should have a different type combination, tell the moderators. If we find your reasoning compelling, we'll consider allowing you to use that type as one of your main types. \n\n*For example, someone might argue that Lugia should be a Water type instead of a Psychic type. So if approved you can have Water & Flying as posibilities at the time to pick your types.*\n\nSomething similar can be said for those characters that are fusions of pokemons where one of the parts might be a monotype. In those cases you can choose a types that you think fit your fusion.\n\n- **OCUPATION**\nThe occupation your character holds. This could be something they are currently working on or something they have done in the past.\n\n- **WORLD OF ORIGIN**\nThe world your Pokémon originates from. If it's from one of the games, add the region name. If it's not from the games, please add the name and a short description"
+            },
+            {
+              "title": "Personality",
+              "text": "This section is about personality. It's one of the most important sections for your character, so take your time. I'll leave some helpful links in each section, as well as some comments.\n\n- **PERSONALITY TRAITS**-\nA list of your character traits. My personal recommendation is a minimum of 6 with a mix of positive, negative, and neutral traits.\n\nUseful Documentation: \nhttps://www.novel-software.com/character-traits/\n\n- **LIKES AND DISLIKES**\nA list of your character's likes and dislikes. At least three of each.\n\nNow, it's true that everyone has their own tastes, however, my recommendation is that your character's likes and dislikes should tell us something unique about them. For example, listing dislikes such as your character disliking pain doesn't tell us much... But if you tell us that your character likes pain, that says a lot more about them.\n\nIf you want to add a touch of \"Oh, I have changed\" Maybe add a like and dislike that reflects how they were before they got fused. *For example a character might have liked coffee before and now they dislike it.*\n\n- FEARS & PHOBIAS\nYour character's fears. No matter how brave you are, we all have something we fear to a greater or lesser degree. There must be one, but you can add more.\n\nSome Useful Documentation\nhttps://en.wikipedia.org/wiki/List_of_phobias\nhttps://www.ovrcome.io/post/how-many-phobias-are-there-a-nearly-complete-list-of-500-phobias\nhttps://www.verywellmind.com/list-of-phobias-2795453\n\n- IN-DEPTH PERSONALITY\nYour character's personality should be in detail. That means it should be at least one compelling paragraph. And no, having amnesia is not a personality.\n\nMy recommendation is that you build upon the previous points. How do those personality traits manifest? How do they act around others? What happens when someone triggers their worse fears? Maybe how their new bodies have affected them.\n\nSome Useful Documentation:\nhttps://litreactor.com/columns/character-personalities"
+            },
+            {
+              "title": "ABILITIES & MOVES",
+              "text": "Explanation of skills, movements, and the part that affects combat.\n\n**ABILITIES**\n- **COMMON TALENT**\nYour character's common talent. This type of skill can be used both in slice-of-life roleplay and outside of combat in dungeons. It must match one of your characters' Main Types.\n\nYou can find the talents at: ⁠common-talents \n\n- **SPECIAL TALENT**\nYour character's personal talent. This talent, like the COMMON TALENT, can be used in both slice-of-life roleplay and dungeons while out of combat.\n\nAll we ask is that it fits your fusion at the very least.\n\nIf your character can levitate or fly (even if is not evident in the design, for example you are part magnemite or a fish), you can add a small extra Unique ability that describes how they move around.\n\n- **COMMON BATTLE**\nThis ability corresponds to the abilities of a Pokemon.\n\nHere you can take any ability... as long as it makes sense and isn't unique to another legendary.\n\n- **UNIQUE BATTLE**\nThe unique ability can be something completely custom, or if your character is a Legendary that has its own unique ability and you haven't chosen it; you can do so now.\n\n**MOVES:**\nYour Pokemon moves. Follow the following format\n- Move (Type/PP):\n- Description of the move.\n\nIn the case of legendaries, you can have up to 6 moves. However:\n- 1 must be your Legendary Signature Move, in case your legendary doesn't have one, you can make a custom one (Check first Changes, as that legendary might have had a move that comes from an alternate version of the character. Like articuno using the Signature Move of Articuno Galar). (This one is obligatory)\n- For the other 5, you can choose Any Move that belongs to the three types you chose in Basic Info. As long as it is not another's legendary Signature Move."
+            },
+            {
+              "title": "BACKSTORY",
+              "text": "BACKSTORY\nYour character's backstory. We're not asking for a whole novel, but at least a good paragraph explaining who they are, where they come from, and what they were doing before their story began on the server is the bare minimum.\n\nAnd no, having amnesia doesn't mean you don't have to write a backstory or just make a bare-bones one.\n\nRemember that for all legendary Reincarnations, the pokémon that is the dominant one (the normal pokemon) comes from outside Bethath. They can come from any kind of dimension, from a human world similar to our everyday lives, to the canonical world of the games. And while you can make references to other franchises when creating your characters, your character cannot come from that franchise. Example: Saying that your character is Batman.\n\nIn this type of backstory, what interests us is knowing what happened up until the point you entered Bethath. (Don't go beyond this point in time, since this server provides a brief introduction to the characters starting from that point.)\n\nRemember that centuries have passed since the Legendary Pokémon last appeared in other dimensions. So, while mentioning locations is fine, a lot has happened since, for example, Groudon and Kyogre last fought—enough for the people of Hoenn to have forgotten their names and appereance."
+            },
+            {
+              "title": "LEGACY BACKSTORY",
+              "text": "Legacy characters are a special class. These are characters that have remained since before the server reboot, and only these characters can use this type of backstory.\n\nIf a member owns one of these characters, they can choose whether to use the LEGACY backstory type or the standard one.\n\nThe LEGACY backstory type assumes the character has already spent a certain amount of time in Bethath and has already settled there. They might have opened a shop, adopted a child, or make friends.\n\nBasically, this backstory would be your character's story plus what they've been doing in Bethath since arriving."
+            },
+            {
+              "title": "APPEREANCE",
+              "text": "Your character's appearance.\n\nIf you don't have fusion art in mind or can't find anything online, you can use the links below to find a good ammount of fusions (Though it would be in pixelArt)\n\nInfiniteDex:  https://infinitefusiondex.com/\nFusionDex: https://www.fusiondex.org/\n\nRemember to give credits to the artists in any case."
+            }
+          ],
           "templateTitle": "Legendary OC template",
-          "template": "## LEGENDARY OC\n__**BASICS**__\n - Name:\n - Nickname:\n - Gender:\n - Species: \n  - Fusion Name:\n  - Specie 1:\n  - Specie 2:\n - Age:\n - Type: \n  - Main Type 1:\n  - Main Type 2:\n  - Hidden Type:\n - Occupation:\n - World of Origin:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**PERSONALITY**__\n - Personality Traits:\n - Likes:\n - Dislikes:\n - Fears/Phobias:\n - In-Depth Personality:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**ABILITIES & MOVES**__\n\n __Abilities__\n - Common Talent:\n> Insert text here\n - Special Talent:\n> Insert text here\n - Common Battle:\n> Insert text here\n - Unique Battle:\n> Insert text here\n\n __Moves:__\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**BACKSTORY**\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**APPEARANCE**\n- Credits"
+          "template": "## LEGENDARY OC\n__**BASICS**__\n - Name:\n - Nickname:\n - Gender:\n - Species: \n  - Fusion Name:\n  - Specie 1:\n  - Specie 2:\n - Age:\n - Type: \n  - Main Type 1:\n  - Main Type 2:\n  - Hidden Type:\n - Occupation:\n - World of Origin:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**PERSONALITY**__\n - Personality Traits:\n - Likes:\n - Dislikes:\n - Fears/Phobias:\n - In-Depth Personality:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**ABILITIES & MOVES**__\n\n __Abilities__\n - Common Talent:\n> Insert text here\n - Special Talent:\n> Insert text here\n - Common Battle:\n> Insert text here\n - Unique Battle:\n> Insert text here\n\n __Moves:__\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**BACKSTORY**\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**APPEARANCE**\n- Credits",
+          "intro": "The **Full Version** is the version that includes moves and abilities. It is intended for characters who will be exploring dungeons, taking part in battles, or simply for those who enjoy the full process of creating a Pokémon.\n\nBelow, I'll go through each section step by step, explaining how to fill them out and providing some helpful tips along the way.",
+          "outro": "Remember that you can ask the moderators if you have any doubts at any point, and that, as the server grows, this submission can change, things might get added, reworked, and deleted."
         },
         {
           "title": "Slice of Life Version",
@@ -80,7 +213,10 @@
           "entries": [],
           "maker": true
         }
-      ]
+      ],
+      "image": "/image-2.png",
+      "imagePosition": "center center",
+      "intro": "**Legendary Reincarnations** are fusions between a Legendary, Mythical, or Ultra Beast Pokémon and a regular Pokémon.\n\nAccording to our lore, Legendary Reincarnations occur when a Pokémon from a dimension outside Bethath is forcibly transported to the region. In some cases, usually when the Pokémon arrives on its own, Bethath forces it to fuse with the soul of one of its Legendary Pokémon.\n\nI'll mention this again in the backstory guidelines, but I want to make one thing clear from the beginning: **Legendary Reincarnations DO NOT remember their past lives as Legendary Pokémon.** The regular Pokémon's personality and identity are entirely dominant, even if the character suffers from amnesia."
     },
     {
       "title": "Commonfolk",
