@@ -16,11 +16,11 @@ import { fillTemplate, parseTemplate } from "../lib/ocTemplate";
 //   "Main Type 1", "Hidden Type"…      → los tipos.
 //   "World of Origin"                  → los mundos del panel, más "Other".
 //   "Island"                           → las islas de Bethath.
-//   "Move (Type/PP)"                   → nombre, categoría, tipo, PP y si es
+//   "Move (Type/PP)", "Custom Move…"   → nombre, categoría, tipo, PP y si es
 //                                        legendario, como en el panel.
 function kindOf(label){
 
-    if(/^move\b/i.test(label)){
+    if(/^(custom\s+)?move\b/i.test(label)){
         return "move";
     }
 
@@ -218,7 +218,9 @@ export default function OcMaker({ versions, storageKey, typeId, legendaryMoves =
 
                         // "Move (Type/PP)" ya no hace falta explicarlo: lo
                         // piden los campos del movimiento.
-                        const base = kindOf(token.label) === "move" ? "Move" : token.label;
+                        const base = kindOf(token.label) === "move"
+                            ? (/^custom/i.test(token.label) ? "Custom move" : "Move")
+                            : token.label;
 
                         const label = totals[token.label] > 1
                             ? `${base} #${seen[token.label]}`

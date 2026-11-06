@@ -134,11 +134,15 @@
       "sections": [
         {
           "title": "Full Version",
-          "entries": []
+          "entries": [],
+          "templateTitle": "Amalgam OC template",
+          "template": "## AMALGAM OC\n__**BASICS**__\n - Name:\n - Nickname:\n - Gender:\n - Species: \n  - Fusion Name:\n  - Specie 1:\n  - Specie 2:\n  - Specie 3:\n - Age:\n - Type: \n  - Main Type 1:\n  - Main Type 2:\n  - Main Type 3:\n - Occupation:\n - Island:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**PERSONALITY**__\n - Personality Traits:\n - Likes:\n - Dislikes:\n - Fears/Phobias:\n - In-Depth Personality:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**ABILITIES & MOVES**__\n\n __Abilities__\n - Common Talent:\n> Insert text here\n - Special Talent:\n> Insert text here\n - Common Battle:\n> Insert text here\n - Unique Battle:\n> Insert text here\n\n __Moves:__\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Move (Type/PP):\n> Insert Text here\n - Custom Move (Type/PP):\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**BACKSTORY**\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**APPEARANCE**\n- Credits"
         },
         {
           "title": "Slice of Life Version",
-          "entries": []
+          "entries": [],
+          "templateTitle": "Amalgam OC template",
+          "template": "## AMALGAM OC\n__**BASICS**__\n - Name:\n - Nickname:\n - Gender:\n - Species: \n  - Fusion Name:\n  - Specie 1:\n  - Specie 2:\n  - Specie 3:\n - Age:\n - Type: \n  - Main Type 1:\n  - Main Type 2:\n  - Main Type 3:\n - Occupation:\n - Island:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**PERSONALITY**__\n - Personality Traits:\n - Likes:\n - Dislikes:\n - Fears/Phobias:\n - In-Depth Personality:\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n__**ABILITIES & MOVES**__\n\n __Abilities__\n - Common Talent:\n> Insert text here\n - Special Talent:\n> Insert text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**BACKSTORY**\n> Insert Text here\n\n>< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< >< ><\n\n**APPEARANCE**\n- Credits"
         },
         {
           "title": "OC Maker",
