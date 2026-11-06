@@ -199,32 +199,6 @@ collections:
                   - { name: text, label: Text, widget: richtext, required: false }
               - { name: outro, label: "Closing note", widget: richtext, required: false, hint: "Shown at the end of the section." }
 
-      # Character Creation Help de General: la guía para hacer un personaje, por pasos.
-      - name: character-creation
-        label: "Character Creation Help"
-        file: src/content/character-creation.json
-        format: json
-        fields:
-          - name: sections
-            label: Sections
-            widget: list
-            label_singular: Section
-            summary: "{{fields.title}}"
-            hint: "Each section is a button on the page, in this order. Pressing it shows what's inside."
-            fields:
-              - { name: title, label: Title, widget: string, hint: "e.g. 'Step 1: Pick a Pokémon'." }
-              - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown at the top of the section. Leave a blank line between paragraphs." }
-              - name: entries
-                label: Entries
-                widget: list
-                required: false
-                label_singular: Entry
-                summary: "{{fields.title}}"
-                fields:
-                  - { name: title, label: Title, widget: string }
-                  - { name: text, label: Text, widget: richtext, required: false }
-              - { name: outro, label: "Closing note", widget: richtext, required: false, hint: "Shown at the end of the section." }
-
   # ───────────────────────── Islands ─────────────────────────
   # Las islas de la región, cada una en su carpeta con su JSON y sus imágenes
   # al lado (src/content/islands/<isla>/<isla>.json). Cada una sale como

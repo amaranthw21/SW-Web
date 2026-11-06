@@ -23,11 +23,6 @@ const general = [
         description: "What can't be used, and what has been changed from the original games."
     },
     {
-        id: "character-creation",
-        title: "Character Creation Help",
-        description: "A step-by-step guide to making your first character."
-    },
-    {
         id: "lore",
         title: "Lore",
         description: "The story of the world and the forces that shape it."
