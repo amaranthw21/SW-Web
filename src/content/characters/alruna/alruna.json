@@ -111,7 +111,8 @@
       "category": "Special",
       "type": "Water",
       "pp": 10,
-      "description": "The user attacks opposing Pokémon with countless beams of light that glow a deep and brilliant blue. "
+      "description": "The user attacks opposing Pokémon with countless beams of light that glow a deep and brilliant blue. ",
+      "legendary": true
     },
     {
       "name": "Refreshing Waters",
