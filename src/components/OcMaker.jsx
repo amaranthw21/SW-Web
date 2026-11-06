@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import CopyTemplate from "./CopyTemplate";
+import Dropdown from "./Dropdown";
+import TypeBadge from "./TypeBadge";
 import { worlds, worldsHint } from "../data/characterTypes";
 import asset from "../lib/asset";
 import pokemon, { TYPES } from "../data/pokemon";
@@ -54,7 +56,10 @@ const OTHER = "__other";
 // los elige.
 const TYPE_OPTIONS = TYPES.filter(type => !["Stellar", "Shadow", "Radiant"].includes(type.value));
 
-const CATEGORIES = ["Physical", "Special", "Status"];
+const CATEGORIES = ["Physical", "Special", "Status"].map(value => ({ value, label: value }));
+
+// Cada tipo se ve con su insignia de color, como en la lista de Pokémon.
+const showType = option => <TypeBadge type={option.value} />;
 
 
 // Lo escrito se guarda en el navegador de quien lo escribe, para que recargar
@@ -397,10 +402,7 @@ function Picker({ id, kind, fieldKey, values, setValue, worldOptions }){
     if(kind === "type"){
 
         return (
-            <select id={id} className="oc-maker__input" value={value} onChange={event => setValue(fieldKey, event.target.value)}>
-                <option value="">—</option>
-                {TYPE_OPTIONS.map(type => <option key={type.value} value={type.value}>{type.label}</option>)}
-            </select>
+            <Dropdown id={id} value={value} onChange={next => setValue(fieldKey, next)} options={TYPE_OPTIONS} renderOption={showType} />
         );
 
     }
@@ -412,11 +414,15 @@ function Picker({ id, kind, fieldKey, values, setValue, worldOptions }){
 
             {worldsHint.trim() && <p className="oc-maker__hint">{worldsHint}</p>}
 
-            <select id={id} className="oc-maker__input" value={value} onChange={event => setValue(fieldKey, event.target.value)}>
-                <option value="">—</option>
-                {worldOptions.map(world => <option key={world.name} value={world.name}>{world.name}</option>)}
-                <option value={OTHER}>Other</option>
-            </select>
+            <Dropdown
+                id={id}
+                value={value}
+                onChange={next => setValue(fieldKey, next)}
+                options={[
+                    ...worldOptions.map(world => ({ value: world.name, label: world.name })),
+                    { value: OTHER, label: "Other" }
+                ]}
+            />
 
             {
                 value === OTHER && (
@@ -558,15 +564,22 @@ function MoveFields({ label, fieldKey, values, setValue }){
 
             <div className="oc-move__row">
 
-                <select className="oc-maker__input" aria-label={`${label}: category`} {...field("cat")}>
-                    <option value="">Category</option>
-                    {CATEGORIES.map(category => <option key={category} value={category}>{category}</option>)}
-                </select>
+                <Dropdown
+                    ariaLabel={`${label}: category`}
+                    placeholder="Category"
+                    value={values[`${fieldKey}:cat`] ?? ""}
+                    onChange={next => setValue(`${fieldKey}:cat`, next)}
+                    options={CATEGORIES}
+                />
 
-                <select className="oc-maker__input" aria-label={`${label}: type`} {...field("type")}>
-                    <option value="">Type</option>
-                    {TYPE_OPTIONS.map(type => <option key={type.value} value={type.value}>{type.label}</option>)}
-                </select>
+                <Dropdown
+                    ariaLabel={`${label}: type`}
+                    placeholder="Type"
+                    value={values[`${fieldKey}:type`] ?? ""}
+                    onChange={next => setValue(`${fieldKey}:type`, next)}
+                    options={TYPE_OPTIONS}
+                    renderOption={showType}
+                />
 
                 <input className="oc-maker__input" type="number" min={1} placeholder="PP" aria-label={`${label}: PP`} {...field("pp")} />
 
