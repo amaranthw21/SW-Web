@@ -6735,6 +6735,33 @@ button.region-loc {
 
 }
 
+/* El botón destacado (el General del Rulebook): a lo ancho, encima de los
+   demás, más alto y con la letra más grande. */
+.section-tab--featured {
+
+    grid-column: 1 / -1;
+
+    padding: 20px 12px;
+
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
+
+    border-width: 2px;
+
+}
+
+@media (min-width: 768px) {
+
+    .section-tab--featured {
+
+        padding: 24px 12px;
+
+        font-size: 1.35rem;
+
+    }
+
+}
+
 .section-tabs__hint {
 
     color: #9aa4b2;

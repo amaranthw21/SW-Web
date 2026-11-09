@@ -62,7 +62,10 @@ function sectionBlocks(sections, numbered, empty, extra, divided){
 }
 
 
-export default function SectionTabs({ sections, numbered = false, empty = "Nothing has been written here yet.", extra, divided = false }){
+// `featured` hace el primer botón más grande y a lo ancho, encima de los demás
+// (el General del Rulebook): con cinco apartados, así los otros cuatro llenan
+// sus filas y ninguno se queda suelto.
+export default function SectionTabs({ sections, numbered = false, empty = "Nothing has been written here yet.", extra, divided = false, featured = false }){
 
     const blocks = sectionBlocks(sections, numbered, empty, extra, divided);
 
@@ -83,11 +86,11 @@ export default function SectionTabs({ sections, numbered = false, empty = "Nothi
 
             <div className="section-tabs" role="group" aria-label="Sections">
                 {
-                    blocks.map(block => (
+                    blocks.map((block, i) => (
                         <button
                             key={block.id}
                             type="button"
-                            className={`section-tab${block === current ? " section-tab--on" : ""}`}
+                            className={`section-tab${featured && i === 0 ? " section-tab--featured" : ""}${block === current ? " section-tab--on" : ""}`}
                             aria-pressed={block === current}
                             onClick={() => setParams({ section: block.id })}
                         >
