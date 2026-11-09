@@ -8127,3 +8127,96 @@ a.blessing-link__body:hover {
     }
 
 }
+
+
+/* ───────── Mechanics: tarjetas (Common Abilities…) ─────────
+   Una tarjeta por entrada. `--type` es el color del tipo; sin tipo, el oro. */
+.mechanic-cards {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+
+}
+
+.mechanic-card {
+
+    --type: var(--accent);
+
+    position: relative;
+
+    padding: 16px 18px 6px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(160deg, color-mix(in srgb, var(--type) 16%, transparent), transparent 55%),
+        rgba(17, 24, 39, 0.82);
+
+    border: 1px solid color-mix(in srgb, var(--type) 40%, transparent);
+    border-left: 4px solid var(--type);
+    border-radius: 12px;
+
+}
+
+.mechanic-card__head {
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 10px;
+
+}
+
+.mechanic-card__icon {
+
+    display: grid;
+    place-items: center;
+    flex: none;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: color-mix(in srgb, var(--type) 85%, #111827);
+
+    box-shadow: 0 0 14px color-mix(in srgb, var(--type) 40%, transparent);
+
+}
+
+.mechanic-card__icon img {
+
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+
+}
+
+.mechanic-card__title {
+
+    margin: 0;
+
+    color: color-mix(in srgb, var(--type) 70%, white);
+
+    font-size: 1.15rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+}
+
+.mechanic-card .paragraph {
+
+    font-size: 0.95rem;
+
+}
+
+.mechanic-card__empty {
+
+    color: #9aa4b2;
+
+    font-style: italic;
+
+}

@@ -12,7 +12,99 @@
     },
     {
       "title": "Common Abilities",
-      "sections": []
+      "sections": [],
+      "cards": [
+        {
+          "type": "Normal",
+          "title": "Normal",
+          "text": "Can more easily adjust to certain environments, though at a lesser amount than other abilities dedicated to specific environments."
+        },
+        {
+          "type": "Fire",
+          "title": "Fire",
+          "text": "Slightly warmer than the average mon. Can tolerate fire, and swim in magma."
+        },
+        {
+          "type": "Water",
+          "title": "Water",
+          "text": "Able to swim/breathe/dive underwater for far longer periods of time than other Pokémon."
+        },
+        {
+          "type": "Electric",
+          "title": "Electric",
+          "text": "Surrounded by a light layer of electric fuzz that helps detect incredibly close people. Concentrate this fuzz into electricity that can emit light and shock people, as a weak shock nowhere near the power of an actual move."
+        },
+        {
+          "type": "Grass",
+          "title": "Grass",
+          "text": "More in tune with plantlife, able to nurture and control its growth to fit desires."
+        },
+        {
+          "type": "Ice",
+          "title": "Ice",
+          "text": "Naturally cools down surroundings. Can tolerate freezing temperatures, and easily travel in snowy/icy zones."
+        },
+        {
+          "type": "Fighting",
+          "title": "Fighting",
+          "text": "Can destroy large obstacles blocking paths. Your opponent cannot use foul, unusual tricks in duels you start, an example being having an ally of theirs attack you from the shadows."
+        },
+        {
+          "type": "Poison",
+          "title": "Poison",
+          "text": "Can absorb poison from allies to help them recover. With enough poison absorbed, can create a foul barrier that non-poison type amalgams refuse to cross."
+        },
+        {
+          "type": "Ground",
+          "title": "Ground",
+          "text": "Can dig and move around underground. However, some surfaces will be too hard to break through."
+        },
+        {
+          "type": "Flying",
+          "title": "Flying",
+          "text": "Can fly around, and tolerate difficult flying conditions like hailstorms, sandstorms, or similar."
+        },
+        {
+          "type": "Psychic",
+          "title": "Psychic",
+          "text": "Can communicate telepathically with other Pokémon. Pokémon who lack telepathy can still respond by concentrating very hard on answering, but cannot start telepathic communication themselves."
+        },
+        {
+          "type": "Bug",
+          "title": "Bug",
+          "text": "Leave lingering messages behind for other bug types through pheromones."
+        },
+        {
+          "type": "Rock",
+          "title": "Rock",
+          "text": "More in tune with the earth and able to more easily find valuable gems while exploring."
+        },
+        {
+          "type": "Ghost",
+          "title": "Ghost",
+          "text": "Gain the ability to levitate small/medium things, and can become intangible for a short time. If in a solid object when intangibility ends, teleport to the last location you were able to be in normally."
+        },
+        {
+          "type": "Dragon",
+          "title": "Dragon",
+          "text": "Understand and peer through the veil of comprehension to more easily understand what is hidden to others."
+        },
+        {
+          "type": "Dark",
+          "title": "Dark",
+          "text": "More easily able to adjust and handle being in lightless areas with the ability to see in the darkness."
+        },
+        {
+          "type": "Steel",
+          "title": "Steel",
+          "text": "Alter and adjust the shape of non-living metal to your will. Stronger metals are more difficult to manipulate."
+        },
+        {
+          "type": "Fairy",
+          "title": "Fairy",
+          "text": "You can conjure objects from your memory and make them appear out of thin air for a short time. Unfortunately, these objects have no special effects nor work as intended, even if their real-life counterparts did. They still retain their physical structure, though."
+        }
+      ]
     },
     {
       "title": "Battle Guide",

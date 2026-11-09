@@ -1,4 +1,4 @@
-import { TYPES } from "../data/pokemon";
+import { TYPES } from "../data/types";
 import asset from "../lib/asset";
 
 

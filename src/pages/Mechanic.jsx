@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import BlessingsMechanic from "../components/BlessingsMechanic";
+import MechanicCards from "../components/MechanicCards";
 import Paragraphs from "../components/Paragraphs";
 import SectionTabs from "../components/SectionTabs";
 import mechanics from "../data/mechanics";
@@ -8,8 +9,9 @@ import NotFound from "./NotFound";
 
 
 // Una mecánica: un botón por apartado, como en Changes & Bans, y solo se ve el
-// pulsado. La marcada con `blessings` enseña además las bendiciones con sus
-// etapas (y los apartados, solo si tiene alguno).
+// pulsado. Puede llevar además tarjetas (`cards`, para las que son una simple
+// lista, como Common Abilities) y la marcada con `blessings` enseña las
+// bendiciones con sus etapas.
 export default function Mechanic(){
 
     const { mechanicId } = useParams();
@@ -53,16 +55,18 @@ export default function Mechanic(){
                 )
             }
 
+            {/* Los botones de apartados salen siempre, salvo en una mecánica
+                que ya tiene otra cosa (tarjetas o bendiciones) y ningún
+                apartado: ahí sobraría el "aún no hay nada". */}
             {
-                mechanic.blessings
-                    ? (
-                        <>
-                            {mechanic.sections?.length > 0 && <SectionTabs sections={mechanic.sections} divided />}
-                            <BlessingsMechanic />
-                        </>
-                    )
-                    : <SectionTabs sections={mechanic.sections} divided />
+                (mechanic.sections?.length > 0 || !(mechanic.blessings || mechanic.cards?.length > 0)) && (
+                    <SectionTabs sections={mechanic.sections} divided />
+                )
             }
+
+            <MechanicCards cards={mechanic.cards} />
+
+            {mechanic.blessings && <BlessingsMechanic />}
 
         </div>
 
