@@ -15,14 +15,19 @@
     },
     {
       "title": "Battle Guide",
-      "sections": []
+      "sections": [
+        {
+          "title": "Status Conditions",
+          "entries": []
+        }
+      ]
     },
     {
       "title": "Dungeon Exploration",
       "sections": []
     },
     {
-      "title": "Weather/Terrain/Status Conditions",
+      "title": "Weather & Terrain",
       "sections": []
     }
   ]
