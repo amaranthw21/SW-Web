@@ -1,3 +1,34 @@
 {
-  "cards": []
+  "cards": [
+    {
+      "page": "mechanics",
+      "image": "/fnd2ixq.jpg",
+      "imagePosition": ""
+    },
+    {
+      "page": "rulebook",
+      "image": "/f73c5ad09c5393a6bc18fb045e1f54fc-2.jpg",
+      "imagePosition": "center center"
+    },
+    {
+      "page": "character-types",
+      "image": "/image-8.png",
+      "imagePosition": "center center"
+    },
+    {
+      "page": "changes-and-bans",
+      "image": "/pikachu-pokemon.gif",
+      "imagePosition": "center center"
+    },
+    {
+      "page": "timeline",
+      "image": "/image-7.png",
+      "imagePosition": ""
+    },
+    {
+      "page": "lore",
+      "image": "/arceus-b-e-t-a-g-o-d-v0-bfyghue6fhd51.webp",
+      "imagePosition": "center center"
+    }
+  ]
 }
