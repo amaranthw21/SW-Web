@@ -8695,3 +8695,133 @@ a.blessing-link__body:hover {
     }
 
 }
+
+
+/* ───────── Tarjetas partidas (menús de General y Mechanics) ─────────
+   Como los botones de los apartados: texto a la izquierda, imagen a la
+   derecha tras una diagonal con filo dorado (la sombra va en __slash por el
+   mismo motivo que allí: el clip-path se la comería). */
+.card--slash {
+
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 150px;
+
+    border: 1px solid rgba(212, 165, 55, 0.35);
+
+    transition: transform 0.2s, border-color 0.2s;
+
+}
+
+.card__text {
+
+    position: relative;
+    z-index: 1;
+
+    max-width: 60%;
+
+    pointer-events: none;
+
+}
+
+.card__text h2,
+.card__text .paragraph {
+
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+
+}
+
+.card__text .card__link {
+
+    pointer-events: auto;
+
+}
+
+.card__slash {
+
+    position: absolute;
+    inset: 0 0 0 auto;
+
+    width: 48%;
+
+    filter: drop-shadow(-2px 0 0 color-mix(in srgb, var(--accent) 70%, transparent));
+
+    pointer-events: none;
+
+}
+
+.card__slash-art {
+
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+
+    opacity: 0.75;
+
+    transition: opacity 0.2s ease, transform 0.3s ease;
+
+}
+
+.card__slash-art--empty {
+
+    background-image:
+        repeating-linear-gradient(115deg, rgba(212, 165, 55, 0.08) 0 6px, transparent 6px 14px),
+        linear-gradient(115deg, rgba(212, 165, 55, 0.05), rgba(212, 165, 55, 0.3));
+
+    opacity: 1;
+
+}
+
+/* El enlace que cubre la tarjeta entera, por debajo del texto. */
+.card__cover {
+
+    position: absolute;
+    inset: 0;
+
+}
+
+@media (hover: hover) {
+
+    .card--slash:hover {
+
+        border-color: var(--accent);
+
+    }
+
+    .card--slash:hover .card__slash-art {
+
+        opacity: 1;
+
+        transform: scale(1.04);
+
+    }
+
+}
+
+.card--slash:focus-within {
+
+    border-color: var(--accent);
+
+}
+
+@media (max-width: 520px) {
+
+    .card__text {
+
+        max-width: 64%;
+
+    }
+
+    .card__slash {
+
+        width: 42%;
+
+    }
+
+}

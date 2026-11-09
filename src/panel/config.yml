@@ -64,6 +64,25 @@ collections:
           - { name: region, label: "Region name", widget: string, hint: "The region's name, e.g. 'Bethath'. It titles its page and its entry in the sidebar." }
           - { name: intro, label: Intro, widget: richtext, required: false, hint: "A few lines about the region, above the island cards. Leave a blank line between paragraphs." }
 
+      # Las imágenes de las tarjetas del menú de General. Las páginas son fijas
+      # (src/data/general.js); aquí solo se elige la imagen de cada una.
+      - name: general-menu
+        label: "General menu"
+        file: src/content/general-menu.json
+        format: json
+        fields:
+          - name: cards
+            label: "Card pictures"
+            widget: list
+            required: false
+            label_singular: "Card picture"
+            summary: "{{fields.page}}"
+            hint: "One per page whose card on the General page should have a picture. It shows on the right, past a diagonal cut; cards without one show a gradient."
+            fields:
+              - { name: page, label: Page, widget: select, options: [{ label: Rulebook, value: rulebook }, { label: Mechanics, value: mechanics }, { label: "Character Types", value: character-types }, { label: "Changes & Bans", value: changes-and-bans }, { label: Lore, value: lore }, { label: Timeline, value: timeline }] }
+              - { name: image, label: Picture, widget: image, required: false }
+              - { name: imagePosition, label: "Picture position (CSS background-position)", widget: string, required: false, hint: "Which part of the picture shows, e.g. 'center 30%' or 'right top'." }
+
       # El Rulebook de General: un apartado por tipo de reglas (General,
       # Character, Combat, Romance), cada uno con sus reglas numeradas.
       - name: rulebook
@@ -112,8 +131,8 @@ collections:
             fields:
               - { name: title, label: Title, widget: string, hint: "e.g. 'Battles' or 'Training'." }
               - { name: summary, label: Summary, widget: text, required: false, hint: "One or two lines for the card." }
-              - { name: image, label: Picture, widget: image, required: false, hint: "Shown on the card." }
-              - { name: imagePosition, label: "Image position (CSS object-position)", widget: string, required: false, hint: "e.g. 'center 20%'" }
+              - { name: image, label: Picture, widget: image, required: false, hint: "Shown on the right of the card, past a diagonal cut. Without one the card shows a gradient." }
+              - { name: imagePosition, label: "Picture position (CSS background-position)", widget: string, required: false, hint: "Which part of the picture shows, e.g. 'center 30%' or 'right top'." }
               - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown at the top of the mechanic's page, above the buttons." }
               - name: cards
                 label: Cards

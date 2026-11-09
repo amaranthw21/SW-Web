@@ -56,6 +56,7 @@ export default function Mechanics(){
                                         image={mechanic.image}
                                         imagePosition={mechanic.imagePosition}
                                         link={`/general/mechanics/${mechanic.id}`}
+                                        slash
                                     />
 
                                 ))

@@ -37,6 +37,12 @@ export default function GeneralHub(){
 
                             link={`/general/${page.id}`}
 
+                            image={page.image}
+
+                            imagePosition={page.imagePosition}
+
+                            slash
+
                         />
 
                     ))
