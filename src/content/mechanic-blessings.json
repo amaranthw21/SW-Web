@@ -10,12 +10,12 @@
       "howToGet": "",
       "stages": [
         {
-          "title": "Stage I",
+          "title": "Tier 1: Acknowledgement",
           "symbol": "",
           "text": ""
         },
         {
-          "title": "Stage II",
+          "title": "Tier 2: Full Trust",
           "symbol": "",
           "text": ""
         }
@@ -30,12 +30,12 @@
       "howToGet": "",
       "stages": [
         {
-          "title": "Stage I",
+          "title": "Tier 1: Acknowledgement",
           "symbol": "",
           "text": ""
         },
         {
-          "title": "Stage II",
+          "title": "Tier 2: Full Trust",
           "symbol": "",
           "text": ""
         }
@@ -50,12 +50,12 @@
       "howToGet": "",
       "stages": [
         {
-          "title": "Stage I",
+          "title": "Tier 1: Acknowledgement",
           "symbol": "",
           "text": ""
         },
         {
-          "title": "Stage II",
+          "title": "Tier 2: Full Trust",
           "symbol": "",
           "text": ""
         }
@@ -70,12 +70,12 @@
       "howToGet": "",
       "stages": [
         {
-          "title": "Stage I",
+          "title": "Tier 1: Acknowledgement",
           "symbol": "",
           "text": ""
         },
         {
-          "title": "Stage II",
+          "title": "Tier 2: Full Trust",
           "symbol": "",
           "text": ""
         }
@@ -90,12 +90,12 @@
       "howToGet": "",
       "stages": [
         {
-          "title": "Stage I",
+          "title": "Tier 1: Acknowledgement",
           "symbol": "",
           "text": ""
         },
         {
-          "title": "Stage II",
+          "title": "Tier 2: Full Trust",
           "symbol": "",
           "text": ""
         }
@@ -110,12 +110,12 @@
       "howToGet": "",
       "stages": [
         {
-          "title": "Stage I",
+          "title": "Tier 1: Acknowledgement",
           "symbol": "",
           "text": ""
         },
         {
-          "title": "Stage II",
+          "title": "Tier 2: Full Trust",
           "symbol": "",
           "text": ""
         }
@@ -130,12 +130,12 @@
       "howToGet": "",
       "stages": [
         {
-          "title": "Stage I",
+          "title": "Tier 1: Acknowledgement",
           "symbol": "",
           "text": ""
         },
         {
-          "title": "Stage II",
+          "title": "Tier 2: Full Trust",
           "symbol": "",
           "text": ""
         }
@@ -150,12 +150,12 @@
       "howToGet": "",
       "stages": [
         {
-          "title": "Stage I",
+          "title": "Tier 1: Acknowledgement",
           "symbol": "",
           "text": ""
         },
         {
-          "title": "Stage II",
+          "title": "Tier 2: Full Trust",
           "symbol": "",
           "text": ""
         }
@@ -170,12 +170,12 @@
       "howToGet": "",
       "stages": [
         {
-          "title": "Stage I",
+          "title": "Tier 1: Acknowledgement",
           "symbol": "",
           "text": ""
         },
         {
-          "title": "Stage II",
+          "title": "Tier 2: Full Trust",
           "symbol": "",
           "text": ""
         }
@@ -190,12 +190,12 @@
       "howToGet": "",
       "stages": [
         {
-          "title": "Stage I",
+          "title": "Tier 1: Acknowledgement",
           "symbol": "",
           "text": ""
         },
         {
-          "title": "Stage II",
+          "title": "Tier 2: Full Trust",
           "symbol": "",
           "text": ""
         }
@@ -210,14 +210,14 @@
       "howToGet": "",
       "stages": [
         {
-          "title": "Stage I",
+          "title": "Tier 1: Acknowledgement",
           "symbol": "",
-          "text": ""
+          "text": "* Allows the acknowledged to consume light from a singular, stable, living Pokémon to drain their strength and make it their own for single battle, the strength returning to the drained Pokémon once said battle concludes. The draining requires active channeling and will be canceled if interrupted by any means.\n   * To Acknowledged: +1 Stage ATK & Sp A\n   * To Drained: -1 Stage ATK & Sp A\n* If in a Midnight Sun Island dungeon and out of danger, call upon this blessing to escape to `[MIDNIGHT SUN ISLAND TOWN NAME]`.\n* Being K.O.'d will return you to the nearest safe space with your items intact."
         },
         {
-          "title": "Stage II",
+          "title": "Tier 2: Full Trust",
           "symbol": "",
-          "text": ""
+          "text": "* Allows the trusted’s consumption of light to also steal a move from the drained, preventing them from using that move, but letting the trusted use it instead. The trusted must have the parts needed to use the move, and the move cannot be a legendary signature or custom move.\n* If in a Midnight Sun Island dungeon, call upon this blessing to escape with your team (optional) to `[MIDNIGHT SUN ISLAND TOWN NAME]`.\n* Being K.O.'d will return you to the nearest safe space with your items intact."
         }
       ]
     },
@@ -230,12 +230,12 @@
       "howToGet": "",
       "stages": [
         {
-          "title": "Stage I",
+          "title": "Tier 1: Acknowledgement",
           "symbol": "",
           "text": ""
         },
         {
-          "title": "Stage II",
+          "title": "Tier 2: Full Trust",
           "symbol": "",
           "text": ""
         }
@@ -250,12 +250,12 @@
       "howToGet": "",
       "stages": [
         {
-          "title": "Stage I",
+          "title": "Tier 1: Acknowledgement",
           "symbol": "",
           "text": ""
         },
         {
-          "title": "Stage II",
+          "title": "Tier 2: Full Trust",
           "symbol": "",
           "text": ""
         }
@@ -270,12 +270,12 @@
       "howToGet": "",
       "stages": [
         {
-          "title": "Stage I",
+          "title": "Tier 1: Acknowledgement",
           "symbol": "",
           "text": ""
         },
         {
-          "title": "Stage II",
+          "title": "Tier 2: Full Trust",
           "symbol": "",
           "text": ""
         }

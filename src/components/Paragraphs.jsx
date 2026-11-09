@@ -26,6 +26,10 @@ import { Link } from "react-router-dom";
 // pegarla es lo que hace todo el mundo, y no se le puede pedir a quien edita
 // que la envuelva en [texto](url).
 //
+// Una viñeta con sangría (dos espacios o más, o un tabulador) va dentro de la
+// de encima, como sub-viñeta: así se escriben los efectos de las bendiciones,
+// con sus números debajo de cada efecto.
+//
 // La viñeta vale con "-", "*" o "+", que son los tres que usa markdown: el
 // editor del panel escribe uno u otro según le parece, y una lista hecha con su
 // botón tiene que salir como lista igual.
@@ -153,6 +157,56 @@ function inline(line){
 }
 
 
+// Las viñetas de un tramo, anidadas por su sangría: cada una se queda con las
+// que tiene debajo más metidas hacia dentro.
+function nestList(items){
+
+    const roots = [];
+    const stack = [];
+
+    items.forEach(item => {
+
+        const node = { text: item.text, children: [] };
+
+        while(stack.length && stack[stack.length - 1].indent >= item.indent){
+            stack.pop();
+        }
+
+        (stack.length ? stack[stack.length - 1].node.children : roots).push(node);
+
+        stack.push({ indent: item.indent, node });
+
+    });
+
+    return roots;
+
+}
+
+
+function List({ nodes, className }){
+
+    return (
+
+        <ul className={className ? `${className} paragraph-list` : "paragraph-list"}>
+
+            {
+                nodes.map((node, k) => (
+
+                    <li key={k}>
+                        {inline(node.text)}
+                        {node.children.length > 0 && <List nodes={node.children} className={className} />}
+                    </li>
+
+                ))
+            }
+
+        </ul>
+
+    );
+
+}
+
+
 // `lineBreaks` respeta los saltos de línea sueltos dentro de un párrafo (sin
 // él se juntan con un espacio, que es lo normal en un texto). Lo usa la
 // historia de los personajes, que a veces va en verso.
@@ -172,17 +226,22 @@ export default function Paragraphs({ text, className, lineBreaks }){
 
             block
                 .split("\n")
-                .map(line => line.trim())
-                .filter(Boolean)
-                .forEach(line => {
+                .filter(raw => raw.trim())
+                .forEach(raw => {
 
+                    const line = raw.trim();
                     const kind = kindOf(line);
                     const open = chunks[chunks.length - 1];
 
+                    // La sangría solo cuenta en las viñetas (un tabulador vale
+                    // por cuatro espacios).
+                    const indent = raw.match(/^\s*/)[0].replace(/\t/g, "    ").length;
+
                     if(open?.kind === kind && kind !== "heading"){
                         open.lines.push(line);
+                        open.indents.push(indent);
                     } else {
-                        chunks.push({ kind, lines: [line] });
+                        chunks.push({ kind, lines: [line], indents: [indent] });
                     }
 
                 });
@@ -226,26 +285,14 @@ export default function Paragraphs({ text, className, lineBreaks }){
 
                 if(chunk.kind === "list"){
 
-                    return (
+                    // La sangría se cuenta de dos en dos espacios: un espacio
+                    // suelto delante no anida nada, dos o más sí.
+                    const items = chunk.lines.map((line, k) => ({
+                        text: line.replace(BULLET, ""),
+                        indent: Math.floor(chunk.indents[k] / 2)
+                    }));
 
-                        <ul
-                            key={`${i}-${j}`}
-                            className={className ? `${className} paragraph-list` : "paragraph-list"}
-                        >
-
-                            {
-                                chunk.lines.map((line, k) => (
-
-                                    <li key={k}>
-                                        {inline(line.replace(BULLET, ""))}
-                                    </li>
-
-                                ))
-                            }
-
-                        </ul>
-
-                    );
+                    return <List key={`${i}-${j}`} nodes={nestList(items)} className={className} />;
 
                 }
 

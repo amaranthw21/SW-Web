@@ -2813,6 +2813,10 @@ body::before {
     margin: 0 0 18px;
     padding-left: 22px;
 
+    /* Explícito: dentro de otra lista (las etapas de una bendición son un
+       <ol>) el navegador le pondría círculos huecos, que son de sub-viñeta. */
+    list-style-type: disc;
+
 }
 
 .paragraph-list li {
@@ -2824,6 +2828,21 @@ body::before {
 .paragraph-list li::marker {
 
     color: color-mix(in srgb, var(--accent) 55%, transparent);
+
+}
+
+/* Sub-viñetas: más pegadas a su viñeta y con un círculo hueco. */
+.paragraph-list .paragraph-list {
+
+    margin: 6px 0 0;
+
+    list-style-type: circle;
+
+}
+
+.paragraph-list .paragraph-list li {
+
+    margin-bottom: 4px;
 
 }
 
