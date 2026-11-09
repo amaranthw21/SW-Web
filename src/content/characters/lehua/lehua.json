@@ -8,9 +8,9 @@
   "guardianOf": [
     "bead-island"
   ],
-  "image": "",
+  "image": "lehua.png",
   "imageCredit": "Art by xanandra_",
-  "cardPosition": "",
+  "cardPosition": "56.4% 47.9%",
   "summary": "",
   "gender": "Male",
   "age": "21",
@@ -106,5 +106,6 @@
     }
   ],
   "backstory": "",
-  "gallery": []
+  "gallery": [],
+  "cardZoom": 1.2
 }
