@@ -42,7 +42,7 @@ function Sigil({ blessing, size }){
 
 
 // El símbolo de una etapa, a la derecha: el que se suba en el panel o, mientras
-// no haya, un rombo con el número del tier.
+// no haya, un rombo con el número de la etapa.
 function StageEmblem({ stage, index }){
 
     return (
@@ -127,7 +127,7 @@ function BlessingDetail({ blessing }){
 
             <section className="blessing-detail__section">
 
-                <h3 className="blessing-detail__heading">Tiers</h3>
+                <h3 className="blessing-detail__heading">Stages</h3>
 
                 {
                     blessing.stages.length > 0
@@ -140,7 +140,7 @@ function BlessingDetail({ blessing }){
 
                                             <div className="blessing-stage__body">
                                                 <h4 className="blessing-stage__title">
-                                                    {stage.title?.trim() || `Tier ${index + 1}`}
+                                                    {stage.title?.trim() || `Stage ${index + 1}`}
                                                 </h4>
                                                 {
                                                     stage.text?.trim()
@@ -227,7 +227,7 @@ export default function BlessingsMechanic(){
                             <BlessingDetail key={current.id} blessing={current} />
                         </div>
                     )
-                    : <p className="section-tabs__hint">Pick a blessing to see its tiers.</p>
+                    : <p className="section-tabs__hint">Pick a blessing to see its stages.</p>
             }
 
         </div>

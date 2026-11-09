@@ -169,8 +169,8 @@ collections:
                 summary: "{{fields.title}}"
                 hint: "In order, from the first rank to the last. Add more whenever a new one exists."
                 fields:
-                  - { name: title, label: Title, widget: string, hint: "e.g. 'Tier 1: Acknowledgement'." }
-                  - { name: symbol, label: Symbol, widget: image, required: false, hint: "The rank's own symbol, shown on the right. Without one it shows the tier number. A square PNG with a transparent background works best." }
+                  - { name: title, label: Title, widget: string, hint: "e.g. 'Stage 1: Acquaintances'. Each stage is a step further in the friendship with the NPC." }
+                  - { name: symbol, label: Symbol, widget: image, required: false, hint: "The rank's own symbol, shown on the right. Without one it shows the stage number. A square PNG with a transparent background works best." }
                   - { name: text, label: Effects, widget: richtext, required: false, hint: "One bullet per effect. Indent a bullet (two spaces or more) to put it under the one above, e.g. the stat changes of an effect." }
 
       # Character Types de General: una tarjeta por tipo de personaje y, dentro
