@@ -4,7 +4,9 @@
     {
       "title": "Blessings",
       "sections": [],
-      "blessings": true
+      "blessings": true,
+      "image": "/of-wings-and-bells-by-mischievousraven-dbsqznl-fullview.jpg",
+      "imagePosition": "center center"
     },
     {
       "title": "Commonfolk Perks",
