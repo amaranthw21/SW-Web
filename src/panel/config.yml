@@ -123,6 +123,7 @@ collections:
                 fields:
                   - { name: type, label: Type, widget: select, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar, Shadow, Radiant], hint: "Shows the type's symbol and tints the card with its color." }
                   - { name: title, label: Title, widget: string, required: false, hint: "Empty uses the type's name." }
+                  - { name: island, label: Island, widget: relation, collection: islands, value_field: "{{slug}}", search_fields: [name], display_fields: ["{{name}}"], required: false, hint: "Puts the island's picture at the top of the card and a link to it, e.g. for Commonfolk Perks." }
                   - { name: text, label: Text, widget: richtext, required: false }
               - { name: blessings, label: "Show the blessings", widget: boolean, default: false, required: false, hint: "Shows the blessings and their stages (edited in 'Mechanics · Blessings') on this page. Only for the Blessings page." }
               - name: sections

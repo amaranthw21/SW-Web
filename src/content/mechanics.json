@@ -8,7 +8,49 @@
     },
     {
       "title": "Commonfolk Perks",
-      "sections": []
+      "sections": [],
+      "cards": [
+        {
+          "title": "Shadow Moves",
+          "island": "sleighbell-island",
+          "text": "It allows the Pokémon to learn a Shadow Move. These moves, which can only be learned through this perk, are super effective against any Pokémon, regardless of its type.\n\nFor balancing purposes, all Shadow Moves have a maximum of 10 PP."
+        },
+        {
+          "title": "Weathersync",
+          "island": "bead-island",
+          "text": "This perk allows Pokémon to change one of their types to match the weather or terrain type that is currently active. If both weather and terrain are active at the same time, both types can be changed.\n\nYou can choose whether or not to activate this perk."
+        },
+        {
+          "title": "Callforma",
+          "island": "enthropy-island",
+          "text": "This perk allows you to summon a clone (a dummy version with no personality) of a character your character has befriended. This clone will possess the same abilities and moves as the original character.\n\nThe clone disappears if it takes damage or if the battle ends. Summoning it takes one turn and can only be done once per floor."
+        },
+        {
+          "title": "Make Believe",
+          "island": "frost-island",
+          "text": "This perk allows you to create a second version of your movepool; however, you can slightly alter the moves to give them different effects. Some examples would be Flamethrower becoming a Water-type move, or Blizzard, instead of having a chance to freeze, now having the ability to paralyze.\n\nIn battle, you can only switch between your movepool versions once. Once you've switched, it will remain that way for the rest of the battle. PP is shared between both movepool versions.\n\n> If you choose this perk, you will have to submit the list of altered moves for approval."
+        },
+        {
+          "title": "Mega-Evolution",
+          "island": "gaia-island",
+          "text": "You can Mega Evolve regardless of whether the parts of your fusion already possess a Mega Evolution or not. This Mega Evolution can result not only in a change to stats but also a change to your Pokémon's Common Battle Ability.\n\nMega Evolution lasts for the entire floor, but has a cooldown for the next floor.\n\n> If you want to use this perk, you will need to submit the new common ability and the change in stats that your character will acquire upon mega-evolving."
+        },
+        {
+          "title": "Z-Move",
+          "island": "twilight-island",
+          "text": "You can equip a Z-Move as if it were an extra move. You can use any Z-Move, regardless of whether your type allows it or not. However, it can only be used once per battle.\n\nYou start with one Z-Move of your choice, but you can obtain more later by completing missions. You can switch your Z-Move by switching the Z-Crystal you have equipped."
+        },
+        {
+          "title": "Dynamax-Gigantamax",
+          "island": "fable-island",
+          "text": "Like regular Gigantamax/Dynamax, you will take the form of a giant version of your Pokémon for 3 turns, changing your movepool to that of the Dynamax version.\n\nHowever, your increased size means that all moves directed at you now have a 100% chance to hit, regardless of modifiers or abilities."
+        },
+        {
+          "title": "Terastallization",
+          "island": "chroma-island",
+          "text": "It retains the effects of normal Terastallization, meaning your Pokémon will become mono-type but will keep the STAB of its original main type plus the STAB of the Teratype.\n\nOnce activated, it will last for the entire battle."
+        }
+      ]
     },
     {
       "title": "Common Abilities",

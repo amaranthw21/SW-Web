@@ -8220,3 +8220,66 @@ a.blessing-link__body:hover {
     font-style: italic;
 
 }
+
+/* Con isla: su imagen arriba, desvaneciéndose hacia la tarjeta. */
+.mechanic-card--island {
+
+    padding-top: 0;
+
+}
+
+.mechanic-card__banner {
+
+    height: 96px;
+
+    margin: 0 -18px 12px;
+
+    background:
+        linear-gradient(to bottom, transparent 30%, rgba(17, 24, 39, 0.95)),
+        var(--card-island) center / cover no-repeat;
+
+}
+
+.mechanic-card--island .mechanic-card__head {
+
+    margin-top: -34px;
+
+    position: relative;
+
+}
+
+.mechanic-card__island {
+
+    display: inline-block;
+
+    margin: -4px 0 10px;
+
+    padding: 2px 10px;
+
+    border: 1px solid color-mix(in srgb, var(--type) 55%, transparent);
+    border-radius: 999px;
+
+    color: color-mix(in srgb, var(--type) 70%, white);
+
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+
+@media (hover: hover) {
+
+    .mechanic-card__island:hover {
+
+        background: color-mix(in srgb, var(--type) 18%, transparent);
+
+    }
+
+}
+
+.mechanic-card .paragraph-note {
+
+    font-size: 0.9rem;
+
+}
