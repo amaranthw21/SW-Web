@@ -1,3 +1,14 @@
 {
-  "cards": []
+  "cards": [
+    {
+      "page": "mechanics",
+      "image": "/fnd2ixq.jpg",
+      "imagePosition": ""
+    },
+    {
+      "page": "rulebook",
+      "image": "/image-7.png",
+      "imagePosition": "center center"
+    }
+  ]
 }
