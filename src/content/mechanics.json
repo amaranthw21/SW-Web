@@ -20,6 +20,10 @@
     {
       "title": "Dungeon Exploration",
       "sections": []
+    },
+    {
+      "title": "Weather/Terrain/Status Conditions",
+      "sections": []
     }
   ]
 }
