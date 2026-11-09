@@ -5,7 +5,8 @@ import useDocumentTitle from "../lib/useDocumentTitle";
 
 
 // Un botón por apartado (General, Character…) con sus reglas numeradas solas,
-// por orden. El de General, el primero, va más grande y encima de los demás.
+// por orden. Los botones llevan la imagen de su apartado tras una diagonal, y
+// el de General, el primero, va más grande y encima de los demás.
 export default function Rulebook(){
 
     useDocumentTitle("Rulebook");

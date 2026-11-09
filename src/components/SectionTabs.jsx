@@ -2,6 +2,7 @@ import { useSearchParams } from "react-router-dom";
 import ContentBlock from "./ContentBlock";
 import CopyTemplate from "./CopyTemplate";
 import withBlockIds from "../lib/blocks";
+import asset from "../lib/asset";
 
 
 // Las páginas de General hechas de apartados (Rulebook, Mechanics…): un botón
@@ -54,7 +55,13 @@ function sectionBlocks(sections, numbered, empty, extra, divided){
                 parts.push({ type: "text", text: `*${empty}*` });
             }
 
-            return { title: section.title, parts, className: divided ? "country-block--divided" : undefined };
+            return {
+                title: section.title,
+                parts,
+                className: divided ? "country-block--divided" : undefined,
+                image: section.image,
+                imagePosition: section.imagePosition
+            };
 
         })
     );
@@ -62,10 +69,15 @@ function sectionBlocks(sections, numbered, empty, extra, divided){
 }
 
 
+// Los botones son tarjetas partidas por una diagonal: el texto a la izquierda y
+// la imagen del apartado (`image`, del panel) a la derecha. Sin imagen, en su
+// lado va un degradado, así que no hace falta subirlas todas a la vez. Con
+// `art={false}` vuelven a ser botones planos.
+//
 // `featured` hace el primer botón más grande y a lo ancho, encima de los demás
 // (el General del Rulebook): con cinco apartados, así los otros cuatro llenan
 // sus filas y ninguno se queda suelto.
-export default function SectionTabs({ sections, numbered = false, empty = "Nothing has been written here yet.", extra, divided = false, featured = false }){
+export default function SectionTabs({ sections, numbered = false, empty = "Nothing has been written here yet.", extra, divided = false, featured = false, art = true }){
 
     const blocks = sectionBlocks(sections, numbered, empty, extra, divided);
 
@@ -84,17 +96,41 @@ export default function SectionTabs({ sections, numbered = false, empty = "Nothi
 
         <>
 
-            <div className="section-tabs" role="group" aria-label="Sections">
+            {/* --cols: en ancho, tantas columnas como botones (hasta cuatro),
+                para que tres botones no dejen un hueco a la derecha. */}
+            <div
+                className={featured ? "section-tabs section-tabs--featured" : "section-tabs"}
+                style={{ "--cols": Math.min(4, Math.max(1, blocks.length - (featured ? 1 : 0))) }}
+                role="group"
+                aria-label="Sections"
+            >
                 {
                     blocks.map((block, i) => (
                         <button
                             key={block.id}
                             type="button"
-                            className={`section-tab${featured && i === 0 ? " section-tab--featured" : ""}${block === current ? " section-tab--on" : ""}`}
+                            className={`section-tab${art ? " section-tab--art" : ""}${featured && i === 0 ? " section-tab--featured" : ""}${block === current ? " section-tab--on" : ""}`}
                             aria-pressed={block === current}
                             onClick={() => setParams({ section: block.id })}
                         >
-                            {block.title}
+                            {
+                                art
+                                    ? (
+                                        <>
+                                            <span className="section-tab__label">{block.title}</span>
+                                            <span className="section-tab__slash" aria-hidden="true">
+                                                <span
+                                                    className={block.image?.trim() ? "section-tab__art" : "section-tab__art section-tab__art--empty"}
+                                                    style={block.image?.trim() ? {
+                                                        backgroundImage: `url(${asset(block.image)})`,
+                                                        backgroundPosition: block.imagePosition || "center"
+                                                    } : undefined}
+                                                />
+                                            </span>
+                                        </>
+                                    )
+                                    : block.title
+                            }
                         </button>
                     ))
                 }

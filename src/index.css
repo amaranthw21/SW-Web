@@ -6666,7 +6666,7 @@ button.region-loc {
 
     .section-tabs {
 
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr));
 
     }
 
@@ -6732,6 +6732,19 @@ button.region-loc {
     border-color: var(--accent);
 
     color: var(--accent);
+
+}
+
+/* En móvil van de dos en dos: si quedan impares, el último se lleva la fila
+   entera para no quedarse suelto. Con botón destacado arriba la cuenta va
+   corrida en uno, así que ahí no se aplica. */
+@media (max-width: 767px) {
+
+    .section-tabs:not(.section-tabs--featured) > .section-tab:last-child:nth-child(odd) {
+
+        grid-column: 1 / -1;
+
+    }
 
 }
 
@@ -8535,6 +8548,149 @@ a.blessing-link__body:hover {
 
         border-right: 0;
         border-bottom: 1px solid color-mix(in srgb, var(--type) 40%, transparent);
+
+    }
+
+}
+
+
+/* ───────── Botones con imagen (Rulebook) ─────────
+   El texto a la izquierda y la imagen a la derecha, partidos por una diagonal
+   con un filo dorado. El filo es la sombra del envoltorio (__slash): la imagen
+   va recortada con clip-path, y una sombra puesta en el mismo elemento se
+   recortaría con ella, pero en su padre no. */
+.section-tab--art {
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 64px;
+
+    padding: 0 0 0 16px;
+
+    overflow: hidden;
+
+    text-align: left;
+
+}
+
+.section-tab__label {
+
+    position: relative;
+    z-index: 1;
+
+    max-width: 58%;
+
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+
+}
+
+.section-tab__slash {
+
+    position: absolute;
+    inset: 0 0 0 auto;
+
+    width: 52%;
+
+    filter: drop-shadow(-2px 0 0 color-mix(in srgb, var(--accent) 70%, transparent));
+
+    pointer-events: none;
+
+}
+
+.section-tab__art {
+
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    clip-path: polygon(34% 0, 100% 0, 100% 100%, 0 100%);
+
+    opacity: 0.55;
+    filter: saturate(0.7);
+
+    transition: opacity 0.2s ease, filter 0.2s ease, transform 0.3s ease;
+
+}
+
+/* Sin imagen: un degradado del color del sitio, para que la diagonal se vea. */
+.section-tab__art--empty {
+
+    background-image:
+        repeating-linear-gradient(115deg, rgba(212, 165, 55, 0.08) 0 6px, transparent 6px 14px),
+        linear-gradient(115deg, rgba(212, 165, 55, 0.05), rgba(212, 165, 55, 0.3));
+
+    opacity: 1;
+    filter: none;
+
+}
+
+@media (hover: hover) {
+
+    .section-tab--art:hover .section-tab__art {
+
+        opacity: 0.85;
+        filter: none;
+
+        transform: scale(1.04);
+
+    }
+
+}
+
+.section-tab--art.section-tab--on .section-tab__art {
+
+    opacity: 1;
+    filter: none;
+
+}
+
+.section-tab--art.section-tab--on .section-tab__slash {
+
+    filter: drop-shadow(-3px 0 0 var(--accent));
+
+}
+
+/* El grande (General): más alto, y la imagen ocupa más. */
+.section-tab--art.section-tab--featured {
+
+    min-height: 96px;
+
+    padding-left: 28px;
+
+}
+
+.section-tab--featured .section-tab__slash {
+
+    width: 62%;
+
+}
+
+.section-tab--featured .section-tab__art {
+
+    clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+
+}
+
+@media (min-width: 768px) {
+
+    .section-tab--art {
+
+        min-height: 76px;
+
+        padding: 0 0 0 18px;
+
+    }
+
+    .section-tab--art.section-tab--featured {
+
+        min-height: 120px;
+
+        padding-left: 36px;
 
     }
 
