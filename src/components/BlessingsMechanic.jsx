@@ -7,6 +7,22 @@ import asset from "../lib/asset";
 const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
 
 
+// El encuadre del dibujo del objeto, ajustable desde el panel: zoom y cuánto se
+// mueve hacia los lados y en vertical (en % de su tamaño). Sale centrado por
+// defecto; esto es para los dibujos que no lo están.
+function iconFraming(blessing){
+
+    const number = (value, fallback) => (Number.isFinite(Number(value)) && value !== "" && value !== null ? Number(value) : fallback);
+
+    return {
+        "--icon-zoom": number(blessing.iconZoom, 1),
+        "--icon-x": `${number(blessing.iconX, 0)}%`,
+        "--icon-y": `${number(blessing.iconY, 0)}%`
+    };
+
+}
+
+
 // El dibujo de la bendición en los botones y en la cabecera: el del objeto, y
 // si aún no tiene, la inicial en un rombo.
 function Sigil({ blessing, size }){
@@ -15,7 +31,7 @@ function Sigil({ blessing, size }){
 
     return (
 
-        <span className={`blessing-sigil blessing-sigil--${size}`} aria-hidden="true">
+        <span className={`blessing-sigil blessing-sigil--${size}`} style={iconFraming(blessing)} aria-hidden="true">
             {
                 image
                     ? <img src={asset(image)} alt="" loading="lazy" />
@@ -89,7 +105,7 @@ function BlessingDetail({ blessing }){
                         blessing.item
                             ? (
                                 <Link className="blessing-link__body" to="/items/blessings">
-                                    <span className="blessing-link__portrait blessing-link__portrait--item">
+                                    <span className="blessing-link__portrait blessing-link__portrait--item" style={iconFraming(blessing)}>
                                         {blessing.item.image?.trim() && <img src={asset(blessing.item.image)} alt="" loading="lazy" />}
                                     </span>
                                     {blessing.item.name}

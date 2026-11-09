@@ -154,6 +154,9 @@ collections:
             fields:
               - { name: name, label: Name, widget: string, hint: "e.g. 'Tidal Blessing'. Its address comes from it, so renaming it changes the link." }
               - { name: item, label: "Related item", widget: relation, collection: blessings, value_field: "{{slug}}", search_fields: [name, blessing], display_fields: ["{{name}} → {{blessing}}"], required: false, hint: "The object from Items › Blessings. Its picture is used as the blessing's icon." }
+              - { name: iconZoom, label: "Icon zoom", widget: number, value_type: float, required: false, min: 0.2, max: 4, hint: "How big the item's picture looks in its circle. 1 is normal; 1.3 is bigger, 0.8 smaller." }
+              - { name: iconX, label: "Icon left/right", widget: number, value_type: int, required: false, min: -50, max: 50, hint: "Moves the item's picture sideways, in % of its size: negative goes left, positive right. Empty or 0 keeps it centered." }
+              - { name: iconY, label: "Icon up/down", widget: number, value_type: int, required: false, min: -50, max: 50, hint: "Moves the item's picture vertically, in % of its size: negative goes up, positive down. Empty or 0 keeps it centered." }
               - { name: npc, label: "Granted by (NPC)", widget: relation, collection: characters, value_field: "{{slug}}", search_fields: [name], display_fields: ["{{name}}"], required: false, hint: "The NPC you befriend to get it." }
               - { name: color, label: "Accent color", widget: color, required: false, hint: "Tints its button and its page. Empty keeps the site's gold." }
               - { name: summary, label: Summary, widget: richtext, required: false, hint: "A few lines under the name." }

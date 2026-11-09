@@ -7700,12 +7700,29 @@ button.region-loc {
 
 }
 
+/* El dibujo del objeto, centrado. --icon-* es el encuadre del panel. */
+.blessing-sigil {
+
+    overflow: hidden;
+
+}
+
+.blessing-sigil img,
+.blessing-link__portrait--item img {
+
+    display: block;
+
+    object-fit: contain;
+    object-position: center;
+
+    transform: translate(var(--icon-x, 0%), var(--icon-y, 0%)) scale(var(--icon-zoom, 1));
+
+}
+
 .blessing-sigil img {
 
     width: 80%;
     height: 80%;
-
-    object-fit: contain;
 
 }
 
@@ -7851,11 +7868,20 @@ a.blessing-link__body:hover {
 
 }
 
+/* El objeto, con su margen dentro del círculo. Va con un grid y no con
+   padding en la imagen: con padding la imagen medía más que el círculo y se
+   salía hacia abajo a la derecha. */
+.blessing-link__portrait--item {
+
+    display: grid;
+    place-items: center;
+
+}
+
 .blessing-link__portrait--item img {
 
-    object-fit: contain;
-
-    padding: 4px;
+    width: 80%;
+    height: 80%;
 
 }
 
