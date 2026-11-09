@@ -1,16 +1,14 @@
 import { Link, useParams } from "react-router-dom";
 import SectionTabs from "../components/SectionTabs";
 import changesAndBans from "../content/changes-and-bans.json";
-import mechanics from "../content/mechanics.json";
 import general from "../data/general";
 import useDocumentTitle from "../lib/useDocumentTitle";
 import NotFound from "./NotFound";
 
 
 // Las páginas de General que ya tienen contenido, hecho de apartados con un
-// botón cada uno (como el Rulebook, que tiene su propia ruta).
+// botón cada uno (como el Rulebook o Mechanics, que tienen su propia ruta).
 const CONTENT = {
-    "mechanics": mechanics,
     "changes-and-bans": changesAndBans
 };
 
