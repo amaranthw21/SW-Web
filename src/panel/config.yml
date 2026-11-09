@@ -113,6 +113,7 @@ collections:
               - { name: image, label: Picture, widget: image, required: false, hint: "Shown on the card." }
               - { name: imagePosition, label: "Image position (CSS object-position)", widget: string, required: false, hint: "e.g. 'center 20%'" }
               - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown at the top of the mechanic's page, above the buttons." }
+              - { name: blessings, label: "Show the blessings", widget: boolean, default: false, required: false, hint: "Shows the blessings and their stages (edited in 'Mechanics · Blessings') on this page. Only for the Blessings page." }
               - name: sections
                 label: Sections
                 widget: list
@@ -133,6 +134,41 @@ collections:
                       - { name: title, label: Title, widget: string }
                       - { name: text, label: Text, widget: richtext, required: false }
                   - { name: outro, label: "Closing note", widget: richtext, required: false, hint: "Shown at the end of the section." }
+
+      # Las bendiciones de Mechanics: cada una con su objeto, el NPC que la da y
+      # sus etapas, cada etapa con su símbolo. Salen en la mecánica marcada con
+      # "Show the blessings".
+      - name: mechanic-blessings
+        label: "Mechanics · Blessings"
+        file: src/content/mechanic-blessings.json
+        format: json
+        fields:
+          - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown above the blessing buttons. Leave a blank line between paragraphs." }
+          - name: blessings
+            label: Blessings
+            widget: list
+            required: false
+            label_singular: Blessing
+            summary: "{{fields.name}}"
+            hint: "Each blessing is a button on the Blessings page, in this order."
+            fields:
+              - { name: name, label: Name, widget: string, hint: "e.g. 'Tidal Blessing'. Its address comes from it, so renaming it changes the link." }
+              - { name: item, label: "Related item", widget: relation, collection: blessings, value_field: "{{slug}}", search_fields: [name, blessing], display_fields: ["{{name}} → {{blessing}}"], required: false, hint: "The object from Items › Blessings. Its picture is used as the blessing's icon." }
+              - { name: npc, label: "Granted by (NPC)", widget: relation, collection: characters, value_field: "{{slug}}", search_fields: [name], display_fields: ["{{name}}"], required: false, hint: "The NPC you befriend to get it." }
+              - { name: color, label: "Accent color", widget: color, required: false, hint: "Tints its button and its page. Empty keeps the site's gold." }
+              - { name: summary, label: Summary, widget: richtext, required: false, hint: "A few lines under the name." }
+              - { name: howToGet, label: "How to get it", widget: richtext, required: false, hint: "Usually: befriend the NPC. Leave a blank line between paragraphs." }
+              - name: stages
+                label: Stages
+                widget: list
+                required: false
+                label_singular: Stage
+                summary: "{{fields.title}}"
+                hint: "In order, from the first rank to the last. Add more whenever a new one exists."
+                fields:
+                  - { name: title, label: Title, widget: string, hint: "e.g. 'Stage I'." }
+                  - { name: symbol, label: Symbol, widget: image, required: false, hint: "The rank's own symbol, shown on the right. Without one it shows the stage number. A square PNG with a transparent background works best." }
+                  - { name: text, label: "What it gives", widget: richtext, required: false }
 
       # Character Types de General: una tarjeta por tipo de personaje y, dentro
       # de cada uno, un botón por versión (Full Version, Slice of Life, OC Maker).

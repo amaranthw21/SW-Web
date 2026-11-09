@@ -1,0 +1,285 @@
+{
+  "intro": "",
+  "blessings": [
+    {
+      "name": "Rainbow Blessing",
+      "item": "rainbow-wing",
+      "npc": "stralende",
+      "color": "#e9a23b",
+      "summary": "",
+      "howToGet": "",
+      "stages": [
+        {
+          "title": "Stage I",
+          "symbol": "",
+          "text": ""
+        },
+        {
+          "title": "Stage II",
+          "symbol": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "name": "Tidal Blessing",
+      "item": "silver-wing",
+      "npc": "malaya-bailey",
+      "color": "#8fbcd8",
+      "summary": "",
+      "howToGet": "",
+      "stages": [
+        {
+          "title": "Stage I",
+          "symbol": "",
+          "text": ""
+        },
+        {
+          "title": "Stage II",
+          "symbol": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "name": "Continental Blessing",
+      "item": "groudon",
+      "npc": "lehua",
+      "color": "#d0583f",
+      "summary": "",
+      "howToGet": "",
+      "stages": [
+        {
+          "title": "Stage I",
+          "symbol": "",
+          "text": ""
+        },
+        {
+          "title": "Stage II",
+          "symbol": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "name": "Ocean Blessing",
+      "item": "kyogre",
+      "npc": "alruna",
+      "color": "#3f76d9",
+      "summary": "",
+      "howToGet": "",
+      "stages": [
+        {
+          "title": "Stage I",
+          "symbol": "",
+          "text": ""
+        },
+        {
+          "title": "Stage II",
+          "symbol": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "name": "Sky Blessing",
+      "item": "rayquaza",
+      "npc": "rayquaza",
+      "color": "#3fae70",
+      "summary": "",
+      "howToGet": "",
+      "stages": [
+        {
+          "title": "Stage I",
+          "symbol": "",
+          "text": ""
+        },
+        {
+          "title": "Stage II",
+          "symbol": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "name": "Time Blessing",
+      "item": "dialga",
+      "npc": "chronus-lathander",
+      "color": "#5b8fd6",
+      "summary": "",
+      "howToGet": "",
+      "stages": [
+        {
+          "title": "Stage I",
+          "symbol": "",
+          "text": ""
+        },
+        {
+          "title": "Stage II",
+          "symbol": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "name": "Space Blessing",
+      "item": "palkia",
+      "npc": "semper",
+      "color": "#d08fd8",
+      "summary": "",
+      "howToGet": "",
+      "stages": [
+        {
+          "title": "Stage I",
+          "symbol": "",
+          "text": ""
+        },
+        {
+          "title": "Stage II",
+          "symbol": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "name": "Antimatter Blessing",
+      "item": "giratina",
+      "npc": "giratina",
+      "color": "#9a7bd0",
+      "summary": "",
+      "howToGet": "",
+      "stages": [
+        {
+          "title": "Stage I",
+          "symbol": "",
+          "text": ""
+        },
+        {
+          "title": "Stage II",
+          "symbol": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "name": "Statue Blessing",
+      "item": "regigigas",
+      "npc": "kara",
+      "color": "#c9b48a",
+      "summary": "",
+      "howToGet": "",
+      "stages": [
+        {
+          "title": "Stage I",
+          "symbol": "",
+          "text": ""
+        },
+        {
+          "title": "Stage II",
+          "symbol": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "name": "Ivory Blessing",
+      "item": "kyurem",
+      "npc": "io",
+      "color": "#cfdde6",
+      "summary": "",
+      "howToGet": "",
+      "stages": [
+        {
+          "title": "Stage I",
+          "symbol": "",
+          "text": ""
+        },
+        {
+          "title": "Stage II",
+          "symbol": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "name": "Dark Light Blessing",
+      "item": "necrozma",
+      "npc": "ampelo",
+      "color": "#8f7cf0",
+      "summary": "",
+      "howToGet": "",
+      "stages": [
+        {
+          "title": "Stage I",
+          "symbol": "",
+          "text": ""
+        },
+        {
+          "title": "Stage II",
+          "symbol": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "name": "Giant Blessing",
+      "item": "eternatus",
+      "npc": "",
+      "color": "#c23a52",
+      "summary": "",
+      "howToGet": "",
+      "stages": [
+        {
+          "title": "Stage I",
+          "symbol": "",
+          "text": ""
+        },
+        {
+          "title": "Stage II",
+          "symbol": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "name": "Crystal Blessing",
+      "item": "terapagos",
+      "npc": "aeneas",
+      "color": "#6fd3d9",
+      "summary": "",
+      "howToGet": "",
+      "stages": [
+        {
+          "title": "Stage I",
+          "symbol": "",
+          "text": ""
+        },
+        {
+          "title": "Stage II",
+          "symbol": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "name": "Chain Blessing",
+      "item": "pecharunt",
+      "npc": "george",
+      "color": "#b55bd6",
+      "summary": "",
+      "howToGet": "",
+      "stages": [
+        {
+          "title": "Stage I",
+          "symbol": "",
+          "text": ""
+        },
+        {
+          "title": "Stage II",
+          "symbol": "",
+          "text": ""
+        }
+      ]
+    }
+  ]
+}

@@ -3,7 +3,8 @@
   "pages": [
     {
       "title": "Blessings",
-      "sections": []
+      "sections": [],
+      "blessings": true
     },
     {
       "title": "Commonfolk Perks",

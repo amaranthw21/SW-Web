@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import BlessingsMechanic from "../components/BlessingsMechanic";
 import Paragraphs from "../components/Paragraphs";
 import SectionTabs from "../components/SectionTabs";
 import mechanics from "../data/mechanics";
@@ -7,7 +8,8 @@ import NotFound from "./NotFound";
 
 
 // Una mecánica: un botón por apartado, como en Changes & Bans, y solo se ve el
-// pulsado.
+// pulsado. La marcada con `blessings` enseña además las bendiciones con sus
+// etapas (y los apartados, solo si tiene alguno).
 export default function Mechanic(){
 
     const { mechanicId } = useParams();
@@ -51,7 +53,16 @@ export default function Mechanic(){
                 )
             }
 
-            <SectionTabs sections={mechanic.sections} divided />
+            {
+                mechanic.blessings
+                    ? (
+                        <>
+                            {mechanic.sections?.length > 0 && <SectionTabs sections={mechanic.sections} divided />}
+                            <BlessingsMechanic />
+                        </>
+                    )
+                    : <SectionTabs sections={mechanic.sections} divided />
+            }
 
         </div>
 
