@@ -1,4 +1,25 @@
 {
   "intro": "",
-  "pages": []
+  "pages": [
+    {
+      "title": "Blessings",
+      "sections": []
+    },
+    {
+      "title": "Commonfolk Perks",
+      "sections": []
+    },
+    {
+      "title": "Common Abilities",
+      "sections": []
+    },
+    {
+      "title": "Battle Guide",
+      "sections": []
+    },
+    {
+      "title": "Dungeon Exploration",
+      "sections": []
+    }
+  ]
 }
