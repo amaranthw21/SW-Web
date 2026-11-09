@@ -4,7 +4,9 @@
     {
       "title": "Blessings",
       "sections": [],
-      "blessings": true
+      "blessings": true,
+      "image": "/of-wings-and-bells-by-mischievousraven-dbsqznl-fullview.jpg",
+      "imagePosition": "center center"
     },
     {
       "title": "Commonfolk Perks",
@@ -50,7 +52,9 @@
           "island": "chroma-island",
           "text": "It retains the effects of normal Terastallization, meaning your Pokémon will become mono-type but will keep the STAB of its original main type plus the STAB of the Teratype.\n\nOnce activated, it will last for the entire battle."
         }
-      ]
+      ],
+      "image": "/cltglj3f8j3f1.jpg",
+      "imagePosition": "center center"
     },
     {
       "title": "Common Abilities",
@@ -146,7 +150,8 @@
           "title": "Fairy",
           "text": "You can conjure objects from your memory and make them appear out of thin air for a short time. Unfortunately, these objects have no special effects nor work as intended, even if their real-life counterparts did. They still retain their physical structure, though."
         }
-      ]
+      ],
+      "image": "/2002-06-pokemon-mundo-misterioso-05-2.webp"
     },
     {
       "title": "Battle Guide",
@@ -226,7 +231,9 @@
               "hinders": [],
               "text": "- Lasts five turns.\n- Boosts the power of Ice-type moves.\n- Protects against burns.\n- Ice-type moves may cause frostbite on the opponents they hit.\n- Can be caused by moves like Blizzard."
             }
-          ]
+          ],
+          "image": "/images-2.jpg",
+          "imagePosition": "center center"
         },
         {
           "title": "Weather",
@@ -364,9 +371,12 @@
               ],
               "text": "- Boosts the power of Electric-type moves.\n- Every other turn, a Pokémon can be hit by lightning.\n- If a Steel-type Pokémon is on the field, it always draws the lightning to itself."
             }
-          ]
+          ],
+          "image": "/dd1b6340b243316ce61e5840f26b4dd9.png",
+          "imagePosition": "center center"
         }
-      ]
+      ],
+      "image": "/ddx8iby-9cda4e58-eccf-4d71-bc3b-ee100742d861.png"
     }
   ]
 }
