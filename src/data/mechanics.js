@@ -10,7 +10,8 @@ export const mechanicsIntro = content.intro ?? "";
 
 
 const mechanics = (content.pages ?? [])
-    .filter(page => page?.title?.trim())
+    // Las marcadas como ocultas en el panel no salen hasta que estén listas.
+    .filter(page => page?.title?.trim() && !page.hidden)
     .map(page => ({
         ...page,
         id: slug(page.title)

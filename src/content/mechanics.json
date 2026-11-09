@@ -155,11 +155,13 @@
           "title": "Status Conditions",
           "entries": []
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "title": "Dungeon Exploration",
-      "sections": []
+      "sections": [],
+      "hidden": true
     },
     {
       "title": "Weather & Terrain",

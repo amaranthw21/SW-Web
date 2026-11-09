@@ -130,6 +130,7 @@ collections:
             hint: "Each mechanic is a card on the page, in this order, with its own page. Its address comes from the title, so renaming it changes the link."
             fields:
               - { name: title, label: Title, widget: string, hint: "e.g. 'Battles' or 'Training'." }
+              - { name: hidden, label: "Hidden", widget: boolean, default: false, required: false, hint: "Keeps this mechanic off the site (no card, no page) until it's ready." }
               - { name: summary, label: Summary, widget: text, required: false, hint: "One or two lines for the card." }
               - { name: image, label: Picture, widget: image, required: false, hint: "Shown on the right of the card, past a diagonal cut. Without one the card shows a gradient." }
               - { name: imagePosition, label: "Picture position (CSS background-position)", widget: string, required: false, hint: "Which part of the picture shows, e.g. 'center 30%' or 'right top'." }
