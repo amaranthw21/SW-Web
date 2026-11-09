@@ -163,7 +163,208 @@
     },
     {
       "title": "Weather & Terrain",
-      "sections": []
+      "sections": [
+        {
+          "title": "Terrains",
+          "intro": "Terrain is a type of field effect that affects Pokémon on the ground. In battle there is often no terrain to begin with, except in certain territories and dungeons, but it can be changed by Pokémon's moves and Abilities.\n\n> Only one terrain can be active at a time. A new terrain overwrites the previous one.",
+          "entries": [],
+          "cards": [
+            {
+              "title": "Electric Terrain",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "",
+              "favours": [
+                "Electric"
+              ],
+              "hinders": [],
+              "text": "- Lasts five turns.\n- Pokémon on the ground can't fall asleep.\n- Boosts the power of Electric-type moves."
+            },
+            {
+              "title": "Grassy Terrain",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "",
+              "favours": [
+                "Grass"
+              ],
+              "hinders": [],
+              "text": "- Lasts five turns.\n- Pokémon on the ground restore a little HP at the end of each turn.\n- Boosts the power of Grass-type moves."
+            },
+            {
+              "title": "Misty Terrain",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "",
+              "favours": [],
+              "hinders": [
+                "Dragon"
+              ],
+              "text": "- Lasts five turns.\n- Pokémon on the ground can't get status conditions.\n- Halves the damage of Dragon-type moves."
+            },
+            {
+              "title": "Psychic Terrain",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "",
+              "favours": [
+                "Psychic"
+              ],
+              "hinders": [],
+              "text": "- Lasts five turns.\n- Pokémon on the ground can't be hit by priority moves.\n- Boosts the power of Psychic-type moves."
+            },
+            {
+              "title": "Frost Terrain",
+              "image": "",
+              "origin": "Server",
+              "restriction": "",
+              "favours": [
+                "Ice"
+              ],
+              "hinders": [],
+              "text": "- Lasts five turns.\n- Boosts the power of Ice-type moves.\n- Protects against burns.\n- Ice-type moves may cause frostbite on the opponents they hit.\n- Can be caused by moves like Blizzard."
+            }
+          ]
+        },
+        {
+          "title": "Weather",
+          "intro": "The weather changes the battle environment: it can activate Abilities, modify certain moves, and damage the Pokémon in battle or affect their stats.\n\n> Only one weather can be active at a time. An effect that creates weather removes the previous one.",
+          "entries": [],
+          "cards": [
+            {
+              "title": "Harsh Sunlight",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "",
+              "favours": [
+                "Fire"
+              ],
+              "hinders": [
+                "Water"
+              ],
+              "text": "- Boosts the power of Fire-type moves.\n- Lowers the power of Water-type moves."
+            },
+            {
+              "title": "Rain",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "",
+              "favours": [
+                "Water"
+              ],
+              "hinders": [
+                "Fire"
+              ],
+              "text": "- Boosts the power of Water-type moves.\n- Lowers the power of Fire-type moves."
+            },
+            {
+              "title": "Sandstorm",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "",
+              "favours": [
+                "Rock",
+                "Ground",
+                "Steel"
+              ],
+              "hinders": [],
+              "text": "- At the end of each turn, damages every Pokémon that isn't Rock, Ground or Steel type.\n- Boosts the Sp. Def of Rock-type Pokémon."
+            },
+            {
+              "title": "Hail",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "",
+              "favours": [
+                "Ice"
+              ],
+              "hinders": [],
+              "text": "- At the end of each turn, damages every Pokémon that isn't Ice type.\n- Makes Blizzard more likely to hit.\n- Boosts the Defense of Ice-type Pokémon."
+            },
+            {
+              "title": "Fog",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "",
+              "favours": [],
+              "hinders": [],
+              "text": "- A thick fog clouds the overworld and the battlefield.\n- Lowers the accuracy of all moves."
+            },
+            {
+              "title": "Extremely Harsh Sunlight",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "Only Groudon",
+              "favours": [
+                "Fire"
+              ],
+              "hinders": [
+                "Water"
+              ],
+              "text": "- Boosts the power of Fire-type moves.\n- Protects Pokémon from Water-type moves."
+            },
+            {
+              "title": "Heavy Rain",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "Only Kyogre",
+              "favours": [
+                "Water"
+              ],
+              "hinders": [
+                "Fire"
+              ],
+              "text": "- Boosts the power of Water-type moves.\n- Protects Pokémon from Fire-type moves."
+            },
+            {
+              "title": "Strong Winds",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "Only Rayquaza",
+              "favours": [
+                "Flying"
+              ],
+              "hinders": [],
+              "text": "- Lowers the power of moves that are super effective against Flying-type Pokémon."
+            },
+            {
+              "title": "Poison Mist",
+              "image": "",
+              "origin": "Server",
+              "restriction": "",
+              "favours": [
+                "Poison"
+              ],
+              "hinders": [],
+              "text": "- Boosts the power of Poison-type moves.\n- Poisons every Pokémon that isn't Poison type and has no immunity."
+            },
+            {
+              "title": "Snowstorm",
+              "image": "",
+              "origin": "Server",
+              "restriction": "",
+              "favours": [
+                "Ice"
+              ],
+              "hinders": [],
+              "text": "- A permanent hail, unless a move or an Ability changes it.\n- Works like Hail: damages every Pokémon that isn't Ice type at the end of each turn."
+            },
+            {
+              "title": "Thunderstorm",
+              "image": "",
+              "origin": "Server",
+              "restriction": "",
+              "favours": [
+                "Electric"
+              ],
+              "hinders": [
+                "Steel"
+              ],
+              "text": "- Boosts the power of Electric-type moves.\n- Every other turn, a Pokémon can be hit by lightning.\n- If a Steel-type Pokémon is on the field, it always draws the lightning to itself."
+            }
+          ]
+        }
+      ]
     }
   ]
 }

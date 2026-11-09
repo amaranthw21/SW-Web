@@ -11,7 +11,8 @@ import NotFound from "./NotFound";
 // Una mecánica: un botón por apartado, como en Changes & Bans, y solo se ve el
 // pulsado. Puede llevar además tarjetas (`cards`, para las que son una simple
 // lista, como Common Abilities) y la marcada con `blessings` enseña las
-// bendiciones con sus etapas.
+// bendiciones con sus etapas. Un apartado también puede llevar tarjetas, que
+// salen en fila con su imagen al lado (Weather & Terrain).
 export default function Mechanic(){
 
     const { mechanicId } = useParams();
@@ -60,7 +61,13 @@ export default function Mechanic(){
                 apartado: ahí sobraría el "aún no hay nada". */}
             {
                 (mechanic.sections?.length > 0 || !(mechanic.blessings || mechanic.cards?.length > 0)) && (
-                    <SectionTabs sections={mechanic.sections} divided />
+                    <SectionTabs
+                        sections={mechanic.sections}
+                        divided
+                        extra={section => section.cards?.length > 0 && (
+                            <MechanicCards key="cards" cards={section.cards} rows />
+                        )}
+                    />
                 )
             }
 

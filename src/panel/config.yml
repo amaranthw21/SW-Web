@@ -146,6 +146,22 @@ collections:
                       - { name: title, label: Title, widget: string }
                       - { name: text, label: Text, widget: richtext, required: false }
                   - { name: outro, label: "Closing note", widget: richtext, required: false, hint: "Shown at the end of the section." }
+                  - name: cards
+                    label: Cards
+                    widget: list
+                    required: false
+                    label_singular: Card
+                    summary: "{{fields.title}}"
+                    hint: "Cards shown one under another at the end of the section, with a picture on the left (e.g. each weather or terrain)."
+                    fields:
+                      - { name: title, label: Title, widget: string, hint: "e.g. 'Electric Terrain'." }
+                      - { name: image, label: Picture, widget: image, required: false, hint: "Shown on the left. Without one it shows the symbol of the first type it favours." }
+                      - { name: imagePosition, label: "Image position (CSS object-position)", widget: string, required: false, hint: "e.g. 'center 20%'" }
+                      - { name: origin, label: Origin, widget: select, required: false, options: [Canon, Server], hint: "'Canon' if it's from the games, 'Server' if it's one of ours." }
+                      - { name: restriction, label: Restriction, widget: string, required: false, hint: "e.g. 'Only Groudon'. Leave empty if anyone can cause it." }
+                      - { name: favours, label: "Favours (types)", widget: checkboxes, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar, Shadow, Radiant], hint: "The types it helps: boosted moves, raised stats, immunity to its damage…" }
+                      - { name: hinders, label: "Hinders (types)", widget: checkboxes, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar, Shadow, Radiant], hint: "The types it hurts: weakened moves, extra damage…" }
+                      - { name: text, label: Effects, widget: richtext, required: false, hint: "One bullet per effect, e.g. '- Lasts five turns.'" }
 
       # Las bendiciones de Mechanics: cada una con su objeto, el NPC que la da y
       # sus etapas, cada etapa con su símbolo. Salen en la mecánica marcada con
