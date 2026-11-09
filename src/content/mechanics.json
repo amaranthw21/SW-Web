@@ -1,3 +1,372 @@
 {
-  "sections": []
+  "intro": "",
+  "pages": [
+    {
+      "title": "Blessings",
+      "sections": [],
+      "blessings": true
+    },
+    {
+      "title": "Commonfolk Perks",
+      "sections": [],
+      "cards": [
+        {
+          "title": "Shadow/Radiant Moves",
+          "island": "sleighbell-island",
+          "text": "It allows the Pokémon to learn a Shadow Move. These moves, which can only be learned through this perk, are super effective against any Pokémon, regardless of its type.\n\nFor balancing purposes, all Shadow Moves have a maximum of 10 PP."
+        },
+        {
+          "title": "Weathersync",
+          "island": "bead-island",
+          "text": "This perk allows Pokémon to change one of their types to match the weather or terrain type that is currently active. If both weather and terrain are active at the same time, both types can be changed.\n\nYou can choose whether or not to activate this perk."
+        },
+        {
+          "title": "Callforma",
+          "island": "enthropy-island",
+          "text": "This perk allows you to summon a clone (a dummy version with no personality) of a character your character has befriended. This clone will possess the same abilities and moves as the original character.\n\nThe clone disappears if it takes damage or if the battle ends. Summoning it takes one turn and can only be done once per floor."
+        },
+        {
+          "title": "Make Believe",
+          "island": "frost-island",
+          "text": "This perk allows you to create a second version of your movepool; however, you can slightly alter the moves to give them different effects. Some examples would be Flamethrower becoming a Water-type move, or Blizzard, instead of having a chance to freeze, now having the ability to paralyze.\n\nIn battle, you can only switch between your movepool versions once. Once you've switched, it will remain that way for the rest of the battle. PP is shared between both movepool versions.\n\n> If you choose this perk, you will have to submit the list of altered moves for approval."
+        },
+        {
+          "title": "Mega-Evolution",
+          "island": "gaia-island",
+          "text": "You can Mega Evolve regardless of whether the parts of your fusion already possess a Mega Evolution or not. This Mega Evolution can result not only in a change to stats but also a change to your Pokémon's Common Battle Ability.\n\nMega Evolution lasts for the entire floor, but has a cooldown for the next floor.\n\n> If you want to use this perk, you will need to submit the new common ability and the change in stats that your character will acquire upon mega-evolving."
+        },
+        {
+          "title": "Z-Move",
+          "island": "twilight-island",
+          "text": "You can equip a Z-Move as if it were an extra move. You can use any Z-Move, regardless of whether your type allows it or not. However, it can only be used once per battle.\n\nYou start with one Z-Move of your choice, but you can obtain more later by completing missions. You can switch your Z-Move by switching the Z-Crystal you have equipped."
+        },
+        {
+          "title": "Dynamax-Gigantamax",
+          "island": "fable-island",
+          "text": "Like regular Gigantamax/Dynamax, you will take the form of a giant version of your Pokémon for 3 turns, changing your movepool to that of the Dynamax version.\n\nHowever, your increased size means that all moves directed at you now have a 100% chance to hit, regardless of modifiers or abilities."
+        },
+        {
+          "title": "Terastallization",
+          "island": "chroma-island",
+          "text": "It retains the effects of normal Terastallization, meaning your Pokémon will become mono-type but will keep the STAB of its original main type plus the STAB of the Teratype.\n\nOnce activated, it will last for the entire battle."
+        }
+      ]
+    },
+    {
+      "title": "Common Abilities",
+      "sections": [],
+      "cards": [
+        {
+          "type": "Normal",
+          "title": "Normal",
+          "text": "Can more easily adjust to certain environments, though at a lesser amount than other abilities dedicated to specific environments."
+        },
+        {
+          "type": "Fire",
+          "title": "Fire",
+          "text": "Slightly warmer than the average mon. Can tolerate fire, and swim in magma."
+        },
+        {
+          "type": "Water",
+          "title": "Water",
+          "text": "Able to swim/breathe/dive underwater for far longer periods of time than other Pokémon."
+        },
+        {
+          "type": "Electric",
+          "title": "Electric",
+          "text": "Surrounded by a light layer of electric fuzz that helps detect incredibly close people. Concentrate this fuzz into electricity that can emit light and shock people, as a weak shock nowhere near the power of an actual move."
+        },
+        {
+          "type": "Grass",
+          "title": "Grass",
+          "text": "More in tune with plantlife, able to nurture and control its growth to fit desires."
+        },
+        {
+          "type": "Ice",
+          "title": "Ice",
+          "text": "Naturally cools down surroundings. Can tolerate freezing temperatures, and easily travel in snowy/icy zones."
+        },
+        {
+          "type": "Fighting",
+          "title": "Fighting",
+          "text": "Can destroy large obstacles blocking paths. Your opponent cannot use foul, unusual tricks in duels you start, an example being having an ally of theirs attack you from the shadows."
+        },
+        {
+          "type": "Poison",
+          "title": "Poison",
+          "text": "Can absorb poison from allies to help them recover. With enough poison absorbed, can create a foul barrier that non-poison type amalgams refuse to cross."
+        },
+        {
+          "type": "Ground",
+          "title": "Ground",
+          "text": "Can dig and move around underground. However, some surfaces will be too hard to break through."
+        },
+        {
+          "type": "Flying",
+          "title": "Flying",
+          "text": "Can fly around, and tolerate difficult flying conditions like hailstorms, sandstorms, or similar."
+        },
+        {
+          "type": "Psychic",
+          "title": "Psychic",
+          "text": "Can communicate telepathically with other Pokémon. Pokémon who lack telepathy can still respond by concentrating very hard on answering, but cannot start telepathic communication themselves."
+        },
+        {
+          "type": "Bug",
+          "title": "Bug",
+          "text": "Leave lingering messages behind for other bug types through pheromones."
+        },
+        {
+          "type": "Rock",
+          "title": "Rock",
+          "text": "More in tune with the earth and able to more easily find valuable gems while exploring."
+        },
+        {
+          "type": "Ghost",
+          "title": "Ghost",
+          "text": "Gain the ability to levitate small/medium things, and can become intangible for a short time. If in a solid object when intangibility ends, teleport to the last location you were able to be in normally."
+        },
+        {
+          "type": "Dragon",
+          "title": "Dragon",
+          "text": "Understand and peer through the veil of comprehension to more easily understand what is hidden to others."
+        },
+        {
+          "type": "Dark",
+          "title": "Dark",
+          "text": "More easily able to adjust and handle being in lightless areas with the ability to see in the darkness."
+        },
+        {
+          "type": "Steel",
+          "title": "Steel",
+          "text": "Alter and adjust the shape of non-living metal to your will. Stronger metals are more difficult to manipulate."
+        },
+        {
+          "type": "Fairy",
+          "title": "Fairy",
+          "text": "You can conjure objects from your memory and make them appear out of thin air for a short time. Unfortunately, these objects have no special effects nor work as intended, even if their real-life counterparts did. They still retain their physical structure, though."
+        }
+      ]
+    },
+    {
+      "title": "Battle Guide",
+      "sections": [
+        {
+          "title": "Status Conditions",
+          "entries": []
+        }
+      ],
+      "hidden": true
+    },
+    {
+      "title": "Dungeon Exploration",
+      "sections": [],
+      "hidden": true
+    },
+    {
+      "title": "Weather & Terrain",
+      "sections": [
+        {
+          "title": "Terrains",
+          "intro": "Terrain is a type of field effect that affects Pokémon on the ground. In battle there is often no terrain to begin with, except in certain territories and dungeons, but it can be changed by Pokémon's moves and Abilities.\n\n> Only one terrain can be active at a time. A new terrain overwrites the previous one.",
+          "entries": [],
+          "cards": [
+            {
+              "title": "Electric Terrain",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "",
+              "favours": [
+                "Electric"
+              ],
+              "hinders": [],
+              "text": "- Lasts five turns.\n- Pokémon on the ground can't fall asleep.\n- Boosts the power of Electric-type moves."
+            },
+            {
+              "title": "Grassy Terrain",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "",
+              "favours": [
+                "Grass"
+              ],
+              "hinders": [],
+              "text": "- Lasts five turns.\n- Pokémon on the ground restore a little HP at the end of each turn.\n- Boosts the power of Grass-type moves."
+            },
+            {
+              "title": "Misty Terrain",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "",
+              "favours": [],
+              "hinders": [
+                "Dragon"
+              ],
+              "text": "- Lasts five turns.\n- Pokémon on the ground can't get status conditions.\n- Halves the damage of Dragon-type moves."
+            },
+            {
+              "title": "Psychic Terrain",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "",
+              "favours": [
+                "Psychic"
+              ],
+              "hinders": [],
+              "text": "- Lasts five turns.\n- Pokémon on the ground can't be hit by priority moves.\n- Boosts the power of Psychic-type moves."
+            },
+            {
+              "title": "Frost Terrain",
+              "image": "",
+              "origin": "Server",
+              "restriction": "",
+              "favours": [
+                "Ice"
+              ],
+              "hinders": [],
+              "text": "- Lasts five turns.\n- Boosts the power of Ice-type moves.\n- Protects against burns.\n- Ice-type moves may cause frostbite on the opponents they hit.\n- Can be caused by moves like Blizzard."
+            }
+          ]
+        },
+        {
+          "title": "Weather",
+          "intro": "The weather changes the battle environment: it can activate Abilities, modify certain moves, and damage the Pokémon in battle or affect their stats.\n\n> Only one weather can be active at a time. An effect that creates weather removes the previous one.",
+          "entries": [],
+          "cards": [
+            {
+              "title": "Harsh Sunlight",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "",
+              "favours": [
+                "Fire"
+              ],
+              "hinders": [
+                "Water"
+              ],
+              "text": "- Boosts the power of Fire-type moves.\n- Lowers the power of Water-type moves."
+            },
+            {
+              "title": "Rain",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "",
+              "favours": [
+                "Water"
+              ],
+              "hinders": [
+                "Fire"
+              ],
+              "text": "- Boosts the power of Water-type moves.\n- Lowers the power of Fire-type moves."
+            },
+            {
+              "title": "Sandstorm",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "",
+              "favours": [
+                "Rock",
+                "Ground",
+                "Steel"
+              ],
+              "hinders": [],
+              "text": "- At the end of each turn, damages every Pokémon that isn't Rock, Ground or Steel type.\n- Boosts the Sp. Def of Rock-type Pokémon."
+            },
+            {
+              "title": "Hail",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "",
+              "favours": [
+                "Ice"
+              ],
+              "hinders": [],
+              "text": "- At the end of each turn, damages every Pokémon that isn't Ice type.\n- Makes Blizzard more likely to hit.\n- Boosts the Defense of Ice-type Pokémon."
+            },
+            {
+              "title": "Fog",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "",
+              "favours": [],
+              "hinders": [],
+              "text": "- A thick fog clouds the overworld and the battlefield.\n- Lowers the accuracy of all moves."
+            },
+            {
+              "title": "Extremely Harsh Sunlight",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "Only Groudon",
+              "favours": [
+                "Fire"
+              ],
+              "hinders": [
+                "Water"
+              ],
+              "text": "- Boosts the power of Fire-type moves.\n- Protects Pokémon from Water-type moves."
+            },
+            {
+              "title": "Heavy Rain",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "Only Kyogre",
+              "favours": [
+                "Water"
+              ],
+              "hinders": [
+                "Fire"
+              ],
+              "text": "- Boosts the power of Water-type moves.\n- Protects Pokémon from Fire-type moves."
+            },
+            {
+              "title": "Strong Winds",
+              "image": "",
+              "origin": "Canon",
+              "restriction": "Only Rayquaza",
+              "favours": [
+                "Flying"
+              ],
+              "hinders": [],
+              "text": "- Lowers the power of moves that are super effective against Flying-type Pokémon."
+            },
+            {
+              "title": "Poison Mist",
+              "image": "",
+              "origin": "Server",
+              "restriction": "",
+              "favours": [
+                "Poison"
+              ],
+              "hinders": [],
+              "text": "- Boosts the power of Poison-type moves.\n- Poisons every Pokémon that isn't Poison type and has no immunity."
+            },
+            {
+              "title": "Snowstorm",
+              "image": "",
+              "origin": "Server",
+              "restriction": "",
+              "favours": [
+                "Ice"
+              ],
+              "hinders": [],
+              "text": "- A permanent hail, unless a move or an Ability changes it.\n- Works like Hail: damages every Pokémon that isn't Ice type at the end of each turn."
+            },
+            {
+              "title": "Thunderstorm",
+              "image": "",
+              "origin": "Server",
+              "restriction": "",
+              "favours": [
+                "Electric"
+              ],
+              "hinders": [
+                "Steel"
+              ],
+              "text": "- Boosts the power of Electric-type moves.\n- Every other turn, a Pokémon can be hit by lightning.\n- If a Steel-type Pokémon is on the field, it always draws the lightning to itself."
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

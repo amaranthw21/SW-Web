@@ -9,7 +9,55 @@ import asset from "../lib/asset";
 // igual de bien con cualquier arte.
 //
 // Sin imagen se queda exactamente como estaba.
-export default function Card({ title, description, link, image, imagePosition }) {
+//
+// Con `slash` (los menús de General y Mechanics) la tarjeta va partida por una
+// diagonal como los botones de los apartados: el texto a la izquierda y la
+// imagen a la derecha, o un degradado mientras no haya imagen.
+export default function Card({ title, description, link, image, imagePosition, slash = false }) {
+
+    if(slash){
+
+        return (
+
+            <div className="card card--slash">
+
+                <div className="card__text">
+
+                    <h2>
+                        {title}
+                    </h2>
+
+                    <Paragraphs text={description} />
+
+                    {
+                        link && (
+                            <Link to={link} className="card__link">
+                                Explore →
+                            </Link>
+                        )
+                    }
+
+                </div>
+
+                <span className="card__slash" aria-hidden="true">
+                    <span
+                        className={image?.trim() ? "card__slash-art" : "card__slash-art card__slash-art--empty"}
+                        style={image?.trim() ? {
+                            backgroundImage: `url(${asset(image)})`,
+                            backgroundPosition: imagePosition || "center"
+                        } : undefined}
+                    />
+                </span>
+
+                {/* Toda la tarjeta lleva al enlace, no solo el "Explore". */}
+                {link && <Link to={link} className="card__cover" aria-hidden="true" tabIndex={-1} />}
+
+            </div>
+
+        );
+
+    }
+
 
     // Solo se pasa la imagen y su encuadre. El degradado lo pone el CSS: en
     // ancho entra por la derecha y en un móvil por abajo, y esa decisión es de

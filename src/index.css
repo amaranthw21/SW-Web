@@ -2813,6 +2813,10 @@ body::before {
     margin: 0 0 18px;
     padding-left: 22px;
 
+    /* Explícito: dentro de otra lista (las etapas de una bendición son un
+       <ol>) el navegador le pondría círculos huecos, que son de sub-viñeta. */
+    list-style-type: disc;
+
 }
 
 .paragraph-list li {
@@ -2824,6 +2828,21 @@ body::before {
 .paragraph-list li::marker {
 
     color: color-mix(in srgb, var(--accent) 55%, transparent);
+
+}
+
+/* Sub-viñetas: más pegadas a su viñeta y con un círculo hueco. */
+.paragraph-list .paragraph-list {
+
+    margin: 6px 0 0;
+
+    list-style-type: circle;
+
+}
+
+.paragraph-list .paragraph-list li {
+
+    margin-bottom: 4px;
 
 }
 
@@ -6647,7 +6666,7 @@ button.region-loc {
 
     .section-tabs {
 
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr));
 
     }
 
@@ -6713,6 +6732,46 @@ button.region-loc {
     border-color: var(--accent);
 
     color: var(--accent);
+
+}
+
+/* En móvil van de dos en dos: si quedan impares, el último se lleva la fila
+   entera para no quedarse suelto. Con botón destacado arriba la cuenta va
+   corrida en uno, así que ahí no se aplica. */
+@media (max-width: 767px) {
+
+    .section-tabs:not(.section-tabs--featured) > .section-tab:last-child:nth-child(odd) {
+
+        grid-column: 1 / -1;
+
+    }
+
+}
+
+/* El botón destacado (el General del Rulebook): a lo ancho, encima de los
+   demás, más alto y con la letra más grande. */
+.section-tab--featured {
+
+    grid-column: 1 / -1;
+
+    padding: 20px 12px;
+
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
+
+    border-width: 2px;
+
+}
+
+@media (min-width: 768px) {
+
+    .section-tab--featured {
+
+        padding: 24px 12px;
+
+        font-size: 1.35rem;
+
+    }
 
 }
 
@@ -7550,5 +7609,1219 @@ button.region-loc {
 .dropdown__clear:hover {
 
     color: white;
+
+}
+
+
+/* ───────── Mechanics › Blessings (/general/mechanics/blessings) ─────────
+   Un botón por bendición y, debajo, la ficha de la pulsada con sus etapas.
+   `--blessing` es el color de cada una (del panel); sin él, el oro del sitio. */
+.blessings-mechanic {
+
+    --blessing: var(--accent);
+
+}
+
+.blessing-picker {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+
+    margin-bottom: 24px;
+
+}
+
+.blessing-tile {
+
+    --blessing: var(--accent);
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    min-width: 0;
+
+    padding: 10px 12px;
+
+    background: rgba(31, 41, 55, 0.6);
+
+    border: 1px solid color-mix(in srgb, var(--blessing) 45%, transparent);
+    border-radius: 12px;
+
+    color: #e2e8f0;
+
+    font: inherit;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+
+}
+
+@media (hover: hover) {
+
+    .blessing-tile:hover {
+
+        background: color-mix(in srgb, var(--blessing) 12%, rgba(31, 41, 55, 0.6));
+
+        border-color: var(--blessing);
+
+    }
+
+}
+
+.blessing-tile:focus-visible {
+
+    outline: 2px solid var(--blessing);
+    outline-offset: 2px;
+
+}
+
+.blessing-tile--on {
+
+    background: color-mix(in srgb, var(--blessing) 20%, rgba(31, 41, 55, 0.7));
+
+    border-color: var(--blessing);
+
+    box-shadow: 0 0 0 1px var(--blessing) inset;
+
+}
+
+.blessing-tile__text {
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+}
+
+.blessing-tile__name {
+
+    font-weight: bold;
+    letter-spacing: 0.02em;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+.blessing-tile--on .blessing-tile__name {
+
+    color: var(--blessing);
+
+}
+
+.blessing-tile__npc {
+
+    color: #9aa4b2;
+
+    font-size: 0.8rem;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+
+/* El dibujo de la bendición: el objeto en un círculo con su color. */
+.blessing-sigil {
+
+    display: grid;
+    place-items: center;
+    flex: none;
+
+    border-radius: 50%;
+
+    background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--blessing) 35%, #111827), #111827 75%);
+
+    border: 1px solid color-mix(in srgb, var(--blessing) 60%, transparent);
+
+}
+
+.blessing-sigil--small {
+
+    width: 40px;
+    height: 40px;
+
+}
+
+.blessing-sigil--large {
+
+    width: 84px;
+    height: 84px;
+
+    box-shadow: 0 0 24px color-mix(in srgb, var(--blessing) 35%, transparent);
+
+}
+
+/* El dibujo del objeto, centrado. --icon-* es el encuadre del panel. */
+.blessing-sigil {
+
+    overflow: hidden;
+
+}
+
+.blessing-sigil img,
+.blessing-link__portrait--item img {
+
+    display: block;
+
+    object-fit: contain;
+    object-position: center;
+
+    transform: translate(var(--icon-x, 0%), var(--icon-y, 0%)) scale(var(--icon-zoom, 1));
+
+}
+
+.blessing-sigil img {
+
+    width: 80%;
+    height: 80%;
+
+}
+
+.blessing-sigil__letter {
+
+    color: var(--blessing);
+
+    font-weight: bold;
+
+}
+
+.blessing-sigil--small .blessing-sigil__letter {
+
+    font-size: 1.1rem;
+
+}
+
+.blessing-sigil--large .blessing-sigil__letter {
+
+    font-size: 2.2rem;
+
+}
+
+
+/* La ficha de la bendición elegida. */
+.blessing-detail {
+
+    padding: 24px;
+
+    background: rgba(17, 24, 39, 0.82);
+
+    border: 1px solid color-mix(in srgb, var(--blessing) 45%, transparent);
+    border-top: 3px solid var(--blessing);
+    border-radius: 14px;
+
+}
+
+.blessing-detail__head {
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+}
+
+.blessing-detail__name {
+
+    margin: 0 0 4px;
+
+    color: var(--blessing);
+
+    font-size: 1.6rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+}
+
+.blessing-detail__links {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+
+    margin-top: 20px;
+
+}
+
+.blessing-link {
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    padding: 10px 12px;
+
+    background: rgba(31, 41, 55, 0.6);
+
+    border-radius: 10px;
+
+}
+
+.blessing-link__label {
+
+    color: #9aa4b2;
+
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+}
+
+.blessing-link__body {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #e2e8f0;
+
+    font-weight: bold;
+    text-decoration: none;
+
+}
+
+a.blessing-link__body:hover {
+
+    color: var(--blessing);
+
+}
+
+.blessing-link__body--empty {
+
+    color: #9aa4b2;
+
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+.blessing-link__portrait {
+
+    flex: none;
+
+    width: 40px;
+    height: 40px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    background: #111827;
+
+    border: 1px solid color-mix(in srgb, var(--blessing) 50%, transparent);
+
+}
+
+.blessing-link__portrait img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+/* El objeto, con su margen dentro del círculo. Va con un grid y no con
+   padding en la imagen: con padding la imagen medía más que el círculo y se
+   salía hacia abajo a la derecha. */
+.blessing-link__portrait--item {
+
+    display: grid;
+    place-items: center;
+
+}
+
+.blessing-link__portrait--item img {
+
+    width: 80%;
+    height: 80%;
+
+}
+
+.blessing-detail__section {
+
+    margin-top: 24px;
+
+}
+
+.blessing-detail__heading {
+
+    margin: 0 0 12px;
+
+    padding-bottom: 6px;
+
+    border-bottom: 1px solid color-mix(in srgb, var(--blessing) 30%, transparent);
+
+    color: #e2e8f0;
+
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+}
+
+
+/* Las etapas: el texto a la izquierda y el símbolo del rango a la derecha,
+   unidos por una línea vertical como una escalera de rangos. */
+.blessing-stages {
+
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+}
+
+.blessing-stage {
+
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    padding: 16px 0;
+
+}
+
+.blessing-stage + .blessing-stage {
+
+    border-top: 1px dashed rgba(148, 163, 184, 0.2);
+
+}
+
+/* La línea que une un símbolo con el siguiente. */
+.blessing-stage:not(:last-child)::after {
+
+    content: "";
+
+    position: absolute;
+    top: calc(16px + 64px);
+    bottom: -16px;
+    right: 31px;
+
+    width: 2px;
+
+    background: linear-gradient(var(--blessing), transparent);
+
+    opacity: 0.5;
+
+}
+
+.blessing-stage__body {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+.blessing-stage__title {
+
+    margin: 0 0 6px;
+
+    color: var(--blessing);
+
+    font-size: 1.05rem;
+
+}
+
+.blessing-stage__empty {
+
+    margin: 0;
+
+    color: #9aa4b2;
+
+    font-style: italic;
+
+}
+
+.blessing-stage__emblem {
+
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    place-items: center;
+    flex: none;
+
+    width: 64px;
+    height: 64px;
+
+}
+
+.blessing-stage__emblem img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    filter: drop-shadow(0 0 8px color-mix(in srgb, var(--blessing) 40%, transparent));
+
+}
+
+/* Sin símbolo: un rombo con el número de la etapa. */
+.blessing-stage__numeral {
+
+    display: grid;
+    place-items: center;
+
+    width: 44px;
+    height: 44px;
+
+    transform: rotate(45deg);
+
+    background: color-mix(in srgb, var(--blessing) 18%, #111827);
+
+    border: 2px solid var(--blessing);
+    border-radius: 6px;
+
+    color: var(--blessing);
+
+    font-weight: bold;
+    font-size: 0.95rem;
+
+}
+
+.blessing-stage__numeral > span {
+
+    transform: rotate(-45deg);
+
+}
+
+@media (max-width: 600px) {
+
+    .blessing-detail {
+
+        padding: 16px;
+
+    }
+
+    .blessing-detail__head {
+
+        gap: 12px;
+
+    }
+
+    .blessing-sigil--large {
+
+        width: 64px;
+        height: 64px;
+
+    }
+
+    .blessing-detail__name {
+
+        font-size: 1.25rem;
+
+    }
+
+    .blessing-picker {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+
+    }
+
+    .blessing-tile {
+
+        gap: 8px;
+
+        padding: 8px 10px;
+
+    }
+
+    .blessing-sigil--small {
+
+        width: 32px;
+        height: 32px;
+
+    }
+
+    /* Dos columnas estrechas: mejor partir el nombre que cortarlo. */
+    .blessing-tile__name,
+    .blessing-tile__npc {
+
+        white-space: normal;
+
+        overflow-wrap: break-word;
+        hyphens: auto;
+
+    }
+
+    .blessing-tile__name {
+
+        font-size: 0.85rem;
+        letter-spacing: 0;
+        line-height: 1.2;
+
+    }
+
+}
+
+
+/* ───────── Mechanics: tarjetas (Common Abilities…) ─────────
+   Una tarjeta por entrada. `--type` es el color del tipo; sin tipo, el oro. */
+.mechanic-cards {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+
+}
+
+.mechanic-card {
+
+    --type: var(--accent);
+
+    position: relative;
+
+    padding: 16px 18px 6px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(160deg, color-mix(in srgb, var(--type) 16%, transparent), transparent 55%),
+        rgba(17, 24, 39, 0.82);
+
+    border: 1px solid color-mix(in srgb, var(--type) 40%, transparent);
+    border-left: 4px solid var(--type);
+    border-radius: 12px;
+
+}
+
+.mechanic-card__head {
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 10px;
+
+}
+
+.mechanic-card__icon {
+
+    display: grid;
+    place-items: center;
+    flex: none;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: color-mix(in srgb, var(--type) 85%, #111827);
+
+    box-shadow: 0 0 14px color-mix(in srgb, var(--type) 40%, transparent);
+
+}
+
+.mechanic-card__icon img {
+
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+
+}
+
+.mechanic-card__title {
+
+    margin: 0;
+
+    color: color-mix(in srgb, var(--type) 70%, white);
+
+    font-size: 1.15rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+}
+
+.mechanic-card .paragraph {
+
+    font-size: 0.95rem;
+
+}
+
+.mechanic-card__empty {
+
+    color: #9aa4b2;
+
+    font-style: italic;
+
+}
+
+/* Con isla: su imagen arriba, desvaneciéndose hacia la tarjeta. */
+.mechanic-card--island {
+
+    padding-top: 0;
+
+}
+
+.mechanic-card__banner {
+
+    height: 96px;
+
+    margin: 0 -18px 12px;
+
+    background:
+        linear-gradient(to bottom, transparent 30%, rgba(17, 24, 39, 0.95)),
+        var(--card-island) center / cover no-repeat;
+
+}
+
+.mechanic-card--island .mechanic-card__head {
+
+    margin-top: -34px;
+
+    position: relative;
+
+}
+
+.mechanic-card__island {
+
+    display: inline-block;
+
+    margin: -4px 0 10px;
+
+    padding: 2px 10px;
+
+    border: 1px solid color-mix(in srgb, var(--type) 55%, transparent);
+    border-radius: 999px;
+
+    color: color-mix(in srgb, var(--type) 70%, white);
+
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+
+@media (hover: hover) {
+
+    .mechanic-card__island:hover {
+
+        background: color-mix(in srgb, var(--type) 18%, transparent);
+
+    }
+
+}
+
+.mechanic-card .paragraph-note {
+
+    font-size: 0.9rem;
+
+}
+
+
+/* ───────── Mechanics: tarjetas en fila (Weather & Terrain) ─────────
+   La imagen a la izquierda y la información a la derecha. `--type` es el
+   color del primer tipo al que favorece. */
+.mechanic-rows {
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    margin-top: 8px;
+
+}
+
+.mechanic-row {
+
+    --type: var(--accent);
+
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(110deg, color-mix(in srgb, var(--type) 12%, transparent), transparent 50%),
+        rgba(17, 24, 39, 0.82);
+
+    border: 1px solid color-mix(in srgb, var(--type) 40%, transparent);
+    border-radius: 12px;
+
+}
+
+.mechanic-row__media {
+
+    position: relative;
+
+    min-height: 150px;
+
+    background: color-mix(in srgb, var(--type) 22%, #0b1120);
+
+    border-right: 1px solid color-mix(in srgb, var(--type) 40%, transparent);
+
+}
+
+.mechanic-row__media img {
+
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+.mechanic-row__placeholder {
+
+    position: absolute;
+    inset: 0;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--type);
+
+    font-size: 2.6rem;
+    font-weight: bold;
+
+    background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--type) 40%, transparent), transparent 70%);
+
+}
+
+.mechanic-row__placeholder img {
+
+    position: static;
+
+    width: 56px;
+    height: 56px;
+
+    object-fit: contain;
+
+    opacity: 0.9;
+
+    filter: drop-shadow(0 0 10px color-mix(in srgb, var(--type) 60%, transparent));
+
+}
+
+.mechanic-row__body {
+
+    padding: 14px 18px 6px;
+
+}
+
+.mechanic-row__tags {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    margin-bottom: 6px;
+
+}
+
+.mechanic-row__tag {
+
+    padding: 1px 9px;
+
+    border: 1px solid rgba(148, 163, 184, 0.45);
+    border-radius: 999px;
+
+    color: #cbd5e1;
+
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+}
+
+.mechanic-row__tag--server {
+
+    border-color: color-mix(in srgb, var(--accent) 70%, transparent);
+
+    color: var(--accent);
+
+}
+
+.mechanic-row__tag--only {
+
+    border-color: rgba(248, 113, 113, 0.6);
+
+    color: #fca5a5;
+
+}
+
+.mechanic-row__title {
+
+    margin: 0 0 10px;
+
+    color: color-mix(in srgb, var(--type) 70%, white);
+
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+}
+
+.mechanic-row__types {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 8px;
+
+}
+
+.mechanic-row__label {
+
+    min-width: 64px;
+
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+}
+
+.mechanic-row__types--up .mechanic-row__label {
+
+    color: #86efac;
+
+}
+
+.mechanic-row__types--up .mechanic-row__label::before {
+
+    content: "▲ ";
+
+}
+
+.mechanic-row__types--down .mechanic-row__label {
+
+    color: #fca5a5;
+
+}
+
+.mechanic-row__types--down .mechanic-row__label::before {
+
+    content: "▼ ";
+
+}
+
+.mechanic-row__badges {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+}
+
+.mechanic-row__text {
+
+    margin-top: 10px;
+
+    font-size: 0.95rem;
+
+}
+
+@media (max-width: 600px) {
+
+    /* Estrecho, la imagen pasa arriba como franja. */
+    .mechanic-row {
+
+        grid-template-columns: minmax(0, 1fr);
+
+    }
+
+    .mechanic-row__media {
+
+        min-height: 110px;
+
+        border-right: 0;
+        border-bottom: 1px solid color-mix(in srgb, var(--type) 40%, transparent);
+
+    }
+
+}
+
+
+/* ───────── Botones con imagen (Rulebook) ─────────
+   El texto a la izquierda y la imagen a la derecha, partidos por una diagonal
+   con un filo dorado. El filo es la sombra del envoltorio (__slash): la imagen
+   va recortada con clip-path, y una sombra puesta en el mismo elemento se
+   recortaría con ella, pero en su padre no. */
+.section-tab--art {
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 64px;
+
+    padding: 0 0 0 16px;
+
+    overflow: hidden;
+
+    text-align: left;
+
+}
+
+.section-tab__label {
+
+    position: relative;
+    z-index: 1;
+
+    max-width: 58%;
+
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+
+}
+
+.section-tab__slash {
+
+    position: absolute;
+    inset: 0 0 0 auto;
+
+    width: 52%;
+
+    filter: drop-shadow(-2px 0 0 color-mix(in srgb, var(--accent) 70%, transparent));
+
+    pointer-events: none;
+
+}
+
+.section-tab__art {
+
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    clip-path: polygon(34% 0, 100% 0, 100% 100%, 0 100%);
+
+    opacity: 0.55;
+    filter: saturate(0.7);
+
+    transition: opacity 0.2s ease, filter 0.2s ease, transform 0.3s ease;
+
+}
+
+/* Sin imagen: un degradado del color del sitio, para que la diagonal se vea. */
+.section-tab__art--empty {
+
+    background-image:
+        repeating-linear-gradient(115deg, rgba(212, 165, 55, 0.08) 0 6px, transparent 6px 14px),
+        linear-gradient(115deg, rgba(212, 165, 55, 0.05), rgba(212, 165, 55, 0.3));
+
+    opacity: 1;
+    filter: none;
+
+}
+
+@media (hover: hover) {
+
+    .section-tab--art:hover .section-tab__art {
+
+        opacity: 0.85;
+        filter: none;
+
+        transform: scale(1.04);
+
+    }
+
+}
+
+.section-tab--art.section-tab--on .section-tab__art {
+
+    opacity: 1;
+    filter: none;
+
+}
+
+.section-tab--art.section-tab--on .section-tab__slash {
+
+    filter: drop-shadow(-3px 0 0 var(--accent));
+
+}
+
+/* El grande (General): más alto, y la imagen ocupa más. */
+.section-tab--art.section-tab--featured {
+
+    min-height: 96px;
+
+    padding-left: 28px;
+
+}
+
+.section-tab--featured .section-tab__slash {
+
+    width: 62%;
+
+}
+
+.section-tab--featured .section-tab__art {
+
+    clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+
+}
+
+@media (min-width: 768px) {
+
+    .section-tab--art {
+
+        min-height: 76px;
+
+        padding: 0 0 0 18px;
+
+    }
+
+    .section-tab--art.section-tab--featured {
+
+        min-height: 120px;
+
+        padding-left: 36px;
+
+    }
+
+}
+
+
+/* ───────── Tarjetas partidas (menús de General y Mechanics) ─────────
+   Como los botones de los apartados: texto a la izquierda, imagen a la
+   derecha tras una diagonal con filo dorado (la sombra va en __slash por el
+   mismo motivo que allí: el clip-path se la comería). */
+.card--slash {
+
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 150px;
+
+    border: 1px solid rgba(212, 165, 55, 0.35);
+
+    transition: transform 0.2s, border-color 0.2s;
+
+}
+
+.card__text {
+
+    position: relative;
+    z-index: 1;
+
+    max-width: 60%;
+
+    pointer-events: none;
+
+}
+
+.card__text h2,
+.card__text .paragraph {
+
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+
+}
+
+.card__text .card__link {
+
+    pointer-events: auto;
+
+}
+
+.card__slash {
+
+    position: absolute;
+    inset: 0 0 0 auto;
+
+    width: 48%;
+
+    filter: drop-shadow(-2px 0 0 color-mix(in srgb, var(--accent) 70%, transparent));
+
+    pointer-events: none;
+
+}
+
+.card__slash-art {
+
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+
+    opacity: 0.75;
+
+    transition: opacity 0.2s ease, transform 0.3s ease;
+
+}
+
+.card__slash-art--empty {
+
+    background-image:
+        repeating-linear-gradient(115deg, rgba(212, 165, 55, 0.08) 0 6px, transparent 6px 14px),
+        linear-gradient(115deg, rgba(212, 165, 55, 0.05), rgba(212, 165, 55, 0.3));
+
+    opacity: 1;
+
+}
+
+/* El enlace que cubre la tarjeta entera, por debajo del texto. */
+.card__cover {
+
+    position: absolute;
+    inset: 0;
+
+}
+
+@media (hover: hover) {
+
+    .card--slash:hover {
+
+        border-color: var(--accent);
+
+    }
+
+    .card--slash:hover .card__slash-art {
+
+        opacity: 1;
+
+        transform: scale(1.04);
+
+    }
+
+}
+
+.card--slash:focus-within {
+
+    border-color: var(--accent);
+
+}
+
+@media (max-width: 520px) {
+
+    .card__text {
+
+        max-width: 64%;
+
+    }
+
+    .card__slash {
+
+        width: 42%;
+
+    }
 
 }

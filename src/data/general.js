@@ -1,3 +1,6 @@
+import menu from "../content/general-menu.json";
+
+
 // Las páginas de General. Son fijas, así que se escriben aquí en vez de salir
 // de una colección: de esta lista tiran la portada de la sección, la barra
 // lateral y la ruta /general/:pageId.
@@ -35,4 +38,16 @@ const general = [
 ];
 
 
-export default general;
+// La imagen de cada tarjeta del menú de General sale del panel
+// (src/content/general-menu.json, "General menu"): las páginas son fijas, pero
+// sus imágenes no.
+const withImages = general.map(page => {
+
+    const card = (menu.cards ?? []).find(entry => entry?.page === page.id);
+
+    return card ? { ...page, image: card.image, imagePosition: card.imagePosition } : page;
+
+});
+
+
+export default withImages;

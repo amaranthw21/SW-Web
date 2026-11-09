@@ -64,6 +64,25 @@ collections:
           - { name: region, label: "Region name", widget: string, hint: "The region's name, e.g. 'Bethath'. It titles its page and its entry in the sidebar." }
           - { name: intro, label: Intro, widget: richtext, required: false, hint: "A few lines about the region, above the island cards. Leave a blank line between paragraphs." }
 
+      # Las imágenes de las tarjetas del menú de General. Las páginas son fijas
+      # (src/data/general.js); aquí solo se elige la imagen de cada una.
+      - name: general-menu
+        label: "General menu"
+        file: src/content/general-menu.json
+        format: json
+        fields:
+          - name: cards
+            label: "Card pictures"
+            widget: list
+            required: false
+            label_singular: "Card picture"
+            summary: "{{fields.page}}"
+            hint: "One per page whose card on the General page should have a picture. It shows on the right, past a diagonal cut; cards without one show a gradient."
+            fields:
+              - { name: page, label: Page, widget: select, options: [{ label: Rulebook, value: rulebook }, { label: Mechanics, value: mechanics }, { label: "Character Types", value: character-types }, { label: "Changes & Bans", value: changes-and-bans }, { label: Lore, value: lore }, { label: Timeline, value: timeline }] }
+              - { name: image, label: Picture, widget: image, required: false }
+              - { name: imagePosition, label: "Picture position (CSS background-position)", widget: string, required: false, hint: "Which part of the picture shows, e.g. 'center 30%' or 'right top'." }
+
       # El Rulebook de General: un apartado por tipo de reglas (General,
       # Character, Combat, Romance), cada uno con sus reglas numeradas.
       - name: rulebook
@@ -79,6 +98,8 @@ collections:
             hint: "Each section is a heading on the page and an entry in its contents, in this order."
             fields:
               - { name: title, label: Title, widget: string, hint: "e.g. 'General' or 'Combat'." }
+              - { name: image, label: "Button picture", widget: image, required: false, hint: "Shown on the right of the section's button, past a diagonal cut. Wide pictures work best. Without one the button shows a gradient." }
+              - { name: imagePosition, label: "Picture position (CSS background-position)", widget: string, required: false, hint: "Which part of the picture shows, e.g. 'center 30%' or 'right top'." }
               - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown above the rules. Leave a blank line between paragraphs." }
               - name: entries
                 label: Rules
@@ -92,31 +113,117 @@ collections:
                   - { name: text, label: Text, widget: richtext, required: false }
               - { name: outro, label: "Closing note", widget: richtext, required: false, hint: "Shown under the last rule, e.g. 'These rules may change in the future'." }
 
-      # Mechanics de General: un apartado por sistema, cada uno con sus entradas.
+      # Mechanics de General: un menú con una tarjeta por mecánica y, dentro de
+      # cada una, un botón por apartado. Las mecánicas no tienen relación entre sí.
       - name: mechanics
         label: "Mechanics"
         file: src/content/mechanics.json
         format: json
         fields:
-          - name: sections
-            label: Sections
+          - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown above the cards. Leave a blank line between paragraphs." }
+          - name: pages
+            label: Mechanics
             widget: list
-            label_singular: Section
+            required: false
+            label_singular: Mechanic
             summary: "{{fields.title}}"
-            hint: "Each section is a button on the page, in this order. Pressing it shows what's inside."
+            hint: "Each mechanic is a card on the page, in this order, with its own page. Its address comes from the title, so renaming it changes the link."
             fields:
               - { name: title, label: Title, widget: string, hint: "e.g. 'Battles' or 'Training'." }
-              - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown at the top of the section. Leave a blank line between paragraphs." }
-              - name: entries
-                label: Entries
+              - { name: hidden, label: "Hidden", widget: boolean, default: false, required: false, hint: "Keeps this mechanic off the site (no card, no page) until it's ready." }
+              - { name: summary, label: Summary, widget: text, required: false, hint: "One or two lines for the card." }
+              - { name: image, label: Picture, widget: image, required: false, hint: "Shown on the right of the card, past a diagonal cut. Without one the card shows a gradient." }
+              - { name: imagePosition, label: "Picture position (CSS background-position)", widget: string, required: false, hint: "Which part of the picture shows, e.g. 'center 30%' or 'right top'." }
+              - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown at the top of the mechanic's page, above the buttons." }
+              - name: cards
+                label: Cards
                 widget: list
                 required: false
-                label_singular: Entry
+                label_singular: Card
                 summary: "{{fields.title}}"
+                hint: "For mechanics that are a simple list (e.g. Common Abilities, one per type): each entry is a card on the page, in this order. Leave empty to use only the section buttons."
+                fields:
+                  - { name: type, label: Type, widget: select, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar, Shadow, Radiant], hint: "Shows the type's symbol and tints the card with its color." }
+                  - { name: title, label: Title, widget: string, required: false, hint: "Empty uses the type's name." }
+                  - { name: island, label: Island, widget: relation, collection: islands, value_field: "{{slug}}", search_fields: [name], display_fields: ["{{name}}"], required: false, hint: "Puts the island's picture at the top of the card and a link to it, e.g. for Commonfolk Perks." }
+                  - { name: text, label: Text, widget: richtext, required: false }
+              - { name: blessings, label: "Show the blessings", widget: boolean, default: false, required: false, hint: "Shows the blessings and their stages (edited in 'Mechanics · Blessings') on this page. Only for the Blessings page." }
+              - name: sections
+                label: Sections
+                widget: list
+                required: false
+                label_singular: Section
+                summary: "{{fields.title}}"
+                hint: "Each section is a button on the mechanic's page, in this order. Pressing it shows what's inside."
                 fields:
                   - { name: title, label: Title, widget: string }
-                  - { name: text, label: Text, widget: richtext, required: false }
-              - { name: outro, label: "Closing note", widget: richtext, required: false, hint: "Shown at the end of the section." }
+                  - { name: image, label: "Button picture", widget: image, required: false, hint: "Shown on the right of the button, past a diagonal cut. Wide pictures work best. Without one the button shows a gradient." }
+                  - { name: imagePosition, label: "Picture position (CSS background-position)", widget: string, required: false, hint: "Which part of the picture shows, e.g. 'center 30%' or 'right top'." }
+                  - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown at the top of the section. Leave a blank line between paragraphs." }
+                  - name: entries
+                    label: Entries
+                    widget: list
+                    required: false
+                    label_singular: Entry
+                    summary: "{{fields.title}}"
+                    fields:
+                      - { name: title, label: Title, widget: string }
+                      - { name: text, label: Text, widget: richtext, required: false }
+                  - { name: outro, label: "Closing note", widget: richtext, required: false, hint: "Shown at the end of the section." }
+                  - name: cards
+                    label: Cards
+                    widget: list
+                    required: false
+                    label_singular: Card
+                    summary: "{{fields.title}}"
+                    hint: "Cards shown one under another at the end of the section, with a picture on the left (e.g. each weather or terrain)."
+                    fields:
+                      - { name: title, label: Title, widget: string, hint: "e.g. 'Electric Terrain'." }
+                      - { name: image, label: Picture, widget: image, required: false, hint: "Shown on the left. Without one it shows the symbol of the first type it favours." }
+                      - { name: imagePosition, label: "Image position (CSS object-position)", widget: string, required: false, hint: "e.g. 'center 20%'" }
+                      - { name: origin, label: Origin, widget: select, required: false, options: [Canon, Server], hint: "'Canon' if it's from the games, 'Server' if it's one of ours." }
+                      - { name: restriction, label: Restriction, widget: string, required: false, hint: "e.g. 'Only Groudon'. Leave empty if anyone can cause it." }
+                      - { name: favours, label: "Favours (types)", widget: checkboxes, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar, Shadow, Radiant], hint: "The types it helps: boosted moves, raised stats, immunity to its damage…" }
+                      - { name: hinders, label: "Hinders (types)", widget: checkboxes, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar, Shadow, Radiant], hint: "The types it hurts: weakened moves, extra damage…" }
+                      - { name: text, label: Effects, widget: richtext, required: false, hint: "One bullet per effect, e.g. '- Lasts five turns.'" }
+
+      # Las bendiciones de Mechanics: cada una con su objeto, el NPC que la da y
+      # sus etapas, cada etapa con su símbolo. Salen en la mecánica marcada con
+      # "Show the blessings".
+      - name: mechanic-blessings
+        label: "Mechanics · Blessings"
+        file: src/content/mechanic-blessings.json
+        format: json
+        fields:
+          - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown above the blessing buttons. Leave a blank line between paragraphs." }
+          - name: blessings
+            label: Blessings
+            widget: list
+            required: false
+            label_singular: Blessing
+            summary: "{{fields.name}}"
+            hint: "Each blessing is a button on the Blessings page, in this order."
+            fields:
+              - { name: name, label: Name, widget: string, hint: "e.g. 'Tidal Blessing'. Its address comes from it, so renaming it changes the link." }
+              - { name: item, label: "Related item", widget: relation, collection: blessings, value_field: "{{slug}}", search_fields: [name, blessing], display_fields: ["{{name}} → {{blessing}}"], required: false, hint: "The object from Items › Blessings. Its picture is used as the blessing's icon." }
+              - { name: iconZoom, label: "Icon zoom", widget: number, value_type: float, required: false, min: 0.2, max: 4, hint: "How big the item's picture looks in its circle. 1 is normal; 1.3 is bigger, 0.8 smaller." }
+              - { name: iconX, label: "Icon left/right", widget: number, value_type: int, required: false, min: -50, max: 50, hint: "Moves the item's picture sideways, in % of its size: negative goes left, positive right. Empty or 0 keeps it centered." }
+              - { name: iconY, label: "Icon up/down", widget: number, value_type: int, required: false, min: -50, max: 50, hint: "Moves the item's picture vertically, in % of its size: negative goes up, positive down. Empty or 0 keeps it centered." }
+              - { name: npc, label: "Granted by (NPC)", widget: relation, collection: characters, value_field: "{{slug}}", search_fields: [name], display_fields: ["{{name}}"], required: false, hint: "The NPC you befriend to get it." }
+              - { name: color, label: "Accent color", widget: color, required: false, hint: "Tints its button and its page. Empty keeps the site's gold." }
+              - { name: summary, label: Summary, widget: richtext, required: false, hint: "A few lines under the name." }
+              - { name: howToGet, label: "How to get it", widget: richtext, required: false, hint: "Usually: befriend the NPC. Leave a blank line between paragraphs." }
+              - name: stages
+                label: Stages
+                widget: list
+                required: false
+                label_singular: Stage
+                summary: "{{fields.title}}"
+                hint: "In order, from the first rank to the last. Add more whenever a new one exists."
+                fields:
+                  - { name: title, label: Title, widget: string, hint: "e.g. 'Stage 1: Acquaintances'. Each stage is a step further in the friendship with the NPC." }
+                  - { name: symbol, label: Symbol, widget: image, required: false, hint: "The rank's own symbol, shown on the right. Without one it shows the stage number. A square PNG with a transparent background works best." }
+                  - { name: text, label: Effects, widget: richtext, required: false, hint: "One bullet per effect. Indent a bullet (two spaces or more) to put it under the one above, e.g. the stat changes of an effect." }
 
       # Character Types de General: una tarjeta por tipo de personaje y, dentro
       # de cada uno, un botón por versión (Full Version, Slice of Life, OC Maker).
@@ -158,6 +265,8 @@ collections:
                 hint: "Each version is a button on the type's page, in this order. Pressing it shows what's inside."
                 fields:
                   - { name: title, label: Title, widget: string, hint: "e.g. 'Full Version', 'Slice of Life Version' or 'OC Maker'." }
+                  - { name: image, label: "Button picture", widget: image, required: false, hint: "Shown on the right of the button, past a diagonal cut. Wide pictures work best. Without one the button shows a gradient." }
+                  - { name: imagePosition, label: "Picture position (CSS background-position)", widget: string, required: false, hint: "Which part of the picture shows, e.g. 'center 30%' or 'right top'." }
                   - { name: maker, label: "OC Maker questionnaire", widget: boolean, default: false, required: false, hint: "Turns this version into the OC Maker: a form built from the other versions' templates that gives back the filled-in sheet. Its own template is ignored." }
                   - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown at the top of the version. Leave a blank line between paragraphs." }
                   - name: entries
@@ -187,6 +296,8 @@ collections:
             hint: "Each section is a button on the page, in this order. Pressing it shows what's inside."
             fields:
               - { name: title, label: Title, widget: string, hint: "e.g. 'Ban-list' or 'Changed list'." }
+              - { name: image, label: "Button picture", widget: image, required: false, hint: "Shown on the right of the button, past a diagonal cut. Wide pictures work best. Without one the button shows a gradient." }
+              - { name: imagePosition, label: "Picture position (CSS background-position)", widget: string, required: false, hint: "Which part of the picture shows, e.g. 'center 30%' or 'right top'." }
               - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown at the top of the section. Leave a blank line between paragraphs." }
               - name: entries
                 label: Entries
