@@ -9407,3 +9407,217 @@ a.blessing-link__body:hover {
     }
 
 }
+
+
+/* ── Lore: las dos baldas ──
+   Arriba la historia oficial (sello dorado en el lomo), debajo lo que
+   escriben los miembros (cinta de marcapáginas y cosido de cuaderno). */
+.lore-section {
+
+    max-width: 1200px;
+    margin: 0 auto 36px;
+
+}
+
+.lore-section__head {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 14px;
+
+    margin-bottom: 12px;
+
+}
+
+.lore-section__title {
+
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: normal;
+
+    color: white;
+
+}
+
+.lore-section--lore .lore-section__title::before {
+
+    content: "✦ ";
+
+    color: var(--accent);
+
+}
+
+.lore-section--story .lore-section__title::before {
+
+    content: "✎ ";
+
+    color: #b9a0e8;
+
+}
+
+.lore-section__description {
+
+    margin: 0;
+
+    color: #94a3b8;
+
+}
+
+.lore-section .lore-shelf,
+.lore-section .lore-blurb {
+
+    margin-bottom: 0;
+
+}
+
+.lore-section .lore-blurb {
+
+    margin-top: 12px;
+
+}
+
+/* Los libros oficiales: el sello abajo, entre la franja y el título. */
+.lore-spine--lore {
+
+    padding-bottom: 44px;
+
+}
+
+.lore-spine__seal {
+
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 12px;
+    line-height: 1;
+
+    color: var(--accent);
+
+}
+
+/* Los de los miembros: sin franjas doradas, con el cosido a los lados. */
+.lore-spine--story::before,
+.lore-spine--story::after {
+
+    top: 8px;
+    bottom: 8px;
+
+    width: 0;
+    height: auto;
+
+    border: none;
+    border-left: 1.5px dashed color-mix(in srgb, var(--ink) 45%, transparent);
+
+}
+
+.lore-spine--story::before {
+
+    left: 5px;
+    right: auto;
+
+}
+
+.lore-spine--story::after {
+
+    left: auto;
+    right: 5px;
+
+}
+
+/* La cinta asoma por arriba, con su pico. */
+.lore-spine__ribbon {
+
+    position: absolute;
+    top: -12px;
+    right: 28%;
+
+    width: 6px;
+    height: 26px;
+
+    background: #b83a4b;
+
+    clip-path: polygon(0 0, 50% 5px, 100% 0, 100% 100%, 0 100%);
+
+}
+
+.lore-blurb__author {
+
+    font-style: italic;
+
+    color: #b9a0e8;
+
+}
+
+
+/* Dentro del libro: de qué balda es, y quién lo escribe. */
+.lore-book__kind {
+
+    display: inline-block;
+
+    margin: 0 0 10px;
+    padding: 3px 10px;
+
+    border-radius: 999px;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+}
+
+.lore-book__kind--lore {
+
+    background: rgba(154, 122, 60, 0.18);
+
+    color: #7a5a1c;
+
+}
+
+.lore-book__kind--story {
+
+    background: rgba(98, 72, 160, 0.14);
+
+    color: #4f3a8a;
+
+}
+
+.lore-book__byline {
+
+    margin: -4px 0 14px;
+
+    font-style: italic;
+
+    color: #5a4a33;
+
+}
+
+.lore-book__byline a {
+
+    color: #4f3a8a;
+
+}
+
+/* Las historias de los miembros se escriben en papel rayado, como un diario.
+   Las rayas van al ritmo del interlineado, y los párrafos se separan por una
+   raya entera para no descuadrarlas. */
+.lore-book--story .lore-book__text {
+
+    line-height: 1.8em;
+
+    background-image: linear-gradient(to bottom, transparent calc(1.8em - 1px), rgba(70, 100, 150, 0.22) calc(1.8em - 1px));
+    background-size: 100% 1.8em;
+
+}
+
+.lore-book--story .lore-book__text .paragraph {
+
+    margin: 0 0 1.8em;
+
+}

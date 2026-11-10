@@ -66,6 +66,12 @@ const books = (content.books ?? [])
         return {
             ...book,
             id,
+            // "lore" es la historia oficial, la que escribe el staff; "story",
+            // lo que escriben los miembros (diarios, cartas, cuentos de sus
+            // personajes). Sin marcar, es oficial.
+            kind: book.kind === "story" ? "story" : "lore",
+            author: book.author?.trim() || "",
+            character: book.character?.trim() || "",
             chapters,
             spine: book.color || SPINES[i % SPINES.length],
             thickness,
@@ -73,6 +79,23 @@ const books = (content.books ?? [])
         };
 
     });
+
+
+// Las dos baldas de la estantería, en este orden.
+export const SHELVES = [
+    {
+        kind: "lore",
+        title: "The Archive",
+        label: "Official lore",
+        description: "The history of the world as it happened, kept by the staff."
+    },
+    {
+        kind: "story",
+        title: "Members' Stories",
+        label: "Member story",
+        description: "Diaries, letters and tales written by the members, in their characters' own words."
+    }
+];
 
 
 export default books;

@@ -11,7 +11,6 @@ import CharacterTypes from "./pages/CharacterTypes";
 import Mechanics from "./pages/Mechanics";
 import Mechanic from "./pages/Mechanic";
 import Lore from "./pages/Lore";
-import LoreBook from "./pages/LoreBook";
 import ItemsHub from "./pages/ItemsHub";
 import Region from "./pages/Region";
 import Credits from "./pages/Credits";
@@ -31,6 +30,9 @@ const Island = lazy(() => import("./pages/Island"));
 // La ficha de personaje también (para sus especies).
 const Characters = lazy(() => import("./pages/Characters"));
 const Character = lazy(() => import("./pages/Character"));
+// Un libro del Lore también: las historias de los miembros enlazan al
+// personaje que las cuenta.
+const LoreBook = lazy(() => import("./pages/LoreBook"));
 // Un tipo de personaje también: su OC Maker ofrece la lista de Pokémon.
 const CharacterType = lazy(() => import("./pages/CharacterType"));
 // El panel de edición sin GitHub. Trae todo el contenido y el lector de YAML,
@@ -99,7 +101,7 @@ function App() {
 
                     <Route
                         path="/general/lore/:bookId"
-                        element={<LoreBook />}
+                        element={<Suspense><LoreBook /></Suspense>}
                     />
 
                     <Route

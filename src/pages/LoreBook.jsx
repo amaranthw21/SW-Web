@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import Paragraphs from "../components/Paragraphs";
-import books from "../data/lore";
+import characters from "../data/characters";
+import books, { SHELVES } from "../data/lore";
 import asset from "../lib/asset";
 import useDocumentTitle from "../lib/useDocumentTitle";
 import NotFound from "./NotFound";
@@ -59,6 +60,16 @@ export default function LoreBook(){
 
     const linkTo = i => `/general/lore/${book.id}?chapter=${chapters[i].id}`;
 
+    const shelf = SHELVES.find(entry => entry.kind === book.kind);
+
+    // El personaje en cuya voz está escrita la historia (solo en las de los
+    // miembros). Si se borró, se queda solo el nombre de quien la escribió.
+    const character = book.kind === "story" && book.character
+        ? characters.find(entry => entry.id === book.character)
+        : null;
+
+    const author = book.kind === "story" ? book.author : "";
+
 
     return (
 
@@ -72,7 +83,7 @@ export default function LoreBook(){
                 <span className="breadcrumb__current">{book.title}</span>
             </nav>
 
-            <div className="lore-book" style={{ "--spine": book.spine }}>
+            <div className={`lore-book lore-book--${book.kind}`} style={{ "--spine": book.spine }}>
 
                 <section className="lore-book__page lore-book__page--left">
 
@@ -92,9 +103,36 @@ export default function LoreBook(){
                             : <div className="lore-book__cover lore-book__cover--plain" aria-hidden="true" />
                     }
 
+                    <p className={`lore-book__kind lore-book__kind--${book.kind}`}>
+                        {book.kind === "story" ? "✎" : "✦"} {shelf.label}
+                    </p>
+
                     <h1 className="lore-book__title">
                         {book.title}
                     </h1>
+
+                    {
+                        (character || author) && (
+
+                            <p className="lore-book__byline">
+
+                                {
+                                    character && (
+                                        <>
+                                            In the words of{" "}
+                                            <Link to={`/characters/${character.id}`}>{character.name}</Link>
+                                        </>
+                                    )
+                                }
+
+                                {character && author && " · "}
+
+                                {author && `by ${author}`}
+
+                            </p>
+
+                        )
+                    }
 
                     {
                         book.summary?.trim() && (
