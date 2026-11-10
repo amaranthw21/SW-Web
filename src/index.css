@@ -8825,3 +8825,585 @@ a.blessing-link__body:hover {
     }
 
 }
+
+
+/* ───────────────────────── Lore ─────────────────────────
+   La estantería de /general/lore y el libro abierto de cada historia.
+
+   La estantería va por filas de 260px: cada hueco mide eso de alto y se
+   apoya en una balda que pinta el fondo (repetido cada 260px), así que al
+   envolver en varias filas cada una cae justo sobre su balda. */
+.lore-shelf {
+
+    --shelf-row: 260px;
+    --shelf-board: 14px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding: 0 18px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0 calc(var(--shelf-row) - var(--shelf-board)),
+            #7a4f2a calc(var(--shelf-row) - var(--shelf-board)) calc(var(--shelf-row) - var(--shelf-board) + 3px),
+            #4d2f17 calc(var(--shelf-row) - var(--shelf-board) + 3px) var(--shelf-row)
+        ),
+        linear-gradient(to bottom, #1a110a, #2a1b0f);
+
+    border: 10px solid #3b2412;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+
+    box-shadow: inset 0 10px 24px rgba(0, 0, 0, 0.6);
+
+}
+
+.lore-shelf__slot {
+
+    display: flex;
+    align-items: flex-end;
+
+    height: var(--shelf-row);
+    padding: 22px 2px var(--shelf-board);
+    box-sizing: border-box;
+
+}
+
+.lore-spine {
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    padding: 30px 0;
+
+    /* Sombra a los lados y un brillo a un tercio: parece un lomo redondeado
+       y no una tabla plana. */
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0, rgba(255, 255, 255, 0.16) 24%, rgba(255, 255, 255, 0) 48%, rgba(0, 0, 0, 0.35) 100%),
+        var(--spine);
+
+    color: var(--ink);
+
+    border-radius: 3px 3px 1px 1px;
+
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.5);
+
+    text-decoration: none;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+}
+
+/* Las dos franjas doradas de arriba y abajo. */
+.lore-spine::before,
+.lore-spine::after {
+
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    height: 5px;
+
+    border-top: 1.5px solid color-mix(in srgb, var(--accent) 80%, transparent);
+    border-bottom: 1.5px solid color-mix(in srgb, var(--accent) 80%, transparent);
+
+}
+
+.lore-spine::before {
+    top: 12px;
+}
+
+.lore-spine::after {
+    bottom: 12px;
+}
+
+.lore-spine__title {
+
+    /* De arriba abajo, como los lomos en inglés. */
+    writing-mode: vertical-rl;
+
+    max-height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+
+}
+
+/* El libro que se está mirando asoma de la balda. */
+.lore-spine--on,
+.lore-spine:focus-visible {
+
+    transform: translateY(-16px);
+
+    box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.6);
+
+}
+
+.lore-spine:focus-visible {
+
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+
+}
+
+
+/* Debajo de la estantería: de qué va el libro que se está mirando. */
+.lore-blurb {
+
+    display: flex;
+    gap: 16px;
+
+    max-width: 1200px;
+    margin: 0 auto 24px;
+    padding: 18px 22px;
+    box-sizing: border-box;
+
+    background: rgba(31, 41, 55, 0.6);
+
+    border: 1px solid rgba(212, 165, 55, 0.45);
+    border-radius: 12px;
+
+    color: #cbd5e1;
+
+    text-decoration: none;
+
+    transition: border-color 0.2s;
+
+}
+
+@media (hover: hover) {
+
+    .lore-blurb:hover {
+        border-color: var(--accent);
+    }
+
+}
+
+.lore-blurb__swatch {
+
+    flex: 0 0 8px;
+
+    border-radius: 4px;
+
+    background: var(--spine);
+
+}
+
+.lore-blurb__body {
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    min-width: 0;
+
+}
+
+.lore-blurb__title {
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+
+    color: white;
+
+}
+
+.lore-blurb__summary {
+
+    line-height: 1.6;
+
+}
+
+.lore-blurb__meta {
+
+    font-size: 14px;
+
+    color: var(--accent);
+
+}
+
+
+/* El libro abierto. Las tapas son el color del lomo y asoman alrededor de
+   las dos páginas, que son de papel. */
+.lore-book {
+
+    --paper: #f4ead3;
+    --paper-edge: #e3d3ae;
+    --ink-text: #2e2417;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    background: var(--spine);
+
+    border-radius: 10px;
+
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
+
+    perspective: 2000px;
+
+}
+
+@media (min-width: 900px) {
+
+    .lore-book {
+
+        grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+
+    }
+
+}
+
+.lore-book__page {
+
+    min-width: 0;
+
+    padding: 28px 30px;
+    box-sizing: border-box;
+
+    background: var(--paper);
+
+    color: var(--ink-text);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    scroll-margin-top: calc(var(--navbar-h) + 12px);
+
+}
+
+.lore-book__page--left {
+
+    border-radius: 6px 6px 0 0;
+
+}
+
+.lore-book__page--right {
+
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 0 0 6px 6px;
+
+    border-top: 1px dashed var(--paper-edge);
+
+}
+
+@media (min-width: 900px) {
+
+    /* El pliego: las dos páginas se oscurecen hacia el centro. */
+    .lore-book__page--left {
+
+        border-radius: 6px 0 0 6px;
+
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0) 7%), var(--paper);
+
+        transform-origin: right center;
+
+        animation: lore-open 0.7s ease-out;
+
+    }
+
+    .lore-book__page--right {
+
+        border-radius: 0 6px 6px 0;
+        border-top: none;
+
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0) 7%), var(--paper);
+
+        padding: 36px 44px;
+
+    }
+
+}
+
+@keyframes lore-open {
+
+    from {
+        transform: rotateY(80deg);
+        opacity: 0.4;
+    }
+
+    to {
+        transform: rotateY(0);
+        opacity: 1;
+    }
+
+}
+
+.lore-book__cover {
+
+    aspect-ratio: 3 / 2;
+
+    margin-bottom: 20px;
+
+    background-size: cover;
+
+    border-radius: 4px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+
+}
+
+.lore-book__cover--plain {
+
+    aspect-ratio: 6 / 1;
+
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.12) 30%, rgba(0, 0, 0, 0.25)),
+        var(--spine);
+
+}
+
+.lore-book__title {
+
+    margin: 0 0 12px;
+
+    font-size: clamp(26px, 4vw, 34px);
+    font-weight: normal;
+    line-height: 1.2;
+
+    color: var(--ink-text);
+
+}
+
+.lore-book__summary {
+
+    font-style: italic;
+
+    color: #5a4a33;
+
+}
+
+/* El texto del CMS va en tinta, no en el blanco del resto de la web. */
+.lore-book .paragraph,
+.lore-book .paragraph-list,
+.lore-book .paragraph-list li,
+.lore-book .paragraph strong,
+.lore-book .paragraph-list strong,
+.lore-book .paragraph-heading,
+.lore-book .paragraph-subheading {
+
+    color: inherit;
+
+}
+
+.lore-book .paragraph a,
+.lore-book .paragraph-list a {
+
+    color: #7a4b12;
+
+}
+
+.lore-book__toc {
+
+    margin-top: 24px;
+    padding-top: 16px;
+
+    border-top: 1px solid var(--paper-edge);
+
+}
+
+.lore-book__toc ol {
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+}
+
+.lore-book__toc-link {
+
+    display: flex;
+    gap: 12px;
+
+    padding: 7px 8px;
+
+    border-radius: 4px;
+
+    color: var(--ink-text);
+
+    text-decoration: none;
+
+}
+
+.lore-book__toc-num {
+
+    min-width: 1.5em;
+
+    color: #8a7656;
+
+}
+
+@media (hover: hover) {
+
+    .lore-book__toc-link:hover {
+        background: rgba(0, 0, 0, 0.06);
+    }
+
+}
+
+.lore-book__toc-link--on {
+
+    background: rgba(0, 0, 0, 0.08);
+
+    font-weight: bold;
+
+}
+
+.lore-book__chapter {
+
+    flex: 1;
+
+    animation: lore-turn 0.4s ease-out;
+
+}
+
+@keyframes lore-turn {
+
+    from {
+        opacity: 0;
+        transform: translateX(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+
+}
+
+.lore-book__chapter-title {
+
+    margin: 0 0 18px;
+
+    font-size: 24px;
+    font-weight: normal;
+
+    text-align: center;
+
+    color: var(--ink-text);
+
+}
+
+.lore-book__chapter-title::after {
+
+    content: "❦";
+
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 18px;
+
+    color: #9a7a3c;
+
+}
+
+.lore-book__text {
+
+    font-size: 17px;
+    line-height: 1.8;
+
+}
+
+.lore-book__empty {
+
+    flex: 1;
+
+    color: #8a7656;
+
+    text-align: center;
+
+}
+
+/* Al pie de la página derecha: pasar al capítulo de antes o al de después. */
+.lore-book__turn {
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 28px;
+    padding-top: 14px;
+
+    border-top: 1px solid var(--paper-edge);
+
+    font-size: 15px;
+
+}
+
+.lore-book__turn a {
+
+    color: #7a4b12;
+
+    text-decoration: none;
+
+}
+
+.lore-book__turn a:last-child {
+
+    text-align: right;
+
+}
+
+@media (hover: hover) {
+
+    .lore-book__turn a:hover {
+        text-decoration: underline;
+    }
+
+}
+
+.lore-book__folio {
+
+    color: #8a7656;
+
+}
+
+.lore-back {
+
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+.lore-back a {
+
+    color: var(--accent);
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .lore-spine,
+    .lore-book__page--left,
+    .lore-book__chapter {
+
+        transition: none;
+        animation: none;
+
+    }
+
+}

@@ -187,6 +187,39 @@ collections:
                       - { name: hinders, label: "Hinders (types)", widget: checkboxes, required: false, options: [Normal, Fire, Water, Electric, Grass, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy, Stellar, Shadow, Radiant], hint: "The types it hurts: weakened moves, extra damage…" }
                       - { name: text, label: Effects, widget: richtext, required: false, hint: "One bullet per effect, e.g. '- Lasts five turns.'" }
 
+      # El Lore de General: una estantería con un libro por historia y, dentro
+      # de cada uno, sus capítulos (ver src/data/lore.js).
+      - name: lore
+        label: Lore
+        file: src/content/lore.json
+        format: json
+        fields:
+          - { name: intro, label: Intro, widget: richtext, required: false, hint: "Shown above the shelf. Leave a blank line between paragraphs." }
+          - name: books
+            label: Books
+            widget: list
+            required: false
+            label_singular: Book
+            summary: "{{fields.title}}"
+            hint: "Each story is a book on the shelf, in this order, with its own page. Its address comes from the title, so renaming it changes the link. The longer the story, the thicker its spine."
+            fields:
+              - { name: title, label: Title, widget: string, hint: "Written on the spine and at the top of the book." }
+              - { name: hidden, label: "Hidden", widget: boolean, default: false, required: false, hint: "Keeps this book off the shelf (no spine, no page) until it's ready." }
+              - { name: color, label: "Spine color", widget: color, required: false, hint: "The color of its spine and covers. Empty picks one. Light colors get dark lettering." }
+              - { name: summary, label: Summary, widget: text, required: false, hint: "One or two lines: shown under the shelf when you point at the book, and under its title inside." }
+              - { name: cover, label: "Cover picture", widget: image, required: false, hint: "Shown at the top of the left page. Wide pictures work best. Without one it shows a strip in the spine's color." }
+              - { name: coverPosition, label: "Cover position (CSS background-position)", widget: string, required: false, hint: "Which part of the picture shows, e.g. 'center 30%' or 'right top'." }
+              - name: chapters
+                label: Chapters
+                widget: list
+                required: false
+                label_singular: Chapter
+                summary: "{{fields.title}}"
+                hint: "Read one at a time on the right page, in this order. With more than one, the left page shows them as an index."
+                fields:
+                  - { name: title, label: Title, widget: string, required: false, hint: "e.g. 'The first dawn'. Empty shows 'Chapter 1', 'Chapter 2'…" }
+                  - { name: text, label: Text, widget: richtext, required: false, hint: "Leave a blank line between paragraphs." }
+
       # Las bendiciones de Mechanics: cada una con su objeto, el NPC que la da y
       # sus etapas, cada etapa con su símbolo. Salen en la mecánica marcada con
       # "Show the blessings".

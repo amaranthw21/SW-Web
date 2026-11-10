@@ -10,6 +10,8 @@ import Rulebook from "./pages/Rulebook";
 import CharacterTypes from "./pages/CharacterTypes";
 import Mechanics from "./pages/Mechanics";
 import Mechanic from "./pages/Mechanic";
+import Lore from "./pages/Lore";
+import LoreBook from "./pages/LoreBook";
 import ItemsHub from "./pages/ItemsHub";
 import Region from "./pages/Region";
 import Credits from "./pages/Credits";
@@ -88,6 +90,16 @@ function App() {
                     <Route
                         path="/general/mechanics/:mechanicId"
                         element={<Mechanic />}
+                    />
+
+                    <Route
+                        path="/general/lore"
+                        element={<Lore />}
+                    />
+
+                    <Route
+                        path="/general/lore/:bookId"
+                        element={<LoreBook />}
                     />
 
                     <Route
