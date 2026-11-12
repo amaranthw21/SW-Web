@@ -2,16 +2,16 @@
   "intro": "",
   "books": [
     {
-      "title": "Lorem Ipsum",
+      "title": "Story of Bethath",
       "kind": "lore",
-      "color": "",
-      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "cover": "/fnd2ixq.jpg",
-      "coverPosition": "",
+      "color": "#517732",
+      "summary": "The Story of Bethath",
+      "cover": "/4c5961fcd2b0e2f34ef954777ceb827b.jpg",
+      "coverPosition": "center top",
       "chapters": [
         {
-          "title": "Lorem Ipsum",
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          "title": "The World Before",
+          "text": "**A World Between Worlds**\n\nBethath was unlike any other place in existence. A realm nestled between countless dimensions, it served as a nexus connecting different worlds and realities. Its lands were scattered across a vast expanse, forming an archipelago of islands, each with its own landscapes, ecosystems and inhabitants.\n\nIt was a place where Pokémon from different worlds could coexist, meet and build new lives. Despite their different origins, the islands shared a common connection, making Bethath a meeting point for countless species and cultures.\n\n**The Islands and Their Guardians**\n\nAcross Bethath, numerous islands housed settlements of varying sizes, from small villages to thriving towns. Each territory had its own identity, shaped by its environment and the Pokémon who called it home.\n\nThe protection of these islands was entrusted to their Legendaries, who worked together to maintain the balance of their respective territories.\n\nMost islands had two or three major Legendaries serving as their primary guardians. They oversaw the largest regions of the island, looking after its most important settlements and ensuring the overall safety of its inhabitants.\n\nUnder their supervision were minor Legendaries, each responsible for more specific areas. They typically watched over individual villages, smaller territories or particular natural landmarks, helping maintain order and attending to the needs of the local population.\n\n**The World Tree**\nAt the very heart of Bethath stood the World Tree, an ancient and colossal structure whose roots and branches extended far beyond the boundaries of the realm.\n\nThe tree was the very heart of Bethath and the structure that connected it to the countless dimensions surrounding it. Its roots and branches stretched across realities, linking worlds and dimensions that would otherwise remain separated.\n\nThrough the World Tree, Bethath served as a nexus between dimensions, allowing different worlds to remain connected through its existence, it also allowed the legendaries to attend to their duties in other dimensions.\n\nIt was more than simply a landmark or a source of power. The World Tree was one of the fundamental pillars of the multiverse, and Bethath itself was built around it. As long as the tree remained healthy, the connections between worlds could endure, and Bethath could continue to exist as the meeting point between them."
         },
         {
           "title": "Dolor Sit Amet",
@@ -21,7 +21,9 @@
           "title": "Consectetur",
           "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.\n\nNemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
         }
-      ]
+      ],
+      "author": "xanandra_",
+      "character": "semper"
     },
     {
       "title": "Dolor Sit Amet",
